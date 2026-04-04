@@ -1,3 +1,4 @@
+import { hasAiSchema } from './_lib/aiSuggestions.js';
 import { checkSupabaseHealth } from './_lib/catalogPersistence.js';
 import { sendJson, type ApiRequest, type ApiResponse } from './_lib/http.js';
 import { createWriteSupabaseClient, getSupabaseServerEnv } from './_lib/supabase.js';
@@ -11,6 +12,7 @@ export default async function handler(request: ApiRequest, response: ApiResponse
     const env = getSupabaseServerEnv();
     const client = createWriteSupabaseClient();
     const health = await checkSupabaseHealth(client);
+    const aiSchemaReady = await hasAiSchema(client);
 
     return sendJson(response, health.ok ? 200 : 503, {
       ok: health.ok,
@@ -18,6 +20,7 @@ export default async function handler(request: ApiRequest, response: ApiResponse
       usesServiceRole: Boolean(env.serviceRoleKey),
       databaseReachable: health.databaseReachable,
       schema: health.schema,
+      aiSchemaReady,
       error: health.error,
     });
   } catch (error) {

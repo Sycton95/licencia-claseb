@@ -535,7 +535,7 @@ async function requestAdminApi<TResponse>(
   const accessToken = await getSessionAccessToken();
 
   if (!accessToken) {
-    throw new Error('Debes iniciar sesiÃ³n como admin para realizar esta acciÃ³n.');
+    throw new Error('Debes iniciar sesión como admin para realizar esta acción.');
   }
 
   const response = await fetch(path, {
@@ -547,13 +547,28 @@ async function requestAdminApi<TResponse>(
     body: JSON.stringify(body),
   });
 
-  const payload = (await response.json().catch(() => ({}))) as {
+  const rawText = await response.text();
+  let payload: {
     error?: string;
     [key: string]: unknown;
-  };
+  } = {};
+
+  if (rawText) {
+    try {
+      payload = JSON.parse(rawText) as {
+        error?: string;
+        [key: string]: unknown;
+      };
+    } catch {
+      payload = {};
+    }
+  }
 
   if (!response.ok) {
-    throw new Error(payload.error ?? 'La operaciÃ³n admin no se pudo completar.');
+    const fallbackMessage = rawText
+      ? `La operación admin falló con ${response.status}. ${rawText.slice(0, 240)}`
+      : `La operación admin falló con ${response.status}.`;
+    throw new Error(payload.error ?? fallbackMessage);
   }
 
   return payload as TResponse;
@@ -920,3 +935,4 @@ export async function isCurrentUserAdmin() {
 export function saveLocalCatalogSnapshot(catalog: ContentCatalog) {
   saveLocalCatalog(normalizeCatalog(catalog));
 }
+

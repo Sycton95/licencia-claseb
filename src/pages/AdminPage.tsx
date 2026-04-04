@@ -39,6 +39,7 @@ type AdminHealth = {
   usesServiceRole: boolean;
   databaseReachable: boolean;
   schema: string;
+  aiSchemaReady?: boolean;
   error: string | null;
 };
 
@@ -765,6 +766,10 @@ export function AdminPage() {
                 <span>{adminHealth?.schema ?? 'sin datos'}</span>
               </div>
               <div className="menu-card">
+                <strong>AI schema</strong>
+                <span>{adminHealth?.aiSchemaReady ? 'activo' : 'pendiente'}</span>
+              </div>
+              <div className="menu-card">
                 <strong>Service role</strong>
                 <span>{adminHealth?.usesServiceRole ? 'activa' : 'pendiente'}</span>
               </div>
@@ -773,6 +778,12 @@ export function AdminPage() {
                 <span>{adminHealth?.databaseReachable ? 'conectada' : 'sin conexión'}</span>
               </div>
             </div>
+            {!adminHealth?.aiSchemaReady && (
+              <p className="info-text">
+                La cola AI requiere aplicar la migración `0003_ai_suggestions.sql` en Supabase antes de
+                poder generar o persistir sugerencias.
+              </p>
+            )}
             {healthNeedsHardening && (
               <p className="info-text">
                 Pendientes para cerrar la base operativa: ejecutar la migración `0002_solid_base_v1.sql`
