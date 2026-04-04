@@ -81,16 +81,32 @@ type EditorialEventRow = {
   created_at: string;
 };
 
-const PUBLIC_ADMIN_FALLBACK_URL = 'https://licencia-claseb.vercel.app/admin';
+const PUBLIC_SITE_FALLBACK_URL = 'https://licencia-claseb.vercel.app';
+
+function isLocalOrigin(origin: string) {
+  return (
+    origin.includes('localhost') ||
+    origin.includes('127.0.0.1') ||
+    origin.includes('0.0.0.0')
+  );
+}
+
+function toAdminRedirectUrl(value: string) {
+  return new URL('/admin', value).toString();
+}
 
 function getAdminRedirectUrl() {
+  if (typeof window !== 'undefined' && window.location?.origin && !isLocalOrigin(window.location.origin)) {
+    return toAdminRedirectUrl(window.location.origin);
+  }
+
   const configuredUrl = import.meta.env.VITE_PUBLIC_ADMIN_URL?.trim();
 
   if (configuredUrl) {
-    return configuredUrl;
+    return toAdminRedirectUrl(configuredUrl);
   }
 
-  return PUBLIC_ADMIN_FALLBACK_URL;
+  return toAdminRedirectUrl(PUBLIC_SITE_FALLBACK_URL);
 }
 
 function getActiveEdition(catalog: ContentCatalog) {
