@@ -1,14 +1,14 @@
-import { SEED_CONTENT } from '../../src/data/seedContent';
+import { SEED_CONTENT } from '../../src/data/seedContent.js';
 import {
   sanitizeQuestionPayload,
   validateQuestionAction,
-} from '../../src/lib/contentValidation';
+} from '../../src/lib/contentValidation.js';
 import type {
   ContentCatalog,
   EditorialAction,
   EditorialEvent,
   Question,
-} from '../../src/types/content';
+} from '../../src/types/content.js';
 
 type SupabaseClient = any;
 

@@ -1,5 +1,5 @@
-import { createUserScopedSupabaseClient, createWriteSupabaseClient } from './supabase';
-import { getBearerToken, type ApiRequest } from './http';
+import { createUserScopedSupabaseClient, createWriteSupabaseClient } from './supabase.js';
+import { getBearerToken, type ApiRequest } from './http.js';
 
 export async function requireAdmin(request: ApiRequest) {
   const accessToken = getBearerToken(request);

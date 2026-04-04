@@ -1,4 +1,4 @@
-import type { EditorialAction, Question } from '../types/content';
+import type { EditorialAction, Question } from '../types/content.js';
 
 function normalizeText(value: string | undefined) {
   return (value ?? '').replace(/\s+/g, ' ').trim();

@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/practice",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/exam",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/index.html"
+    }
+  ]
+}

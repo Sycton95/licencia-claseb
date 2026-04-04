@@ -1,6 +1,6 @@
-import { checkSupabaseHealth } from './_lib/catalogPersistence';
-import { sendJson, type ApiRequest, type ApiResponse } from './_lib/http';
-import { createWriteSupabaseClient, getSupabaseServerEnv } from './_lib/supabase';
+import { checkSupabaseHealth } from './_lib/catalogPersistence.js';
+import { sendJson, type ApiRequest, type ApiResponse } from './_lib/http.js';
+import { createWriteSupabaseClient, getSupabaseServerEnv } from './_lib/supabase.js';
 
 export default async function handler(request: ApiRequest, response: ApiResponse) {
   if (request.method !== 'GET') {

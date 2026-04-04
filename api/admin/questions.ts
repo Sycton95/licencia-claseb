@@ -1,7 +1,7 @@
-import { applyEditorialAction, hasV1Schema, saveQuestionWithSchema } from '../_lib/catalogPersistence';
-import { requireAdmin } from '../_lib/admin';
-import { readJsonBody, sendJson, type ApiRequest, type ApiResponse } from '../_lib/http';
-import type { EditorialAction, Question } from '../../src/types/content';
+import { applyEditorialAction, hasV1Schema, saveQuestionWithSchema } from '../_lib/catalogPersistence.js';
+import { requireAdmin } from '../_lib/admin.js';
+import { readJsonBody, sendJson, type ApiRequest, type ApiResponse } from '../_lib/http.js';
+import type { EditorialAction, Question } from '../../src/types/content.js';
 
 type SaveQuestionBody = {
   question?: Question;

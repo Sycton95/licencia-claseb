@@ -1,6 +1,6 @@
-import { seedCatalogWithSchema } from '../_lib/catalogPersistence';
-import { requireAdmin } from '../_lib/admin';
-import { readJsonBody, sendJson, type ApiRequest, type ApiResponse } from '../_lib/http';
+import { seedCatalogWithSchema } from '../_lib/catalogPersistence.js';
+import { requireAdmin } from '../_lib/admin.js';
+import { readJsonBody, sendJson, type ApiRequest, type ApiResponse } from '../_lib/http.js';
 
 type SeedBody = {
   replace?: boolean;

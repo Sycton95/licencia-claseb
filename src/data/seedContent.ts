@@ -7,7 +7,7 @@ import type {
   Question,
   QuestionOption,
   SourceDocument,
-} from '../types/content';
+} from '../types/content.js';
 
 const ACTIVE_EDITION_ID = 'edition-2026';
 const SEED_AUTHOR = 'seed@licencia-claseb.local';
