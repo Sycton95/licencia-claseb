@@ -13,13 +13,13 @@ npm run dev
 npm run build
 npm run validate:content
 npm run smoke:prod
-npm run smoke:prod:v1
+npm run smoke:prod:compat
 npm run release:check
-npm run release:check:v1
+npm run release:check:compat
 ```
 
-`npm run release:check` ejecuta validación de contenido, build y smoke test contra la URL pública.
-`npm run release:check:v1` agrega la exigencia de `schema: v1` para el health check de producción.
+`npm run release:check` es ahora el gate normal de release y exige `schema: v1`.
+`npm run release:check:compat` queda solo como fallback temporal para depuración.
 
 ## Variables de entorno
 
@@ -28,26 +28,27 @@ Usa [`.env.example`](./.env.example) como base.
 Frontend:
 
 - `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_ANON_KEY`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+- `VITE_SUPABASE_ANON_KEY` como fallback legado
 - `VITE_ENABLE_LOCAL_ADMIN`
 - `VITE_PUBLIC_ADMIN_URL`
 
 Servidor:
 
-- `SUPABASE_SERVICE_ROLE_KEY` recomendado para endurecer escrituras editoriales desde `api/`
+- `SUPABASE_SERVICE_ROLE_KEY` para escrituras editoriales desde `api/`
 
-Checks:
+Mapa con la UI actual de Supabase:
 
-- `RELEASE_CHECK_BASE_URL` opcional para `npm run smoke:prod`
-- `RELEASE_REQUIRED_SCHEMA` recomendado en `v1` una vez aplicada la migración `0002`
+- Supabase `Publishable key` -> app `VITE_SUPABASE_PUBLISHABLE_KEY`
+- Supabase `Secret key` -> app `SUPABASE_SERVICE_ROLE_KEY`
 
 ## Login admin desde teléfono
 
-Para evitar que el magic link apunte a `localhost`, el proyecto debe usar siempre:
+Para evitar que el magic link apunte a `localhost`, el proyecto debe usar:
 
 - `VITE_PUBLIC_ADMIN_URL=https://licencia-claseb.vercel.app/admin`
 
-Además, en Supabase Auth debes dejar configurado:
+Además, en Supabase Auth:
 
 - `Site URL`: `https://licencia-claseb.vercel.app`
 - `Redirect URLs`:
@@ -85,6 +86,6 @@ Regla operativa:
 - práctica personalizada por capítulo
 - simulación del examen clase B con reglas verificadas
 - panel admin con flujo editorial controlado
-- panel admin con tarjeta de estado operativo para detectar migración o `service role` pendientes
+- panel admin con tarjeta de estado operativo
 - rutas `api/` para escrituras editoriales en producción
-- esquema compatible con edición activa y trazabilidad editorial
+- esquema `v1` activo con trazabilidad editorial

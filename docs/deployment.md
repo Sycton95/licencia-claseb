@@ -3,7 +3,7 @@
 ## Rama y despliegue
 
 - `main` despliega producción
-- ramas `codex/*` o de feature deben generar preview
+- ramas `codex/*` o de feature generan preview
 - no se edita directamente en producción
 
 ## Variables
@@ -11,22 +11,23 @@
 Frontend:
 
 - `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_ANON_KEY`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+- `VITE_SUPABASE_ANON_KEY` solo como fallback legado
 - `VITE_ENABLE_LOCAL_ADMIN=false`
 - `VITE_PUBLIC_ADMIN_URL=https://licencia-claseb.vercel.app/admin`
 
 Servidor:
 
-- `SUPABASE_SERVICE_ROLE_KEY` recomendado para endurecer mutaciones editoriales
+- `SUPABASE_SERVICE_ROLE_KEY` para endurecer mutaciones editoriales
 
-Checks:
+Mapa con Supabase:
 
-- `RELEASE_CHECK_BASE_URL=https://licencia-claseb.vercel.app`
-- `RELEASE_REQUIRED_SCHEMA=v1` una vez aplicada la migración `0002`
+- `Publishable key` -> `VITE_SUPABASE_PUBLISHABLE_KEY`
+- `Secret key` -> `SUPABASE_SERVICE_ROLE_KEY`
 
 ## Supabase Auth
 
-En `Supabase Dashboard -> Authentication -> URL Configuration` deja estos valores:
+En `Supabase Dashboard -> Authentication -> URL Configuration`:
 
 - `Site URL`: `https://licencia-claseb.vercel.app`
 - `Redirect URL`: `https://licencia-claseb.vercel.app/admin`
@@ -40,13 +41,13 @@ Regla operativa:
 
 ## Login admin desde teléfono
 
-Checklist para evitar enlaces rotos:
+Checklist:
 
 1. abrir `/admin` en producción
 2. pedir el magic link desde `https://licencia-claseb.vercel.app/admin`
 3. abrir el correo en el teléfono
 4. confirmar que el enlace apunta a `https://licencia-claseb.vercel.app/admin`
-5. evitar pedir el enlace desde localhost si no estás haciendo una prueba local
+5. evitar pedir el enlace desde localhost fuera de pruebas locales
 
 ## Verificación mínima
 
@@ -56,8 +57,8 @@ Antes de considerar un release sano:
 2. `npm run build`
 3. `npm run smoke:prod`
 
-`npm run release:check` corre los tres pasos.
-`npm run release:check:v1` corre los tres pasos y exige `schema: v1`.
+`npm run release:check` es ahora el gate normal y exige `schema: v1`.
+`npm run release:check:compat` queda solo como fallback temporal.
 
 ## Smoke test
 
@@ -73,5 +74,5 @@ Las rutas mínimas que deben responder:
 
 - `ok: true`
 - `databaseReachable: true`
-- `schema: v1` cuando la migración `0002_solid_base_v1.sql` ya esté aplicada
-- `usesServiceRole: true` cuando `SUPABASE_SERVICE_ROLE_KEY` ya esté cargada en Vercel
+- `schema: v1`
+- `usesServiceRole: true`

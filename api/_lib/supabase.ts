@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 
-function getRequiredEnv(name: 'VITE_SUPABASE_URL' | 'VITE_SUPABASE_ANON_KEY') {
+function getRequiredEnv(name: 'VITE_SUPABASE_URL') {
   const value = process.env[name];
 
   if (!value) {
@@ -10,10 +10,23 @@ function getRequiredEnv(name: 'VITE_SUPABASE_URL' | 'VITE_SUPABASE_ANON_KEY') {
   return value;
 }
 
+function getPublishableKey() {
+  const value =
+    process.env.VITE_SUPABASE_PUBLISHABLE_KEY ?? process.env.VITE_SUPABASE_ANON_KEY;
+
+  if (!value) {
+    throw new Error(
+      'Falta la variable VITE_SUPABASE_PUBLISHABLE_KEY en el entorno del servidor.',
+    );
+  }
+
+  return value;
+}
+
 export function getSupabaseServerEnv() {
   return {
     url: getRequiredEnv('VITE_SUPABASE_URL'),
-    publishableKey: getRequiredEnv('VITE_SUPABASE_ANON_KEY'),
+    publishableKey: getPublishableKey(),
     serviceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
   };
 }

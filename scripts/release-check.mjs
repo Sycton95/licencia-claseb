@@ -7,12 +7,16 @@ const requiredSchema = schemaArg?.split('=')[1]?.trim();
 function runStep(label, args, env = process.env) {
   const result = spawnSync(npmCommand, args, {
     stdio: 'inherit',
-    shell: false,
+    shell: process.platform === 'win32',
     env,
   });
 
+  if (result.error) {
+    throw new Error(`${label} failed: ${result.error.message}`);
+  }
+
   if (result.status !== 0) {
-    throw new Error(`${label} falló con código ${result.status ?? 'desconocido'}.`);
+    throw new Error(`${label} failed with code ${result.status ?? 'unknown'}.`);
   }
 }
 
