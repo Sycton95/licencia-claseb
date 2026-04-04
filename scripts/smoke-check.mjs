@@ -1,5 +1,7 @@
 const baseUrl = process.env.RELEASE_CHECK_BASE_URL || 'https://licencia-claseb.vercel.app';
-const requiredSchema = process.env.RELEASE_REQUIRED_SCHEMA?.trim();
+const schemaArg = process.argv.find((argument) => argument.startsWith('--require-schema='));
+const requiredSchema =
+  schemaArg?.split('=')[1]?.trim() || process.env.RELEASE_REQUIRED_SCHEMA?.trim();
 const routes = ['/', '/practice', '/exam', '/admin', '/api/health'];
 
 async function main() {

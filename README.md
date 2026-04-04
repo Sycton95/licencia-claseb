@@ -13,10 +13,13 @@ npm run dev
 npm run build
 npm run validate:content
 npm run smoke:prod
+npm run smoke:prod:v1
 npm run release:check
+npm run release:check:v1
 ```
 
 `npm run release:check` ejecuta validación de contenido, build y smoke test contra la URL pública.
+`npm run release:check:v1` agrega la exigencia de `schema: v1` para el health check de producción.
 
 ## Variables de entorno
 
@@ -82,5 +85,6 @@ Regla operativa:
 - práctica personalizada por capítulo
 - simulación del examen clase B con reglas verificadas
 - panel admin con flujo editorial controlado
+- panel admin con tarjeta de estado operativo para detectar migración o `service role` pendientes
 - rutas `api/` para escrituras editoriales en producción
 - esquema compatible con edición activa y trazabilidad editorial

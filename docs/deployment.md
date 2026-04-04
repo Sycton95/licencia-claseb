@@ -57,6 +57,7 @@ Antes de considerar un release sano:
 3. `npm run smoke:prod`
 
 `npm run release:check` corre los tres pasos.
+`npm run release:check:v1` corre los tres pasos y exige `schema: v1`.
 
 ## Smoke test
 
@@ -73,3 +74,4 @@ Las rutas mínimas que deben responder:
 - `ok: true`
 - `databaseReachable: true`
 - `schema: v1` cuando la migración `0002_solid_base_v1.sql` ya esté aplicada
+- `usesServiceRole: true` cuando `SUPABASE_SERVICE_ROLE_KEY` ya esté cargada en Vercel

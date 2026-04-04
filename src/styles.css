@@ -637,6 +637,32 @@ button {
   gap: 8px;
 }
 
+.admin-health-card {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 18px;
+  border: 1px solid #dbe5f1;
+  border-radius: 22px;
+  background: #f8fbff;
+}
+
+.admin-health-card--warning {
+  border-color: #fbbf24;
+  background: linear-gradient(180deg, #fffaf0 0%, #fff7ed 100%);
+}
+
+.admin-health-head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-health-grid {
+  display: grid;
+  gap: 12px;
+}
+
 .admin-question-list {
   display: grid;
   gap: 10px;
@@ -744,6 +770,16 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  .admin-health-head {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .admin-health-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .admin-save-row--split {

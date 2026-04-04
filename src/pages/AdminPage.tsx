@@ -18,6 +18,15 @@ import type {
   Question,
 } from '../types/content';
 
+type AdminHealth = {
+  ok: boolean;
+  supabaseConfigured: boolean;
+  usesServiceRole: boolean;
+  databaseReachable: boolean;
+  schema: string;
+  error: string | null;
+};
+
 function getNowIsoString() {
   return new Date().toISOString();
 }
@@ -89,6 +98,7 @@ export function AdminPage() {
   const [isBusy, setIsBusy] = useState(false);
   const [isAdminAuthorized, setIsAdminAuthorized] = useState(false);
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
+  const [adminHealth, setAdminHealth] = useState<AdminHealth | null>(null);
 
   const canUseLocalAdmin =
     !isSupabaseConfigured &&
@@ -123,6 +133,25 @@ export function AdminPage() {
 
   useEffect(() => {
     loadCatalog();
+
+    if (isSupabaseConfigured) {
+      fetch('/api/health', {
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      })
+        .then(async (response) => {
+          if (!response.ok) {
+            throw new Error('No se pudo leer el estado operativo.');
+          }
+
+          const payload = (await response.json()) as AdminHealth;
+          setAdminHealth(payload);
+        })
+        .catch(() => {
+          setAdminHealth(null);
+        });
+    }
 
     if (!isSupabaseConfigured) {
       setIsAdminAuthorized(canUseLocalAdmin);
@@ -172,6 +201,9 @@ export function AdminPage() {
   }, [catalog, filterChapterId, filterEligibleOnly, filterSourceDocumentId, filterStatus, searchTerm]);
 
   const activeEdition = catalog?.activeEdition;
+  const healthNeedsHardening =
+    isSupabaseConfigured &&
+    (!adminHealth || adminHealth.schema !== 'v1' || !adminHealth.usesServiceRole);
 
   const selectQuestion = (questionId: string) => {
     if (!catalog) {
@@ -394,6 +426,50 @@ export function AdminPage() {
         </div>
         {message && <p className="success-banner">{message}</p>}
         {error && <p className="error-banner">{error}</p>}
+        {isSupabaseConfigured && (
+          <section
+            className={
+              healthNeedsHardening
+                ? 'admin-health-card admin-health-card--warning'
+                : 'admin-health-card'
+            }
+          >
+            <div className="admin-health-head">
+              <div>
+                <h2 className="section-title">Estado operativo</h2>
+                <p className="info-text">
+                  Esta tarjeta resume si la plataforma ya quedó endurecida para operar sin depender del
+                  navegador.
+                </p>
+              </div>
+              {adminHealth?.ok ? (
+                <span className="dev-pill">API operativa</span>
+              ) : (
+                <span className="error-banner">API pendiente</span>
+              )}
+            </div>
+            <div className="admin-health-grid">
+              <div className="menu-card">
+                <strong>Esquema</strong>
+                <span>{adminHealth?.schema ?? 'sin datos'}</span>
+              </div>
+              <div className="menu-card">
+                <strong>Service role</strong>
+                <span>{adminHealth?.usesServiceRole ? 'activa' : 'pendiente'}</span>
+              </div>
+              <div className="menu-card">
+                <strong>Base de datos</strong>
+                <span>{adminHealth?.databaseReachable ? 'conectada' : 'sin conexión'}</span>
+              </div>
+            </div>
+            {healthNeedsHardening && (
+              <p className="info-text">
+                Pendientes para cerrar la base operativa: ejecutar la migración `0002_solid_base_v1.sql`
+                en Supabase y cargar `SUPABASE_SERVICE_ROLE_KEY` en Vercel.
+              </p>
+            )}
+          </section>
+        )}
       </section>
 
       <section className="admin-grid">

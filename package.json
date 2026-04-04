@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "validate:content": "node scripts/validate-content.mjs",
     "smoke:prod": "node scripts/smoke-check.mjs",
-    "release:check": "node scripts/release-check.mjs"
+    "smoke:prod:v1": "node scripts/smoke-check.mjs --require-schema=v1",
+    "release:check": "node scripts/release-check.mjs",
+    "release:check:v1": "node scripts/release-check.mjs --require-schema=v1"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.101.1",
