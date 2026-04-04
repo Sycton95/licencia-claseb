@@ -13,10 +13,40 @@ Frontend:
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_ANON_KEY`
 - `VITE_ENABLE_LOCAL_ADMIN=false`
+- `VITE_PUBLIC_ADMIN_URL=https://licencia-claseb.vercel.app/admin`
 
 Servidor:
 
-- `SUPABASE_SERVICE_ROLE_KEY` recomendado
+- `SUPABASE_SERVICE_ROLE_KEY` recomendado para endurecer mutaciones editoriales
+
+Checks:
+
+- `RELEASE_CHECK_BASE_URL=https://licencia-claseb.vercel.app`
+- `RELEASE_REQUIRED_SCHEMA=v1` una vez aplicada la migración `0002`
+
+## Supabase Auth
+
+En `Supabase Dashboard -> Authentication -> URL Configuration` deja estos valores:
+
+- `Site URL`: `https://licencia-claseb.vercel.app`
+- `Redirect URL`: `https://licencia-claseb.vercel.app/admin`
+- `Redirect URL`: `http://localhost:3000/admin`
+- `Redirect URL`: `http://localhost:5173/admin`
+
+Regla operativa:
+
+- login admin normal siempre desde producción
+- localhost solo para desarrollo y pruebas controladas
+
+## Login admin desde teléfono
+
+Checklist para evitar enlaces rotos:
+
+1. abrir `/admin` en producción
+2. pedir el magic link desde `https://licencia-claseb.vercel.app/admin`
+3. abrir el correo en el teléfono
+4. confirmar que el enlace apunta a `https://licencia-claseb.vercel.app/admin`
+5. evitar pedir el enlace desde localhost si no estás haciendo una prueba local
 
 ## Verificación mínima
 
@@ -38,4 +68,8 @@ Las rutas mínimas que deben responder:
 - `/admin`
 - `/api/health`
 
-`/api/health` debe devolver `ok: true` y `databaseReachable: true`.
+`/api/health` debe devolver:
+
+- `ok: true`
+- `databaseReachable: true`
+- `schema: v1` cuando la migración `0002_solid_base_v1.sql` ya esté aplicada

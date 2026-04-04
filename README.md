@@ -27,21 +27,42 @@ Frontend:
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_ANON_KEY`
 - `VITE_ENABLE_LOCAL_ADMIN`
+- `VITE_PUBLIC_ADMIN_URL`
 
 Servidor:
 
-- `SUPABASE_SERVICE_ROLE_KEY` opcional, recomendado para endurecer escrituras editoriales desde `api/`
+- `SUPABASE_SERVICE_ROLE_KEY` recomendado para endurecer escrituras editoriales desde `api/`
 
 Checks:
 
 - `RELEASE_CHECK_BASE_URL` opcional para `npm run smoke:prod`
+- `RELEASE_REQUIRED_SCHEMA` recomendado en `v1` una vez aplicada la migración `0002`
+
+## Login admin desde teléfono
+
+Para evitar que el magic link apunte a `localhost`, el proyecto debe usar siempre:
+
+- `VITE_PUBLIC_ADMIN_URL=https://licencia-claseb.vercel.app/admin`
+
+Además, en Supabase Auth debes dejar configurado:
+
+- `Site URL`: `https://licencia-claseb.vercel.app`
+- `Redirect URLs`:
+- `https://licencia-claseb.vercel.app/admin`
+- `http://localhost:3000/admin`
+- `http://localhost:5173/admin`
+
+Regla operativa:
+
+- login admin normal siempre desde producción
+- localhost solo para desarrollo y pruebas controladas
 
 ## Arquitectura
 
 - frontend público: `Vite + React Router`
 - persistencia y auth admin: `Supabase`
 - mutaciones editoriales en producción: rutas `api/` desplegadas en Vercel
-- producción: `main -> Vercel`
+- producción: `main -> GitHub -> Vercel`
 
 ## Documentos clave
 
