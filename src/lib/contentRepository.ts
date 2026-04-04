@@ -83,19 +83,11 @@ type EditorialEventRow = {
 
 const PUBLIC_ADMIN_FALLBACK_URL = 'https://licencia-claseb.vercel.app/admin';
 
-function isLocalHostname(hostname: string) {
-  return hostname === 'localhost' || hostname === '127.0.0.1';
-}
-
 function getAdminRedirectUrl() {
   const configuredUrl = import.meta.env.VITE_PUBLIC_ADMIN_URL?.trim();
 
   if (configuredUrl) {
     return configuredUrl;
-  }
-
-  if (typeof window !== 'undefined' && isLocalHostname(window.location.hostname)) {
-    return `${window.location.origin}/admin`;
   }
 
   return PUBLIC_ADMIN_FALLBACK_URL;
