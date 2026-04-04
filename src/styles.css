@@ -663,6 +663,112 @@ button {
   gap: 12px;
 }
 
+.admin-report-stack {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.admin-report-grid,
+.admin-report-layout,
+.admin-filter-chip-row,
+.admin-warning-list,
+.admin-coverage-list,
+.admin-metric-row {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-report-card,
+.admin-filter-chip,
+.admin-warning-card,
+.admin-coverage-card {
+  border: 1px solid #dbe5f1;
+  cursor: pointer;
+}
+
+.admin-report-card {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #f8fbff;
+  color: #0f172a;
+  text-align: left;
+}
+
+.admin-report-card span {
+  color: #1d4ed8;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.admin-report-card--warning span {
+  color: #b45309;
+}
+
+.admin-report-panel {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #dbe5f1;
+  border-radius: 22px;
+  background: #fff;
+}
+
+.admin-report-head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-coverage-card,
+.admin-warning-card {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #f8fbff;
+  text-align: left;
+}
+
+.admin-warning-card span,
+.admin-warning-card small,
+.admin-coverage-card span {
+  color: #475569;
+}
+
+.admin-warning-card--ok {
+  border-color: #86efac;
+  background: #f0fdf4;
+  cursor: default;
+}
+
+.admin-metric-row {
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.admin-filter-chip-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.admin-filter-chip {
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #f8fbff;
+  color: #334155;
+  font-weight: 700;
+}
+
+.secondary-button--compact {
+  width: auto;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+}
+
 .admin-question-list {
   display: grid;
   gap: 10px;
@@ -779,6 +885,29 @@ button {
   }
 
   .admin-health-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .admin-report-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .admin-report-layout {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .admin-report-head {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .admin-filter-chip-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .admin-metric-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

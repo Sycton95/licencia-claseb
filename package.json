@@ -10,8 +10,8 @@
     "validate:content": "node scripts/validate-content.mjs",
     "smoke:prod": "node scripts/smoke-check.mjs --require-schema=v1",
     "smoke:prod:compat": "node scripts/smoke-check.mjs",
-    "release:check": "node scripts/release-check.mjs --require-schema=v1",
-    "release:check:compat": "node scripts/release-check.mjs"
+    "release:check": "npm run validate:content && npm run smoke:prod",
+    "release:check:compat": "npm run validate:content && npm run smoke:prod:compat"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.101.1",

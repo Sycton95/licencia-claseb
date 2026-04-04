@@ -12,10 +12,12 @@ import {
 import { validateQuestionAction } from '../lib/contentValidation';
 import { isSupabaseConfigured } from '../lib/supabase';
 import type {
+  Chapter,
   ContentCatalog,
   EditorialAction,
   EditorialStatus,
   Question,
+  SourceDocument,
 } from '../types/content';
 
 type AdminHealth = {
@@ -27,12 +29,143 @@ type AdminHealth = {
   error: string | null;
 };
 
+type EditorialWarning = {
+  id: string;
+  questionId: string;
+  title: string;
+  detail: string;
+};
+
+type AdminReportSummary = {
+  totalQuestions: number;
+  draftCount: number;
+  reviewedCount: number;
+  publishedCount: number;
+  archivedCount: number;
+  examEligibleCount: number;
+};
+
+type ChapterCoverageRow = {
+  chapterId: string;
+  chapterCode: string;
+  chapterTitle: string;
+  total: number;
+  published: number;
+  reviewedPending: number;
+};
+
+type SourceCoverageRow = {
+  sourceDocumentId: string;
+  title: string;
+  total: number;
+  missingReferenceCount: number;
+};
+
 function getNowIsoString() {
   return new Date().toISOString();
 }
 
 function cloneQuestion(question: Question) {
   return JSON.parse(JSON.stringify(question)) as Question;
+}
+
+function hasClearSourceReference(question: Question) {
+  return Boolean(question.sourceReference?.trim());
+}
+
+function getCorrectOptionCount(question: Question) {
+  return question.options.filter((option) => option.isCorrect).length;
+}
+
+function getQuestionWarnings(question: Question): EditorialWarning[] {
+  const warnings: EditorialWarning[] = [];
+  const correctOptionCount = getCorrectOptionCount(question);
+
+  if (question.status === 'published' && !hasClearSourceReference(question)) {
+    warnings.push({
+      id: `${question.id}-missing-source-reference`,
+      questionId: question.id,
+      title: 'Publicada sin referencia precisa',
+      detail: 'La pregunta esta publicada, pero no incluye texto de referencia fuente.',
+    });
+  }
+
+  if (question.status === 'published' && correctOptionCount === 0) {
+    warnings.push({
+      id: `${question.id}-missing-correct-option`,
+      questionId: question.id,
+      title: 'Publicada sin respuesta correcta',
+      detail: 'La pregunta publicada no tiene ninguna alternativa marcada como correcta.',
+    });
+  }
+
+  if (question.selectionMode === 'multiple' && correctOptionCount < 2) {
+    warnings.push({
+      id: `${question.id}-multiple-insufficient-correct`,
+      questionId: question.id,
+      title: 'Multiple con respuestas insuficientes',
+      detail: 'Las preguntas multiple deben tener al menos dos respuestas correctas.',
+    });
+  }
+
+  if (question.isOfficialExamEligible && question.status !== 'published') {
+    warnings.push({
+      id: `${question.id}-exam-not-published`,
+      questionId: question.id,
+      title: 'Apta para examen sin publicar',
+      detail: 'La pregunta esta marcada como apta para examen, pero aun no esta publicada.',
+    });
+  }
+
+  if (question.doubleWeight && !question.isOfficialExamEligible) {
+    warnings.push({
+      id: `${question.id}-double-weight-not-eligible`,
+      questionId: question.id,
+      title: 'Doble puntaje fuera de examen',
+      detail: 'Una pregunta de doble puntaje debe estar marcada como apta para examen.',
+    });
+  }
+
+  return warnings;
+}
+
+function buildChapterCoverage(chapters: Chapter[], questions: Question[]): ChapterCoverageRow[] {
+  return chapters
+    .map((chapter) => {
+      const chapterQuestions = questions.filter((question) => question.chapterId === chapter.id);
+
+      return {
+        chapterId: chapter.id,
+        chapterCode: chapter.code,
+        chapterTitle: chapter.title,
+        total: chapterQuestions.length,
+        published: chapterQuestions.filter((question) => question.status === 'published').length,
+        reviewedPending: chapterQuestions.filter((question) => question.status === 'reviewed').length,
+      };
+    })
+    .sort((left, right) => left.chapterCode.localeCompare(right.chapterCode));
+}
+
+function buildSourceCoverage(
+  sourceDocuments: SourceDocument[],
+  questions: Question[],
+): SourceCoverageRow[] {
+  return sourceDocuments
+    .map((sourceDocument) => {
+      const sourceQuestions = questions.filter(
+        (question) => question.sourceDocumentId === sourceDocument.id,
+      );
+
+      return {
+        sourceDocumentId: sourceDocument.id,
+        title: sourceDocument.title,
+        total: sourceQuestions.length,
+        missingReferenceCount: sourceQuestions.filter(
+          (question) => !hasClearSourceReference(question),
+        ).length,
+      };
+    })
+    .sort((left, right) => right.total - left.total || left.title.localeCompare(right.title));
 }
 
 function prepareQuestionForAction(
@@ -90,6 +223,7 @@ export function AdminPage() {
   const [filterChapterId, setFilterChapterId] = useState<'all' | string>('all');
   const [filterSourceDocumentId, setFilterSourceDocumentId] = useState<'all' | string>('all');
   const [filterEligibleOnly, setFilterEligibleOnly] = useState(false);
+  const [filterWarningsOnly, setFilterWarningsOnly] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [message, setMessage] = useState<string | null>(null);
@@ -192,18 +326,107 @@ export function AdminPage() {
         return false;
       }
 
+      if (filterWarningsOnly && getQuestionWarnings(question).length === 0) {
+        return false;
+      }
+
       if (!searchTerm.trim()) {
         return true;
       }
 
       return question.prompt.toLowerCase().includes(searchTerm.toLowerCase());
     });
-  }, [catalog, filterChapterId, filterEligibleOnly, filterSourceDocumentId, filterStatus, searchTerm]);
+  }, [
+    catalog,
+    filterChapterId,
+    filterEligibleOnly,
+    filterSourceDocumentId,
+    filterStatus,
+    filterWarningsOnly,
+    searchTerm,
+  ]);
+
+  const summary = useMemo<AdminReportSummary | null>(() => {
+    if (!catalog) {
+      return null;
+    }
+
+    return {
+      totalQuestions: catalog.questions.length,
+      draftCount: catalog.questions.filter((question) => question.status === 'draft').length,
+      reviewedCount: catalog.questions.filter((question) => question.status === 'reviewed').length,
+      publishedCount: catalog.questions.filter((question) => question.status === 'published').length,
+      archivedCount: catalog.questions.filter((question) => question.status === 'archived').length,
+      examEligibleCount: catalog.questions.filter((question) => question.isOfficialExamEligible).length,
+    };
+  }, [catalog]);
+
+  const chapterCoverage = useMemo(() => {
+    if (!catalog) {
+      return [];
+    }
+
+    return buildChapterCoverage(catalog.chapters, catalog.questions);
+  }, [catalog]);
+
+  const sourceCoverage = useMemo(() => {
+    if (!catalog) {
+      return [];
+    }
+
+    return buildSourceCoverage(catalog.sourceDocuments, catalog.questions);
+  }, [catalog]);
+
+  const warningsByQuestionId = useMemo(() => {
+    if (!catalog) {
+      return new Map<string, EditorialWarning[]>();
+    }
+
+    return new Map(
+      catalog.questions.map((question) => [question.id, getQuestionWarnings(question)]),
+    );
+  }, [catalog]);
+
+  const editorialWarnings = useMemo(() => {
+    return Array.from(warningsByQuestionId.values()).flat();
+  }, [warningsByQuestionId]);
 
   const activeEdition = catalog?.activeEdition;
   const healthNeedsHardening =
     isSupabaseConfigured &&
     (!adminHealth || adminHealth.schema !== 'v1' || !adminHealth.usesServiceRole);
+
+  const resetQuestionFilters = () => {
+    setFilterStatus('all');
+    setFilterChapterId('all');
+    setFilterSourceDocumentId('all');
+    setFilterEligibleOnly(false);
+    setFilterWarningsOnly(false);
+    setSearchTerm('');
+  };
+
+  const applyQuickFilter = (
+    preset: 'all' | 'draft' | 'reviewed' | 'published' | 'archived' | 'exam' | 'warnings',
+  ) => {
+    resetQuestionFilters();
+
+    if (
+      preset === 'draft' ||
+      preset === 'reviewed' ||
+      preset === 'published' ||
+      preset === 'archived'
+    ) {
+      setFilterStatus(preset);
+    }
+
+    if (preset === 'exam') {
+      setFilterEligibleOnly(true);
+    }
+
+    if (preset === 'warnings') {
+      setFilterWarningsOnly(true);
+    }
+  };
 
   const selectQuestion = (questionId: string) => {
     if (!catalog) {
@@ -470,11 +693,173 @@ export function AdminPage() {
             )}
           </section>
         )}
+        {summary && (
+          <section className="admin-report-stack">
+            <div className="admin-report-grid">
+              <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('all')}>
+                <strong>Total</strong>
+                <span>{summary.totalQuestions}</span>
+              </button>
+              <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('draft')}>
+                <strong>Draft</strong>
+                <span>{summary.draftCount}</span>
+              </button>
+              <button
+                type="button"
+                className="admin-report-card"
+                onClick={() => applyQuickFilter('reviewed')}
+              >
+                <strong>Reviewed</strong>
+                <span>{summary.reviewedCount}</span>
+              </button>
+              <button
+                type="button"
+                className="admin-report-card"
+                onClick={() => applyQuickFilter('published')}
+              >
+                <strong>Published</strong>
+                <span>{summary.publishedCount}</span>
+              </button>
+              <button
+                type="button"
+                className="admin-report-card"
+                onClick={() => applyQuickFilter('archived')}
+              >
+                <strong>Archived</strong>
+                <span>{summary.archivedCount}</span>
+              </button>
+              <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('exam')}>
+                <strong>Aptas examen</strong>
+                <span>{summary.examEligibleCount}</span>
+              </button>
+              <button
+                type="button"
+                className="admin-report-card admin-report-card--warning"
+                onClick={() => applyQuickFilter('warnings')}
+              >
+                <strong>Warnings</strong>
+                <span>{editorialWarnings.length}</span>
+              </button>
+            </div>
+
+            <div className="admin-report-layout">
+              <section className="admin-report-panel">
+                <div className="admin-report-head">
+                  <div>
+                    <h2 className="section-title">Cobertura por capitulo</h2>
+                    <p className="info-text">
+                      Total de preguntas, publicadas y revisadas pendientes por capitulo.
+                    </p>
+                  </div>
+                </div>
+                <div className="admin-coverage-list">
+                  {chapterCoverage.map((row) => (
+                    <article key={row.chapterId} className="admin-coverage-card">
+                      <div>
+                        <strong>
+                          {row.chapterCode} · {row.chapterTitle}
+                        </strong>
+                      </div>
+                      <div className="admin-metric-row">
+                        <span>Total: {row.total}</span>
+                        <span>Published: {row.published}</span>
+                        <span>Reviewed pendientes: {row.reviewedPending}</span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+
+              <section className="admin-report-panel">
+                <div className="admin-report-head">
+                  <div>
+                    <h2 className="section-title">Cobertura por fuente</h2>
+                    <p className="info-text">
+                      Detecta fuentes con preguntas sin referencia textual clara.
+                    </p>
+                  </div>
+                </div>
+                <div className="admin-coverage-list">
+                  {sourceCoverage.map((row) => (
+                    <article key={row.sourceDocumentId} className="admin-coverage-card">
+                      <div>
+                        <strong>{row.title}</strong>
+                      </div>
+                      <div className="admin-metric-row">
+                        <span>Total: {row.total}</span>
+                        <span>Sin referencia: {row.missingReferenceCount}</span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+
+              <section className="admin-report-panel">
+                <div className="admin-report-head">
+                  <div>
+                    <h2 className="section-title">Warnings editoriales</h2>
+                    <p className="info-text">
+                      Visibilidad de riesgos antes de publicar o ampliar el banco.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    className="secondary-button secondary-button--compact"
+                    onClick={() => applyQuickFilter('warnings')}
+                  >
+                    Ver solo warnings
+                  </button>
+                </div>
+                <div className="admin-warning-list">
+                  {editorialWarnings.length === 0 ? (
+                    <article className="admin-warning-card admin-warning-card--ok">
+                      <strong>Sin warnings editoriales</strong>
+                      <span>El catalogo cargado no expone inconsistencias en estas reglas de control.</span>
+                    </article>
+                  ) : (
+                    editorialWarnings.map((warning) => (
+                      <button
+                        key={warning.id}
+                        type="button"
+                        className="admin-warning-card"
+                        onClick={() => selectQuestion(warning.questionId)}
+                      >
+                        <strong>{warning.title}</strong>
+                        <span>{warning.detail}</span>
+                        <small>{warning.questionId}</small>
+                      </button>
+                    ))
+                  )}
+                </div>
+              </section>
+            </div>
+          </section>
+        )}
       </section>
 
       <section className="admin-grid">
         <aside className="panel admin-sidebar">
           <h2 className="section-title">Preguntas</h2>
+          <div className="admin-filter-chip-row">
+            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('all')}>
+              Todas
+            </button>
+            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('draft')}>
+              Draft
+            </button>
+            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('reviewed')}>
+              Reviewed
+            </button>
+            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('published')}>
+              Published
+            </button>
+            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('exam')}>
+              Examen
+            </button>
+            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('warnings')}>
+              Warnings
+            </button>
+          </div>
           <div className="field-stack">
             <label className="field">
               <span>Buscar</span>
@@ -526,6 +911,14 @@ export function AdminPage() {
               />
               <span>Solo aptas para examen</span>
             </label>
+            <label className="checkbox-field">
+              <input
+                type="checkbox"
+                checked={filterWarningsOnly}
+                onChange={(event) => setFilterWarningsOnly(event.target.checked)}
+              />
+              <span>Solo con warnings</span>
+            </label>
           </div>
 
           <div className="admin-question-list">
@@ -542,7 +935,12 @@ export function AdminPage() {
               >
                 <strong>{question.id}</strong>
                 <span>{question.prompt}</span>
-                <small>{question.status}</small>
+                <small>
+                  {question.status}
+                  {warningsByQuestionId.get(question.id)?.length
+                    ? ` · ${warningsByQuestionId.get(question.id)?.length} warning(s)`
+                    : ''}
+                </small>
               </button>
             ))}
           </div>
