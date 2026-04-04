@@ -1,0 +1,367 @@
+:root {
+  font-family: "Aptos", "Segoe UI", "SF Pro Rounded", "Trebuchet MS", sans-serif;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.2), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.16), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, #eef4ff 45%, #eefaf3 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  padding: 24px 14px 40px;
+  overflow: hidden;
+}
+
+.ambient {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  filter: blur(24px);
+  opacity: 0.5;
+}
+
+.ambient--left {
+  top: -60px;
+  left: -80px;
+  background: rgba(14, 165, 233, 0.24);
+}
+
+.ambient--right {
+  right: -70px;
+  bottom: 80px;
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.app-frame {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 430px);
+  margin: 0 auto;
+}
+
+.app-header,
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.brand-pill {
+  width: fit-content;
+  padding: 8px 12px;
+  border: 1px solid rgba(14, 116, 144, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f766e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.app-subtitle,
+.app-footer {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.app-footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+.panel {
+  padding: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 24px 70px -42px rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(10px);
+}
+
+.panel--soft {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.97), rgba(244, 249, 255, 0.94)),
+    rgba(255, 255, 255, 0.9);
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: #0f766e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-title,
+.question-title {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  line-height: 1.15;
+}
+
+.hero-copy {
+  margin: 14px 0 0;
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.feature-list {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.feature-card {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef7ff 100%);
+  color: #1e293b;
+}
+
+.feature-card strong {
+  font-size: 0.96rem;
+}
+
+.feature-card span {
+  color: #475569;
+  font-size: 0.88rem;
+}
+
+.primary-button,
+.secondary-button {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    opacity 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.primary-button {
+  color: #fff;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  box-shadow: 0 18px 38px -20px rgba(37, 99, 235, 0.75);
+}
+
+.secondary-button {
+  color: #fff;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.option-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+.progress-shell {
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 16px 44px -34px rgba(15, 23, 42, 0.35);
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: #475569;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+  border-radius: 999px;
+  background: #dbeafe;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0ea5e9 0%, #2563eb 100%);
+  transition: width 0.24s ease;
+}
+
+.question-title {
+  margin-bottom: 20px;
+  font-size: clamp(1.35rem, 4.4vw, 1.75rem);
+}
+
+.option-list {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.option-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid #dbe5f1;
+  border-radius: 18px;
+  background: #f8fbff;
+  color: #0f172a;
+  text-align: left;
+  cursor: pointer;
+}
+
+.option-button:disabled {
+  cursor: default;
+}
+
+.option-button--selected {
+  border-color: #60a5fa;
+  background: #eaf3ff;
+}
+
+.option-button--correct {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.option-button--wrong {
+  border-color: #f87171;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.option-button--muted {
+  opacity: 0.5;
+}
+
+.option-letter {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.score-badge {
+  display: grid;
+  gap: 6px;
+  margin: 24px 0 18px;
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #ecfdf5 100%);
+  color: #0f172a;
+  text-align: center;
+}
+
+.score-badge strong {
+  font-size: 2.2rem;
+}
+
+.score-badge span {
+  color: #475569;
+  font-size: 0.88rem;
+}
+
+.review-list {
+  display: grid;
+  gap: 12px;
+  max-height: 360px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+}
+
+.review-card {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: #f8fafc;
+}
+
+.review-card h3 {
+  margin: 6px 0 8px;
+  font-size: 0.97rem;
+  line-height: 1.4;
+}
+
+.review-card p {
+  margin: 0;
+  color: #166534;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.review-page {
+  color: #2563eb;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .app-frame {
+    width: min(100%, 480px);
+  }
+}
