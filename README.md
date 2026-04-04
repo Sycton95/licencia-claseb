@@ -1,47 +1,65 @@
 # Quiz Licencia Clase B Chile
 
-SPA en React + Vite para practicar la Semana 1 del manual oficial 2026 de licencia Clase B en Chile.
+Plataforma web en `React + Vite + Vercel` para estudiar la licencia clase B en Chile con dos frentes:
 
-## Requisitos
+- experiencia pública de práctica y simulación de examen
+- backoffice editorial privado para revisión manual y publicación de preguntas
 
-- Node.js 20 o superior
-- npm 10 o superior
-
-## Desarrollo local
+## Scripts
 
 ```bash
 npm install
 npm run dev
-```
-
-## Build de producción
-
-```bash
 npm run build
+npm run validate:content
+npm run smoke:prod
+npm run release:check
 ```
 
-El resultado queda en `dist/`.
+`npm run release:check` ejecuta validación de contenido, build y smoke test contra la URL pública.
 
-## Deploy en Vercel
+## Variables de entorno
 
-1. Sube este repositorio a GitHub.
-2. Entra a [Vercel](https://vercel.com/) y selecciona `Add New Project`.
-3. Importa el repositorio.
-4. Usa esta configuración:
-   - Framework Preset: `Vite`
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-5. Publica el proyecto.
+Usa [`.env.example`](./.env.example) como base.
 
-## Alcance actual
+Frontend:
 
-- Semana 1 del plan 2026
-- 10 preguntas aleatorias por intento
-- Corrección inmediata
-- Resumen final con página de referencia del manual
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+- `VITE_ENABLE_LOCAL_ADMIN`
 
-## Próximos pasos sugeridos
+Servidor:
 
-- Agregar más semanas según `Plan.xlsx`
-- Incorporar filtros por tema
-- Convertir la app en PWA para uso offline
+- `SUPABASE_SERVICE_ROLE_KEY` opcional, recomendado para endurecer escrituras editoriales desde `api/`
+
+Checks:
+
+- `RELEASE_CHECK_BASE_URL` opcional para `npm run smoke:prod`
+
+## Arquitectura
+
+- frontend público: `Vite + React Router`
+- persistencia y auth admin: `Supabase`
+- mutaciones editoriales en producción: rutas `api/` desplegadas en Vercel
+- producción: `main -> Vercel`
+
+## Documentos clave
+
+- [`plan.md`](./plan.md): documento rector del producto
+- [`docs/architecture.md`](./docs/architecture.md): arquitectura objetivo y compatibilidad
+- [`docs/editorial-rules.md`](./docs/editorial-rules.md): reglas de exactitud y formato
+- [`docs/security.md`](./docs/security.md): modelo de seguridad y permisos
+- [`docs/deployment.md`](./docs/deployment.md): flujo de release y despliegue
+- [`docs/automation-recommendations.md`](./docs/automation-recommendations.md): automatizaciones sugeridas
+- [`docs/question-bank-audit.md`](./docs/question-bank-audit.md): auditoría léxica inicial del banco
+- [`supabase/migrations/0001_base.sql`](./supabase/migrations/0001_base.sql): esquema base original
+- [`supabase/migrations/0002_solid_base_v1.sql`](./supabase/migrations/0002_solid_base_v1.sql): edición activa e historial editorial
+
+## Estado actual
+
+- menú inicial público
+- práctica personalizada por capítulo
+- simulación del examen clase B con reglas verificadas
+- panel admin con flujo editorial controlado
+- rutas `api/` para escrituras editoriales en producción
+- esquema compatible con edición activa y trazabilidad editorial

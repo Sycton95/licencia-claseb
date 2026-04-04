@@ -1,0 +1,196 @@
+import { useEffect, useMemo, useState } from 'react';
+import { QuizRunner } from '../components/quiz/QuizRunner';
+import { getPublishedCatalog } from '../lib/contentRepository';
+import {
+  buildPracticeQuestionSet,
+  getChapterQuestionCount,
+  getDefaultPracticeQuestionCount,
+} from '../lib/quizFactory';
+import type { ContentCatalog } from '../types/content';
+
+type ActivePractice = {
+  key: string;
+  title: string;
+  subtitle: string;
+  questions: ContentCatalog['questions'];
+  maxScore: number;
+};
+
+export function PracticePage() {
+  const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedChapterIds, setSelectedChapterIds] = useState<string[]>([]);
+  const [questionCount, setQuestionCount] = useState(10);
+  const [activePractice, setActivePractice] = useState<ActivePractice | null>(null);
+
+  useEffect(() => {
+    getPublishedCatalog()
+      .then((data) => {
+        setCatalog(data);
+        const availableChapterIds = data.chapters
+          .filter((chapter) => getChapterQuestionCount(data.questions, chapter.id) > 0)
+          .map((chapter) => chapter.id);
+
+        setSelectedChapterIds(availableChapterIds);
+        setQuestionCount(getDefaultPracticeQuestionCount(data.questions));
+      })
+      .catch(() => setError('No se pudo cargar la práctica personalizada.'));
+  }, []);
+
+  const chapterCards = useMemo(() => {
+    if (!catalog) {
+      return [];
+    }
+
+    return catalog.chapters.map((chapter) => ({
+      ...chapter,
+      questionCount: getChapterQuestionCount(catalog.questions, chapter.id),
+    }));
+  }, [catalog]);
+
+  const availableQuestionCount = useMemo(() => {
+    if (!catalog) {
+      return 0;
+    }
+
+    return catalog.questions.filter((question) => selectedChapterIds.includes(question.chapterId)).length;
+  }, [catalog, selectedChapterIds]);
+
+  const toggleChapter = (chapterId: string) => {
+    setSelectedChapterIds((current) =>
+      current.includes(chapterId)
+        ? current.filter((id) => id !== chapterId)
+        : [...current, chapterId],
+    );
+  };
+
+  const startPractice = () => {
+    if (!catalog || selectedChapterIds.length === 0) {
+      return;
+    }
+
+    const questions = buildPracticeQuestionSet(catalog.questions, {
+      chapterIds: selectedChapterIds,
+      questionCount,
+    });
+
+    setActivePractice({
+      key: `${Date.now()}`,
+      title: 'Práctica personalizada',
+      subtitle: `${questions.length} preguntas seleccionadas desde ${selectedChapterIds.length} capítulo(s).`,
+      questions,
+      maxScore: questions.length,
+    });
+  };
+
+  if (activePractice) {
+    return (
+      <QuizRunner
+        key={activePractice.key}
+        mode="practice"
+        title={activePractice.title}
+        subtitle={activePractice.subtitle}
+        questions={activePractice.questions}
+        maxScore={activePractice.maxScore}
+        onRestart={() => setActivePractice(null)}
+      />
+    );
+  }
+
+  return (
+    <section className="page-stack">
+      <section className="panel panel--soft">
+        <span className="eyebrow">Práctica personalizada</span>
+        <h1 className="hero-title">Arma un quiz según el capítulo que quieras estudiar</h1>
+        <p className="hero-copy">
+          Solo se usan preguntas publicadas de la edición activa. Así evitamos mezclar material en
+          borrador con contenido apto para estudio.
+        </p>
+      </section>
+
+      <section className="panel">
+        <h2 className="section-title">Capítulos disponibles</h2>
+        {error && <p className="error-banner">{error}</p>}
+        <div className="choice-grid">
+          {chapterCards.map((chapter) => {
+            const isSelected = selectedChapterIds.includes(chapter.id);
+            const isDisabled = chapter.questionCount === 0;
+
+            return (
+              <button
+                key={chapter.id}
+                type="button"
+                className={
+                  isDisabled
+                    ? 'choice-card choice-card--disabled'
+                    : isSelected
+                      ? 'choice-card choice-card--selected'
+                      : 'choice-card'
+                }
+                disabled={isDisabled}
+                onClick={() => toggleChapter(chapter.id)}
+              >
+                <strong>{chapter.code}</strong>
+                <span>{chapter.title}</span>
+                <small>
+                  {isDisabled ? 'Próximamente' : `${chapter.questionCount} preguntas publicadas`}
+                </small>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="panel">
+        <h2 className="section-title">Cantidad de preguntas</h2>
+        <div className="number-picker">
+          {[5, 10, 20, 35].map((amount) => {
+            const disabled = amount > availableQuestionCount || availableQuestionCount === 0;
+
+            return (
+              <button
+                key={amount}
+                type="button"
+                className={questionCount === amount ? 'amount-chip amount-chip--selected' : 'amount-chip'}
+                disabled={disabled}
+                onClick={() => setQuestionCount(amount)}
+              >
+                {amount}
+              </button>
+            );
+          })}
+          <label className="field">
+            <span>Personalizado</span>
+            <input
+              type="number"
+              min={1}
+              max={Math.max(1, availableQuestionCount)}
+              value={questionCount}
+              onChange={(event) =>
+                setQuestionCount(
+                  Math.min(
+                    Math.max(Number(event.target.value) || 1, 1),
+                    Math.max(1, availableQuestionCount),
+                  ),
+                )
+              }
+            />
+          </label>
+        </div>
+
+        <p className="info-text">
+          Preguntas disponibles con tu selección actual: {availableQuestionCount}.
+        </p>
+
+        <button
+          className="primary-button"
+          type="button"
+          onClick={startPractice}
+          disabled={selectedChapterIds.length === 0 || availableQuestionCount === 0}
+        >
+          Iniciar práctica
+        </button>
+      </section>
+    </section>
+  );
+}

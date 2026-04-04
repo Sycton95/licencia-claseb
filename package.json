@@ -6,11 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit -p tsconfig.app.json && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:content": "node scripts/validate-content.mjs",
+    "smoke:prod": "node scripts/smoke-check.mjs",
+    "release:check": "node scripts/release-check.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.101.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.14.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",

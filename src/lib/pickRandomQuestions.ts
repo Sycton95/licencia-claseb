@@ -1,4 +1,4 @@
-import type { Question } from '../types/quiz';
+import type { Question } from '../types/content';
 
 export function pickRandomQuestions(questions: Question[], quizSize: number): Question[] {
   const pool = [...questions];

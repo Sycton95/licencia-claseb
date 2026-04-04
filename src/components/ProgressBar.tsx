@@ -1,10 +1,11 @@
 type ProgressBarProps = {
   current: number;
   total: number;
-  score: number;
+  scoreLabel: string;
+  scoreValue: string;
 };
 
-export function ProgressBar({ current, total, score }: ProgressBarProps) {
+export function ProgressBar({ current, total, scoreLabel, scoreValue }: ProgressBarProps) {
   const progress = total === 0 ? 0 : (current / total) * 100;
 
   return (
@@ -13,7 +14,9 @@ export function ProgressBar({ current, total, score }: ProgressBarProps) {
         <span>
           Pregunta {current} de {total}
         </span>
-        <span>{score} correctas</span>
+        <span>
+          {scoreLabel}: {scoreValue}
+        </span>
       </div>
       <div className="progress-track" aria-hidden="true">
         <div className="progress-fill" style={{ width: `${progress}%` }} />
