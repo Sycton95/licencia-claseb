@@ -4,23 +4,29 @@ type QuestionCardProps = {
   question: Question;
   selectedOptionIds: string[];
   isAnswered: boolean;
+  showReference: boolean;
   onSelect: (optionId: string) => void;
   onConfirm: () => void;
   onNext: () => void;
+  onToggleReference: () => void;
 };
 
 export function QuestionCard({
   question,
   selectedOptionIds,
   isAnswered,
+  showReference,
   onSelect,
   onConfirm,
   onNext,
+  onToggleReference,
 }: QuestionCardProps) {
+  const hasQuickReference = Boolean(question.sourceReference || question.publicExplanation);
+
   return (
     <section className="panel">
       <div className="question-meta">
-        <span className="eyebrow">Manual oficial · pág. {question.sourcePage}</span>
+        <span className="eyebrow">Manual oficial · página {question.sourcePage}</span>
         <span className="question-mode">
           {question.selectionMode === 'multiple' ? 'Selección múltiple' : 'Selección única'}
         </span>
@@ -74,18 +80,29 @@ export function QuestionCard({
       </div>
 
       {!isAnswered ? (
-        <button
-          className="primary-button"
-          type="button"
-          onClick={onConfirm}
-          disabled={selectedOptionIds.length === 0}
-        >
+        <button className="primary-button" type="button" onClick={onConfirm} disabled={selectedOptionIds.length === 0}>
           {question.selectionMode === 'multiple' ? 'Comprobar respuestas' : 'Comprobar respuesta'}
         </button>
       ) : (
-        <button className="secondary-button" type="button" onClick={onNext}>
-          Siguiente pregunta
-        </button>
+        <div className="question-action-row">
+          {hasQuickReference && (
+            <button className="question-reference-button" type="button" onClick={onToggleReference}>
+              {showReference ? 'Ocultar referencia' : 'Referencia rápida'}
+            </button>
+          )}
+          <button className="secondary-button" type="button" onClick={onNext}>
+            Siguiente pregunta
+          </button>
+        </div>
+      )}
+
+      {isAnswered && hasQuickReference && showReference && (
+        <aside className="reference-overlay" aria-label="Referencia rápida">
+          <strong>Referencia rápida</strong>
+          <span>Página {question.sourcePage}</span>
+          {question.sourceReference && <p>{question.sourceReference}</p>}
+          {question.publicExplanation && <p>{question.publicExplanation}</p>}
+        </aside>
       )}
     </section>
   );

@@ -30,6 +30,7 @@ export function QuizRunner({
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [outcomes, setOutcomes] = useState<QuestionOutcome[]>([]);
+  const [showReference, setShowReference] = useState(false);
 
   const currentQuestion = questions[currentIndex];
 
@@ -84,6 +85,7 @@ export function QuizRunner({
     setCurrentIndex((current) => current + 1);
     setSelectedOptionIds([]);
     setIsAnswered(false);
+    setShowReference(false);
   };
 
   if (!currentQuestion) {
@@ -128,9 +130,11 @@ export function QuizRunner({
         question={currentQuestion}
         selectedOptionIds={selectedOptionIds}
         isAnswered={isAnswered}
+        showReference={mode === 'practice' && showReference}
         onSelect={handleSelect}
         onConfirm={handleConfirm}
         onNext={handleNext}
+        onToggleReference={() => setShowReference((current) => !current)}
       />
     </>
   );

@@ -1133,9 +1133,11 @@ export function AdminPage() {
                   question={draftQuestion}
                   selectedOptionIds={[]}
                   isAnswered={false}
+                  showReference={false}
                   onSelect={() => {}}
                   onConfirm={() => {}}
                   onNext={() => {}}
+                  onToggleReference={() => {}}
                 />
               </div>
             </>

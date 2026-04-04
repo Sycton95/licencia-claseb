@@ -28,65 +28,37 @@ export function HomePage() {
   return (
     <section className="page-stack">
       <section className="panel panel--soft">
-        <span className="eyebrow">Base sólida del producto</span>
-        <h1 className="hero-title">Estudio libre y simulación formal en una misma app</h1>
+        <span className="eyebrow">Quiz Clase B</span>
+        <h1 className="hero-title">Practica y prepárate para el examen teórico</h1>
         <p className="hero-copy">
-          La experiencia pública ya separa práctica personalizada, simulación del examen y panel
-          editorial. La regla rectora es simple: ninguna pregunta debería publicarse sin fuente,
-          revisión y trazabilidad.
+          Elige una práctica rápida por capítulos o entra al modo examen para simular una prueba con
+          reglas oficiales verificadas.
         </p>
         {catalog?.activeEdition && (
           <p className="info-text">
-            Edición activa del contenido: <strong>{catalog.activeEdition.title}</strong>
+            Contenido activo: <strong>{catalog.activeEdition.title}</strong>
           </p>
         )}
 
         <div className="menu-grid">
           <Link className="menu-card" to="/practice">
             <strong>Práctica personalizada</strong>
-            <span>Elige capítulos activos y cantidad de preguntas.</span>
+            <span>Selecciona capítulos, cantidad de preguntas y repasa con referencias rápidas.</span>
           </Link>
           <Link className="menu-card" to="/exam">
             <strong>Examen clase B</strong>
-            <span>Simula 35 preguntas, 38 puntos máximos y aprobación con 33.</span>
+            <span>Simula una prueba completa con 35 preguntas y puntaje oficial objetivo.</span>
           </Link>
-          <Link className="menu-card" to="/admin">
-            <strong>Panel admin</strong>
-            <span>Edita, revisa y publica preguntas con flujo editorial controlado.</span>
-          </Link>
-        </div>
-      </section>
-
-      <section className="panel">
-        <span className="eyebrow">Reglas verificadas</span>
-        <h2 className="section-title">Modo examen actual</h2>
-        <div className="stats-grid">
-          <article className="stat-card">
-            <strong>35</strong>
-            <span>preguntas por intento</span>
-          </article>
-          <article className="stat-card">
-            <strong>38</strong>
-            <span>puntos máximos</span>
-          </article>
-          <article className="stat-card">
-            <strong>33</strong>
-            <span>puntos necesarios para aprobar</span>
-          </article>
-          <article className="stat-card">
-            <strong>3</strong>
-            <span>preguntas de doble puntuación</span>
+          <article className="menu-card menu-card--muted">
+            <strong>Estudio</strong>
+            <span>Próximamente: lectura guiada y consulta de material por referencias.</span>
           </article>
         </div>
-        <p className="info-text">
-          Fuente normativa de referencia: Decreto 170 de Conaset y ficha de ChileAtiende. No se fija
-          una duración oficial hasta contar con una fuente primaria equivalente para ese dato.
-        </p>
       </section>
 
       <section className="panel">
         <span className="eyebrow">Cobertura actual</span>
-        <h2 className="section-title">Capítulos disponibles</h2>
+        <h2 className="section-title">Capítulos con preguntas publicadas</h2>
         {error && <p className="error-banner">{error}</p>}
         <div className="chapter-grid">
           {availableChapters.map((chapter) => (

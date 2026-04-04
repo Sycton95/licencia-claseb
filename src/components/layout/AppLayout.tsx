@@ -1,10 +1,10 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { APP_WATERMARK } from '../../lib/appMeta';
 
 const navigation = [
   { to: '/', label: 'Inicio' },
   { to: '/practice', label: 'Práctica' },
   { to: '/exam', label: 'Examen' },
-  { to: '/admin', label: 'Admin' },
 ];
 
 export function AppLayout() {
@@ -18,7 +18,7 @@ export function AppLayout() {
           <div>
             <span className="brand-pill">Clase B Chile</span>
             <p className="app-subtitle">
-              Plataforma de práctica, simulación y revisión editorial basada en fuentes formales.
+              Practica desde el móvil y revisa con más espacio desde escritorio.
             </p>
           </div>
 
@@ -40,10 +40,13 @@ export function AppLayout() {
         <Outlet />
 
         <footer className="app-footer">
-          <span>Prioridad editorial: exactitud de preguntas, fuentes y trazabilidad.</span>
-          <span>Vercel + Supabase como base para la siguiente etapa pública.</span>
+          <span>Contenido de práctica basado en fuentes formales y revisión continua.</span>
         </footer>
       </section>
+
+      <span className="app-watermark" aria-hidden="true">
+        {APP_WATERMARK}
+      </span>
     </main>
   );
 }

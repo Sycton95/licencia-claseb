@@ -166,3 +166,11 @@ Toda nueva funcionalidad debe responder estas preguntas antes de implementarse:
 4. ¿Funciona bien en móvil?
 
 Si la respuesta es no para alguna de estas, la funcionalidad debe replantearse.
+
+## Decisiones de Producto Bloqueadas
+
+- El acceso admin queda como ruta oculta por URL directa. No debe aparecer en navegación pública.
+- La app debe ser usable en móvil y escritorio desde la misma base responsive.
+- Se permiten diferencias de densidad e interacción entre móvil y escritorio cuando mejoren usabilidad, sin separar el producto en dos apps.
+- El modo `Estudio` puede explorar un visor PDF futuro, pero no debe publicarse antes de documentar postura de contenido, redistribución y potenciales donaciones.
+- La app debe mostrar una marca de versión discreta para seguimiento operativo en cada release.
