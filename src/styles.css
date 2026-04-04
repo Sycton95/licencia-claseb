@@ -884,6 +884,32 @@ button {
   gap: 10px;
 }
 
+.admin-ai-shell,
+.admin-ai-grid,
+.admin-ai-sidebar,
+.admin-ai-detail,
+.admin-ai-card,
+.admin-ai-list {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-ai-list {
+  max-height: 420px;
+  overflow: auto;
+}
+
+.admin-ai-card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.admin-report-grid--tight {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
 @media (min-width: 768px) {
   .app-shell {
     padding-top: 40px;
@@ -924,6 +950,11 @@ button {
 
   .admin-grid {
     grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  }
+
+  .admin-ai-grid {
+    grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
+    align-items: start;
   }
 
   .admin-hero {

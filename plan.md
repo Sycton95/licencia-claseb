@@ -1,176 +1,237 @@
-# Base Sólida para Escalar la App
+# Autonomous Roadmap v2
 
-## Propósito
+## Product purpose
 
-Construir una plataforma pública de práctica para la licencia clase B en Chile con dos prioridades no negociables:
+Build a public study app for the Chilean `Licencia Clase B` that optimizes for two constraints above all others:
 
-1. Exactitud de preguntas y respuestas.
-2. Trazabilidad completa de las fuentes formales.
+1. Content accuracy.
+2. Traceability to formal sources.
 
-La app no debe intentar replicar el banco oficial no público. Debe ofrecer material propio, revisado, explicable y verificable.
+The product must not claim to replicate the non-public official question bank. It must publish its own reviewed, explainable, source-grounded practice material.
 
-## Principios Editoriales
+## Locked operating principles
 
-- No publicar preguntas sin fuente formal identificada.
-- No publicar preguntas con stems ambiguos, incompletos o estilo "complete la frase".
-- No usar simuladores comerciales como autoridad normativa.
-- Sí usar cuestionarios municipales y simuladores públicos para revisar formato, tono e instrucciones.
-- Registrar siempre fuente primaria cuando exista.
-- Diferenciar con claridad entre `draft`, `reviewed`, `published` y `archived`.
-- Mantener notas editoriales cuando una pregunta se reescriba por claridad o formato.
+- Public content must come only from `published` questions.
+- Hidden admin route policy remains locked: `/admin` is direct URL only and must stay out of public navigation.
+- The product remains a single responsive web app. Mobile and desktop are both first-class, with denser editorial workflows on desktop where justified.
+- AI is assistant-only. It may suggest, flag, cluster, and prepare drafts. It may not publish, overwrite approved questions, or invent sources.
+- Public benchmark questionnaires and simulators are allowed only for format and tone comparison, not as normative authority.
+- Any public study-mode or PDF feature stays blocked until content/legal posture is documented in repo docs.
 
-## Reglas Oficiales Verificadas
+## Current platform baseline
 
-Fuentes de referencia:
+- Frontend: `Vite + React Router`
+- Persistence and auth: `Supabase`
+- Production writes: `Vercel api/` routes
+- Deploy source of truth: `main -> GitHub -> Vercel`
+- Current production health target:
+  - `schema: v1`
+  - `usesServiceRole: true`
+- Editorial statuses:
+  - `draft`
+  - `reviewed`
+  - `published`
+  - `archived`
 
-- Decreto 170 de Conaset
-- ChileAtiende
-- Manual oficial 2026 para contenido de estudio
+## Autonomous execution rules
 
-Reglas verificadas hoy para el examen clase B:
+- Work proceeds milestone by milestone.
+- A milestone is not considered closed until:
+  - repo changes are committed and pushed
+  - `npm run validate:content` passes
+  - `npm run build` passes
+  - production verification notes are recorded in `docs/progress.md`
+- No new milestone starts until the previous one has a status entry in `docs/progress.md` with:
+  - outcomes
+  - remaining risks
+  - blocked items
+- If a milestone introduces external dependencies or manual infra actions, the code should degrade cleanly and document the missing step rather than breaking the current admin/public flows.
 
-- 35 preguntas
-- 38 puntos máximos
-- 3 preguntas de doble puntuación
-- aprobación con 33 puntos
+## Release discipline
 
-No se fijará una duración oficial del examen en la app hasta contar con una fuente primaria igual de sólida para ese dato.
+Normal release gate:
 
-## Arquitectura
+- `npm run validate:content`
+- `npm run build`
+- `npm run release:check`
 
-### Frontend
+Production health checks remain:
 
-- `Vite + React`
-- rutas públicas:
-  - `/`
-  - `/practice`
-  - `/exam`
-- ruta privada:
-  - `/admin`
+- `/api/health`
+- hidden `/admin`
+- public `/`, `/practice`, `/exam`
 
-### Persistencia
+## AI editorial policy
 
-- `Supabase` para:
-  - base de datos
-  - autenticación admin
-  - lecturas públicas filtradas por edición activa
-- rutas `api/` de Vercel para mutaciones editoriales en producción
-- fallback local en navegador solo para desarrollo o pruebas sin credenciales configuradas
+### Allowed AI roles
 
-### Deploy
+- Suggest new question candidates.
+- Suggest rewrites for weak or overly framed prompts.
+- Detect likely editorial issues and review targets.
+- Detect coverage gaps by chapter/source.
+- Prepare grounded draft candidates for admin review.
 
-- `main` es la rama de producción
-- `GitHub -> Vercel` es la fuente de verdad del despliegue
-- deploy manual por CLI solo como respaldo operativo
+### Prohibited AI behaviors
 
-## Modelo de Datos
+- Auto-publishing content.
+- Modifying existing published questions without an explicit admin action.
+- Inventing source references, pages, or factual grounding.
+- Using non-whitelisted sources as factual authority.
+- Exposing AI suggestion artifacts in public routes.
 
-Entidades mínimas:
+### Grounding policy
 
-- `editions`
-- `chapters`
-- `source_documents`
-- `questions`
-- `question_options`
-- `question_media`
-- `exam_rule_sets`
-- `editorial_events`
-- `quiz_attempts`
-- `attempt_answers`
-- `admin_allowlist`
+AI suggestion generation must use:
 
-Campos editoriales obligatorios para preguntas:
+- formal source documents and verified official materials as factual basis
+- manually prepared source chunks or extracted notes as grounding inputs
+- municipal/public benchmark material only for exam-style format guidance
 
-- edición activa
-- capítulo
-- semana
-- fuente
-- página o referencia
-- tipo de respuesta
-- instrucción visible
-- estado editorial
-- notas de revisión
-- marca de elegibilidad para examen
+Every AI suggestion must carry:
 
-## Modos de Usuario
+- edition id
+- source document id when applicable
+- source page or source reference
+- rationale
+- grounding excerpt
+- confidence label
+- suggestion type
 
-### Público
+Any suggestion without source grounding is ineligible for admin approval.
 
-- `Práctica personalizada`
-  - selección de capítulo(s)
-  - selección de cantidad de preguntas
-  - solo usa preguntas `published`
+## Milestone sequence
 
-- `Examen clase B`
-  - reglas oficiales verificadas
-  - 35 preguntas
-  - 3 de doble puntuación
-  - 38 puntos máximos
-  - aprobación con 33
+### Milestone 1: Governance and progress safety
 
-### Admin
+Scope:
 
-- login con magic link de Supabase
-- acceso restringido por email allowlist
-- lista de preguntas con filtros
-- editor con preview
-- acciones explícitas:
-  - guardar cambios
-  - marcar revisada
-  - publicar
-  - archivar
-- siembra inicial del banco base
+- Expand `plan.md` into the main execution roadmap.
+- Formalize `docs/progress.md` as the operational log.
+- Record autonomy rules, milestone gates, release checks, and AI guardrails.
 
-## Workflow Editorial
+Exit criteria:
 
-Estados:
+- The roadmap is explicit enough to support longer autonomous work blocks.
+- Progress logging is mandatory and unambiguous.
 
-- `draft`
-- `reviewed`
-- `published`
-- `archived`
+Status:
 
-Reglas:
+- Implemented in repo.
 
-- `draft`: editable, no visible en experiencia pública
-- `reviewed`: contenido revisado, aún no visible al público
-- `published`: visible en práctica y potencialmente elegible para examen
-- `archived`: fuera de circulación
+### Milestone 2: Content preparation for AI
 
-Una pregunta no se puede publicar si le falta:
+Scope:
 
-- fuente formal
-- página o referencia
-- instrucción
-- respuesta correcta válida
-- revisión registrada
+- Add a structured source-preparation layer:
+  - source chunks / prepared notes
+  - chapter mapping
+  - source-to-question traceability helpers
+- Keep this layer private to admin and generation flows.
 
-## Criterios de Publicación
+Exit criteria:
 
-Antes de publicar una pregunta:
+- The system can answer, deterministically, which chapter/source a generation pass should use.
 
-- validar ortografía y redacción
-- validar exactitud contra la fuente
-- validar formato de respuesta
-- validar que los distractores sean plausibles
-- validar que la instrucción coincida con el tipo de selección
-- validar que no existan caracteres corruptos
+Status:
 
-## Política Operativa
+- Initial implementation in repo with prepared chunks for current covered chapters.
+- Additional chapter preparation remains pending.
 
-Toda nueva funcionalidad debe responder estas preguntas antes de implementarse:
+### Milestone 3: AI suggestion data model and server routes
 
-1. ¿Mejora o protege la exactitud del contenido?
-2. ¿Preserva la trazabilidad de la fuente?
-3. ¿Evita exponer material no revisado al público?
-4. ¿Funciona bien en móvil?
+Scope:
 
-Si la respuesta es no para alguna de estas, la funcionalidad debe replantearse.
+- Add persisted suggestion entities in Supabase:
+  - `ai_suggestions`
+  - `ai_runs`
+- Add admin-only API routes for:
+  - listing suggestions
+  - generating suggestion batches
+  - transitioning suggestion status
+  - creating draft questions from accepted suggestions
+- Keep all suggestion execution server-side in production.
 
-## Decisiones de Producto Bloqueadas
+Exit criteria:
 
-- El acceso admin queda como ruta oculta por URL directa. No debe aparecer en navegación pública.
-- La app debe ser usable en móvil y escritorio desde la misma base responsive.
-- Se permiten diferencias de densidad e interacción entre móvil y escritorio cuando mejoren usabilidad, sin separar el producto en dos apps.
-- El modo `Estudio` puede explorar un visor PDF futuro, pero no debe publicarse antes de documentar postura de contenido, redistribución y potenciales donaciones.
-- La app debe mostrar una marca de versión discreta para seguimiento operativo en cada release.
+- Suggestions can be stored, listed, and reviewed without touching public catalog content automatically.
+
+Status:
+
+- Implemented in repo.
+- Requires `supabase/migrations/0003_ai_suggestions.sql` to be applied before production can persist suggestions.
+
+### Milestone 4: Admin AI inbox
+
+Scope:
+
+- Add an admin suggestion inbox with:
+  - summary counts
+  - type filters
+  - chapter filters
+  - source filters
+  - inline grounded suggestion preview
+  - accept/edit/defer/reject actions
+- Accepted suggestions become editable drafts, never published content.
+
+Exit criteria:
+
+- Admin can manage AI-generated backlog without leaving `/admin`.
+
+Status:
+
+- Implemented in repo.
+- Full production persistence depends on Milestone 3 migration being applied.
+
+### Milestone 5: Automated review flags and coverage analysis
+
+Scope:
+
+- Add rule-based or AI-assisted checks for:
+  - missing source references
+  - chapter coverage gaps
+  - duplicate or near-duplicate prompts
+  - weak distractors
+  - inconsistent instructions
+  - answer-format mismatches
+- Surface these as review tasks, not public content.
+
+Exit criteria:
+
+- Admin can use `/admin` primarily as a correction console instead of authoring everything manually.
+
+Status:
+
+- Partially implemented:
+  - editorial warnings already exist
+  - AI queue now generates flags and coverage-gap tasks
+- Duplicate/weak-distractor heuristics remain pending.
+
+### Milestone 6: Public UX refinement after editorial scale-up
+
+Scope:
+
+- Continue public UX cleanup only after AI-assisted editorial flow is stable:
+  - cleaner main menu
+  - stronger practice review flow
+  - better desktop admin ergonomics
+  - study-mode prework
+
+Exit criteria:
+
+- Content operations are scalable enough that UX work no longer competes with manual content production.
+
+Status:
+
+- In progress across previous iterations.
+- Further refinement should resume after Milestones 3 and 4 are live in production.
+
+## Current next actions
+
+1. Apply `supabase/migrations/0003_ai_suggestions.sql`.
+2. Deploy current `main`.
+3. Verify `/admin` AI inbox against production.
+4. Close Milestones 3 and 4 in `docs/progress.md`.
+5. Start Milestone 5 heuristics:
+   - duplicate detection
+   - weak distractor checks
+   - review-task surfacing improvements

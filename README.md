@@ -76,9 +76,12 @@ Regla operativa:
 - [`docs/security.md`](./docs/security.md): modelo de seguridad y permisos
 - [`docs/deployment.md`](./docs/deployment.md): flujo de release y despliegue
 - [`docs/automation-recommendations.md`](./docs/automation-recommendations.md): automatizaciones sugeridas
+- [`docs/progress.md`](./docs/progress.md): bitácora operativa y estado de milestones
+- [`docs/ai-editorial-policy.md`](./docs/ai-editorial-policy.md): reglas de uso y límites de la capa AI
 - [`docs/question-bank-audit.md`](./docs/question-bank-audit.md): auditoría léxica inicial del banco
 - [`supabase/migrations/0001_base.sql`](./supabase/migrations/0001_base.sql): esquema base original
 - [`supabase/migrations/0002_solid_base_v1.sql`](./supabase/migrations/0002_solid_base_v1.sql): edición activa e historial editorial
+- [`supabase/migrations/0003_ai_suggestions.sql`](./supabase/migrations/0003_ai_suggestions.sql): cola AI y auditoría de sugerencias
 
 ## Estado actual
 
@@ -87,5 +90,6 @@ Regla operativa:
 - simulación del examen clase B con reglas verificadas
 - panel admin con flujo editorial controlado
 - panel admin con tarjeta de estado operativo
+- panel admin con inbox privado de sugerencias AI
 - rutas `api/` para escrituras editoriales en producción
 - esquema `v1` activo con trazabilidad editorial

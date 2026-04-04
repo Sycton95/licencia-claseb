@@ -13,3 +13,20 @@
 - Admin remains hidden from public navigation and landing pages.
 - Version watermark is visible in-app for operator tracking.
 - Practice mode supports quick reference overlays after answering.
+# Releases
+
+## 2026-04-04
+
+- Added AI-assisted editorial foundation:
+  - source-preparation chunks
+  - `ai_suggestions` migration
+  - admin-only AI routes
+  - AI inbox in `/admin`
+- Upgraded `plan.md` into milestone-driven roadmap.
+- Expanded `docs/progress.md` into milestone log with explicit risks and manual blockers.
+- Added `docs/ai-editorial-policy.md`.
+
+Pending after this release:
+
+- apply `0003_ai_suggestions.sql`
+- verify AI inbox in production

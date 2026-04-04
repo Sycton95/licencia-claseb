@@ -1,9 +1,17 @@
 import { SEED_CONTENT } from '../data/seedContent';
+import { SOURCE_PREPARATION } from '../data/sourcePreparation';
+import { buildDraftQuestionFromSuggestion, generateAiSuggestions } from './aiSuggestionEngine';
 import {
   sanitizeQuestionPayload,
   validateQuestionAction,
 } from './contentValidation';
 import { loadLocalCatalog, saveLocalCatalog, saveLocalQuestion } from './localContentStore';
+import {
+  loadLocalAiWorkspace,
+  updateLocalAiSuggestion,
+  upsertLocalAiRun,
+  upsertLocalAiSuggestions,
+} from './localAiStore';
 import { isSupabaseConfigured, supabase } from './supabase';
 import type {
   Chapter,
@@ -17,6 +25,7 @@ import type {
   QuestionOption,
   SourceDocument,
 } from '../types/content';
+import type { AiSuggestion, AiWorkspace } from '../types/ai';
 
 type BaseQuestionRow = {
   id: string;
@@ -687,6 +696,122 @@ export async function getPublishedCatalog() {
     ...catalog,
     questions: catalog.questions.filter((question) => question.status === 'published'),
   };
+}
+
+export async function getAiWorkspace(): Promise<AiWorkspace> {
+  if (!isSupabaseConfigured || import.meta.env.DEV) {
+    const workspace = loadLocalAiWorkspace();
+    const catalog = await getContentCatalog();
+
+    return {
+      ...workspace,
+      sourcePreparation: SOURCE_PREPARATION.filter(
+        (item) => item.editionId === (catalog.activeEdition?.id ?? catalog.examRuleSet.editionId),
+      ),
+    };
+  }
+
+  return requestAdminApi<{ workspace: AiWorkspace }>('/api/admin/ai-suggestions', {
+    operation: 'list',
+  }).then((payload) => payload.workspace);
+}
+
+export async function generateAiWorkspace() {
+  if (!isSupabaseConfigured || import.meta.env.DEV) {
+    const catalog = await getContentCatalog();
+    const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
+    const result = generateAiSuggestions(catalog, actorEmail);
+
+    upsertLocalAiRun(result.run);
+    upsertLocalAiSuggestions(result.suggestions);
+
+    return getAiWorkspace();
+  }
+
+  return requestAdminApi<{ workspace: AiWorkspace }>('/api/admin/ai-suggestions', {
+    operation: 'generate',
+  }).then((payload) => payload.workspace);
+}
+
+export async function transitionAiSuggestion(
+  suggestionId: string,
+  status: AiSuggestion['status'],
+  reviewNotes?: string,
+) {
+  if (!isSupabaseConfigured || import.meta.env.DEV) {
+    updateLocalAiSuggestion(suggestionId, (current) => ({
+      ...current,
+      status,
+      reviewNotes: reviewNotes ?? current.reviewNotes,
+      updatedAt: new Date().toISOString(),
+    }));
+
+    return getAiWorkspace();
+  }
+
+  await requestAdminApi<{ suggestion: AiSuggestion }>('/api/admin/ai-suggestions', {
+    operation: 'transition',
+    suggestionId,
+    status,
+    reviewNotes,
+  });
+
+  return getAiWorkspace();
+}
+
+export async function createDraftFromAiSuggestion(suggestion: AiSuggestion) {
+  if (!isSupabaseConfigured || import.meta.env.DEV) {
+    const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
+    const draftQuestion = buildDraftQuestionFromSuggestion(suggestion, actorEmail);
+
+    if (!draftQuestion) {
+      throw new Error('La sugerencia seleccionada no se puede convertir en draft.');
+    }
+
+    await saveQuestion(draftQuestion, 'save_draft', 'Draft creado desde sugerencia AI.');
+    updateLocalAiSuggestion(suggestion.id, (current) => ({
+      ...current,
+      status: 'applied',
+      appliedQuestionId: draftQuestion.id,
+      updatedAt: new Date().toISOString(),
+    }));
+
+    return {
+      question: draftQuestion,
+      workspace: await getAiWorkspace(),
+    };
+  }
+
+  const payload = await requestAdminApi<{ question: Question }>('/api/admin/ai-suggestions', {
+    operation: 'createDraft',
+    suggestionId: suggestion.id,
+  });
+
+  return {
+    question: payload.question,
+    workspace: await getAiWorkspace(),
+  };
+}
+
+export async function markAiSuggestionApplied(suggestionId: string, questionId: string) {
+  if (!isSupabaseConfigured || import.meta.env.DEV) {
+    updateLocalAiSuggestion(suggestionId, (current) => ({
+      ...current,
+      status: 'applied',
+      appliedQuestionId: questionId,
+      updatedAt: new Date().toISOString(),
+    }));
+
+    return getAiWorkspace();
+  }
+
+  await requestAdminApi<{ suggestion: AiSuggestion }>('/api/admin/ai-suggestions', {
+    operation: 'markApplied',
+    suggestionId,
+    questionId,
+  });
+
+  return getAiWorkspace();
 }
 
 export async function saveQuestion(

@@ -7,11 +7,12 @@
     "dev": "vite",
     "build": "tsc --noEmit -p tsconfig.app.json && vite build",
     "preview": "vite preview",
+    "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
     "validate:content": "node scripts/validate-content.mjs",
     "smoke:prod": "node scripts/smoke-check.mjs --require-schema=v1",
     "smoke:prod:compat": "node scripts/smoke-check.mjs",
-    "release:check": "npm run validate:content && npm run smoke:prod",
-    "release:check:compat": "npm run validate:content && npm run smoke:prod:compat"
+    "release:check": "node scripts/release-check.mjs --require-schema=v1",
+    "release:check:compat": "node scripts/release-check.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.101.1",

@@ -4,35 +4,15 @@ const npmExecPath = process.env.npm_execpath;
 const schemaArg = process.argv.find((argument) => argument.startsWith('--require-schema='));
 const requiredSchema = schemaArg?.split('=')[1]?.trim();
 
-function sanitizeChildEnv(env = process.env) {
-  const childEnv = { ...env };
-
-  for (const key of Object.keys(childEnv)) {
-    if (key.toLowerCase().startsWith('npm_')) {
-      delete childEnv[key];
-    }
-  }
-
-  return childEnv;
-}
-
 function runStep(label, args, env = process.env) {
-  const usePowerShell = process.platform === 'win32';
-  const command = usePowerShell
-    ? 'powershell.exe'
-    : npmExecPath
-      ? process.execPath
-      : 'npm';
-  const commandArgs = usePowerShell
-    ? ['-NoProfile', '-Command', `npm ${args.join(' ')}`]
-    : npmExecPath
-      ? [npmExecPath, ...args]
-      : args;
+  const useWindowsShell = process.platform === 'win32';
+  const command = useWindowsShell ? 'npm' : npmExecPath ? process.execPath : 'npm';
+  const commandArgs = useWindowsShell ? args : npmExecPath ? [npmExecPath, ...args] : args;
 
   const result = spawnSync(command, commandArgs, {
     stdio: 'inherit',
-    shell: false,
-    env: sanitizeChildEnv(env),
+    shell: useWindowsShell,
+    env,
   });
 
   if (result.error) {
@@ -46,10 +26,10 @@ function runStep(label, args, env = process.env) {
 
 try {
   runStep('validate:content', ['run', 'validate:content']);
-  runStep('build', ['run', 'build']);
+  runStep('typecheck:api', ['run', 'typecheck:api']);
   runStep(
-    'smoke:prod',
-    ['run', 'smoke:prod'],
+    requiredSchema ? 'smoke:prod' : 'smoke:prod:compat',
+    ['run', requiredSchema ? 'smoke:prod' : 'smoke:prod:compat'],
     requiredSchema
       ? {
           ...process.env,
