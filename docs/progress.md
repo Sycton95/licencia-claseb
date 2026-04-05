@@ -15,11 +15,10 @@
 
 ## Active milestone
 
-- Milestone 3 and Milestone 4 implementation pass:
-  - AI suggestion data model
-  - source-preparation scaffolding
-  - server-side suggestion APIs
-  - admin AI inbox
+- Milestone 6 implementation pass:
+  - desktop-first `/admin` workspace
+  - responsive public shell refresh
+  - improved quiz presentation on mobile and desktop
 
 ## Completed milestones
 
@@ -41,6 +40,18 @@
 
 ## Outcomes from the current implementation pass
 
+- Reworked `/admin` into a desktop-first workspace with:
+  - top summary/status strip
+  - mobile/tab fallback
+  - three-column desktop layout for question list, AI queue, diagnostics, and editor
+- Refreshed the public shell with:
+  - broader desktop frame width
+  - cleaner header and footer hierarchy
+  - more concise home menu and section grouping
+- Improved `Práctica` and `Examen` presentation with:
+  - two-column desktop builders
+  - clearer quiz sidebar and content split
+  - stronger quick-reference drawer presentation in `Práctica`
 - Added `ai_suggestions` and `ai_runs` migration in:
   - `supabase/migrations/0003_ai_suggestions.sql`
 - Added private source-preparation layer in:
@@ -60,7 +71,6 @@
 
 ## Open risks
 
-- Production persistence for the AI inbox depends on applying `0003_ai_suggestions.sql` in Supabase.
 - Current AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
 - Source-preparation coverage currently exists only for the chapters already better represented in the bank. Broader chapter coverage still requires more prepared chunks.
 - Server route type-checking is now part of the local verification path, but the smoke check still depends on network access.
@@ -68,8 +78,8 @@
 
 ## Blocked or manual steps
 
-- Apply `supabase/migrations/0003_ai_suggestions.sql` in Supabase SQL Editor.
-- After migration, verify live `/admin` AI inbox against production.
+- Re-authenticate the Vercel connector in-session whenever live deployment verification is needed after a push.
+- Use browser/Vercel confirmation after each UI-heavy release because shell fetches from this sandbox still cannot reach production.
 
 ## Active UX constraints
 
@@ -89,14 +99,14 @@
 ## Latest regressions or blocked items
 
 - None in the public app baseline.
-- AI persistence is pending migration, by design, and should degrade cleanly until then.
+- No current platform blocker. The remaining gap is better live verification tooling inside this session after pushes.
 
 ## Next approved work blocks
 
-1. Apply migration `0003_ai_suggestions.sql` and verify production AI inbox.
-2. Close Milestones 3 and 4 in production verification notes.
-3. Start Milestone 5:
+1. Verify the new `/admin` desktop workspace and public responsive shell on production after this release.
+2. Start Milestone 5:
    - duplicate prompt detection
    - weak distractor heuristics
    - richer review-task surfacing
-4. Resume chapter-by-chapter content expansion through the AI-assisted review flow.
+3. Resume chapter-by-chapter content expansion through the AI-assisted review flow.
+4. Keep logging each milestone close-out in `docs/progress.md` and `docs/releases.md` before opening the next work block.

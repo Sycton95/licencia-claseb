@@ -30,3 +30,13 @@ Pending after this release:
 
 - apply `0003_ai_suggestions.sql`
 - verify AI inbox in production
+
+## 2026-04-04 UI Rework v1
+
+- Reworked `/admin` into a desktop-first workspace:
+  - summary/status strip
+  - three-column desktop layout
+  - mobile/tab fallback for smaller screens
+- Refreshed the public shell and page layouts for broader desktop widths and cleaner mobile spacing.
+- Improved `Práctica` and `Examen` presentation without changing routes or quiz behavior.
+- Preserved hidden-admin policy and the existing public route structure.
