@@ -25,6 +25,15 @@ export function MenuIcon({ className }: IconProps) {
   );
 }
 
+export function CloseIcon({ className }: IconProps) {
+  return (
+    <svg {...iconProps(className)}>
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  );
+}
+
 export function ChevronLeftIcon({ className }: IconProps) {
   return (
     <svg {...iconProps(className)}>
@@ -71,6 +80,15 @@ export function EditIcon({ className }: IconProps) {
     <svg {...iconProps(className)}>
       <path d="m4 20 4.5-1 9-9a2.2 2.2 0 1 0-3.1-3.1l-9 9L4 20Z" />
       <path d="M13.5 6.5 17 10" />
+    </svg>
+  );
+}
+
+export function SearchIcon({ className }: IconProps) {
+  return (
+    <svg {...iconProps(className)}>
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-3.6-3.6" />
     </svg>
   );
 }

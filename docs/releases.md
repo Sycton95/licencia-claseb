@@ -57,3 +57,13 @@ Pending after this release:
 - Converted Catálogo and Cola AI into master-detail layouts with mobile back navigation.
 - Rebuilt the editor as a fixed-footer surface with a scrollable form body.
 - Moved `/admin` outside the public app frame so the admin workspace can use the full viewport height.
+
+## 2026-04-05 Admin Mockup Alignment
+
+- Applied the latest mockup direction to the extracted admin workspace instead of reverting to a monolithic page.
+- Simplified the admin navigation to three sections:
+  - Resumen
+  - Catálogo
+  - Cola AI
+- Tightened the catalog and AI lists into compact work queues with search-first headers and status dots.
+- Kept the editor embedded as the detail surface of Catálogo, matching the mockup’s desktop and mobile behavior.

@@ -1,5 +1,5 @@
 import { APP_WATERMARK } from '../../lib/appMeta';
-import { CatalogIcon, DashboardIcon, EditIcon, MenuIcon, SparkIcon } from './AdminIcons';
+import { CatalogIcon, CloseIcon, DashboardIcon, SparkIcon } from './AdminIcons';
 import type { AdminSection } from './types';
 
 type AdminSidebarProps = {
@@ -14,10 +14,9 @@ const items: Array<{
   label: string;
   Icon: typeof DashboardIcon;
 }> = [
-  { id: 'summary', label: 'Resumen', Icon: DashboardIcon },
+  { id: 'dashboard', label: 'Resumen', Icon: DashboardIcon },
   { id: 'catalog', label: 'Catálogo', Icon: CatalogIcon },
   { id: 'ai', label: 'Cola AI', Icon: SparkIcon },
-  { id: 'editor', label: 'Editor', Icon: EditIcon },
 ];
 
 export function AdminSidebar({
@@ -38,10 +37,11 @@ export function AdminSidebar({
         <div className="admin-sidebar__head">
           <div>
             <span className="eyebrow">Admin privado</span>
-            <h1 className="admin-sidebar__title">Clase B Chile</h1>
+            <h1 className="admin-sidebar__title">Admin Workspace</h1>
+            <p className="admin-sidebar__subtitle">Clase B Chile</p>
           </div>
           <button type="button" className="admin-sidebar__close" onClick={onClose} aria-label="Cerrar menú">
-            <MenuIcon className="admin-icon" />
+            <CloseIcon className="admin-icon" />
           </button>
         </div>
 

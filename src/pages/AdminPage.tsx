@@ -116,8 +116,10 @@ export function AdminPage() {
   const [isAdminAuthorized, setIsAdminAuthorized] = useState(false);
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
   const [adminHealth, setAdminHealth] = useState<AdminHealth | null>(null);
-  const [activeSection, setActiveSection] = useState<AdminSection>('summary');
+  const [activeSection, setActiveSection] = useState<AdminSection>('dashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isCatalogDetailOpen, setIsCatalogDetailOpen] = useState(false);
+  const [isAiDetailOpen, setIsAiDetailOpen] = useState(false);
 
   const canUseLocalAdmin =
     !isSupabaseConfigured &&
@@ -140,6 +142,7 @@ export function AdminPage() {
           setSelectedQuestionId(null);
           setDraftQuestion(null);
           setDraftOriginSuggestionId(null);
+          setIsCatalogDetailOpen(false);
         }
       }
     } catch (loadError) {
@@ -159,6 +162,7 @@ export function AdminPage() {
         !workspace.suggestions.some((suggestion) => suggestion.id === selectedSuggestionId)
       ) {
         setSelectedSuggestionId(null);
+        setIsAiDetailOpen(false);
       }
     } catch (loadError) {
       setError(loadError instanceof Error ? loadError.message : 'No se pudo cargar la cola AI.');
@@ -419,6 +423,7 @@ export function AdminPage() {
     setSelectedQuestionId(questionId);
     setDraftQuestion(cloneQuestion(question));
     setDraftOriginSuggestionId(null);
+    setIsCatalogDetailOpen(true);
     setActiveSection('catalog');
     setMessage(null);
     setError(null);
@@ -426,6 +431,7 @@ export function AdminPage() {
 
   const selectSuggestion = (suggestionId: string) => {
     setSelectedSuggestionId(suggestionId);
+    setIsAiDetailOpen(true);
     setActiveSection('ai');
     setMessage(null);
     setError(null);
@@ -530,7 +536,8 @@ export function AdminPage() {
     setDraftQuestion(questionDraft);
     setDraftOriginSuggestionId(suggestion.id);
     setSelectedSuggestionId(suggestion.id);
-    setActiveSection('editor');
+    setIsCatalogDetailOpen(true);
+    setActiveSection('catalog');
     setMessage('La sugerencia quedó cargada en el editor para revisión manual.');
     setError(null);
 
@@ -555,7 +562,8 @@ export function AdminPage() {
       setSelectedQuestionId(result.question.id);
       setDraftQuestion(cloneQuestion(result.question));
       setDraftOriginSuggestionId(null);
-      setActiveSection('editor');
+      setIsCatalogDetailOpen(true);
+      setActiveSection('catalog');
       setMessage('La sugerencia se convirtió en draft dentro del catálogo.');
     } catch (createError) {
       setError(
@@ -760,7 +768,7 @@ export function AdminPage() {
         />
 
         <div className="admin-route__body">
-          {activeSection === 'summary' && (
+          {activeSection === 'dashboard' && (
             <DashboardView
               activeEditionCode={activeEdition?.code}
               chapterCoverage={chapterCoverage}
@@ -777,24 +785,19 @@ export function AdminPage() {
 
           {activeSection === 'catalog' && (
             <CatalogManager
-              catalogChapterOptions={catalogChapterOptions}
-              catalogSourceOptions={catalogSourceOptions}
               editorPanel={editorPanel}
-              filterChapterId={filterChapterId}
               filterEligibleOnly={filterEligibleOnly}
-              filterSourceDocumentId={filterSourceDocumentId}
               filterStatus={filterStatus}
               filterWarningsOnly={filterWarningsOnly}
+              isDetailOpen={isCatalogDetailOpen}
               onApplyQuickFilter={applyQuickFilter}
-              onClearSelection={() => setSelectedQuestionId(null)}
+              onCloseDetail={() => setIsCatalogDetailOpen(false)}
               onSearchTermChange={setSearchTerm}
               onSelectQuestion={selectQuestion}
               questions={filteredQuestions}
               searchTerm={searchTerm}
               selectedQuestionId={selectedQuestionId}
-              setFilterChapterId={setFilterChapterId}
               setFilterEligibleOnly={setFilterEligibleOnly}
-              setFilterSourceDocumentId={setFilterSourceDocumentId}
               setFilterStatus={setFilterStatus}
               setFilterWarningsOnly={setFilterWarningsOnly}
               warningsByQuestionId={warningsByQuestionId}
@@ -804,11 +807,10 @@ export function AdminPage() {
           {activeSection === 'ai' && (
             <AiQueueManager
               aiSummary={aiSummary}
-              catalogChapterOptions={catalogChapterOptions}
-              catalogSourceOptions={catalogSourceOptions}
               filteredSuggestions={filteredSuggestions}
               isBusy={isBusy}
-              onClearSelection={() => setSelectedSuggestionId(null)}
+              isDetailOpen={isAiDetailOpen}
+              onCloseDetail={() => setIsAiDetailOpen(false)}
               onCreateDraftFromSuggestion={handleCreateDraftFromSuggestion}
               onGenerateSuggestions={handleGenerateSuggestions}
               onLoadSuggestionIntoEditor={handleLoadSuggestionIntoEditor}
@@ -816,19 +818,11 @@ export function AdminPage() {
               onTransitionSuggestion={handleSuggestionTransition}
               selectedSuggestion={selectedSuggestion}
               selectedSuggestionId={selectedSuggestionId}
-              setSuggestionChapterFilter={setSuggestionChapterFilter}
-              setSuggestionSourceFilter={setSuggestionSourceFilter}
               setSuggestionStatusFilter={setSuggestionStatusFilter}
               setSuggestionTypeFilter={setSuggestionTypeFilter}
-              suggestionChapterFilter={suggestionChapterFilter}
-              suggestionSourceFilter={suggestionSourceFilter}
               suggestionStatusFilter={suggestionStatusFilter}
               suggestionTypeFilter={suggestionTypeFilter}
             />
-          )}
-
-          {activeSection === 'editor' && (
-            <div className="admin-section-single">{editorPanel}</div>
           )}
         </div>
       </div>

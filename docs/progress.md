@@ -54,6 +54,11 @@
   - mobile list/detail switching with back navigation
   - fixed-width master column on desktop
   - detail pane fills the remaining workspace
+- Applied the current mockup direction to the extracted admin shell:
+  - dark sidebar with three primary sections only
+  - compact search-and-filter list header
+  - slimmer queue rows with status dots instead of bulky pills
+  - simplified mobile header and drawer behavior
 - Rebuilt the editor as a fixed-footer editing surface:
   - scrollable form body
   - persistent action footer

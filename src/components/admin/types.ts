@@ -20,7 +20,7 @@ export type AdminReportSummary = {
   examEligibleCount: number;
 };
 
-export type AdminSection = 'summary' | 'catalog' | 'ai' | 'editor';
+export type AdminSection = 'dashboard' | 'catalog' | 'ai';
 
 export function getEditorialStatusLabel(status: EditorialStatus) {
   switch (status) {

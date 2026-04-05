@@ -37,7 +37,7 @@ export function DashboardView({
             <strong>{summary.totalQuestions}</strong>
           </button>
           <button type="button" className="admin-summary-card" onClick={() => onApplyQuickFilter('draft')}>
-            <small>Draft</small>
+            <small>Drafts</small>
             <strong>{summary.draftCount}</strong>
           </button>
           <button type="button" className="admin-summary-card" onClick={() => onApplyQuickFilter('reviewed')}>
@@ -48,18 +48,6 @@ export function DashboardView({
             <small>Publicadas</small>
             <strong>{summary.publishedCount}</strong>
           </button>
-          <button type="button" className="admin-summary-card" onClick={() => onApplyQuickFilter('exam')}>
-            <small>Aptas examen</small>
-            <strong>{summary.examEligibleCount}</strong>
-          </button>
-          <button
-            type="button"
-            className="admin-summary-card admin-summary-card--warning"
-            onClick={() => onApplyQuickFilter('warnings')}
-          >
-            <small>Warnings</small>
-            <strong>{editorialWarnings.length}</strong>
-          </button>
         </div>
       )}
 
@@ -69,7 +57,7 @@ export function DashboardView({
             <div className="section-head">
               <div>
                 <span className="eyebrow">Operación</span>
-                <h3 className="section-title">Estado de la plataforma</h3>
+                <h3 className="section-title">Estado del sistema</h3>
               </div>
             </div>
             <div className="admin-detail-list">
@@ -96,7 +84,7 @@ export function DashboardView({
             </div>
             {healthNeedsHardening && (
               <p className="info-text">
-                Persisten pendientes operativos. La base debe quedar en esquema v1 con AI schema activo y service role operativa.
+                Persisten pendientes operativos. La base debe quedar en esquema v1 con AI schema activa y service role operativa.
               </p>
             )}
           </section>
@@ -113,7 +101,7 @@ export function DashboardView({
             {editorialWarnings.length === 0 ? (
               <article className="admin-inline-note">
                 <strong>Sin warnings</strong>
-                <span>Las reglas de control actuales no detectan inconsistencias en el catálogo cargado.</span>
+                <span>Las reglas actuales no detectan inconsistencias en el catálogo cargado.</span>
               </article>
             ) : (
               editorialWarnings.map((warning) => (
