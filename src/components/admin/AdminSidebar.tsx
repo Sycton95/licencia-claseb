@@ -29,7 +29,9 @@ export function AdminSidebar({
     <>
       <button
         type="button"
-        className={isOpen ? 'admin-sidebar__backdrop admin-sidebar__backdrop--visible' : 'admin-sidebar__backdrop'}
+        className={
+          isOpen ? 'admin-sidebar__backdrop admin-sidebar__backdrop--visible' : 'admin-sidebar__backdrop'
+        }
         onClick={onClose}
         aria-label="Cerrar navegación"
       />
@@ -50,7 +52,9 @@ export function AdminSidebar({
             <button
               key={id}
               type="button"
-              className={activeSection === id ? 'admin-sidebar__link admin-sidebar__link--active' : 'admin-sidebar__link'}
+              className={
+                activeSection === id ? 'admin-sidebar__link admin-sidebar__link--active' : 'admin-sidebar__link'
+              }
               onClick={() => {
                 onSelectSection(id);
                 onClose();

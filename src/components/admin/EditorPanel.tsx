@@ -33,7 +33,8 @@ export function EditorPanel({
           <span className="eyebrow">Editor</span>
           <h3 className="section-title">Selecciona una pregunta</h3>
           <p className="info-text">
-            Desde Catálogo puedes abrir una pregunta existente. Desde Cola AI puedes cargar una sugerencia al editor o convertirla en draft.
+            Desde Catálogo puedes abrir una pregunta existente. Desde Cola AI puedes cargar una
+            sugerencia al editor o convertirla en draft.
           </p>
         </div>
       </section>
@@ -43,20 +44,28 @@ export function EditorPanel({
   return (
     <section className="panel admin-surface admin-editor-panel">
       <div className="admin-editor-panel__head">
-        <div>
+        <div className="admin-editor-panel__heading">
           <span className="eyebrow">Editor</span>
-          <h3 className="section-title">Edición manual</h3>
-          <p className="info-text">
-            Estado {draftQuestion.status} · Fuente {draftQuestion.sourceReference ?? `Pág. ${draftQuestion.sourcePage}`}
-          </p>
+          <div>
+            <h3 className="section-title">Edición manual</h3>
+            <p className="info-text">
+              Estado {draftQuestion.status} · Fuente{' '}
+              {draftQuestion.sourceReference ?? `Pág. ${draftQuestion.sourcePage}`}
+            </p>
+          </div>
         </div>
-        <div className="admin-inline-chip admin-inline-chip--subtle">
-          Edición {activeEditionCode ?? draftQuestion.editionId}
+        <div className="admin-editor-panel__head-meta">
+          <span className="admin-inline-chip admin-inline-chip--subtle">
+            Edición {activeEditionCode ?? draftQuestion.editionId}
+          </span>
+          <span className="admin-inline-chip admin-inline-chip--subtle">
+            {draftQuestion.selectionMode === 'multiple' ? 'Respuesta múltiple' : 'Respuesta única'}
+          </span>
         </div>
       </div>
 
       <div className="admin-editor-panel__body">
-        <div className="field-grid">
+        <div className="field-grid admin-editor-panel__fields">
           <label className="field field--full">
             <span>Enunciado</span>
             <textarea
@@ -82,7 +91,9 @@ export function EditorPanel({
             <span>Modo de respuesta</span>
             <select
               value={draftQuestion.selectionMode}
-              onChange={(event) => onQuestionField('selectionMode', event.target.value as SelectionMode)}
+              onChange={(event) =>
+                onQuestionField('selectionMode', event.target.value as SelectionMode)
+              }
             >
               <option value="single">single</option>
               <option value="multiple">multiple</option>
@@ -142,7 +153,7 @@ export function EditorPanel({
           </label>
         </div>
 
-        <div className="field-inline">
+        <div className="field-inline admin-editor-panel__toggles">
           <label className="checkbox-field">
             <input
               type="checkbox"
@@ -162,11 +173,19 @@ export function EditorPanel({
         </div>
 
         <div className="admin-options">
-          <h3>Opciones</h3>
+          <div className="admin-options__head">
+            <h3>Opciones</h3>
+            <span className="info-text">
+              Marca las correctas según el modo de respuesta de la pregunta.
+            </span>
+          </div>
           {draftQuestion.options.map((option) => (
             <div key={option.id} className="admin-option-row">
               <span className="option-letter">{option.label}</span>
-              <input value={option.text} onChange={(event) => onOptionText(option.id, event.target.value)} />
+              <input
+                value={option.text}
+                onChange={(event) => onOptionText(option.id, event.target.value)}
+              />
               <label className="checkbox-field">
                 <input
                   type="checkbox"
@@ -180,7 +199,10 @@ export function EditorPanel({
         </div>
 
         <div className="admin-preview admin-preview--compact">
-          <h3>Vista previa</h3>
+          <div className="admin-preview__head">
+            <h3>Vista previa</h3>
+            <span className="info-text">Así se verá en práctica y examen.</span>
+          </div>
           <QuestionCard
             question={draftQuestion}
             selectedOptionIds={[]}
@@ -195,38 +217,44 @@ export function EditorPanel({
       </div>
 
       <div className="admin-editor-panel__footer">
-        <button
-          className="primary-button"
-          type="button"
-          onClick={() => onEditorialAction('save', 'Cambios guardados correctamente.')}
-          disabled={isBusy}
-        >
-          Guardar
-        </button>
-        <button
-          className="secondary-button"
-          type="button"
-          onClick={() => onEditorialAction('mark_reviewed', 'Pregunta marcada como revisada.')}
-          disabled={isBusy}
-        >
-          Marcar revisada
-        </button>
-        <button
-          className="secondary-button"
-          type="button"
-          onClick={() => onEditorialAction('publish', 'Pregunta publicada correctamente.')}
-          disabled={isBusy}
-        >
-          Publicar
-        </button>
-        <button
-          className="secondary-button"
-          type="button"
-          onClick={() => onEditorialAction('archive', 'Pregunta archivada correctamente.')}
-          disabled={isBusy}
-        >
-          Archivar
-        </button>
+        <div className="admin-editor-panel__footer-copy">
+          <strong>{draftQuestion.id}</strong>
+          <span>Los cambios quedan dentro del flujo editorial actual.</span>
+        </div>
+        <div className="admin-editor-panel__footer-actions">
+          <button
+            className="primary-button"
+            type="button"
+            onClick={() => onEditorialAction('save', 'Cambios guardados correctamente.')}
+            disabled={isBusy}
+          >
+            Guardar
+          </button>
+          <button
+            className="secondary-button"
+            type="button"
+            onClick={() => onEditorialAction('mark_reviewed', 'Pregunta marcada como revisada.')}
+            disabled={isBusy}
+          >
+            Marcar revisada
+          </button>
+          <button
+            className="secondary-button"
+            type="button"
+            onClick={() => onEditorialAction('publish', 'Pregunta publicada correctamente.')}
+            disabled={isBusy}
+          >
+            Publicar
+          </button>
+          <button
+            className="secondary-button secondary-button--danger"
+            type="button"
+            onClick={() => onEditorialAction('archive', 'Pregunta archivada correctamente.')}
+            disabled={isBusy}
+          >
+            Archivar
+          </button>
+        </div>
       </div>
     </section>
   );

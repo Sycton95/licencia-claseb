@@ -58,7 +58,11 @@ export function AiQueueManager({
 }: AiQueueManagerProps) {
   return (
     <section className="admin-manager">
-      <div className={isDetailOpen ? 'admin-manager__master admin-manager__master--hidden-mobile' : 'admin-manager__master'}>
+      <div
+        className={
+          isDetailOpen ? 'admin-manager__master admin-manager__master--hidden-mobile' : 'admin-manager__master'
+        }
+      >
         <section className="admin-manager__master-surface">
           <div className="admin-manager__master-head">
             <div>
@@ -77,19 +81,19 @@ export function AiQueueManager({
 
           {aiSummary && (
             <div className="admin-summary-grid admin-summary-grid--tight">
-              <article className="admin-summary-card">
+              <article className="admin-summary-card admin-summary-card--metric">
                 <small>Pendientes</small>
                 <strong>{aiSummary.pending}</strong>
               </article>
-              <article className="admin-summary-card">
+              <article className="admin-summary-card admin-summary-card--metric">
                 <small>Aceptadas</small>
                 <strong>{aiSummary.accepted}</strong>
               </article>
-              <article className="admin-summary-card admin-summary-card--warning">
+              <article className="admin-summary-card admin-summary-card--metric admin-summary-card--warning">
                 <small>Flags</small>
                 <strong>{aiSummary.flags}</strong>
               </article>
-              <article className="admin-summary-card">
+              <article className="admin-summary-card admin-summary-card--metric">
                 <small>Brechas</small>
                 <strong>{aiSummary.coverageGaps}</strong>
               </article>
@@ -99,28 +103,44 @@ export function AiQueueManager({
           <div className="admin-filter-row admin-filter-row--compact">
             <button
               type="button"
-              className={suggestionTypeFilter === 'all' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'}
+              className={
+                suggestionTypeFilter === 'all'
+                  ? 'admin-status-filter admin-status-filter--active'
+                  : 'admin-status-filter'
+              }
               onClick={() => setSuggestionTypeFilter('all')}
             >
               Todas
             </button>
             <button
               type="button"
-              className={suggestionTypeFilter === 'new_question' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'}
+              className={
+                suggestionTypeFilter === 'new_question'
+                  ? 'admin-status-filter admin-status-filter--active'
+                  : 'admin-status-filter'
+              }
               onClick={() => setSuggestionTypeFilter('new_question')}
             >
               Nuevas
             </button>
             <button
               type="button"
-              className={suggestionTypeFilter === 'rewrite' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'}
+              className={
+                suggestionTypeFilter === 'rewrite'
+                  ? 'admin-status-filter admin-status-filter--active'
+                  : 'admin-status-filter'
+              }
               onClick={() => setSuggestionTypeFilter('rewrite')}
             >
               Rewrites
             </button>
             <button
               type="button"
-              className={suggestionTypeFilter === 'flag' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'}
+              className={
+                suggestionTypeFilter === 'flag'
+                  ? 'admin-status-filter admin-status-filter--active'
+                  : 'admin-status-filter'
+              }
               onClick={() => setSuggestionTypeFilter('flag')}
             >
               Flags
@@ -132,7 +152,9 @@ export function AiQueueManager({
               <span>Estado</span>
               <select
                 value={suggestionStatusFilter}
-                onChange={(event) => setSuggestionStatusFilter(event.target.value as 'all' | AiSuggestionStatus)}
+                onChange={(event) =>
+                  setSuggestionStatusFilter(event.target.value as 'all' | AiSuggestionStatus)
+                }
               >
                 <option value="all">Todos</option>
                 <option value="pending">Pendientes</option>
@@ -155,7 +177,11 @@ export function AiQueueManager({
                 <button
                   key={suggestion.id}
                   type="button"
-                  className={selectedSuggestionId === suggestion.id ? 'admin-work-item admin-work-item--selected' : 'admin-work-item'}
+                  className={
+                    selectedSuggestionId === suggestion.id
+                      ? 'admin-work-item admin-work-item--selected'
+                      : 'admin-work-item'
+                  }
                   onClick={() => onSelectSuggestion(suggestion.id)}
                 >
                   <div className="admin-work-item__top">
@@ -177,7 +203,11 @@ export function AiQueueManager({
         </section>
       </div>
 
-      <div className={isDetailOpen ? 'admin-manager__detail' : 'admin-manager__detail admin-manager__detail--hidden-mobile'}>
+      <div
+        className={
+          isDetailOpen ? 'admin-manager__detail' : 'admin-manager__detail admin-manager__detail--hidden-mobile'
+        }
+      >
         <section className="admin-manager__detail-surface">
           <div className="admin-manager__detail-mobile-head">
             <button type="button" className="admin-back-button" onClick={onCloseDetail}>
@@ -190,7 +220,8 @@ export function AiQueueManager({
             <div className="admin-ai-placeholder">
               <p className="admin-ai-placeholder__title">Cola AI / Bandeja de entrada</p>
               <p className="admin-ai-placeholder__copy">
-                El mismo patrón master-detail se aplica aquí para revisar sugerencias y convertirlas en drafts.
+                El mismo patrón master-detail se aplica aquí para revisar sugerencias y convertirlas
+                en drafts.
               </p>
               <p className="admin-ai-placeholder__meta">Total pendientes: {aiSummary?.pending ?? 0}</p>
             </div>
@@ -199,7 +230,9 @@ export function AiQueueManager({
               <div className="admin-pane__head">
                 <div>
                   <span className="eyebrow">Detalle AI</span>
-                  <h3 className="section-title">{getSuggestionTypeLabel(selectedSuggestion.suggestionType)}</h3>
+                  <h3 className="section-title">
+                    {getSuggestionTypeLabel(selectedSuggestion.suggestionType)}
+                  </h3>
                 </div>
                 <div className="admin-status-inline">
                   <span className={getSuggestionStatusDotClass(selectedSuggestion.status)} />
@@ -262,7 +295,7 @@ export function AiQueueManager({
                     onTransitionSuggestion(
                       selectedSuggestion.id,
                       'deferred',
-                      'La sugerencia quedó postergada para revisión posterior.',
+                      'La sugerencia se marcó como postergada.',
                     )
                   }
                   disabled={isBusy}
@@ -270,13 +303,13 @@ export function AiQueueManager({
                   Postergar
                 </button>
                 <button
-                  className="secondary-button"
+                  className="secondary-button secondary-button--danger"
                   type="button"
                   onClick={() =>
                     onTransitionSuggestion(
                       selectedSuggestion.id,
                       'rejected',
-                      'La sugerencia quedó rechazada.',
+                      'La sugerencia se rechazó y quedó fuera de la cola activa.',
                     )
                   }
                   disabled={isBusy}

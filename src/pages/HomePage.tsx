@@ -55,11 +55,15 @@ export function HomePage() {
             <div className="menu-grid home-menu-grid">
               <Link className="menu-card menu-card--primary" to="/practice">
                 <strong>Práctica</strong>
-                <span>Elige capítulos, ajusta la cantidad de preguntas y repasa con referencias rápidas.</span>
+                <span>
+                  Elige capítulos, ajusta la cantidad de preguntas y repasa con referencias rápidas.
+                </span>
               </Link>
               <Link className="menu-card" to="/exam">
                 <strong>Examen</strong>
-                <span>Simula una prueba completa con puntaje objetivo y reglas oficiales verificadas.</span>
+                <span>
+                  Simula una prueba completa con puntaje objetivo y reglas oficiales verificadas.
+                </span>
               </Link>
               <article className="menu-card menu-card--muted">
                 <strong>Estudio</strong>
@@ -103,7 +107,9 @@ export function HomePage() {
           {availableChapters.map((chapter) => (
             <article
               key={chapter.id}
-              className={chapter.questionCount > 0 ? 'chapter-card' : 'chapter-card chapter-card--disabled'}
+              className={
+                chapter.questionCount > 0 ? 'chapter-card' : 'chapter-card chapter-card--disabled'
+              }
             >
               <strong>{chapter.code}</strong>
               <h3>{chapter.title}</h3>

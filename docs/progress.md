@@ -15,10 +15,11 @@
 
 ## Active milestone
 
-- Milestone 6A implementation pass:
-  - admin workstation polish
-  - responsive two-column to three-column desktop transition
-  - public-shell consistency cleanup
+- Milestone 6A final polish pass:
+  - admin workstation visual consistency
+  - overflow cleanup
+  - UTF-8 cleanup in touched admin/public shell files
+  - pending live `/admin` verification before close-out
 
 ## Completed milestones
 
@@ -37,80 +38,59 @@
   - admin reporting added for status counts, chapter coverage, source coverage, and warnings
   - magic link redirect stabilized to use the canonical production admin URL
   - public UI cleaned up and admin hidden from navigation
+- Milestones 3 and 4 operationally implemented:
+  - `ai_suggestions` and `ai_runs` persistence
+  - admin AI inbox
+  - grounded suggestion review actions
 
 ## Outcomes from the current implementation pass
 
-- Refactored `/admin` into a container plus extracted UI components:
-  - `AdminSidebar`
-  - `AdminTopStrip`
-  - `DashboardView`
-  - `CatalogManager`
-  - `AiQueueManager`
-  - `EditorPanel`
-- Replaced the mobile tab switcher with a responsive sidebar shell:
-  - overlay drawer below `960px`
-  - static left rail from `960px`
-- Converted Catálogo and Cola AI into master-detail workspaces:
-  - mobile list/detail switching with back navigation
-  - fixed-width master column on desktop
-  - detail pane fills the remaining workspace
-- Applied the current mockup direction to the extracted admin shell:
-  - dark sidebar with three primary sections only
-  - compact search-and-filter list header
-  - slimmer queue rows with status dots instead of bulky pills
-  - simplified mobile header and drawer behavior
-- Rebuilt the editor as a fixed-footer editing surface:
-  - scrollable form body
-  - persistent action footer
-  - preview kept secondary to the form
-- Tightened `/admin` into a denser workstation layout:
-  - two-column transitional workspace from `960px`
-  - roomier desktop workstation from `1280px`
-- Reduced admin overflow risk with:
-  - internal scroll regions
+- Restored the extracted admin component tree to a buildable local state after the interrupted UI pass.
+- Kept the current `/admin` structure intact:
+  - `Resumen`
+  - `Catálogo`
+  - `Cola AI`
+- Rebuilt the editor component and kept it embedded inside `Catálogo`.
+- Tightened admin visual hierarchy:
   - denser summary cards
-  - compact question and AI work-queue rows with status dots
-  - stronger wrap and max-height behavior in text-heavy panels
-- Reworked `/admin` into a desktop-first workspace with:
-  - top summary/status strip
-  - mobile/tab fallback
-  - three-column desktop layout for question list, AI queue, diagnostics, and editor
-- Refreshed the public shell with:
-  - broader desktop frame width
-  - cleaner header and footer hierarchy
-  - more concise home menu and section grouping
-- Improved `Práctica` and `Examen` presentation with:
-  - two-column desktop builders
-  - clearer quiz sidebar and content split
-  - stronger quick-reference drawer presentation in `Práctica`
-- Added `ai_suggestions` and `ai_runs` migration in:
-  - `supabase/migrations/0003_ai_suggestions.sql`
-- Added private source-preparation layer in:
-  - `src/data/sourcePreparation.ts`
-- Added heuristic AI suggestion engine for:
-  - new question candidates
-  - rewrite suggestions
-  - flag suggestions
-  - coverage gap suggestions
-- Added admin-only API route:
-  - `api/admin/ai-suggestions.ts`
-- Added AI inbox in `/admin` with:
-  - summary counts
-  - type/status/chapter/source filters
-  - grounded suggestion detail
-  - create-draft / load-into-editor / defer / reject actions
+  - lighter top strip
+  - more consistent surface radius and shadow treatment
+  - clearer primary vs secondary vs destructive actions
+- Tightened queue row presentation in `Catálogo` and `Cola AI`:
+  - compact metadata lines
+  - status dots
+  - better selected-row contrast
+- Improved editor coherence:
+  - stable header
+  - scrollable body
+  - fixed footer with grouped actions
+  - clearer metadata and preview hierarchy
+- Cleaned UTF-8 regressions in touched admin/public shell files:
+  - sidebar
+  - top strip
+  - dashboard
+  - question card
+  - public shell
+  - home page
+- Local verification completed:
+  - `npm run validate:content`
+  - `npm run build`
 
 ## Open risks
 
+- Live verification for the latest Milestone 6A polish pass is still pending.
 - Current AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
 - Source-preparation coverage currently exists only for the chapters already better represented in the bank. Broader chapter coverage still requires more prepared chunks.
-- Server route type-checking is now part of the local verification path, but the smoke check still depends on network access.
 - The shell-based smoke check still cannot reach production from this sandbox, so live verification must continue through Vercel/browser checks after push.
 
 ## Blocked or manual steps
 
 - Re-authenticate the Vercel connector in-session whenever live deployment verification is needed after a push.
 - Use browser/Vercel confirmation after each UI-heavy release because shell fetches from this sandbox still cannot reach production.
+- Before closing Milestone 6A, verify `/admin` on:
+  - desktop `>=1280px`
+  - tablet around `1100px`
+  - mobile `<960px`
 
 ## Active UX constraints
 
@@ -129,13 +109,13 @@
 
 ## Latest regressions or blocked items
 
-- None in the public app baseline.
-- No current platform blocker. The remaining gap is better live verification tooling inside this session after pushes.
+- No platform regression is currently blocking local development.
+- Milestone 6A is waiting on live UI verification, not on another structural rewrite.
 
 ## Next approved work blocks
 
-1. Verify the new `/admin` desktop workspace and public responsive shell on production after this release.
-2. Start Milestone 5:
+1. Verify the latest `/admin` polish pass on production and close Milestone 6A.
+2. Switch the active roadmap back to Milestone 5:
    - duplicate prompt detection
    - weak distractor heuristics
    - richer review-task surfacing

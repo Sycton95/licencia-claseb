@@ -1,4 +1,8 @@
-import type { ChapterCoverageRow, EditorialWarning, SourceCoverageRow } from '../../lib/editorialDiagnostics';
+import type {
+  ChapterCoverageRow,
+  EditorialWarning,
+  SourceCoverageRow,
+} from '../../lib/editorialDiagnostics';
 import type { AdminHealth, AdminReportSummary } from './types';
 
 type DashboardViewProps = {
@@ -32,19 +36,35 @@ export function DashboardView({
     <section className="admin-section-scroll admin-dashboard">
       {summary && (
         <div className="admin-summary-grid">
-          <button type="button" className="admin-summary-card" onClick={() => onApplyQuickFilter('all')}>
+          <button
+            type="button"
+            className="admin-summary-card admin-summary-card--metric"
+            onClick={() => onApplyQuickFilter('all')}
+          >
             <small>Total</small>
             <strong>{summary.totalQuestions}</strong>
           </button>
-          <button type="button" className="admin-summary-card" onClick={() => onApplyQuickFilter('draft')}>
+          <button
+            type="button"
+            className="admin-summary-card admin-summary-card--metric"
+            onClick={() => onApplyQuickFilter('draft')}
+          >
             <small>Drafts</small>
             <strong>{summary.draftCount}</strong>
           </button>
-          <button type="button" className="admin-summary-card" onClick={() => onApplyQuickFilter('reviewed')}>
+          <button
+            type="button"
+            className="admin-summary-card admin-summary-card--metric"
+            onClick={() => onApplyQuickFilter('reviewed')}
+          >
             <small>Revisadas</small>
             <strong>{summary.reviewedCount}</strong>
           </button>
-          <button type="button" className="admin-summary-card" onClick={() => onApplyQuickFilter('published')}>
+          <button
+            type="button"
+            className="admin-summary-card admin-summary-card--metric"
+            onClick={() => onApplyQuickFilter('published')}
+          >
             <small>Publicadas</small>
             <strong>{summary.publishedCount}</strong>
           </button>
@@ -53,7 +73,7 @@ export function DashboardView({
 
       <div className="admin-dashboard__grid">
         {isSupabaseConfigured && (
-          <section className="panel admin-surface">
+          <section className="panel admin-surface admin-surface--dashboard">
             <div className="section-head">
               <div>
                 <span className="eyebrow">Operación</span>
@@ -84,13 +104,14 @@ export function DashboardView({
             </div>
             {healthNeedsHardening && (
               <p className="info-text">
-                Persisten pendientes operativos. La base debe quedar en esquema v1 con AI schema activa y service role operativa.
+                Persisten pendientes operativos. La base debe quedar en esquema v1 con AI schema
+                activa y service role operativa.
               </p>
             )}
           </section>
         )}
 
-        <section className="panel admin-surface">
+        <section className="panel admin-surface admin-surface--dashboard">
           <div className="section-head">
             <div>
               <span className="eyebrow">Triage</span>
@@ -120,7 +141,7 @@ export function DashboardView({
           </div>
         </section>
 
-        <section className="panel admin-surface">
+        <section className="panel admin-surface admin-surface--dashboard">
           <div className="section-head">
             <div>
               <span className="eyebrow">Cobertura</span>
@@ -134,14 +155,15 @@ export function DashboardView({
                   {row.chapterCode} · {row.chapterTitle}
                 </strong>
                 <small>
-                  Total {row.total} · Publicadas {row.published} · Revisadas pendientes {row.reviewedPending}
+                  Total {row.total} · Publicadas {row.published} · Revisadas pendientes{' '}
+                  {row.reviewedPending}
                 </small>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="panel admin-surface">
+        <section className="panel admin-surface admin-surface--dashboard">
           <div className="section-head">
             <div>
               <span className="eyebrow">Fuentes</span>
@@ -152,9 +174,7 @@ export function DashboardView({
             {sourceCoverage.map((row) => (
               <article key={row.sourceDocumentId} className="admin-inline-card">
                 <strong>{row.title}</strong>
-                <small>
-                  Total {row.total} · Sin referencia {row.missingReferenceCount}
-                </small>
+                <small>Total {row.total} · Sin referencia {row.missingReferenceCount}</small>
               </article>
             ))}
           </div>

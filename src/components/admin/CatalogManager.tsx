@@ -45,7 +45,11 @@ export function CatalogManager({
 }: CatalogManagerProps) {
   return (
     <section className="admin-manager">
-      <div className={isDetailOpen ? 'admin-manager__master admin-manager__master--hidden-mobile' : 'admin-manager__master'}>
+      <div
+        className={
+          isDetailOpen ? 'admin-manager__master admin-manager__master--hidden-mobile' : 'admin-manager__master'
+        }
+      >
         <section className="admin-manager__master-surface">
           <div className="admin-manager__master-head">
             <div className="admin-search">
@@ -64,28 +68,42 @@ export function CatalogManager({
             <div className="admin-filter-row admin-filter-row--compact">
               <button
                 type="button"
-                className={filterStatus === 'all' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'}
+                className={
+                  filterStatus === 'all' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'
+                }
                 onClick={() => setFilterStatus('all')}
               >
                 Todos
               </button>
               <button
                 type="button"
-                className={filterStatus === 'draft' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'}
+                className={
+                  filterStatus === 'draft'
+                    ? 'admin-status-filter admin-status-filter--active'
+                    : 'admin-status-filter'
+                }
                 onClick={() => onApplyQuickFilter('draft')}
               >
                 Draft
               </button>
               <button
                 type="button"
-                className={filterStatus === 'reviewed' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'}
+                className={
+                  filterStatus === 'reviewed'
+                    ? 'admin-status-filter admin-status-filter--active'
+                    : 'admin-status-filter'
+                }
                 onClick={() => onApplyQuickFilter('reviewed')}
               >
                 Revisadas
               </button>
               <button
                 type="button"
-                className={filterStatus === 'published' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'}
+                className={
+                  filterStatus === 'published'
+                    ? 'admin-status-filter admin-status-filter--active'
+                    : 'admin-status-filter'
+                }
                 onClick={() => onApplyQuickFilter('published')}
               >
                 Publicadas
@@ -119,14 +137,23 @@ export function CatalogManager({
                 <button
                   key={question.id}
                   type="button"
-                  className={selectedQuestionId === question.id ? 'admin-work-item admin-work-item--selected' : 'admin-work-item'}
+                  className={
+                    selectedQuestionId === question.id
+                      ? 'admin-work-item admin-work-item--selected'
+                      : 'admin-work-item'
+                  }
                   onClick={() => onSelectQuestion(question.id)}
                 >
                   <div className="admin-work-item__top">
                     <span className="admin-record-id">{question.id}</span>
                     <div className="admin-work-item__dots">
-                      {warnings.length > 0 && <span className="status-dot status-dot--rejected" title="Warnings" />}
-                      <span className={getEditorialStatusDotClass(question.status)} title={question.status} />
+                      {warnings.length > 0 && (
+                        <span className="status-dot status-dot--rejected" title="Warnings" />
+                      )}
+                      <span
+                        className={getEditorialStatusDotClass(question.status)}
+                        title={question.status}
+                      />
                     </div>
                   </div>
                   <span className="admin-work-item__title">{question.prompt}</span>
@@ -141,7 +168,11 @@ export function CatalogManager({
         </section>
       </div>
 
-      <div className={isDetailOpen ? 'admin-manager__detail' : 'admin-manager__detail admin-manager__detail--hidden-mobile'}>
+      <div
+        className={
+          isDetailOpen ? 'admin-manager__detail' : 'admin-manager__detail admin-manager__detail--hidden-mobile'
+        }
+      >
         <section className="admin-manager__detail-surface">
           <div className="admin-manager__detail-mobile-head">
             <button type="button" className="admin-back-button" onClick={onCloseDetail}>

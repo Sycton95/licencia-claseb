@@ -49,7 +49,10 @@ export function AppLayout() {
         <Outlet />
 
         <footer className="app-footer">
-          <span>Práctica digital para licencia Clase B. El contenido visible siempre sale del catálogo publicado.</span>
+          <span>
+            Práctica digital para licencia Clase B. El contenido visible siempre sale del catálogo
+            publicado.
+          </span>
         </footer>
       </section>
 

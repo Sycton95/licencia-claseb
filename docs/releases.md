@@ -13,7 +13,6 @@
 - Admin remains hidden from public navigation and landing pages.
 - Version watermark is visible in-app for operator tracking.
 - Practice mode supports quick reference overlays after answering.
-# Releases
 
 ## 2026-04-04
 
@@ -54,7 +53,7 @@ Pending after this release:
 - Replaced the mobile tab switcher with a sidebar shell:
   - overlay drawer on mobile
   - static rail on desktop
-- Converted Catálogo and Cola AI into master-detail layouts with mobile back navigation.
+- Converted `Catálogo` and `Cola AI` into master-detail layouts with mobile back navigation.
 - Rebuilt the editor as a fixed-footer surface with a scrollable form body.
 - Moved `/admin` outside the public app frame so the admin workspace can use the full viewport height.
 
@@ -66,4 +65,22 @@ Pending after this release:
   - Catálogo
   - Cola AI
 - Tightened the catalog and AI lists into compact work queues with search-first headers and status dots.
-- Kept the editor embedded as the detail surface of Catálogo, matching the mockup’s desktop and mobile behavior.
+- Kept the editor embedded as the detail surface of `Catálogo`, matching the mockup’s desktop and mobile behavior.
+
+## 2026-04-05 Milestone 6A Polish Restart
+
+- Restored the interrupted admin component tree to a buildable state.
+- Tightened the current admin visual system instead of changing structure again:
+  - lighter top strip
+  - denser metrics
+  - cleaner queue rows
+  - stronger editor hierarchy
+- Cleaned UTF-8 regressions in the touched admin and public shell files.
+- Revalidated local gates:
+  - `npm run validate:content`
+  - `npm run build`
+
+Pending after this release:
+
+- verify the latest `/admin` polish pass on production
+- close Milestone 6A in `docs/progress.md`
