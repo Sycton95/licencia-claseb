@@ -15,32 +15,41 @@ export function AppLayout() {
 
       <section className="app-frame app-frame--wide">
         <header className="app-header app-header--layout">
-          <div>
-            <span className="brand-pill">Clase B Chile</span>
-            <p className="app-subtitle">
-              Practica desde el móvil y revisa con más espacio desde escritorio.
-            </p>
+          <div className="app-header__row">
+            <div className="app-heading">
+              <span className="brand-pill">Clase B Chile</span>
+              <div className="app-heading__copy">
+                <h1 className="app-title">Simulador de práctica y examen</h1>
+                <p className="app-subtitle">
+                  Estudia desde el móvil y trabaja el backoffice con más espacio desde escritorio.
+                </p>
+              </div>
+            </div>
+
+            <nav className="top-nav" aria-label="Navegación principal">
+              {navigation.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    isActive ? 'top-nav__link top-nav__link--active' : 'top-nav__link'
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
           </div>
 
-          <nav className="top-nav" aria-label="Navegación principal">
-            {navigation.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  isActive ? 'top-nav__link top-nav__link--active' : 'top-nav__link'
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+          <div className="app-header__note">
+            <span>Catálogo publicado y revisión editorial continua.</span>
+          </div>
         </header>
 
         <Outlet />
 
         <footer className="app-footer">
-          <span>Contenido de práctica basado en fuentes formales y revisión continua.</span>
+          <span>Práctica digital para licencia Clase B. El contenido visible siempre sale del catálogo publicado.</span>
         </footer>
       </section>
 

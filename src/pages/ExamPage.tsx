@@ -57,20 +57,36 @@ export function ExamPage() {
   }
 
   return (
-    <section className="page-stack">
-      <section className="panel panel--soft">
-        <span className="eyebrow">Examen clase B</span>
-        <h1 className="hero-title">Simulación basada en reglas oficiales verificadas</h1>
-        <p className="hero-copy">
-          Este modo reproduce la estructura de puntaje del examen teórico clase B con base en
-          fuentes oficiales verificadas. No fija una duración oficial hasta contar con una fuente
-          primaria equivalente para ese dato.
-        </p>
+    <section className="page-stack page-stack--public">
+      <section className="panel panel--soft exam-hero">
+        <div className="public-builder-grid public-builder-grid--exam">
+          <div>
+            <span className="eyebrow">Examen clase B</span>
+            <h1 className="hero-title">Simulación basada en reglas oficiales verificadas</h1>
+            <p className="hero-copy">
+              Este modo reproduce la estructura de puntaje del examen teórico clase B con base en
+              fuentes oficiales verificadas.
+            </p>
+          </div>
+
+          <article className="menu-card exam-note-card">
+            <strong>Nota de alcance</strong>
+            <span>
+              No fijamos una duración oficial mientras no exista una fuente primaria equivalente para
+              ese dato.
+            </span>
+          </article>
+        </div>
       </section>
 
       <section className="panel">
-        <h2 className="section-title">Reglas de esta simulación</h2>
-        <div className="stats-grid">
+        <div className="section-head">
+          <div>
+            <h2 className="section-title">Reglas de esta simulación</h2>
+            <p className="info-text">Estas reglas se explican aquí y no se repiten en el menú principal.</p>
+          </div>
+        </div>
+        <div className="stats-grid stats-grid--exam">
           <article className="stat-card">
             <strong>{catalog?.examRuleSet.questionCount ?? 35}</strong>
             <span>preguntas</span>

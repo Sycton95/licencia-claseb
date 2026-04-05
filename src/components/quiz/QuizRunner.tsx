@@ -112,30 +112,53 @@ export function QuizRunner({
   const scoreValue = mode === 'exam' ? `${score}/${maxScore}` : `${score}`;
 
   return (
-    <>
+    <section className="page-stack page-stack--quiz">
       <div className="panel panel--soft quiz-header">
         <span className="eyebrow">{mode === 'exam' ? 'Examen clase B' : 'Práctica personalizada'}</span>
         <h1 className="hero-title">{title}</h1>
         <p className="hero-copy">{subtitle}</p>
       </div>
 
-      <ProgressBar
-        current={currentIndex + 1}
-        total={questions.length}
-        scoreLabel={scoreLabel}
-        scoreValue={scoreValue}
-      />
+      <div className="quiz-layout">
+        <aside className="quiz-sidebar">
+          <ProgressBar
+            current={currentIndex + 1}
+            total={questions.length}
+            scoreLabel={scoreLabel}
+            scoreValue={scoreValue}
+          />
 
-      <QuestionCard
-        question={currentQuestion}
-        selectedOptionIds={selectedOptionIds}
-        isAnswered={isAnswered}
-        showReference={mode === 'practice' && showReference}
-        onSelect={handleSelect}
-        onConfirm={handleConfirm}
-        onNext={handleNext}
-        onToggleReference={() => setShowReference((current) => !current)}
-      />
-    </>
+          <section className="panel quiz-sidebar-card">
+            <strong>{mode === 'exam' ? 'Modo examen' : 'Modo práctica'}</strong>
+            <p className="info-text">
+              {mode === 'exam'
+                ? 'Avanza una pregunta a la vez y controla el puntaje acumulado.'
+                : 'Responde con calma y usa la referencia rápida para volver al manual.'}
+            </p>
+            <div className="quiz-sidebar-stats">
+              <span>
+                <strong>{questions.length}</strong> preguntas
+              </span>
+              <span>
+                <strong>{maxScore}</strong> {mode === 'exam' ? 'puntos máximos' : 'respuestas'}
+              </span>
+            </div>
+          </section>
+        </aside>
+
+        <div className="quiz-main">
+          <QuestionCard
+            question={currentQuestion}
+            selectedOptionIds={selectedOptionIds}
+            isAnswered={isAnswered}
+            showReference={mode === 'practice' && showReference}
+            onSelect={handleSelect}
+            onConfirm={handleConfirm}
+            onNext={handleNext}
+            onToggleReference={() => setShowReference((current) => !current)}
+          />
+        </div>
+      </div>
+    </section>
   );
 }

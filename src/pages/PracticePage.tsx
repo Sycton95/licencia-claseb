@@ -98,67 +98,81 @@ export function PracticePage() {
   }
 
   return (
-    <section className="page-stack">
+    <section className="page-stack page-stack--public">
       <section className="panel panel--soft">
         <span className="eyebrow">Práctica personalizada</span>
         <h1 className="hero-title">Arma un quiz según el capítulo que quieras estudiar</h1>
         <p className="hero-copy">
-          Solo se usan preguntas publicadas de la edición activa. Así evitamos mezclar material en
-          borrador con contenido apto para estudio.
+          Solo se usan preguntas publicadas de la edición activa. Así evitamos mezclar material
+          pendiente con contenido apto para estudio.
         </p>
       </section>
 
-      <section className="panel">
-        <h2 className="section-title">Capítulos disponibles</h2>
-        {error && <p className="error-banner">{error}</p>}
-        <div className="choice-grid">
-          {chapterCards.map((chapter) => {
-            const isSelected = selectedChapterIds.includes(chapter.id);
-            const isDisabled = chapter.questionCount === 0;
+      <section className="public-builder-grid">
+        <section className="panel">
+          <div className="section-head">
+            <div>
+              <h2 className="section-title">Capítulos disponibles</h2>
+              <p className="info-text">Elige uno o varios capítulos para construir tu práctica.</p>
+            </div>
+          </div>
+          {error && <p className="error-banner">{error}</p>}
+          <div className="choice-grid choice-grid--chapters">
+            {chapterCards.map((chapter) => {
+              const isSelected = selectedChapterIds.includes(chapter.id);
+              const isDisabled = chapter.questionCount === 0;
 
-            return (
-              <button
-                key={chapter.id}
-                type="button"
-                className={
-                  isDisabled
-                    ? 'choice-card choice-card--disabled'
-                    : isSelected
-                      ? 'choice-card choice-card--selected'
-                      : 'choice-card'
-                }
-                disabled={isDisabled}
-                onClick={() => toggleChapter(chapter.id)}
-              >
-                <strong>{chapter.code}</strong>
-                <span>{chapter.title}</span>
-                <small>
-                  {isDisabled ? 'Próximamente' : `${chapter.questionCount} preguntas publicadas`}
-                </small>
-              </button>
-            );
-          })}
-        </div>
-      </section>
+              return (
+                <button
+                  key={chapter.id}
+                  type="button"
+                  className={
+                    isDisabled
+                      ? 'choice-card choice-card--disabled'
+                      : isSelected
+                        ? 'choice-card choice-card--selected'
+                        : 'choice-card'
+                  }
+                  disabled={isDisabled}
+                  onClick={() => toggleChapter(chapter.id)}
+                >
+                  <strong>{chapter.code}</strong>
+                  <span>{chapter.title}</span>
+                  <small>
+                    {isDisabled ? 'Próximamente' : `${chapter.questionCount} preguntas publicadas`}
+                  </small>
+                </button>
+              );
+            })}
+          </div>
+        </section>
 
-      <section className="panel">
-        <h2 className="section-title">Cantidad de preguntas</h2>
-        <div className="number-picker">
-          {[5, 10, 20, 35].map((amount) => {
-            const disabled = amount > availableQuestionCount || availableQuestionCount === 0;
+        <section className="panel practice-config-panel">
+          <div className="section-head">
+            <div>
+              <h2 className="section-title">Configuración</h2>
+              <p className="info-text">Ajusta la cantidad de preguntas y comienza cuando quieras.</p>
+            </div>
+          </div>
 
-            return (
-              <button
-                key={amount}
-                type="button"
-                className={questionCount === amount ? 'amount-chip amount-chip--selected' : 'amount-chip'}
-                disabled={disabled}
-                onClick={() => setQuestionCount(amount)}
-              >
-                {amount}
-              </button>
-            );
-          })}
+          <div className="number-picker">
+            {[5, 10, 20, 35].map((amount) => {
+              const disabled = amount > availableQuestionCount || availableQuestionCount === 0;
+
+              return (
+                <button
+                  key={amount}
+                  type="button"
+                  className={questionCount === amount ? 'amount-chip amount-chip--selected' : 'amount-chip'}
+                  disabled={disabled}
+                  onClick={() => setQuestionCount(amount)}
+                >
+                  {amount}
+                </button>
+              );
+            })}
+          </div>
+
           <label className="field">
             <span>Personalizado</span>
             <input
@@ -176,20 +190,27 @@ export function PracticePage() {
               }
             />
           </label>
-        </div>
 
-        <p className="info-text">
-          Preguntas disponibles con tu selección actual: {availableQuestionCount}.
-        </p>
+          <div className="stats-grid stats-grid--config">
+            <article className="stat-card">
+              <strong>{selectedChapterIds.length}</strong>
+              <span>capítulos seleccionados</span>
+            </article>
+            <article className="stat-card">
+              <strong>{availableQuestionCount}</strong>
+              <span>preguntas disponibles</span>
+            </article>
+          </div>
 
-        <button
-          className="primary-button"
-          type="button"
-          onClick={startPractice}
-          disabled={selectedChapterIds.length === 0 || availableQuestionCount === 0}
-        >
-          Iniciar práctica
-        </button>
+          <button
+            className="primary-button"
+            type="button"
+            onClick={startPractice}
+            disabled={selectedChapterIds.length === 0 || availableQuestionCount === 0}
+          >
+            Iniciar práctica
+          </button>
+        </section>
       </section>
     </section>
   );

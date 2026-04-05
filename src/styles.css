@@ -1006,3 +1006,395 @@ button {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+.app-header__row,
+.app-heading,
+.app-heading__copy,
+.home-hero__layout,
+.home-overview,
+.public-builder-grid,
+.quiz-layout,
+.quiz-sidebar,
+.quiz-main,
+.question-body,
+.admin-topbar,
+.admin-summary-strip,
+.admin-mobile-tabs,
+.admin-workspace,
+.admin-workspace__column,
+.admin-workspace-panel,
+.admin-editor-scroll {
+  display: grid;
+  gap: 16px;
+}
+
+.app-shell {
+  padding-bottom: 72px;
+}
+
+.app-frame {
+  width: min(100%, 560px);
+}
+
+.app-frame--wide {
+  width: min(100%, 1320px);
+}
+
+.app-header--layout {
+  margin-bottom: 26px;
+}
+
+.app-header__row {
+  gap: 18px;
+}
+
+.app-heading {
+  gap: 12px;
+}
+
+.app-heading__copy {
+  gap: 8px;
+}
+
+.app-title {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(1.8rem, 3.8vw, 2.4rem);
+  line-height: 1.05;
+}
+
+.app-header__note {
+  padding: 12px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #475569;
+  font-size: 0.92rem;
+}
+
+.top-nav {
+  gap: 10px;
+}
+
+.top-nav__link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-stack--public,
+.page-stack--quiz,
+.admin-shell {
+  gap: 22px;
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.section-head .section-title {
+  margin-bottom: 0;
+}
+
+.home-hero {
+  overflow: hidden;
+}
+
+.home-hero__copy {
+  display: grid;
+  gap: 18px;
+}
+
+.home-menu-grid {
+  grid-template-columns: 1fr;
+}
+
+.menu-card--primary {
+  border-color: rgba(14, 116, 144, 0.2);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+.home-overview {
+  align-content: start;
+}
+
+.stats-grid--home,
+.stats-grid--config,
+.stats-grid--exam {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.chapter-grid--home,
+.choice-grid--chapters {
+  grid-template-columns: 1fr;
+}
+
+.public-builder-grid {
+  align-items: start;
+}
+
+.practice-config-panel,
+.exam-hero {
+  align-content: start;
+}
+
+.exam-note-card {
+  align-content: start;
+}
+
+.page-stack--quiz .quiz-header {
+  margin-bottom: 0;
+}
+
+.quiz-layout {
+  align-items: start;
+}
+
+.quiz-sidebar-card {
+  align-content: start;
+}
+
+.quiz-sidebar-stats {
+  display: grid;
+  gap: 10px;
+  color: #334155;
+}
+
+.quiz-main {
+  min-width: 0;
+}
+
+.question-card-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.question-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.question-mode {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #e8f0ff;
+  color: #1d4ed8;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.question-body {
+  gap: 18px;
+}
+
+.question-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.reference-overlay {
+  display: grid;
+  gap: 10px;
+  padding: 16px 18px;
+  border: 1px solid #d7e8ff;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+}
+
+.reference-overlay__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  color: #1e3a8a;
+}
+
+.admin-topbar {
+  gap: 18px;
+}
+
+.admin-summary-strip {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-filter-chip {
+  min-height: 44px;
+}
+
+.admin-filter-chip--active {
+  border-color: #2563eb;
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.admin-mobile-tabs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-workspace--desktop {
+  display: none;
+}
+
+.admin-workspace-panel {
+  gap: 16px;
+}
+
+.admin-workspace-panel--list,
+.admin-workspace-panel--detail,
+.admin-workspace-panel--summary,
+.admin-workspace-panel--editor {
+  min-width: 0;
+}
+
+.admin-question-list,
+.admin-ai-list,
+.admin-editor-scroll {
+  min-width: 0;
+}
+
+.admin-sticky-actions {
+  display: grid;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 14px;
+  border: 1px solid #dbe5f1;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.admin-editor-scroll {
+  gap: 18px;
+}
+
+.admin-workspace__column--right .admin-workspace-panel--editor {
+  position: relative;
+}
+
+@media (min-width: 720px) {
+  .app-shell {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .app-frame {
+    width: min(100%, 760px);
+  }
+
+  .home-menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .public-builder-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  }
+
+  .public-builder-grid--exam {
+    grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .app-shell {
+    padding-top: 34px;
+  }
+
+  .app-frame {
+    width: min(100%, 1040px);
+  }
+
+  .app-header__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+
+  .app-heading {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .top-nav {
+    justify-content: flex-end;
+  }
+
+  .home-hero__layout {
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    align-items: start;
+  }
+
+  .stats-grid--home,
+  .stats-grid--config,
+  .stats-grid--exam,
+  .chapter-grid--home,
+  .choice-grid--chapters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-stack--quiz {
+    gap: 20px;
+  }
+
+  .quiz-layout {
+    grid-template-columns: minmax(280px, 320px) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .question-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1180px) {
+  .app-frame--wide {
+    width: min(100%, 1440px);
+  }
+
+  .admin-mobile-tabs,
+  .admin-workspace--mobile {
+    display: none;
+  }
+
+  .admin-workspace--desktop {
+    display: grid;
+    grid-template-columns: minmax(280px, 320px) minmax(320px, 420px) minmax(420px, 1fr);
+    gap: 18px;
+    align-items: start;
+  }
+
+  .admin-workspace__column {
+    display: grid;
+    gap: 18px;
+    min-width: 0;
+  }
+
+  .admin-workspace__column--right {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+  }
+
+  .admin-summary-strip {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .admin-workspace-panel--list .admin-question-list,
+  .admin-workspace-panel--detail .admin-ai-list {
+    max-height: calc(100vh - 360px);
+  }
+
+  .admin-workspace-panel--editor .admin-editor-scroll {
+    max-height: calc(100vh - 290px);
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+}

@@ -25,42 +25,81 @@ export function HomePage() {
     }));
   }, [catalog]);
 
-  return (
-    <section className="page-stack">
-      <section className="panel panel--soft">
-        <span className="eyebrow">Quiz Clase B</span>
-        <h1 className="hero-title">Practica y prepárate para el examen teórico</h1>
-        <p className="hero-copy">
-          Elige una práctica rápida por capítulos o entra al modo examen para simular una prueba con
-          reglas oficiales verificadas.
-        </p>
-        {catalog?.activeEdition && (
-          <p className="info-text">
-            Contenido activo: <strong>{catalog.activeEdition.title}</strong>
-          </p>
-        )}
+  const publishedQuestionCount = useMemo(
+    () => availableChapters.reduce((total, chapter) => total + chapter.questionCount, 0),
+    [availableChapters],
+  );
 
-        <div className="menu-grid">
-          <Link className="menu-card" to="/practice">
-            <strong>Práctica personalizada</strong>
-            <span>Selecciona capítulos, cantidad de preguntas y repasa con referencias rápidas.</span>
-          </Link>
-          <Link className="menu-card" to="/exam">
-            <strong>Examen clase B</strong>
-            <span>Simula una prueba completa con 35 preguntas y puntaje oficial objetivo.</span>
-          </Link>
-          <article className="menu-card menu-card--muted">
-            <strong>Estudio</strong>
-            <span>Próximamente: lectura guiada y consulta de material por referencias.</span>
-          </article>
+  const activeChapterCount = useMemo(
+    () => availableChapters.filter((chapter) => chapter.questionCount > 0).length,
+    [availableChapters],
+  );
+
+  return (
+    <section className="page-stack page-stack--public">
+      <section className="panel panel--soft home-hero">
+        <div className="home-hero__layout">
+          <div className="home-hero__copy">
+            <span className="eyebrow">Quiz Clase B</span>
+            <h2 className="hero-title">Práctica guiada y simulación de examen en una sola app</h2>
+            <p className="hero-copy">
+              Entra a práctica para estudiar por capítulos o usa el modo examen para simular la
+              estructura oficial con las reglas vigentes.
+            </p>
+            {catalog?.activeEdition && (
+              <p className="info-text">
+                Contenido activo: <strong>{catalog.activeEdition.title}</strong>
+              </p>
+            )}
+
+            <div className="menu-grid home-menu-grid">
+              <Link className="menu-card menu-card--primary" to="/practice">
+                <strong>Práctica</strong>
+                <span>Elige capítulos, ajusta la cantidad de preguntas y repasa con referencias rápidas.</span>
+              </Link>
+              <Link className="menu-card" to="/exam">
+                <strong>Examen</strong>
+                <span>Simula una prueba completa con puntaje objetivo y reglas oficiales verificadas.</span>
+              </Link>
+              <article className="menu-card menu-card--muted">
+                <strong>Estudio</strong>
+                <span>Próximamente: lectura guiada y consulta de referencias por tema.</span>
+              </article>
+            </div>
+          </div>
+
+          <aside className="home-overview">
+            <div className="stats-grid stats-grid--home">
+              <article className="stat-card">
+                <strong>{publishedQuestionCount}</strong>
+                <span>preguntas publicadas</span>
+              </article>
+              <article className="stat-card">
+                <strong>{activeChapterCount}</strong>
+                <span>capítulos con cobertura</span>
+              </article>
+              <article className="stat-card">
+                <strong>{catalog?.examRuleSet.questionCount ?? 35}</strong>
+                <span>preguntas en el examen</span>
+              </article>
+              <article className="stat-card">
+                <strong>{catalog?.examRuleSet.passingPoints ?? 33}</strong>
+                <span>puntos para aprobar</span>
+              </article>
+            </div>
+          </aside>
         </div>
       </section>
 
       <section className="panel">
-        <span className="eyebrow">Cobertura actual</span>
-        <h2 className="section-title">Capítulos con preguntas publicadas</h2>
+        <div className="section-head">
+          <div>
+            <span className="eyebrow">Cobertura actual</span>
+            <h2 className="section-title">Capítulos con preguntas publicadas</h2>
+          </div>
+        </div>
         {error && <p className="error-banner">{error}</p>}
-        <div className="chapter-grid">
+        <div className="chapter-grid chapter-grid--home">
           {availableChapters.map((chapter) => (
             <article
               key={chapter.id}

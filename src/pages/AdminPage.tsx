@@ -52,6 +52,8 @@ type AdminReportSummary = {
   examEligibleCount: number;
 };
 
+type AdminWorkspaceTab = 'summary' | 'ai' | 'questions' | 'editor';
+
 function getNowIsoString() {
   return new Date().toISOString();
 }
@@ -132,6 +134,7 @@ export function AdminPage() {
   const [isAdminAuthorized, setIsAdminAuthorized] = useState(false);
   const [sessionEmail, setSessionEmail] = useState<string | null>(null);
   const [adminHealth, setAdminHealth] = useState<AdminHealth | null>(null);
+  const [activeWorkspaceTab, setActiveWorkspaceTab] = useState<AdminWorkspaceTab>('summary');
 
   const canUseLocalAdmin =
     !isSupabaseConfigured &&
@@ -417,12 +420,14 @@ export function AdminPage() {
     setSelectedQuestionId(questionId);
     setDraftQuestion(cloneQuestion(question));
     setDraftOriginSuggestionId(null);
+    setActiveWorkspaceTab('editor');
     setMessage(null);
     setError(null);
   };
 
   const selectSuggestion = (suggestionId: string) => {
     setSelectedSuggestionId(suggestionId);
+    setActiveWorkspaceTab('ai');
     setMessage(null);
     setError(null);
   };
@@ -533,6 +538,7 @@ export function AdminPage() {
     setDraftQuestion(questionDraft);
     setDraftOriginSuggestionId(suggestion.id);
     setSelectedSuggestionId(suggestion.id);
+    setActiveWorkspaceTab('editor');
     setMessage('La sugerencia quedó cargada en el editor para revisión manual.');
     setError(null);
 
@@ -557,6 +563,7 @@ export function AdminPage() {
       setSelectedQuestionId(result.question.id);
       setDraftQuestion(cloneQuestion(result.question));
       setDraftOriginSuggestionId(null);
+      setActiveWorkspaceTab('editor');
       setMessage('La sugerencia se convirtió en draft dentro del catálogo.');
     } catch (createError) {
       setError(
@@ -650,6 +657,755 @@ export function AdminPage() {
     setMessage('Sesión cerrada.');
   };
 
+  const renderHealthPanel = () =>
+    isSupabaseConfigured ? (
+      <section
+        className={
+          healthNeedsHardening ? 'admin-health-card admin-health-card--warning' : 'admin-health-card'
+        }
+      >
+        <div className="admin-health-head">
+          <div>
+            <h2 className="section-title">Estado operativo</h2>
+            <p className="info-text">
+              Resume si la plataforma está lista para operar sin depender del navegador.
+            </p>
+          </div>
+          {adminHealth?.ok ? (
+            <span className="dev-pill">API operativa</span>
+          ) : (
+            <span className="error-banner">API pendiente</span>
+          )}
+        </div>
+        <div className="admin-health-grid">
+          <div className="menu-card">
+            <strong>Esquema</strong>
+            <span>{adminHealth?.schema ?? 'sin datos'}</span>
+          </div>
+          <div className="menu-card">
+            <strong>AI schema</strong>
+            <span>{adminHealth?.aiSchemaReady ? 'activo' : 'pendiente'}</span>
+          </div>
+          <div className="menu-card">
+            <strong>Service role</strong>
+            <span>{adminHealth?.usesServiceRole ? 'activa' : 'pendiente'}</span>
+          </div>
+          <div className="menu-card">
+            <strong>Base de datos</strong>
+            <span>{adminHealth?.databaseReachable ? 'conectada' : 'sin conexión'}</span>
+          </div>
+        </div>
+        {!adminHealth?.aiSchemaReady && (
+          <p className="info-text">
+            La cola AI requiere aplicar la migración <code>0003_ai_suggestions.sql</code> en Supabase
+            antes de poder generar o persistir sugerencias.
+          </p>
+        )}
+        {healthNeedsHardening && (
+          <p className="info-text">
+            Pendientes para cerrar la base operativa: ejecutar la migración{' '}
+            <code>0002_solid_base_v1.sql</code> en Supabase y cargar{' '}
+            <code>SUPABASE_SERVICE_ROLE_KEY</code> en Vercel.
+          </p>
+        )}
+      </section>
+    ) : null;
+
+  const renderSummaryStrip = () =>
+    summary ? (
+      <div className="admin-summary-strip">
+        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('all')}>
+          <strong>Total</strong>
+          <span>{summary.totalQuestions}</span>
+        </button>
+        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('draft')}>
+          <strong>Draft</strong>
+          <span>{summary.draftCount}</span>
+        </button>
+        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('reviewed')}>
+          <strong>Reviewed</strong>
+          <span>{summary.reviewedCount}</span>
+        </button>
+        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('published')}>
+          <strong>Published</strong>
+          <span>{summary.publishedCount}</span>
+        </button>
+        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('exam')}>
+          <strong>Aptas examen</strong>
+          <span>{summary.examEligibleCount}</span>
+        </button>
+        <button
+          type="button"
+          className="admin-report-card admin-report-card--warning"
+          onClick={() => applyQuickFilter('warnings')}
+        >
+          <strong>Warnings</strong>
+          <span>{editorialWarnings.length}</span>
+        </button>
+      </div>
+    ) : null;
+
+  const renderOverviewPanel = () => (
+    <section className="panel admin-workspace-panel admin-workspace-panel--summary">
+      <div className="section-head">
+        <div>
+          <span className="eyebrow">Resumen editorial</span>
+          <h2 className="section-title">Cobertura y riesgos</h2>
+        </div>
+      </div>
+
+      <div className="admin-report-layout">
+        <section className="admin-report-panel">
+          <div className="admin-report-head">
+            <div>
+              <h3 className="section-title">Cobertura por capítulo</h3>
+              <p className="info-text">Total, publicadas y revisadas pendientes por capítulo.</p>
+            </div>
+          </div>
+          <div className="admin-coverage-list">
+            {chapterCoverage.map((row) => (
+              <article key={row.chapterId} className="admin-coverage-card">
+                <div>
+                  <strong>
+                    {row.chapterCode} · {row.chapterTitle}
+                  </strong>
+                </div>
+                <div className="admin-metric-row">
+                  <span>Total: {row.total}</span>
+                  <span>Published: {row.published}</span>
+                  <span>Reviewed pendientes: {row.reviewedPending}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="admin-report-panel">
+          <div className="admin-report-head">
+            <div>
+              <h3 className="section-title">Cobertura por fuente</h3>
+              <p className="info-text">Detecta preguntas con referencias fuente incompletas.</p>
+            </div>
+          </div>
+          <div className="admin-coverage-list">
+            {sourceCoverage.map((row) => (
+              <article key={row.sourceDocumentId} className="admin-coverage-card">
+                <div>
+                  <strong>{row.title}</strong>
+                </div>
+                <div className="admin-metric-row admin-metric-row--two">
+                  <span>Total: {row.total}</span>
+                  <span>Sin referencia: {row.missingReferenceCount}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="admin-report-panel">
+          <div className="admin-report-head">
+            <div>
+              <h3 className="section-title">Warnings editoriales</h3>
+              <p className="info-text">Selecciona un warning para abrir la pregunta asociada.</p>
+            </div>
+            <button
+              type="button"
+              className="secondary-button secondary-button--compact"
+              onClick={() => applyQuickFilter('warnings')}
+            >
+              Ver solo warnings
+            </button>
+          </div>
+          <div className="admin-warning-list">
+            {editorialWarnings.length === 0 ? (
+              <article className="admin-warning-card admin-warning-card--ok">
+                <strong>Sin warnings editoriales</strong>
+                <span>El catálogo cargado no expone inconsistencias en estas reglas de control.</span>
+              </article>
+            ) : (
+              editorialWarnings.map((warning) => (
+                <button
+                  key={warning.id}
+                  type="button"
+                  className="admin-warning-card"
+                  onClick={() => selectQuestion(warning.questionId)}
+                >
+                  <strong>{warning.title}</strong>
+                  <span>{warning.detail}</span>
+                  <small>{warning.questionId}</small>
+                </button>
+              ))
+            )}
+          </div>
+        </section>
+      </div>
+    </section>
+  );
+
+  const renderAiSidebar = () => (
+    <section className="panel admin-workspace-panel admin-workspace-panel--list">
+      <div className="section-head">
+        <div>
+          <span className="eyebrow">Sugerencias AI</span>
+          <h2 className="section-title">Cola privada</h2>
+        </div>
+        <button className="secondary-button secondary-button--compact" type="button" onClick={handleGenerateSuggestions} disabled={isBusy}>
+          Actualizar
+        </button>
+      </div>
+
+      {aiSummary && (
+        <div className="admin-report-grid admin-report-grid--tight">
+          <article className="admin-report-card">
+            <strong>Pendientes</strong>
+            <span>{aiSummary.pending}</span>
+          </article>
+          <article className="admin-report-card">
+            <strong>Aceptadas</strong>
+            <span>{aiSummary.accepted}</span>
+          </article>
+          <article className="admin-report-card admin-report-card--warning">
+            <strong>Flags</strong>
+            <span>{aiSummary.flags}</span>
+          </article>
+          <article className="admin-report-card">
+            <strong>Brechas</strong>
+            <span>{aiSummary.coverageGaps}</span>
+          </article>
+        </div>
+      )}
+
+      <div className="admin-filter-chip-row">
+        <button
+          type="button"
+          className="admin-filter-chip"
+          onClick={() => {
+            setSuggestionTypeFilter('all');
+            setSuggestionStatusFilter('all');
+          }}
+        >
+          Todas
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => setSuggestionTypeFilter('new_question')}>
+          Nuevas
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => setSuggestionTypeFilter('rewrite')}>
+          Rewrites
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => setSuggestionTypeFilter('flag')}>
+          Flags
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => setSuggestionTypeFilter('coverage_gap')}>
+          Brechas
+        </button>
+      </div>
+
+      <div className="field-stack">
+        <label className="field">
+          <span>Estado sugerencia</span>
+          <select
+            value={suggestionStatusFilter}
+            onChange={(event) => setSuggestionStatusFilter(event.target.value as 'all' | AiSuggestionStatus)}
+          >
+            <option value="all">Todos</option>
+            <option value="pending">Pending</option>
+            <option value="accepted">Accepted</option>
+            <option value="applied">Applied</option>
+            <option value="deferred">Deferred</option>
+            <option value="rejected">Rejected</option>
+          </select>
+        </label>
+        <label className="field">
+          <span>Capítulo AI</span>
+          <select value={suggestionChapterFilter} onChange={(event) => setSuggestionChapterFilter(event.target.value)}>
+            <option value="all">Todos</option>
+            {catalog?.chapters.map((chapter) => (
+              <option key={chapter.id} value={chapter.id}>
+                {chapter.code}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="field">
+          <span>Fuente AI</span>
+          <select value={suggestionSourceFilter} onChange={(event) => setSuggestionSourceFilter(event.target.value)}>
+            <option value="all">Todas</option>
+            {catalog?.sourceDocuments.map((sourceDocument) => (
+              <option key={sourceDocument.id} value={sourceDocument.id}>
+                {sourceDocument.title}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+
+      <div className="admin-ai-list">
+        {filteredSuggestions.length === 0 ? (
+          <article className="admin-warning-card admin-warning-card--ok">
+            <strong>Sin sugerencias cargadas</strong>
+            <span>Genera una corrida AI para poblar la cola privada de revisión.</span>
+          </article>
+        ) : (
+          filteredSuggestions.map((suggestion) => (
+            <button
+              key={suggestion.id}
+              type="button"
+              className={
+                selectedSuggestionId === suggestion.id
+                  ? 'admin-question-card admin-question-card--selected'
+                  : 'admin-question-card'
+              }
+              onClick={() => selectSuggestion(suggestion.id)}
+            >
+              <strong>{suggestion.suggestionType}</strong>
+              <span>{suggestion.prompt}</span>
+              <small>
+                {suggestion.status}
+                {suggestion.chapterId ? ` · ${suggestion.chapterId}` : ''}
+              </small>
+            </button>
+          ))
+        )}
+      </div>
+    </section>
+  );
+
+  const renderAiDetailPanel = () => (
+    <section className="panel admin-workspace-panel admin-workspace-panel--detail">
+      {!selectedSuggestion ? (
+        <article className="admin-warning-card admin-warning-card--ok">
+          <strong>Selecciona una sugerencia</strong>
+          <span>La cola AI sirve como bandeja de entrada para expansión y correcciones.</span>
+        </article>
+      ) : (
+        <div className="admin-ai-card">
+          <div className="admin-editor-head">
+            <div>
+              <h2 className="section-title">Detalle de sugerencia</h2>
+              <p className="info-text">
+                Tipo: <strong>{selectedSuggestion.suggestionType}</strong> · Estado:{' '}
+                <strong>{selectedSuggestion.status}</strong> · Confianza:{' '}
+                <strong>{Math.round(selectedSuggestion.confidence * 100)}%</strong>
+              </p>
+            </div>
+            <div className="admin-status-row">
+              <span className="dev-pill">{selectedSuggestion.provider}</span>
+              {selectedSuggestion.sourceReference && (
+                <span className="dev-pill">{selectedSuggestion.sourceReference}</span>
+              )}
+            </div>
+          </div>
+
+          <div className="field-grid">
+            <label className="field field--full">
+              <span>Prompt sugerido</span>
+              <textarea rows={4} value={selectedSuggestion.prompt} readOnly />
+            </label>
+            <label className="field field--full">
+              <span>Grounding</span>
+              <textarea rows={3} value={selectedSuggestion.groundingExcerpt} readOnly />
+            </label>
+            <label className="field field--full">
+              <span>Rationale</span>
+              <textarea rows={3} value={selectedSuggestion.rationale} readOnly />
+            </label>
+            {selectedSuggestion.reviewNotes && (
+              <label className="field field--full">
+                <span>Notas de revisión AI</span>
+                <textarea rows={2} value={selectedSuggestion.reviewNotes} readOnly />
+              </label>
+            )}
+          </div>
+
+          {selectedSuggestion.suggestedOptions.length > 0 && (
+            <div className="admin-options">
+              <h3>Opciones sugeridas</h3>
+              {selectedSuggestion.suggestedOptions.map((option, index) => (
+                <div key={`${selectedSuggestion.id}-option-${index}`} className="admin-option-row">
+                  <span className="option-letter">{String.fromCharCode(65 + index)}</span>
+                  <input value={option} readOnly />
+                  <label className="checkbox-field">
+                    <input
+                      type="checkbox"
+                      checked={selectedSuggestion.suggestedCorrectAnswers.includes(index)}
+                      readOnly
+                    />
+                    <span>Correcta</span>
+                  </label>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div className="admin-save-row admin-save-row--split">
+            {(selectedSuggestion.suggestionType === 'new_question' ||
+              selectedSuggestion.suggestionType === 'rewrite') && (
+              <>
+                <button
+                  className="primary-button"
+                  type="button"
+                  onClick={() => handleLoadSuggestionIntoEditor(selectedSuggestion)}
+                  disabled={isBusy}
+                >
+                  Cargar en editor
+                </button>
+                <button
+                  className="secondary-button"
+                  type="button"
+                  onClick={() => handleCreateDraftFromSuggestion(selectedSuggestion)}
+                  disabled={isBusy}
+                >
+                  Crear draft
+                </button>
+              </>
+            )}
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() =>
+                handleSuggestionTransition(
+                  selectedSuggestion.id,
+                  'deferred',
+                  'La sugerencia quedó postergada para revisión posterior.',
+                )
+              }
+              disabled={isBusy}
+            >
+              Postergar
+            </button>
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() =>
+                handleSuggestionTransition(selectedSuggestion.id, 'rejected', 'La sugerencia quedó rechazada.')
+              }
+              disabled={isBusy}
+            >
+              Rechazar
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+
+  const renderQuestionListPanel = () => (
+    <section className="panel admin-workspace-panel admin-workspace-panel--list">
+      <div className="section-head">
+        <div>
+          <span className="eyebrow">Preguntas</span>
+          <h2 className="section-title">Lista de trabajo</h2>
+        </div>
+      </div>
+
+      <div className="admin-filter-chip-row">
+        <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('all')}>
+          Todas
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('draft')}>
+          Draft
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('reviewed')}>
+          Reviewed
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('published')}>
+          Published
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('exam')}>
+          Examen
+        </button>
+        <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('warnings')}>
+          Warnings
+        </button>
+      </div>
+
+      <div className="field-stack">
+        <label className="field">
+          <span>Buscar</span>
+          <input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
+        </label>
+        <label className="field">
+          <span>Estado</span>
+          <select
+            value={filterStatus}
+            onChange={(event) => setFilterStatus(event.target.value as 'all' | EditorialStatus)}
+          >
+            <option value="all">Todos</option>
+            <option value="draft">Draft</option>
+            <option value="reviewed">Reviewed</option>
+            <option value="published">Published</option>
+            <option value="archived">Archived</option>
+          </select>
+        </label>
+        <label className="field">
+          <span>Capítulo</span>
+          <select value={filterChapterId} onChange={(event) => setFilterChapterId(event.target.value)}>
+            <option value="all">Todos</option>
+            {catalog?.chapters.map((chapter) => (
+              <option key={chapter.id} value={chapter.id}>
+                {chapter.code}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="field">
+          <span>Fuente</span>
+          <select
+            value={filterSourceDocumentId}
+            onChange={(event) => setFilterSourceDocumentId(event.target.value)}
+          >
+            <option value="all">Todas</option>
+            {catalog?.sourceDocuments.map((sourceDocument) => (
+              <option key={sourceDocument.id} value={sourceDocument.id}>
+                {sourceDocument.title}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="checkbox-field">
+          <input
+            type="checkbox"
+            checked={filterEligibleOnly}
+            onChange={(event) => setFilterEligibleOnly(event.target.checked)}
+          />
+          <span>Solo aptas para examen</span>
+        </label>
+        <label className="checkbox-field">
+          <input
+            type="checkbox"
+            checked={filterWarningsOnly}
+            onChange={(event) => setFilterWarningsOnly(event.target.checked)}
+          />
+          <span>Solo con warnings</span>
+        </label>
+      </div>
+
+      <div className="admin-question-list">
+        {filteredQuestions.map((question) => (
+          <button
+            key={question.id}
+            type="button"
+            className={
+              selectedQuestionId === question.id
+                ? 'admin-question-card admin-question-card--selected'
+                : 'admin-question-card'
+            }
+            onClick={() => selectQuestion(question.id)}
+          >
+            <strong>{question.id}</strong>
+            <span>{question.prompt}</span>
+            <small>
+              {question.status}
+              {warningsByQuestionId.get(question.id)?.length
+                ? ` · ${warningsByQuestionId.get(question.id)?.length} warning(s)`
+                : ''}
+            </small>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+
+  const renderEditorPanel = () => (
+    <section className="panel admin-workspace-panel admin-workspace-panel--editor">
+      {!draftQuestion ? (
+        <p>Selecciona una pregunta para editarla.</p>
+      ) : (
+        <>
+          <div className="admin-editor-head">
+            <div>
+              <span className="eyebrow">Editor</span>
+              <h2 className="section-title">Edición y vista previa</h2>
+              <p className="info-text">
+                Estado actual: <strong>{draftQuestion.status}</strong> · Fuente:{' '}
+                <strong>{draftQuestion.sourceReference ?? `Pág. ${draftQuestion.sourcePage}`}</strong>
+              </p>
+            </div>
+            <div className="admin-status-row">
+              <span className="dev-pill">Edición {activeEdition?.code ?? draftQuestion.editionId}</span>
+            </div>
+          </div>
+
+          <div className="admin-sticky-actions">
+            <button
+              className="primary-button"
+              type="button"
+              onClick={() => handleEditorialAction('save', 'Cambios guardados correctamente.')}
+              disabled={isBusy}
+            >
+              Guardar cambios
+            </button>
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() => handleEditorialAction('mark_reviewed', 'Pregunta marcada como revisada.')}
+              disabled={isBusy}
+            >
+              Marcar revisada
+            </button>
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() => handleEditorialAction('publish', 'Pregunta publicada correctamente.')}
+              disabled={isBusy}
+            >
+              Publicar
+            </button>
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() => handleEditorialAction('archive', 'Pregunta archivada correctamente.')}
+              disabled={isBusy}
+            >
+              Archivar
+            </button>
+          </div>
+
+          <div className="admin-editor-scroll">
+            <div className="field-grid">
+              <label className="field field--full">
+                <span>Enunciado</span>
+                <textarea
+                  rows={4}
+                  value={draftQuestion.prompt}
+                  onChange={(event) => handleQuestionField('prompt', event.target.value)}
+                />
+              </label>
+              <label className="field">
+                <span>Capítulo</span>
+                <select
+                  value={draftQuestion.chapterId}
+                  onChange={(event) => handleQuestionField('chapterId', event.target.value)}
+                >
+                  {catalog?.chapters.map((chapter) => (
+                    <option key={chapter.id} value={chapter.id}>
+                      {chapter.code} · {chapter.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="field">
+                <span>Modo de respuesta</span>
+                <select
+                  value={draftQuestion.selectionMode}
+                  onChange={(event) =>
+                    handleQuestionField('selectionMode', event.target.value as Question['selectionMode'])
+                  }
+                >
+                  <option value="single">single</option>
+                  <option value="multiple">multiple</option>
+                </select>
+              </label>
+              <label className="field">
+                <span>Documento fuente</span>
+                <select
+                  value={draftQuestion.sourceDocumentId}
+                  onChange={(event) => handleQuestionField('sourceDocumentId', event.target.value)}
+                >
+                  {catalog?.sourceDocuments.map((sourceDocument) => (
+                    <option key={sourceDocument.id} value={sourceDocument.id}>
+                      {sourceDocument.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="field">
+                <span>Página fuente</span>
+                <input
+                  type="number"
+                  value={draftQuestion.sourcePage}
+                  onChange={(event) => handleQuestionField('sourcePage', Number(event.target.value))}
+                />
+              </label>
+              <label className="field field--full">
+                <span>Referencia fuente</span>
+                <input
+                  value={draftQuestion.sourceReference ?? ''}
+                  onChange={(event) => handleQuestionField('sourceReference', event.target.value)}
+                  placeholder="Pág. 35, tabla principal, figura 2, etc."
+                />
+              </label>
+              <label className="field field--full">
+                <span>Instrucción</span>
+                <input
+                  value={draftQuestion.instruction}
+                  onChange={(event) => handleQuestionField('instruction', event.target.value)}
+                />
+              </label>
+              <label className="field field--full">
+                <span>Explicación pública opcional</span>
+                <textarea
+                  rows={3}
+                  value={draftQuestion.publicExplanation ?? ''}
+                  onChange={(event) => handleQuestionField('publicExplanation', event.target.value)}
+                />
+              </label>
+              <label className="field field--full">
+                <span>Notas editoriales</span>
+                <textarea
+                  rows={3}
+                  value={draftQuestion.reviewNotes ?? ''}
+                  onChange={(event) => handleQuestionField('reviewNotes', event.target.value)}
+                />
+              </label>
+            </div>
+
+            <div className="field-inline">
+              <label className="checkbox-field">
+                <input
+                  type="checkbox"
+                  checked={draftQuestion.isOfficialExamEligible}
+                  onChange={(event) => handleQuestionField('isOfficialExamEligible', event.target.checked)}
+                />
+                <span>Apta para modo examen</span>
+              </label>
+              <label className="checkbox-field">
+                <input
+                  type="checkbox"
+                  checked={draftQuestion.doubleWeight}
+                  onChange={(event) => handleQuestionField('doubleWeight', event.target.checked)}
+                />
+                <span>Doble puntuación</span>
+              </label>
+            </div>
+
+            <div className="admin-options">
+              <h3>Opciones</h3>
+              {draftQuestion.options.map((option) => (
+                <div key={option.id} className="admin-option-row">
+                  <span className="option-letter">{option.label}</span>
+                  <input value={option.text} onChange={(event) => handleOptionText(option.id, event.target.value)} />
+                  <label className="checkbox-field">
+                    <input
+                      type="checkbox"
+                      checked={option.isCorrect}
+                      onChange={(event) => handleOptionCorrect(option.id, event.target.checked)}
+                    />
+                    <span>Correcta</span>
+                  </label>
+                </div>
+              ))}
+            </div>
+
+            <div className="admin-preview">
+              <h3>Vista previa</h3>
+              <QuestionCard
+                question={draftQuestion}
+                selectedOptionIds={[]}
+                isAnswered={false}
+                showReference={false}
+                onSelect={() => {}}
+                onConfirm={() => {}}
+                onNext={() => {}}
+                onToggleReference={() => {}}
+              />
+            </div>
+          </div>
+        </>
+      )}
+    </section>
+  );
+
   if (isLoading) {
     return <section className="panel">Cargando panel admin...</section>;
   }
@@ -660,8 +1416,8 @@ export function AdminPage() {
         <span className="eyebrow">Admin</span>
         <h1 className="hero-title">Configura Supabase para activar el backoffice</h1>
         <p className="hero-copy">
-          El panel admin ya está pensado para trabajar con autenticación, trazabilidad y persistencia real.
-          Mientras no exista configuración, esta ruta no se habilita en producción.
+          El panel admin ya est? pensado para trabajar con autenticaci?n, trazabilidad y persistencia real.
+          Mientras no exista configuraci?n, esta ruta no se habilita en producci?n.
         </p>
       </section>
     );
@@ -697,12 +1453,12 @@ export function AdminPage() {
     return (
       <section className="panel">
         <span className="eyebrow">Admin privado</span>
-        <h1 className="hero-title">Tu sesión no tiene permisos editoriales</h1>
+        <h1 className="hero-title">Tu sesi?n no tiene permisos editoriales</h1>
         <p className="hero-copy">
           El correo autenticado debe existir en la allowlist admin de Supabase para acceder al panel.
         </p>
         <button className="secondary-button" type="button" onClick={handleSignOut}>
-          Cerrar sesión
+          Cerrar sesi?n
         </button>
       </section>
     );
@@ -710,18 +1466,19 @@ export function AdminPage() {
 
   return (
     <section className="page-stack admin-shell">
-      <section className="panel panel--soft">
+      <section className="panel panel--soft admin-topbar">
         <div className="admin-hero">
           <div>
             <span className="eyebrow">Backoffice editorial</span>
-            <h1 className="hero-title">Revisión manual y publicación de preguntas</h1>
+            <h1 className="hero-title">Revisi?n manual y publicaci?n de preguntas</h1>
             <p className="hero-copy">
-              Esta base ya separa contenido, flujo editorial y exposición pública. Las mutaciones en Vercel
-              pasan por rutas server-side antes de tocar Supabase.
+              Esta base separa contenido, revisi?n y publicaci?n. En escritorio el workspace queda
+              dividido por paneles para revisar sugerencias, mantener el cat?logo y editar sin perder
+              contexto.
             </p>
           </div>
           <div className="admin-actions">
-            {activeEdition && <span className="dev-pill">Edición activa: {activeEdition.code}</span>}
+            {activeEdition && <span className="dev-pill">Edici?n activa: {activeEdition.code}</span>}
             {isSupabaseConfigured ? (
               <button className="secondary-button" type="button" onClick={handleSeed} disabled={isBusy}>
                 Sembrar banco base
@@ -731,815 +1488,72 @@ export function AdminPage() {
             )}
             {isSupabaseConfigured && (
               <button className="secondary-button" type="button" onClick={handleSignOut} disabled={isBusy}>
-                Cerrar sesión
+                Cerrar sesi?n
               </button>
             )}
           </div>
         </div>
         {message && <p className="success-banner">{message}</p>}
         {error && <p className="error-banner">{error}</p>}
-        {isSupabaseConfigured && (
-          <section
-            className={
-              healthNeedsHardening
-                ? 'admin-health-card admin-health-card--warning'
-                : 'admin-health-card'
-            }
-          >
-            <div className="admin-health-head">
-              <div>
-                <h2 className="section-title">Estado operativo</h2>
-                <p className="info-text">
-                  Esta tarjeta resume si la plataforma ya quedó endurecida para operar sin depender del
-                  navegador.
-                </p>
-              </div>
-              {adminHealth?.ok ? (
-                <span className="dev-pill">API operativa</span>
-              ) : (
-                <span className="error-banner">API pendiente</span>
-              )}
-            </div>
-            <div className="admin-health-grid">
-              <div className="menu-card">
-                <strong>Esquema</strong>
-                <span>{adminHealth?.schema ?? 'sin datos'}</span>
-              </div>
-              <div className="menu-card">
-                <strong>AI schema</strong>
-                <span>{adminHealth?.aiSchemaReady ? 'activo' : 'pendiente'}</span>
-              </div>
-              <div className="menu-card">
-                <strong>Service role</strong>
-                <span>{adminHealth?.usesServiceRole ? 'activa' : 'pendiente'}</span>
-              </div>
-              <div className="menu-card">
-                <strong>Base de datos</strong>
-                <span>{adminHealth?.databaseReachable ? 'conectada' : 'sin conexión'}</span>
-              </div>
-            </div>
-            {!adminHealth?.aiSchemaReady && (
-              <p className="info-text">
-                La cola AI requiere aplicar la migración `0003_ai_suggestions.sql` en Supabase antes de
-                poder generar o persistir sugerencias.
-              </p>
-            )}
-            {healthNeedsHardening && (
-              <p className="info-text">
-                Pendientes para cerrar la base operativa: ejecutar la migración `0002_solid_base_v1.sql`
-                en Supabase y cargar `SUPABASE_SERVICE_ROLE_KEY` en Vercel.
-              </p>
-            )}
-          </section>
-        )}
-        {summary && (
-          <section className="admin-report-stack">
-            <div className="admin-report-grid">
-              <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('all')}>
-                <strong>Total</strong>
-                <span>{summary.totalQuestions}</span>
-              </button>
-              <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('draft')}>
-                <strong>Draft</strong>
-                <span>{summary.draftCount}</span>
-              </button>
-              <button
-                type="button"
-                className="admin-report-card"
-                onClick={() => applyQuickFilter('reviewed')}
-              >
-                <strong>Reviewed</strong>
-                <span>{summary.reviewedCount}</span>
-              </button>
-              <button
-                type="button"
-                className="admin-report-card"
-                onClick={() => applyQuickFilter('published')}
-              >
-                <strong>Published</strong>
-                <span>{summary.publishedCount}</span>
-              </button>
-              <button
-                type="button"
-                className="admin-report-card"
-                onClick={() => applyQuickFilter('archived')}
-              >
-                <strong>Archived</strong>
-                <span>{summary.archivedCount}</span>
-              </button>
-              <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('exam')}>
-                <strong>Aptas examen</strong>
-                <span>{summary.examEligibleCount}</span>
-              </button>
-              <button
-                type="button"
-                className="admin-report-card admin-report-card--warning"
-                onClick={() => applyQuickFilter('warnings')}
-              >
-                <strong>Warnings</strong>
-                <span>{editorialWarnings.length}</span>
-              </button>
-            </div>
-
-            <div className="admin-report-layout">
-              <section className="admin-report-panel">
-                <div className="admin-report-head">
-                  <div>
-                    <h2 className="section-title">Cobertura por capítulo</h2>
-                    <p className="info-text">
-                      Total de preguntas, publicadas y revisadas pendientes por capítulo.
-                    </p>
-                  </div>
-                </div>
-                <div className="admin-coverage-list">
-                  {chapterCoverage.map((row) => (
-                    <article key={row.chapterId} className="admin-coverage-card">
-                      <div>
-                        <strong>
-                          {row.chapterCode} · {row.chapterTitle}
-                        </strong>
-                      </div>
-                      <div className="admin-metric-row">
-                        <span>Total: {row.total}</span>
-                        <span>Published: {row.published}</span>
-                        <span>Reviewed pendientes: {row.reviewedPending}</span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section className="admin-report-panel">
-                <div className="admin-report-head">
-                  <div>
-                    <h2 className="section-title">Cobertura por fuente</h2>
-                    <p className="info-text">
-                      Detecta fuentes con preguntas sin referencia textual clara.
-                    </p>
-                  </div>
-                </div>
-                <div className="admin-coverage-list">
-                  {sourceCoverage.map((row) => (
-                    <article key={row.sourceDocumentId} className="admin-coverage-card">
-                      <div>
-                        <strong>{row.title}</strong>
-                      </div>
-                      <div className="admin-metric-row">
-                        <span>Total: {row.total}</span>
-                        <span>Sin referencia: {row.missingReferenceCount}</span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-
-              <section className="admin-report-panel">
-                <div className="admin-report-head">
-                  <div>
-                    <h2 className="section-title">Warnings editoriales</h2>
-                    <p className="info-text">
-                      Visibilidad de riesgos antes de publicar o ampliar el banco.
-                    </p>
-                  </div>
-                  <button
-                    type="button"
-                    className="secondary-button secondary-button--compact"
-                    onClick={() => applyQuickFilter('warnings')}
-                  >
-                    Ver solo warnings
-                  </button>
-                </div>
-                <div className="admin-warning-list">
-                  {editorialWarnings.length === 0 ? (
-                    <article className="admin-warning-card admin-warning-card--ok">
-                      <strong>Sin warnings editoriales</strong>
-                      <span>El catálogo cargado no expone inconsistencias en estas reglas de control.</span>
-                    </article>
-                  ) : (
-                    editorialWarnings.map((warning) => (
-                      <button
-                        key={warning.id}
-                        type="button"
-                        className="admin-warning-card"
-                        onClick={() => selectQuestion(warning.questionId)}
-                      >
-                        <strong>{warning.title}</strong>
-                        <span>{warning.detail}</span>
-                        <small>{warning.questionId}</small>
-                      </button>
-                    ))
-                  )}
-                </div>
-              </section>
-            </div>
-          </section>
-        )}
+        {renderHealthPanel()}
+        {renderSummaryStrip()}
       </section>
 
-      <section className="panel admin-ai-shell">
-        <div className="admin-report-head">
-          <div>
-            <span className="eyebrow">Sugerencias AI</span>
-            <h2 className="section-title">Cola privada de expansión y revisión</h2>
-            <p className="info-text">
-              La AI propone drafts, rewrites, flags y brechas de cobertura. Nada se publica sin revisión manual.
-            </p>
-          </div>
-          <div className="admin-actions">
-            {aiWorkspace?.runs[0] && (
-              <span className="dev-pill">
-                Última corrida: {new Date(aiWorkspace.runs[0].createdAt).toLocaleString()}
-              </span>
-            )}
-            <button
-              className="secondary-button"
-              type="button"
-              onClick={handleGenerateSuggestions}
-              disabled={isBusy}
-            >
-              Actualizar sugerencias
-            </button>
-          </div>
-        </div>
-
-        {aiSummary && (
-          <div className="admin-report-grid admin-report-grid--tight">
-            <article className="admin-report-card">
-              <strong>Total AI</strong>
-              <span>{aiSummary.total}</span>
-            </article>
-            <article className="admin-report-card">
-              <strong>Pendientes</strong>
-              <span>{aiSummary.pending}</span>
-            </article>
-            <article className="admin-report-card">
-              <strong>Aceptadas</strong>
-              <span>{aiSummary.accepted}</span>
-            </article>
-            <article className="admin-report-card">
-              <strong>Aplicadas</strong>
-              <span>{aiSummary.applied}</span>
-            </article>
-            <article className="admin-report-card admin-report-card--warning">
-              <strong>Flags</strong>
-              <span>{aiSummary.flags}</span>
-            </article>
-            <article className="admin-report-card">
-              <strong>Brechas</strong>
-              <span>{aiSummary.coverageGaps}</span>
-            </article>
-          </div>
-        )}
-
-        <div className="admin-ai-grid">
-          <aside className="admin-ai-sidebar">
-            <div className="admin-filter-chip-row">
-              <button
-                type="button"
-                className="admin-filter-chip"
-                onClick={() => {
-                  setSuggestionTypeFilter('all');
-                  setSuggestionStatusFilter('all');
-                }}
-              >
-                Todas
-              </button>
-              <button
-                type="button"
-                className="admin-filter-chip"
-                onClick={() => setSuggestionTypeFilter('new_question')}
-              >
-                Nuevas
-              </button>
-              <button
-                type="button"
-                className="admin-filter-chip"
-                onClick={() => setSuggestionTypeFilter('rewrite')}
-              >
-                Rewrites
-              </button>
-              <button
-                type="button"
-                className="admin-filter-chip"
-                onClick={() => setSuggestionTypeFilter('flag')}
-              >
-                Flags
-              </button>
-              <button
-                type="button"
-                className="admin-filter-chip"
-                onClick={() => setSuggestionTypeFilter('coverage_gap')}
-              >
-                Brechas
-              </button>
-            </div>
-
-            <div className="field-stack">
-              <label className="field">
-                <span>Estado sugerencia</span>
-                <select
-                  value={suggestionStatusFilter}
-                  onChange={(event) =>
-                    setSuggestionStatusFilter(event.target.value as 'all' | AiSuggestionStatus)
-                  }
-                >
-                  <option value="all">Todos</option>
-                  <option value="pending">Pending</option>
-                  <option value="accepted">Accepted</option>
-                  <option value="applied">Applied</option>
-                  <option value="deferred">Deferred</option>
-                  <option value="rejected">Rejected</option>
-                </select>
-              </label>
-              <label className="field">
-                <span>Capítulo AI</span>
-                <select
-                  value={suggestionChapterFilter}
-                  onChange={(event) => setSuggestionChapterFilter(event.target.value)}
-                >
-                  <option value="all">Todos</option>
-                  {catalog?.chapters.map((chapter) => (
-                    <option key={chapter.id} value={chapter.id}>
-                      {chapter.code}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label className="field">
-                <span>Fuente AI</span>
-                <select
-                  value={suggestionSourceFilter}
-                  onChange={(event) => setSuggestionSourceFilter(event.target.value)}
-                >
-                  <option value="all">Todas</option>
-                  {catalog?.sourceDocuments.map((sourceDocument) => (
-                    <option key={sourceDocument.id} value={sourceDocument.id}>
-                      {sourceDocument.title}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-
-            <div className="admin-ai-list">
-              {filteredSuggestions.length === 0 ? (
-                <article className="admin-warning-card admin-warning-card--ok">
-                  <strong>Sin sugerencias cargadas</strong>
-                  <span>Genera una corrida AI para poblar la cola privada de revisión.</span>
-                </article>
-              ) : (
-                filteredSuggestions.map((suggestion) => (
-                  <button
-                    key={suggestion.id}
-                    type="button"
-                    className={
-                      selectedSuggestionId === suggestion.id
-                        ? 'admin-question-card admin-question-card--selected'
-                        : 'admin-question-card'
-                    }
-                    onClick={() => selectSuggestion(suggestion.id)}
-                  >
-                    <strong>{suggestion.suggestionType}</strong>
-                    <span>{suggestion.prompt}</span>
-                    <small>
-                      {suggestion.status}
-                      {suggestion.chapterId ? ` · ${suggestion.chapterId}` : ''}
-                    </small>
-                  </button>
-                ))
-              )}
-            </div>
-          </aside>
-
-          <section className="admin-ai-detail">
-            {!selectedSuggestion ? (
-              <article className="admin-warning-card admin-warning-card--ok">
-                <strong>Selecciona una sugerencia</strong>
-                <span>La cola AI sirve como bandeja de entrada para expansión y correcciones.</span>
-              </article>
-            ) : (
-              <div className="admin-ai-card">
-                <div className="admin-editor-head">
-                  <div>
-                    <h3 className="section-title">Detalle de sugerencia</h3>
-                    <p className="info-text">
-                      Tipo: <strong>{selectedSuggestion.suggestionType}</strong> · Estado:{' '}
-                      <strong>{selectedSuggestion.status}</strong> · Confianza:{' '}
-                      <strong>{Math.round(selectedSuggestion.confidence * 100)}%</strong>
-                    </p>
-                  </div>
-                  <div className="admin-status-row">
-                    <span className="dev-pill">{selectedSuggestion.provider}</span>
-                    {selectedSuggestion.sourceReference && (
-                      <span className="dev-pill">{selectedSuggestion.sourceReference}</span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="field-grid">
-                  <label className="field field--full">
-                    <span>Prompt sugerido</span>
-                    <textarea rows={4} value={selectedSuggestion.prompt} readOnly />
-                  </label>
-                  <label className="field field--full">
-                    <span>Grounding</span>
-                    <textarea rows={3} value={selectedSuggestion.groundingExcerpt} readOnly />
-                  </label>
-                  <label className="field field--full">
-                    <span>Rationale</span>
-                    <textarea rows={3} value={selectedSuggestion.rationale} readOnly />
-                  </label>
-                  {selectedSuggestion.reviewNotes && (
-                    <label className="field field--full">
-                      <span>Notas de revisión AI</span>
-                      <textarea rows={2} value={selectedSuggestion.reviewNotes} readOnly />
-                    </label>
-                  )}
-                </div>
-
-                {selectedSuggestion.suggestedOptions.length > 0 && (
-                  <div className="admin-options">
-                    <h3>Opciones sugeridas</h3>
-                    {selectedSuggestion.suggestedOptions.map((option, index) => (
-                      <div key={`${selectedSuggestion.id}-option-${index}`} className="admin-option-row">
-                        <span className="option-letter">{String.fromCharCode(65 + index)}</span>
-                        <input value={option} readOnly />
-                        <label className="checkbox-field">
-                          <input
-                            type="checkbox"
-                            checked={selectedSuggestion.suggestedCorrectAnswers.includes(index)}
-                            readOnly
-                          />
-                          <span>Correcta</span>
-                        </label>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                <div className="admin-save-row admin-save-row--split">
-                  {(selectedSuggestion.suggestionType === 'new_question' ||
-                    selectedSuggestion.suggestionType === 'rewrite') && (
-                    <>
-                      <button
-                        className="primary-button"
-                        type="button"
-                        onClick={() => handleLoadSuggestionIntoEditor(selectedSuggestion)}
-                        disabled={isBusy}
-                      >
-                        Cargar en editor
-                      </button>
-                      <button
-                        className="secondary-button"
-                        type="button"
-                        onClick={() => handleCreateDraftFromSuggestion(selectedSuggestion)}
-                        disabled={isBusy}
-                      >
-                        Crear draft
-                      </button>
-                    </>
-                  )}
-                  <button
-                    className="secondary-button"
-                    type="button"
-                    onClick={() =>
-                      handleSuggestionTransition(
-                        selectedSuggestion.id,
-                        'deferred',
-                        'La sugerencia quedó postergada para revisión posterior.',
-                      )
-                    }
-                    disabled={isBusy}
-                  >
-                    Postergar
-                  </button>
-                  <button
-                    className="secondary-button"
-                    type="button"
-                    onClick={() =>
-                      handleSuggestionTransition(
-                        selectedSuggestion.id,
-                        'rejected',
-                        'La sugerencia quedó rechazada.',
-                      )
-                    }
-                    disabled={isBusy}
-                  >
-                    Rechazar
-                  </button>
-                </div>
-              </div>
-            )}
-          </section>
-        </div>
+      <section className="admin-mobile-tabs" aria-label="Secciones del workspace admin">
+        <button
+          type="button"
+          className={activeWorkspaceTab === 'summary' ? 'admin-filter-chip admin-filter-chip--active' : 'admin-filter-chip'}
+          onClick={() => setActiveWorkspaceTab('summary')}
+        >
+          Resumen
+        </button>
+        <button
+          type="button"
+          className={activeWorkspaceTab === 'ai' ? 'admin-filter-chip admin-filter-chip--active' : 'admin-filter-chip'}
+          onClick={() => setActiveWorkspaceTab('ai')}
+        >
+          Sugerencias AI
+        </button>
+        <button
+          type="button"
+          className={activeWorkspaceTab === 'questions' ? 'admin-filter-chip admin-filter-chip--active' : 'admin-filter-chip'}
+          onClick={() => setActiveWorkspaceTab('questions')}
+        >
+          Preguntas
+        </button>
+        <button
+          type="button"
+          className={activeWorkspaceTab === 'editor' ? 'admin-filter-chip admin-filter-chip--active' : 'admin-filter-chip'}
+          onClick={() => setActiveWorkspaceTab('editor')}
+        >
+          Editor
+        </button>
       </section>
 
-      <section className="admin-grid">
-        <aside className="panel admin-sidebar">
-          <h2 className="section-title">Preguntas</h2>
-          <div className="admin-filter-chip-row">
-            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('all')}>
-              Todas
-            </button>
-            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('draft')}>
-              Draft
-            </button>
-            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('reviewed')}>
-              Reviewed
-            </button>
-            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('published')}>
-              Published
-            </button>
-            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('exam')}>
-              Examen
-            </button>
-            <button type="button" className="admin-filter-chip" onClick={() => applyQuickFilter('warnings')}>
-              Warnings
-            </button>
-          </div>
-          <div className="field-stack">
-            <label className="field">
-              <span>Buscar</span>
-              <input value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
-            </label>
-            <label className="field">
-              <span>Estado</span>
-              <select
-                value={filterStatus}
-                onChange={(event) => setFilterStatus(event.target.value as 'all' | EditorialStatus)}
-              >
-                <option value="all">Todos</option>
-                <option value="draft">Draft</option>
-                <option value="reviewed">Reviewed</option>
-                <option value="published">Published</option>
-                <option value="archived">Archived</option>
-              </select>
-            </label>
-            <label className="field">
-              <span>Capítulo</span>
-              <select value={filterChapterId} onChange={(event) => setFilterChapterId(event.target.value)}>
-                <option value="all">Todos</option>
-                {catalog?.chapters.map((chapter) => (
-                  <option key={chapter.id} value={chapter.id}>
-                    {chapter.code}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="field">
-              <span>Fuente</span>
-              <select
-                value={filterSourceDocumentId}
-                onChange={(event) => setFilterSourceDocumentId(event.target.value)}
-              >
-                <option value="all">Todas</option>
-                {catalog?.sourceDocuments.map((sourceDocument) => (
-                  <option key={sourceDocument.id} value={sourceDocument.id}>
-                    {sourceDocument.title}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="checkbox-field">
-              <input
-                type="checkbox"
-                checked={filterEligibleOnly}
-                onChange={(event) => setFilterEligibleOnly(event.target.checked)}
-              />
-              <span>Solo aptas para examen</span>
-            </label>
-            <label className="checkbox-field">
-              <input
-                type="checkbox"
-                checked={filterWarningsOnly}
-                onChange={(event) => setFilterWarningsOnly(event.target.checked)}
-              />
-              <span>Solo con warnings</span>
-            </label>
-          </div>
+      <section className="admin-workspace admin-workspace--mobile">
+        {activeWorkspaceTab === 'summary' && renderOverviewPanel()}
+        {activeWorkspaceTab === 'ai' && (
+          <>
+            {renderAiSidebar()}
+            {renderAiDetailPanel()}
+          </>
+        )}
+        {activeWorkspaceTab === 'questions' && renderQuestionListPanel()}
+        {activeWorkspaceTab === 'editor' && renderEditorPanel()}
+      </section>
 
-          <div className="admin-question-list">
-            {filteredQuestions.map((question) => (
-              <button
-                key={question.id}
-                type="button"
-                className={
-                  selectedQuestionId === question.id
-                    ? 'admin-question-card admin-question-card--selected'
-                    : 'admin-question-card'
-                }
-                onClick={() => selectQuestion(question.id)}
-              >
-                <strong>{question.id}</strong>
-                <span>{question.prompt}</span>
-                <small>
-                  {question.status}
-                  {warningsByQuestionId.get(question.id)?.length
-                    ? ` · ${warningsByQuestionId.get(question.id)?.length} warning(s)`
-                    : ''}
-                </small>
-              </button>
-            ))}
-          </div>
-        </aside>
-
-        <section className="panel admin-editor">
-          {!draftQuestion ? (
-            <p>Selecciona una pregunta para editarla.</p>
-          ) : (
-            <>
-              <div className="admin-editor-head">
-                <div>
-                  <h2 className="section-title">Editor</h2>
-                  <p className="info-text">
-                    Estado actual: <strong>{draftQuestion.status}</strong> · Fuente: <strong>{draftQuestion.sourceReference ?? `Pág. ${draftQuestion.sourcePage}`}</strong>
-                  </p>
-                </div>
-                <div className="admin-status-row">
-                  <span className="dev-pill">Edición {activeEdition?.code ?? draftQuestion.editionId}</span>
-                </div>
-              </div>
-
-              <div className="field-grid">
-                <label className="field field--full">
-                  <span>Enunciado</span>
-                  <textarea
-                    rows={4}
-                    value={draftQuestion.prompt}
-                    onChange={(event) => handleQuestionField('prompt', event.target.value)}
-                  />
-                </label>
-                <label className="field">
-                  <span>Capítulo</span>
-                  <select
-                    value={draftQuestion.chapterId}
-                    onChange={(event) => handleQuestionField('chapterId', event.target.value)}
-                  >
-                    {catalog?.chapters.map((chapter) => (
-                      <option key={chapter.id} value={chapter.id}>
-                        {chapter.code} · {chapter.title}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="field">
-                  <span>Modo de respuesta</span>
-                  <select
-                    value={draftQuestion.selectionMode}
-                    onChange={(event) =>
-                      handleQuestionField('selectionMode', event.target.value as Question['selectionMode'])
-                    }
-                  >
-                    <option value="single">single</option>
-                    <option value="multiple">multiple</option>
-                  </select>
-                </label>
-                <label className="field">
-                  <span>Documento fuente</span>
-                  <select
-                    value={draftQuestion.sourceDocumentId}
-                    onChange={(event) => handleQuestionField('sourceDocumentId', event.target.value)}
-                  >
-                    {catalog?.sourceDocuments.map((sourceDocument) => (
-                      <option key={sourceDocument.id} value={sourceDocument.id}>
-                        {sourceDocument.title}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="field">
-                  <span>Página fuente</span>
-                  <input
-                    type="number"
-                    value={draftQuestion.sourcePage}
-                    onChange={(event) => handleQuestionField('sourcePage', Number(event.target.value))}
-                  />
-                </label>
-                <label className="field field--full">
-                  <span>Referencia fuente</span>
-                  <input
-                    value={draftQuestion.sourceReference ?? ''}
-                    onChange={(event) => handleQuestionField('sourceReference', event.target.value)}
-                    placeholder="Pág. 35, tabla principal, figura 2, etc."
-                  />
-                </label>
-                <label className="field field--full">
-                  <span>Instrucción</span>
-                  <input
-                    value={draftQuestion.instruction}
-                    onChange={(event) => handleQuestionField('instruction', event.target.value)}
-                  />
-                </label>
-                <label className="field field--full">
-                  <span>Explicación pública opcional</span>
-                  <textarea
-                    rows={3}
-                    value={draftQuestion.publicExplanation ?? ''}
-                    onChange={(event) => handleQuestionField('publicExplanation', event.target.value)}
-                  />
-                </label>
-                <label className="field field--full">
-                  <span>Notas editoriales</span>
-                  <textarea
-                    rows={3}
-                    value={draftQuestion.reviewNotes ?? ''}
-                    onChange={(event) => handleQuestionField('reviewNotes', event.target.value)}
-                  />
-                </label>
-              </div>
-
-              <div className="field-inline">
-                <label className="checkbox-field">
-                  <input
-                    type="checkbox"
-                    checked={draftQuestion.isOfficialExamEligible}
-                    onChange={(event) =>
-                      handleQuestionField('isOfficialExamEligible', event.target.checked)
-                    }
-                  />
-                  <span>Apta para modo examen</span>
-                </label>
-                <label className="checkbox-field">
-                  <input
-                    type="checkbox"
-                    checked={draftQuestion.doubleWeight}
-                    onChange={(event) => handleQuestionField('doubleWeight', event.target.checked)}
-                  />
-                  <span>Doble puntuación</span>
-                </label>
-              </div>
-
-              <div className="admin-options">
-                <h3>Opciones</h3>
-                {draftQuestion.options.map((option) => (
-                  <div key={option.id} className="admin-option-row">
-                    <span className="option-letter">{option.label}</span>
-                    <input value={option.text} onChange={(event) => handleOptionText(option.id, event.target.value)} />
-                    <label className="checkbox-field">
-                      <input
-                        type="checkbox"
-                        checked={option.isCorrect}
-                        onChange={(event) => handleOptionCorrect(option.id, event.target.checked)}
-                      />
-                      <span>Correcta</span>
-                    </label>
-                  </div>
-                ))}
-              </div>
-
-              <div className="admin-save-row admin-save-row--split">
-                <button
-                  className="primary-button"
-                  type="button"
-                  onClick={() => handleEditorialAction('save', 'Cambios guardados correctamente.')}
-                  disabled={isBusy}
-                >
-                  Guardar cambios
-                </button>
-                <button
-                  className="secondary-button"
-                  type="button"
-                  onClick={() =>
-                    handleEditorialAction('mark_reviewed', 'Pregunta marcada como revisada.')
-                  }
-                  disabled={isBusy}
-                >
-                  Marcar revisada
-                </button>
-                <button
-                  className="secondary-button"
-                  type="button"
-                  onClick={() => handleEditorialAction('publish', 'Pregunta publicada correctamente.')}
-                  disabled={isBusy}
-                >
-                  Publicar
-                </button>
-                <button
-                  className="secondary-button"
-                  type="button"
-                  onClick={() => handleEditorialAction('archive', 'Pregunta archivada correctamente.')}
-                  disabled={isBusy}
-                >
-                  Archivar
-                </button>
-              </div>
-
-              <div className="admin-preview">
-                <h3>Vista previa</h3>
-                <QuestionCard
-                  question={draftQuestion}
-                  selectedOptionIds={[]}
-                  isAnswered={false}
-                  showReference={false}
-                  onSelect={() => {}}
-                  onConfirm={() => {}}
-                  onNext={() => {}}
-                  onToggleReference={() => {}}
-                />
-              </div>
-            </>
-          )}
-        </section>
+      <section className="admin-workspace admin-workspace--desktop">
+        <div className="admin-workspace__column admin-workspace__column--left">
+          {renderQuestionListPanel()}
+          {renderAiSidebar()}
+        </div>
+        <div className="admin-workspace__column admin-workspace__column--center">
+          {renderOverviewPanel()}
+          {renderAiDetailPanel()}
+        </div>
+        <div className="admin-workspace__column admin-workspace__column--right">
+          {renderEditorPanel()}
+        </div>
       </section>
     </section>
   );

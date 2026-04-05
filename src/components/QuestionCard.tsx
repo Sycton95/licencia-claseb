@@ -24,7 +24,7 @@ export function QuestionCard({
   const hasQuickReference = Boolean(question.sourceReference || question.publicExplanation);
 
   return (
-    <section className="panel">
+    <section className="panel question-card-shell">
       <div className="question-meta">
         <span className="eyebrow">Manual oficial · página {question.sourcePage}</span>
         <span className="question-mode">
@@ -43,44 +43,53 @@ export function QuestionCard({
         </figure>
       )}
 
-      <h2 className="question-title">{question.prompt}</h2>
-      <p className="question-instruction">{question.instruction}</p>
+      <div className="question-body">
+        <div className="question-copy">
+          <h2 className="question-title">{question.prompt}</h2>
+          <p className="question-instruction">{question.instruction}</p>
+        </div>
 
-      <div className="option-list" role="list" aria-label="Opciones de respuesta">
-        {question.options.map((option) => {
-          const isCorrect = option.isCorrect;
-          const isSelected = selectedOptionIds.includes(option.id);
+        <div className="option-list" role="list" aria-label="Opciones de respuesta">
+          {question.options.map((option) => {
+            const isCorrect = option.isCorrect;
+            const isSelected = selectedOptionIds.includes(option.id);
 
-          let className = 'option-button';
+            let className = 'option-button';
 
-          if (isAnswered && isCorrect) {
-            className += ' option-button--correct';
-          } else if (isAnswered && isSelected) {
-            className += ' option-button--wrong';
-          } else if (!isAnswered && isSelected) {
-            className += ' option-button--selected';
-          } else if (isAnswered) {
-            className += ' option-button--muted';
-          }
+            if (isAnswered && isCorrect) {
+              className += ' option-button--correct';
+            } else if (isAnswered && isSelected) {
+              className += ' option-button--wrong';
+            } else if (!isAnswered && isSelected) {
+              className += ' option-button--selected';
+            } else if (isAnswered) {
+              className += ' option-button--muted';
+            }
 
-          return (
-            <button
-              key={option.id}
-              className={className}
-              type="button"
-              onClick={() => onSelect(option.id)}
-              disabled={isAnswered}
-              aria-pressed={isSelected}
-            >
-              <span className="option-letter">{option.label}</span>
-              <span>{option.text}</span>
-            </button>
-          );
-        })}
+            return (
+              <button
+                key={option.id}
+                className={className}
+                type="button"
+                onClick={() => onSelect(option.id)}
+                disabled={isAnswered}
+                aria-pressed={isSelected}
+              >
+                <span className="option-letter">{option.label}</span>
+                <span>{option.text}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {!isAnswered ? (
-        <button className="primary-button" type="button" onClick={onConfirm} disabled={selectedOptionIds.length === 0}>
+        <button
+          className="primary-button"
+          type="button"
+          onClick={onConfirm}
+          disabled={selectedOptionIds.length === 0}
+        >
           {question.selectionMode === 'multiple' ? 'Comprobar respuestas' : 'Comprobar respuesta'}
         </button>
       ) : (
@@ -98,8 +107,10 @@ export function QuestionCard({
 
       {isAnswered && hasQuickReference && showReference && (
         <aside className="reference-overlay" aria-label="Referencia rápida">
-          <strong>Referencia rápida</strong>
-          <span>Página {question.sourcePage}</span>
+          <div className="reference-overlay__head">
+            <strong>Referencia rápida</strong>
+            <span>Página {question.sourcePage}</span>
+          </div>
           {question.sourceReference && <p>{question.sourceReference}</p>}
           {question.publicExplanation && <p>{question.publicExplanation}</p>}
         </aside>
