@@ -1225,6 +1225,37 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.admin-report-card--compact {
+  gap: 4px;
+  min-height: 112px;
+  padding: 14px 15px;
+  border-radius: 16px;
+}
+
+.admin-report-card--compact small {
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.admin-report-card--compact strong {
+  font-size: 0.92rem;
+}
+
+.admin-topbar .hero-copy {
+  max-width: 70ch;
+  margin-top: 10px;
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+
+.admin-topbar .success-banner,
+.admin-topbar .error-banner {
+  margin: 0;
+}
+
 .admin-filter-chip {
   min-height: 44px;
 }
@@ -1245,9 +1276,12 @@ button {
 
 .admin-workspace-panel {
   gap: 16px;
+  padding: 18px;
+  border-radius: 22px;
 }
 
 .admin-workspace-panel--list,
+.admin-workspace-panel--queue,
 .admin-workspace-panel--detail,
 .admin-workspace-panel--summary,
 .admin-workspace-panel--editor {
@@ -1260,11 +1294,107 @@ button {
   min-width: 0;
 }
 
+.admin-overview-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-report-panel {
+  gap: 10px;
+  border-radius: 18px;
+}
+
+.admin-report-layout {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.admin-report-grid--compact {
+  gap: 10px;
+}
+
+.admin-question-card,
+.admin-work-row {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.admin-question-card--selected,
+.admin-work-row--selected {
+  border-color: #2563eb;
+  background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.14);
+}
+
+.admin-work-row__head {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-work-row__head strong,
+.admin-question-card strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.admin-work-row__body,
+.admin-question-card span {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.admin-work-row__meta,
+.admin-question-card small {
+  color: #64748b;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.admin-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.admin-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.admin-pill--muted {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.admin-pill--accent {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
 .admin-sticky-actions {
   display: grid;
   gap: 10px;
-  position: sticky;
-  top: 0;
+  position: static;
   z-index: 1;
   padding: 14px;
   border: 1px solid #dbe5f1;
@@ -1275,10 +1405,50 @@ button {
 
 .admin-editor-scroll {
   gap: 18px;
+  min-width: 0;
 }
 
 .admin-workspace__column--right .admin-workspace-panel--editor {
   position: relative;
+}
+
+.admin-workspace-panel textarea,
+.admin-workspace-panel input,
+.admin-workspace-panel select {
+  min-width: 0;
+}
+
+.admin-workspace-panel textarea,
+.admin-workspace-panel p,
+.admin-workspace-panel span,
+.admin-workspace-panel small,
+.admin-workspace-panel strong {
+  overflow-wrap: anywhere;
+}
+
+.admin-ai-card,
+.admin-health-card,
+.admin-report-panel {
+  min-width: 0;
+}
+
+.admin-ai-list,
+.admin-question-list,
+.admin-warning-list,
+.admin-coverage-list {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-preview--compact .question-card-shell {
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+.app-footer {
+  margin-top: 22px;
+  padding-top: 8px;
 }
 
 @media (min-width: 720px) {
@@ -1315,7 +1485,7 @@ button {
 
   .app-header__row {
     grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
+    align-items: center;
   }
 
   .app-heading {
@@ -1352,12 +1522,6 @@ button {
   .question-body {
     grid-template-columns: minmax(0, 1fr);
   }
-}
-
-@media (min-width: 1180px) {
-  .app-frame--wide {
-    width: min(100%, 1440px);
-  }
 
   .admin-mobile-tabs,
   .admin-workspace--mobile {
@@ -1366,7 +1530,69 @@ button {
 
   .admin-workspace--desktop {
     display: grid;
-    grid-template-columns: minmax(280px, 320px) minmax(320px, 420px) minmax(420px, 1fr);
+    grid-template-columns: minmax(300px, 340px) minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  .admin-workspace__column {
+    display: grid;
+    gap: 16px;
+    min-width: 0;
+  }
+
+  .admin-workspace__column--left {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .admin-workspace__column--center {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .admin-workspace__column--right {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .admin-summary-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .admin-report-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-workspace__column--left .admin-question-list,
+  .admin-workspace__column--left .admin-ai-list,
+  .admin-workspace__column--center .admin-warning-list,
+  .admin-workspace__column--center .admin-coverage-list {
+    max-height: 28rem;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .admin-sticky-actions {
+    position: sticky;
+    top: 0;
+  }
+
+  .admin-editor-scroll {
+    max-height: 40rem;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .app-frame--wide {
+    width: min(100%, 1440px);
+  }
+
+  .admin-workspace--desktop {
+    display: grid;
+    grid-template-columns: minmax(300px, 340px) minmax(360px, 460px) minmax(520px, 1fr);
     gap: 18px;
     align-items: start;
   }
@@ -1378,18 +1604,32 @@ button {
   }
 
   .admin-workspace__column--right {
+    grid-column: 3;
+    grid-row: 1;
     position: sticky;
     top: 20px;
     align-self: start;
+  }
+
+  .admin-workspace__column--center {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .admin-workspace__column--left {
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .admin-summary-strip {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
-  .admin-workspace-panel--list .admin-question-list,
-  .admin-workspace-panel--detail .admin-ai-list {
-    max-height: calc(100vh - 360px);
+  .admin-workspace__column--left .admin-question-list,
+  .admin-workspace__column--left .admin-ai-list,
+  .admin-workspace__column--center .admin-warning-list,
+  .admin-workspace__column--center .admin-coverage-list {
+    max-height: calc(100vh - 22rem);
   }
 
   .admin-workspace-panel--editor .admin-editor-scroll {

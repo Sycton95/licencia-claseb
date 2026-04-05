@@ -714,29 +714,29 @@ export function AdminPage() {
   const renderSummaryStrip = () =>
     summary ? (
       <div className="admin-summary-strip">
-        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('all')}>
+        <button type="button" className="admin-report-card admin-report-card--compact" onClick={() => applyQuickFilter('all')}>
           <strong>Total</strong>
           <span>{summary.totalQuestions}</span>
         </button>
-        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('draft')}>
+        <button type="button" className="admin-report-card admin-report-card--compact" onClick={() => applyQuickFilter('draft')}>
           <strong>Draft</strong>
           <span>{summary.draftCount}</span>
         </button>
-        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('reviewed')}>
+        <button type="button" className="admin-report-card admin-report-card--compact" onClick={() => applyQuickFilter('reviewed')}>
           <strong>Reviewed</strong>
           <span>{summary.reviewedCount}</span>
         </button>
-        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('published')}>
+        <button type="button" className="admin-report-card admin-report-card--compact" onClick={() => applyQuickFilter('published')}>
           <strong>Published</strong>
           <span>{summary.publishedCount}</span>
         </button>
-        <button type="button" className="admin-report-card" onClick={() => applyQuickFilter('exam')}>
+        <button type="button" className="admin-report-card admin-report-card--compact" onClick={() => applyQuickFilter('exam')}>
           <strong>Aptas examen</strong>
           <span>{summary.examEligibleCount}</span>
         </button>
         <button
           type="button"
-          className="admin-report-card admin-report-card--warning"
+          className="admin-report-card admin-report-card--warning admin-report-card--compact"
           onClick={() => applyQuickFilter('warnings')}
         >
           <strong>Warnings</strong>
@@ -855,20 +855,20 @@ export function AdminPage() {
       </div>
 
       {aiSummary && (
-        <div className="admin-report-grid admin-report-grid--tight">
-          <article className="admin-report-card">
+        <div className="admin-report-grid admin-report-grid--tight admin-report-grid--compact">
+          <article className="admin-report-card admin-report-card--compact">
             <strong>Pendientes</strong>
             <span>{aiSummary.pending}</span>
           </article>
-          <article className="admin-report-card">
+          <article className="admin-report-card admin-report-card--compact">
             <strong>Aceptadas</strong>
             <span>{aiSummary.accepted}</span>
           </article>
-          <article className="admin-report-card admin-report-card--warning">
+          <article className="admin-report-card admin-report-card--warning admin-report-card--compact">
             <strong>Flags</strong>
             <span>{aiSummary.flags}</span>
           </article>
-          <article className="admin-report-card">
+          <article className="admin-report-card admin-report-card--compact">
             <strong>Brechas</strong>
             <span>{aiSummary.coverageGaps}</span>
           </article>

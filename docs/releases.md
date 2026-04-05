@@ -40,3 +40,10 @@ Pending after this release:
 - Refreshed the public shell and page layouts for broader desktop widths and cleaner mobile spacing.
 - Improved `Práctica` and `Examen` presentation without changing routes or quiz behavior.
 - Preserved hidden-admin policy and the existing public route structure.
+
+## 2026-04-05 UI Rework v1.1
+
+- Polished `/admin` into a denser workstation layout with clearer desktop breakpoints.
+- Added a stable two-column transitional layout before the full three-column desktop workspace.
+- Reduced overflow in list/detail/editor surfaces with stronger wrapping and internal scroll regions.
+- Tightened summary cards and queue styling so the admin workspace behaves more like an editorial tool.

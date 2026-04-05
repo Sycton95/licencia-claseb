@@ -15,10 +15,10 @@
 
 ## Active milestone
 
-- Milestone 6 implementation pass:
-  - desktop-first `/admin` workspace
-  - responsive public shell refresh
-  - improved quiz presentation on mobile and desktop
+- Milestone 6A implementation pass:
+  - admin workstation polish
+  - responsive two-column to three-column desktop transition
+  - public-shell consistency cleanup
 
 ## Completed milestones
 
@@ -40,6 +40,15 @@
 
 ## Outcomes from the current implementation pass
 
+- Tightened `/admin` into a denser workstation layout:
+  - mobile tabs below `960px`
+  - two-column transitional workspace from `960px`
+  - full three-column workstation from `1280px`
+- Reduced admin overflow risk with:
+  - internal scroll regions
+  - denser summary cards
+  - compact question and AI work-queue rows
+  - stronger wrap and max-height behavior in text-heavy panels
 - Reworked `/admin` into a desktop-first workspace with:
   - top summary/status strip
   - mobile/tab fallback
