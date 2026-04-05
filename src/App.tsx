@@ -8,11 +8,11 @@ import { PracticePage } from './pages/PracticePage';
 export default function App() {
   return (
     <Routes>
+      <Route path="admin" element={<AdminPage />} />
       <Route element={<AppLayout />}>
         <Route index element={<HomePage />} />
         <Route path="practice" element={<PracticePage />} />
         <Route path="exam" element={<ExamPage />} />
-        <Route path="admin" element={<AdminPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

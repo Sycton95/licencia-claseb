@@ -40,14 +40,31 @@
 
 ## Outcomes from the current implementation pass
 
+- Refactored `/admin` into a container plus extracted UI components:
+  - `AdminSidebar`
+  - `AdminTopStrip`
+  - `DashboardView`
+  - `CatalogManager`
+  - `AiQueueManager`
+  - `EditorPanel`
+- Replaced the mobile tab switcher with a responsive sidebar shell:
+  - overlay drawer below `960px`
+  - static left rail from `960px`
+- Converted Catálogo and Cola AI into master-detail workspaces:
+  - mobile list/detail switching with back navigation
+  - fixed-width master column on desktop
+  - detail pane fills the remaining workspace
+- Rebuilt the editor as a fixed-footer editing surface:
+  - scrollable form body
+  - persistent action footer
+  - preview kept secondary to the form
 - Tightened `/admin` into a denser workstation layout:
-  - mobile tabs below `960px`
   - two-column transitional workspace from `960px`
-  - full three-column workstation from `1280px`
+  - roomier desktop workstation from `1280px`
 - Reduced admin overflow risk with:
   - internal scroll regions
   - denser summary cards
-  - compact question and AI work-queue rows
+  - compact question and AI work-queue rows with status dots
   - stronger wrap and max-height behavior in text-heavy panels
 - Reworked `/admin` into a desktop-first workspace with:
   - top summary/status strip

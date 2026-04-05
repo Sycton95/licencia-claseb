@@ -47,3 +47,13 @@ Pending after this release:
 - Added a stable two-column transitional layout before the full three-column desktop workspace.
 - Reduced overflow in list/detail/editor surfaces with stronger wrapping and internal scroll regions.
 - Tightened summary cards and queue styling so the admin workspace behaves more like an editorial tool.
+
+## 2026-04-05 Admin Master-Detail Refactor
+
+- Split `src/pages/AdminPage.tsx` into a stateful container plus extracted admin UI components.
+- Replaced the mobile tab switcher with a sidebar shell:
+  - overlay drawer on mobile
+  - static rail on desktop
+- Converted Catálogo and Cola AI into master-detail layouts with mobile back navigation.
+- Rebuilt the editor as a fixed-footer surface with a scrollable form body.
+- Moved `/admin` outside the public app frame so the admin workspace can use the full viewport height.
