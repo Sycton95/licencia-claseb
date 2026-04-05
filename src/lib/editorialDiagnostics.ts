@@ -1,4 +1,4 @@
-import type { Chapter, Question, SourceDocument } from '../types/content';
+import type { Chapter, Question, SourceDocument } from '../types/content.js';
 
 export type EditorialWarning = {
   id: string;

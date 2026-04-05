@@ -1,4 +1,4 @@
-import type { SourcePreparationChunk } from '../types/ai';
+import type { SourcePreparationChunk } from '../types/ai.js';
 
 const ACTIVE_EDITION_ID = 'edition-2026';
 

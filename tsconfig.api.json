@@ -8,12 +8,21 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["api", "src"]
+  "include": [
+    "api",
+    "src/types/content.ts",
+    "src/types/ai.ts",
+    "src/data/seedContent.ts",
+    "src/data/sourcePreparation.ts",
+    "src/lib/contentValidation.ts",
+    "src/lib/editorialDiagnostics.ts",
+    "src/lib/aiSuggestionEngine.ts"
+  ]
 }

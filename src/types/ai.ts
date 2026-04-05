@@ -1,4 +1,4 @@
-import type { SelectionMode } from './content';
+import type { SelectionMode } from './content.js';
 
 export type AiSuggestionType = 'new_question' | 'rewrite' | 'flag' | 'coverage_gap';
 export type AiSuggestionStatus = 'pending' | 'accepted' | 'rejected' | 'applied' | 'deferred';

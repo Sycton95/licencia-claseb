@@ -1,12 +1,12 @@
-import { SOURCE_PREPARATION } from '../data/sourcePreparation';
-import { getQuestionWarnings } from './editorialDiagnostics';
-import type { ContentCatalog, Question } from '../types/content';
+import { SOURCE_PREPARATION } from '../data/sourcePreparation.js';
+import { getQuestionWarnings } from './editorialDiagnostics.js';
+import type { ContentCatalog, Question } from '../types/content.js';
 import type {
   AiRun,
   AiSuggestion,
   AiSuggestionType,
   SourcePreparationChunk,
-} from '../types/ai';
+} from '../types/ai.js';
 
 function nowIso() {
   return new Date().toISOString();
