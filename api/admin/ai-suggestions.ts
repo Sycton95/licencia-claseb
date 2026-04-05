@@ -76,9 +76,20 @@ export default async function handler(request: ApiRequest, response: ApiResponse
 
     return sendJson(response, 400, { error: 'Operación AI no soportada.' });
   } catch (error) {
-    return sendJson(response, 400, {
+    const message =
+      error instanceof Error ? error.message : 'No se pudo completar la operación AI.';
+    const status =
+      message === 'Debes iniciar sesión como admin para usar esta ruta.'
+        ? 401
+        : message === 'No se pudo validar la sesión admin.'
+          ? 401
+          : message === 'Tu sesión no tiene permisos editoriales.'
+            ? 403
+            : 500;
+
+    return sendJson(response, status, {
       ok: false,
-      error: error instanceof Error ? error.message : 'No se pudo completar la operación AI.',
+      error: message,
     });
   }
 }

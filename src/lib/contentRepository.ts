@@ -1,4 +1,4 @@
-import { SEED_CONTENT } from '../data/seedContent';
+ï»¿import { SEED_CONTENT } from '../data/seedContent';
 import { SOURCE_PREPARATION } from '../data/sourcePreparation';
 import { buildDraftQuestionFromSuggestion, generateAiSuggestions } from './aiSuggestionEngine';
 import {
@@ -535,7 +535,7 @@ async function requestAdminApi<TResponse>(
   const accessToken = await getSessionAccessToken();
 
   if (!accessToken) {
-    throw new Error('Debes iniciar sesión como admin para realizar esta acción.');
+    throw new Error('Debes iniciar sesiÃ³n como admin para realizar esta acciÃ³n.');
   }
 
   const response = await fetch(path, {
@@ -566,8 +566,8 @@ async function requestAdminApi<TResponse>(
 
   if (!response.ok) {
     const fallbackMessage = rawText
-      ? `La operación admin falló con ${response.status}. ${rawText.slice(0, 240)}`
-      : `La operación admin falló con ${response.status}.`;
+      ? `La operaciÃ³n admin fallÃ³ con ${response.status}. ${rawText.slice(0, 240)}`
+      : `La operaciÃ³n admin fallÃ³ con ${response.status}.`;
     throw new Error(payload.error ?? fallbackMessage);
   }
 
@@ -935,4 +935,5 @@ export async function isCurrentUserAdmin() {
 export function saveLocalCatalogSnapshot(catalog: ContentCatalog) {
   saveLocalCatalog(normalizeCatalog(catalog));
 }
+
 

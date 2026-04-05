@@ -1,9 +1,9 @@
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
-const roots = ['src', 'docs'];
+const roots = ['src', 'api', 'docs'];
 const singleFiles = ['README.md', 'plan.md'];
-const invalidPatterns = [/Ã‚/g, /Ãƒ/g, /Ã°/g, /Â/g, /Ã/g, /ð/g];
+const invalidPatterns = [/Ãƒâ€š/g, /ÃƒÆ’/g, /ÃƒÂ°/g, /Ã‚/g, /Ãƒ/g, /Ã°/g, /�/g];
 
 function walk(directory) {
   const entries = readdirSync(directory);

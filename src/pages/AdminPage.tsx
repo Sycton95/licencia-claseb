@@ -845,9 +845,9 @@ export function AdminPage() {
               <section className="admin-report-panel">
                 <div className="admin-report-head">
                   <div>
-                    <h2 className="section-title">Cobertura por capitulo</h2>
+                    <h2 className="section-title">Cobertura por capítulo</h2>
                     <p className="info-text">
-                      Total de preguntas, publicadas y revisadas pendientes por capitulo.
+                      Total de preguntas, publicadas y revisadas pendientes por capítulo.
                     </p>
                   </div>
                 </div>
@@ -913,7 +913,7 @@ export function AdminPage() {
                   {editorialWarnings.length === 0 ? (
                     <article className="admin-warning-card admin-warning-card--ok">
                       <strong>Sin warnings editoriales</strong>
-                      <span>El catalogo cargado no expone inconsistencias en estas reglas de control.</span>
+                      <span>El catálogo cargado no expone inconsistencias en estas reglas de control.</span>
                     </article>
                   ) : (
                     editorialWarnings.map((warning) => (
