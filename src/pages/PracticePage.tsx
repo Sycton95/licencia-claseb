@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { startTransition, useEffect, useMemo, useState } from 'react';
 import { QuizRunner } from '../components/quiz/QuizRunner';
-import { getPublishedCatalog } from '../lib/contentRepository';
+import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
 import {
   buildPracticeQuestionSet,
   getChapterQuestionCount,
@@ -17,25 +17,25 @@ type ActivePractice = {
 };
 
 export function PracticePage() {
-  const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const { catalog, error, isLoading } = usePublishedCatalog(
+    'No se pudo cargar la práctica personalizada.',
+  );
   const [selectedChapterIds, setSelectedChapterIds] = useState<string[]>([]);
   const [questionCount, setQuestionCount] = useState(10);
   const [activePractice, setActivePractice] = useState<ActivePractice | null>(null);
 
   useEffect(() => {
-    getPublishedCatalog()
-      .then((data) => {
-        setCatalog(data);
-        const availableChapterIds = data.chapters
-          .filter((chapter) => getChapterQuestionCount(data.questions, chapter.id) > 0)
-          .map((chapter) => chapter.id);
+    if (!catalog) {
+      return;
+    }
 
-        setSelectedChapterIds(availableChapterIds);
-        setQuestionCount(getDefaultPracticeQuestionCount(data.questions));
-      })
-      .catch(() => setError('No se pudo cargar la práctica personalizada.'));
-  }, []);
+    const availableChapterIds = catalog.chapters
+      .filter((chapter) => getChapterQuestionCount(catalog.questions, chapter.id) > 0)
+      .map((chapter) => chapter.id);
+
+    setSelectedChapterIds(availableChapterIds);
+    setQuestionCount(getDefaultPracticeQuestionCount(catalog.questions));
+  }, [catalog]);
 
   const chapterCards = useMemo(() => {
     if (!catalog) {
@@ -53,7 +53,8 @@ export function PracticePage() {
       return 0;
     }
 
-    return catalog.questions.filter((question) => selectedChapterIds.includes(question.chapterId)).length;
+    return catalog.questions.filter((question) => selectedChapterIds.includes(question.chapterId))
+      .length;
   }, [catalog, selectedChapterIds]);
 
   const toggleChapter = (chapterId: string) => {
@@ -74,12 +75,14 @@ export function PracticePage() {
       questionCount,
     });
 
-    setActivePractice({
-      key: `${Date.now()}`,
-      title: 'Práctica personalizada',
-      subtitle: `${questions.length} preguntas seleccionadas desde ${selectedChapterIds.length} capítulo(s).`,
-      questions,
-      maxScore: questions.length,
+    startTransition(() => {
+      setActivePractice({
+        key: `${Date.now()}`,
+        title: 'Práctica personalizada',
+        subtitle: `${questions.length} preguntas seleccionadas desde ${selectedChapterIds.length} capítulo(s).`,
+        questions,
+        maxScore: questions.length,
+      });
     });
   };
 
@@ -116,7 +119,12 @@ export function PracticePage() {
               <p className="info-text">Elige uno o varios capítulos para construir tu práctica.</p>
             </div>
           </div>
-          {error && <p className="error-banner">{error}</p>}
+          {isLoading && <p className="info-banner">Cargando práctica disponible…</p>}
+          {error && (
+            <p className="error-banner" aria-live="polite">
+              {error}
+            </p>
+          )}
           <div className="choice-grid choice-grid--chapters">
             {chapterCards.map((chapter) => {
               const isSelected = selectedChapterIds.includes(chapter.id);
@@ -135,6 +143,7 @@ export function PracticePage() {
                   }
                   disabled={isDisabled}
                   onClick={() => toggleChapter(chapter.id)}
+                  aria-pressed={isSelected}
                 >
                   <strong>{chapter.code}</strong>
                   <span>{chapter.title}</span>
@@ -155,7 +164,7 @@ export function PracticePage() {
             </div>
           </div>
 
-          <div className="number-picker">
+          <div className="number-picker" aria-label="Cantidad sugerida de preguntas">
             {[5, 10, 20, 35].map((amount) => {
               const disabled = amount > availableQuestionCount || availableQuestionCount === 0;
 
@@ -163,9 +172,12 @@ export function PracticePage() {
                 <button
                   key={amount}
                   type="button"
-                  className={questionCount === amount ? 'amount-chip amount-chip--selected' : 'amount-chip'}
+                  className={
+                    questionCount === amount ? 'amount-chip amount-chip--selected' : 'amount-chip'
+                  }
                   disabled={disabled}
                   onClick={() => setQuestionCount(amount)}
+                  aria-pressed={questionCount === amount}
                 >
                   {amount}
                 </button>
@@ -206,7 +218,7 @@ export function PracticePage() {
             className="primary-button"
             type="button"
             onClick={startPractice}
-            disabled={selectedChapterIds.length === 0 || availableQuestionCount === 0}
+            disabled={isLoading || selectedChapterIds.length === 0 || availableQuestionCount === 0}
           >
             Iniciar práctica
           </button>

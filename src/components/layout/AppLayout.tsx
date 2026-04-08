@@ -9,7 +9,10 @@ const navigation = [
 
 export function AppLayout() {
   return (
-    <main className="app-shell">
+    <div className="app-shell">
+      <a className="skip-link" href="#main-content">
+        Saltar al contenido
+      </a>
       <div className="ambient ambient--left" aria-hidden="true" />
       <div className="ambient ambient--right" aria-hidden="true" />
 
@@ -46,7 +49,9 @@ export function AppLayout() {
           </div>
         </header>
 
-        <Outlet />
+        <main id="main-content" tabIndex={-1}>
+          <Outlet />
+        </main>
 
         <footer className="app-footer">
           <span>
@@ -59,6 +64,6 @@ export function AppLayout() {
       <span className="app-watermark" aria-hidden="true">
         {APP_WATERMARK}
       </span>
-    </main>
+    </div>
   );
 }

@@ -1,18 +1,12 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { getPublishedCatalog } from '../lib/contentRepository';
+import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
 import { getChapterQuestionCount } from '../lib/quizFactory';
-import type { ContentCatalog } from '../types/content';
 
 export function HomePage() {
-  const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    getPublishedCatalog()
-      .then((data) => setCatalog(data))
-      .catch(() => setError('No se pudo cargar el catálogo público.'));
-  }, []);
+  const { catalog, error, isLoading } = usePublishedCatalog(
+    'No se pudo cargar el catálogo público.',
+  );
 
   const availableChapters = useMemo(() => {
     if (!catalog) {
@@ -72,7 +66,7 @@ export function HomePage() {
             </div>
           </div>
 
-          <aside className="home-overview">
+          <aside className="home-overview" aria-label="Resumen de cobertura">
             <div className="stats-grid stats-grid--home">
               <article className="stat-card">
                 <strong>{publishedQuestionCount}</strong>
@@ -102,7 +96,15 @@ export function HomePage() {
             <h2 className="section-title">Capítulos con preguntas publicadas</h2>
           </div>
         </div>
-        {error && <p className="error-banner">{error}</p>}
+        {isLoading && <p className="info-banner">Cargando capítulos publicados…</p>}
+        {error && (
+          <p className="error-banner" aria-live="polite">
+            {error}
+          </p>
+        )}
+        {!isLoading && !error && availableChapters.length === 0 && (
+          <p className="info-banner">Todavía no hay capítulos publicados.</p>
+        )}
         <div className="chapter-grid chapter-grid--home">
           {availableChapters.map((chapter) => (
             <article

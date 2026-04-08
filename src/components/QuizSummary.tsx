@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import type { Question, QuizMode } from '../types/content';
 import type { QuestionOutcome } from '../types/quiz';
 
@@ -34,6 +35,10 @@ export function QuizSummary({
   const totalQuestions = questions.length;
   const percentage = maxScore === 0 ? 0 : Math.round((score / maxScore) * 100);
   const passed = typeof passingScore === 'number' ? score >= passingScore : undefined;
+  const outcomesByQuestionId = useMemo(
+    () => new Map(outcomes.map((outcome) => [outcome.questionId, outcome])),
+    [outcomes],
+  );
 
   return (
     <section className="panel">
@@ -41,7 +46,7 @@ export function QuizSummary({
       <h2 className="hero-title">{title}</h2>
       <p className="hero-copy">{subtitle}</p>
 
-      <div className="score-badge">
+      <div className="score-badge" aria-live="polite">
         <strong>
           {score}/{maxScore}
         </strong>
@@ -56,7 +61,7 @@ export function QuizSummary({
 
       <div className="review-list">
         {questions.map((question) => {
-          const outcome = outcomes.find((item) => item.questionId === question.id);
+          const outcome = outcomesByQuestionId.get(question.id);
 
           return (
             <article key={question.id} className="review-card">

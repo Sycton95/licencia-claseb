@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState } from 'react';
 import { AiQueueManager } from '../components/admin/AiQueueManager';
 import { CatalogManager } from '../components/admin/CatalogManager';
 import { DashboardView } from '../components/admin/DashboardView';
@@ -120,6 +120,7 @@ export function AdminPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isCatalogDetailOpen, setIsCatalogDetailOpen] = useState(false);
   const [isAiDetailOpen, setIsAiDetailOpen] = useState(false);
+  const deferredSearchTerm = useDeferredValue(searchTerm);
 
   const canUseLocalAdmin =
     !isSupabaseConfigured &&
@@ -240,20 +241,25 @@ export function AdminPage() {
         return false;
       }
 
-      if (!searchTerm.trim()) {
+      const normalizedSearchTerm = deferredSearchTerm.trim().toLowerCase();
+
+      if (!normalizedSearchTerm) {
         return true;
       }
 
-      return question.prompt.toLowerCase().includes(searchTerm.toLowerCase());
+      return (
+        question.prompt.toLowerCase().includes(normalizedSearchTerm) ||
+        question.id.toLowerCase().includes(normalizedSearchTerm)
+      );
     });
   }, [
     catalog,
+    deferredSearchTerm,
     filterChapterId,
     filterEligibleOnly,
     filterSourceDocumentId,
     filterStatus,
     filterWarningsOnly,
-    searchTerm,
   ]);
 
   const summary = useMemo<AdminReportSummary | null>(() => {
@@ -714,10 +720,21 @@ export function AdminPage() {
               value={loginEmail}
               onChange={(event) => setLoginEmail(event.target.value)}
               placeholder="tu-correo@dominio.com"
+              autoComplete="email"
+              inputMode="email"
+              spellCheck={false}
             />
           </label>
-          {message && <p className="success-banner">{message}</p>}
-          {error && <p className="error-banner">{error}</p>}
+          {message && (
+            <p className="success-banner" aria-live="polite">
+              {message}
+            </p>
+          )}
+          {error && (
+            <p className="error-banner" aria-live="polite">
+              {error}
+            </p>
+          )}
           <button className="primary-button" type="button" onClick={handleRequestLogin} disabled={!loginEmail}>
             Enviar enlace de acceso
           </button>

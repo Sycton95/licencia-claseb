@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { startTransition, useState } from 'react';
 import { QuizRunner } from '../components/quiz/QuizRunner';
-import { getPublishedCatalog } from '../lib/contentRepository';
+import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
 import { buildExamQuestionSet } from '../lib/quizFactory';
 import type { ContentCatalog } from '../types/content';
 
@@ -12,15 +12,11 @@ type ActiveExam = {
 };
 
 export function ExamPage() {
-  const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const { catalog, error: loadError, isLoading } = usePublishedCatalog(
+    'No se pudo cargar el modo examen.',
+  );
+  const [buildError, setBuildError] = useState<string | null>(null);
   const [activeExam, setActiveExam] = useState<ActiveExam | null>(null);
-
-  useEffect(() => {
-    getPublishedCatalog()
-      .then((data) => setCatalog(data))
-      .catch(() => setError('No se pudo cargar el modo examen.'));
-  }, []);
 
   const startExam = () => {
     if (!catalog) {
@@ -30,14 +26,17 @@ export function ExamPage() {
     try {
       const questions = buildExamQuestionSet(catalog.questions, catalog.examRuleSet);
 
-      setActiveExam({
-        key: `${Date.now()}`,
-        questions,
-        maxScore: catalog.examRuleSet.maxPoints,
-        passingScore: catalog.examRuleSet.passingPoints,
+      setBuildError(null);
+      startTransition(() => {
+        setActiveExam({
+          key: `${Date.now()}`,
+          questions,
+          maxScore: catalog.examRuleSet.maxPoints,
+          passingScore: catalog.examRuleSet.passingPoints,
+        });
       });
-    } catch (buildError) {
-      setError(buildError instanceof Error ? buildError.message : 'No se pudo construir el examen.');
+    } catch (error) {
+      setBuildError(error instanceof Error ? error.message : 'No se pudo construir el examen.');
     }
   };
 
@@ -55,6 +54,8 @@ export function ExamPage() {
       />
     );
   }
+
+  const error = loadError ?? buildError;
 
   return (
     <section className="page-stack page-stack--public">
@@ -83,7 +84,9 @@ export function ExamPage() {
         <div className="section-head">
           <div>
             <h2 className="section-title">Reglas de esta simulación</h2>
-            <p className="info-text">Estas reglas se explican aquí y no se repiten en el menú principal.</p>
+            <p className="info-text">
+              Estas reglas se explican aquí y no se repiten en el menú principal.
+            </p>
           </div>
         </div>
         <div className="stats-grid stats-grid--exam">
@@ -104,8 +107,13 @@ export function ExamPage() {
             <span>preguntas de doble puntuación</span>
           </article>
         </div>
-        {error && <p className="error-banner">{error}</p>}
-        <button className="primary-button" type="button" onClick={startExam} disabled={!catalog}>
+        {isLoading && <p className="info-banner">Cargando reglas de examen…</p>}
+        {error && (
+          <p className="error-banner" aria-live="polite">
+            {error}
+          </p>
+        )}
+        <button className="primary-button" type="button" onClick={startExam} disabled={isLoading || !catalog}>
           Comenzar simulación
         </button>
       </section>

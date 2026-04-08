@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
 import { ProgressBar } from '../ProgressBar';
 import { QuestionCard } from '../QuestionCard';
 import { QuizSummary } from '../QuizSummary';
@@ -16,6 +16,87 @@ type QuizRunnerProps = {
   onRestart: () => void;
 };
 
+type QuizState = {
+  currentIndex: number;
+  selectedOptionIds: string[];
+  isAnswered: boolean;
+  score: number;
+  outcomes: QuestionOutcome[];
+  showReference: boolean;
+};
+
+type QuizAction =
+  | { type: 'toggle-option'; optionId: string; selectionMode: Question['selectionMode'] }
+  | { type: 'confirm'; outcome: QuestionOutcome; pointsEarned: number }
+  | { type: 'next'; totalQuestions: number }
+  | { type: 'toggle-reference' };
+
+const INITIAL_STATE: QuizState = {
+  currentIndex: 0,
+  selectedOptionIds: [],
+  isAnswered: false,
+  score: 0,
+  outcomes: [],
+  showReference: false,
+};
+
+function quizReducer(state: QuizState, action: QuizAction): QuizState {
+  switch (action.type) {
+    case 'toggle-option':
+      if (state.isAnswered) {
+        return state;
+      }
+
+      if (action.selectionMode === 'single') {
+        return {
+          ...state,
+          selectedOptionIds: [action.optionId],
+        };
+      }
+
+      return {
+        ...state,
+        selectedOptionIds: state.selectedOptionIds.includes(action.optionId)
+          ? state.selectedOptionIds.filter((selectedId) => selectedId !== action.optionId)
+          : [...state.selectedOptionIds, action.optionId],
+      };
+    case 'confirm':
+      if (state.isAnswered || state.selectedOptionIds.length === 0) {
+        return state;
+      }
+
+      return {
+        ...state,
+        isAnswered: true,
+        score: state.score + action.pointsEarned,
+        outcomes: [...state.outcomes, action.outcome],
+      };
+    case 'next':
+      if (state.currentIndex >= action.totalQuestions - 1) {
+        return {
+          ...state,
+          currentIndex: action.totalQuestions,
+          selectedOptionIds: [],
+          isAnswered: false,
+          showReference: false,
+        };
+      }
+
+      return {
+        ...state,
+        currentIndex: state.currentIndex + 1,
+        selectedOptionIds: [],
+        isAnswered: false,
+        showReference: false,
+      };
+    case 'toggle-reference':
+      return {
+        ...state,
+        showReference: !state.showReference,
+      };
+  }
+}
+
 export function QuizRunner({
   mode,
   title,
@@ -25,67 +106,45 @@ export function QuizRunner({
   passingScore,
   onRestart,
 }: QuizRunnerProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedOptionIds, setSelectedOptionIds] = useState<string[]>([]);
-  const [isAnswered, setIsAnswered] = useState(false);
-  const [score, setScore] = useState(0);
-  const [outcomes, setOutcomes] = useState<QuestionOutcome[]>([]);
-  const [showReference, setShowReference] = useState(false);
-
-  const currentQuestion = questions[currentIndex];
+  const [state, dispatch] = useReducer(quizReducer, INITIAL_STATE);
+  const currentQuestion = questions[state.currentIndex];
 
   const handleSelect = (optionId: string) => {
-    if (isAnswered) {
+    if (!currentQuestion) {
       return;
     }
 
-    if (currentQuestion.selectionMode === 'single') {
-      setSelectedOptionIds([optionId]);
-      return;
-    }
-
-    setSelectedOptionIds((current) =>
-      current.includes(optionId)
-        ? current.filter((selectedId) => selectedId !== optionId)
-        : [...current, optionId],
-    );
+    dispatch({
+      type: 'toggle-option',
+      optionId,
+      selectionMode: currentQuestion.selectionMode,
+    });
   };
 
   const handleConfirm = () => {
-    if (selectedOptionIds.length === 0 || isAnswered) {
+    if (!currentQuestion || state.selectedOptionIds.length === 0 || state.isAnswered) {
       return;
     }
 
-    const isCorrect = isQuestionAnswerCorrect(currentQuestion, selectedOptionIds);
+    const isCorrect = isQuestionAnswerCorrect(currentQuestion, state.selectedOptionIds);
     const pointsAvailable = getQuestionPoints(currentQuestion, mode === 'exam');
     const pointsEarned = isCorrect ? pointsAvailable : 0;
 
-    setScore((current) => current + pointsEarned);
-    setOutcomes((current) => [
-      ...current,
-      {
+    dispatch({
+      type: 'confirm',
+      pointsEarned,
+      outcome: {
         questionId: currentQuestion.id,
-        selectedOptionIds,
+        selectedOptionIds: state.selectedOptionIds,
         isCorrect,
         pointsAvailable,
         pointsEarned,
       },
-    ]);
-    setIsAnswered(true);
+    });
   };
 
   const handleNext = () => {
-    const isLastQuestion = currentIndex >= questions.length - 1;
-
-    if (isLastQuestion) {
-      setCurrentIndex(questions.length);
-      return;
-    }
-
-    setCurrentIndex((current) => current + 1);
-    setSelectedOptionIds([]);
-    setIsAnswered(false);
-    setShowReference(false);
+    dispatch({ type: 'next', totalQuestions: questions.length });
   };
 
   if (!currentQuestion) {
@@ -99,8 +158,8 @@ export function QuizRunner({
             : 'Revisa tus respuestas correctas y vuelve a practicar.'
         }
         questions={questions}
-        outcomes={outcomes}
-        score={score}
+        outcomes={state.outcomes}
+        score={state.score}
         maxScore={maxScore}
         passingScore={passingScore}
         onRestart={onRestart}
@@ -109,7 +168,7 @@ export function QuizRunner({
   }
 
   const scoreLabel = mode === 'exam' ? 'Puntaje' : 'Aciertos';
-  const scoreValue = mode === 'exam' ? `${score}/${maxScore}` : `${score}`;
+  const scoreValue = mode === 'exam' ? `${state.score}/${maxScore}` : `${state.score}`;
 
   return (
     <section className="page-stack page-stack--quiz">
@@ -122,7 +181,7 @@ export function QuizRunner({
       <div className="quiz-layout">
         <aside className="quiz-sidebar">
           <ProgressBar
-            current={currentIndex + 1}
+            current={state.currentIndex + 1}
             total={questions.length}
             scoreLabel={scoreLabel}
             scoreValue={scoreValue}
@@ -149,13 +208,13 @@ export function QuizRunner({
         <div className="quiz-main">
           <QuestionCard
             question={currentQuestion}
-            selectedOptionIds={selectedOptionIds}
-            isAnswered={isAnswered}
-            showReference={mode === 'practice' && showReference}
+            selectedOptionIds={state.selectedOptionIds}
+            isAnswered={state.isAnswered}
+            showReference={mode === 'practice' && state.showReference}
             onSelect={handleSelect}
             onConfirm={handleConfirm}
             onNext={handleNext}
-            onToggleReference={() => setShowReference((current) => !current)}
+            onToggleReference={() => dispatch({ type: 'toggle-reference' })}
           />
         </div>
       </div>

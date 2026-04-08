@@ -47,20 +47,26 @@ export function CatalogManager({
     <section className="admin-manager">
       <div
         className={
-          isDetailOpen ? 'admin-manager__master admin-manager__master--hidden-mobile' : 'admin-manager__master'
+          isDetailOpen
+            ? 'admin-manager__master admin-manager__master--hidden-mobile'
+            : 'admin-manager__master'
         }
       >
         <section className="admin-manager__master-surface">
           <div className="admin-manager__master-head">
             <div className="admin-search">
-              <span className="admin-search__icon">
+              <label className="sr-only" htmlFor="catalog-search">
+                Buscar por ID o enunciado
+              </label>
+              <span className="admin-search__icon" aria-hidden="true">
                 <SearchIcon className="admin-icon admin-icon--sm" />
               </span>
               <input
+                id="catalog-search"
                 type="text"
                 value={searchTerm}
                 onChange={(event) => onSearchTermChange(event.target.value)}
-                placeholder="Buscar ID o enunciado..."
+                placeholder="Buscar ID o enunciado…"
                 className="admin-search__input"
               />
             </div>
@@ -69,7 +75,9 @@ export function CatalogManager({
               <button
                 type="button"
                 className={
-                  filterStatus === 'all' ? 'admin-status-filter admin-status-filter--active' : 'admin-status-filter'
+                  filterStatus === 'all'
+                    ? 'admin-status-filter admin-status-filter--active'
+                    : 'admin-status-filter'
                 }
                 onClick={() => setFilterStatus('all')}
               >
@@ -131,46 +139,55 @@ export function CatalogManager({
           </div>
 
           <div className="admin-manager__master-list">
-            {questions.map((question) => {
-              const warnings = warningsByQuestionId.get(question.id) ?? [];
-              return (
-                <button
-                  key={question.id}
-                  type="button"
-                  className={
-                    selectedQuestionId === question.id
-                      ? 'admin-work-item admin-work-item--selected'
-                      : 'admin-work-item'
-                  }
-                  onClick={() => onSelectQuestion(question.id)}
-                >
-                  <div className="admin-work-item__top">
-                    <span className="admin-record-id">{question.id}</span>
-                    <div className="admin-work-item__dots">
-                      {warnings.length > 0 && (
-                        <span className="status-dot status-dot--rejected" title="Warnings" />
-                      )}
-                      <span
-                        className={getEditorialStatusDotClass(question.status)}
-                        title={question.status}
-                      />
+            {questions.length === 0 ? (
+              <article className="admin-inline-note">
+                <strong>Sin resultados</strong>
+                <span>Ajusta los filtros o el texto de búsqueda para encontrar preguntas.</span>
+              </article>
+            ) : (
+              questions.map((question) => {
+                const warnings = warningsByQuestionId.get(question.id) ?? [];
+                return (
+                  <button
+                    key={question.id}
+                    type="button"
+                    className={
+                      selectedQuestionId === question.id
+                        ? 'admin-work-item admin-work-item--selected'
+                        : 'admin-work-item'
+                    }
+                    onClick={() => onSelectQuestion(question.id)}
+                  >
+                    <div className="admin-work-item__top">
+                      <span className="admin-record-id">{question.id}</span>
+                      <div className="admin-work-item__dots">
+                        {warnings.length > 0 && (
+                          <span className="status-dot status-dot--rejected" title="Warnings" />
+                        )}
+                        <span
+                          className={getEditorialStatusDotClass(question.status)}
+                          title={question.status}
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <span className="admin-work-item__title">{question.prompt}</span>
-                  <small className="admin-work-item__meta">
-                    {question.chapterId}
-                    {warnings.length > 0 ? ` · ${warnings.length} warning(s)` : ''}
-                  </small>
-                </button>
-              );
-            })}
+                    <span className="admin-work-item__title">{question.prompt}</span>
+                    <small className="admin-work-item__meta">
+                      {question.chapterId}
+                      {warnings.length > 0 ? ` · ${warnings.length} warning(s)` : ''}
+                    </small>
+                  </button>
+                );
+              })
+            )}
           </div>
         </section>
       </div>
 
       <div
         className={
-          isDetailOpen ? 'admin-manager__detail' : 'admin-manager__detail admin-manager__detail--hidden-mobile'
+          isDetailOpen
+            ? 'admin-manager__detail'
+            : 'admin-manager__detail admin-manager__detail--hidden-mobile'
         }
       >
         <section className="admin-manager__detail-surface">

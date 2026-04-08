@@ -22,6 +22,10 @@ export function QuestionCard({
   onToggleReference,
 }: QuestionCardProps) {
   const hasQuickReference = Boolean(question.sourceReference || question.publicExplanation);
+  const optionGroupLabel =
+    question.selectionMode === 'multiple'
+      ? 'Opciones de respuesta de selección múltiple'
+      : 'Opciones de respuesta de selección única';
 
   return (
     <section className="panel question-card-shell">
@@ -49,7 +53,7 @@ export function QuestionCard({
           <p className="question-instruction">{question.instruction}</p>
         </div>
 
-        <div className="option-list" role="list" aria-label="Opciones de respuesta">
+        <div className="option-list" role="group" aria-label={optionGroupLabel}>
           {question.options.map((option) => {
             const isCorrect = option.isCorrect;
             const isSelected = selectedOptionIds.includes(option.id);
@@ -74,6 +78,7 @@ export function QuestionCard({
                 onClick={() => onSelect(option.id)}
                 disabled={isAnswered}
                 aria-pressed={isSelected}
+                aria-label={`${option.label}. ${option.text}`}
               >
                 <span className="option-letter">{option.label}</span>
                 <span>{option.text}</span>
@@ -95,7 +100,12 @@ export function QuestionCard({
       ) : (
         <div className="question-action-row">
           {hasQuickReference && (
-            <button className="question-reference-button" type="button" onClick={onToggleReference}>
+            <button
+              className="question-reference-button"
+              type="button"
+              onClick={onToggleReference}
+              aria-expanded={showReference}
+            >
               {showReference ? 'Ocultar referencia' : 'Referencia rápida'}
             </button>
           )}
