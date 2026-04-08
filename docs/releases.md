@@ -80,7 +80,17 @@ Pending after this release:
   - `npm run validate:content`
   - `npm run build`
 
+## 2026-04-08 Path A Local UI Branch
+
+- Created local-only UI branch `codex/ui-polish-local` to finish Milestone 6A without deploying every visual pass.
+- Removed `.codex/config.toml` from the staged set so local operator config does not ride along with product commits.
+- Locked the workflow for the current UI phase:
+  - iterate locally with `npm run dev`
+  - validate `/admin` at mobile, tablet, and desktop widths
+  - deploy only once after visual approval
+
 Pending after this release:
 
-- verify the latest `/admin` polish pass on production
-- close Milestone 6A in `docs/progress.md`
+- complete the local `/admin` polish loop
+- merge or cherry-pick the approved branch work into `main`
+- run the release gate and perform one final deployment for Milestone 6A

@@ -19,7 +19,9 @@
   - admin workstation visual consistency
   - overflow cleanup
   - UTF-8 cleanup in touched admin/public shell files
-  - pending live `/admin` verification before close-out
+  - local-only iteration on branch `codex/ui-polish-local`
+  - no intermediate UI deployments until visual approval
+  - pending final live `/admin` verification before close-out
 
 ## Completed milestones
 
@@ -79,14 +81,16 @@
 ## Open risks
 
 - Live verification for the latest Milestone 6A polish pass is still pending.
+- Repeated deploy-first UI iteration has been the main source of churn. The current branch policy is to validate UI locally first and deploy once after signoff.
 - Current AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
 - Source-preparation coverage currently exists only for the chapters already better represented in the bank. Broader chapter coverage still requires more prepared chunks.
-- The shell-based smoke check still cannot reach production from this sandbox, so live verification must continue through Vercel/browser checks after push.
 
 ## Blocked or manual steps
 
-- Re-authenticate the Vercel connector in-session whenever live deployment verification is needed after a push.
-- Use browser/Vercel confirmation after each UI-heavy release because shell fetches from this sandbox still cannot reach production.
+- `.codex/config.toml` was removed from the staged set and should remain out of product commits.
+- Continue UI work on `codex/ui-polish-local`, not on `main`.
+- Re-authenticate the Vercel connector in-session whenever final live deployment verification is needed after the approved merge/push.
+- Use browser/Vercel confirmation for the final approved UI release.
 - Before closing Milestone 6A, verify `/admin` on:
   - desktop `>=1280px`
   - tablet around `1100px`
@@ -110,14 +114,15 @@
 ## Latest regressions or blocked items
 
 - No platform regression is currently blocking local development.
-- Milestone 6A is waiting on live UI verification, not on another structural rewrite.
+- Milestone 6A is waiting on local signoff and one final live verification, not on another structural rewrite.
 
 ## Next approved work blocks
 
-1. Verify the latest `/admin` polish pass on production and close Milestone 6A.
-2. Switch the active roadmap back to Milestone 5:
+1. Iterate locally on `/admin` inside `codex/ui-polish-local` until the visual pass is approved.
+2. Merge the approved UI work into `main`, deploy once, and close Milestone 6A.
+3. Switch the active roadmap back to Milestone 5:
    - duplicate prompt detection
    - weak distractor heuristics
    - richer review-task surfacing
-3. Resume chapter-by-chapter content expansion through the AI-assisted review flow.
-4. Keep logging each milestone close-out in `docs/progress.md` and `docs/releases.md` before opening the next work block.
+4. Resume chapter-by-chapter content expansion through the AI-assisted review flow.
+5. Keep logging each milestone close-out in `docs/progress.md` and `docs/releases.md` before opening the next work block.
