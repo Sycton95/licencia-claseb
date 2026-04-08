@@ -51,16 +51,16 @@ export function AdminTopStrip({
           >
             <MenuIcon className="admin-icon" />
           </button>
-          <span className="admin-top-strip__mobile-title">{getSectionTitle(activeSection)}</span>
-          <div className="admin-top-strip__desktop-copy">
+
+          <div className="admin-top-strip__copy">
             <span className="eyebrow">Workspace editorial</span>
             <h2 className="admin-top-strip__title">{getSectionTitle(activeSection)}</h2>
           </div>
         </div>
 
-        <div className="admin-top-strip__actions">
+        <div className="admin-top-strip__meta">
           {activeEditionCode && <span className="admin-inline-chip">Edición {activeEditionCode}</span>}
-          {health && <span className="admin-inline-chip">Esquema {health.schema}</span>}
+          {health && <span className="admin-inline-chip">Schema {health.schema}</span>}
           {health && (
             <span
               className={
@@ -72,7 +72,12 @@ export function AdminTopStrip({
               AI {health.aiSchemaReady ? 'activa' : 'pendiente'}
             </span>
           )}
-          {sessionEmail && <span className="admin-inline-chip admin-inline-chip--subtle">{sessionEmail}</span>}
+          {sessionEmail && (
+            <span className="admin-inline-chip admin-inline-chip--subtle">{sessionEmail}</span>
+          )}
+        </div>
+
+        <div className="admin-top-strip__actions">
           {isSupabaseConfigured && (
             <button
               className="secondary-button secondary-button--compact"

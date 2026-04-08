@@ -30,19 +30,26 @@ export function AdminSidebar({
       <button
         type="button"
         className={
-          isOpen ? 'admin-sidebar__backdrop admin-sidebar__backdrop--visible' : 'admin-sidebar__backdrop'
+          isOpen
+            ? 'admin-sidebar__backdrop admin-sidebar__backdrop--visible'
+            : 'admin-sidebar__backdrop'
         }
         onClick={onClose}
         aria-label="Cerrar navegación"
       />
       <aside className={isOpen ? 'admin-sidebar admin-sidebar--open' : 'admin-sidebar'}>
         <div className="admin-sidebar__head">
-          <div>
+          <div className="admin-sidebar__branding">
             <span className="eyebrow">Admin privado</span>
             <h1 className="admin-sidebar__title">Admin Workspace</h1>
             <p className="admin-sidebar__subtitle">Clase B Chile</p>
           </div>
-          <button type="button" className="admin-sidebar__close" onClick={onClose} aria-label="Cerrar menú">
+          <button
+            type="button"
+            className="admin-sidebar__close"
+            onClick={onClose}
+            aria-label="Cerrar menú"
+          >
             <CloseIcon className="admin-icon" />
           </button>
         </div>
@@ -53,7 +60,9 @@ export function AdminSidebar({
               key={id}
               type="button"
               className={
-                activeSection === id ? 'admin-sidebar__link admin-sidebar__link--active' : 'admin-sidebar__link'
+                activeSection === id
+                  ? 'admin-sidebar__link admin-sidebar__link--active'
+                  : 'admin-sidebar__link'
               }
               onClick={() => {
                 onSelectSection(id);
@@ -61,7 +70,7 @@ export function AdminSidebar({
               }}
             >
               <Icon className="admin-icon" />
-              <span>{label}</span>
+              <span className="admin-sidebar__label">{label}</span>
             </button>
           ))}
         </nav>

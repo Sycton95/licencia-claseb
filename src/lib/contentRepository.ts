@@ -12,7 +12,7 @@ import {
   upsertLocalAiRun,
   upsertLocalAiSuggestions,
 } from './localAiStore';
-import { isSupabaseConfigured, supabase } from './supabase';
+import { isSupabaseConfigured, supabase, useLocalAdminMode } from './supabase';
 import type {
   Chapter,
   ContentCatalog,
@@ -693,7 +693,7 @@ async function seedRemoteContentDirect() {
 }
 
 export async function getContentCatalog(): Promise<ContentCatalog> {
-  if (!isSupabaseConfigured) {
+  if (useLocalAdminMode) {
     return normalizeCatalog(loadLocalCatalog());
   }
 
@@ -714,7 +714,7 @@ export async function getPublishedCatalog() {
 }
 
 export async function getAiWorkspace(): Promise<AiWorkspace> {
-  if (!isSupabaseConfigured || import.meta.env.DEV) {
+  if (useLocalAdminMode) {
     const workspace = loadLocalAiWorkspace();
     const catalog = await getContentCatalog();
 
@@ -732,7 +732,7 @@ export async function getAiWorkspace(): Promise<AiWorkspace> {
 }
 
 export async function generateAiWorkspace() {
-  if (!isSupabaseConfigured || import.meta.env.DEV) {
+  if (useLocalAdminMode) {
     const catalog = await getContentCatalog();
     const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
     const result = generateAiSuggestions(catalog, actorEmail);
@@ -753,7 +753,7 @@ export async function transitionAiSuggestion(
   status: AiSuggestion['status'],
   reviewNotes?: string,
 ) {
-  if (!isSupabaseConfigured || import.meta.env.DEV) {
+  if (useLocalAdminMode) {
     updateLocalAiSuggestion(suggestionId, (current) => ({
       ...current,
       status,
@@ -775,7 +775,7 @@ export async function transitionAiSuggestion(
 }
 
 export async function createDraftFromAiSuggestion(suggestion: AiSuggestion) {
-  if (!isSupabaseConfigured || import.meta.env.DEV) {
+  if (useLocalAdminMode) {
     const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
     const draftQuestion = buildDraftQuestionFromSuggestion(suggestion, actorEmail);
 
@@ -809,7 +809,7 @@ export async function createDraftFromAiSuggestion(suggestion: AiSuggestion) {
 }
 
 export async function markAiSuggestionApplied(suggestionId: string, questionId: string) {
-  if (!isSupabaseConfigured || import.meta.env.DEV) {
+  if (useLocalAdminMode) {
     updateLocalAiSuggestion(suggestionId, (current) => ({
       ...current,
       status: 'applied',
@@ -841,7 +841,7 @@ export async function saveQuestion(
     throw new Error(validationErrors.join('\n'));
   }
 
-  if (!isSupabaseConfigured || !supabase) {
+  if (useLocalAdminMode || !supabase) {
     const event = buildEditorialEvent(
       sanitizedQuestion,
       sanitizedQuestion.updatedBy || 'local-admin',
@@ -849,17 +849,6 @@ export async function saveQuestion(
       notes,
     );
     saveLocalQuestion(sanitizedQuestion, event);
-    return { question: sanitizedQuestion, event };
-  }
-
-  if (import.meta.env.DEV) {
-    const event = buildEditorialEvent(
-      sanitizedQuestion,
-      sanitizedQuestion.updatedBy || 'local-admin',
-      action,
-      notes,
-    );
-    await saveQuestionDirect(sanitizedQuestion, event);
     return { question: sanitizedQuestion, event };
   }
 
@@ -871,12 +860,8 @@ export async function saveQuestion(
 }
 
 export async function seedRemoteContent() {
-  if (!isSupabaseConfigured || !supabase) {
+  if (useLocalAdminMode || !supabase) {
     throw new Error('Configura Supabase para sembrar el contenido remoto.');
-  }
-
-  if (import.meta.env.DEV) {
-    return seedRemoteContentDirect();
   }
 
   return requestAdminApi<{ seeded: boolean; reason?: string }>('/api/admin/seed', {

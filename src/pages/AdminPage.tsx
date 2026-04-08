@@ -27,7 +27,7 @@ import {
   signOutAdmin,
   transitionAiSuggestion,
 } from '../lib/contentRepository';
-import { isSupabaseConfigured } from '../lib/supabase';
+import { isPreviewAdminBypassEnabled, isSupabaseConfigured, useLocalAdminMode } from '../lib/supabase';
 import { validateQuestionAction } from '../lib/contentValidation';
 import type { AiSuggestion, AiSuggestionStatus, AiWorkspace } from '../types/ai';
 import type {
@@ -122,9 +122,8 @@ export function AdminPage() {
   const [isAiDetailOpen, setIsAiDetailOpen] = useState(false);
   const deferredSearchTerm = useDeferredValue(searchTerm);
 
-  const canUseLocalAdmin =
-    !isSupabaseConfigured &&
-    (import.meta.env.DEV || import.meta.env.VITE_ENABLE_LOCAL_ADMIN === 'true');
+  const canUseLocalAdmin = useLocalAdminMode;
+  const useRemoteAdmin = isSupabaseConfigured && !canUseLocalAdmin;
 
   const loadCatalog = async () => {
     setIsLoading(true);
@@ -173,7 +172,7 @@ export function AdminPage() {
   useEffect(() => {
     loadCatalog();
 
-    if (isSupabaseConfigured) {
+    if (useRemoteAdmin) {
       fetch('/api/health', {
         headers: {
           'Cache-Control': 'no-cache',
@@ -192,7 +191,7 @@ export function AdminPage() {
         });
     }
 
-    if (!isSupabaseConfigured) {
+    if (canUseLocalAdmin) {
       setIsAdminAuthorized(canUseLocalAdmin);
       setSessionEmail(canUseLocalAdmin ? 'local-admin' : null);
       return;
@@ -366,7 +365,7 @@ export function AdminPage() {
 
   const activeEdition = catalog?.activeEdition;
   const healthNeedsHardening =
-    isSupabaseConfigured &&
+    useRemoteAdmin &&
     (!adminHealth || adminHealth.schema !== 'v1' || !adminHealth.usesServiceRole || !adminHealth.aiSchemaReady);
 
   const catalogChapterOptions = useMemo(
@@ -704,7 +703,7 @@ export function AdminPage() {
     );
   }
 
-  if (isSupabaseConfigured && !sessionEmail) {
+  if (useRemoteAdmin && !sessionEmail) {
     return (
       <section className="admin-auth-shell">
         <section className="panel admin-auth-panel">
@@ -713,6 +712,11 @@ export function AdminPage() {
           <p className="hero-copy">
             El acceso usa magic link de Supabase y luego valida el correo contra la allowlist editorial.
           </p>
+          {isPreviewAdminBypassEnabled && (
+            <p className="info-banner">
+              El bypass de preview está activo, pero esta build todavía no entró al modo local.
+            </p>
+          )}
           <label className="field">
             <span>Correo</span>
             <input
@@ -743,7 +747,7 @@ export function AdminPage() {
     );
   }
 
-  if (isSupabaseConfigured && !isAdminAuthorized) {
+  if (useRemoteAdmin && !isAdminAuthorized) {
     return (
       <section className="admin-auth-shell">
         <section className="panel admin-auth-panel">
@@ -776,7 +780,7 @@ export function AdminPage() {
           error={error}
           health={adminHealth}
           isBusy={isBusy}
-          isSupabaseConfigured={isSupabaseConfigured}
+          isSupabaseConfigured={useRemoteAdmin}
           message={message}
           onOpenSidebar={() => setIsSidebarOpen(true)}
           onSeed={handleSeed}
@@ -792,7 +796,7 @@ export function AdminPage() {
               editorialWarnings={editorialWarnings}
               health={adminHealth}
               healthNeedsHardening={healthNeedsHardening}
-              isSupabaseConfigured={isSupabaseConfigured}
+              isSupabaseConfigured={useRemoteAdmin}
               onApplyQuickFilter={applyQuickFilter}
               onSelectQuestion={selectQuestion}
               sourceCoverage={sourceCoverage}

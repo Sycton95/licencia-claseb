@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { QuestionCard } from '../QuestionCard';
 import type { ContentCatalog, Question, SelectionMode } from '../../types/content';
 
@@ -26,6 +27,12 @@ export function EditorPanel({
   onOptionText,
   onQuestionField,
 }: EditorPanelProps) {
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+
+  useEffect(() => {
+    setIsPreviewOpen(false);
+  }, [draftQuestion?.id]);
+
   if (!draftQuestion) {
     return (
       <section className="panel admin-surface admin-editor-panel admin-editor-panel--empty">
@@ -69,7 +76,7 @@ export function EditorPanel({
           <label className="field field--full">
             <span>Enunciado</span>
             <textarea
-              rows={4}
+              rows={5}
               value={draftQuestion.prompt}
               onChange={(event) => onQuestionField('prompt', event.target.value)}
             />
@@ -138,7 +145,7 @@ export function EditorPanel({
           <label className="field field--full">
             <span>Explicación pública opcional</span>
             <textarea
-              rows={3}
+              rows={4}
               value={draftQuestion.publicExplanation ?? ''}
               onChange={(event) => onQuestionField('publicExplanation', event.target.value)}
             />
@@ -146,7 +153,7 @@ export function EditorPanel({
           <label className="field field--full">
             <span>Notas editoriales</span>
             <textarea
-              rows={3}
+              rows={4}
               value={draftQuestion.reviewNotes ?? ''}
               onChange={(event) => onQuestionField('reviewNotes', event.target.value)}
             />
@@ -179,81 +186,95 @@ export function EditorPanel({
               Marca las correctas según el modo de respuesta de la pregunta.
             </span>
           </div>
-          {draftQuestion.options.map((option) => (
-            <div key={option.id} className="admin-option-row">
-              <span className="option-letter">{option.label}</span>
-              <input
-                value={option.text}
-                onChange={(event) => onOptionText(option.id, event.target.value)}
-              />
-              <label className="checkbox-field">
+          <div className="admin-option-list">
+            {draftQuestion.options.map((option) => (
+              <div key={option.id} className="admin-option-row">
+                <span className="option-letter">{option.label}</span>
                 <input
-                  type="checkbox"
-                  checked={option.isCorrect}
-                  onChange={(event) => onOptionCorrect(option.id, event.target.checked)}
+                  value={option.text}
+                  onChange={(event) => onOptionText(option.id, event.target.value)}
                 />
-                <span>Correcta</span>
-              </label>
-            </div>
-          ))}
-        </div>
-
-        <div className="admin-preview admin-preview--compact">
-          <div className="admin-preview__head">
-            <h3>Vista previa</h3>
-            <span className="info-text">Así se verá en práctica y examen.</span>
+                <label className="checkbox-field">
+                  <input
+                    type="checkbox"
+                    checked={option.isCorrect}
+                    onChange={(event) => onOptionCorrect(option.id, event.target.checked)}
+                  />
+                  <span>Correcta</span>
+                </label>
+              </div>
+            ))}
           </div>
-          <QuestionCard
-            question={draftQuestion}
-            selectedOptionIds={[]}
-            isAnswered={false}
-            showReference={false}
-            onSelect={() => {}}
-            onConfirm={() => {}}
-            onNext={() => {}}
-            onToggleReference={() => {}}
-          />
         </div>
-      </div>
 
-      <div className="admin-editor-panel__footer">
-        <div className="admin-editor-panel__footer-copy">
-          <strong>{draftQuestion.id}</strong>
-          <span>Los cambios quedan dentro del flujo editorial actual.</span>
-        </div>
-        <div className="admin-editor-panel__footer-actions">
-          <button
-            className="primary-button"
-            type="button"
-            onClick={() => onEditorialAction('save', 'Cambios guardados correctamente.')}
-            disabled={isBusy}
-          >
-            Guardar
-          </button>
-          <button
-            className="secondary-button"
-            type="button"
-            onClick={() => onEditorialAction('mark_reviewed', 'Pregunta marcada como revisada.')}
-            disabled={isBusy}
-          >
-            Marcar revisada
-          </button>
-          <button
-            className="secondary-button"
-            type="button"
-            onClick={() => onEditorialAction('publish', 'Pregunta publicada correctamente.')}
-            disabled={isBusy}
-          >
-            Publicar
-          </button>
-          <button
-            className="secondary-button secondary-button--danger"
-            type="button"
-            onClick={() => onEditorialAction('archive', 'Pregunta archivada correctamente.')}
-            disabled={isBusy}
-          >
-            Archivar
-          </button>
+        <section className="admin-preview admin-preview--compact">
+          <div className="admin-preview__head admin-preview__head--interactive">
+            <div>
+              <h3>Vista previa</h3>
+              <span className="info-text">Se mantiene plegada para priorizar la edición.</span>
+            </div>
+            <button
+              className="secondary-button secondary-button--compact"
+              type="button"
+              onClick={() => setIsPreviewOpen((current) => !current)}
+            >
+              {isPreviewOpen ? 'Ocultar preview' : 'Mostrar preview'}
+            </button>
+          </div>
+
+          {isPreviewOpen && (
+            <QuestionCard
+              question={draftQuestion}
+              selectedOptionIds={[]}
+              isAnswered={false}
+              showReference={false}
+              onSelect={() => {}}
+              onConfirm={() => {}}
+              onNext={() => {}}
+              onToggleReference={() => {}}
+            />
+          )}
+        </section>
+
+        <div className="admin-editor-panel__footer admin-editor-panel__footer--inline">
+          <div className="admin-editor-panel__footer-copy">
+            <strong>{draftQuestion.id}</strong>
+            <span>Los cambios quedan dentro del flujo editorial actual.</span>
+          </div>
+          <div className="admin-editor-panel__footer-actions">
+            <button
+              className="primary-button secondary-button--compact"
+              type="button"
+              onClick={() => onEditorialAction('save', 'Cambios guardados correctamente.')}
+              disabled={isBusy}
+            >
+              Guardar
+            </button>
+            <button
+              className="secondary-button secondary-button--compact"
+              type="button"
+              onClick={() => onEditorialAction('mark_reviewed', 'Pregunta marcada como revisada.')}
+              disabled={isBusy}
+            >
+              Revisada
+            </button>
+            <button
+              className="secondary-button secondary-button--compact"
+              type="button"
+              onClick={() => onEditorialAction('publish', 'Pregunta publicada correctamente.')}
+              disabled={isBusy}
+            >
+              Publicar
+            </button>
+            <button
+              className="secondary-button secondary-button--compact secondary-button--danger"
+              type="button"
+              onClick={() => onEditorialAction('archive', 'Pregunta archivada correctamente.')}
+              disabled={isBusy}
+            >
+              Archivar
+            </button>
+          </div>
         </div>
       </div>
     </section>

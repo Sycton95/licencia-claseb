@@ -44,7 +44,7 @@ export function CatalogManager({
   warningsByQuestionId,
 }: CatalogManagerProps) {
   return (
-    <section className="admin-manager">
+    <section className="admin-manager admin-manager--catalog">
       <div
         className={
           isDetailOpen
@@ -54,6 +54,12 @@ export function CatalogManager({
       >
         <section className="admin-manager__master-surface">
           <div className="admin-manager__master-head">
+            <div className="admin-manager__summary">
+              <span className="eyebrow">Catálogo</span>
+              <h3 className="section-title">Preguntas editoriales</h3>
+              <p className="info-text">{questions.length} resultado(s) visibles con los filtros actuales.</p>
+            </div>
+
             <div className="admin-search">
               <label className="sr-only" htmlFor="catalog-search">
                 Buscar por ID o enunciado
@@ -66,7 +72,7 @@ export function CatalogManager({
                 type="text"
                 value={searchTerm}
                 onChange={(event) => onSearchTermChange(event.target.value)}
-                placeholder="Buscar ID o enunciado…"
+                placeholder="Buscar ID o enunciado..."
                 className="admin-search__input"
               />
             </div>
@@ -142,11 +148,12 @@ export function CatalogManager({
             {questions.length === 0 ? (
               <article className="admin-inline-note">
                 <strong>Sin resultados</strong>
-                <span>Ajusta los filtros o el texto de búsqueda para encontrar preguntas.</span>
+                <span>Ajusta filtros o búsqueda para encontrar preguntas.</span>
               </article>
             ) : (
               questions.map((question) => {
                 const warnings = warningsByQuestionId.get(question.id) ?? [];
+
                 return (
                   <button
                     key={question.id}
