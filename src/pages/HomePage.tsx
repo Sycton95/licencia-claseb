@@ -22,7 +22,7 @@ const ArrowRightIcon = () => (
 );
 
 export function HomePage() {
-  const { catalog } = usePublishedCatalog();
+  const { catalog } = usePublishedCatalog('No se pudo cargar el catalogo publico.');
 
   return (
     <div className="flex-1 flex flex-col bg-slate-50 overflow-y-auto">
