@@ -1,3 +1,4 @@
+// src/components/admin/types.ts
 import type { AiSuggestionStatus, AiSuggestionType } from '../../types/ai';
 import type { EditorialStatus } from '../../types/content';
 
@@ -22,51 +23,23 @@ export type AdminReportSummary = {
 
 export type AdminSection = 'dashboard' | 'catalog' | 'ai';
 
-export function getEditorialStatusLabel(status: EditorialStatus) {
+export function getEditorialStatusColor(status: EditorialStatus) {
   switch (status) {
-    case 'draft':
-      return 'Draft';
-    case 'reviewed':
-      return 'Revisada';
-    case 'published':
-      return 'Publicada';
-    case 'archived':
-      return 'Archivada';
+    case 'draft': return 'bg-amber-500';
+    case 'reviewed': return 'bg-blue-500';
+    case 'published': return 'bg-emerald-500';
+    case 'archived': return 'bg-slate-400';
+    default: return 'bg-slate-300';
   }
 }
 
-export function getEditorialStatusDotClass(status: EditorialStatus) {
-  return `status-dot status-dot--${status}`;
-}
-
-export function getSuggestionStatusLabel(status: AiSuggestionStatus) {
+export function getSuggestionStatusColor(status: AiSuggestionStatus) {
   switch (status) {
-    case 'pending':
-      return 'Pendiente';
-    case 'accepted':
-      return 'Aceptada';
-    case 'applied':
-      return 'Aplicada';
-    case 'deferred':
-      return 'Postergada';
-    case 'rejected':
-      return 'Rechazada';
-  }
-}
-
-export function getSuggestionStatusDotClass(status: AiSuggestionStatus) {
-  return `status-dot status-dot--${status}`;
-}
-
-export function getSuggestionTypeLabel(type: AiSuggestionType) {
-  switch (type) {
-    case 'new_question':
-      return 'Nueva';
-    case 'rewrite':
-      return 'Rewrite';
-    case 'flag':
-      return 'Flag';
-    case 'coverage_gap':
-      return 'Brecha';
+    case 'pending': return 'bg-amber-500';
+    case 'accepted': return 'bg-blue-500';
+    case 'applied': return 'bg-emerald-500';
+    case 'deferred': return 'bg-slate-400';
+    case 'rejected': return 'bg-rose-500';
+    default: return 'bg-slate-300';
   }
 }
