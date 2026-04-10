@@ -20,7 +20,7 @@ type ActivePractice = {
 export function PracticePage() {
   const navigate = useNavigate();
   const { catalog, error, isLoading } = usePublishedCatalog(
-    'No se pudo cargar la practica personalizada.',
+    'No se pudo cargar la práctica personalizada.',
   );
   const [selectedChapterIds, setSelectedChapterIds] = useState<string[]>([]);
   const [questionCount, setQuestionCount] = useState(10);
@@ -80,7 +80,7 @@ export function PracticePage() {
     startTransition(() => {
       setActivePractice({
         key: `${Date.now()}`,
-        title: 'Practica personalizada',
+        title: 'Práctica personalizada',
         subtitle: `${questions.length} preguntas seleccionadas.`,
         questions,
         maxScore: questions.length,
@@ -108,13 +108,13 @@ export function PracticePage() {
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
           <button
             onClick={() => navigate('/')}
-            className="rounded-xl px-2 py-1 text-xs font-bold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            className="rounded-xl px-2 py-1 text-xs font-bold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200"
             type="button"
           >
             Volver
           </button>
           <span className="inline-flex rounded-full bg-indigo-50 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600">
-            Practica
+            Práctica
           </span>
           <div className="w-12" aria-hidden="true" />
         </div>
@@ -124,7 +124,7 @@ export function PracticePage() {
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
           {isLoading && (
             <div className="rounded-3xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-500 shadow-sm">
-              Cargando practica disponible...
+              Cargando práctica disponible…
             </div>
           )}
 
@@ -160,7 +160,7 @@ export function PracticePage() {
                           {chapter.title}
                         </span>
                         <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500">
-                          {isDisabled ? 'Proximamente' : `${chapter.questionCount}`}
+                          {isDisabled ? 'Próximamente' : `${chapter.questionCount}`}
                         </span>
                       </div>
                       <p className="mt-1 text-xs leading-5 text-slate-500">{chapter.description}</p>
@@ -231,12 +231,12 @@ export function PracticePage() {
       <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-3">
         <div className="mx-auto max-w-3xl">
           <button
-            className="w-full rounded-2xl border-b-4 border-indigo-800 bg-indigo-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-indigo-700 hover:bg-indigo-500 active:translate-y-[4px] active:border-b-0 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4"
+            className="w-full rounded-2xl border-b-4 border-indigo-800 bg-indigo-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-indigo-700 hover:bg-indigo-500 active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4"
             type="button"
             onClick={startPractice}
             disabled={isLoading || selectedChapterIds.length === 0 || availableQuestionCount === 0}
           >
-            Iniciar practica
+            Iniciar práctica
           </button>
         </div>
       </div>

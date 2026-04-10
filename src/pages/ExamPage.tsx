@@ -47,8 +47,8 @@ export function ExamPage() {
       <QuizRunner
         key={activeExam.key}
         mode="exam"
-        title="Simulacion del examen teorico Clase B"
-        subtitle="35 preguntas, 38 puntos posibles y aprobacion con 33."
+        title="Simulación del examen teórico Clase B"
+        subtitle="35 preguntas, 38 puntos posibles y aprobación con 33."
         questions={activeExam.questions}
         maxScore={activeExam.maxScore}
         passingScore={activeExam.passingScore}
@@ -65,7 +65,7 @@ export function ExamPage() {
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
           <button
             onClick={() => navigate('/')}
-            className="rounded-xl px-2 py-1 text-xs font-bold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            className="rounded-xl px-2 py-1 text-xs font-bold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-200"
             type="button"
           >
             Volver
@@ -94,7 +94,7 @@ export function ExamPage() {
                   {catalog?.examRuleSet.maxPoints ?? 38}
                 </div>
                 <div className="mt-1 text-xs font-bold uppercase tracking-wide text-slate-400">
-                  puntos maximos
+                  puntos máximos
                 </div>
               </article>
               <article className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
@@ -117,7 +117,7 @@ export function ExamPage() {
 
             {isLoading && (
               <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-500">
-                Cargando reglas de examen...
+                Cargando reglas de examen…
               </div>
             )}
 
@@ -133,12 +133,12 @@ export function ExamPage() {
       <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-3">
         <div className="mx-auto max-w-3xl">
           <button
-            className="w-full rounded-2xl border-b-4 border-emerald-800 bg-emerald-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-emerald-700 hover:bg-emerald-500 active:translate-y-[4px] active:border-b-0 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4"
+            className="w-full rounded-2xl border-b-4 border-emerald-800 bg-emerald-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-emerald-700 hover:bg-emerald-500 active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-200 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4"
             type="button"
             onClick={startExam}
             disabled={isLoading || !catalog}
           >
-            Comenzar simulacion
+            Iniciar examen
           </button>
         </div>
       </div>

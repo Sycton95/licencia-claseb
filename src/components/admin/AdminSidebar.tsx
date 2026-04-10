@@ -1,5 +1,4 @@
-// src/components/admin/AdminSidebar.tsx
-import { DashboardIcon, CatalogIcon, SparkIcon, CloseIcon, LogOutIcon } from './AdminIcons';
+import { CatalogIcon, CloseIcon, DashboardIcon, LogOutIcon, SparkIcon } from './AdminIcons';
 import type { AdminSection } from './types';
 
 type Props = {
@@ -12,7 +11,15 @@ type Props = {
   onCloseMobile: () => void;
 };
 
-export function AdminSidebar({ activeSection, onNavigate, sessionEmail, onSignOut, isSupabaseConfigured, isMobileOpen, onCloseMobile }: Props) {
+export function AdminSidebar({
+  activeSection,
+  onNavigate,
+  sessionEmail,
+  onSignOut,
+  isSupabaseConfigured,
+  isMobileOpen,
+  onCloseMobile,
+}: Props) {
   const navItems = [
     { id: 'dashboard', label: 'Resumen', Icon: DashboardIcon },
     { id: 'catalog', label: 'Catálogo', Icon: CatalogIcon },
@@ -22,31 +29,43 @@ export function AdminSidebar({ activeSection, onNavigate, sessionEmail, onSignOu
   return (
     <>
       {isMobileOpen && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 md:hidden transition-opacity" onClick={onCloseMobile} />
+        <div
+          className="fixed inset-0 z-40 bg-slate-900/60 backdrop-blur-sm transition-opacity md:hidden"
+          onClick={onCloseMobile}
+        />
       )}
-      <aside className={`
-        fixed md:static inset-y-0 left-0 z-50
-        w-60 bg-slate-900 text-slate-300 flex flex-col shrink-0 transition-transform duration-300 ease-in-out
-        ${isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-      `}>
-        <div className="p-4 border-b border-slate-800 flex justify-between items-center shrink-0 h-14">
-          <div>
-            <h2 className="text-white font-bold text-sm tracking-wide">ADMINISTRACIÓN</h2>
-          </div>
-          <button className="md:hidden text-slate-400 p-1 hover:text-white rounded-md hover:bg-slate-800" onClick={onCloseMobile}>
+      <aside
+        className={`
+          fixed inset-y-0 left-0 z-50 flex w-60 shrink-0 flex-col bg-slate-900 text-slate-300 transition-transform duration-300 ease-in-out md:static
+          ${isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        `}
+      >
+        <div className="flex h-14 shrink-0 items-center justify-between border-b border-slate-800 p-4">
+          <h2 className="text-sm font-bold tracking-wide text-white">ADMINISTRACIÓN</h2>
+          <button
+            className="rounded-md p-1 text-slate-400 hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-600 md:hidden"
+            onClick={onCloseMobile}
+            aria-label="Cerrar menú lateral"
+            type="button"
+          >
             <CloseIcon size={18} />
           </button>
         </div>
-        
-        <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
-          {navItems.map(item => {
+
+        <nav className="flex-1 space-y-1 overflow-y-auto p-3">
+          {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
-                onClick={() => { onNavigate(item.id as AdminSection); onCloseMobile(); }}
-                className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all text-sm font-medium ${
-                  isActive ? 'bg-blue-600 text-white shadow-md' : 'hover:bg-slate-800 hover:text-white text-slate-400'
+                onClick={() => {
+                  onNavigate(item.id as AdminSection);
+                  onCloseMobile();
+                }}
+                className={`flex w-full items-center space-x-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 ${
+                  isActive
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'text-slate-400 hover:bg-slate-800 hover:text-white'
                 }`}
               >
                 <item.Icon size={18} />
@@ -56,13 +75,22 @@ export function AdminSidebar({ activeSection, onNavigate, sessionEmail, onSignOu
           })}
         </nav>
 
-        <div className="p-4 bg-slate-950/50 border-t border-slate-800 flex justify-between items-center shrink-0">
+        <div className="flex shrink-0 items-center justify-between border-t border-slate-800 bg-slate-950/50 p-4">
           <div className="flex flex-col overflow-hidden">
-            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Usuario</span>
-            <span className="text-xs text-slate-300 truncate pr-2">{sessionEmail?.split('@')[0] || 'Modo Local'}</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              Usuario
+            </span>
+            <span className="truncate pr-2 text-xs text-slate-300">
+              {sessionEmail?.split('@')[0] || 'Modo local'}
+            </span>
           </div>
           {isSupabaseConfigured && (
-            <button onClick={onSignOut} className="text-slate-500 hover:text-rose-400 transition-colors p-2 rounded-md hover:bg-slate-800 shrink-0" title="Cerrar sesión">
+            <button
+              onClick={onSignOut}
+              className="shrink-0 rounded-md p-2 text-slate-500 transition-colors hover:bg-slate-800 hover:text-rose-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-rose-200"
+              aria-label="Cerrar sesión"
+              type="button"
+            >
               <LogOutIcon size={16} />
             </button>
           )}

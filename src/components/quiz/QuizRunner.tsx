@@ -170,7 +170,7 @@ export function QuizRunner({
     return (
       <QuizSummary
         mode={mode}
-        title={mode === 'exam' ? 'Simulacion completada' : 'Practica completada'}
+        title={mode === 'exam' ? 'Simulación completada' : 'Práctica completada'}
         subtitle={
           mode === 'exam'
             ? 'Revisa tu puntaje y las respuestas correctas.'
@@ -205,8 +205,8 @@ export function QuizRunner({
         <div className="mx-auto flex w-full max-w-3xl items-center gap-4 px-4">
           <button
             onClick={onRestart}
-            className="rounded-xl p-2 text-slate-400 transition-colors hover:bg-slate-50 hover:text-slate-700"
-            title="Salir del quiz"
+            className="rounded-xl p-2 text-slate-400 transition-colors hover:bg-slate-50 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200"
+            aria-label="Salir del quiz"
             type="button"
           >
             <XIcon />
@@ -237,7 +237,7 @@ export function QuizRunner({
                   : 'bg-indigo-50 text-indigo-600'
               }`}
             >
-              {mode === 'exam' ? 'Simulador' : 'Practica'}
+              {mode === 'exam' ? 'Simulador' : 'Práctica'}
             </span>
             <div className="sr-only">
               <h1>{title}</h1>
@@ -250,7 +250,7 @@ export function QuizRunner({
               <div className="min-w-0">
                 {mode === 'practice' && (
                   <div className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
-                    Manual oficial - pagina {currentQuestion.sourcePage}
+                    Manual oficial · página {currentQuestion.sourcePage}
                   </div>
                 )}
                 <h2 className="mt-3 text-xl font-black leading-tight tracking-tight text-slate-900 md:text-[1.7rem]">
@@ -263,8 +263,8 @@ export function QuizRunner({
 
               <span className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-black uppercase tracking-wide text-slate-500">
                 {currentQuestion.selectionMode === 'multiple'
-                  ? 'Seleccion multiple'
-                  : 'Seleccion unica'}
+                  ? 'Selección múltiple'
+                  : 'Selección única'}
               </span>
             </div>
 
@@ -362,11 +362,11 @@ export function QuizRunner({
                   >
                     {isCorrectAnswerSelected ? <CheckIcon /> : <XIcon />}
                   </span>
-                  <span>{isCorrectAnswerSelected ? 'Correcto' : 'Incorrecto'}</span>
+                  <span>{isCorrectAnswerSelected ? 'Correcta' : 'Incorrecta'}</span>
                 </div>
 
                 {hasQuickReference && (
-                  <div className="max-h-24 overflow-y-auto rounded-2xl bg-white/80 px-3 py-3 text-sm leading-6 text-slate-600 shadow-sm">
+                  <div className="max-h-40 overflow-y-auto rounded-2xl bg-white/80 px-3 py-3 text-sm leading-6 text-slate-600 shadow-sm md:max-h-48">
                     {currentQuestion.publicExplanation && <p>{currentQuestion.publicExplanation}</p>}
                     {!currentQuestion.publicExplanation && currentQuestion.sourceReference && (
                       <p>{currentQuestion.sourceReference}</p>
@@ -382,7 +382,7 @@ export function QuizRunner({
               <button
                 onClick={handleConfirm}
                 disabled={state.selectedOptionIds.length === 0}
-                className="w-full rounded-2xl border-b-4 border-indigo-800 bg-indigo-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-indigo-700 hover:bg-indigo-500 active:translate-y-[4px] active:border-b-0 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4 md:w-44"
+                className="w-full rounded-2xl border-b-4 border-indigo-800 bg-indigo-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-indigo-700 hover:bg-indigo-500 active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4 md:w-44"
                 type="button"
               >
                 {currentQuestion.selectionMode === 'multiple' ? 'Comprobar' : 'Responder'}
@@ -390,10 +390,10 @@ export function QuizRunner({
             ) : (
               <button
                 onClick={handleNext}
-                className={`w-full rounded-2xl border-b-4 px-6 py-3.5 text-base font-black text-white transition-all active:translate-y-[4px] active:border-b-0 md:w-44 ${
+                className={`w-full rounded-2xl border-b-4 px-6 py-3.5 text-base font-black text-white transition-all active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 md:w-44 ${
                   isCorrectAnswerSelected
-                    ? 'border-emerald-800 bg-emerald-600 hover:border-emerald-700 hover:bg-emerald-500'
-                    : 'border-rose-800 bg-rose-600 hover:border-rose-700 hover:bg-rose-500'
+                    ? 'border-emerald-800 bg-emerald-600 hover:border-emerald-700 hover:bg-emerald-500 focus-visible:ring-emerald-200'
+                    : 'border-rose-800 bg-rose-600 hover:border-rose-700 hover:bg-rose-500 focus-visible:ring-rose-200'
                 }`}
                 type="button"
               >

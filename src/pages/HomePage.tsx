@@ -40,7 +40,7 @@ const ArrowRightIcon = () => (
 );
 
 export function HomePage() {
-  const { catalog } = usePublishedCatalog('No se pudo cargar el catalogo publico.');
+  const { catalog } = usePublishedCatalog('No se pudo cargar el catálogo público.');
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-slate-50">
@@ -64,7 +64,7 @@ export function HomePage() {
             </h1>
             <p className="mt-4 max-w-md text-sm leading-7 text-slate-300 sm:text-base">
               Entra directo a practicar o simula el examen completo con una interfaz ligera,
-              rapida y tactil.
+              rápida y táctil.
             </p>
             {catalog?.activeEdition?.title && (
               <p className="mt-5 text-[11px] font-black uppercase tracking-[0.24em] text-slate-500">
@@ -76,7 +76,7 @@ export function HomePage() {
           <div className="grid w-full max-w-2xl gap-4">
             <Link
               to="/practice"
-              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-indigo-300/30 bg-white/95 p-6 text-slate-900 shadow-lg shadow-slate-950/10 transition-all hover:-translate-y-1 hover:border-indigo-300 hover:shadow-xl"
+              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-indigo-300/30 bg-white/95 p-6 text-slate-900 shadow-lg shadow-slate-950/10 transition-all hover:-translate-y-1 hover:border-indigo-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200 focus-visible:ring-offset-2"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600">
                 <PlayIcon />
@@ -84,18 +84,18 @@ export function HomePage() {
               <div className="mt-8">
                 <h2 className="text-2xl font-black tracking-tight">Practica</h2>
                 <p className="mt-2 text-sm leading-6 text-slate-500">
-                  Elige capitulos, define cantidad y empieza a responder.
+                  Elige capítulos, define cantidad y empieza a responder.
                 </p>
               </div>
               <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-indigo-600">
-                Empezar
+                Iniciar práctica
                 <ArrowRightIcon />
               </div>
             </Link>
 
             <Link
               to="/exam"
-              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-emerald-300/30 bg-white/95 p-6 text-slate-900 shadow-lg shadow-slate-950/10 transition-all hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl"
+              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-emerald-300/30 bg-white/95 p-6 text-slate-900 shadow-lg shadow-slate-950/10 transition-all hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-200 focus-visible:ring-offset-2"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600">
                 <AwardIcon />
@@ -103,11 +103,11 @@ export function HomePage() {
               <div className="mt-8">
                 <h2 className="text-2xl font-black tracking-tight">Simulador</h2>
                 <p className="mt-2 text-sm leading-6 text-slate-500">
-                  Entra a una prueba completa con puntaje y aprobacion.
+                  Entra a una prueba completa con puntaje y aprobación.
                 </p>
               </div>
               <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-emerald-600">
-                Iniciar
+                Iniciar simulador
                 <ArrowRightIcon />
               </div>
             </Link>
