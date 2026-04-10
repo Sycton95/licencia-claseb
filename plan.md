@@ -134,8 +134,11 @@ Exit criteria:
 
 Status:
 
-- Initial implementation in repo with prepared chunks for current covered chapters.
-- Additional chapter preparation remains pending.
+- Implemented for the currently covered chapters.
+- Current prepared chunks exist only for:
+  - `chapter-1`
+  - `chapter-3`
+- Remaining chapters still need prepared grounding before AI-assisted expansion.
 
 ### Milestone 3: AI suggestion data model and server routes
 
@@ -157,8 +160,7 @@ Exit criteria:
 
 Status:
 
-- Implemented in repo.
-- Requires `supabase/migrations/0003_ai_suggestions.sql` to be applied before production can persist suggestions.
+- Implemented in repo and production.
 
 ### Milestone 4: Admin AI inbox
 
@@ -179,8 +181,7 @@ Exit criteria:
 
 Status:
 
-- Implemented in repo.
-- Full production persistence depends on Milestone 3 migration being applied.
+- Implemented in repo and production.
 
 ### Milestone 5: Automated review flags and coverage analysis
 
@@ -204,7 +205,11 @@ Status:
 - Partially implemented:
   - editorial warnings already exist
   - AI queue now generates flags and coverage-gap tasks
-- Duplicate/weak-distractor heuristics remain pending.
+- Milestone 5A is the next required quality slice before scaling chapter expansion:
+  - duplicate / near-duplicate detection
+  - weak-distractor detection
+  - inconsistent-instruction checks
+  - answer-format mismatch checks
 
 ### Milestone 6: Public UX refinement after editorial scale-up
 
@@ -223,8 +228,48 @@ Exit criteria:
 Status:
 
 - In progress across previous iterations.
-- Current work is redirected to the local-only branch `codex/ui-polish-local` for Milestone 6A close-out.
+- Current work remains redirected to the local-only branch `codex/ui-polish-local` for Milestone 6A close-out.
 - No further UI deployment should occur until the local visual pass is approved.
+
+## Current content baseline
+
+- Published seeded questions currently exist only in:
+  - `chapter-1`: 28
+  - `chapter-3`: 12
+- Prepared source chunks currently exist only in:
+  - `chapter-1`: 2
+  - `chapter-3`: 2
+- Remaining uncovered chapters:
+  - `chapter-2`
+  - `chapter-4`
+  - `chapter-5`
+  - `chapter-6`
+  - `chapter-7`
+  - `chapter-8`
+
+## Chapter rollout policy
+
+- Coverage target is locked to **baseline first**.
+- Public rollout is locked to **progressive activate**.
+- A chapter is considered ready for public activation when it reaches all of:
+  - at least `10` published questions
+  - at least `3` prepared source chunks
+  - clear source references on published items
+  - no unresolved critical editorial warnings
+
+## Chapter rollout order
+
+### Wave 1
+
+1. `chapter-7` — Normas de circulación
+2. `chapter-5` — Alcohol, drogas, enfermedades y fatiga
+3. `chapter-4` — Capacidad visual, reacción y percepción
+
+### Wave 2
+
+4. `chapter-6` — Usuarios vulnerables
+5. `chapter-2` — Principios de la conducción
+6. `chapter-8` — Conducción eficiente e informaciones importantes
 
 ## Current next actions
 
@@ -238,7 +283,16 @@ Status:
    - `npm run build`
    - `npm run release:check`
 4. Deploy once and verify live `/admin` plus `/api/health`.
-5. Close Milestone 6A in `docs/progress.md`, then resume Milestone 5 heuristics:
+5. Close Milestone 6A in `docs/progress.md`.
+6. Ship Milestone 5A:
    - duplicate detection
    - weak distractor checks
-   - review-task surfacing improvements
+   - inconsistent instruction checks
+   - answer-format mismatch checks
+7. Start chapter expansion as an editorial pipeline:
+   - add source preparation
+   - generate AI suggestions
+   - review in `/admin`
+   - convert accepted suggestions into drafts
+   - publish reviewed questions
+   - progressively activate chapters as they hit the baseline threshold

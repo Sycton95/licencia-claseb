@@ -25,11 +25,6 @@
 - Expanded `docs/progress.md` into milestone log with explicit risks and manual blockers.
 - Added `docs/ai-editorial-policy.md`.
 
-Pending after this release:
-
-- apply `0003_ai_suggestions.sql`
-- verify AI inbox in production
-
 ## 2026-04-04 UI Rework v1
 
 - Reworked `/admin` into a desktop-first workspace:
@@ -89,8 +84,24 @@ Pending after this release:
   - validate `/admin` at mobile, tablet, and desktop widths
   - deploy only once after visual approval
 
-Pending after this release:
+## 2026-04-10 Chapter Rollout Roadmap Update
 
-- complete the local `/admin` polish loop
-- merge or cherry-pick the approved branch work into `main`
-- run the release gate and perform one final deployment for Milestone 6A
+- Locked the remaining manual coverage strategy to:
+  - baseline first
+  - progressive public activation
+- Recorded the actual current content baseline:
+  - published coverage only in `chapter-1` and `chapter-3`
+  - prepared grounding only in `chapter-1` and `chapter-3`
+- Added the required Milestone 5A gate before scaling content:
+  - duplicate / near-duplicate detection
+  - weak-distractor checks
+  - inconsistent-instruction checks
+  - answer-format mismatch checks
+- Defined the remaining chapter rollout in two waves:
+  - Wave 1: `chapter-7`, `chapter-5`, `chapter-4`
+  - Wave 2: `chapter-6`, `chapter-2`, `chapter-8`
+- Defined the public activation threshold for each chapter:
+  - at least `10` published questions
+  - at least `3` prepared source chunks
+  - clear source references
+  - no unresolved critical editorial warnings

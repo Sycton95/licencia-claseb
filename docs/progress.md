@@ -30,7 +30,7 @@
   - `docs/progress.md` formalized as operational log
   - release discipline and autonomy rules documented
 - Milestone 2: Content preparation for AI
-  - initial source-preparation chunks added for currently covered chapters
+  - initial source-preparation chunks added for the currently covered chapters
   - grounding policy aligned to formal sources
 - Platform baseline milestones completed earlier:
   - Vite SPA deployed and connected to GitHub -> Vercel production
@@ -44,6 +44,22 @@
   - `ai_suggestions` and `ai_runs` persistence
   - admin AI inbox
   - grounded suggestion review actions
+
+## Current content baseline
+
+- Published seed coverage exists only for:
+  - `chapter-1`: 28 questions
+  - `chapter-3`: 12 questions
+- Source-preparation chunks exist only for:
+  - `chapter-1`: 2 chunks
+  - `chapter-3`: 2 chunks
+- The remaining manual chapters without baseline coverage are:
+  - `chapter-2`
+  - `chapter-4`
+  - `chapter-5`
+  - `chapter-6`
+  - `chapter-7`
+  - `chapter-8`
 
 ## Outcomes from the current implementation pass
 
@@ -78,36 +94,16 @@
   - `npm run validate:content`
   - `npm run build`
 
-## Public UI baseline
-
-- Public routes `/`, `/practice`, and `/exam` now follow a minimal quiz-game direction instead of a dashboard direction.
-- Home screen should remain a start menu:
-  - only the main launch actions for `Practica` and `Simulador`
-  - no coverage stats, chapter summaries, or session-status blocks
-- Practice and Exam setup screens should stay compressed:
-  - thin top strip
-  - compact colored mode chip
-  - no secondary descriptive banners unless they are operationally required
-- Public quiz screens must preserve:
-  - locked `100dvh` shell
-  - no window-level scrolling
-  - pinned bottom action footer
-  - compact top progress chrome
-- Do not reintroduce redundant reference UI in the quiz footer:
-  - no `Ver referencia` / `Ocultar referencia`
-  - no fallback `Pagina X` text beside `Continuar`
-- Mobile vertical space is the priority constraint for public routes. Any future UI work should be checked first against narrow portrait screens before expanding desktop chrome.
-
 ## Open risks
 
 - Live verification for the latest Milestone 6A polish pass is still pending.
 - Repeated deploy-first UI iteration has been the main source of churn. The current branch policy is to validate UI locally first and deploy once after signoff.
 - Current AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
-- Source-preparation coverage currently exists only for the chapters already better represented in the bank. Broader chapter coverage still requires more prepared chunks.
+- Remaining chapter expansion would currently create too much manual review noise because Milestone 5A heuristics are not in place yet.
 
 ## Blocked or manual steps
 
-- `.codex/config.toml` was removed from the staged set and should remain out of product commits.
+- `.codex/config.toml` should remain out of product commits.
 - Continue UI work on `codex/ui-polish-local`, not on `main`.
 - Re-authenticate the Vercel connector in-session whenever final live deployment verification is needed after the approved merge/push.
 - Use browser/Vercel confirmation for the final approved UI release.
@@ -131,18 +127,20 @@
 - Magic link remains the admin login mechanism for now.
 - AI suggestions are private admin artifacts and must never appear in public routes.
 
-## Latest regressions or blocked items
-
-- No platform regression is currently blocking local development.
-- Milestone 6A is waiting on local signoff and one final live verification, not on another structural rewrite.
-
 ## Next approved work blocks
 
-1. Iterate locally on `/admin` inside `codex/ui-polish-local` until the visual pass is approved.
-2. Merge the approved UI work into `main`, deploy once, and close Milestone 6A.
-3. Switch the active roadmap back to Milestone 5:
-   - duplicate prompt detection
-   - weak distractor heuristics
-   - richer review-task surfacing
-4. Resume chapter-by-chapter content expansion through the AI-assisted review flow.
-5. Keep logging each milestone close-out in `docs/progress.md` and `docs/releases.md` before opening the next work block.
+1. Finish Milestone 6A locally and do one final approved deployment.
+2. Ship Milestone 5A quality gates:
+   - duplicate / near-duplicate prompt detection
+   - weak-distractor checks
+   - inconsistent-instruction checks
+   - answer-format mismatch checks
+3. Start remaining chapter expansion with a baseline-first, progressive-activation policy.
+4. Roll out chapter coverage in two waves:
+   - Wave 1: `chapter-7`, `chapter-5`, `chapter-4`
+   - Wave 2: `chapter-6`, `chapter-2`, `chapter-8`
+5. Activate each chapter publicly only after it reaches:
+   - at least `10` published questions
+   - at least `3` prepared source chunks
+   - clear source references
+   - no unresolved critical editorial warnings
