@@ -205,7 +205,7 @@ Status:
 - Partially implemented:
   - editorial warnings already exist
   - AI queue now generates flags and coverage-gap tasks
-- Milestone 5A is the next required quality slice before scaling chapter expansion:
+- Milestone 5A is now the active milestone:
   - duplicate / near-duplicate detection
   - weak-distractor detection
   - inconsistent-instruction checks
@@ -227,9 +227,9 @@ Exit criteria:
 
 Status:
 
-- In progress across previous iterations.
-- Current work remains redirected to the local-only branch `codex/ui-polish-local` for Milestone 6A close-out.
-- No further UI deployment should occur until the local visual pass is approved.
+- Milestone 6A close-out accepted and complete.
+- UI polishing is paused at the current approved baseline.
+- Further roadmap execution returns to content quality and chapter rollout work on `main`.
 
 ## Current content baseline
 
@@ -273,23 +273,17 @@ Status:
 
 ## Current next actions
 
-1. Finish Milestone 6A on the local-only branch `codex/ui-polish-local`:
-   - refine `/admin` without changing structure
-   - verify locally at mobile, tablet, and desktop widths
-   - do not deploy intermediate UI passes
-2. After local signoff, merge or cherry-pick the approved UI work into `main`.
-3. Run the release gate on the approved UI state:
+1. Keep the accepted Milestone 6A UI baseline and resume delivery on `main`.
+2. Ship Milestone 5A:
+   - duplicate detection
+   - weak distractor checks
+   - inconsistent-instruction checks
+   - answer-format mismatch checks
+3. Run the release gate on milestone changes before each production release:
    - `npm run validate:content`
    - `npm run build`
    - `npm run release:check`
-4. Deploy once and verify live `/admin` plus `/api/health`.
-5. Close Milestone 6A in `docs/progress.md`.
-6. Ship Milestone 5A:
-   - duplicate detection
-   - weak distractor checks
-   - inconsistent instruction checks
-   - answer-format mismatch checks
-7. Start chapter expansion as an editorial pipeline:
+4. Start chapter expansion as an editorial pipeline:
    - add source preparation
    - generate AI suggestions
    - review in `/admin`

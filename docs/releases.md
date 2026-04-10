@@ -60,7 +60,7 @@
   - Catálogo
   - Cola AI
 - Tightened the catalog and AI lists into compact work queues with search-first headers and status dots.
-- Kept the editor embedded as the detail surface of `Catálogo`, matching the mockup’s desktop and mobile behavior.
+- Kept the editor embedded as the detail surface of `Catálogo`, matching the mockup's desktop and mobile behavior.
 
 ## 2026-04-05 Milestone 6A Polish Restart
 
@@ -105,3 +105,14 @@
   - at least `3` prepared source chunks
   - clear source references
   - no unresolved critical editorial warnings
+
+## 2026-04-10 Milestone 6A Closed
+
+- Accepted the current `/admin` UI baseline and closed UI polishing for now.
+- Returned roadmap execution to `main` so work can continue on Milestone 5A and chapter rollout.
+- Kept the current admin shell as the working baseline:
+  - sidebar navigation
+  - `Resumen`
+  - `Catálogo`
+  - `Cola AI`
+  - embedded editor in `Catálogo`

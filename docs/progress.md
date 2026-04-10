@@ -15,13 +15,12 @@
 
 ## Active milestone
 
-- Milestone 6A final polish pass:
-  - admin workstation visual consistency
-  - overflow cleanup
-  - UTF-8 cleanup in touched admin/public shell files
-  - local-only iteration on branch `codex/ui-polish-local`
-  - no intermediate UI deployments until visual approval
-  - pending final live `/admin` verification before close-out
+- Milestone 5A quality gate:
+  - duplicate / near-duplicate prompt detection
+  - weak-distractor checks
+  - inconsistent-instruction checks
+  - answer-format mismatch checks
+  - prepare the editorial pipeline for remaining chapter rollout
 
 ## Completed milestones
 
@@ -44,6 +43,12 @@
   - `ai_suggestions` and `ai_runs` persistence
   - admin AI inbox
   - grounded suggestion review actions
+- Milestone 6A: Admin UI polish and visual consistency
+  - accepted current `/admin` UI baseline as complete for now
+  - isolated `/admin` from the public frame
+  - kept the sidebar + `Resumen` / `Catálogo` / `Cola AI` structure
+  - stabilized master-detail flows and editor footer behavior
+  - paused further UI-only work so roadmap execution can return to Milestone 5
 
 ## Current content baseline
 
@@ -61,7 +66,7 @@
   - `chapter-7`
   - `chapter-8`
 
-## Outcomes from the current implementation pass
+## Outcomes from the Milestone 6A close-out pass
 
 - Restored the extracted admin component tree to a buildable local state after the interrupted UI pass.
 - Kept the current `/admin` structure intact:
@@ -93,24 +98,24 @@
 - Local verification completed:
   - `npm run validate:content`
   - `npm run build`
+  - `npm run release:check`
+
+## Milestone 6A close-out decision
+
+- UI polishing is closed for now at the accepted current baseline.
+- Remaining UI refinements are deferred until after Milestone 5 and baseline chapter expansion.
+- Work now proceeds on `main`.
 
 ## Open risks
 
-- Live verification for the latest Milestone 6A polish pass is still pending.
-- Repeated deploy-first UI iteration has been the main source of churn. The current branch policy is to validate UI locally first and deploy once after signoff.
 - Current AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
 - Remaining chapter expansion would currently create too much manual review noise because Milestone 5A heuristics are not in place yet.
 
 ## Blocked or manual steps
 
 - `.codex/config.toml` should remain out of product commits.
-- Continue UI work on `codex/ui-polish-local`, not on `main`.
 - Re-authenticate the Vercel connector in-session whenever final live deployment verification is needed after the approved merge/push.
 - Use browser/Vercel confirmation for the final approved UI release.
-- Before closing Milestone 6A, verify `/admin` on:
-  - desktop `>=1280px`
-  - tablet around `1100px`
-  - mobile `<960px`
 
 ## Active UX constraints
 
@@ -129,17 +134,16 @@
 
 ## Next approved work blocks
 
-1. Finish Milestone 6A locally and do one final approved deployment.
-2. Ship Milestone 5A quality gates:
+1. Ship Milestone 5A quality gates:
    - duplicate / near-duplicate prompt detection
    - weak-distractor checks
    - inconsistent-instruction checks
    - answer-format mismatch checks
-3. Start remaining chapter expansion with a baseline-first, progressive-activation policy.
-4. Roll out chapter coverage in two waves:
+2. Start remaining chapter expansion with a baseline-first, progressive-activation policy.
+3. Roll out chapter coverage in two waves:
    - Wave 1: `chapter-7`, `chapter-5`, `chapter-4`
    - Wave 2: `chapter-6`, `chapter-2`, `chapter-8`
-5. Activate each chapter publicly only after it reaches:
+4. Activate each chapter publicly only after it reaches:
    - at least `10` published questions
    - at least `3` prepared source chunks
    - clear source references
