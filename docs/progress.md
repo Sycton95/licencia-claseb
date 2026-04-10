@@ -15,12 +15,11 @@
 
 ## Active milestone
 
-- Milestone 5A quality gate:
-  - duplicate / near-duplicate prompt detection
-  - weak-distractor checks
-  - inconsistent-instruction checks
-  - answer-format mismatch checks
-  - prepare the editorial pipeline for remaining chapter rollout
+- Milestone 5E local LLM suggestion pilot:
+  - local-only
+  - opt-in
+  - verifier-gated
+  - heuristic provider remains production-default
 
 ## Completed milestones
 
@@ -43,6 +42,12 @@
   - `ai_suggestions` and `ai_runs` persistence
   - admin AI inbox
   - grounded suggestion review actions
+- Milestone 5A: Editorial quality gate
+  - duplicate / near-duplicate prompt detection implemented
+  - weak-distractor checks implemented
+  - inconsistent-instruction checks implemented
+  - answer-format mismatch checks implemented
+  - shared diagnostics surfaced in dashboard, catalog review, editor review, and AI suggestion review
 - Milestone 6A: Admin UI polish and visual consistency
   - accepted current `/admin` UI baseline as complete for now
   - isolated `/admin` from the public frame
@@ -108,8 +113,12 @@
 
 ## Open risks
 
-- Current AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
-- Remaining chapter expansion would currently create too much manual review noise because Milestone 5A heuristics are not in place yet.
+- Current production AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
+- The local Ollama pilot is intentionally not production-ready:
+  - no background worker yet
+  - no beta admin panel yet
+  - bounded local runs only
+  - suggestion output quality still unproven on target hardware
 
 ## Blocked or manual steps
 
@@ -134,16 +143,16 @@
 
 ## Next approved work blocks
 
-1. Ship Milestone 5A quality gates:
-   - duplicate / near-duplicate prompt detection
-   - weak-distractor checks
-   - inconsistent-instruction checks
-   - answer-format mismatch checks
-2. Start remaining chapter expansion with a baseline-first, progressive-activation policy.
-3. Roll out chapter coverage in two waves:
+1. Keep Milestone 5A as the active quality gate for content review.
+2. Add the local-only Milestone 5E pilot:
+   - provider abstraction
+   - verifier-gated local Ollama adapter
+   - isolated beta storage
+3. Start remaining chapter expansion with a baseline-first, progressive-activation policy.
+4. Roll out chapter coverage in two waves:
    - Wave 1: `chapter-7`, `chapter-5`, `chapter-4`
    - Wave 2: `chapter-6`, `chapter-2`, `chapter-8`
-4. Activate each chapter publicly only after it reaches:
+5. Activate each chapter publicly only after it reaches:
    - at least `10` published questions
    - at least `3` prepared source chunks
    - clear source references

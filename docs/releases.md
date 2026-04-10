@@ -116,3 +116,20 @@
   - `Catálogo`
   - `Cola AI`
   - embedded editor in `Catálogo`
+
+## 2026-04-10 Milestone 5A and Local Pilot Scaffold
+
+- Completed the Milestone 5A editorial quality gate in the admin workflow:
+  - duplicate / near-duplicate prompt detection
+  - weak-distractor checks
+  - inconsistent-instruction checks
+  - answer-format mismatch checks
+- Added local-only scaffolding for a future Ollama pilot:
+  - provider abstraction with production default still set to `heuristic`
+  - env-gated `ollama_qwen25_3b` pilot adapter
+  - isolated local beta storage
+  - deterministic verifier stage before any admin review
+- Kept the pilot non-destructive by design:
+  - no public route dependency
+  - no direct path to published content
+  - no production beta panel yet

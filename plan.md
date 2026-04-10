@@ -205,11 +205,41 @@ Status:
 - Partially implemented:
   - editorial warnings already exist
   - AI queue now generates flags and coverage-gap tasks
-- Milestone 5A is now the active milestone:
+- Milestone 5A has been implemented:
   - duplicate / near-duplicate detection
   - weak-distractor detection
   - inconsistent-instruction checks
   - answer-format mismatch checks
+
+### Milestone 5E: Local LLM suggestion pilot
+
+Scope:
+
+- Add a local-only, opt-in pilot provider for bounded suggestion generation.
+- Keep the current heuristic provider as the production default.
+- Gate any local model output through deterministic verifier checks before admin review.
+- Keep pilot results isolated from the verified suggestion bank and hidden from public routes.
+
+Exit criteria:
+
+- The repo supports a local provider abstraction with:
+  - default `heuristic`
+  - local `ollama_qwen25_3b` pilot
+- Pilot output is:
+  - local-only
+  - verifier-gated
+  - draft-only after explicit admin action
+- Production routes and release checks still work with Ollama fully disabled.
+
+Status:
+
+- Scaffolding added in repo:
+  - provider abstraction
+  - local beta storage
+  - verifier pipeline
+  - env-gated local Ollama adapter
+- No production beta panel yet.
+- The heuristic path remains the only production-active provider.
 
 ### Milestone 6: Public UX refinement after editorial scale-up
 
@@ -274,16 +304,16 @@ Status:
 ## Current next actions
 
 1. Keep the accepted Milestone 6A UI baseline and resume delivery on `main`.
-2. Ship Milestone 5A:
-   - duplicate detection
-   - weak distractor checks
-   - inconsistent-instruction checks
-   - answer-format mismatch checks
-3. Run the release gate on milestone changes before each production release:
+2. Keep Milestone 5A diagnostics active as the quality gate for content scaling.
+3. Use Milestone 5E only as a local pilot track:
+   - opt-in
+   - verifier-gated
+   - never production-default
+4. Run the release gate on milestone changes before each production release:
    - `npm run validate:content`
    - `npm run build`
    - `npm run release:check`
-4. Start chapter expansion as an editorial pipeline:
+5. Start chapter expansion as an editorial pipeline:
    - add source preparation
    - generate AI suggestions
    - review in `/admin`

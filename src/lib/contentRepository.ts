@@ -1,18 +1,27 @@
 ﻿import { SEED_CONTENT } from '../data/seedContent';
 import { SOURCE_PREPARATION } from '../data/sourcePreparation';
-import { buildDraftQuestionFromSuggestion, generateAiSuggestions } from './aiSuggestionEngine';
+import { buildDraftQuestionFromSuggestion } from './aiSuggestionEngine';
+import { generateHeuristicWorkspace, generateLocalPilotWorkspace } from './aiProvider.js';
 import {
   sanitizeQuestionPayload,
   validateQuestionAction,
 } from './contentValidation';
 import { loadLocalCatalog, saveLocalCatalog, saveLocalQuestion } from './localContentStore';
 import {
+  loadLocalAiBetaWorkspace,
   loadLocalAiWorkspace,
   updateLocalAiSuggestion,
+  upsertLocalAiPilotRun,
+  upsertLocalAiPilotSuggestions,
   upsertLocalAiRun,
   upsertLocalAiSuggestions,
 } from './localAiStore';
-import { isSupabaseConfigured, supabase, useLocalAdminMode } from './supabase';
+import {
+  isLocalOllamaEnabled,
+  isSupabaseConfigured,
+  supabase,
+  useLocalAdminMode,
+} from './supabase';
 import type {
   Chapter,
   ContentCatalog,
@@ -25,7 +34,7 @@ import type {
   QuestionOption,
   SourceDocument,
 } from '../types/content';
-import type { AiSuggestion, AiWorkspace } from '../types/ai';
+import type { AiPilotWorkspace, AiProvider, AiSuggestion, AiWorkspace } from '../types/ai';
 
 type BaseQuestionRow = {
   id: string;
@@ -731,13 +740,27 @@ export async function getAiWorkspace(): Promise<AiWorkspace> {
   }).then((payload) => payload.workspace);
 }
 
+export async function getLocalAiPilotWorkspace(): Promise<AiPilotWorkspace> {
+  const workspace = loadLocalAiBetaWorkspace();
+  const catalog = await getContentCatalog();
+
+  return {
+    ...workspace,
+    sourcePreparation: SOURCE_PREPARATION.filter(
+      (item) => item.editionId === (catalog.activeEdition?.id ?? catalog.examRuleSet.editionId),
+    ),
+  };
+}
+
 export async function generateAiWorkspace() {
   if (useLocalAdminMode) {
     const catalog = await getContentCatalog();
     const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
-    const result = generateAiSuggestions(catalog, actorEmail);
+    const result = generateHeuristicWorkspace({ catalog, actorEmail });
 
-    upsertLocalAiRun(result.run);
+    if (result.runs[0]) {
+      upsertLocalAiRun(result.runs[0]);
+    }
     upsertLocalAiSuggestions(result.suggestions);
 
     return getAiWorkspace();
@@ -746,6 +769,39 @@ export async function generateAiWorkspace() {
   return requestAdminApi<{ workspace: AiWorkspace }>('/api/admin/ai-suggestions', {
     operation: 'generate',
   }).then((payload) => payload.workspace);
+}
+
+export async function generateLocalAiPilotWorkspace(
+  provider: AiProvider = 'ollama_qwen25_3b',
+) {
+  if (!useLocalAdminMode) {
+    throw new Error('El piloto local solo está disponible en modo admin local.');
+  }
+
+  if (!isLocalOllamaEnabled) {
+    throw new Error('Habilita VITE_ENABLE_LOCAL_OLLAMA para usar el piloto local.');
+  }
+
+  const catalog = await getContentCatalog();
+  const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
+  const editionId = catalog.activeEdition?.id ?? catalog.examRuleSet.editionId;
+  const chunks = SOURCE_PREPARATION.filter((item) => item.editionId === editionId);
+  const questions = catalog.questions
+    .filter((question) => question.status !== 'archived')
+    .slice(0, 1);
+  const workspace = await generateLocalPilotWorkspace(provider, {
+    catalog,
+    actorEmail,
+    chunks,
+    questions,
+  });
+
+  if (workspace.runs[0]) {
+    upsertLocalAiPilotRun(workspace.runs[0]);
+  }
+  upsertLocalAiPilotSuggestions(workspace.suggestions);
+
+  return getLocalAiPilotWorkspace();
 }
 
 export async function transitionAiSuggestion(
