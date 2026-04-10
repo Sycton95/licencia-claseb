@@ -134,8 +134,11 @@ Exit criteria:
 
 Status:
 
-- Initial implementation in repo with prepared chunks for current covered chapters.
-- Additional chapter preparation remains pending.
+- Implemented for the currently covered chapters.
+- Current prepared chunks exist only for:
+  - `chapter-1`
+  - `chapter-3`
+- Remaining chapters still need prepared grounding before AI-assisted expansion.
 
 ### Milestone 3: AI suggestion data model and server routes
 
@@ -157,8 +160,7 @@ Exit criteria:
 
 Status:
 
-- Implemented in repo.
-- Requires `supabase/migrations/0003_ai_suggestions.sql` to be applied before production can persist suggestions.
+- Implemented in repo and production.
 
 ### Milestone 4: Admin AI inbox
 
@@ -179,8 +181,7 @@ Exit criteria:
 
 Status:
 
-- Implemented in repo.
-- Full production persistence depends on Milestone 3 migration being applied.
+- Implemented in repo and production.
 
 ### Milestone 5: Automated review flags and coverage analysis
 
@@ -204,7 +205,11 @@ Status:
 - Partially implemented:
   - editorial warnings already exist
   - AI queue now generates flags and coverage-gap tasks
-- Duplicate/weak-distractor heuristics remain pending.
+- Milestone 5A is now the active milestone:
+  - duplicate / near-duplicate detection
+  - weak-distractor detection
+  - inconsistent-instruction checks
+  - answer-format mismatch checks
 
 ### Milestone 6: Public UX refinement after editorial scale-up
 
@@ -222,23 +227,66 @@ Exit criteria:
 
 Status:
 
-- In progress across previous iterations.
-- Current work is redirected to the local-only branch `codex/ui-polish-local` for Milestone 6A close-out.
-- No further UI deployment should occur until the local visual pass is approved.
+- Milestone 6A close-out accepted and complete.
+- UI polishing is paused at the current approved baseline.
+- Further roadmap execution returns to content quality and chapter rollout work on `main`.
+
+## Current content baseline
+
+- Published seeded questions currently exist only in:
+  - `chapter-1`: 28
+  - `chapter-3`: 12
+- Prepared source chunks currently exist only in:
+  - `chapter-1`: 2
+  - `chapter-3`: 2
+- Remaining uncovered chapters:
+  - `chapter-2`
+  - `chapter-4`
+  - `chapter-5`
+  - `chapter-6`
+  - `chapter-7`
+  - `chapter-8`
+
+## Chapter rollout policy
+
+- Coverage target is locked to **baseline first**.
+- Public rollout is locked to **progressive activate**.
+- A chapter is considered ready for public activation when it reaches all of:
+  - at least `10` published questions
+  - at least `3` prepared source chunks
+  - clear source references on published items
+  - no unresolved critical editorial warnings
+
+## Chapter rollout order
+
+### Wave 1
+
+1. `chapter-7` — Normas de circulación
+2. `chapter-5` — Alcohol, drogas, enfermedades y fatiga
+3. `chapter-4` — Capacidad visual, reacción y percepción
+
+### Wave 2
+
+4. `chapter-6` — Usuarios vulnerables
+5. `chapter-2` — Principios de la conducción
+6. `chapter-8` — Conducción eficiente e informaciones importantes
 
 ## Current next actions
 
-1. Finish Milestone 6A on the local-only branch `codex/ui-polish-local`:
-   - refine `/admin` without changing structure
-   - verify locally at mobile, tablet, and desktop widths
-   - do not deploy intermediate UI passes
-2. After local signoff, merge or cherry-pick the approved UI work into `main`.
-3. Run the release gate on the approved UI state:
+1. Keep the accepted Milestone 6A UI baseline and resume delivery on `main`.
+2. Ship Milestone 5A:
+   - duplicate detection
+   - weak distractor checks
+   - inconsistent-instruction checks
+   - answer-format mismatch checks
+3. Run the release gate on milestone changes before each production release:
    - `npm run validate:content`
    - `npm run build`
    - `npm run release:check`
-4. Deploy once and verify live `/admin` plus `/api/health`.
-5. Close Milestone 6A in `docs/progress.md`, then resume Milestone 5 heuristics:
-   - duplicate detection
-   - weak distractor checks
-   - review-task surfacing improvements
+4. Start chapter expansion as an editorial pipeline:
+   - add source preparation
+   - generate AI suggestions
+   - review in `/admin`
+   - convert accepted suggestions into drafts
+   - publish reviewed questions
+   - progressively activate chapters as they hit the baseline threshold

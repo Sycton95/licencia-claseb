@@ -92,7 +92,7 @@ export function QuizSummary({
 
           <section className="rounded-[30px] border border-slate-200 bg-white p-5 shadow-sm md:p-6">
             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">
-              Revision de respuestas
+              Revisión de respuestas
             </h2>
 
             <div className="mt-4 space-y-3">
@@ -111,7 +111,7 @@ export function QuizSummary({
                   >
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <span className="rounded-full bg-white px-2.5 py-1 text-[11px] font-black uppercase tracking-wide text-slate-500">
-                        Pag. {question.sourcePage}
+                        Pág. {question.sourcePage}
                       </span>
                       {outcome && (
                         <span
@@ -145,15 +145,15 @@ export function QuizSummary({
       <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-4">
         <div className="mx-auto max-w-3xl">
           <button
-            className={`w-full rounded-2xl border-b-4 px-6 py-3.5 text-base font-black text-white transition-all active:translate-y-[4px] active:border-b-0 ${
+            className={`w-full rounded-2xl border-b-4 px-6 py-3.5 text-base font-black text-white transition-all active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 ${
               mode === 'exam'
-                ? 'border-emerald-800 bg-emerald-600 hover:border-emerald-700 hover:bg-emerald-500'
-                : 'border-indigo-800 bg-indigo-600 hover:border-indigo-700 hover:bg-indigo-500'
+                ? 'border-emerald-800 bg-emerald-600 hover:border-emerald-700 hover:bg-emerald-500 focus-visible:ring-emerald-200'
+                : 'border-indigo-800 bg-indigo-600 hover:border-indigo-700 hover:bg-indigo-500 focus-visible:ring-indigo-200'
             }`}
             type="button"
             onClick={onRestart}
           >
-            {mode === 'exam' ? 'Intentar otra simulacion' : 'Practicar de nuevo'}
+            {mode === 'exam' ? 'Intentar otra simulación' : 'Crear otra práctica'}
           </button>
         </div>
       </div>

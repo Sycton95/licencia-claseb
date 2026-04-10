@@ -1,4 +1,3 @@
-// src/components/admin/AiQueueManager.tsx
 import { ChevronLeftIcon } from './AdminIcons';
 import { getSuggestionStatusColor } from './types';
 import type { AiSuggestion, AiSuggestionStatus } from '../../types/ai';
@@ -7,103 +6,182 @@ type Props = {
   filteredSuggestions: AiSuggestion[];
   isBusy: boolean;
   onGenerateSuggestions: () => void;
-  onLoadSuggestionIntoEditor: (s: AiSuggestion) => void;
+  onLoadSuggestionIntoEditor: (suggestion: AiSuggestion) => void;
   onSelectSuggestion: (id: string | null) => void;
   onTransitionSuggestion: (id: string, status: AiSuggestionStatus, msg: string) => void;
   selectedSuggestion: AiSuggestion | null;
   selectedSuggestionId: string | null;
 };
 
-export function AiQueueManager({ filteredSuggestions, isBusy, onGenerateSuggestions, onLoadSuggestionIntoEditor, onSelectSuggestion, onTransitionSuggestion, selectedSuggestion, selectedSuggestionId }: Props) {
+export function AiQueueManager({
+  filteredSuggestions,
+  isBusy,
+  onGenerateSuggestions,
+  onLoadSuggestionIntoEditor,
+  onSelectSuggestion,
+  onTransitionSuggestion,
+  selectedSuggestion,
+  selectedSuggestionId,
+}: Props) {
   return (
-    <div className="flex flex-1 h-full w-full overflow-hidden relative">
-      {/* Master Column */}
-      <div className={`
-        w-full md:w-[340px] lg:w-[380px] flex flex-col border-r border-slate-200 bg-white shrink-0 h-full
-        ${selectedSuggestionId ? 'hidden md:flex' : 'flex'}
-      `}>
-        <div className="shrink-0 p-4 border-b border-slate-200 bg-slate-50/80 flex justify-between items-center z-10">
-           <div>
-             <h2 className="text-sm font-extrabold text-slate-900 tracking-tight">Sugerencias AI</h2>
-             <p className="text-[11px] text-slate-500 font-medium mt-0.5">{filteredSuggestions.length} en cola</p>
-           </div>
-           <button onClick={onGenerateSuggestions} disabled={isBusy} className="text-xs text-white bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded-lg font-semibold shadow-sm transition-colors">
-             Generar Más
-           </button>
+    <div className="relative flex h-full w-full flex-1 overflow-hidden">
+      <div
+        className={`
+          flex h-full w-full shrink-0 flex-col border-r border-slate-200 bg-white md:w-[340px] lg:w-[380px]
+          ${selectedSuggestionId ? 'hidden md:flex' : 'flex'}
+        `}
+      >
+        <div className="z-10 flex shrink-0 items-center justify-between border-b border-slate-200 bg-slate-50/80 p-4">
+          <div>
+            <h2 className="text-sm font-extrabold tracking-tight text-slate-900">
+              Sugerencias AI
+            </h2>
+            <p className="mt-0.5 text-[11px] font-medium text-slate-500">
+              {filteredSuggestions.length} en cola
+            </p>
+          </div>
+          <button
+            onClick={onGenerateSuggestions}
+            disabled={isBusy}
+            className="rounded-lg bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-200"
+          >
+            Generar más
+          </button>
         </div>
-        
-        <div className="flex-1 overflow-y-auto p-2.5 space-y-1.5 bg-slate-50/30">
-          {filteredSuggestions.map((s) => (
+
+        <div className="flex-1 space-y-1.5 overflow-y-auto bg-slate-50/30 p-2.5">
+          {filteredSuggestions.map((suggestion) => (
             <button
-              key={s.id} onClick={() => onSelectSuggestion(s.id)}
-              className={`w-full text-left p-3.5 rounded-xl border transition-all ${selectedSuggestionId === s.id ? 'bg-indigo-50 border-indigo-300 ring-1 ring-indigo-500 shadow-sm' : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm'}`}
+              key={suggestion.id}
+              onClick={() => onSelectSuggestion(suggestion.id)}
+              className={`w-full rounded-xl border p-3.5 text-left transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100 ${
+                selectedSuggestionId === suggestion.id
+                  ? 'border-indigo-300 bg-indigo-50 shadow-sm ring-1 ring-indigo-500'
+                  : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
+              }`}
             >
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-[10px] uppercase font-bold text-indigo-700 bg-indigo-100/50 px-2 py-0.5 rounded border border-indigo-100">{s.suggestionType.replace('_', ' ')}</span>
+              <div className="mb-2 flex items-center justify-between">
+                <span className="rounded border border-indigo-100 bg-indigo-100/50 px-2 py-0.5 text-[10px] font-bold uppercase text-indigo-700">
+                  {suggestion.suggestionType.replace('_', ' ')}
+                </span>
                 <div className="flex items-center space-x-2">
-                  <span className="text-[10px] text-slate-400 font-mono bg-slate-50 px-1 rounded border">{Math.round(s.confidence * 100)}%</span>
-                  <span className={`w-2.5 h-2.5 rounded-full ${getSuggestionStatusColor(s.status)}`} title={s.status} />
+                  <span className="rounded border bg-slate-50 px-1 text-[10px] font-mono text-slate-400">
+                    {Math.round(suggestion.confidence * 100)}%
+                  </span>
+                  <span
+                    className={`h-2.5 w-2.5 rounded-full ${getSuggestionStatusColor(suggestion.status)}`}
+                    title={suggestion.status}
+                  />
                 </div>
               </div>
-              <p className={`text-sm line-clamp-3 leading-relaxed ${selectedSuggestionId === s.id ? 'text-indigo-950 font-semibold' : 'text-slate-700 font-medium'}`}>
-                {s.prompt}
+              <p
+                className={`line-clamp-3 text-sm leading-relaxed ${
+                  selectedSuggestionId === suggestion.id
+                    ? 'font-semibold text-indigo-950'
+                    : 'font-medium text-slate-700'
+                }`}
+              >
+                {suggestion.prompt}
               </p>
             </button>
           ))}
           {filteredSuggestions.length === 0 && (
-            <div className="p-6 text-center text-sm text-slate-400">La cola privada AI está vacía.</div>
+            <div className="p-6 text-center text-sm text-slate-400">
+              No hay sugerencias pendientes. Genera nuevas propuestas o vuelve más tarde.
+            </div>
           )}
         </div>
       </div>
 
-      {/* Detail Column */}
-      <div className={`
-        flex-1 flex flex-col h-full bg-slate-50 relative min-w-0
-        ${selectedSuggestionId ? 'flex' : 'hidden md:flex'}
-      `}>
+      <div
+        className={`
+          relative flex h-full min-w-0 flex-1 flex-col bg-slate-50
+          ${selectedSuggestionId ? 'flex' : 'hidden md:flex'}
+        `}
+      >
         {!selectedSuggestion ? (
-           <div className="flex-1 flex flex-col items-center justify-center text-slate-400 p-8 text-center bg-slate-50/50">
-             <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4 text-2xl">✨</div>
-             <p className="font-medium text-slate-600">Selecciona una sugerencia para revisión manual</p>
-           </div>
+          <div className="flex flex-1 flex-col items-center justify-center bg-slate-50/50 p-8 text-center text-slate-400">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-2xl">
+              ✨
+            </div>
+            <p className="font-medium text-slate-600">Selecciona una sugerencia para revisar</p>
+            <p className="mt-1 max-w-sm text-sm">
+              Aquí verás el prompt propuesto, la fundamentación y las opciones sugeridas.
+            </p>
+          </div>
         ) : (
           <>
-            <div className="h-14 px-4 border-b border-slate-200 flex items-center justify-between bg-white shrink-0 z-10 shadow-sm">
+            <div className="z-10 flex h-14 shrink-0 items-center justify-between border-b border-slate-200 bg-white px-4 shadow-sm">
               <div className="flex items-center space-x-2">
-                <button onClick={() => onSelectSuggestion(null)} className="md:hidden p-2 -ml-2 text-slate-500 hover:bg-slate-100 rounded-md">
+                <button
+                  onClick={() => onSelectSuggestion(null)}
+                  className="-ml-2 rounded-md p-2 text-slate-500 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100 md:hidden"
+                  aria-label="Volver a la cola AI"
+                  type="button"
+                >
                   <ChevronLeftIcon size={20} />
                 </button>
-                <h2 className="font-semibold text-slate-900 text-sm hidden sm:block">Revisión Automática</h2>
+                <h2 className="hidden text-sm font-semibold text-slate-900 sm:block">
+                  Revisión automática
+                </h2>
               </div>
-              <span className="px-2.5 py-1 rounded-md text-[10px] uppercase font-bold bg-slate-100 text-slate-600 border border-slate-200">
+              <span className="rounded-md border border-slate-200 bg-slate-100 px-2.5 py-1 text-[10px] font-bold uppercase text-slate-600">
                 {selectedSuggestion.status}
               </span>
             </div>
-            
-            <div className="flex-1 overflow-y-auto p-4 md:p-8 bg-slate-50/30">
-              <div className="max-w-3xl mx-auto space-y-6">
-                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                  <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3">Enunciado Propuesto</h3>
-                  <p className="text-base font-semibold text-slate-900 leading-relaxed">{selectedSuggestion.prompt}</p>
+
+            <div className="flex-1 overflow-y-auto bg-slate-50/30 p-4 md:p-8">
+              <div className="mx-auto max-w-3xl space-y-6">
+                <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <h3 className="mb-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    Enunciado propuesto
+                  </h3>
+                  <p className="text-base font-semibold leading-relaxed text-slate-900">
+                    {selectedSuggestion.prompt}
+                  </p>
                 </div>
-                
+
                 {selectedSuggestion.rationale && (
-                  <div className="bg-slate-100/50 p-5 rounded-xl border border-slate-200">
-                    <h3 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Fundamentación de AI</h3>
-                    <p className="text-sm text-slate-700 leading-relaxed italic">"{selectedSuggestion.rationale}"</p>
+                  <div className="rounded-xl border border-slate-200 bg-slate-100/50 p-5">
+                    <h3 className="mb-2 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                      Fundamentación de AI
+                    </h3>
+                    <p className="text-sm italic leading-relaxed text-slate-700">
+                      “{selectedSuggestion.rationale}”
+                    </p>
                   </div>
                 )}
 
                 {selectedSuggestion.suggestedOptions?.length > 0 && (
                   <div>
-                    <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3 px-1">Opciones Generadas</h3>
+                    <h3 className="mb-3 px-1 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                      Opciones generadas
+                    </h3>
                     <div className="space-y-2">
-                      {selectedSuggestion.suggestedOptions.map((opt: string, i: number) => {
-                        const isCorrect = selectedSuggestion.suggestedCorrectAnswers.includes(i);
+                      {selectedSuggestion.suggestedOptions.map((option, index) => {
+                        const isCorrect =
+                          selectedSuggestion.suggestedCorrectAnswers.includes(index);
                         return (
-                          <div key={i} className={`p-4 border rounded-xl flex items-start space-x-3 shadow-sm ${isCorrect ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-white border-slate-200 text-slate-700'}`}>
-                            <span className={`flex items-center justify-center w-6 h-6 rounded-full shrink-0 text-xs font-bold ${isCorrect ? 'bg-emerald-200 text-emerald-800' : 'bg-slate-100 text-slate-500'}`}>{String.fromCharCode(65 + i)}</span>
-                            <span className={`text-sm mt-0.5 ${isCorrect ? 'font-semibold' : 'font-medium'}`}>{opt}</span>
+                          <div
+                            key={index}
+                            className={`flex items-start space-x-3 rounded-xl border p-4 shadow-sm ${
+                              isCorrect
+                                ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
+                                : 'border-slate-200 bg-white text-slate-700'
+                            }`}
+                          >
+                            <span
+                              className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                                isCorrect
+                                  ? 'bg-emerald-200 text-emerald-800'
+                                  : 'bg-slate-100 text-slate-500'
+                              }`}
+                            >
+                              {String.fromCharCode(65 + index)}
+                            </span>
+                            <span className={`mt-0.5 text-sm ${isCorrect ? 'font-semibold' : 'font-medium'}`}>
+                              {option}
+                            </span>
                           </div>
                         );
                       })}
@@ -113,15 +191,31 @@ export function AiQueueManager({ filteredSuggestions, isBusy, onGenerateSuggesti
               </div>
             </div>
 
-            <div className="shrink-0 p-3 bg-white border-t border-slate-200 flex justify-end space-x-2 z-20">
-              <button onClick={() => onTransitionSuggestion(selectedSuggestion.id, 'deferred', 'Postergada')} disabled={isBusy} className="px-4 py-2 text-xs font-semibold text-slate-600 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors hidden sm:block">
+            <div className="z-20 flex shrink-0 justify-end space-x-2 border-t border-slate-200 bg-white p-3">
+              <button
+                onClick={() =>
+                  onTransitionSuggestion(selectedSuggestion.id, 'deferred', 'Postergada')
+                }
+                disabled={isBusy}
+                className="hidden rounded-lg border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-600 transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-200 sm:block"
+              >
                 Postergar
               </button>
-              <button onClick={() => onTransitionSuggestion(selectedSuggestion.id, 'rejected', 'Rechazada')} disabled={isBusy} className="px-4 py-2 text-xs font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-lg hover:bg-rose-100 transition-colors">
+              <button
+                onClick={() =>
+                  onTransitionSuggestion(selectedSuggestion.id, 'rejected', 'Rechazada')
+                }
+                disabled={isBusy}
+                className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-2 text-xs font-semibold text-rose-700 transition-colors hover:bg-rose-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-rose-100"
+              >
                 Rechazar
               </button>
-              <button onClick={() => onLoadSuggestionIntoEditor(selectedSuggestion)} disabled={isBusy} className="px-6 py-2 text-xs font-bold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm transition-colors">
-                Aprobar y Editar
+              <button
+                onClick={() => onLoadSuggestionIntoEditor(selectedSuggestion)}
+                disabled={isBusy}
+                className="rounded-lg bg-indigo-600 px-6 py-2 text-xs font-bold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100"
+              >
+                Aprobar y editar
               </button>
             </div>
           </>
