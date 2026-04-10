@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from 'react';
+import { startTransition, useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { QuizRunner } from '../components/quiz/QuizRunner';
-import { getPublishedCatalog } from '../lib/contentRepository';
+import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
 import {
   buildPracticeQuestionSet,
   getChapterQuestionCount,
@@ -17,25 +18,26 @@ type ActivePractice = {
 };
 
 export function PracticePage() {
-  const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const { catalog, error, isLoading } = usePublishedCatalog(
+    'No se pudo cargar la practica personalizada.',
+  );
   const [selectedChapterIds, setSelectedChapterIds] = useState<string[]>([]);
   const [questionCount, setQuestionCount] = useState(10);
   const [activePractice, setActivePractice] = useState<ActivePractice | null>(null);
 
   useEffect(() => {
-    getPublishedCatalog()
-      .then((data) => {
-        setCatalog(data);
-        const availableChapterIds = data.chapters
-          .filter((chapter) => getChapterQuestionCount(data.questions, chapter.id) > 0)
-          .map((chapter) => chapter.id);
+    if (!catalog) {
+      return;
+    }
 
-        setSelectedChapterIds(availableChapterIds);
-        setQuestionCount(getDefaultPracticeQuestionCount(data.questions));
-      })
-      .catch(() => setError('No se pudo cargar la práctica personalizada.'));
-  }, []);
+    const availableChapterIds = catalog.chapters
+      .filter((chapter) => getChapterQuestionCount(catalog.questions, chapter.id) > 0)
+      .map((chapter) => chapter.id);
+
+    setSelectedChapterIds(availableChapterIds);
+    setQuestionCount(getDefaultPracticeQuestionCount(catalog.questions));
+  }, [catalog]);
 
   const chapterCards = useMemo(() => {
     if (!catalog) {
@@ -53,7 +55,8 @@ export function PracticePage() {
       return 0;
     }
 
-    return catalog.questions.filter((question) => selectedChapterIds.includes(question.chapterId)).length;
+    return catalog.questions.filter((question) => selectedChapterIds.includes(question.chapterId))
+      .length;
   }, [catalog, selectedChapterIds]);
 
   const toggleChapter = (chapterId: string) => {
@@ -74,12 +77,14 @@ export function PracticePage() {
       questionCount,
     });
 
-    setActivePractice({
-      key: `${Date.now()}`,
-      title: 'Práctica personalizada',
-      subtitle: `${questions.length} preguntas seleccionadas desde ${selectedChapterIds.length} capítulo(s).`,
-      questions,
-      maxScore: questions.length,
+    startTransition(() => {
+      setActivePractice({
+        key: `${Date.now()}`,
+        title: 'Practica personalizada',
+        subtitle: `${questions.length} preguntas seleccionadas.`,
+        questions,
+        maxScore: questions.length,
+      });
     });
   };
 
@@ -98,120 +103,143 @@ export function PracticePage() {
   }
 
   return (
-    <section className="page-stack page-stack--public">
-      <section className="panel panel--soft">
-        <span className="eyebrow">Práctica personalizada</span>
-        <h1 className="hero-title">Arma un quiz según el capítulo que quieras estudiar</h1>
-        <p className="hero-copy">
-          Solo se usan preguntas publicadas de la edición activa. Así evitamos mezclar material
-          pendiente con contenido apto para estudio.
-        </p>
-      </section>
-
-      <section className="public-builder-grid">
-        <section className="panel">
-          <div className="section-head">
-            <div>
-              <h2 className="section-title">Capítulos disponibles</h2>
-              <p className="info-text">Elige uno o varios capítulos para construir tu práctica.</p>
-            </div>
-          </div>
-          {error && <p className="error-banner">{error}</p>}
-          <div className="choice-grid choice-grid--chapters">
-            {chapterCards.map((chapter) => {
-              const isSelected = selectedChapterIds.includes(chapter.id);
-              const isDisabled = chapter.questionCount === 0;
-
-              return (
-                <button
-                  key={chapter.id}
-                  type="button"
-                  className={
-                    isDisabled
-                      ? 'choice-card choice-card--disabled'
-                      : isSelected
-                        ? 'choice-card choice-card--selected'
-                        : 'choice-card'
-                  }
-                  disabled={isDisabled}
-                  onClick={() => toggleChapter(chapter.id)}
-                >
-                  <strong>{chapter.code}</strong>
-                  <span>{chapter.title}</span>
-                  <small>
-                    {isDisabled ? 'Próximamente' : `${chapter.questionCount} preguntas publicadas`}
-                  </small>
-                </button>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="panel practice-config-panel">
-          <div className="section-head">
-            <div>
-              <h2 className="section-title">Configuración</h2>
-              <p className="info-text">Ajusta la cantidad de preguntas y comienza cuando quieras.</p>
-            </div>
-          </div>
-
-          <div className="number-picker">
-            {[5, 10, 20, 35].map((amount) => {
-              const disabled = amount > availableQuestionCount || availableQuestionCount === 0;
-
-              return (
-                <button
-                  key={amount}
-                  type="button"
-                  className={questionCount === amount ? 'amount-chip amount-chip--selected' : 'amount-chip'}
-                  disabled={disabled}
-                  onClick={() => setQuestionCount(amount)}
-                >
-                  {amount}
-                </button>
-              );
-            })}
-          </div>
-
-          <label className="field">
-            <span>Personalizado</span>
-            <input
-              type="number"
-              min={1}
-              max={Math.max(1, availableQuestionCount)}
-              value={questionCount}
-              onChange={(event) =>
-                setQuestionCount(
-                  Math.min(
-                    Math.max(Number(event.target.value) || 1, 1),
-                    Math.max(1, availableQuestionCount),
-                  ),
-                )
-              }
-            />
-          </label>
-
-          <div className="stats-grid stats-grid--config">
-            <article className="stat-card">
-              <strong>{selectedChapterIds.length}</strong>
-              <span>capítulos seleccionados</span>
-            </article>
-            <article className="stat-card">
-              <strong>{availableQuestionCount}</strong>
-              <span>preguntas disponibles</span>
-            </article>
-          </div>
-
+    <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden bg-slate-50">
+      <div className="shrink-0 border-b border-slate-200 bg-white px-4 py-3 shadow-sm md:py-4">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
           <button
-            className="primary-button"
+            onClick={() => navigate('/')}
+            className="rounded-xl px-2 py-1 text-xs font-bold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            type="button"
+          >
+            Volver
+          </button>
+          <span className="inline-flex rounded-full bg-indigo-50 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600">
+            Practica
+          </span>
+          <div className="w-12" aria-hidden="true" />
+        </div>
+      </div>
+
+      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 md:px-6 md:py-4">
+        <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
+          {isLoading && (
+            <div className="rounded-3xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-500 shadow-sm">
+              Cargando practica disponible...
+            </div>
+          )}
+
+          {error && (
+            <div className="rounded-3xl border border-rose-200 bg-rose-50 px-5 py-4 text-sm font-semibold text-rose-700 shadow-sm">
+              {error}
+            </div>
+          )}
+
+          <section className="rounded-[28px] border border-slate-200 bg-white p-4 shadow-sm md:p-5">
+            <div className="overflow-hidden rounded-3xl border border-slate-200">
+              {chapterCards.map((chapter) => {
+                const isSelected = selectedChapterIds.includes(chapter.id);
+                const isDisabled = chapter.questionCount === 0;
+
+                return (
+                  <label
+                    key={chapter.id}
+                    className={`flex cursor-pointer items-center gap-4 border-b border-slate-100 px-4 py-3.5 last:border-b-0 ${
+                      isSelected ? 'bg-indigo-50/70' : 'bg-white hover:bg-slate-50'
+                    } ${isDisabled ? 'cursor-not-allowed opacity-60' : ''}`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={isSelected}
+                      disabled={isDisabled}
+                      onChange={() => toggleChapter(chapter.id)}
+                      className="h-5 w-5 shrink-0 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="truncate text-sm font-bold text-slate-900">
+                          {chapter.title}
+                        </span>
+                        <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500">
+                          {isDisabled ? 'Proximamente' : `${chapter.questionCount}`}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs leading-5 text-slate-500">{chapter.description}</p>
+                    </div>
+                  </label>
+                );
+              })}
+            </div>
+          </section>
+
+          <section className="rounded-[28px] border border-slate-200 bg-white p-4 shadow-sm md:p-5">
+            <div className="mb-3">
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">
+                Cantidad de preguntas
+              </h2>
+            </div>
+
+            <div className="flex rounded-2xl border border-slate-200 bg-slate-200/70 p-1 shadow-inner">
+              {[5, 10, 20, 35].map((amount) => {
+                const disabled = amount > availableQuestionCount || availableQuestionCount === 0;
+
+                return (
+                  <label key={amount} className="flex-1 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="question-count"
+                      checked={questionCount === amount}
+                      disabled={disabled}
+                      onChange={() => setQuestionCount(amount)}
+                      className="peer sr-only"
+                    />
+                    <div
+                      className={`rounded-xl py-2.5 text-center text-sm font-black transition-all ${
+                        disabled
+                          ? 'cursor-not-allowed text-slate-400'
+                          : 'text-slate-500 hover:text-slate-800 peer-checked:bg-white peer-checked:text-indigo-700 peer-checked:shadow-sm'
+                      }`}
+                    >
+                      {amount}
+                    </div>
+                  </label>
+                );
+              })}
+            </div>
+
+            <label className="mt-4 block">
+              <span className="mb-2 block text-sm font-bold text-slate-700">Personalizado</span>
+              <input
+                type="number"
+                min={1}
+                max={Math.max(1, availableQuestionCount)}
+                value={questionCount}
+                onChange={(event) =>
+                  setQuestionCount(
+                    Math.min(
+                      Math.max(Number(event.target.value) || 1, 1),
+                      Math.max(1, availableQuestionCount),
+                    ),
+                  )
+                }
+                className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-base font-semibold text-slate-900 outline-none ring-0 transition focus:border-indigo-400 focus:bg-white"
+              />
+            </label>
+          </section>
+        </div>
+      </div>
+
+      <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-3">
+        <div className="mx-auto max-w-3xl">
+          <button
+            className="w-full rounded-2xl border-b-4 border-indigo-800 bg-indigo-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-indigo-700 hover:bg-indigo-500 active:translate-y-[4px] active:border-b-0 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4"
             type="button"
             onClick={startPractice}
-            disabled={selectedChapterIds.length === 0 || availableQuestionCount === 0}
+            disabled={isLoading || selectedChapterIds.length === 0 || availableQuestionCount === 0}
           >
-            Iniciar práctica
+            Iniciar practica
           </button>
-        </section>
-      </section>
-    </section>
+        </div>
+      </div>
+    </div>
   );
 }

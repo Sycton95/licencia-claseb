@@ -5,7 +5,9 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_PUBLISHABLE_KEY?: string;
   readonly VITE_SUPABASE_ANON_KEY?: string;
   readonly VITE_ENABLE_LOCAL_ADMIN?: string;
+  readonly VITE_ENABLE_PREVIEW_ADMIN_BYPASS?: string;
   readonly VITE_PUBLIC_ADMIN_URL?: string;
+  readonly VITE_VERCEL_ENV?: string;
 }
 
 interface ImportMeta {

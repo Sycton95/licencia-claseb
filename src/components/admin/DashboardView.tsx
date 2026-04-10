@@ -1,185 +1,68 @@
-import type {
-  ChapterCoverageRow,
-  EditorialWarning,
-  SourceCoverageRow,
-} from '../../lib/editorialDiagnostics';
-import type { AdminHealth, AdminReportSummary } from './types';
+// src/components/admin/DashboardView.tsx
+import type { AdminReportSummary, AdminHealth } from './types';
+import type { ChapterCoverageRow } from '../../lib/editorialDiagnostics';
 
-type DashboardViewProps = {
-  activeEditionCode?: string;
-  chapterCoverage: ChapterCoverageRow[];
-  editorialWarnings: EditorialWarning[];
-  health: AdminHealth | null;
-  healthNeedsHardening: boolean;
-  isSupabaseConfigured: boolean;
-  onApplyQuickFilter: (
-    preset: 'all' | 'draft' | 'reviewed' | 'published' | 'archived' | 'exam' | 'warnings',
-  ) => void;
-  onSelectQuestion: (questionId: string) => void;
-  sourceCoverage: SourceCoverageRow[];
+type Props = {
   summary: AdminReportSummary | null;
+  chapterCoverage: ChapterCoverageRow[];
+  health: AdminHealth | null;
 };
 
-export function DashboardView({
-  activeEditionCode,
-  chapterCoverage,
-  editorialWarnings,
-  health,
-  healthNeedsHardening,
-  isSupabaseConfigured,
-  onApplyQuickFilter,
-  onSelectQuestion,
-  sourceCoverage,
-  summary,
-}: DashboardViewProps) {
+export function DashboardView({ summary, chapterCoverage, health }: Props) {
   return (
-    <section className="admin-section-scroll admin-dashboard">
-      {summary && (
-        <div className="admin-summary-grid">
-          <button
-            type="button"
-            className="admin-summary-card admin-summary-card--metric"
-            onClick={() => onApplyQuickFilter('all')}
-          >
-            <small>Total</small>
-            <strong>{summary.totalQuestions}</strong>
-          </button>
-          <button
-            type="button"
-            className="admin-summary-card admin-summary-card--metric"
-            onClick={() => onApplyQuickFilter('draft')}
-          >
-            <small>Drafts</small>
-            <strong>{summary.draftCount}</strong>
-          </button>
-          <button
-            type="button"
-            className="admin-summary-card admin-summary-card--metric"
-            onClick={() => onApplyQuickFilter('reviewed')}
-          >
-            <small>Revisadas</small>
-            <strong>{summary.reviewedCount}</strong>
-          </button>
-          <button
-            type="button"
-            className="admin-summary-card admin-summary-card--metric"
-            onClick={() => onApplyQuickFilter('published')}
-          >
-            <small>Publicadas</small>
-            <strong>{summary.publishedCount}</strong>
-          </button>
+    <div className="flex-1 overflow-y-auto p-4 md:p-8 bg-slate-50">
+      <div className="max-w-5xl mx-auto space-y-6">
+        
+        <div>
+          <h1 className="text-xl font-bold text-slate-900">Resumen Editorial</h1>
+          <p className="text-sm text-slate-500 mt-1">Métricas de cobertura y salud del sistema.</p>
         </div>
-      )}
 
-      <div className="admin-dashboard__grid">
-        {isSupabaseConfigured && (
-          <section className="panel admin-surface admin-surface--dashboard">
-            <div className="section-head">
-              <div>
-                <span className="eyebrow">Operación</span>
-                <h3 className="section-title">Estado del sistema</h3>
+        {summary && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: 'Total Base', value: summary.totalQuestions, color: 'text-slate-900' },
+              { label: 'En Borrador', value: summary.draftCount, color: 'text-amber-600' },
+              { label: 'En Revisión', value: summary.reviewedCount, color: 'text-blue-600' },
+              { label: 'Publicadas', value: summary.publishedCount, color: 'text-emerald-600' },
+            ].map((stat, i) => (
+              <div key={i} className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-center">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">{stat.label}</span>
+                <span className={`text-3xl font-extrabold ${stat.color}`}>{stat.value}</span>
               </div>
-            </div>
-            <div className="admin-detail-list">
-              <div className="admin-detail-list__row">
-                <span>Edición activa</span>
-                <strong>{activeEditionCode ?? 'sin datos'}</strong>
-              </div>
-              <div className="admin-detail-list__row">
-                <span>Esquema</span>
-                <strong>{health?.schema ?? 'sin datos'}</strong>
-              </div>
-              <div className="admin-detail-list__row">
-                <span>AI schema</span>
-                <strong>{health?.aiSchemaReady ? 'activa' : 'pendiente'}</strong>
-              </div>
-              <div className="admin-detail-list__row">
-                <span>Service role</span>
-                <strong>{health?.usesServiceRole ? 'activa' : 'pendiente'}</strong>
-              </div>
-              <div className="admin-detail-list__row">
-                <span>Base de datos</span>
-                <strong>{health?.databaseReachable ? 'conectada' : 'sin conexión'}</strong>
-              </div>
-            </div>
-            {healthNeedsHardening && (
-              <p className="info-text">
-                Persisten pendientes operativos. La base debe quedar en esquema v1 con AI schema
-                activa y service role operativa.
-              </p>
-            )}
-          </section>
+            ))}
+          </div>
         )}
 
-        <section className="panel admin-surface admin-surface--dashboard">
-          <div className="section-head">
-            <div>
-              <span className="eyebrow">Triage</span>
-              <h3 className="section-title">Warnings editoriales</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col">
+            <h3 className="font-semibold text-slate-900 mb-4 pb-2 border-b border-slate-100 text-sm">Estado del Entorno</h3>
+            <div className="space-y-4 text-sm flex-1">
+              <div className="flex justify-between items-center"><span className="text-slate-500">Versión Schema</span> <span className="font-mono bg-slate-100 px-2 py-0.5 rounded">{health?.schema ?? 'v1'}</span></div>
+              <div className="flex justify-between items-center"><span className="text-slate-500">Service Role</span> <span className={`px-2 py-0.5 rounded text-xs font-bold ${health?.usesServiceRole ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>{health?.usesServiceRole ? 'Activa' : 'Inactiva'}</span></div>
+              <div className="flex justify-between items-center"><span className="text-slate-500">Motor AI</span> <span className={`px-2 py-0.5 rounded text-xs font-bold ${health?.aiSchemaReady ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>{health?.aiSchemaReady ? 'Operativo' : 'Pendiente Migración'}</span></div>
             </div>
           </div>
-          <div className="admin-stack-list">
-            {editorialWarnings.length === 0 ? (
-              <article className="admin-inline-note">
-                <strong>Sin warnings</strong>
-                <span>Las reglas actuales no detectan inconsistencias en el catálogo cargado.</span>
-              </article>
-            ) : (
-              editorialWarnings.map((warning) => (
-                <button
-                  key={warning.id}
-                  type="button"
-                  className="admin-inline-card"
-                  onClick={() => onSelectQuestion(warning.questionId)}
-                >
-                  <strong>{warning.title}</strong>
-                  <span>{warning.detail}</span>
-                  <small>{warning.questionId}</small>
-                </button>
-              ))
-            )}
-          </div>
-        </section>
-
-        <section className="panel admin-surface admin-surface--dashboard">
-          <div className="section-head">
-            <div>
-              <span className="eyebrow">Cobertura</span>
-              <h3 className="section-title">Capítulos</h3>
+          
+          <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col">
+            <h3 className="font-semibold text-slate-900 mb-4 pb-2 border-b border-slate-100 text-sm">Cobertura por Capítulo</h3>
+            <div className="space-y-3 overflow-y-auto max-h-60 pr-2">
+              {chapterCoverage.map(c => (
+                <div key={c.chapterId} className="flex justify-between items-center text-sm">
+                  <span className="text-slate-600 truncate pr-4 font-medium" title={c.chapterTitle}>{c.chapterCode}</span>
+                  <div className="flex items-center space-x-2 shrink-0">
+                    <div className="w-24 h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-emerald-400" style={{ width: `${c.total > 0 ? (c.published / c.total) * 100 : 0}%` }} />
+                    </div>
+                    <span className="text-xs font-mono text-slate-500 w-8 text-right">{c.published}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="admin-stack-list">
-            {chapterCoverage.map((row) => (
-              <article key={row.chapterId} className="admin-inline-card">
-                <strong>
-                  {row.chapterCode} · {row.chapterTitle}
-                </strong>
-                <small>
-                  Total {row.total} · Publicadas {row.published} · Revisadas pendientes{' '}
-                  {row.reviewedPending}
-                </small>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="panel admin-surface admin-surface--dashboard">
-          <div className="section-head">
-            <div>
-              <span className="eyebrow">Fuentes</span>
-              <h3 className="section-title">Referencia editorial</h3>
-            </div>
-          </div>
-          <div className="admin-stack-list">
-            {sourceCoverage.map((row) => (
-              <article key={row.sourceDocumentId} className="admin-inline-card">
-                <strong>{row.title}</strong>
-                <small>Total {row.total} · Sin referencia {row.missingReferenceCount}</small>
-              </article>
-            ))}
-          </div>
-        </section>
+        </div>
+        
       </div>
-    </section>
+    </div>
   );
 }

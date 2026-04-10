@@ -1,64 +1,70 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { APP_WATERMARK } from '../../lib/appMeta';
 
-const navigation = [
+const CarIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+    <circle cx="7" cy="17" r="2" />
+    <path d="M9 17h6" />
+    <circle cx="17" cy="17" r="2" />
+  </svg>
+);
+
+const links = [
   { to: '/', label: 'Inicio' },
-  { to: '/practice', label: 'Práctica' },
-  { to: '/exam', label: 'Examen' },
+  { to: '/practice', label: 'Practica' },
+  { to: '/exam', label: 'Simulador' },
 ];
 
 export function AppLayout() {
   return (
-    <main className="app-shell">
-      <div className="ambient ambient--left" aria-hidden="true" />
-      <div className="ambient ambient--right" aria-hidden="true" />
-
-      <section className="app-frame app-frame--wide">
-        <header className="app-header app-header--layout">
-          <div className="app-header__row">
-            <div className="app-heading">
-              <span className="brand-pill">Clase B Chile</span>
-              <div className="app-heading__copy">
-                <h1 className="app-title">Simulador de práctica y examen</h1>
-                <p className="app-subtitle">
-                  Estudia desde el móvil y trabaja el backoffice con más espacio desde escritorio.
-                </p>
-              </div>
+    <div className="flex h-[100dvh] w-full flex-col overflow-hidden bg-slate-50 font-sans">
+      <header className="z-40 h-14 shrink-0 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur-md md:h-16">
+        <div className="mx-auto flex h-full max-w-5xl items-center justify-between px-4">
+          <NavLink
+            to="/"
+            className="flex items-center space-x-2 text-indigo-900 transition-opacity hover:opacity-80"
+          >
+            <div className="rounded-lg bg-indigo-600 p-1.5 text-white shadow-sm">
+              <CarIcon />
             </div>
+            <span className="text-base font-bold tracking-tight md:text-lg">
+              Clase B<span className="text-indigo-500">.cl</span>
+            </span>
+          </NavLink>
 
-            <nav className="top-nav" aria-label="Navegación principal">
-              {navigation.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) =>
-                    isActive ? 'top-nav__link top-nav__link--active' : 'top-nav__link'
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-            </nav>
-          </div>
+          <nav className="hidden md:flex md:space-x-1">
+            {links.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  `rounded-xl px-4 py-2 text-sm font-medium transition-all ${
+                    isActive
+                      ? 'border border-slate-200/50 bg-slate-100 text-slate-900 shadow-inner'
+                      : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+      </header>
 
-          <div className="app-header__note">
-            <span>Catálogo publicado y revisión editorial continua.</span>
-          </div>
-        </header>
-
+      <main className="relative flex min-w-0 flex-1 flex-col overflow-hidden">
         <Outlet />
-
-        <footer className="app-footer">
-          <span>
-            Práctica digital para licencia Clase B. El contenido visible siempre sale del catálogo
-            publicado.
-          </span>
-        </footer>
-      </section>
-
-      <span className="app-watermark" aria-hidden="true">
-        {APP_WATERMARK}
-      </span>
-    </main>
+      </main>
+    </div>
   );
 }

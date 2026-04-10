@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { startTransition, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { QuizRunner } from '../components/quiz/QuizRunner';
-import { getPublishedCatalog } from '../lib/contentRepository';
+import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
 import { buildExamQuestionSet } from '../lib/quizFactory';
 import type { ContentCatalog } from '../types/content';
 
@@ -12,15 +13,12 @@ type ActiveExam = {
 };
 
 export function ExamPage() {
-  const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const { catalog, error: loadError, isLoading } = usePublishedCatalog(
+    'No se pudo cargar el modo examen.',
+  );
+  const [buildError, setBuildError] = useState<string | null>(null);
   const [activeExam, setActiveExam] = useState<ActiveExam | null>(null);
-
-  useEffect(() => {
-    getPublishedCatalog()
-      .then((data) => setCatalog(data))
-      .catch(() => setError('No se pudo cargar el modo examen.'));
-  }, []);
 
   const startExam = () => {
     if (!catalog) {
@@ -30,14 +28,17 @@ export function ExamPage() {
     try {
       const questions = buildExamQuestionSet(catalog.questions, catalog.examRuleSet);
 
-      setActiveExam({
-        key: `${Date.now()}`,
-        questions,
-        maxScore: catalog.examRuleSet.maxPoints,
-        passingScore: catalog.examRuleSet.passingPoints,
+      setBuildError(null);
+      startTransition(() => {
+        setActiveExam({
+          key: `${Date.now()}`,
+          questions,
+          maxScore: catalog.examRuleSet.maxPoints,
+          passingScore: catalog.examRuleSet.passingPoints,
+        });
       });
-    } catch (buildError) {
-      setError(buildError instanceof Error ? buildError.message : 'No se pudo construir el examen.');
+    } catch (error) {
+      setBuildError(error instanceof Error ? error.message : 'No se pudo construir el examen.');
     }
   };
 
@@ -46,8 +47,8 @@ export function ExamPage() {
       <QuizRunner
         key={activeExam.key}
         mode="exam"
-        title="Simulación del examen teórico clase B"
-        subtitle="35 preguntas, 38 puntos posibles y aprobación con 33."
+        title="Simulacion del examen teorico Clase B"
+        subtitle="35 preguntas, 38 puntos posibles y aprobacion con 33."
         questions={activeExam.questions}
         maxScore={activeExam.maxScore}
         passingScore={activeExam.passingScore}
@@ -56,59 +57,91 @@ export function ExamPage() {
     );
   }
 
+  const error = loadError ?? buildError;
+
   return (
-    <section className="page-stack page-stack--public">
-      <section className="panel panel--soft exam-hero">
-        <div className="public-builder-grid public-builder-grid--exam">
-          <div>
-            <span className="eyebrow">Examen clase B</span>
-            <h1 className="hero-title">Simulación basada en reglas oficiales verificadas</h1>
-            <p className="hero-copy">
-              Este modo reproduce la estructura de puntaje del examen teórico clase B con base en
-              fuentes oficiales verificadas.
-            </p>
-          </div>
+    <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden bg-slate-50">
+      <div className="shrink-0 border-b border-slate-200 bg-white px-4 py-3 shadow-sm md:py-4">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
+          <button
+            onClick={() => navigate('/')}
+            className="rounded-xl px-2 py-1 text-xs font-bold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            type="button"
+          >
+            Volver
+          </button>
+          <span className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600">
+            Simulador
+          </span>
+          <div className="w-12" aria-hidden="true" />
+        </div>
+      </div>
 
-          <article className="menu-card exam-note-card">
-            <strong>Nota de alcance</strong>
-            <span>
-              No fijamos una duración oficial mientras no exista una fuente primaria equivalente para
-              ese dato.
-            </span>
-          </article>
-        </div>
-      </section>
+      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 md:px-6 md:py-4">
+        <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
+          <section className="rounded-[28px] border border-slate-200 bg-white p-4 shadow-sm md:p-5">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <article className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+                <div className="text-2xl font-black text-slate-900">
+                  {catalog?.examRuleSet.questionCount ?? 35}
+                </div>
+                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-slate-400">
+                  preguntas
+                </div>
+              </article>
+              <article className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+                <div className="text-2xl font-black text-slate-900">
+                  {catalog?.examRuleSet.maxPoints ?? 38}
+                </div>
+                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-slate-400">
+                  puntos maximos
+                </div>
+              </article>
+              <article className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+                <div className="text-2xl font-black text-slate-900">
+                  {catalog?.examRuleSet.passingPoints ?? 33}
+                </div>
+                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-slate-400">
+                  para aprobar
+                </div>
+              </article>
+              <article className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+                <div className="text-2xl font-black text-slate-900">
+                  {catalog?.examRuleSet.doubleWeightCount ?? 3}
+                </div>
+                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-slate-400">
+                  preguntas dobles
+                </div>
+              </article>
+            </div>
 
-      <section className="panel">
-        <div className="section-head">
-          <div>
-            <h2 className="section-title">Reglas de esta simulación</h2>
-            <p className="info-text">Estas reglas se explican aquí y no se repiten en el menú principal.</p>
-          </div>
+            {isLoading && (
+              <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-500">
+                Cargando reglas de examen...
+              </div>
+            )}
+
+            {error && (
+              <div className="mt-4 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-700">
+                {error}
+              </div>
+            )}
+          </section>
         </div>
-        <div className="stats-grid stats-grid--exam">
-          <article className="stat-card">
-            <strong>{catalog?.examRuleSet.questionCount ?? 35}</strong>
-            <span>preguntas</span>
-          </article>
-          <article className="stat-card">
-            <strong>{catalog?.examRuleSet.maxPoints ?? 38}</strong>
-            <span>puntos máximos</span>
-          </article>
-          <article className="stat-card">
-            <strong>{catalog?.examRuleSet.passingPoints ?? 33}</strong>
-            <span>puntos para aprobar</span>
-          </article>
-          <article className="stat-card">
-            <strong>{catalog?.examRuleSet.doubleWeightCount ?? 3}</strong>
-            <span>preguntas de doble puntuación</span>
-          </article>
+      </div>
+
+      <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-3">
+        <div className="mx-auto max-w-3xl">
+          <button
+            className="w-full rounded-2xl border-b-4 border-emerald-800 bg-emerald-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-emerald-700 hover:bg-emerald-500 active:translate-y-[4px] active:border-b-0 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4"
+            type="button"
+            onClick={startExam}
+            disabled={isLoading || !catalog}
+          >
+            Comenzar simulacion
+          </button>
         </div>
-        {error && <p className="error-banner">{error}</p>}
-        <button className="primary-button" type="button" onClick={startExam} disabled={!catalog}>
-          Comenzar simulación
-        </button>
-      </section>
-    </section>
+      </div>
+    </div>
   );
 }

@@ -1,128 +1,119 @@
-import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getPublishedCatalog } from '../lib/contentRepository';
-import { getChapterQuestionCount } from '../lib/quizFactory';
-import type { ContentCatalog } from '../types/content';
+import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
+
+const PlayIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+    <polygon points="5 3 19 12 5 21 5 3" />
+  </svg>
+);
+
+const AwardIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="8" r="7" />
+    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+  </svg>
+);
+
+const ArrowRightIcon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.4"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <polyline points="12 5 19 12 12 19" />
+  </svg>
+);
 
 export function HomePage() {
-  const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    getPublishedCatalog()
-      .then((data) => setCatalog(data))
-      .catch(() => setError('No se pudo cargar el catálogo público.'));
-  }, []);
-
-  const availableChapters = useMemo(() => {
-    if (!catalog) {
-      return [];
-    }
-
-    return catalog.chapters.map((chapter) => ({
-      ...chapter,
-      questionCount: getChapterQuestionCount(catalog.questions, chapter.id),
-    }));
-  }, [catalog]);
-
-  const publishedQuestionCount = useMemo(
-    () => availableChapters.reduce((total, chapter) => total + chapter.questionCount, 0),
-    [availableChapters],
-  );
-
-  const activeChapterCount = useMemo(
-    () => availableChapters.filter((chapter) => chapter.questionCount > 0).length,
-    [availableChapters],
-  );
+  const { catalog } = usePublishedCatalog('No se pudo cargar el catalogo publico.');
 
   return (
-    <section className="page-stack page-stack--public">
-      <section className="panel panel--soft home-hero">
-        <div className="home-hero__layout">
-          <div className="home-hero__copy">
-            <span className="eyebrow">Quiz Clase B</span>
-            <h2 className="hero-title">Práctica guiada y simulación de examen en una sola app</h2>
-            <p className="hero-copy">
-              Entra a práctica para estudiar por capítulos o usa el modo examen para simular la
-              estructura oficial con las reglas vigentes.
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-slate-50">
+      <section className="relative flex min-h-full flex-1 items-center overflow-hidden bg-slate-950 px-4 py-8 text-white sm:px-6">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'radial-gradient(#6366f1 1px, transparent 1px)',
+            backgroundSize: '28px 28px',
+          }}
+        />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-indigo-500/20 to-transparent" />
+
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col justify-center gap-8 py-4 lg:flex-row lg:items-center lg:gap-12">
+          <div className="max-w-xl">
+            <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl">
+              Clase B,
+              <br />
+              <span className="text-indigo-400">modo estudio.</span>
+            </h1>
+            <p className="mt-4 max-w-md text-sm leading-7 text-slate-300 sm:text-base">
+              Entra directo a practicar o simula el examen completo con una interfaz ligera,
+              rapida y tactil.
             </p>
-            {catalog?.activeEdition && (
-              <p className="info-text">
-                Contenido activo: <strong>{catalog.activeEdition.title}</strong>
+            {catalog?.activeEdition?.title && (
+              <p className="mt-5 text-[11px] font-black uppercase tracking-[0.24em] text-slate-500">
+                {catalog.activeEdition.title}
               </p>
             )}
-
-            <div className="menu-grid home-menu-grid">
-              <Link className="menu-card menu-card--primary" to="/practice">
-                <strong>Práctica</strong>
-                <span>
-                  Elige capítulos, ajusta la cantidad de preguntas y repasa con referencias rápidas.
-                </span>
-              </Link>
-              <Link className="menu-card" to="/exam">
-                <strong>Examen</strong>
-                <span>
-                  Simula una prueba completa con puntaje objetivo y reglas oficiales verificadas.
-                </span>
-              </Link>
-              <article className="menu-card menu-card--muted">
-                <strong>Estudio</strong>
-                <span>Próximamente: lectura guiada y consulta de referencias por tema.</span>
-              </article>
-            </div>
           </div>
 
-          <aside className="home-overview">
-            <div className="stats-grid stats-grid--home">
-              <article className="stat-card">
-                <strong>{publishedQuestionCount}</strong>
-                <span>preguntas publicadas</span>
-              </article>
-              <article className="stat-card">
-                <strong>{activeChapterCount}</strong>
-                <span>capítulos con cobertura</span>
-              </article>
-              <article className="stat-card">
-                <strong>{catalog?.examRuleSet.questionCount ?? 35}</strong>
-                <span>preguntas en el examen</span>
-              </article>
-              <article className="stat-card">
-                <strong>{catalog?.examRuleSet.passingPoints ?? 33}</strong>
-                <span>puntos para aprobar</span>
-              </article>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section className="panel">
-        <div className="section-head">
-          <div>
-            <span className="eyebrow">Cobertura actual</span>
-            <h2 className="section-title">Capítulos con preguntas publicadas</h2>
-          </div>
-        </div>
-        {error && <p className="error-banner">{error}</p>}
-        <div className="chapter-grid chapter-grid--home">
-          {availableChapters.map((chapter) => (
-            <article
-              key={chapter.id}
-              className={
-                chapter.questionCount > 0 ? 'chapter-card' : 'chapter-card chapter-card--disabled'
-              }
+          <div className="grid w-full max-w-2xl gap-4">
+            <Link
+              to="/practice"
+              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-indigo-300/30 bg-white/95 p-6 text-slate-900 shadow-lg shadow-slate-950/10 transition-all hover:-translate-y-1 hover:border-indigo-300 hover:shadow-xl"
             >
-              <strong>{chapter.code}</strong>
-              <h3>{chapter.title}</h3>
-              <p>{chapter.description}</p>
-              <span>
-                {chapter.questionCount > 0
-                  ? `${chapter.questionCount} preguntas publicadas`
-                  : 'Próximamente'}
-              </span>
-            </article>
-          ))}
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600">
+                <PlayIcon />
+              </div>
+              <div className="mt-8">
+                <h2 className="text-2xl font-black tracking-tight">Practica</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-500">
+                  Elige capitulos, define cantidad y empieza a responder.
+                </p>
+              </div>
+              <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-indigo-600">
+                Empezar
+                <ArrowRightIcon />
+              </div>
+            </Link>
+
+            <Link
+              to="/exam"
+              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-emerald-300/30 bg-white/95 p-6 text-slate-900 shadow-lg shadow-slate-950/10 transition-all hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600">
+                <AwardIcon />
+              </div>
+              <div className="mt-8">
+                <h2 className="text-2xl font-black tracking-tight">Simulador</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-500">
+                  Entra a una prueba completa con puntaje y aprobacion.
+                </p>
+              </div>
+              <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-emerald-600">
+                Iniciar
+                <ArrowRightIcon />
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
-    </section>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 # Quiz Licencia Clase B Chile
 
-Plataforma web en `React + Vite + Vercel` para estudiar la licencia clase B en Chile con dos frentes:
+Plataforma web en `React + Vite + Vercel` para estudiar la licencia Clase B en Chile con dos frentes:
 
 - experiencia pública de práctica y simulación de examen
 - backoffice editorial privado para revisión manual y publicación de preguntas
@@ -31,6 +31,7 @@ Frontend:
 - `VITE_SUPABASE_PUBLISHABLE_KEY`
 - `VITE_SUPABASE_ANON_KEY` como fallback legado
 - `VITE_ENABLE_LOCAL_ADMIN`
+- `VITE_ENABLE_PREVIEW_ADMIN_BYPASS`
 - `VITE_PUBLIC_ADMIN_URL`
 
 Servidor:
@@ -60,6 +61,30 @@ Regla operativa:
 
 - login admin normal siempre desde producción
 - localhost solo para desarrollo y pruebas controladas
+- preview bypass solo cuando `VITE_ENABLE_PREVIEW_ADMIN_BYPASS=true` en Vercel Preview; ese modo usa datos locales del navegador y no toca el backoffice real
+
+## Prueba local sin magic link
+
+Para probar `/admin` localmente sin usar magic link:
+
+1. crea o edita `.env.local`
+2. define `VITE_ENABLE_PREVIEW_ADMIN_BYPASS=true`
+3. deja `VITE_SUPABASE_URL` y `VITE_SUPABASE_PUBLISHABLE_KEY` configurados si quieres seguir leyendo el catálogo publicado real
+4. ejecuta `npm run dev`
+5. abre `http://localhost:5173/admin`
+
+Comportamiento esperado:
+
+- el panel entra en modo local de pruebas
+- no pide magic link
+- usa datos locales del navegador para flujos editoriales y cola AI
+- no ejecuta escrituras contra el backoffice real de Supabase
+
+Reglas:
+
+- no usar este bypass en producción
+- en Vercel Preview se habilita solo con `VITE_ENABLE_PREVIEW_ADMIN_BYPASS=true`
+- para probar auth real, desactiva el bypass y usa el flujo normal desde producción
 
 ## Arquitectura
 
@@ -82,12 +107,13 @@ Regla operativa:
 - [`supabase/migrations/0001_base.sql`](./supabase/migrations/0001_base.sql): esquema base original
 - [`supabase/migrations/0002_solid_base_v1.sql`](./supabase/migrations/0002_solid_base_v1.sql): edición activa e historial editorial
 - [`supabase/migrations/0003_ai_suggestions.sql`](./supabase/migrations/0003_ai_suggestions.sql): cola AI y auditoría de sugerencias
+- [`supabase/migrations/0004_secure_attempt_tables.sql`](./supabase/migrations/0004_secure_attempt_tables.sql): endurecimiento RLS de tablas de intentos
 
 ## Estado actual
 
 - menú inicial público
 - práctica personalizada por capítulo
-- simulación del examen clase B con reglas verificadas
+- simulación del examen Clase B con reglas verificadas
 - panel admin con flujo editorial controlado
 - panel admin con tarjeta de estado operativo
 - panel admin con inbox privado de sugerencias AI

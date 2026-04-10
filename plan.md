@@ -223,15 +223,22 @@ Exit criteria:
 Status:
 
 - In progress across previous iterations.
-- Further refinement should resume after Milestones 3 and 4 are live in production.
+- Current work is redirected to the local-only branch `codex/ui-polish-local` for Milestone 6A close-out.
+- No further UI deployment should occur until the local visual pass is approved.
 
 ## Current next actions
 
-1. Apply `supabase/migrations/0003_ai_suggestions.sql`.
-2. Deploy current `main`.
-3. Verify `/admin` AI inbox against production.
-4. Close Milestones 3 and 4 in `docs/progress.md`.
-5. Start Milestone 5 heuristics:
+1. Finish Milestone 6A on the local-only branch `codex/ui-polish-local`:
+   - refine `/admin` without changing structure
+   - verify locally at mobile, tablet, and desktop widths
+   - do not deploy intermediate UI passes
+2. After local signoff, merge or cherry-pick the approved UI work into `main`.
+3. Run the release gate on the approved UI state:
+   - `npm run validate:content`
+   - `npm run build`
+   - `npm run release:check`
+4. Deploy once and verify live `/admin` plus `/api/health`.
+5. Close Milestone 6A in `docs/progress.md`, then resume Milestone 5 heuristics:
    - duplicate detection
    - weak distractor checks
    - review-task surfacing improvements

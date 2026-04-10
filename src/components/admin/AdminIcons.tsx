@@ -1,94 +1,47 @@
-type IconProps = {
-  className?: string;
-};
+// src/components/admin/AdminIcons.tsx
+type IconProps = { className?: string; size?: number };
 
-function iconProps(className?: string) {
-  return {
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    stroke: 'currentColor',
-    strokeWidth: 1.8,
-    strokeLinecap: 'round' as const,
-    strokeLinejoin: 'round' as const,
-    className,
-    'aria-hidden': true,
-  };
-}
+const baseProps = (size = 20, className = '') => ({
+  width: size,
+  height: size,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 2,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+  className,
+  'aria-hidden': true,
+});
 
-export function MenuIcon({ className }: IconProps) {
-  return (
-    <svg {...iconProps(className)}>
-      <path d="M4 7h16" />
-      <path d="M4 12h16" />
-      <path d="M4 17h16" />
-    </svg>
-  );
-}
+export const MenuIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+);
 
-export function CloseIcon({ className }: IconProps) {
-  return (
-    <svg {...iconProps(className)}>
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
-    </svg>
-  );
-}
+export const CloseIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+);
 
-export function ChevronLeftIcon({ className }: IconProps) {
-  return (
-    <svg {...iconProps(className)}>
-      <path d="m15 18-6-6 6-6" />
-    </svg>
-  );
-}
+export const ChevronLeftIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="m15 18-6-6 6-6"/></svg>
+);
 
-export function DashboardIcon({ className }: IconProps) {
-  return (
-    <svg {...iconProps(className)}>
-      <rect x="4" y="4" width="7" height="7" rx="1.5" />
-      <rect x="13" y="4" width="7" height="5" rx="1.5" />
-      <rect x="13" y="11" width="7" height="9" rx="1.5" />
-      <rect x="4" y="13" width="7" height="7" rx="1.5" />
-    </svg>
-  );
-}
+export const SearchIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+);
 
-export function CatalogIcon({ className }: IconProps) {
-  return (
-    <svg {...iconProps(className)}>
-      <path d="M6 5.5h12" />
-      <path d="M6 12h12" />
-      <path d="M6 18.5h12" />
-      <circle cx="4.5" cy="5.5" r="0.5" fill="currentColor" stroke="none" />
-      <circle cx="4.5" cy="12" r="0.5" fill="currentColor" stroke="none" />
-      <circle cx="4.5" cy="18.5" r="0.5" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
+export const DashboardIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+);
 
-export function SparkIcon({ className }: IconProps) {
-  return (
-    <svg {...iconProps(className)}>
-      <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
-      <path d="m18.5 3 .6 1.8L21 5.5l-1.9.7-.6 1.8-.6-1.8L16 5.5l1.9-.7.6-1.8Z" />
-    </svg>
-  );
-}
+export const CatalogIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+);
 
-export function EditIcon({ className }: IconProps) {
-  return (
-    <svg {...iconProps(className)}>
-      <path d="m4 20 4.5-1 9-9a2.2 2.2 0 1 0-3.1-3.1l-9 9L4 20Z" />
-      <path d="M13.5 6.5 17 10" />
-    </svg>
-  );
-}
+export const SparkIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+);
 
-export function SearchIcon({ className }: IconProps) {
-  return (
-    <svg {...iconProps(className)}>
-      <circle cx="11" cy="11" r="7" />
-      <path d="m20 20-3.6-3.6" />
-    </svg>
-  );
-}
+export const LogOutIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+);

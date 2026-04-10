@@ -1,326 +1,132 @@
-import type { AiSuggestion, AiSuggestionStatus } from '../../types/ai';
+// src/components/admin/AiQueueManager.tsx
 import { ChevronLeftIcon } from './AdminIcons';
-import {
-  getSuggestionStatusDotClass,
-  getSuggestionStatusLabel,
-  getSuggestionTypeLabel,
-} from './types';
+import { getSuggestionStatusColor } from './types';
+import type { AiSuggestion, AiSuggestionStatus } from '../../types/ai';
 
-type AiQueueManagerProps = {
-  aiSummary: {
-    total: number;
-    pending: number;
-    accepted: number;
-    applied: number;
-    rejected: number;
-    deferred: number;
-    flags: number;
-    coverageGaps: number;
-  } | null;
+type Props = {
   filteredSuggestions: AiSuggestion[];
   isBusy: boolean;
-  isDetailOpen: boolean;
-  onCloseDetail: () => void;
-  onCreateDraftFromSuggestion: (suggestion: AiSuggestion) => void;
   onGenerateSuggestions: () => void;
-  onLoadSuggestionIntoEditor: (suggestion: AiSuggestion) => void;
-  onSelectSuggestion: (suggestionId: string) => void;
-  onTransitionSuggestion: (
-    suggestionId: string,
-    status: AiSuggestionStatus,
-    successMessage: string,
-  ) => void;
+  onLoadSuggestionIntoEditor: (s: AiSuggestion) => void;
+  onSelectSuggestion: (id: string | null) => void;
+  onTransitionSuggestion: (id: string, status: AiSuggestionStatus, msg: string) => void;
   selectedSuggestion: AiSuggestion | null;
   selectedSuggestionId: string | null;
-  setSuggestionStatusFilter: (value: 'all' | AiSuggestionStatus) => void;
-  setSuggestionTypeFilter: (value: 'all' | AiSuggestion['suggestionType']) => void;
-  suggestionStatusFilter: 'all' | AiSuggestionStatus;
-  suggestionTypeFilter: 'all' | AiSuggestion['suggestionType'];
 };
 
-export function AiQueueManager({
-  aiSummary,
-  filteredSuggestions,
-  isBusy,
-  isDetailOpen,
-  onCloseDetail,
-  onCreateDraftFromSuggestion,
-  onGenerateSuggestions,
-  onLoadSuggestionIntoEditor,
-  onSelectSuggestion,
-  onTransitionSuggestion,
-  selectedSuggestion,
-  selectedSuggestionId,
-  setSuggestionStatusFilter,
-  setSuggestionTypeFilter,
-  suggestionStatusFilter,
-  suggestionTypeFilter,
-}: AiQueueManagerProps) {
+export function AiQueueManager({ filteredSuggestions, isBusy, onGenerateSuggestions, onLoadSuggestionIntoEditor, onSelectSuggestion, onTransitionSuggestion, selectedSuggestion, selectedSuggestionId }: Props) {
   return (
-    <section className="admin-manager">
-      <div
-        className={
-          isDetailOpen ? 'admin-manager__master admin-manager__master--hidden-mobile' : 'admin-manager__master'
-        }
-      >
-        <section className="admin-manager__master-surface">
-          <div className="admin-manager__master-head">
-            <div>
-              <h3 className="section-title">Cola AI</h3>
-              <p className="info-text">Sugerencias privadas para triage editorial.</p>
-            </div>
+    <div className="flex flex-1 h-full w-full overflow-hidden relative">
+      {/* Master Column */}
+      <div className={`
+        w-full md:w-[340px] lg:w-[380px] flex flex-col border-r border-slate-200 bg-white shrink-0 h-full
+        ${selectedSuggestionId ? 'hidden md:flex' : 'flex'}
+      `}>
+        <div className="shrink-0 p-4 border-b border-slate-200 bg-slate-50/80 flex justify-between items-center z-10">
+           <div>
+             <h2 className="text-sm font-extrabold text-slate-900 tracking-tight">Sugerencias AI</h2>
+             <p className="text-[11px] text-slate-500 font-medium mt-0.5">{filteredSuggestions.length} en cola</p>
+           </div>
+           <button onClick={onGenerateSuggestions} disabled={isBusy} className="text-xs text-white bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded-lg font-semibold shadow-sm transition-colors">
+             Generar Más
+           </button>
+        </div>
+        
+        <div className="flex-1 overflow-y-auto p-2.5 space-y-1.5 bg-slate-50/30">
+          {filteredSuggestions.map((s) => (
             <button
-              className="secondary-button secondary-button--compact"
-              type="button"
-              onClick={onGenerateSuggestions}
-              disabled={isBusy}
+              key={s.id} onClick={() => onSelectSuggestion(s.id)}
+              className={`w-full text-left p-3.5 rounded-xl border transition-all ${selectedSuggestionId === s.id ? 'bg-indigo-50 border-indigo-300 ring-1 ring-indigo-500 shadow-sm' : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-sm'}`}
             >
-              Actualizar
-            </button>
-          </div>
-
-          {aiSummary && (
-            <div className="admin-summary-grid admin-summary-grid--tight">
-              <article className="admin-summary-card admin-summary-card--metric">
-                <small>Pendientes</small>
-                <strong>{aiSummary.pending}</strong>
-              </article>
-              <article className="admin-summary-card admin-summary-card--metric">
-                <small>Aceptadas</small>
-                <strong>{aiSummary.accepted}</strong>
-              </article>
-              <article className="admin-summary-card admin-summary-card--metric admin-summary-card--warning">
-                <small>Flags</small>
-                <strong>{aiSummary.flags}</strong>
-              </article>
-              <article className="admin-summary-card admin-summary-card--metric">
-                <small>Brechas</small>
-                <strong>{aiSummary.coverageGaps}</strong>
-              </article>
-            </div>
-          )}
-
-          <div className="admin-filter-row admin-filter-row--compact">
-            <button
-              type="button"
-              className={
-                suggestionTypeFilter === 'all'
-                  ? 'admin-status-filter admin-status-filter--active'
-                  : 'admin-status-filter'
-              }
-              onClick={() => setSuggestionTypeFilter('all')}
-            >
-              Todas
-            </button>
-            <button
-              type="button"
-              className={
-                suggestionTypeFilter === 'new_question'
-                  ? 'admin-status-filter admin-status-filter--active'
-                  : 'admin-status-filter'
-              }
-              onClick={() => setSuggestionTypeFilter('new_question')}
-            >
-              Nuevas
-            </button>
-            <button
-              type="button"
-              className={
-                suggestionTypeFilter === 'rewrite'
-                  ? 'admin-status-filter admin-status-filter--active'
-                  : 'admin-status-filter'
-              }
-              onClick={() => setSuggestionTypeFilter('rewrite')}
-            >
-              Rewrites
-            </button>
-            <button
-              type="button"
-              className={
-                suggestionTypeFilter === 'flag'
-                  ? 'admin-status-filter admin-status-filter--active'
-                  : 'admin-status-filter'
-              }
-              onClick={() => setSuggestionTypeFilter('flag')}
-            >
-              Flags
-            </button>
-          </div>
-
-          <div className="admin-filter-row admin-filter-row--meta">
-            <label className="field field--inline">
-              <span>Estado</span>
-              <select
-                value={suggestionStatusFilter}
-                onChange={(event) =>
-                  setSuggestionStatusFilter(event.target.value as 'all' | AiSuggestionStatus)
-                }
-              >
-                <option value="all">Todos</option>
-                <option value="pending">Pendientes</option>
-                <option value="accepted">Aceptadas</option>
-                <option value="applied">Aplicadas</option>
-                <option value="deferred">Postergadas</option>
-                <option value="rejected">Rechazadas</option>
-              </select>
-            </label>
-          </div>
-
-          <div className="admin-manager__master-list">
-            {filteredSuggestions.length === 0 ? (
-              <article className="admin-inline-note">
-                <strong>Sin sugerencias</strong>
-                <span>Ejecuta una actualización para poblar la cola privada.</span>
-              </article>
-            ) : (
-              filteredSuggestions.map((suggestion) => (
-                <button
-                  key={suggestion.id}
-                  type="button"
-                  className={
-                    selectedSuggestionId === suggestion.id
-                      ? 'admin-work-item admin-work-item--selected'
-                      : 'admin-work-item'
-                  }
-                  onClick={() => onSelectSuggestion(suggestion.id)}
-                >
-                  <div className="admin-work-item__top">
-                    <strong>{getSuggestionTypeLabel(suggestion.suggestionType)}</strong>
-                    <span className="admin-status-inline">
-                      <span className={getSuggestionStatusDotClass(suggestion.status)} />
-                      <span>{getSuggestionStatusLabel(suggestion.status)}</span>
-                    </span>
-                  </div>
-                  <span className="admin-work-item__title">{suggestion.prompt}</span>
-                  <small className="admin-work-item__meta">
-                    {suggestion.chapterId ?? 'sin capítulo'}
-                    {suggestion.sourceReference ? ` · ${suggestion.sourceReference}` : ''}
-                  </small>
-                </button>
-              ))
-            )}
-          </div>
-        </section>
-      </div>
-
-      <div
-        className={
-          isDetailOpen ? 'admin-manager__detail' : 'admin-manager__detail admin-manager__detail--hidden-mobile'
-        }
-      >
-        <section className="admin-manager__detail-surface">
-          <div className="admin-manager__detail-mobile-head">
-            <button type="button" className="admin-back-button" onClick={onCloseDetail}>
-              <ChevronLeftIcon className="admin-icon" />
-              <span>Volver</span>
-            </button>
-          </div>
-
-          {!selectedSuggestion ? (
-            <div className="admin-ai-placeholder">
-              <p className="admin-ai-placeholder__title">Cola AI / Bandeja de entrada</p>
-              <p className="admin-ai-placeholder__copy">
-                El mismo patrón master-detail se aplica aquí para revisar sugerencias y convertirlas
-                en drafts.
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-[10px] uppercase font-bold text-indigo-700 bg-indigo-100/50 px-2 py-0.5 rounded border border-indigo-100">{s.suggestionType.replace('_', ' ')}</span>
+                <div className="flex items-center space-x-2">
+                  <span className="text-[10px] text-slate-400 font-mono bg-slate-50 px-1 rounded border">{Math.round(s.confidence * 100)}%</span>
+                  <span className={`w-2.5 h-2.5 rounded-full ${getSuggestionStatusColor(s.status)}`} title={s.status} />
+                </div>
+              </div>
+              <p className={`text-sm line-clamp-3 leading-relaxed ${selectedSuggestionId === s.id ? 'text-indigo-950 font-semibold' : 'text-slate-700 font-medium'}`}>
+                {s.prompt}
               </p>
-              <p className="admin-ai-placeholder__meta">Total pendientes: {aiSummary?.pending ?? 0}</p>
-            </div>
-          ) : (
-            <section className="panel admin-surface admin-pane admin-pane--detail">
-              <div className="admin-pane__head">
-                <div>
-                  <span className="eyebrow">Detalle AI</span>
-                  <h3 className="section-title">
-                    {getSuggestionTypeLabel(selectedSuggestion.suggestionType)}
-                  </h3>
-                </div>
-                <div className="admin-status-inline">
-                  <span className={getSuggestionStatusDotClass(selectedSuggestion.status)} />
-                  <span>{getSuggestionStatusLabel(selectedSuggestion.status)}</span>
-                </div>
-              </div>
-
-              <div className="admin-detail-list">
-                <div className="admin-detail-list__row">
-                  <span>Confianza</span>
-                  <strong>{Math.round(selectedSuggestion.confidence * 100)}%</strong>
-                </div>
-                <div className="admin-detail-list__row">
-                  <span>Fuente</span>
-                  <strong>{selectedSuggestion.sourceReference || 'sin referencia'}</strong>
-                </div>
-              </div>
-
-              <div className="admin-pane__body admin-detail-stack">
-                <label className="field field--full">
-                  <span>Prompt sugerido</span>
-                  <textarea rows={4} value={selectedSuggestion.prompt} readOnly />
-                </label>
-                <label className="field field--full">
-                  <span>Grounding</span>
-                  <textarea rows={4} value={selectedSuggestion.groundingExcerpt} readOnly />
-                </label>
-                <label className="field field--full">
-                  <span>Rationale</span>
-                  <textarea rows={4} value={selectedSuggestion.rationale} readOnly />
-                </label>
-              </div>
-
-              <div className="admin-action-row">
-                {(selectedSuggestion.suggestionType === 'new_question' ||
-                  selectedSuggestion.suggestionType === 'rewrite') && (
-                  <>
-                    <button
-                      className="primary-button"
-                      type="button"
-                      onClick={() => onLoadSuggestionIntoEditor(selectedSuggestion)}
-                      disabled={isBusy}
-                    >
-                      Cargar en editor
-                    </button>
-                    <button
-                      className="secondary-button"
-                      type="button"
-                      onClick={() => onCreateDraftFromSuggestion(selectedSuggestion)}
-                      disabled={isBusy}
-                    >
-                      Crear draft
-                    </button>
-                  </>
-                )}
-                <button
-                  className="secondary-button"
-                  type="button"
-                  onClick={() =>
-                    onTransitionSuggestion(
-                      selectedSuggestion.id,
-                      'deferred',
-                      'La sugerencia se marcó como postergada.',
-                    )
-                  }
-                  disabled={isBusy}
-                >
-                  Postergar
-                </button>
-                <button
-                  className="secondary-button secondary-button--danger"
-                  type="button"
-                  onClick={() =>
-                    onTransitionSuggestion(
-                      selectedSuggestion.id,
-                      'rejected',
-                      'La sugerencia se rechazó y quedó fuera de la cola activa.',
-                    )
-                  }
-                  disabled={isBusy}
-                >
-                  Rechazar
-                </button>
-              </div>
-            </section>
+            </button>
+          ))}
+          {filteredSuggestions.length === 0 && (
+            <div className="p-6 text-center text-sm text-slate-400">La cola privada AI está vacía.</div>
           )}
-        </section>
+        </div>
       </div>
-    </section>
+
+      {/* Detail Column */}
+      <div className={`
+        flex-1 flex flex-col h-full bg-slate-50 relative min-w-0
+        ${selectedSuggestionId ? 'flex' : 'hidden md:flex'}
+      `}>
+        {!selectedSuggestion ? (
+           <div className="flex-1 flex flex-col items-center justify-center text-slate-400 p-8 text-center bg-slate-50/50">
+             <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4 text-2xl">✨</div>
+             <p className="font-medium text-slate-600">Selecciona una sugerencia para revisión manual</p>
+           </div>
+        ) : (
+          <>
+            <div className="h-14 px-4 border-b border-slate-200 flex items-center justify-between bg-white shrink-0 z-10 shadow-sm">
+              <div className="flex items-center space-x-2">
+                <button onClick={() => onSelectSuggestion(null)} className="md:hidden p-2 -ml-2 text-slate-500 hover:bg-slate-100 rounded-md">
+                  <ChevronLeftIcon size={20} />
+                </button>
+                <h2 className="font-semibold text-slate-900 text-sm hidden sm:block">Revisión Automática</h2>
+              </div>
+              <span className="px-2.5 py-1 rounded-md text-[10px] uppercase font-bold bg-slate-100 text-slate-600 border border-slate-200">
+                {selectedSuggestion.status}
+              </span>
+            </div>
+            
+            <div className="flex-1 overflow-y-auto p-4 md:p-8 bg-slate-50/30">
+              <div className="max-w-3xl mx-auto space-y-6">
+                <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                  <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3">Enunciado Propuesto</h3>
+                  <p className="text-base font-semibold text-slate-900 leading-relaxed">{selectedSuggestion.prompt}</p>
+                </div>
+                
+                {selectedSuggestion.rationale && (
+                  <div className="bg-slate-100/50 p-5 rounded-xl border border-slate-200">
+                    <h3 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Fundamentación de AI</h3>
+                    <p className="text-sm text-slate-700 leading-relaxed italic">"{selectedSuggestion.rationale}"</p>
+                  </div>
+                )}
+
+                {selectedSuggestion.suggestedOptions?.length > 0 && (
+                  <div>
+                    <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3 px-1">Opciones Generadas</h3>
+                    <div className="space-y-2">
+                      {selectedSuggestion.suggestedOptions.map((opt: string, i: number) => {
+                        const isCorrect = selectedSuggestion.suggestedCorrectAnswers.includes(i);
+                        return (
+                          <div key={i} className={`p-4 border rounded-xl flex items-start space-x-3 shadow-sm ${isCorrect ? 'bg-emerald-50 border-emerald-200 text-emerald-900' : 'bg-white border-slate-200 text-slate-700'}`}>
+                            <span className={`flex items-center justify-center w-6 h-6 rounded-full shrink-0 text-xs font-bold ${isCorrect ? 'bg-emerald-200 text-emerald-800' : 'bg-slate-100 text-slate-500'}`}>{String.fromCharCode(65 + i)}</span>
+                            <span className={`text-sm mt-0.5 ${isCorrect ? 'font-semibold' : 'font-medium'}`}>{opt}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="shrink-0 p-3 bg-white border-t border-slate-200 flex justify-end space-x-2 z-20">
+              <button onClick={() => onTransitionSuggestion(selectedSuggestion.id, 'deferred', 'Postergada')} disabled={isBusy} className="px-4 py-2 text-xs font-semibold text-slate-600 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors hidden sm:block">
+                Postergar
+              </button>
+              <button onClick={() => onTransitionSuggestion(selectedSuggestion.id, 'rejected', 'Rechazada')} disabled={isBusy} className="px-4 py-2 text-xs font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-lg hover:bg-rose-100 transition-colors">
+                Rechazar
+              </button>
+              <button onClick={() => onLoadSuggestionIntoEditor(selectedSuggestion)} disabled={isBusy} className="px-6 py-2 text-xs font-bold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-sm transition-colors">
+                Aprobar y Editar
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
   );
 }
