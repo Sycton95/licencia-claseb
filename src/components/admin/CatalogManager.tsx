@@ -1,5 +1,6 @@
 import { SearchIcon } from './AdminIcons';
 import { getEditorialStatusColor } from './types';
+import type { EditorialDiagnostic } from '../../lib/editorialDiagnostics';
 import type { EditorialStatus, Question } from '../../types/content';
 
 type Props = {
@@ -10,8 +11,13 @@ type Props = {
   onSearchTermChange: (val: string) => void;
   filterStatus: 'all' | EditorialStatus;
   setFilterStatus: (val: 'all' | EditorialStatus) => void;
+  diagnosticsByQuestionId: Record<string, EditorialDiagnostic[]>;
   editorPanel: React.ReactNode;
 };
+
+function getHighestSeverity(diagnostics: EditorialDiagnostic[]) {
+  return diagnostics.some((item) => item.severity === 'critical') ? 'critical' : 'warning';
+}
 
 export function CatalogManager({
   questions,
@@ -21,6 +27,7 @@ export function CatalogManager({
   onSearchTermChange,
   filterStatus,
   setFilterStatus,
+  diagnosticsByQuestionId,
   editorPanel,
 }: Props) {
   return (
@@ -69,36 +76,59 @@ export function CatalogManager({
         </div>
 
         <div className="flex-1 space-y-1.5 overflow-y-auto bg-slate-50/30 p-2.5">
-          {questions.map((question) => (
-            <button
-              key={question.id}
-              onClick={() => onSelectQuestion(question.id)}
-              className={`w-full rounded-xl border p-3.5 text-left transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 ${
-                selectedQuestionId === question.id
-                  ? 'border-blue-300 bg-blue-50 shadow-sm ring-1 ring-blue-500'
-                  : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
-              }`}
-            >
-              <div className="mb-2 flex items-center justify-between">
-                <span className="rounded border border-slate-200 bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] font-bold text-slate-500">
-                  {question.id}
-                </span>
-                <span
-                  className={`h-2.5 w-2.5 rounded-full ${getEditorialStatusColor(question.status)}`}
-                  title={question.status}
-                />
-              </div>
-              <p
-                className={`line-clamp-2 text-sm leading-snug ${
+          {questions.map((question) => {
+            const diagnostics = diagnosticsByQuestionId[question.id] ?? [];
+            const highestSeverity = diagnostics.length > 0 ? getHighestSeverity(diagnostics) : null;
+
+            return (
+              <button
+                key={question.id}
+                onClick={() => onSelectQuestion(question.id)}
+                className={`w-full rounded-xl border p-3.5 text-left transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100 ${
                   selectedQuestionId === question.id
-                    ? 'font-semibold text-blue-900'
-                    : 'font-medium text-slate-700'
+                    ? 'border-blue-300 bg-blue-50 shadow-sm ring-1 ring-blue-500'
+                    : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
                 }`}
               >
-                {question.prompt}
-              </p>
-            </button>
-          ))}
+                <div className="mb-2 flex items-center justify-between gap-2">
+                  <span className="rounded border border-slate-200 bg-slate-100 px-1.5 py-0.5 font-mono text-[10px] font-bold text-slate-500">
+                    {question.id}
+                  </span>
+                  <div className="flex items-center gap-2">
+                    {diagnostics.length > 0 && (
+                      <span
+                        className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
+                          highestSeverity === 'critical'
+                            ? 'bg-rose-100 text-rose-700'
+                            : 'bg-amber-100 text-amber-700'
+                        }`}
+                        title={`${diagnostics.length} alertas`}
+                      >
+                        {diagnostics.length}
+                      </span>
+                    )}
+                    <span
+                      className={`h-2.5 w-2.5 rounded-full ${getEditorialStatusColor(question.status)}`}
+                      title={question.status}
+                    />
+                  </div>
+                </div>
+                <p
+                  className={`line-clamp-2 text-sm leading-snug ${
+                    selectedQuestionId === question.id
+                      ? 'font-semibold text-blue-900'
+                      : 'font-medium text-slate-700'
+                  }`}
+                >
+                  {question.prompt}
+                </p>
+                <div className="mt-2 flex items-center justify-between gap-3 text-[11px] text-slate-500">
+                  <span className="truncate">{question.chapterId}</span>
+                  <span className="shrink-0 uppercase">{question.selectionMode}</span>
+                </div>
+              </button>
+            );
+          })}
           {questions.length === 0 && (
             <div className="mt-10 p-4 text-center text-sm text-slate-400">
               No hay resultados para esta búsqueda. Ajusta el filtro o intenta con otro ID.

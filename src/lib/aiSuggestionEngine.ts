@@ -314,7 +314,7 @@ export function generateAiSuggestions(catalog: ContentCatalog, actorEmail: strin
       suggestions.push(rewriteSuggestion);
     }
 
-    for (const warning of getQuestionWarnings(question)) {
+    for (const warning of getQuestionWarnings(question, catalog.questions)) {
       suggestions.push(buildFlagSuggestion(question, warning.title, warning.detail, actorEmail, aiRun.id));
     }
   }

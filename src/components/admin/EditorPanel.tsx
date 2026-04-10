@@ -1,8 +1,10 @@
 import { ChevronLeftIcon } from './AdminIcons';
-import type { EditorialAction, Question } from '../../types/content';
+import type { EditorialDiagnostic } from '../../lib/editorialDiagnostics';
+import type { Chapter, EditorialAction, Question, SelectionMode, SourceDocument } from '../../types/content';
 
 type Props = {
   draftQuestion: Question | null;
+  diagnostics: EditorialDiagnostic[];
   isBusy: boolean;
   statusMessage: string | null;
   statusTone: 'success' | 'error';
@@ -11,12 +13,19 @@ type Props = {
   onUpdateField: <K extends keyof Question>(field: K, val: Question[K]) => void;
   onUpdateOptionText: (id: string, text: string) => void;
   onUpdateOptionCorrect: (id: string, checked: boolean) => void;
-  chapters: any[];
-  sourceDocuments: any[];
+  chapters: Chapter[];
+  sourceDocuments: SourceDocument[];
 };
+
+function getSeverityClasses(severity: EditorialDiagnostic['severity']) {
+  return severity === 'critical'
+    ? 'border-rose-200 bg-rose-50 text-rose-700'
+    : 'border-amber-200 bg-amber-50 text-amber-700';
+}
 
 export function EditorPanel({
   draftQuestion,
+  diagnostics,
   isBusy,
   statusMessage,
   statusTone,
@@ -66,7 +75,7 @@ export function EditorPanel({
         </span>
       </div>
 
-      <div className="flex-1 overflow-y-auto bg-slate-50/30 p-4 md:p-8">
+      <div className="flex-1 overflow-y-auto bg-slate-50/30 p-4 pb-28 md:p-8 md:pb-32">
         <div className="mx-auto max-w-3xl space-y-6 md:space-y-8">
           {statusMessage && (
             <div
@@ -81,6 +90,28 @@ export function EditorPanel({
             </div>
           )}
 
+          {diagnostics.length > 0 && (
+            <div className="space-y-3">
+              {diagnostics.map((diagnostic) => (
+                <div
+                  key={diagnostic.id}
+                  className={`rounded-xl border p-4 ${getSeverityClasses(diagnostic.severity)}`}
+                >
+                  <div className="mb-1 flex items-center justify-between gap-3">
+                    <span className="text-xs font-bold uppercase tracking-wider">
+                      {diagnostic.category.replace('_', ' ')}
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wider">
+                      {diagnostic.severity}
+                    </span>
+                  </div>
+                  <p className="text-sm font-semibold">{diagnostic.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed">{diagnostic.detail}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <div>
               <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
@@ -91,7 +122,7 @@ export function EditorPanel({
                 onChange={(event) => onUpdateField('chapterId', event.target.value)}
                 className="w-full rounded-lg border border-slate-200 bg-white p-2.5 text-sm shadow-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
               >
-                {chapters?.map((chapter) => (
+                {chapters.map((chapter) => (
                   <option key={chapter.id} value={chapter.id}>
                     {chapter.code} - {chapter.title}
                   </option>
@@ -107,12 +138,54 @@ export function EditorPanel({
                 onChange={(event) => onUpdateField('sourceDocumentId', event.target.value)}
                 className="w-full rounded-lg border border-slate-200 bg-white p-2.5 text-sm shadow-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
               >
-                {sourceDocuments?.map((source) => (
+                {sourceDocuments.map((source) => (
                   <option key={source.id} value={source.id}>
                     {source.title}
                   </option>
                 ))}
               </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            <div>
+              <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                Modo de selección
+              </label>
+              <select
+                value={draftQuestion.selectionMode}
+                onChange={(event) =>
+                  onUpdateField('selectionMode', event.target.value as SelectionMode)
+                }
+                className="w-full rounded-lg border border-slate-200 bg-white p-2.5 text-sm shadow-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              >
+                <option value="single">Única</option>
+                <option value="multiple">Múltiple</option>
+              </select>
+            </div>
+            <div>
+              <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                Página fuente
+              </label>
+              <input
+                type="number"
+                min={1}
+                value={draftQuestion.sourcePage}
+                onChange={(event) => onUpdateField('sourcePage', Number(event.target.value) || 0)}
+                className="w-full rounded-lg border border-slate-200 bg-white p-2.5 text-sm shadow-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                Referencia visible
+              </label>
+              <input
+                type="text"
+                value={draftQuestion.sourceReference || ''}
+                onChange={(event) => onUpdateField('sourceReference', event.target.value)}
+                className="w-full rounded-lg border border-slate-200 bg-white p-2.5 text-sm shadow-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                placeholder="Pág. 34"
+              />
             </div>
           </div>
 
@@ -129,6 +202,20 @@ export function EditorPanel({
                 placeholder="Escribe el enunciado aquí…"
               />
             </div>
+
+            <div>
+              <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                Instrucción visible
+              </label>
+              <input
+                type="text"
+                value={draftQuestion.instruction}
+                onChange={(event) => onUpdateField('instruction', event.target.value)}
+                className="w-full rounded-lg border border-slate-200 bg-white p-3 text-sm shadow-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                placeholder="Marque una respuesta."
+              />
+            </div>
+
             <div>
               <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-slate-500">
                 Explicación o feedback público (opcional)
@@ -149,7 +236,7 @@ export function EditorPanel({
                 Opciones de respuesta
               </h3>
               <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-500">
-                Selección única
+                {draftQuestion.selectionMode === 'single' ? 'Selección única' : 'Selección múltiple'}
               </span>
             </div>
             <div className="space-y-3">

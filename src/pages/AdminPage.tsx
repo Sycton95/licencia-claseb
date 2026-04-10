@@ -7,7 +7,14 @@ import { EditorPanel } from '../components/admin/EditorPanel';
 import { AiQueueManager } from '../components/admin/AiQueueManager';
 import type { AdminHealth, AdminReportSummary, AdminSection } from '../components/admin/types';
 import { buildDraftQuestionFromSuggestion } from '../lib/aiSuggestionEngine';
-import { buildChapterCoverage } from '../lib/editorialDiagnostics';
+import {
+  buildChapterCoverage,
+  buildQuestionDiagnosticMap,
+  buildReviewSummary,
+  buildReviewTasks,
+  buildSuggestionDiagnosticMap,
+  getQuestionDiagnostics,
+} from '../lib/editorialDiagnostics';
 import { validateQuestionAction } from '../lib/contentValidation';
 import { isSupabaseConfigured, useLocalAdminMode } from '../lib/supabase';
 import {
@@ -114,6 +121,42 @@ export function AdminPage() {
     });
   }, [catalog, filterStatus, searchTerm]);
 
+  const reviewTasks = useMemo(() => {
+    if (!catalog) {
+      return [];
+    }
+
+    return buildReviewTasks(catalog.questions).sort((left, right) => {
+      if (left.severity !== right.severity) {
+        return left.severity === 'critical' ? -1 : 1;
+      }
+
+      return left.questionId.localeCompare(right.questionId);
+    });
+  }, [catalog]);
+
+  const questionDiagnosticsById = useMemo(
+    () => (catalog ? buildQuestionDiagnosticMap(catalog.questions) : {}),
+    [catalog],
+  );
+
+  const suggestionDiagnosticsById = useMemo(
+    () =>
+      catalog && aiWorkspace
+        ? buildSuggestionDiagnosticMap(aiWorkspace.suggestions, catalog.questions)
+        : {},
+    [aiWorkspace, catalog],
+  );
+
+  const draftDiagnostics = useMemo(() => {
+    if (!draftQuestion || !catalog) {
+      return [];
+    }
+
+    const peerQuestions = catalog.questions.filter((question) => question.id !== draftQuestion.id);
+    return getQuestionDiagnostics(draftQuestion, [draftQuestion, ...peerQuestions]);
+  }, [catalog, draftQuestion]);
+
   const summary = useMemo<AdminReportSummary | null>(() => {
     if (!catalog) {
       return null;
@@ -127,8 +170,9 @@ export function AdminPage() {
       archivedCount: catalog.questions.filter((question) => question.status === 'archived').length,
       examEligibleCount: catalog.questions.filter((question) => question.isOfficialExamEligible)
         .length,
+      reviewSummary: buildReviewSummary(reviewTasks),
     };
-  }, [catalog]);
+  }, [catalog, reviewTasks]);
 
   const chapterCoverage = useMemo(
     () => (catalog ? buildChapterCoverage(catalog.chapters, catalog.questions) : []),
@@ -286,7 +330,12 @@ export function AdminPage() {
 
         <div className="relative w-full flex-1 overflow-hidden">
           {activeSection === 'dashboard' && (
-            <DashboardView summary={summary} chapterCoverage={chapterCoverage} health={adminHealth} />
+            <DashboardView
+              summary={summary}
+              chapterCoverage={chapterCoverage}
+              health={adminHealth}
+              reviewTasks={reviewTasks}
+            />
           )}
 
           {activeSection === 'catalog' && (
@@ -298,9 +347,11 @@ export function AdminPage() {
               onSearchTermChange={setSearchTerm}
               filterStatus={filterStatus}
               setFilterStatus={setFilterStatus}
+              diagnosticsByQuestionId={questionDiagnosticsById}
               editorPanel={
                 <EditorPanel
                   draftQuestion={draftQuestion}
+                  diagnostics={draftDiagnostics}
                   isBusy={isBusy}
                   statusMessage={editorStatusMessage}
                   statusTone={editorStatusTone}
@@ -349,6 +400,7 @@ export function AdminPage() {
           {activeSection === 'ai' && (
             <AiQueueManager
               filteredSuggestions={aiWorkspace?.suggestions || []}
+              diagnosticsBySuggestionId={suggestionDiagnosticsById}
               isBusy={isBusy}
               selectedSuggestionId={selectedSuggestionId}
               selectedSuggestion={

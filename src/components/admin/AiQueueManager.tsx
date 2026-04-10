@@ -1,9 +1,11 @@
 import { ChevronLeftIcon } from './AdminIcons';
 import { getSuggestionStatusColor } from './types';
+import type { EditorialDiagnostic } from '../../lib/editorialDiagnostics';
 import type { AiSuggestion, AiSuggestionStatus } from '../../types/ai';
 
 type Props = {
   filteredSuggestions: AiSuggestion[];
+  diagnosticsBySuggestionId: Record<string, EditorialDiagnostic[]>;
   isBusy: boolean;
   onGenerateSuggestions: () => void;
   onLoadSuggestionIntoEditor: (suggestion: AiSuggestion) => void;
@@ -13,8 +15,15 @@ type Props = {
   selectedSuggestionId: string | null;
 };
 
+function getSeverityClasses(severity: EditorialDiagnostic['severity']) {
+  return severity === 'critical'
+    ? 'border-rose-200 bg-rose-50 text-rose-700'
+    : 'border-amber-200 bg-amber-50 text-amber-700';
+}
+
 export function AiQueueManager({
   filteredSuggestions,
+  diagnosticsBySuggestionId,
   isBusy,
   onGenerateSuggestions,
   onLoadSuggestionIntoEditor,
@@ -23,6 +32,10 @@ export function AiQueueManager({
   selectedSuggestion,
   selectedSuggestionId,
 }: Props) {
+  const selectedDiagnostics = selectedSuggestion
+    ? diagnosticsBySuggestionId[selectedSuggestion.id] ?? []
+    : [];
+
   return (
     <div className="relative flex h-full w-full flex-1 overflow-hidden">
       <div
@@ -50,41 +63,58 @@ export function AiQueueManager({
         </div>
 
         <div className="flex-1 space-y-1.5 overflow-y-auto bg-slate-50/30 p-2.5">
-          {filteredSuggestions.map((suggestion) => (
-            <button
-              key={suggestion.id}
-              onClick={() => onSelectSuggestion(suggestion.id)}
-              className={`w-full rounded-xl border p-3.5 text-left transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100 ${
-                selectedSuggestionId === suggestion.id
-                  ? 'border-indigo-300 bg-indigo-50 shadow-sm ring-1 ring-indigo-500'
-                  : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
-              }`}
-            >
-              <div className="mb-2 flex items-center justify-between">
-                <span className="rounded border border-indigo-100 bg-indigo-100/50 px-2 py-0.5 text-[10px] font-bold uppercase text-indigo-700">
-                  {suggestion.suggestionType.replace('_', ' ')}
-                </span>
-                <div className="flex items-center space-x-2">
-                  <span className="rounded border bg-slate-50 px-1 text-[10px] font-mono text-slate-400">
-                    {Math.round(suggestion.confidence * 100)}%
-                  </span>
-                  <span
-                    className={`h-2.5 w-2.5 rounded-full ${getSuggestionStatusColor(suggestion.status)}`}
-                    title={suggestion.status}
-                  />
-                </div>
-              </div>
-              <p
-                className={`line-clamp-3 text-sm leading-relaxed ${
+          {filteredSuggestions.map((suggestion) => {
+            const diagnostics = diagnosticsBySuggestionId[suggestion.id] ?? [];
+            const hasCritical = diagnostics.some((item) => item.severity === 'critical');
+
+            return (
+              <button
+                key={suggestion.id}
+                onClick={() => onSelectSuggestion(suggestion.id)}
+                className={`w-full rounded-xl border p-3.5 text-left transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100 ${
                   selectedSuggestionId === suggestion.id
-                    ? 'font-semibold text-indigo-950'
-                    : 'font-medium text-slate-700'
+                    ? 'border-indigo-300 bg-indigo-50 shadow-sm ring-1 ring-indigo-500'
+                    : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
                 }`}
               >
-                {suggestion.prompt}
-              </p>
-            </button>
-          ))}
+                <div className="mb-2 flex items-center justify-between">
+                  <span className="rounded border border-indigo-100 bg-indigo-100/50 px-2 py-0.5 text-[10px] font-bold uppercase text-indigo-700">
+                    {suggestion.suggestionType.replace('_', ' ')}
+                  </span>
+                  <div className="flex items-center space-x-2">
+                    {diagnostics.length > 0 && (
+                      <span
+                        className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
+                          hasCritical
+                            ? 'bg-rose-100 text-rose-700'
+                            : 'bg-amber-100 text-amber-700'
+                        }`}
+                        title={`${diagnostics.length} alertas`}
+                      >
+                        {diagnostics.length}
+                      </span>
+                    )}
+                    <span className="rounded border bg-slate-50 px-1 text-[10px] font-mono text-slate-400">
+                      {Math.round(suggestion.confidence * 100)}%
+                    </span>
+                    <span
+                      className={`h-2.5 w-2.5 rounded-full ${getSuggestionStatusColor(suggestion.status)}`}
+                      title={suggestion.status}
+                    />
+                  </div>
+                </div>
+                <p
+                  className={`line-clamp-3 text-sm leading-relaxed ${
+                    selectedSuggestionId === suggestion.id
+                      ? 'font-semibold text-indigo-950'
+                      : 'font-medium text-slate-700'
+                  }`}
+                >
+                  {suggestion.prompt}
+                </p>
+              </button>
+            );
+          })}
           {filteredSuggestions.length === 0 && (
             <div className="p-6 text-center text-sm text-slate-400">
               No hay sugerencias pendientes. Genera nuevas propuestas o vuelve más tarde.
@@ -102,11 +132,11 @@ export function AiQueueManager({
         {!selectedSuggestion ? (
           <div className="flex flex-1 flex-col items-center justify-center bg-slate-50/50 p-8 text-center text-slate-400">
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-2xl">
-              ✨
+              AI
             </div>
             <p className="font-medium text-slate-600">Selecciona una sugerencia para revisar</p>
             <p className="mt-1 max-w-sm text-sm">
-              Aquí verás el prompt propuesto, la fundamentación y las opciones sugeridas.
+              Aquí verás el prompt propuesto, la fundamentación, las opciones sugeridas y las alertas de calidad.
             </p>
           </div>
         ) : (
@@ -132,6 +162,28 @@ export function AiQueueManager({
 
             <div className="flex-1 overflow-y-auto bg-slate-50/30 p-4 md:p-8">
               <div className="mx-auto max-w-3xl space-y-6">
+                {selectedDiagnostics.length > 0 && (
+                  <div className="space-y-3">
+                    {selectedDiagnostics.map((diagnostic) => (
+                      <div
+                        key={diagnostic.id}
+                        className={`rounded-xl border p-4 ${getSeverityClasses(diagnostic.severity)}`}
+                      >
+                        <div className="mb-1 flex items-center justify-between gap-3">
+                          <span className="text-xs font-bold uppercase tracking-wider">
+                            {diagnostic.category.replace('_', ' ')}
+                          </span>
+                          <span className="text-xs font-bold uppercase tracking-wider">
+                            {diagnostic.severity}
+                          </span>
+                        </div>
+                        <p className="text-sm font-semibold">{diagnostic.title}</p>
+                        <p className="mt-1 text-sm leading-relaxed">{diagnostic.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                   <h3 className="mb-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">
                     Enunciado propuesto
@@ -147,7 +199,7 @@ export function AiQueueManager({
                       Fundamentación de AI
                     </h3>
                     <p className="text-sm italic leading-relaxed text-slate-700">
-                      “{selectedSuggestion.rationale}”
+                      "{selectedSuggestion.rationale}"
                     </p>
                   </div>
                 )}
@@ -215,7 +267,7 @@ export function AiQueueManager({
                 disabled={isBusy}
                 className="rounded-lg bg-indigo-600 px-6 py-2 text-xs font-bold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-100"
               >
-                Aprobar y editar
+                Cargar en editor
               </button>
             </div>
           </>

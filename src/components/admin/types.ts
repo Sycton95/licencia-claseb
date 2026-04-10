@@ -1,6 +1,6 @@
-// src/components/admin/types.ts
 import type { AiSuggestionStatus, AiSuggestionType } from '../../types/ai';
 import type { EditorialStatus } from '../../types/content';
+import type { ReviewSummary } from '../../lib/editorialDiagnostics';
 
 export type AdminHealth = {
   ok: boolean;
@@ -19,6 +19,7 @@ export type AdminReportSummary = {
   publishedCount: number;
   archivedCount: number;
   examEligibleCount: number;
+  reviewSummary: ReviewSummary;
 };
 
 export type AdminSection = 'dashboard' | 'catalog' | 'ai';
