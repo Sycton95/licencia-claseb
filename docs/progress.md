@@ -78,6 +78,26 @@
   - `npm run validate:content`
   - `npm run build`
 
+## Public UI baseline
+
+- Public routes `/`, `/practice`, and `/exam` now follow a minimal quiz-game direction instead of a dashboard direction.
+- Home screen should remain a start menu:
+  - only the main launch actions for `Practica` and `Simulador`
+  - no coverage stats, chapter summaries, or session-status blocks
+- Practice and Exam setup screens should stay compressed:
+  - thin top strip
+  - compact colored mode chip
+  - no secondary descriptive banners unless they are operationally required
+- Public quiz screens must preserve:
+  - locked `100dvh` shell
+  - no window-level scrolling
+  - pinned bottom action footer
+  - compact top progress chrome
+- Do not reintroduce redundant reference UI in the quiz footer:
+  - no `Ver referencia` / `Ocultar referencia`
+  - no fallback `Pagina X` text beside `Continuar`
+- Mobile vertical space is the priority constraint for public routes. Any future UI work should be checked first against narrow portrait screens before expanding desktop chrome.
+
 ## Open risks
 
 - Live verification for the latest Milestone 6A polish pass is still pending.

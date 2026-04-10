@@ -81,7 +81,7 @@ export function PracticePage() {
       setActivePractice({
         key: `${Date.now()}`,
         title: 'Practica personalizada',
-        subtitle: `${questions.length} preguntas seleccionadas desde ${selectedChapterIds.length} capitulo(s).`,
+        subtitle: `${questions.length} preguntas seleccionadas.`,
         questions,
         maxScore: questions.length,
       });
@@ -104,47 +104,24 @@ export function PracticePage() {
 
   return (
     <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden bg-slate-50">
-      <div className="shrink-0 border-b border-slate-200 bg-white px-4 py-6 shadow-sm md:py-7">
-        <div className="mx-auto max-w-3xl">
+      <div className="shrink-0 border-b border-slate-200 bg-white px-4 py-3 shadow-sm md:py-4">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
           <button
             onClick={() => navigate('/')}
-            className="mb-3 flex items-center text-xs font-bold text-slate-500 transition-colors hover:text-slate-900"
+            className="rounded-xl px-2 py-1 text-xs font-bold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            type="button"
           >
-            ← Volver al menu
+            Volver
           </button>
-          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div>
-              <span className="inline-flex rounded-full bg-indigo-50 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600">
-                Practica guiada
-              </span>
-              <h1 className="mt-3 text-2xl font-black tracking-tight text-slate-900 md:text-3xl">
-                Configura tu sesion
-              </h1>
-              <p className="mt-1 text-sm text-slate-500">
-                Elige temario, define volumen de preguntas y entra a una experiencia sin scroll de
-                ventana.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-3 md:min-w-[15rem]">
-              <div className="rounded-2xl bg-slate-100 px-3 py-3 text-center">
-                <div className="text-lg font-black text-slate-900">{selectedChapterIds.length}</div>
-                <div className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
-                  capitulos
-                </div>
-              </div>
-              <div className="rounded-2xl bg-slate-100 px-3 py-3 text-center">
-                <div className="text-lg font-black text-slate-900">{availableQuestionCount}</div>
-                <div className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
-                  preguntas disp.
-                </div>
-              </div>
-            </div>
-          </div>
+          <span className="inline-flex rounded-full bg-indigo-50 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600">
+            Practica
+          </span>
+          <div className="w-12" aria-hidden="true" />
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6">
-        <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
+      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 md:px-6 md:py-4">
+        <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
           {isLoading && (
             <div className="rounded-3xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-500 shadow-sm">
               Cargando practica disponible...
@@ -157,17 +134,7 @@ export function PracticePage() {
             </div>
           )}
 
-          <section className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm md:p-6">
-            <div className="mb-4">
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">
-                Seleccion de temario
-              </h2>
-              <p className="mt-2 text-sm text-slate-500">
-                Marca uno o varios capitulos. Los que no tienen preguntas publicadas quedan
-                bloqueados.
-              </p>
-            </div>
-
+          <section className="rounded-[28px] border border-slate-200 bg-white p-4 shadow-sm md:p-5">
             <div className="overflow-hidden rounded-3xl border border-slate-200">
               {chapterCards.map((chapter) => {
                 const isSelected = selectedChapterIds.includes(chapter.id);
@@ -176,8 +143,8 @@ export function PracticePage() {
                 return (
                   <label
                     key={chapter.id}
-                    className={`flex cursor-pointer items-center gap-4 border-b border-slate-100 px-4 py-4 last:border-b-0 ${
-                      isSelected ? 'bg-indigo-50/60' : 'bg-white hover:bg-slate-50'
+                    className={`flex cursor-pointer items-center gap-4 border-b border-slate-100 px-4 py-3.5 last:border-b-0 ${
+                      isSelected ? 'bg-indigo-50/70' : 'bg-white hover:bg-slate-50'
                     } ${isDisabled ? 'cursor-not-allowed opacity-60' : ''}`}
                   >
                     <input
@@ -189,12 +156,14 @@ export function PracticePage() {
                     />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-3">
-                        <span className="text-sm font-bold text-slate-900">{chapter.title}</span>
+                        <span className="truncate text-sm font-bold text-slate-900">
+                          {chapter.title}
+                        </span>
                         <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500">
-                          {isDisabled ? 'Proximamente' : `${chapter.questionCount} disp.`}
+                          {isDisabled ? 'Proximamente' : `${chapter.questionCount}`}
                         </span>
                       </div>
-                      <p className="mt-1 text-xs leading-6 text-slate-500">{chapter.description}</p>
+                      <p className="mt-1 text-xs leading-5 text-slate-500">{chapter.description}</p>
                     </div>
                   </label>
                 );
@@ -202,15 +171,11 @@ export function PracticePage() {
             </div>
           </section>
 
-          <section className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm md:p-6">
-            <div className="mb-4">
+          <section className="rounded-[28px] border border-slate-200 bg-white p-4 shadow-sm md:p-5">
+            <div className="mb-3">
               <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">
-                Volumen de preguntas
+                Cantidad de preguntas
               </h2>
-              <p className="mt-2 text-sm text-slate-500">
-                Usa un volumen sugerido o ingresa una cantidad personalizada dentro del rango
-                disponible.
-              </p>
             </div>
 
             <div className="flex rounded-2xl border border-slate-200 bg-slate-200/70 p-1 shadow-inner">
@@ -263,7 +228,7 @@ export function PracticePage() {
         </div>
       </div>
 
-      <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-4">
+      <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-3">
         <div className="mx-auto max-w-3xl">
           <button
             className="w-full rounded-2xl border-b-4 border-indigo-800 bg-indigo-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-indigo-700 hover:bg-indigo-500 active:translate-y-[4px] active:border-b-0 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4"
