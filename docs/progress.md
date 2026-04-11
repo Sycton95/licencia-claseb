@@ -20,6 +20,7 @@
   - opt-in
   - verifier-gated
   - heuristic provider remains production-default
+  - local Admin `Beta` section now available behind env flags
 
 ## Completed milestones
 
@@ -116,9 +117,9 @@
 - Current production AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
 - The local Ollama pilot is intentionally not production-ready:
   - no background worker yet
-  - no beta admin panel yet
   - bounded local runs only
   - suggestion output quality still unproven on target hardware
+  - browser-local persistence only in this phase
 
 ## Blocked or manual steps
 
@@ -148,6 +149,7 @@
    - provider abstraction
    - verifier-gated local Ollama adapter
    - isolated beta storage
+   - local Admin Beta panel
 3. Start remaining chapter expansion with a baseline-first, progressive-activation policy.
 4. Roll out chapter coverage in two waves:
    - Wave 1: `chapter-7`, `chapter-5`, `chapter-4`

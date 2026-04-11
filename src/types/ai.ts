@@ -5,6 +5,7 @@ export type AiSuggestionStatus = 'pending' | 'accepted' | 'rejected' | 'applied'
 export type AiProvider = 'heuristic' | 'ollama_qwen25_3b';
 export type AiRunStatus = 'completed' | 'failed';
 export type AiRunType = 'suggestion_refresh';
+export type AiPilotRunMode = 'new_question' | 'rewrite' | 'mixed';
 export type AiPilotVerifierSeverity = 'critical' | 'warning';
 export type AiPilotVerifierStatus = 'passed' | 'failed';
 export type AiPilotVerifierCode =
@@ -127,6 +128,7 @@ export interface AiPilotRun {
   provider: AiProvider;
   model: string;
   actorEmail: string;
+  mode: AiPilotRunMode;
   status: AiPilotRunStatus;
   summary: AiPilotRunSummary;
   createdAt: string;

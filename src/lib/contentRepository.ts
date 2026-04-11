@@ -10,6 +10,7 @@ import { loadLocalCatalog, saveLocalCatalog, saveLocalQuestion } from './localCo
 import {
   loadLocalAiBetaWorkspace,
   loadLocalAiWorkspace,
+  removeLocalAiPilotSuggestion,
   updateLocalAiSuggestion,
   upsertLocalAiPilotRun,
   upsertLocalAiPilotSuggestions,
@@ -34,7 +35,13 @@ import type {
   QuestionOption,
   SourceDocument,
 } from '../types/content';
-import type { AiPilotWorkspace, AiProvider, AiSuggestion, AiWorkspace } from '../types/ai';
+import type {
+  AiPilotRunMode,
+  AiPilotWorkspace,
+  AiProvider,
+  AiSuggestion,
+  AiWorkspace,
+} from '../types/ai';
 
 type BaseQuestionRow = {
   id: string;
@@ -773,11 +780,8 @@ export async function generateAiWorkspace() {
 
 export async function generateLocalAiPilotWorkspace(
   provider: AiProvider = 'ollama_qwen25_3b',
+  mode: AiPilotRunMode = 'mixed',
 ) {
-  if (!useLocalAdminMode) {
-    throw new Error('El piloto local solo está disponible en modo admin local.');
-  }
-
   if (!isLocalOllamaEnabled) {
     throw new Error('Habilita VITE_ENABLE_LOCAL_OLLAMA para usar el piloto local.');
   }
@@ -788,12 +792,13 @@ export async function generateLocalAiPilotWorkspace(
   const chunks = SOURCE_PREPARATION.filter((item) => item.editionId === editionId);
   const questions = catalog.questions
     .filter((question) => question.status !== 'archived')
-    .slice(0, 1);
+    .slice(0, 3);
   const workspace = await generateLocalPilotWorkspace(provider, {
     catalog,
     actorEmail,
     chunks,
     questions,
+    mode,
   });
 
   if (workspace.runs[0]) {
@@ -801,6 +806,11 @@ export async function generateLocalAiPilotWorkspace(
   }
   upsertLocalAiPilotSuggestions(workspace.suggestions);
 
+  return getLocalAiPilotWorkspace();
+}
+
+export async function discardLocalAiPilotSuggestion(suggestionId: string) {
+  removeLocalAiPilotSuggestion(suggestionId);
   return getLocalAiPilotWorkspace();
 }
 

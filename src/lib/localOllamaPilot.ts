@@ -1,6 +1,7 @@
 import type { ContentCatalog, Question } from '../types/content.js';
 import type {
   AiPilotRun,
+  AiPilotRunMode,
   AiPilotSuggestionRecord,
   AiProvider,
   AiSuggestion,
@@ -36,6 +37,7 @@ type LocalOllamaPilotOptions = {
   maxItems?: number;
   chunks?: SourcePreparationChunk[];
   questions?: Question[];
+  mode?: AiPilotRunMode;
 };
 
 function nowIso() {
@@ -268,17 +270,20 @@ export async function runLocalOllamaPilot(
   }
 
   const provider = options.provider ?? 'ollama_qwen25_3b';
+  const mode = options.mode ?? 'mixed';
   if (provider !== 'ollama_qwen25_3b') {
     throw new Error('El proveedor local solicitado no está soportado todavía.');
   }
 
   const startedAt = Date.now();
   const runId = `pilot-run-${startedAt}`;
-  const chunkTargets = (options.chunks ?? []).slice(0, options.maxItems ?? ollamaMaxItemsPerRun);
-  const rewriteTargets = (options.questions ?? []).slice(
-    0,
-    Math.max(0, (options.maxItems ?? ollamaMaxItemsPerRun) - chunkTargets.length),
-  );
+  const maxItems = options.maxItems ?? ollamaMaxItemsPerRun;
+  const chunkBudget =
+    mode === 'new_question' ? maxItems : mode === 'rewrite' ? 0 : Math.max(1, Math.ceil(maxItems / 2));
+  const rewriteBudget =
+    mode === 'rewrite' ? maxItems : mode === 'new_question' ? 0 : Math.max(0, maxItems - chunkBudget);
+  const chunkTargets = (options.chunks ?? []).slice(0, chunkBudget);
+  const rewriteTargets = (options.questions ?? []).slice(0, rewriteBudget);
   const suggestionRecords: AiPilotSuggestionRecord[] = [];
 
   for (const chunk of chunkTargets) {
@@ -297,6 +302,7 @@ export async function runLocalOllamaPilot(
       provider,
       model: ollamaModel,
       actorEmail,
+      mode,
       status: 'completed',
       createdAt: new Date(startedAt).toISOString(),
       durationMs: completedAt - startedAt,

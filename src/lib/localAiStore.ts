@@ -156,3 +156,12 @@ export function upsertLocalAiPilotRun(run: AiPilotRun) {
     runs: nextRuns,
   });
 }
+
+export function removeLocalAiPilotSuggestion(suggestionId: string) {
+  const workspace = loadLocalAiBetaWorkspace();
+
+  saveLocalAiBetaWorkspace({
+    ...workspace,
+    suggestions: workspace.suggestions.filter((suggestion) => suggestion.id !== suggestionId),
+  });
+}

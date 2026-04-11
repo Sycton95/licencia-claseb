@@ -1,4 +1,11 @@
-import { CatalogIcon, CloseIcon, DashboardIcon, LogOutIcon, SparkIcon } from './AdminIcons';
+import {
+  CatalogIcon,
+  CloseIcon,
+  DashboardIcon,
+  FlaskIcon,
+  LogOutIcon,
+  SparkIcon,
+} from './AdminIcons';
 import type { AdminSection } from './types';
 
 type Props = {
@@ -9,6 +16,7 @@ type Props = {
   isSupabaseConfigured: boolean;
   isMobileOpen: boolean;
   onCloseMobile: () => void;
+  showBeta: boolean;
 };
 
 export function AdminSidebar({
@@ -19,12 +27,14 @@ export function AdminSidebar({
   isSupabaseConfigured,
   isMobileOpen,
   onCloseMobile,
+  showBeta,
 }: Props) {
   const navItems = [
     { id: 'dashboard', label: 'Resumen', Icon: DashboardIcon },
-    { id: 'catalog', label: 'Catálogo', Icon: CatalogIcon },
+    { id: 'catalog', label: 'Catalogo', Icon: CatalogIcon },
     { id: 'ai', label: 'Cola AI', Icon: SparkIcon },
-  ];
+    ...(showBeta ? [{ id: 'beta' as const, label: 'Beta', Icon: FlaskIcon }] : []),
+  ] as const;
 
   return (
     <>
@@ -41,11 +51,11 @@ export function AdminSidebar({
         `}
       >
         <div className="flex h-14 shrink-0 items-center justify-between border-b border-slate-800 p-4">
-          <h2 className="text-sm font-bold tracking-wide text-white">ADMINISTRACIÓN</h2>
+          <h2 className="text-sm font-bold tracking-wide text-white">ADMINISTRACION</h2>
           <button
             className="rounded-md p-1 text-slate-400 hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-600 md:hidden"
             onClick={onCloseMobile}
-            aria-label="Cerrar menú lateral"
+            aria-label="Cerrar menu lateral"
             type="button"
           >
             <CloseIcon size={18} />
@@ -88,7 +98,7 @@ export function AdminSidebar({
             <button
               onClick={onSignOut}
               className="shrink-0 rounded-md p-2 text-slate-500 transition-colors hover:bg-slate-800 hover:text-rose-400 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-rose-200"
-              aria-label="Cerrar sesión"
+              aria-label="Cerrar sesion"
               type="button"
             >
               <LogOutIcon size={16} />

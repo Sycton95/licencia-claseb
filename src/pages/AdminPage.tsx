@@ -5,6 +5,7 @@ import { DashboardView } from '../components/admin/DashboardView';
 import { CatalogManager } from '../components/admin/CatalogManager';
 import { EditorPanel } from '../components/admin/EditorPanel';
 import { AiQueueManager } from '../components/admin/AiQueueManager';
+import { BetaPilotManager } from '../components/admin/BetaPilotManager';
 import type { AdminHealth, AdminReportSummary, AdminSection } from '../components/admin/types';
 import { buildDraftQuestionFromSuggestion } from '../lib/aiSuggestionEngine';
 import {
@@ -16,12 +17,23 @@ import {
   getQuestionDiagnostics,
 } from '../lib/editorialDiagnostics';
 import { validateQuestionAction } from '../lib/contentValidation';
-import { isSupabaseConfigured, useLocalAdminMode } from '../lib/supabase';
 import {
+  isAdminBetaPanelEnabled,
+  isLocalOllamaEnabled,
+  isSupabaseConfigured,
+  ollamaMaxGenerationMs,
+  ollamaMaxItemsPerRun,
+  ollamaModel,
+  useLocalAdminMode,
+} from '../lib/supabase';
+import {
+  discardLocalAiPilotSuggestion,
   generateAiWorkspace,
+  generateLocalAiPilotWorkspace,
   getAiWorkspace,
   getContentCatalog,
   getCurrentSession,
+  getLocalAiPilotWorkspace,
   isCurrentUserAdmin,
   markAiSuggestionApplied,
   requestAdminMagicLink,
@@ -29,7 +41,13 @@ import {
   signOutAdmin,
   transitionAiSuggestion,
 } from '../lib/contentRepository';
-import type { AiSuggestion, AiWorkspace } from '../types/ai';
+import type {
+  AiPilotRunMode,
+  AiPilotSuggestionRecord,
+  AiPilotWorkspace,
+  AiSuggestion,
+  AiWorkspace,
+} from '../types/ai';
 import type { ContentCatalog, EditorialAction, EditorialStatus, Question } from '../types/content';
 
 type StatusTone = 'success' | 'error';
@@ -41,12 +59,14 @@ function cloneQuestion(question: Question) {
 export function AdminPage() {
   const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
   const [aiWorkspace, setAiWorkspace] = useState<AiWorkspace | null>(null);
+  const [betaWorkspace, setBetaWorkspace] = useState<AiPilotWorkspace | null>(null);
   const [activeSection, setActiveSection] = useState<AdminSection>('dashboard');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedQuestionId, setSelectedQuestionId] = useState<string | null>(null);
   const [draftQuestion, setDraftQuestion] = useState<Question | null>(null);
   const [draftOriginSuggestionId, setDraftOriginSuggestionId] = useState<string | null>(null);
   const [selectedSuggestionId, setSelectedSuggestionId] = useState<string | null>(null);
+  const [selectedBetaSuggestionId, setSelectedBetaSuggestionId] = useState<string | null>(null);
   const [filterStatus, setFilterStatus] = useState<'all' | EditorialStatus>('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
@@ -59,6 +79,7 @@ export function AdminPage() {
   const [editorStatusTone, setEditorStatusTone] = useState<StatusTone>('success');
 
   const canUseLocalAdmin = useLocalAdminMode;
+  const showBetaSection = isAdminBetaPanelEnabled && (canUseLocalAdmin || isAdminAuthorized);
 
   useEffect(() => {
     getContentCatalog().then(setCatalog).finally(() => setIsLoading(false));
@@ -98,6 +119,12 @@ export function AdminPage() {
       getAiWorkspace().then(setAiWorkspace);
     }
   }, [canUseLocalAdmin, isAdminAuthorized]);
+
+  useEffect(() => {
+    if (showBetaSection) {
+      getLocalAiPilotWorkspace().then(setBetaWorkspace);
+    }
+  }, [showBetaSection]);
 
   const filteredQuestions = useMemo(() => {
     if (!catalog) {
@@ -243,7 +270,7 @@ export function AdminPage() {
       setDraftQuestion(cloneQuestion(questionToSave));
       setEditorStatus(message, 'success');
     } catch {
-      setEditorStatus('No se pudo guardar. Revisa la conexión e inténtalo nuevamente.', 'error');
+      setEditorStatus('No se pudo guardar. Revisa la conexion e intentalo nuevamente.', 'error');
     } finally {
       setIsBusy(false);
     }
@@ -269,10 +296,51 @@ export function AdminPage() {
     }
   };
 
+  const handleLoadBetaSuggestionIntoEditor = (record: AiPilotSuggestionRecord) => {
+    const questionDraft = buildDraftQuestionFromSuggestion(
+      record.suggestion,
+      sessionEmail ?? 'local-admin',
+    );
+
+    if (!questionDraft) {
+      setEditorStatus('La salida Beta no se pudo convertir en draft utilizable.', 'error');
+      return;
+    }
+
+    setSelectedQuestionId(record.suggestion.targetQuestionId ?? `beta-${record.suggestion.id}`);
+    setDraftQuestion(questionDraft);
+    setDraftOriginSuggestionId(null);
+    setActiveSection('catalog');
+    setEditorStatus('Borrador cargado desde Beta local.', 'success');
+  };
+
+  const handleRunBetaPilot = async (mode: AiPilotRunMode) => {
+    setIsBusy(true);
+
+    try {
+      setBetaWorkspace(await generateLocalAiPilotWorkspace('ollama_qwen25_3b', mode));
+      setSelectedBetaSuggestionId(null);
+      setEditorStatus(`Corrida Beta ejecutada en modo ${mode}.`, 'success');
+    } catch (error) {
+      const message =
+        error instanceof Error
+          ? error.message
+          : 'No se pudo ejecutar el piloto local de Ollama.';
+      setEditorStatus(message, 'error');
+    } finally {
+      setIsBusy(false);
+    }
+  };
+
+  const handleDiscardBetaSuggestion = async (id: string) => {
+    setBetaWorkspace(await discardLocalAiPilotSuggestion(id));
+    setSelectedBetaSuggestionId((current) => (current === id ? null : current));
+  };
+
   if (isLoading) {
     return (
       <div className="flex h-screen items-center justify-center bg-slate-50 text-sm font-medium text-slate-500">
-        Cargando Admin Workspace…
+        Cargando Admin Workspace...
       </div>
     );
   }
@@ -296,14 +364,14 @@ export function AdminPage() {
             aria-label="Correo autorizado"
             value={loginEmail}
             onChange={(event) => setLoginEmail(event.target.value)}
-            placeholder="correo@dominio.com…"
+            placeholder="correo@dominio.com..."
             className="mb-4 w-full rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
           />
           <button
             onClick={() => requestAdminMagicLink(loginEmail)}
             className="w-full rounded-lg bg-slate-900 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-300"
           >
-            Enviar enlace mágico
+            Enviar enlace magico
           </button>
         </div>
       </div>
@@ -320,6 +388,7 @@ export function AdminPage() {
         isSupabaseConfigured={isSupabaseConfigured}
         isMobileOpen={isMobileMenuOpen}
         onCloseMobile={() => setIsMobileMenuOpen(false)}
+        showBeta={showBetaSection}
       />
 
       <main className="relative flex h-full min-w-0 flex-1 flex-col overflow-hidden">
@@ -413,6 +482,23 @@ export function AdminPage() {
               onTransitionSuggestion={async (id, status) =>
                 setAiWorkspace(await transitionAiSuggestion(id, status))
               }
+            />
+          )}
+
+          {activeSection === 'beta' && showBetaSection && (
+            <BetaPilotManager
+              isBusy={isBusy}
+              isEnabled={isLocalOllamaEnabled}
+              maxItemsPerRun={ollamaMaxItemsPerRun}
+              model={ollamaModel}
+              providerId="ollama_qwen25_3b"
+              selectedSuggestionId={selectedBetaSuggestionId}
+              timeoutMs={ollamaMaxGenerationMs}
+              workspace={betaWorkspace}
+              onDiscardSuggestion={handleDiscardBetaSuggestion}
+              onLoadIntoEditor={handleLoadBetaSuggestionIntoEditor}
+              onRunPilot={handleRunBetaPilot}
+              onSelectSuggestion={setSelectedBetaSuggestionId}
             />
           )}
         </div>

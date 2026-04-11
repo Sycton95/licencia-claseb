@@ -3,6 +3,7 @@ import { generateAiSuggestions } from './aiSuggestionEngine.js';
 import { runLocalOllamaPilot } from './localOllamaPilot.js';
 import type { ContentCatalog, Question } from '../types/content.js';
 import type {
+  AiPilotRunMode,
   AiPilotWorkspace,
   AiProvider,
   AiWorkspace,
@@ -18,6 +19,7 @@ type PilotProviderContext = ProviderContext & {
   chunks?: SourcePreparationChunk[];
   questions?: Question[];
   maxItems?: number;
+  mode?: AiPilotRunMode;
 };
 
 export function generateHeuristicWorkspace({
@@ -42,6 +44,7 @@ export async function generateLocalPilotWorkspace(
     chunks,
     questions,
     maxItems,
+    mode,
   }: PilotProviderContext,
 ): Promise<AiPilotWorkspace> {
   switch (provider) {
@@ -51,6 +54,7 @@ export async function generateLocalPilotWorkspace(
         chunks,
         questions,
         maxItems,
+        mode,
       });
       const editionId = catalog.activeEdition?.id ?? catalog.examRuleSet.editionId;
 

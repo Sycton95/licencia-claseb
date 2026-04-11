@@ -129,7 +129,11 @@
   - env-gated `ollama_qwen25_3b` pilot adapter
   - isolated local beta storage
   - deterministic verifier stage before any admin review
+- Added a local-only Admin `Beta` section:
+  - visible only behind local env flags
+  - bounded run controls for new questions, rewrites, and mixed runs
+  - passing results can be loaded into the existing editor as drafts
 - Kept the pilot non-destructive by design:
   - no public route dependency
   - no direct path to published content
-  - no production beta panel yet
+  - no production dependency on the beta panel

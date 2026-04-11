@@ -238,7 +238,10 @@ Status:
   - local beta storage
   - verifier pipeline
   - env-gated local Ollama adapter
-- No production beta panel yet.
+- Local-only admin Beta panel added:
+  - env-gated sidebar section
+  - browser-local persistence
+  - bounded run controls for `new_question`, `rewrite`, and `mixed`
 - The heuristic path remains the only production-active provider.
 
 ### Milestone 6: Public UX refinement after editorial scale-up

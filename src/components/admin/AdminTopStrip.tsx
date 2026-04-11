@@ -9,8 +9,9 @@ type Props = {
 export function AdminTopStrip({ activeSection, onOpenMobileMenu }: Props) {
   const sectionTitles: Record<AdminSection, string> = {
     dashboard: 'Resumen',
-    catalog: 'Catálogo de preguntas',
-    ai: 'Cola de revisión AI',
+    catalog: 'Catalogo de preguntas',
+    ai: 'Cola de revision AI',
+    beta: 'Beta local Ollama',
   };
 
   return (
@@ -18,7 +19,7 @@ export function AdminTopStrip({ activeSection, onOpenMobileMenu }: Props) {
       <button
         onClick={onOpenMobileMenu}
         className="-ml-1.5 rounded-md p-1.5 text-slate-600 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-200"
-        aria-label="Abrir menú lateral"
+        aria-label="Abrir menu lateral"
         type="button"
       >
         <MenuIcon size={22} />

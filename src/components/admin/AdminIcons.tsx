@@ -42,6 +42,10 @@ export const SparkIcon = ({ className, size }: IconProps) => (
   <svg {...baseProps(size, className)}><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
 );
 
+export const FlaskIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="M10 2v7.31"/><path d="M14 9.3V2"/><path d="M8.5 2h7"/><path d="m14 9.3 4.38 7.58A2 2 0 0 1 16.65 20H7.35a2 2 0 0 1-1.73-3.02L10 9.3"/><path d="M7 16h10"/></svg>
+);
+
 export const LogOutIcon = ({ className, size }: IconProps) => (
   <svg {...baseProps(size, className)}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
 );

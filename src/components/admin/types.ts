@@ -22,7 +22,7 @@ export type AdminReportSummary = {
   reviewSummary: ReviewSummary;
 };
 
-export type AdminSection = 'dashboard' | 'catalog' | 'ai';
+export type AdminSection = 'dashboard' | 'catalog' | 'ai' | 'beta';
 
 export function getEditorialStatusColor(status: EditorialStatus) {
   switch (status) {
