@@ -8,6 +8,7 @@
   QuestionOption,
   SourceDocument,
 } from '../types/content.js';
+import { REVIEWED_IMPORTED_QUESTIONS } from './reviewedImports.js';
 
 const ACTIVE_EDITION_ID = 'edition-2026';
 const SEED_AUTHOR = 'seed@licencia-claseb.local';
@@ -77,74 +78,83 @@ export const CHAPTERS: Chapter[] = [
   {
     id: 'chapter-1',
     editionId: ACTIVE_EDITION_ID,
-    code: 'CapÃ­tulo 1',
-    title: 'Los siniestros de trÃ¡nsito',
-    description: 'EstadÃ­sticas, terminologÃ­a y enfoque de Sistema Seguro.',
+    code: 'Capítulo 1',
+    title: 'Los siniestros de tránsito',
+    description: 'Estadísticas, terminología y enfoque de Sistema Seguro.',
     order: 1,
     isActive: true,
   },
   {
     id: 'chapter-2',
     editionId: ACTIVE_EDITION_ID,
-    code: 'CapÃ­tulo 2',
-    title: 'Principios de la conducciÃ³n',
-    description: 'Funcionamiento del vehÃ­culo, leyes fÃ­sicas y seguridad activa/pasiva.',
+    code: 'Capítulo 2',
+    title: 'Los principios de la conducción',
+    description: 'Funcionamiento del vehículo, leyes físicas y seguridad activa/pasiva.',
     order: 2,
     isActive: false,
   },
   {
     id: 'chapter-3',
     editionId: ACTIVE_EDITION_ID,
-    code: 'CapÃ­tulo 3',
-    title: 'Convivencia y seguridad vial',
-    description: 'Convivencia vial, principios y usuarios vulnerables.',
+    code: 'Capítulo 3',
+    title: 'Convivencia vial',
+    description: 'Convivencia vial, educación vial, confianza y precaución.',
     order: 3,
     isActive: true,
   },
   {
     id: 'chapter-4',
     editionId: ACTIVE_EDITION_ID,
-    code: 'CapÃ­tulo 4',
-    title: 'La persona en el trÃ¡nsito I',
-    description: 'Capacidad visual, reacciÃ³n y percepciÃ³n selectiva.',
+    code: 'Capítulo 4',
+    title: 'La persona en el tránsito',
+    description: 'Capacidad visual, reacción, percepción y factores humanos de la conducción.',
     order: 4,
-    isActive: false,
+    isActive: true,
   },
   {
     id: 'chapter-5',
     editionId: ACTIVE_EDITION_ID,
-    code: 'CapÃ­tulo 5',
-    title: 'La persona en el trÃ¡nsito II',
-    description: 'Alcohol, drogas, enfermedades y fatiga.',
+    code: 'Capítulo 5',
+    title: 'Las y los usuarios vulnerables',
+    description: 'Peatones, ciclistas, motociclistas, niños y otros usuarios vulnerables.',
     order: 5,
-    isActive: false,
+    isActive: true,
   },
   {
     id: 'chapter-6',
     editionId: ACTIVE_EDITION_ID,
-    code: 'CapÃ­tulo 6',
-    title: 'Usuarios vulnerables',
-    description: 'NiÃ±os, peatones, ciclistas, motociclistas y sistemas de retenciÃ³n.',
+    code: 'Capítulo 6',
+    title: 'Normas de circulación',
+    description: 'Velocidad, prioridades, adelantamientos, señales y reglas de circulación.',
     order: 6,
-    isActive: false,
+    isActive: true,
   },
   {
     id: 'chapter-7',
     editionId: ACTIVE_EDITION_ID,
-    code: 'CapÃ­tulo 7',
-    title: 'Normas de circulaciÃ³n',
-    description: 'SeÃ±ales, semÃ¡foros, prioridades, velocidad y situaciones especiales.',
+    code: 'Capítulo 7',
+    title: 'Conducción en circunstancias especiales',
+    description: 'Conducción nocturna, climática y otras condiciones especiales.',
     order: 7,
-    isActive: false,
+    isActive: true,
   },
   {
     id: 'chapter-8',
     editionId: ACTIVE_EDITION_ID,
-    code: 'CapÃ­tulo 8',
-    title: 'ConducciÃ³n eficiente e informaciones importantes',
-    description: 'Ahorro de combustible y trÃ¡mites legales.',
+    code: 'Capítulo 8',
+    title: 'Conducción eficiente',
+    description: 'Hábitos de conducción eficiente, consumo y conducción sustentable.',
     order: 8,
-    isActive: false,
+    isActive: true,
+  },
+  {
+    id: 'chapter-9',
+    editionId: ACTIVE_EDITION_ID,
+    code: 'Capítulo 9',
+    title: 'Informaciones importantes',
+    description: 'Obligaciones legales, documentación y contenidos finales del manual.',
+    order: 9,
+    isActive: true,
   },
 ];
 
@@ -221,7 +231,7 @@ function buildQuestion(input: SeedQuestionInput): Question {
   };
 }
 
-export const SEEDED_QUESTIONS: Question[] = [
+const CORE_SEEDED_QUESTIONS: Question[] = [
   buildQuestion({
     id: 'week1-q01',
     chapterId: 'chapter-1',
@@ -858,6 +868,11 @@ export const SEEDED_QUESTIONS: Question[] = [
     explanation:
       'El manual pone como ejemplos de solidaridad ceder el paso, dejar espacio suficiente y actuar con consideraciÃ³n hacia peatones, ciclistas y otras personas usuarias vulnerables.',
   }),
+];
+
+export const SEEDED_QUESTIONS: Question[] = [
+  ...CORE_SEEDED_QUESTIONS,
+  ...REVIEWED_IMPORTED_QUESTIONS,
 ];
 
 export const EDITORIAL_EVENTS: EditorialEvent[] = SEEDED_QUESTIONS.map((question) => ({

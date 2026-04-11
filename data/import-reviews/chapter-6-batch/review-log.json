@@ -1,0 +1,1637 @@
+{
+  "sourceFile": "data/imports/chapter-6-batch.json",
+  "reviewedAt": "2026-04-11T04:14:59.436Z",
+  "batch": {
+    "batchId": "6-batch-2026-04-10-01",
+    "chapterIdRaw": "6",
+    "chapterIdNormalized": "chapter-6",
+    "sourceDocumentId": "manual-claseb-2026",
+    "questionCount": 40
+  },
+  "summary": {
+    "acceptedCount": 40,
+    "rejectedCount": 0,
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "normalizations": [
+    {
+      "scope": "batch",
+      "target": "batch",
+      "field": "chapterId",
+      "action": "chapter_id_normalized",
+      "before": "6",
+      "after": "chapter-6"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "items": [
+    {
+      "externalId": "6-q001",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q001",
+        "prompt": "¿Qué indicación entrega un Carabinero cuando está posicionado de frente o de espalda hacia usted?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Indica detención."
+          },
+          {
+            "text": "Autoriza para avanzar."
+          },
+          {
+            "text": "Indica advertencia para prepararse a avanzar."
+          },
+          {
+            "text": "Indica que debe reducir la velocidad."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La posición de frente o de espalda de un Carabinero dirigiendo el tránsito significa obligación de detenerse para los vehículos que circulan en esa trayectoria.",
+        "sourcePageStart": 77,
+        "sourcePageEnd": 77,
+        "sourceReference": "Pág. 77, Las señales de Carabineros",
+        "groundingExcerpt": "Carabineros vistos de frente o de espalda: indican detención.",
+        "reviewNotes": "Identificación de señales manuales de Carabineros.",
+        "tags": [
+          "carabineros",
+          "senales"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q002",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q002",
+        "prompt": "Si usted enfrenta una indicación de un Carabinero que contradice la luz de un semáforo en la intersección, ¿a cuál de las señales debe obedecer?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A la indicación del Carabinero, ya que prevalece sobre las demás."
+          },
+          {
+            "text": "Al semáforo, porque es una señal automática que rige el cruce."
+          },
+          {
+            "text": "A la señal que indique la maniobra de mayor seguridad."
+          },
+          {
+            "text": "A ninguna, debe detenerse y esperar a que el semáforo se apague."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Las instrucciones impartidas por Carabineros de Chile que se encuentran regulando el tránsito prevalecen por sobre cualquier otra señalización o regla.",
+        "sourcePageStart": 77,
+        "sourcePageEnd": 77,
+        "sourceReference": "Pág. 77, Las señales de Carabineros",
+        "groundingExcerpt": "En tal caso, las indicaciones dadas por Carabineros de Chile prevalecen sobre las demás.",
+        "reviewNotes": "Jerarquía normativa en el tránsito.",
+        "tags": [
+          "carabineros",
+          "jerarquia",
+          "normas"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q003",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q003",
+        "prompt": "¿Qué significa enfrentar una luz roja intermitente en un semáforo vehicular?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Indica ceda el paso, permitiendo continuar si no hay vehículos aproximándose que hagan riesgoso cruzar."
+          },
+          {
+            "text": "Indica detención absoluta hasta que aparezca la luz verde."
+          },
+          {
+            "text": "Advierte peligro y obliga a reducir la velocidad sin detenerse en el cruce."
+          },
+          {
+            "text": "Indica que el semáforo está fuera de servicio temporalmente."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La luz roja intermitente funciona como una señal CEDA EL PASO, obligando a verificar que no haya vehículos en contra antes de avanzar.",
+        "sourcePageStart": 78,
+        "sourcePageEnd": 78,
+        "sourceReference": "Pág. 78, Significado de las luces del semáforo",
+        "groundingExcerpt": "Luz roja intermitente: Indica ceda el paso. Los vehículos que enfrenten una luz roja intermitente podrán continuar una vez que verifiquen que no se aproximan vehículos por la otra vía que hagan riesgoso el cruzar.",
+        "reviewNotes": "Norma sobre funcionamiento de semáforos intermitentes.",
+        "tags": [
+          "semaforos",
+          "luces"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q004",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q004",
+        "prompt": "¿Qué acción debe tomar si al aproximarse a un cruce se enciende la luz amarilla del semáforo?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Detenerse antes de entrar al cruce, a menos que esté tan próximo que no pueda hacerlo con seguridad."
+          },
+          {
+            "text": "Acelerar para cruzar antes de que aparezca la luz roja."
+          },
+          {
+            "text": "Continuar a la misma velocidad siempre y cuando no haya peatones esperando."
+          },
+          {
+            "text": "Frenar bruscamente en cualquier punto del cruce."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La luz amarilla indica prevención y obliga a detenerse, salvo que el conductor ya esté muy cerca del cruce y detenerse suponga un riesgo.",
+        "sourcePageStart": 78,
+        "sourcePageEnd": 78,
+        "sourceReference": "Pág. 78, Significado de las luces del semáforo",
+        "groundingExcerpt": "Luz amarilla: Indica prevención. Los vehículos deben detenerse antes de entrar al cruce... Si la luz amarilla te sorprende tan próximo al cruce que ya no puedes detenerte con suficiente seguridad, continúa con precaución.",
+        "reviewNotes": "Normativa sobre la luz amarilla.",
+        "tags": [
+          "semaforos",
+          "intersecciones"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q005",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q005",
+        "prompt": "Si usted enfrenta un semáforo que muestra luz roja y, simultáneamente, una luz de flecha verde, ¿qué maniobra le está permitida realizar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Entrar cuidadosamente al cruce solo para continuar en la dirección indicada por la flecha."
+          },
+          {
+            "text": "Avanzar en cualquier dirección siempre que ceda el paso a los peatones."
+          },
+          {
+            "text": "Virar a la derecha independientemente de hacia dónde apunte la flecha."
+          },
+          {
+            "text": "Detenerse completamente hasta que la luz principal cambie a verde."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La luz roja exige detención para seguir recto, pero la flecha verde otorga paso exclusivamente en la dirección de la flecha, respetando siempre a peatones.",
+        "sourcePageStart": 79,
+        "sourcePageEnd": 79,
+        "sourceReference": "Pág. 79, Significado de las luces del semáforo",
+        "groundingExcerpt": "Luz roja y flecha verde: Los vehículos que enfrenten estas luces podrán entrar cuidadosamente al cruce, pero sólo para continuar en la dirección indicada por la flecha, y deberán respetar a las y los peatones que estén cruzando...",
+        "reviewNotes": "Señalización de semáforos direccionales.",
+        "tags": [
+          "semaforos",
+          "flecha-verde"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q006",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q006",
+        "prompt": "En un cruce ferroviario provisto de señales luminosas, ¿qué significa la luz blanca?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Que no se acerca un tren, pero igualmente se debe verificar antes de pasar sin peligro."
+          },
+          {
+            "text": "Que puede avanzar a velocidad máxima porque el paso está completamente libre."
+          },
+          {
+            "text": "Que debe detenerse obligatoriamente por 3 segundos antes de cruzar la vía."
+          },
+          {
+            "text": "Que el sistema de seguridad está averiado y debe esperar a un guardavía."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La luz blanca indica vía libre de trenes, pero el conductor no debe confiarse y debe verificar que efectivamente la vía esté despejada ante posibles fallas del sistema.",
+        "sourcePageStart": 79,
+        "sourcePageEnd": 79,
+        "sourceReference": "Pág. 79, Semáforos con cruces ferroviarios",
+        "groundingExcerpt": "La luz roja... advierte la proximidad de un tren, en tanto que la blanca indica que no se acerca alguno, lo que no significa que se pueda pasar sin peligro. Siempre verifica que el cruce esté despejado, el sistema de seguridad podría fallar.",
+        "reviewNotes": "Norma sobre cruce de vías férreas.",
+        "tags": [
+          "ferrocarril",
+          "semaforos"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q007",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q007",
+        "prompt": "¿Cuál es el propósito principal de las señales reglamentarias dispuestas en la vía pública?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Notificar a los usuarios acerca de prioridades, prohibiciones, restricciones, obligaciones y autorizaciones."
+          },
+          {
+            "text": "Advertir sobre peligros o riesgos permanentes en el camino para reducir la velocidad."
+          },
+          {
+            "text": "Orientar y guiar hacia destinos o puntos de interés turístico y servicios básicos."
+          },
+          {
+            "text": "Indicar la presencia de trabajos temporales en la calzada para desvíos de tránsito."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Las señales reglamentarias establecen mandatos o prohibiciones cuyo incumplimiento constituye infracción de tránsito.",
+        "sourcePageStart": 80,
+        "sourcePageEnd": 80,
+        "sourceReference": "Pág. 80, Señales verticales",
+        "groundingExcerpt": "Señales reglamentarias: tienen por finalidad notificar a las personas usuarias de la vía acerca de prioridades, prohibiciones, restricciones, obligaciones y autorizaciones.",
+        "reviewNotes": "Clasificación de señales de tránsito.",
+        "tags": [
+          "senales",
+          "reglamentarias"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q008",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q008",
+        "prompt": "¿Qué forma geométrica y color de fondo caracterizan de manera general a las señales de advertencia de peligro?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Forma de rombo, con color de fondo amarillo y símbolo negro."
+          },
+          {
+            "text": "Forma circular, con fondo blanco, símbolo negro y orla roja."
+          },
+          {
+            "text": "Forma rectangular, con color de fondo azul o verde y símbolo blanco."
+          },
+          {
+            "text": "Forma cuadrada, con color de fondo naranja y símbolo reflectante."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Con la excepción de la Cruz de San Andrés, las señales de advertencia de peligro o preventivas son rombos amarillos.",
+        "sourcePageStart": 81,
+        "sourcePageEnd": 81,
+        "sourceReference": "Pág. 81, Señales de advertencia de peligro",
+        "groundingExcerpt": "Señales de advertencia de peligro... Estas tienen forma de rombo, su color de fondo es amarillo y su símbolo es negro. Excepto la señal denominada Cruz de San Andrés.",
+        "reviewNotes": "Identificación visual de señalética.",
+        "tags": [
+          "senales",
+          "advertencia"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q009",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q009",
+        "prompt": "¿De qué color son, por regla general, las señales transitorias que advierten sobre trabajos que se realizan en la vía?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Color naranja, a excepción de la primera señal que suele ser amarilla."
+          },
+          {
+            "text": "Color amarillo en toda su extensión para reflejar la luz nocturna."
+          },
+          {
+            "text": "Color azul reflectante con letras blancas."
+          },
+          {
+            "text": "Color blanco con borde rojo y texto negro."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "El color naranja denota transitoriedad debido a trabajos, diferenciándolas de las preventivas permanentes amarillas.",
+        "sourcePageStart": 81,
+        "sourcePageEnd": 81,
+        "sourceReference": "Pág. 81, Señales transitorias",
+        "groundingExcerpt": "Señales transitorias... Son de color naranja, con la excepción de la primera señal que advierte sobre los trabajos, la que es de color amarillo.",
+        "reviewNotes": "Identificación de señales por colorimetría.",
+        "tags": [
+          "senales",
+          "transitorias",
+          "color"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q010",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q010",
+        "prompt": "Al circular por una calzada, ¿qué indica la presencia de una línea longitudinal continua de color blanco que marca el eje de la misma?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Que no existen condiciones de seguridad para que pueda ser traspasada."
+          },
+          {
+            "text": "Que se puede traspasar únicamente para adelantar a un vehículo pesado o lento."
+          },
+          {
+            "text": "Que divide la calzada en pistas del mismo sentido y se puede traspasar con precaución."
+          },
+          {
+            "text": "Que señala una zona de estacionamiento permitido en casos de emergencia rural."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La línea longitudinal continua representa un muro imaginario que prohíbe el adelantamiento o cruce debido a falta de visibilidad u otras condiciones de seguridad.",
+        "sourcePageStart": 82,
+        "sourcePageEnd": 82,
+        "sourceReference": "Pág. 82, Demarcaciones de pistas",
+        "groundingExcerpt": "Las líneas longitudinales continuas (2), pueden estar complementadas con tachas reflectantes de color rojo, e indican que no existen condiciones de seguridad para que pueda ser traspasada.",
+        "reviewNotes": "Significado de la demarcación continua.",
+        "tags": [
+          "demarcacion",
+          "linea-continua"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q011",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q011",
+        "prompt": "Si en una vía el eje de la calzada está demarcado en forma mixta (una línea continua y otra segmentada), ¿qué vehículos están autorizados a traspasarla?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Sólo los vehículos que circulan por el lado en que la línea es segmentada."
+          },
+          {
+            "text": "Todos los vehículos si verifican que no vienen autos en contra."
+          },
+          {
+            "text": "Sólo los vehículos de emergencia en servicio con balizas encendidas."
+          },
+          {
+            "text": "Ningún vehículo, ya que la línea continua prohíbe la maniobra en ambos sentidos."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La línea mixta restringe el paso según el sentido de circulación: solo quien tiene a su lado la línea discontinua o segmentada puede efectuar la maniobra.",
+        "sourcePageStart": 82,
+        "sourcePageEnd": 82,
+        "sourceReference": "Pág. 82, Demarcaciones de pistas",
+        "groundingExcerpt": "En ocasiones, las líneas longitudinales pueden presentarse en forma mixta (3), esto es, tanto en forma segmentada como continua. En estos casos, sólo puede ser traspasada por los vehículos que circulan por el lado en que esta es segmentada.",
+        "reviewNotes": "Uso de la línea longitudinal mixta.",
+        "tags": [
+          "demarcacion",
+          "linea-mixta"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q012",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q012",
+        "prompt": "¿Cuál es la función de la demarcación que consiste en líneas amarillas diagonales formando cuadrados dentro de un cruce o intersección?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Advertir a los conductores que no deben quedar detenidos al interior de la intersección."
+          },
+          {
+            "text": "Indicar que existe una zona de paso preferente exclusiva para peatones y ciclistas."
+          },
+          {
+            "text": "Señalar que el cruce está clausurado temporalmente por trabajos viales."
+          },
+          {
+            "text": "Permitir que los vehículos de emergencia se estacionen momentáneamente sobre ellas."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Esta demarcación busca mantener expeditos los cruces congestionados, obligando al conductor a no ingresar si no tiene espacio para salir del cruce.",
+        "sourcePageStart": 83,
+        "sourcePageEnd": 83,
+        "sourceReference": "Pág. 83, Demarcación de no bloquear cruce",
+        "groundingExcerpt": "Demarcación de no bloquear cruce: Algunas intersecciones pueden estar demarcadas con líneas amarillas diagonales que forman cuadrados (10). Estas marcas, que se utilizan en vías congestionadas, advierten a las personas conductoras que deben tomar todas las medidas del caso a fin de no quedar detenidas en la intersección.",
+        "reviewNotes": "Identificación de demarcación preventiva.",
+        "tags": [
+          "demarcacion",
+          "cruces",
+          "congestión"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q013",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q013",
+        "prompt": "Al aproximarse a un cruce que carece de semáforo, señal de PARE o señal de CEDA EL PASO, ¿a qué vehículos debe ceder el derecho preferente de paso?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A los vehículos que se aproximan al cruce por la otra vía desde su derecha."
+          },
+          {
+            "text": "A los vehículos que se aproximan al cruce por la otra vía desde su izquierda."
+          },
+          {
+            "text": "Al vehículo que circule a mayor velocidad o que sea de mayor envergadura."
+          },
+          {
+            "text": "Al vehículo que vaya a efectuar un viraje hacia la izquierda dentro del cruce."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La regla básica de derecho de paso en cruces no regulados otorga siempre la preferencia al vehículo que aparece por la derecha.",
+        "sourcePageStart": 84,
+        "sourcePageEnd": 84,
+        "sourceReference": "Pág. 84, La obligación de ceder el paso",
+        "groundingExcerpt": "Cuando te aproximes a un cruce sin semáforo, o a uno donde no haya un Carabinero regulando el tránsito, y este no tenga señales PARE o Ceda el Paso, siempre tienes que dar preferencia a los vehículos que se aproximan al cruce por la otra vía desde tu derecha.",
+        "reviewNotes": "Regla fundamental de tránsito no regulado.",
+        "tags": [
+          "derecho-de-paso",
+          "intersecciones"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q014",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q014",
+        "prompt": "¿Qué ocurre con su derecho preferente de paso cuando usted tiene la intención de realizar un viraje en una intersección?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Carecerá de toda preferencia y deberá respetar el derecho de los vehículos que circulan recto y peatones."
+          },
+          {
+            "text": "Mantiene la preferencia sobre los otros vehículos siempre y cuando señalice con 30 metros de anticipación."
+          },
+          {
+            "text": "Adquiere prioridad absoluta sobre los peatones que están cruzando por los pasos demarcados."
+          },
+          {
+            "text": "Mantiene la preferencia únicamente si vira a la derecha desde la pista correspondiente."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La regla de tránsito establece que quien vira pierde cualquier preferencia que tuviera antes de iniciar la maniobra.",
+        "sourcePageStart": 84,
+        "sourcePageEnd": 84,
+        "sourceReference": "Pág. 84, La obligación de ceder el paso",
+        "groundingExcerpt": "Al momento de virar no tienes preferencia: cuando tengas el propósito de virar, carecerás de toda preferencia y deberás respetar el derecho preferente de paso que en tales circunstancias tengan los demás vehículos que circulen y las y los peatones en los cruces o pasos reglamentarios.",
+        "reviewNotes": "Pérdida de preferencia en virajes.",
+        "tags": [
+          "virajes",
+          "derecho-de-paso"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q015",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q015",
+        "prompt": "Al llegar y tener la intención de incorporarse a una zona de tránsito en rotación (como una rotonda), ¿qué vehículos tienen la preferencia de paso?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Los vehículos que ya circulan dentro de la rotonda."
+          },
+          {
+            "text": "Los vehículos que intentan ingresar a la rotonda, por la regla de la derecha."
+          },
+          {
+            "text": "Los vehículos de mayor tamaño que se incorporen desde una avenida principal."
+          },
+          {
+            "text": "Los vehículos que circulan por la pista exterior de la rotonda hacia la salida."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La regla en rotondas exige a quienes desean ingresar que cedan el paso a aquellos vehículos que ya se encuentran circulando dentro del anillo de rotación.",
+        "sourcePageStart": 84,
+        "sourcePageEnd": 84,
+        "sourceReference": "Pág. 84, La obligación de ceder el paso",
+        "groundingExcerpt": "Al incorporarte a una zona de tránsito en rotación -rotonda o minirrotonda, debes ceder el paso a los vehículos que circulan por ella.",
+        "reviewNotes": "Prioridad de circulación en rotondas.",
+        "tags": [
+          "rotondas",
+          "derecho-de-paso"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q016",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q016",
+        "prompt": "Si usted se incorpora a la circulación vial saliendo desde un estacionamiento, vía particular o inmueble, ¿quién tiene derecho preferente de paso?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Los vehículos en tránsito por la vía pública, ciclistas y peatones."
+          },
+          {
+            "text": "Usted, debido a que se está incorporando por la derecha de la vía."
+          },
+          {
+            "text": "Sólo los vehículos motorizados que circulan por la calzada, excluyendo ciclos."
+          },
+          {
+            "text": "Quien llegue primero a la línea imaginaria de la vereda o acera."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "El conductor que sale de un recinto privado a la calle carece de toda prioridad y debe ceder el paso a quienes transitan, incluyendo peatones y ciclistas.",
+        "sourcePageStart": 85,
+        "sourcePageEnd": 85,
+        "sourceReference": "Pág. 85, Otras obligaciones de ceder el paso",
+        "groundingExcerpt": "Al incorporarte a la circulación desde una vía particular, desde un inmueble o un estacionamiento, debes ceder el paso a los vehículos en tránsito, incluidos los ciclistas, así como a las y los peatones.",
+        "reviewNotes": "Derecho de paso en incorporaciones.",
+        "tags": [
+          "derecho-de-paso",
+          "incorporacion"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q017",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q017",
+        "prompt": "¿Qué debe hacer usted si se percata de la aproximación de un vehículo de emergencia (ambulancia, bomberos o carabineros) haciendo uso de sus señales acústicas y luminosas?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Cederles el derecho a vía, desplazándose hacia un lado de la calzada y deteniéndose si es necesario."
+          },
+          {
+            "text": "Acelerar su marcha para no obstaculizar el camino y abandonar la vía lo antes posible."
+          },
+          {
+            "text": "Detenerse de inmediato y de manera brusca en la misma pista por la que circula."
+          },
+          {
+            "text": "Seguir detrás del vehículo de emergencia para avanzar más rápido aprovechando la vía despejada."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Los vehículos de emergencia en servicio tienen derecho preferente de paso absoluto, y los demás conductores deben apartarse y detenerse si hace falta para facilitar su avance.",
+        "sourcePageStart": 85,
+        "sourcePageEnd": 85,
+        "sourceReference": "Pág. 85, Vehículos de emergencia",
+        "groundingExcerpt": "Vehículos de emergencia: Ante la aproximación de un vehículo de emergencia... deberás cederles el derecho a vía, ya sea desplazándote hacia un lado en la calzada y deteniéndote si es necesario...",
+        "reviewNotes": "Reglas ante vehículos de emergencia.",
+        "tags": [
+          "emergencia",
+          "preferencia"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q018",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q018",
+        "prompt": "El uso correcto de las luces intermitentes de advertencia de peligro (luces de emergencia) en el vehículo está destinado a:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Advertir a los demás usuarios que el vehículo se encuentra detenido por un desperfecto o que hay riesgo en la vía."
+          },
+          {
+            "text": "Permitir el estacionamiento temporal en doble fila o frente a comercios."
+          },
+          {
+            "text": "Avisar al vehículo de atrás que se realizará una maniobra de retroceso en un cruce."
+          },
+          {
+            "text": "Advertir que se adelantará a un vehículo más lento en zona de niebla."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Las luces de estacionamiento o 'gatos' sólo deben utilizarse para indicar fallas del vehículo o un riesgo inminente, no como excusa para detenerse en lugares prohibidos.",
+        "sourcePageStart": 87,
+        "sourcePageEnd": 87,
+        "sourceReference": "Pág. 87, Debes saber:",
+        "groundingExcerpt": "Las luces intermitentes de emergencia advierten a las demás personas que tu vehículo se encuentra detenido. Úsalas cuando tu vehículo haya sufrido un desperfecto o haya una situación de riesgo.",
+        "reviewNotes": "Normativa de uso de luces de emergencia.",
+        "tags": [
+          "luces",
+          "emergencia"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q019",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q019",
+        "prompt": "En relación al uso de la bocina del vehículo, la normativa del tránsito establece que:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Sólo puede utilizarse para prevenir un siniestro y siempre que su uso sea estrictamente necesario."
+          },
+          {
+            "text": "Está permitido utilizarla para apurar a un conductor inexperto o un vehículo de tracción animal."
+          },
+          {
+            "text": "Se puede usar como señal de advertencia en las entradas y salidas de los túneles viales."
+          },
+          {
+            "text": "Puede utilizarse como señal de saludo al reconocer a una persona en la vía pública o calzada."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "El aparato sonoro o bocina tiene uso muy restringido; solo se permite para evitar accidentes y queda estrictamente prohibido dentro de túneles o para apurar a usuarios vulnerables.",
+        "sourcePageStart": 87,
+        "sourcePageEnd": 87,
+        "sourceReference": "Pág. 87, Debes saber:",
+        "groundingExcerpt": "Sólo para prevenir un siniestro y siempre que su uso sea estrictamente necesario, puedes hacer uso de la bocina de tu vehiculo.",
+        "reviewNotes": "Uso reglamentario del aparato sonoro.",
+        "tags": [
+          "bocina",
+          "normas"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q020",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q020",
+        "prompt": "Al conducir por una carretera a velocidad media o alta, ¿qué técnica recomienda el manual para evaluar si mantiene una distancia segura con el vehículo que le antecede?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Aplicar la 'Regla de los Tres Segundos' contando desde un punto de referencia fijo."
+          },
+          {
+            "text": "Aplicar la regla de dejar diez metros de distancia por cada 10 km/h de velocidad."
+          },
+          {
+            "text": "Aplicar una frenada intermitente de prueba para calcular la adherencia visual."
+          },
+          {
+            "text": "Mantener siempre una distancia fija y exacta de 50 metros en toda circunstancia."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La regla de los tres segundos es un método simple y eficaz de calcular una distancia longitudinal prudente, basándose en la distancia recorrida en el tiempo, en vez de un estimado visual en metros.",
+        "sourcePageStart": 88,
+        "sourcePageEnd": 88,
+        "sourceReference": "Pág. 88, Distancia a los vehículos que van delante",
+        "groundingExcerpt": "Una regla aplicable en carreteras que te permite saber si marchas a una distancia adecuada del vehículo que va delante, es la denominada 'Regla de los Tres Segundos': Para usarla, fija tu mirada en un punto, por ejemplo, un árbol. Tan pronto el vehículo que circula adelante pase el árbol, comienza a contar... mil uno, mil dos, mil tres.",
+        "reviewNotes": "Técnica de medición de distancia longitudinal.",
+        "tags": [
+          "distancia-seguridad",
+          "conduccion-defensiva"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q021",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q021",
+        "prompt": "De acuerdo con la legislación de tránsito, la regla general para efectuar maniobras de adelantamiento a otros vehículos establece que deben realizarse:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Exclusivamente por la pista o el costado izquierdo del eje de calzada."
+          },
+          {
+            "text": "Por el costado derecho siempre que el otro vehículo transite lento."
+          },
+          {
+            "text": "Por la berma en carreteras de una pista por sentido."
+          },
+          {
+            "text": "Por el carril que se encuentre más despejado en el momento del alcance."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Por norma general y de seguridad, todo adelantamiento que implique salir de la pista normal se debe efectuar por el lado izquierdo del vehículo alcanzado.",
+        "sourcePageStart": 103,
+        "sourcePageEnd": 103,
+        "sourceReference": "Pág. 103, Las reglas sobre el adelantamiento",
+        "groundingExcerpt": "Las reglas sobre el adelantamiento: Los adelantamientos deben efectuarse siempre por la izquierda.",
+        "reviewNotes": "Norma básica de adelantamiento.",
+        "tags": [
+          "adelantamiento",
+          "normas"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q022",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q022",
+        "prompt": "Al transitar cerca de vehículos estacionados junto a la acera, es importante mantener una distancia lateral segura. ¿Qué espacio lateral se sugiere dejar en estos casos?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Un espacio suficiente, equivalente a la apertura total del ancho de una puerta."
+          },
+          {
+            "text": "Al menos 2 metros de separación obligatoria con el vehículo más próximo."
+          },
+          {
+            "text": "El espacio mínimo posible para no cruzar o pisar el eje central de la vía."
+          },
+          {
+            "text": "Una distancia aproximada de 5 metros para evitar chocar peatones."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Se sugiere dejar un espacio de seguridad igual al ancho de una puerta para evitar choques con puertas que se abren sorpresivamente o peatones descendiendo.",
+        "sourcePageStart": 89,
+        "sourcePageEnd": 89,
+        "sourceReference": "Pág. 89, Cuando hay vehículos estacionados",
+        "groundingExcerpt": "Deja un espacio suficiente, equivalente al ancho de una puerta, al pasar cerca de vehículos estacionados.",
+        "reviewNotes": "Espacio lateral de seguridad.",
+        "tags": [
+          "distancia-lateral",
+          "prevencion"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q023",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q023",
+        "prompt": "En aquellas vías y caminos rurales donde el eje de calzada no se encuentre demarcado o pintado, ¿cómo se determina la pista de circulación correcta?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "La división de la calzada es en dos partes iguales y siempre debe circular por la mitad derecha."
+          },
+          {
+            "text": "El conductor puede circular por el centro hasta que aparezca otro vehículo en sentido contrario."
+          },
+          {
+            "text": "La división de la vía es del 70% a favor de los vehículos que suben y 30% a los que bajan."
+          },
+          {
+            "text": "Debe circular siempre por el lado izquierdo si su velocidad es menor al límite establecido."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Si no hay marcas de pintura que dividan el camino, la ley de tránsito obliga a asumir un eje imaginario por la mitad exacta y circular por el margen derecho.",
+        "sourcePageStart": 87,
+        "sourcePageEnd": 87,
+        "sourceReference": "Pág. 87, La ubicación del vehículo",
+        "groundingExcerpt": "En ocasiones, el eje de calzada puede no estar demarcado. En este caso, la división de la calzada es en dos partes iguales y siempre debes circular por la derecha.",
+        "reviewNotes": "Definición del eje de calzada imaginario.",
+        "tags": [
+          "ubicacion-vehiculo",
+          "normas"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q024",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q024",
+        "prompt": "Al aproximarse a un cruce con la intención de efectuar un viraje, la normativa le obliga a señalizar y advertir su maniobra. ¿Con cuánta anticipación mínima en metros debe hacerlo?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A lo menos 30 metros antes de iniciar el viraje."
+          },
+          {
+            "text": "A lo menos 10 metros antes de llegar a la esquina."
+          },
+          {
+            "text": "A lo menos 50 metros antes en todas las vías, sean urbanas o carreteras."
+          },
+          {
+            "text": "Justo en el momento de girar el volante para ingresar a la vía perpendicular."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Señalizar con un mínimo de 30 metros de anticipación otorga tiempo de reacción al vehículo que le sigue para frenar o preparar su marcha.",
+        "sourcePageStart": 91,
+        "sourcePageEnd": 91,
+        "sourceReference": "Pág. 91, Virajes (No olvides que:)",
+        "groundingExcerpt": "Debes señalizar tu intención de virar con una anticipación suficiente: a lo menos 30 metros antes.",
+        "reviewNotes": "Distancia reglamentaria para uso del intermitente.",
+        "tags": [
+          "virajes",
+          "senalizacion"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q025",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q025",
+        "prompt": "Si usted circula por una vía de doble sentido de tránsito y desea realizar un viraje hacia la izquierda, ¿dónde debe posicionar de forma segura su vehículo antes de llegar a la intersección?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Aproximándose en forma segura al costado derecho del eje o de la línea central de la vía por la cual circula."
+          },
+          {
+            "text": "Lo más cerca posible de la cuneta del lado derecho de la vía para abrir el radio de giro."
+          },
+          {
+            "text": "Sobre el mismo eje central, invadiendo levemente la pista contraria para tener mejor visión."
+          },
+          {
+            "text": "En el centro geométrico y exacto de la intersección bloqueando el cruce."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Para virar a la izquierda desde una vía bidireccional, el vehículo se ubica pegado al lado derecho del eje central, sin traspasarlo, y espera a tener la vía expedita.",
+        "sourcePageStart": 92,
+        "sourcePageEnd": 92,
+        "sourceReference": "Pág. 92, Viraje a la izquierda",
+        "groundingExcerpt": "Para virar desde una vía de doble tránsito, aproximate en forma segura al costado derecho del eje o de la línea central de la vía por la cual circulas",
+        "reviewNotes": "Posicionamiento correcto previo al viraje izquierdo.",
+        "tags": [
+          "virajes",
+          "ubicacion-vehiculo"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q026",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q026",
+        "prompt": "Al realizar un viraje a la izquierda, si debe detenerse antes de doblar esperando a que pase el flujo contrario, ¿cuál es la orientación correcta que deben tener sus ruedas delanteras mientras aguarda?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Deben estar orientadas completamente rectas hacia adelante."
+          },
+          {
+            "text": "Deben estar torcidas hacia la izquierda, listas para efectuar el giro."
+          },
+          {
+            "text": "Deben estar torcidas hacia la derecha por seguridad ante patinajes."
+          },
+          {
+            "text": "Es irrelevante la posición de las ruedas si el vehículo cuenta con freno de mano accionado."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Si las ruedas apuntan a la izquierda y se recibe un choque por la parte posterior, el vehículo será empujado a la pista contraria, originando un siniestro de alta energía.",
+        "sourcePageStart": 92,
+        "sourcePageEnd": 92,
+        "sourceReference": "Pág. 92, Viraje a la izquierda",
+        "groundingExcerpt": "Si te ves en la obligación de detenerte, hazlo unos metros antes de la intersección con tus ruedas delanteras orientadas hacia adelante. Si te chocaran por atrás (3) y tuvieras tus ruedas torcidas a la izquierda, serías lanzado hacia la pista que viene en sentido contrario...",
+        "reviewNotes": "Medida de seguridad pasiva/activa durante la espera del viraje.",
+        "tags": [
+          "virajes",
+          "seguridad"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q027",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q027",
+        "prompt": "¿En qué circunstancias topográficas o elementos viales está expresamente prohibido realizar una maniobra de viraje en 'U'?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A menos de 200 metros de una curva, cima, cruce ferroviario, puente, túnel o viaducto."
+          },
+          {
+            "text": "En avenidas de doble tránsito provistas de bandejones centrales anchos."
+          },
+          {
+            "text": "En vías de doble sentido sin línea de centro continua demarcada."
+          },
+          {
+            "text": "En zonas urbanas de flujo lento que posean más de tres pistas de circulación."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Cualquier lugar con visión limitada o infraestructuras críticas (túneles, puentes, cruces férreos) prohíbe el viraje en U al menos 200 metros a la redonda.",
+        "sourcePageStart": 94,
+        "sourcePageEnd": 94,
+        "sourceReference": "Pág. 94, Viraje en 'U'",
+        "groundingExcerpt": "NO DEBES VIRAR EN \"U\":... A menos de 200 m de una curva, cima o gradiente, cruce ferroviario, puente, túnel y viaducto.",
+        "reviewNotes": "Prohibiciones legales del giro en 180°.",
+        "tags": [
+          "viraje-en-u",
+          "prohibiciones"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q028",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q028",
+        "prompt": "Respecto a las pistas especiales segregadas para ciclistas (ciclovías), ¿qué indicación entrega el manual para los vehículos motorizados?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Las ciclovías no pueden ser utilizadas por otros vehículos bajo ninguna circunstancia."
+          },
+          {
+            "text": "Pueden ser utilizadas por motociclistas para efectuar adelantamientos por la derecha de manera rápida."
+          },
+          {
+            "text": "Están habilitadas para el tránsito motorizado únicamente durante la noche cuando los ciclistas no transitan."
+          },
+          {
+            "text": "Pueden ser usadas por automóviles siempre que circulen a una velocidad máxima no superior a los 30 km/h."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Las ciclovías son de uso exclusivo de ciclos, y automovilistas no pueden invadirlas ni para detenerse, circular o estacionar.",
+        "sourcePageStart": 95,
+        "sourcePageEnd": 95,
+        "sourceReference": "Pág. 95, Pistas especiales para ciclistas",
+        "groundingExcerpt": "En algunos lugares pueden existir ciclovías. Estas no pueden ser utilizadas por otros vehículos, aun cuando en algunos casos están delimitadas sólo con demarcación al borde de la calzada.",
+        "reviewNotes": "Norma sobre uso exclusivo de infraestructura ciclista.",
+        "tags": [
+          "ciclovias",
+          "uso-vias"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q029",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q029",
+        "prompt": "Como norma general en la conducción, a menos que existan señales que indiquen lo contrario, ¿cuál es la velocidad máxima permitida para los vehículos livianos dentro de zonas urbanas?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "50 km/h."
+          },
+          {
+            "text": "40 km/h."
+          },
+          {
+            "text": "60 km/h."
+          },
+          {
+            "text": "80 km/h."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "El límite urbano actual para automóviles en la ley chilena se encuentra fijado en 50 km/h para disminuir la fatalidad en los siniestros y resguardar a los usuarios vulnerables.",
+        "sourcePageStart": 96,
+        "sourcePageEnd": 96,
+        "sourceReference": "Pág. 96, Los límites de velocidad",
+        "groundingExcerpt": "En zonas urbanas, la velocidad máxima permitida es de 50 km/h.",
+        "reviewNotes": "Norma base de velocidad urbana.",
+        "tags": [
+          "velocidad",
+          "zonas-urbanas"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q030",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q030",
+        "prompt": "Al circular en un vehículo liviano por una zona rural o no urbana cuya calzada solo posee una pista de circulación por cada sentido, ¿cuál es el límite máximo de velocidad permitido?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "100 km/h."
+          },
+          {
+            "text": "90 km/h."
+          },
+          {
+            "text": "120 km/h."
+          },
+          {
+            "text": "80 km/h."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "En zonas rurales de pista simple por sentido, el límite de 100 km/h obedece al riesgo inminente de impacto frontal que existe al efectuar adelantamientos; en autopistas de dos pistas el límite asciende a 120 km/h.",
+        "sourcePageStart": 96,
+        "sourcePageEnd": 96,
+        "sourceReference": "Pág. 96, Los límites de velocidad",
+        "groundingExcerpt": "En zonas no urbanas, y cuando la calzada tiene sólo una pista por sentido, la velocidad máxima permitida a los vehículos livianos es de 100 km/h.",
+        "reviewNotes": "Norma base de velocidad en vías interurbanas de pista simple.",
+        "tags": [
+          "velocidad",
+          "zonas-rurales"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q031",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q031",
+        "prompt": "¿A qué velocidad máxima obliga la ley a reducir la marcha al circular por las inmediaciones de un establecimiento educacional (colegio) durante los horarios de entrada y salida de los escolares?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A no más de 30 km/h."
+          },
+          {
+            "text": "A no más de 20 km/h."
+          },
+          {
+            "text": "A no más de 40 km/h."
+          },
+          {
+            "text": "A no más de 50 km/h."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La velocidad de 30 km/h permite al conductor reaccionar a tiempo y, en caso de atropello, la probabilidad de sobrevida del escolar es de un 90%.",
+        "sourcePageStart": 97,
+        "sourcePageEnd": 97,
+        "sourceReference": "Pág. 97, Reducción de velocidad obligatoria",
+        "groundingExcerpt": "Debes reducir tu velocidad a no más de 30 km/h cuando circules por las afueras de un colegio durante las horas de entrada y salida de clases.",
+        "reviewNotes": "Norma de velocidad en zonas escolares.",
+        "tags": [
+          "velocidad",
+          "colegios"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q032",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q032",
+        "prompt": "Desde el punto de vista físico, cuando dos vehículos circulan en sentido contrario por la misma vía, ¿a qué velocidad se aproximan para encontrarse?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A una velocidad equivalente a la suma de las velocidades de ambos vehículos."
+          },
+          {
+            "text": "A una velocidad igual a la del vehículo que circule más rápido."
+          },
+          {
+            "text": "A una velocidad igual a la del vehículo que transite más lento."
+          },
+          {
+            "text": "A la velocidad promedio exacta calculada entre ambos vehículos."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La suma de ambas velocidades acorta drásticamente el tiempo de reacción disponible al momento de cruzarse en la vía.",
+        "sourcePageStart": 98,
+        "sourcePageEnd": 98,
+        "sourceReference": "Pág. 98, Encuentros",
+        "groundingExcerpt": "Si dos vehículos circulan en sentido contrario, éstos se aproximan a una velocidad igual a la suma de las velocidades de cada uno.",
+        "reviewNotes": "Leyes de física aplicadas al tránsito (velocidad relativa).",
+        "tags": [
+          "encuentros",
+          "velocidad"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q033",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q033",
+        "prompt": "Si en la vía se encuentra repentinamente con que un vehículo que transita en sentido contrario invade sorpresivamente la pista destinada a su circulación, la reacción adecuada es:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Frenar enérgicamente, hacer señales con luces y bocina, y tratar de dirigirse siempre por su derecha."
+          },
+          {
+            "text": "Moverse rápidamente hacia el carril izquierdo, para esquivarlo por su lado."
+          },
+          {
+            "text": "Acelerar a fondo intentando pasar antes de que el otro conductor reaccione o corrija el rumbo."
+          },
+          {
+            "text": "Apagar inmediatamente el motor de su vehículo y esperar aferrado al volante el impacto."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Nunca se debe maniobrar hacia el carril contrario (izquierdo) ya que el otro conductor podría recuperar repentinamente su pista correcta, provocando así la colisión.",
+        "sourcePageStart": 99,
+        "sourcePageEnd": 99,
+        "sourceReference": "Pág. 99, Peligros del encuentro",
+        "groundingExcerpt": "Una experiencia que puede resultar desagradable es aquella en la que un vehículo que viene en sentido contrario lo haga por el lado de la calzada destinada a tu circulación. Medida: frena enérgicamente, haz señales con las luces y bocina. Por último, trata de moverte por la derecha.",
+        "reviewNotes": "Técnica de evasión ante invasiones de pista contraria.",
+        "tags": [
+          "encuentros",
+          "peligros",
+          "conduccion-defensiva"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q034",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q034",
+        "prompt": "¿En cuál de las siguientes infraestructuras o tramos de la vía se prohíbe absolutamente realizar una maniobra de adelantamiento que implique traspasar el eje de calzada?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "En puentes, viaductos, túneles o cruces ferroviarios, o al aproximarse a una distancia mínima de 200 metros de ellos."
+          },
+          {
+            "text": "En carreteras interurbanas asfaltadas de una sola pista que dispongan de amplias bermas."
+          },
+          {
+            "text": "En calzadas de área urbana reguladas por límites de velocidad máxima de 50 km/h."
+          },
+          {
+            "text": "En zonas de autopistas de cuota que posean tres o más pistas de circulación en la misma dirección."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Los túneles, viaductos y puentes carecen de zonas de escape lateral (bermas) y la estrechez reduce el margen de maniobra, prohibiendo por norma legal el adelantamiento con invasión de carril.",
+        "sourcePageStart": 103,
+        "sourcePageEnd": 103,
+        "sourceReference": "Pág. 103, Las reglas sobre el adelantamiento",
+        "groundingExcerpt": "No debes adelantar a otros vehículos traspasando para ello el eje o línea central de la calzada cuando: ... Circules por un puente, viaducto, túnel o cruce ferroviario o al aproximarte a cualquiera de estos lugares desde una distancia mínima de 200 metros.",
+        "reviewNotes": "Restricciones espaciales para los adelantamientos.",
+        "tags": [
+          "adelantamiento",
+          "prohibiciones"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q035",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q035",
+        "prompt": "Al transitar por una avenida de múltiples pistas en el mismo sentido, si usted rebasa a un vehículo situándose por delante de él manteniéndose en su propia pista derecha sin invadir el carril opuesto, legalmente la maniobra constituye:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Una maniobra de 'sobrepaso', que legalmente no se considera un adelantamiento."
+          },
+          {
+            "text": "Un adelantamiento indebido por el lado derecho sancionado por la Ley de Tránsito."
+          },
+          {
+            "text": "Una maniobra riesgosa autorizada exclusivamente para ambulancias o bomberos."
+          },
+          {
+            "text": "Un rebasamiento punible si la velocidad máxima autorizada en el tramo fue superada por más de 10 km/h."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "En derecho de tránsito chileno, el adelantamiento implica invadir el lado opuesto de circulación (eje de calzada). Pasar un vehículo sin cambiar el sentido del flujo se denomina sobrepaso.",
+        "sourcePageStart": 103,
+        "sourcePageEnd": 103,
+        "sourceReference": "Pág. 103, Excepciones a las reglas del adelantamiento",
+        "groundingExcerpt": "Así, se entiende que sobrepasas a otro vehículo cuando te sitúas adelante de él sin invadir la pista del sentido contrario. Legalmente, estas maniobras no constituyen adelantamientos.",
+        "reviewNotes": "Diferenciación conceptual entre adelantar y sobrepasar.",
+        "tags": [
+          "adelantamiento",
+          "sobrepaso",
+          "conceptos"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q036",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q036",
+        "prompt": "Cuando por motivos justificados o llegada a destino deba estacionar su automóvil al costado de una vía urbana, y no exista señalética o norma expresa en contrario, usted deberá ubicarlo:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "De manera paralela a la solera (cuneta), estacionándolo a una distancia que no exceda los 30 centímetros de ésta."
+          },
+          {
+            "text": "De manera perpendicular (batería) o en ángulo a la acera, dejando libre la rueda trasera contra la solera."
+          },
+          {
+            "text": "En dirección paralela a la acera con una distancia mínima legal de separación de 100 centímetros (1 metro) de la acera."
+          },
+          {
+            "text": "De forma indiferente siempre que aplique correctamente el freno de mano, luces e inmovilizador de volante."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "El estacionamiento en la calle debe procurar no entorpecer el tránsito del flujo vehicular contiguo, regulándose a 30 cm de máximo respecto a la vereda.",
+        "sourcePageStart": 104,
+        "sourcePageEnd": 104,
+        "sourceReference": "Pág. 104, Estacionamiento y detención",
+        "groundingExcerpt": "A menos que esté permitida otra forma de estacionamiento, debes hacerlo en forma paralela a la cuneta, a no más de 30 centímetros de ella...",
+        "reviewNotes": "Métrica y normativa base de los estacionamientos.",
+        "tags": [
+          "estacionamiento",
+          "normas"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q037",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q037",
+        "prompt": "Como medida de seguridad para evitar deslizamientos del vehículo estacionado en vías con pendientes pronunciadas en bajada (cuesta abajo), la recomendación y exigencia técnica dictamina que:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El volante debe girarse para dejar las ruedas delanteras orientadas o apuntando hacia la cuneta."
+          },
+          {
+            "text": "El volante debe girarse para dejar las ruedas apuntando hacia el centro (interior) de la calzada."
+          },
+          {
+            "text": "Las ruedas deben alinearse de manera totalmente recta o paralela al eje longitudinal de la vereda."
+          },
+          {
+            "text": "Sólo se requiere enganchar el vehículo en el cambio más alto (5ta o 6ta marcha) dejando las ruedas libres."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Al estar el vehículo en bajada, orientar las ruedas hacia la cuneta (solera) permitirá que el vehículo se apoye de inmediato contra la banqueta de la vereda en caso de fallo de frenos, impidiendo su carrera calle abajo.",
+        "sourcePageStart": 104,
+        "sourcePageEnd": 104,
+        "sourceReference": "Pág. 104, Estacionamiento y detención",
+        "groundingExcerpt": "En vías con pendiente en subida, deja las ruedas orientadas hacia el interior de la calzada. En cambio, si estás estacionado en bajada, deja las ruedas orientadas hacia la cuneta.",
+        "reviewNotes": "Requisito mecánico-físico de seguridad al estacionar en relieves.",
+        "tags": [
+          "estacionamiento",
+          "pendientes"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q038",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q038",
+        "prompt": "Se prohíbe estacionar o efectuar detenciones que obstaculicen cruces peatonales o vías vehiculares en general. Entre las distancias mínimas reglamentadas, ¿qué distancia mínima debe respetarse para estacionar desde la esquina de una intersección?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A no menos de 10 metros de una esquina."
+          },
+          {
+            "text": "A no menos de 5 metros de una esquina."
+          },
+          {
+            "text": "A no menos de 15 metros del encuentro de esquinas."
+          },
+          {
+            "text": "A no menos de 20 metros del comienzo del cruce."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Estacionar en la misma esquina arruina por completo la visibilidad que requieren los conductores que intentan ingresar a la vía o peatones a cruzar, definiéndose 10 metros como margen.",
+        "sourcePageStart": 106,
+        "sourcePageEnd": 106,
+        "sourceReference": "Pág. 106, Lugares donde no debes estacionar:",
+        "groundingExcerpt": "Lugares donde no debes estacionar:... A menos de 10 metros de una esquina.",
+        "reviewNotes": "Distancias restrictivas de estacionamiento urbano.",
+        "tags": [
+          "estacionamiento",
+          "prohibiciones"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q039",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q039",
+        "prompt": "Entre las instalaciones viales de seguridad para bomberos en las ciudades figuran los grifos. ¿A qué distancia mínima le prohíbe la ley estacionar su automóvil respecto de la ubicación de un grifo de incendios?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A menos de 5 metros."
+          },
+          {
+            "text": "A menos de 3 metros de su perímetro."
+          },
+          {
+            "text": "A menos de 10 metros del cuartel de bomberos más cercano."
+          },
+          {
+            "text": "A menos de 15 metros radiales del sistema hidráulico."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Bomberos requiere espacio de trabajo expedito con sus camiones y mangueras voluminosas, exigiendo un radio libre de 5 metros del grifo por normativa.",
+        "sourcePageStart": 105,
+        "sourcePageEnd": 105,
+        "sourceReference": "Pág. 105, Lugares donde no debes estacionar:",
+        "groundingExcerpt": "Lugares donde no debes estacionar:... A menos de 5 metros de un grifo para incendios.",
+        "reviewNotes": "Normativas restrictivas urbanas para emergencia.",
+        "tags": [
+          "estacionamiento",
+          "emergencia"
+        ],
+        "chapterId": "chapter-6"
+      }
+    },
+    {
+      "externalId": "6-q040",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "6-q040",
+        "prompt": "¿Bajo qué circunstancias específicas y restrictivas la normativa chilena permite a los conductores hacer uso de la marcha atrás (retroceso) con su vehículo en las vías públicas?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Sólo para mantener la libre circulación, para incorporarse a la vía de circulación o en la maniobra de estacionar."
+          },
+          {
+            "text": "Se autoriza retroceder para corregir la marcha dentro de un cruce semaforizado si el conductor pasó la línea de detención en luz amarilla."
+          },
+          {
+            "text": "Está permitido cuando el conductor se ha pasado una salida indispensable de ruta en autopista a menos de 50 metros."
+          },
+          {
+            "text": "Para avanzar con mayor rapidez hacia una desviación si el tránsito de frente se encuentra atascado."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La conducción marcha atrás expone altos grados de ceguera estructural del vehículo (puntos ciegos traseros) y atenta contra el flujo predecible, autorizándose sólo en tramos ínfimos que no se puedan salvar avanzando de frente (estacionar, sacar de garage o limpiar atochamiento).",
+        "sourcePageStart": 106,
+        "sourcePageEnd": 106,
+        "sourceReference": "Pág. 106, Retroceso",
+        "groundingExcerpt": "No debes conducir marcha atrás, a menos que ello sea indispensable y sólo en los siguientes casos: Para mantener la libre circulación. Para incorporarte a la circulación. Para estacionar.",
+        "reviewNotes": "Maniobras de excepción en retroceso.",
+        "tags": [
+          "retroceso",
+          "excepciones",
+          "estacionamiento"
+        ],
+        "chapterId": "chapter-6"
+      }
+    }
+  ]
+}

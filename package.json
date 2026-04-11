@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
     "validate:content": "node scripts/validate-content.mjs",
+    "review:import": "node scripts/review-import.mjs",
     "smoke:prod": "node scripts/smoke-check.mjs --require-schema=v1",
     "smoke:prod:compat": "node scripts/smoke-check.mjs",
     "release:check": "node scripts/release-check.mjs --require-schema=v1",

@@ -405,7 +405,7 @@ async function getRemoteCatalogV1(): Promise<ContentCatalog> {
         createdAt: event.created_at,
       }));
 
-  return normalizeCatalog({
+  return mergeCatalogWithSeedFloor({
     editions,
     activeEdition,
     chapters,
@@ -520,7 +520,7 @@ async function getRemoteCatalogLegacy(): Promise<ContentCatalog> {
     mapQuestionRow(row as LegacyQuestionRow, activeEditionId),
   );
 
-  return normalizeCatalog({
+  return mergeCatalogWithSeedFloor({
     editions: SEED_CONTENT.editions,
     activeEdition,
     chapters,
@@ -757,6 +757,60 @@ export async function getLocalAiPilotWorkspace(): Promise<AiPilotWorkspace> {
       (item) => item.editionId === (catalog.activeEdition?.id ?? catalog.examRuleSet.editionId),
     ),
   };
+}
+
+function mergeCatalogWithSeedFloor(catalog: ContentCatalog): ContentCatalog {
+  const remote = normalizeCatalog(catalog);
+  const seed = normalizeCatalog(SEED_CONTENT);
+  const activeEdition = getActiveEdition(remote) ?? seed.activeEdition;
+  const activeEditionId = activeEdition?.id ?? seed.activeEdition?.id ?? 'edition-2026';
+
+  const editionById = new Map(seed.editions.map((edition) => [edition.id, edition]));
+  for (const edition of remote.editions) {
+    editionById.set(edition.id, {
+      ...(editionById.get(edition.id) ?? {}),
+      ...edition,
+    });
+  }
+
+  if (activeEdition) {
+    editionById.set(activeEdition.id, {
+      ...(editionById.get(activeEdition.id) ?? {}),
+      ...activeEdition,
+      id: activeEdition.id,
+      isActive: true,
+    });
+  }
+
+  const chapterById = new Map(remote.chapters.map((chapter) => [chapter.id, chapter]));
+  for (const chapter of seed.chapters) {
+    chapterById.set(chapter.id, chapter);
+  }
+
+  const sourceById = new Map(remote.sourceDocuments.map((source) => [source.id, source]));
+  for (const source of seed.sourceDocuments) {
+    sourceById.set(source.id, source);
+  }
+
+  const questionById = new Map(seed.questions.map((question) => [question.id, question]));
+  for (const question of remote.questions) {
+    questionById.set(question.id, question);
+  }
+
+  const eventById = new Map(seed.editorialEvents.map((event) => [event.id, event]));
+  for (const event of remote.editorialEvents) {
+    eventById.set(event.id, event);
+  }
+
+  return normalizeCatalog({
+    editions: [...editionById.values()],
+    activeEdition,
+    chapters: [...chapterById.values()].sort((left, right) => left.order - right.order),
+    sourceDocuments: [...sourceById.values()].sort((left, right) => left.title.localeCompare(right.title)),
+    examRuleSet: { ...seed.examRuleSet, editionId: activeEditionId },
+    questions: [...questionById.values()],
+    editorialEvents: [...eventById.values()],
+  });
 }
 
 export async function generateAiWorkspace() {

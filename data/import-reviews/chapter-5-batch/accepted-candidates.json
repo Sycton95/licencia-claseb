@@ -1,0 +1,1340 @@
+[
+  {
+    "externalId": "5-q001",
+    "prompt": "En Chile, ¿qué porcentaje aproximado representan las personas atropelladas fallecidas respecto del total de víctimas fatales en siniestros de tránsito?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Aproximadamente el 10%."
+      },
+      {
+        "text": "Aproximadamente el 15%."
+      },
+      {
+        "text": "Aproximadamente el 28%."
+      },
+      {
+        "text": "Aproximadamente el 50%."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Aunque los atropellos son el 15% de los siniestros, su letalidad es muy alta, concentrando cerca del 28% de los fallecidos totales en Chile.",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Pág. 68, Peatones",
+    "groundingExcerpt": "En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas.",
+    "reviewNotes": "Estadística clave sobre letalidad en atropellos.",
+    "tags": [
+      "peatones",
+      "estadisticas"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q002",
+    "prompt": "A nivel mundial, ¿qué proporción de las víctimas mortales por causa del tránsito está compuesta por usuarios vulnerables (peatones, ciclistas, motociclistas y sus pasajeros)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Menos del 10%."
+      },
+      {
+        "text": "Alrededor de un cuarto (25%)."
+      },
+      {
+        "text": "Casi la mitad (50%)."
+      },
+      {
+        "text": "Más del 80%."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "La Organización Mundial de la Salud señala que los usuarios vulnerables concentran cerca del 50% de las muertes viales globales.",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Pág. 68, Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones, ciclistas y motociclistas, junto con sus pasajeros, representan casi la mitad de las víctimas mortales por causa del tránsito en el mundo.",
+    "reviewNotes": "Dato demográfico global sobre vulnerabilidad.",
+    "tags": [
+      "usuarios-vulnerables",
+      "estadisticas"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q003",
+    "prompt": "¿A qué se refiere la 'zona de incertidumbre' de un peatón?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "A los cruces de cebra que no están semaforizados."
+      },
+      {
+        "text": "Al espacio que los rodea cuando circulan por la vía."
+      },
+      {
+        "text": "Al rango de edad en que los niños no comprenden el tránsito."
+      },
+      {
+        "text": "A las ciclovías y veredas mal demarcadas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "La zona de incertidumbre es el perímetro alrededor de un peatón hacia donde puede moverse de manera sorpresiva e impredecible.",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Pág. 68, Peatones",
+    "groundingExcerpt": "La alta siniestralidad de estas personas usuarias de las vías se relaciona con su comportamiento en la zona de incertidumbre, es decir, en aquel espacio que las rodea cuando circulan por la vía.",
+    "reviewNotes": "Definición técnica de espacio de seguridad peatonal.",
+    "tags": [
+      "peatones",
+      "comportamiento"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q004",
+    "prompt": "¿Qué precaución principal se debe tomar al pasar con su vehículo cerca de un bus de transporte público detenido en una parada?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Tocar la bocina repetidamente para avisar su paso."
+      },
+      {
+        "text": "Aumentar la velocidad para sobrepasarlo rápidamente."
+      },
+      {
+        "text": "Encender las luces altas para mejorar la visibilidad."
+      },
+      {
+        "text": "Disminuir la velocidad ante la posible aparición sorpresiva de un peatón."
+      }
+    ],
+    "correctOptionIndexes": [
+      3
+    ],
+    "publicExplanation": "Un peatón puede salir sorpresivamente por delante o detrás del bus, o correr para subirse a él, por lo que es vital disminuir la velocidad.",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Pág. 68, Como persona conductora debes",
+    "groundingExcerpt": "Al pasar cerca de un bus detenido en una parada, debes disminuir tu velocidad ya que un peatón podría aparecer sorpresivamente en la calzada adelante o detrás del bus, o corriendo para subir a este.",
+    "reviewNotes": "Escenario típico de riesgo con peatones.",
+    "tags": [
+      "peatones",
+      "buses"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q005",
+    "prompt": "Frente a la presencia de personas en evidente estado de ebriedad caminando por o cerca de la vía, ¿cómo debe actuar el conductor?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Acelerar para alejarse rápidamente del peligro."
+      },
+      {
+        "text": "Tocar la bocina fuertemente para asustarlos y que se alejen."
+      },
+      {
+        "text": "Reducir la velocidad y darles la preferencia si es necesario."
+      },
+      {
+        "text": "Ignorarlos ya que el conductor siempre tiene la prioridad en la calzada."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Es fundamental evitar siniestros; ante una persona ebria, cuyo comportamiento es impredecible, se debe disminuir la velocidad y cederles el paso.",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 69,
+    "sourceReference": "Pág. 69, Como persona conductora debes",
+    "groundingExcerpt": "Ante la presencia de personas ebrias, reduce tu velocidad, es mejor darles la preferencia que provocar un siniestro.",
+    "reviewNotes": "Regla de conducción defensiva ante usuarios vulnerables bajo efectos de sustancias.",
+    "tags": [
+      "peatones",
+      "prevencion"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q006",
+    "prompt": "Al conducir, si usted nota que un peatón actúa de manera insegura pero no detecta a simple vista ninguna discapacidad, ¿qué debe considerar?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que los impedimentos siempre deben estar señalizados por un bastón o silla de ruedas."
+      },
+      {
+        "text": "Que quienes sufren un impedimento no tienen la obligación de mostrarlo, por lo que debe reducir su velocidad."
+      },
+      {
+        "text": "Que el peatón simplemente está distraído con el celular."
+      },
+      {
+        "text": "Que debe tocar la bocina para obligarlo a acelerar su paso."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Las personas pueden tener discapacidades visuales o auditivas invisibles y no están obligadas a hacerlas evidentes; el conductor siempre debe reducir la velocidad ante la sospecha.",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 69,
+    "sourceReference": "Pág. 69, Como persona conductora debes",
+    "groundingExcerpt": "Quienes sufren de algún impedimento no tienen la obligación de mostrarlo. Por ello, reduce siempre tu velocidad cuando sospeches que un peatón pueda tener problemas de algún tipo.",
+    "reviewNotes": "Conciencia sobre discapacidades invisibles.",
+    "tags": [
+      "peatones",
+      "discapacidad"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q007",
+    "prompt": "¿Cuánto tiempo adicional puede llegar a necesitar una persona mayor, en comparación con una persona joven, para cruzar una calle de 16 metros de ancho?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Aproximadamente 1 segundo extra."
+      },
+      {
+        "text": "Alrededor de 2 segundos extra."
+      },
+      {
+        "text": "Puede necesitar 4 segundos más."
+      },
+      {
+        "text": "Necesita el doble de tiempo exacto que una persona joven."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Las personas mayores poseen menor movilidad y reacciones más lentas, necesitando hasta 4 segundos adicionales para cruzar vías anchas.",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 69,
+    "sourceReference": "Pág. 69, Personas de edad avanzada",
+    "groundingExcerpt": "Una persona mayor puede necesitar 4 segundos más que una persona joven para cruzar una calle de 16 metros de ancho.",
+    "reviewNotes": "Dato temporal específico del manual.",
+    "tags": [
+      "adultos-mayores",
+      "peatones"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q008",
+    "prompt": "Entre los principales problemas que enfrentan los peatones de edad avanzada en la vía pública se encuentra:",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "La dificultad ocasional para distinguir bien los colores del semáforo."
+      },
+      {
+        "text": "La tendencia a cruzar corriendo sin mirar."
+      },
+      {
+        "text": "La falta de conocimiento de las normas básicas del tránsito."
+      },
+      {
+        "text": "El uso excesivo de teléfonos celulares mientras caminan."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "Las personas mayores enfrentan alteraciones fisiológicas como problemas auditivos, menor movilidad y dificultad para distinguir colores o estimar velocidades.",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 69,
+    "sourceReference": "Pág. 69, Personas de edad avanzada",
+    "groundingExcerpt": "En ocasiones existe dificultad para distinguir bien los colores del semáforo.",
+    "reviewNotes": "Características fisiológicas de los adultos mayores peatones.",
+    "tags": [
+      "adultos-mayores",
+      "semaforos"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q009",
+    "prompt": "Respecto a las personas mayores que conducen un vehículo, ¿qué aseveración es correcta según el manual?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Suelen ser los conductores más arriesgados e imprudentes de la vía."
+      },
+      {
+        "text": "Poseen gran experiencia al volante y son prudentes, aunque el deterioro psicomotor aumenta su riesgo en situaciones complejas."
+      },
+      {
+        "text": "Su tiempo de reacción es mucho más rápido debido a los años de práctica."
+      },
+      {
+        "text": "No pueden procesar información de la vía por lo que se les prohíbe conducir de noche."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Aunque prudentes, el envejecimiento merma la capacidad de procesar rápido la información y aumenta el tiempo de reacción ante imprevistos complejos.",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 70,
+    "sourceReference": "Págs. 69-70, Personas de edad avanzada",
+    "groundingExcerpt": "...en general, las personas mayores que conducen un vehículo poseen gran experiencia al volante y son prudentes al conducir. Sin embargo, existen alteraciones psicofisiológicas que se van produciendo al avanzar la edad... Por esto, muchos adultos mayores tienen más riesgo de sufrir siniestros en situaciones de tránsito complejas que exigen una respuesta rápida.",
+    "reviewNotes": "Perfil de riesgo del conductor mayor.",
+    "tags": [
+      "adultos-mayores",
+      "conductores"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q010",
+    "prompt": "Alrededor de qué edad se considera que las niñas y niños comienzan a actuar con seguridad en el entorno del tránsito?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Entre los 5 y 7 años."
+      },
+      {
+        "text": "Entre los 9 y 12 años."
+      },
+      {
+        "text": "Desde los 14 años de edad."
+      },
+      {
+        "text": "Una vez que ingresan a la educación prebásica."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Por sus características de desarrollo físico y cognitivo, recién entre los 9 y 12 años comienzan a tener un comportamiento más seguro.",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Pág. 70, Las niñas y niños",
+    "groundingExcerpt": "Comienzan a actuar con seguridad en el tránsito entre los 9 y 12 años de edad.",
+    "reviewNotes": "Desarrollo cognitivo infantil en relación al tránsito.",
+    "tags": [
+      "ninos",
+      "desarrollo"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q011",
+    "prompt": "¿A qué edad, según el manual, se alcanza el desarrollo completo de la vista en los seres humanos?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "A los 6 años."
+      },
+      {
+        "text": "A los 9 años."
+      },
+      {
+        "text": "A los 15 años."
+      },
+      {
+        "text": "A los 18 años."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Las niñas y niños no tienen la vista completamente desarrollada hasta los 15 años, lo que limita su campo visual y enfoque en el tránsito.",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Pág. 70, Las niñas y niños",
+    "groundingExcerpt": "No tienen la vista completamente desarrollada: la vista no se desarrolla completamente hasta los 15 años de edad. Su campo visual es limitado y ven sólo una cosa a la vez.",
+    "reviewNotes": "Factor biológico de vulnerabilidad infantil.",
+    "tags": [
+      "ninos",
+      "vision"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q012",
+    "prompt": "Si mientras conduce usted se aproxima a un vehículo a tracción animal (como un caballo o carreta), ¿qué acción debe evitar?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Reducir la velocidad gradualmente."
+      },
+      {
+        "text": "Mantener una distancia prudente al adelantar."
+      },
+      {
+        "text": "Hacer señales luminosas, tocar la bocina o acelerar el motor fuertemente."
+      },
+      {
+        "text": "Prestar atención a los movimientos impredecibles del animal."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Los animales pueden asustarse fácilmente con ruidos fuertes o luces repentinas, provocando reacciones peligrosas e incontrolables.",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 71,
+    "sourceReference": "Págs. 70-71, Vehículos a tracción animal",
+    "groundingExcerpt": "No hagas señales luminosas o acústicas ni aceleres el motor en cercanía de animales ya que estos pueden asustarse fácilmente y provocar una situación de riesgo.",
+    "reviewNotes": "Conducción preventiva ante animales en la vía.",
+    "tags": [
+      "animales",
+      "prevencion"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q013",
+    "prompt": "¿En qué tipo de vía y trazado es más frecuente encontrar y sorprenderse con vehículos a tracción animal o jinetes a caballo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "En zonas urbanas, especialmente en cruces semaforizados."
+      },
+      {
+        "text": "En zonas rurales, especialmente en las curvas a la derecha."
+      },
+      {
+        "text": "En autopistas interurbanas concesionadas."
+      },
+      {
+        "text": "En calles comerciales muy concurridas durante la tarde."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "En zonas rurales se debe estar alerta ante la presencia de animales, sobre todo en curvas a la derecha, donde la visibilidad se reduce hacia la berma o margen de ese lado.",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Pág. 70, Vehículos a tracción animal",
+    "groundingExcerpt": "En zonas rurales, donde es más frecuente encontrar personas a caballo, debes prestar más atención a la presencia de estas, especialmente en las curvas a la derecha.",
+    "reviewNotes": "Reconocimiento de entorno rural y riesgos ciegos.",
+    "tags": [
+      "animales",
+      "zonas-rurales"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q014",
+    "prompt": "¿Por qué las colisiones de automóviles con motocicletas son especialmente frecuentes en las intersecciones?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque las motocicletas tienen prohibido usar sus frenos delanteros."
+      },
+      {
+        "text": "Porque las altas velocidades a las que suelen transitar y su tamaño reducido hacen difícil percibirlas a tiempo."
+      },
+      {
+        "text": "Porque las motocicletas no deben respetar las señales CEDA EL PASO."
+      },
+      {
+        "text": "Porque los conductores de automóviles suelen tener su visión directa bloqueada por el parabrisas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Su tamaño y la velocidad dificultan que los automovilistas las detecten oportunamente en los cruces.",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Pág. 71, Motociclistas",
+    "groundingExcerpt": "Son frecuentes las colisiones que se producen en intersecciones con la participación de motociclistas, por esta razón, debes tener especial cuidado al acercarte a los cruces, ya que por las altas velocidades en que se suelen conducir estos vehículos, resulta difícil percibirlos a tiempo.",
+    "reviewNotes": "Factor de riesgo en la interacción con motos.",
+    "tags": [
+      "motocicletas",
+      "intersecciones"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q015",
+    "prompt": "¿Cuál es la reducción estadística de lesiones en la cabeza que proporciona el uso del casco en los ciclistas?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Reduce hasta dos veces la probabilidad de lesiones."
+      },
+      {
+        "text": "Reduce hasta tres veces la probabilidad de sufrir lesiones."
+      },
+      {
+        "text": "Asegura inmunidad total ante lesiones en la cabeza."
+      },
+      {
+        "text": "Reduce en un 10% las lesiones craneales."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "El uso del casco es el elemento primordial de seguridad pasiva para ciclistas, mitigando sustancialmente las lesiones encefálicas.",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Pág. 71, Personas ciclistas",
+    "groundingExcerpt": "El elemento de seguridad principal de las y los ciclistas es el casco. Este reduce hasta tres veces la probabilidad de sufrir lesiones en la cabeza, las cuales son las de mayor importancia en caso de atropello.",
+    "reviewNotes": "Dato sobre efectividad del casco ciclista.",
+    "tags": [
+      "ciclistas",
+      "casco"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q016",
+    "prompt": "Al sobrepasar o adelantar con su vehículo a una persona que transita en bicicleta, ¿cuál es el espacio lateral mínimo que la normativa le obliga a mantener?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Al menos 0,5 metros."
+      },
+      {
+        "text": "Al menos 1,0 metro."
+      },
+      {
+        "text": "Al menos 1,5 metros."
+      },
+      {
+        "text": "El espacio que delimite la línea continua derecha."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "La ley exige dejar un margen y espacio de seguridad de 1,5 metros para proteger al ciclista de posibles tambaleos generados por viento o desniveles.",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Pág. 71, Ante la presencia de ciclistas",
+    "groundingExcerpt": "Al pasar con tu vehículo cerca de una persona ciclista, la normativa indica que debes dejar un espacio lateral de al menos 1,5 metros, ya que esta podría desviarse o tambalear.",
+    "reviewNotes": "Norma de distancia lateral de seguridad.",
+    "tags": [
+      "ciclistas",
+      "distancia-lateral"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q017",
+    "prompt": "Usted conduce por una avenida y se acerca a una intersección donde planea virar a la derecha. Un ciclista transita por su derecha hacia la misma intersección. ¿Qué debe hacer?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Acelerar para adelantarlo rápidamente y virar antes de que él cruce."
+      },
+      {
+        "text": "Tocar la bocina para que se detenga y le permita hacer la maniobra."
+      },
+      {
+        "text": "No adelantarlo; esperar detrás de él a que haya pasado la intersección y luego virar."
+      },
+      {
+        "text": "Adelantarlo de inmediato pegándose a la solera."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Al virar se pierde la preferencia; intentar ganarle al ciclista en el cruce provoca graves colisiones denominadas 'gancho de derecha'.",
+    "sourcePageStart": 72,
+    "sourcePageEnd": 72,
+    "sourceReference": "Pág. 72, Ante la presencia de ciclistas",
+    "groundingExcerpt": "No adelantes a una persona ciclista antes o en un cruce, y especialmente si vas a virar a la derecha. Espera que esta haya pasado la intersección. Recuerda que al virar, pierdes tu preferencia.",
+    "reviewNotes": "Procedimiento seguro en virajes con presencia de ciclistas.",
+    "tags": [
+      "ciclistas",
+      "virajes"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q018",
+    "prompt": "Si una persona ciclista que circula por delante de usted extiende su brazo izquierdo recto hacia abajo de manera continua, ¿qué maniobra está advirtiendo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que realizará un viraje a la izquierda."
+      },
+      {
+        "text": "Que va a disminuir la velocidad o se detendrá."
+      },
+      {
+        "text": "Que cede el paso para que usted la adelante."
+      },
+      {
+        "text": "Que existe un obstáculo en la calzada derecha."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Las señales manuales de los ciclistas están estandarizadas; el brazo izquierdo hacia abajo advierte frenado.",
+    "sourcePageStart": 72,
+    "sourcePageEnd": 72,
+    "sourceReference": "Pág. 72, Señalización de maniobras ciclistas",
+    "groundingExcerpt": "Disminución de la velocidad o detención: Brazo izquierdo extendido hacia abajo.",
+    "reviewNotes": "Identificación de señales manuales de ciclistas.",
+    "tags": [
+      "ciclistas",
+      "senales-manuales"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q019",
+    "prompt": "Si un ciclista que circula frente a usted extiende su brazo izquierdo formando un ángulo recto hacia arriba, está comunicando que:",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Realizará un viraje hacia la izquierda."
+      },
+      {
+        "text": "Realizará un viraje hacia la derecha."
+      },
+      {
+        "text": "Aumentará bruscamente su velocidad."
+      },
+      {
+        "text": "Se detendrá inmediatamente."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Esa posición del brazo izquierdo es la señal estandarizada (alternativa a usar el brazo derecho horizontal) para indicar un giro a la derecha.",
+    "sourcePageStart": 72,
+    "sourcePageEnd": 72,
+    "sourceReference": "Pág. 72, Señalización de maniobras ciclistas",
+    "groundingExcerpt": "Viraje a la derecha: Brazo izquierdo en ángulo recto hacia arriba o brazo derecho extendido horizontalmente.",
+    "reviewNotes": "Identificación de señales manuales de ciclistas.",
+    "tags": [
+      "ciclistas",
+      "senales-manuales"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q020",
+    "prompt": "¿Qué restricciones de circulación tienen los vehículos motorizados sobre las ciclovías?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Solo pueden usarlas de noche para evitar congestión."
+      },
+      {
+        "text": "Pueden detenerse en ellas solo por tiempo mínimo para dejar pasajeros."
+      },
+      {
+        "text": "No pueden circular, detenerse ni estacionar en ellas bajo ninguna circunstancia."
+      },
+      {
+        "text": "Pueden circular en caso de emergencia usando las luces destellantes."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "La ciclovía es de uso exclusivo y protegido para los ciclos, quedando vedada para los automovilistas cualquier tipo de maniobra o estadía en ellas.",
+    "sourcePageStart": 72,
+    "sourcePageEnd": 72,
+    "sourceReference": "Pág. 72, Ante la presencia de ciclistas",
+    "groundingExcerpt": "Recuerda que como persona conductora de un vehículo motorizado, no puedes circular, detenerte ni estacionar en las ciclovías.",
+    "reviewNotes": "Norma excluyente de la infraestructura ciclista.",
+    "tags": [
+      "ciclovias",
+      "normativa"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q021",
+    "prompt": "Según la normativa para el traslado de niñas y niños, ¿quiénes están estrictamente prohibidos de viajar en el asiento delantero de un automóvil?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Toda persona menor de 15 años."
+      },
+      {
+        "text": "Las y los menores de 12 años de edad."
+      },
+      {
+        "text": "Cualquier persona que pese menos de 45 kilos."
+      },
+      {
+        "text": "Cualquier persona que mida menos de 1,50 metros."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Desde 2016 se exige por ley que los menores de 12 años viajen obligatoriamente en los asientos traseros.",
+    "sourcePageStart": 73,
+    "sourcePageEnd": 73,
+    "sourceReference": "Pág. 73, Niñas y niños en el automóvil",
+    "groundingExcerpt": "Se estableció la prohibición del traslado de menores de 12 años en los asientos delanteros de los vehículos, debiendo ser transportados en el asiento trasero...",
+    "reviewNotes": "Norma sobre restricción de asientos delanteros para niños.",
+    "tags": [
+      "ninos",
+      "normativa",
+      "sri"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q022",
+    "prompt": "¿Existe alguna excepción a la prohibición de transportar menores de 12 años en el asiento delantero?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "No, está estrictamente prohibido en todo tipo de vehículo."
+      },
+      {
+        "text": "Sí, está permitido únicamente si viajan en brazos de un adulto."
+      },
+      {
+        "text": "Sí, se exceptúan los vehículos de cabina simple."
+      },
+      {
+        "text": "Sí, cuando el niño es más alto que 135 centímetros."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Las camionetas o vehículos comerciales que constan de una sola fila de asientos (cabina simple) pueden transportar a un menor adelante, siempre con las medidas de retención apropiadas.",
+    "sourcePageStart": 73,
+    "sourcePageEnd": 73,
+    "sourceReference": "Pág. 73, Niñas y niños en el automóvil",
+    "groundingExcerpt": "...debiendo ser transportados en el asiento trasero (excepto en vehículos de cabina simple), utilizando algún SRI adecuado...",
+    "reviewNotes": "Excepción física de infraestructura del vehículo.",
+    "tags": [
+      "ninos",
+      "normativa",
+      "sri"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q023",
+    "prompt": "De acuerdo a la ley de Tránsito modificada en 2017, ¿hasta qué momento es exigible legalmente el uso del Sistema de Retención Infantil (silla) para los niños en vehículos particulares?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Hasta cumplir los 6 años de edad, sin importar su peso o altura."
+      },
+      {
+        "text": "Hasta los 8 años inclusive, o tener una estatura menor o igual a 135 centímetros y 33 kilogramos de peso."
+      },
+      {
+        "text": "Hasta los 10 años, siempre y cuando pesen más de 40 kg."
+      },
+      {
+        "text": "Hasta los 12 años cumplidos para todos sin excepción."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "La normativa combina edad (8 años, es decir hasta el día previo a cumplir 9), altura y peso como los parámetros para la obligación del SRI.",
+    "sourcePageStart": 73,
+    "sourcePageEnd": 73,
+    "sourceReference": "Pág. 73, Niñas y niños en el automóvil",
+    "groundingExcerpt": "...obliga a las personas conductoras a transportar niñas y niños de hasta 8 años inclusive (es decir, hasta un día antes de cumplir los 9 años), o de una estatura menor o igual a 135 centímetros y 33 kilogramos de peso, en Sistemas de Retención Infantil.",
+    "reviewNotes": "Parámetros legales actuales de uso de SRI.",
+    "tags": [
+      "sri",
+      "normativa",
+      "ninos"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q024",
+    "prompt": "El uso del Sistema de Retención Infantil, aunque obligatorio para vehículos particulares, contempla ciertas excepciones legales. ¿A qué vehículos no se les exige cumplir con esta normativa de traslado infantil?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "A los vehículos deportivos y todoterreno (4x4)."
+      },
+      {
+        "text": "Al transporte público, transporte escolar y vehículos de similares características."
+      },
+      {
+        "text": "A los vehículos particulares que realicen trayectos menores a 5 kilómetros urbanos."
+      },
+      {
+        "text": "A ninguna categoría, la ley es para todos los vehículos motorizados."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Los taxis, buses, y furgones escolares cuentan con regulaciones propias y están exceptuados de esta obligación específica de proveer SRI para lactantes/infantes.",
+    "sourcePageStart": 73,
+    "sourcePageEnd": 73,
+    "sourceReference": "Pág. 73, Niñas y niños en el automóvil",
+    "groundingExcerpt": "Lo anterior, es exigible a los vehículos particulares, exceptuándose de esta obligación al transporte público, transporte escolar y vehículos de similares características.",
+    "reviewNotes": "Excepciones en el transporte remunerado/público.",
+    "tags": [
+      "sri",
+      "normativa",
+      "transporte-publico"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q025",
+    "prompt": "¿Qué sanción arriesga el conductor que incumple la normativa de traslado de menores de 12 años en el asiento delantero o el uso de Sistemas de Retención Infantil?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Se considera una falta leve, con amonestación verbal."
+      },
+      {
+        "text": "Es una falta gravísima, con multa de 1,5 a 3 UTM y suspensión de licencia de 5 a 45 días."
+      },
+      {
+        "text": "Es un delito penal con pena de cárcel remitida."
+      },
+      {
+        "text": "Conlleva una multa de 0,5 UTM sin suspensión de licencia."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "El legislador chileno elevó estas conductas a faltas gravísimas para promover su cumplimiento estricto y proteger la vida de los menores.",
+    "sourcePageStart": 73,
+    "sourcePageEnd": 73,
+    "sourceReference": "Pág. 73, Niñas y niños en el automóvil",
+    "groundingExcerpt": "El incumplimiento de estas medidas es sancionado como una falta gravísima y la multa es de 1,5 a 3 UTM y la suspensión de la Licencia de Conducir de 5 a 45 días.",
+    "reviewNotes": "Consecuencias punitivas del incumplimiento de normativa infantil.",
+    "tags": [
+      "infracciones",
+      "normativa",
+      "sri"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q026",
+    "prompt": "Al momento de utilizar el cinturón de seguridad (o usarlo como sujeción sobre un niño sin SRI), ¿por dónde debe pasar la banda inferior o abdominal?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Por encima del abdomen o estómago para mayor protección en caso de choque."
+      },
+      {
+        "text": "Sobre el pecho, cruzada transversalmente hacia la espalda."
+      },
+      {
+        "text": "Bien ajustada sobre la parte superior de los muslos o huesos de la cadera."
+      },
+      {
+        "text": "Holgadamente bajo las rodillas."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "El cinturón debe apoyarse sobre la estructura ósea fuerte (cadera/pelvis), nunca sobre los tejidos blandos del abdomen.",
+    "sourcePageStart": 74,
+    "sourcePageEnd": 74,
+    "sourceReference": "Pág. 74, ¿Cómo se usa correctamente el cinturón?",
+    "groundingExcerpt": "La banda inferior debe estar bien ajustada sobre la parte superior de los muslos y no debe quedar sobre el abdomen.",
+    "reviewNotes": "Instrucción de seguridad pasiva mecánica.",
+    "tags": [
+      "cinturon",
+      "seguridad-pasiva"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q027",
+    "prompt": "¿Qué consecuencia clínica grave se asocia directamente al uso incorrecto del cinturón de seguridad dejando la banda inferior sobre el abdomen?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Lesiones por latigazo cervical severo."
+      },
+      {
+        "text": "Genera lesiones importantes en los órganos de la zona abdominal como hígado, vejiga e intestinos."
+      },
+      {
+        "text": "Provoca la rotura de los huesos de las extremidades inferiores."
+      },
+      {
+        "text": "Causa un daño irreversible en la visión periférica por aumento de la presión sanguínea."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "El impacto y retención brusca sobre el abdomen sin protección ósea comprime los órganos internos pudiendo ser mortal.",
+    "sourcePageStart": 74,
+    "sourcePageEnd": 74,
+    "sourceReference": "Pág. 74, Uso correcto de un SRI",
+    "groundingExcerpt": "El uso incorrecto del cinturón de seguridad, genera lesiones importantes en los órganos ubicados en la zona abdominal como hígado, intestinos, vejiga y riñones, que pueden comprometer seriamente la vida.",
+    "reviewNotes": "Consecuencias patológicas de la mala colocación del elemento de seguridad.",
+    "tags": [
+      "cinturon",
+      "lesiones"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q028",
+    "prompt": "¿A partir de qué momento exacto resulta obligatorio que un niño comience a utilizar un Sistema de Retención Infantil (silla) en los vehículos particulares?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Desde el momento en que cumple 1 año de edad."
+      },
+      {
+        "text": "Desde que el lactante puede sentarse erguido por sí solo."
+      },
+      {
+        "text": "Desde su primer viaje, es decir, el trayecto desde el centro de salud donde nace."
+      },
+      {
+        "text": "Desde que comienza a asistir a establecimientos preescolares."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "La normativa protege a los infantes sin excepciones iniciales, requiriendo el equipamiento apropiado (silla nido, por ejemplo) desde que salen del recinto hospitalario.",
+    "sourcePageStart": 74,
+    "sourcePageEnd": 74,
+    "sourceReference": "Pág. 74, Uso correcto de un SRI",
+    "groundingExcerpt": "Estos dispositivos deben utilizarse desde el primer viaje de las niñas y niños; es decir, desde que nacen (incluye el primer viaje desde del centro de salud donde nace)...",
+    "reviewNotes": "Oportunidad de implementación del SRI.",
+    "tags": [
+      "sri",
+      "ninos",
+      "seguridad"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q029",
+    "prompt": "Al instalar un Sistema de Retención Infantil (SRI) para bebés y niños pequeños, ¿en qué orientación espacial se recomienda ubicar la silla por motivos biomecánicos de seguridad?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Mirando siempre hacia el frente (marcha) para que el niño pueda ver a los padres."
+      },
+      {
+        "text": "Instalada de forma transversal a lo ancho del asiento trasero."
+      },
+      {
+        "text": "A contramarcha (mirando hacia atrás), manteniéndola así hasta alcanzar los límites máximos permitidos por el fabricante (mínimo 2 años)."
+      },
+      {
+        "text": "Es indiferente mientras esté anclada firmemente."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Viajar a contramarcha protege de manera crítica la cabeza, cuello y columna del menor, los cuales son frágiles, absorbiendo el impacto contra el respaldo de la silla.",
+    "sourcePageStart": 74,
+    "sourcePageEnd": 75,
+    "sourceReference": "Pág. 74-75, Consideraciones para elegir un SRI",
+    "groundingExcerpt": "Se recomienda que el SRI sea instalado a contramarcha, de manera tal que las niñas y niños viajen mirando hacia atrás, el mayor tiempo posible, hasta alcanzar los límites de peso y altura indicados por el fabricante (mínimo hasta los dos años).",
+    "reviewNotes": "Recomendación técnica mundial para el traslado seguro.",
+    "tags": [
+      "sri",
+      "seguridad",
+      "contramarcha"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q030",
+    "prompt": "Para anclar correctamente el Sistema de Retención Infantil al vehículo, ¿es necesario usar simultáneamente el sistema de anclaje (ISOFIX/LATCH) y el cinturón de seguridad del auto?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sí, siempre deben usarse en conjunto para sumar protección."
+      },
+      {
+        "text": "No, cualquiera de los métodos es seguro por sí mismo y no se requiere usar dos a menos que el fabricante del SRI lo indique explícitamente."
+      },
+      {
+        "text": "Solo se usa el cinturón si el peso supera los 20 kg, e ISOFIX si es menor."
+      },
+      {
+        "text": "Sí, porque el sistema ISOFIX es solo un anclaje decorativo."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Duplicar los sistemas de anclaje cuando no ha sido diseñado o probado así por el fabricante puede someter a la silla a tensiones dinámicas peligrosas e incorrectas en un choque.",
+    "sourcePageStart": 75,
+    "sourcePageEnd": 75,
+    "sourceReference": "Pág. 75, Consideraciones para elegir un SRI",
+    "groundingExcerpt": "Estos pueden ser anclados al vehículo a través de los sistemas ISOFIX y LATCH o con el cinturón de seguridad. Si están correctamente instalados, cualquiera de los tres es seguro por sí mismo, por lo que no se requiere utilizar dos sistemas al mismo tiempo, a menos que lo indique el fabricante del SRI.",
+    "reviewNotes": "Conocimiento técnico sobre compatibilidad de anclajes.",
+    "tags": [
+      "sri",
+      "anclajes",
+      "isofix"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q031",
+    "prompt": "Usted ha adquirido una silla de niños (SRI) y desea verificar que cumple con la normativa vigente en Chile. ¿Qué distintivo visual debe buscar adherido en la silla?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Una etiqueta de color amarillo con letras negras que mide 9,5 cm de alto por 7,5 cm de ancho."
+      },
+      {
+        "text": "Un sello verde holográfico redondo en el arnés."
+      },
+      {
+        "text": "Una placa metálica en la base de la silla que indique la fecha de vencimiento."
+      },
+      {
+        "text": "Una cinta reflectante roja cosida en el tapiz de la silla."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "La ley chilena estandarizó un sello de certificación de características métricas y cromáticas específicas y exclusivas emitido por el Estado.",
+    "sourcePageStart": 75,
+    "sourcePageEnd": 75,
+    "sourceReference": "Pág. 75, Consideraciones para elegir un SRI",
+    "groundingExcerpt": "La etiqueta debe ir pegada a la silla, es de color amarillo con letras negras y mide 9,5 cm de alto y 7,5 cm de ancho.",
+    "reviewNotes": "Identificación de certificaciones oficiales chilenas.",
+    "tags": [
+      "sri",
+      "certificacion"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q032",
+    "prompt": "En el código de acreditación chileno presente en la etiqueta de un Sistema de Retención Infantil certificado, ¿qué organismo público representan las siglas '3CV'?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Cuerpo de Carabineros, Comisaría y Vialidad."
+      },
+      {
+        "text": "Centro de Control y Certificación Vehicular del Ministerio de Transportes y Telecomunicaciones."
+      },
+      {
+        "text": "Comisión Chilena de Cuidados Viales."
+      },
+      {
+        "text": "Comité Certificador de Calidad y Valor."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "El 3CV es el ente gubernamental encargado de testear y validar que los SRI comercializados en Chile cumplan con exigencias técnicas para salvaguardar la vida infantil.",
+    "sourcePageStart": 75,
+    "sourcePageEnd": 75,
+    "sourceReference": "Pág. 75, Composición del código de acreditación",
+    "groundingExcerpt": "3CV: Centro de Control y Certificación Vehicular del Ministerio de Transportes y Telecomunicaciones.",
+    "reviewNotes": "Glosario técnico institucional.",
+    "tags": [
+      "sri",
+      "instituciones",
+      "certificacion"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q034",
+    "prompt": "¿Qué debilidad o limitación técnica inherente a los ciclos en circulación debe considerar el automovilista que se aproxime por detrás?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que los ciclos, por lo general, no poseen espejos retrovisores."
+      },
+      {
+        "text": "Que los ciclos siempre llevan el volante suelto."
+      },
+      {
+        "text": "Que no poseen sistema de frenado en ninguna rueda."
+      },
+      {
+        "text": "Que la ley les prohíbe mirar hacia atrás mientras transitan."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "El ciclista, al no contar con espejos, no siempre es consciente de lo que ocurre a sus espaldas, por lo que las maniobras del conductor (como adelantar y luego virar) pueden sorprenderlo letalmente.",
+    "sourcePageStart": 72,
+    "sourcePageEnd": 72,
+    "sourceReference": "Pág. 72, Ante la presencia de ciclistas",
+    "groundingExcerpt": "Ten presente que los ciclos no tienen espejos retrovisores.",
+    "reviewNotes": "Reconocimiento de limitaciones técnicas de otros modos de transporte.",
+    "tags": [
+      "ciclos",
+      "conduccion-defensiva"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q035",
+    "prompt": "Como conductor, al percatarse de la presencia de un triciclo motorizado de carga circulando por la vía, debe asumir que:",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Tienen inmunidad frente a accidentes debido a su robustez."
+      },
+      {
+        "text": "Circularán a muy alta velocidad para mantener el tráfico."
+      },
+      {
+        "text": "Suelen circular a una velocidad reducida y no cuentan con carrocería para proteger a quien los conduce."
+      },
+      {
+        "text": "Solo pueden circular legalmente por encima de las aceras y veredas."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "Los triciclos de carga o 'toritos' son vehículos vulnerables lentos y sin protección en cabina, requiriendo paciencia y margen por parte del resto de los conductores.",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Pág. 71, Motociclistas",
+    "groundingExcerpt": "Considera también, la presencia de triciclos motorizados de carga, que suelen circular a una velocidad reducida y, en general, no cuentan con carrocería para proteger a quien los conduce.",
+    "reviewNotes": "Nuevas tipologías de vehículos de micromovilidad comercial y sus riesgos.",
+    "tags": [
+      "vulnerables",
+      "triciclos"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q036",
+    "prompt": "¿Puede una persona ciclista hacer uso de un paso de cebra para cruzar la calzada?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "No, está estrictamente prohibido usar infraestructura peatonal."
+      },
+      {
+        "text": "Sí, el manual señala que un ciclista también puede utilizar un cruce peatonal para atravesar la intersección."
+      },
+      {
+        "text": "Solo si baja de la bicicleta y camina."
+      },
+      {
+        "text": "Solo durante la noche cuando no hay peatones."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "Las reformas legales han otorgado derechos de circulación en cruces a los ciclistas; el conductor debe estar preparado y cederles el paso en zonas peatonales/ciclistas.",
+    "sourcePageStart": 72,
+    "sourcePageEnd": 72,
+    "sourceReference": "Pág. 72, Ante la presencia de ciclistas",
+    "groundingExcerpt": "Recuerda que una persona ciclista también puede utilizar un cruce peatonal para cruzar una intersección.",
+    "reviewNotes": "Comportamiento del ciclista validado en normativa reciente.",
+    "tags": [
+      "ciclistas",
+      "paso-peatonal"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q037",
+    "prompt": "Respecto a la visibilidad nocturna de los ciclistas en la vía, el manual le advierte al automovilista que:",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Las bicicletas siempre llevan potentes luces destellantes que encandilan."
+      },
+      {
+        "text": "Los ciclistas están obligados a usar chaleco reflectante con luces led rojas obligatorias."
+      },
+      {
+        "text": "No siempre circulan con luces que permitan verles oportunamente, por lo que se debe tener especial cuidado."
+      },
+      {
+        "text": "Las bicicletas emiten un sonido particular que advierte su presencia en la oscuridad."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "A pesar de las normativas de reflectancia, existe un importante número de ciclistas que carece de luminarias activas eficientes, siendo casi imperceptibles al anochecer.",
+    "sourcePageStart": 72,
+    "sourcePageEnd": 72,
+    "sourceReference": "Pág. 72, Ante la presencia de ciclistas",
+    "groundingExcerpt": "Si es de noche o la visibilidad ha disminuido, ten especial cuidado. No siempre circulan con luces que permitan verles oportunamente.",
+    "reviewNotes": "Factor crítico en accidentes nocturnos.",
+    "tags": [
+      "ciclistas",
+      "visibilidad-nocturna"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q038",
+    "prompt": "¿Qué medida de seguridad se recomienda emplear en las puertas del vehículo para proteger a niñas y niños durante el traslado?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Colocar candados externos de seguridad en las manillas."
+      },
+      {
+        "text": "Utilizar en las puertas los seguros de niños, que impiden que estas puedan ser abiertas desde el interior."
+      },
+      {
+        "text": "Amarrar las manillas internas con las bandas del cinturón de seguridad."
+      },
+      {
+        "text": "Quitar los vidrios para que puedan pedir ayuda en caso de emergencia."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "El sistema mecánico de bloqueo (child lock) previene la apertura accidental por parte de un niño en movimiento.",
+    "sourcePageStart": 73,
+    "sourcePageEnd": 73,
+    "sourceReference": "Pág. 73, Niñas y niños en el automóvil",
+    "groundingExcerpt": "...y no olvides utilizar en las puertas los seguros de niños, que impiden que estas puedan ser abiertas desde el interior del vehículo.",
+    "reviewNotes": "Medida activa en el vehículo para protección infantil.",
+    "tags": [
+      "ninos",
+      "seguridad-activa",
+      "puertas"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q039",
+    "prompt": "Al transitar cerca de un vehículo en el que se vendan helados o golosinas al borde de la calle, usted debe extremar precauciones porque:",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El vehículo de ventas suele emitir gases inflamables."
+      },
+      {
+        "text": "Dichos vehículos no poseen patente comercial vigente."
+      },
+      {
+        "text": "Las niñas y niños que se acercan se interesan más en estos carros que en el tránsito, pudiendo aparecer sorpresivamente."
+      },
+      {
+        "text": "Los carritos de helados proyectan luz cegadora."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "La atracción de los dulces genera un foco de distracción extrema en la mente infantil, anulando su escasa percepción de peligro vial.",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Pág. 70, Las niñas y niños",
+    "groundingExcerpt": "Cuando te encuentres cerca de un carro o vehículo en el que se vendan golosinas o helados. Las niñas y niños se interesan más en éstos que en el tránsito.",
+    "reviewNotes": "Situación práctica de comportamiento infantil en calle.",
+    "tags": [
+      "ninos",
+      "comportamiento",
+      "precaucion"
+    ],
+    "chapterId": "chapter-5"
+  },
+  {
+    "externalId": "5-q040",
+    "prompt": "¿Por qué motivo fisiológico las niñas y niños pueden pasar desapercibidos más fácilmente cuando juegan detrás de un vehículo estacionado?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Por su escasa agudeza auditiva."
+      },
+      {
+        "text": "Porque tienen una estatura pequeña que los oculta bajo la línea de visión de los espejos."
+      },
+      {
+        "text": "Debido a que usan ropas oscuras por preferencia general."
+      },
+      {
+        "text": "Porque no saben hablar fuerte ni advertir de su presencia."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "La baja estatura ubica a los infantes por debajo del campo de retrovisores y la luneta trasera de automóviles grandes o de carga.",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Pág. 70, Las niñas y niños",
+    "groundingExcerpt": "Tienen una estatura pequeña: por eso, con facilidad pueden no ser vistos cuando juegan detrás de un vehículo estacionado.",
+    "reviewNotes": "Factor físico de vulnerabilidad infantil y punto ciego.",
+    "tags": [
+      "ninos",
+      "estatura",
+      "puntos-ciegos"
+    ],
+    "chapterId": "chapter-5"
+  }
+]

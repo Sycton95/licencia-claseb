@@ -1,0 +1,1641 @@
+{
+  "sourceFile": "data/imports/chapter-7-batch.json",
+  "reviewedAt": "2026-04-11T03:26:01.004Z",
+  "batch": {
+    "batchId": "7-batch-2026-04-10-01",
+    "chapterIdRaw": "7",
+    "chapterIdNormalized": "chapter-7",
+    "sourceDocumentId": "manual-claseb-2026",
+    "questionCount": 40
+  },
+  "summary": {
+    "acceptedCount": 40,
+    "rejectedCount": 0,
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "normalizations": [
+    {
+      "scope": "batch",
+      "target": "batch",
+      "field": "chapterId",
+      "action": "chapter_id_normalized",
+      "before": "7",
+      "after": "chapter-7"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "items": [
+    {
+      "externalId": "7-q001",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q001",
+        "prompt": "¿Por qué motivo principal nuestra capacidad de calcular distancias se ve mermada al conducir en la oscuridad?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Porque el cristalino del ojo pierde flexibilidad debido al frío nocturno."
+          },
+          {
+            "text": "Porque las señales de tránsito apagan su retroiluminación en la noche."
+          },
+          {
+            "text": "Porque no podemos ver los colores y contornos claros que se difuminan en la oscuridad."
+          },
+          {
+            "text": "Porque la velocidad percibida aumenta considerablemente en vías sin luz."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "La percepción de profundidad y distancia del ojo humano requiere de bordes definidos y contraste de colores, elementos que desaparecen al anochecer.",
+        "sourcePageStart": 109,
+        "sourcePageEnd": 109,
+        "sourceReference": "Pág. 109, Conducción en la oscuridad",
+        "groundingExcerpt": "Nuestra capacidad de calcular distancias depende de que veamos colores y contornos claros. En la oscuridad, estos se difuminan.",
+        "reviewNotes": "Efectos fisiológicos de la falta de luz en la conducción.",
+        "tags": [
+          "oscuridad",
+          "vision"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q002",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q002",
+        "prompt": "Según la normativa, ¿en qué período de tiempo del día los vehículos deben circular obligatoriamente con sus luces encendidas para ver y ser vistos?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Desde las 18:00 horas hasta las 06:00 horas del día siguiente, sin excepciones."
+          },
+          {
+            "text": "Desde media hora después de la puesta de sol y hasta media hora antes de su salida."
+          },
+          {
+            "text": "Únicamente cuando el alumbrado público de la ciudad se encuentre encendido."
+          },
+          {
+            "text": "Desde que el sol se oculta completamente en el horizonte hasta que vuelve a aparecer."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "La ley exige el uso de luces 30 minutos después de la puesta de sol hasta 30 minutos antes de que salga, y cada vez que la visibilidad lo requiera.",
+        "sourcePageStart": 110,
+        "sourcePageEnd": 110,
+        "sourceReference": "Pág. 110, Encendido de luces",
+        "groundingExcerpt": "Para poder ver y ser visible, desde media hora después de la puesta de sol y hasta media hora antes de su salida... los vehículos deben circular obligatoriamente con sus luces encendidas...",
+        "reviewNotes": "Horario legal de uso de luces vehiculares.",
+        "tags": [
+          "luces",
+          "normativa"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q003",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q003",
+        "prompt": "¿Qué exigencia sobre el uso de luces aplica al transitar por vías interurbanas (carreteras), aun cuando sea pleno día y haya buena visibilidad?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Deben llevar encendidas las luces de estacionamiento."
+          },
+          {
+            "text": "Pueden circular sin luces si hay sol directo."
+          },
+          {
+            "text": "Deben circular siempre con sus luces encendidas."
+          },
+          {
+            "text": "Están obligados a usar los focos neblineros."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "En vías interurbanas es obligatorio el uso de luces encendidas de manera constante, sin importar si es de día, para aumentar la visibilidad del vehículo.",
+        "sourcePageStart": 110,
+        "sourcePageEnd": 110,
+        "sourceReference": "Pág. 110, Encendido de luces",
+        "groundingExcerpt": "En vías interurbanas, aun cuando no esté oscuro, ni las condiciones de visibilidad sean reducidas por lluvia u otras causas, debes circular siempre con tus luces encendidas.",
+        "reviewNotes": "Normativa específica para vías rurales/interurbanas.",
+        "tags": [
+          "luces",
+          "vias-interurbanas"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q004",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q004",
+        "prompt": "Al transitar de noche y llevar encendidas las luces bajas de su vehículo, ¿a qué distancia máxima, aproximadamente, es visible un peatón que utiliza ropas oscuras?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A 25 metros."
+          },
+          {
+            "text": "A 60 metros."
+          },
+          {
+            "text": "A 125 metros."
+          },
+          {
+            "text": "A 150 metros."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Un peatón vestido de oscuro apenas refleja la luz, siendo visible a unos 25 metros con luces bajas, lo que deja muy poco tiempo para reaccionar a 90 km/h.",
+        "sourcePageStart": 110,
+        "sourcePageEnd": 110,
+        "sourceReference": "Pág. 110, Distancias de visibilidad",
+        "groundingExcerpt": "ropas oscuras con luces bajas 25 m",
+        "reviewNotes": "Datos métricos del gráfico de visibilidad.",
+        "tags": [
+          "visibilidad",
+          "peatones"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q005",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q005",
+        "prompt": "Según el esquema de distancias de visibilidad del manual, ¿a qué distancia puede notar a un peatón con ropas reflectantes si su vehículo circula con luces altas?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A 125 metros."
+          },
+          {
+            "text": "A 150 metros."
+          },
+          {
+            "text": "A 300 metros."
+          },
+          {
+            "text": "A 450 metros."
+          }
+        ],
+        "correctOptionIndexes": [
+          3
+        ],
+        "publicExplanation": "El uso de reflectantes maximiza la visibilidad en la noche, permitiendo que un vehículo con luces altas detecte al peatón hasta a 450 metros.",
+        "sourcePageStart": 110,
+        "sourcePageEnd": 110,
+        "sourceReference": "Pág. 110, Distancias de visibilidad",
+        "groundingExcerpt": "ropas con reflectante con luces altas 450 m",
+        "reviewNotes": "Efectividad del material reflectante en oscuridad.",
+        "tags": [
+          "visibilidad",
+          "luces-altas"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q006",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q006",
+        "prompt": "Al encontrarse en la oscuridad y en una vía no urbana con otro vehículo que se acerca en sentido contrario, ¿qué debe hacer respecto a sus luces?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Mantener las luces altas para asegurar su propia visibilidad."
+          },
+          {
+            "text": "Cambiar a luces bajas para no cegar a quien lo conduce."
+          },
+          {
+            "text": "Apagar las luces temporalmente hasta que el vehículo pase."
+          },
+          {
+            "text": "Hacer destellos con las luces altas para advertir su presencia."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Para evitar encandilar y generar un riesgo grave de siniestro frontal, el conductor siempre debe cambiar de luces altas a bajas ante un encuentro.",
+        "sourcePageStart": 111,
+        "sourcePageEnd": 111,
+        "sourceReference": "Pág. 111, Manejo de luces en un encuentro",
+        "groundingExcerpt": "Al encontrarse en la oscuridad y en una vía no urbana con otro vehículo que se acerca en sentido contrario, deberás cambiar a luces bajas para no cegar a quien lo conduce.",
+        "reviewNotes": "Procedimiento de luces en cruces interurbanos.",
+        "tags": [
+          "luces",
+          "encuentros"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q007",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q007",
+        "prompt": "¿Hacia dónde debe dirigir su mirada al cruzarse de noche con un vehículo que viene en sentido contrario?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Directamente a los focos del otro vehículo para medir la distancia."
+          },
+          {
+            "text": "Hacia el eje central de la calzada para no salir de su pista."
+          },
+          {
+            "text": "A lo lejos hacia el borde derecho de la calzada."
+          },
+          {
+            "text": "Hacia el espejo retrovisor interior."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Mirar hacia el borde derecho ayuda a evitar el deslumbramiento causado por las luces del otro vehículo y mantiene la referencia de la pista.",
+        "sourcePageStart": 111,
+        "sourcePageEnd": 111,
+        "sourceReference": "Pág. 111, Manejo de luces en un encuentro",
+        "groundingExcerpt": "Dirige tu mirada a lo lejos hacia el borde derecho de la calzada.",
+        "reviewNotes": "Técnica visual contra el encandilamiento.",
+        "tags": [
+          "oscuridad",
+          "vision"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q008",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q008",
+        "prompt": "Durante el momento mismo de cruzarse con otro vehículo en la oscuridad, ¿cuál es la recomendación sobre el uso de las luces?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Apagar las luces bajas por un segundo para evitar cualquier reflejo."
+          },
+          {
+            "text": "Cambiar a luces altas en el momento del encuentro propiamente tal para recuperar la visibilidad."
+          },
+          {
+            "text": "Mantener las luces bajas hasta que el vehículo haya desaparecido completamente en el espejo."
+          },
+          {
+            "text": "Encender las luces intermitentes de advertencia de peligro."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Retomar las luces altas justo en el cruce permite iluminar nuevamente la calzada y detectar peatones u obstáculos sin cegar al conductor que ya pasó.",
+        "sourcePageStart": 111,
+        "sourcePageEnd": 111,
+        "sourceReference": "Pág. 111, Manejo de luces en un encuentro",
+        "groundingExcerpt": "También es importante que cambies a luces altas en el momento del encuentro propiamente tal (2), para recuperar una mayor visibilidad de eventuales obstáculos o peatones...",
+        "reviewNotes": "Recuperación de visibilidad tras cruce nocturno.",
+        "tags": [
+          "luces",
+          "encuentros"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q009",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q009",
+        "prompt": "Si usted va a estacionar su vehículo en una vía pública sin alumbrado durante la noche, ¿qué medida de visibilidad debe adoptar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Apagar todas las luces para ahorrar batería."
+          },
+          {
+            "text": "Dejar encendidas las luces altas."
+          },
+          {
+            "text": "Mantener encendidas sus luces de estacionamiento."
+          },
+          {
+            "text": "Instalar obligatoriamente dos triángulos a 50 metros de distancia."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Para asegurar que el vehículo detenido sea visible para el resto del tráfico en zonas carentes de iluminación pública, la ley exige mantener las luces de estacionamiento encendidas.",
+        "sourcePageStart": 112,
+        "sourcePageEnd": 112,
+        "sourceReference": "Pág. 112, Manejo de luces al estacionarse",
+        "groundingExcerpt": "Cuando estaciones en una vía pública sin alumbrado... asegúrate de ser visible para las demás personas conductoras manteniendo siempre encendidas tus luces de estacionamiento.",
+        "reviewNotes": "Estacionamiento seguro en zonas sin luz.",
+        "tags": [
+          "estacionamiento",
+          "luces"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q010",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q010",
+        "prompt": "Además de las luces frontales y traseras habituales, ¿qué luces adicionales llevan los vehículos de carga pesada y de locomoción colectiva para advertir sus dimensiones en la oscuridad?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Luces verdes intermitentes en la cabina."
+          },
+          {
+            "text": "Luces amarillas frontales y rojas traseras en los extremos de la parte superior de la carrocería."
+          },
+          {
+            "text": "Un farol giratorio de color azul en el techo."
+          },
+          {
+            "text": "Bandas iluminadas con luces de neón en los costados."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Las luces en las esquinas superiores (trochas) indican el ancho y la altura máxima de camiones y buses para que otros conductores dimensionen su tamaño en la oscuridad.",
+        "sourcePageStart": 112,
+        "sourcePageEnd": 112,
+        "sourceReference": "Pág. 112, Vehículos de carga y de locomoción colectiva",
+        "groundingExcerpt": "Los vehículos de carga y de locomoción colectiva llevan, además, luces amarillas frontales en ambos extremos de la parte superior de la carrocería, que indican el ancho y altura máxima. También deben llevar luces rojas en los extremos de su parte superior trasera.",
+        "reviewNotes": "Identificación de vehículos pesados en la noche.",
+        "tags": [
+          "vehiculos-pesados",
+          "luces"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q011",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q011",
+        "prompt": "¿Qué luces deben llevar los vehículos a tracción animal y carretones de mano al circular en la oscuridad?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "No requieren luces si circulan por la berma."
+          },
+          {
+            "text": "Un farol en la parte delantera de cada costado que proyecte luz blanca hacia adelante y roja hacia atrás."
+          },
+          {
+            "text": "Una baliza de advertencia naranja en la parte más alta de la carga."
+          },
+          {
+            "text": "Solo bandas reflectantes en la estructura del carretón."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Para hacer visibles a estos vehículos lentos y vulnerables, la ley exige faroles que demarquen su ancho con luz blanca al frente y roja atrás.",
+        "sourcePageStart": 113,
+        "sourcePageEnd": 113,
+        "sourceReference": "Pág. 113, Vehículos a tracción animal y carretones",
+        "groundingExcerpt": "Deben llevar un farol en la parte delantera de cada uno de los costados que sobresalga de su estructura y que proyecten luz blanca hacia adelante y luz roja hacia atrás.",
+        "reviewNotes": "Equipamiento lumínico obligatorio para tracción animal.",
+        "tags": [
+          "traccion-animal",
+          "luces"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q012",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q012",
+        "prompt": "Al conducir de noche dentro de una zona urbana que cuenta con alumbrado público, usted debe tener presente que:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Debe encender las luces altas intermitentemente en cada esquina."
+          },
+          {
+            "text": "No debe llevar encendidas sus luces altas, ya que podría cegar a otros usuarios."
+          },
+          {
+            "text": "Puede circular únicamente con las luces de estacionamiento."
+          },
+          {
+            "text": "El uso de luces es opcional si el alumbrado público es suficientemente potente."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "En zonas urbanas iluminadas, el uso de luces altas está prohibido para evitar el deslumbramiento de otros conductores y peatones.",
+        "sourcePageStart": 113,
+        "sourcePageEnd": 113,
+        "sourceReference": "Pág. 113, Conducción de noche en zona urbana",
+        "groundingExcerpt": "Al conducir por una zona urbana que posea alumbrado público, no debes llevar encendidas tus luces altas.",
+        "reviewNotes": "Norma sobre uso de luces altas en ciudad.",
+        "tags": [
+          "luces-altas",
+          "zona-urbana"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q013",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q013",
+        "prompt": "¿De qué manera afecta al funcionamiento del vehículo el llevar una carga muy pesada?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Mejora considerablemente el tiempo de aceleración."
+          },
+          {
+            "text": "Las distancias necesarias para detenerse se reducirán."
+          },
+          {
+            "text": "La aceleración será más lenta y las distancias para detenerse aumentarán."
+          },
+          {
+            "text": "El vehículo requerirá menos espacio para efectuar un adelantamiento."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "El aumento de masa e inercia implica que el vehículo reaccione con mayor pesadez, exigiendo más tiempo y espacio tanto para acelerar como para frenar.",
+        "sourcePageStart": 113,
+        "sourcePageEnd": 113,
+        "sourceReference": "Pág. 113, Conducción con carga",
+        "groundingExcerpt": "La aceleración será más lenta y las distancias para detenerse aumentarán. Encontrarás que se ladea más en las curvas y necesitarás más espacio para adelantar.",
+        "reviewNotes": "Leyes físicas aplicadas a la conducción con carga.",
+        "tags": [
+          "carga",
+          "distancia-frenado",
+          "aceleracion"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q014",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q014",
+        "prompt": "Si usted ubica una carga excesivamente pesada en la parte posterior (maletero o parte trasera) de su automóvil, ¿qué efecto se produce en la dirección del vehículo?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El volante se sentirá más pesado y el vehículo tenderá a girar menos en las curvas."
+          },
+          {
+            "text": "El volante se sentirá más liviano y el vehículo tenderá a girar más de lo esperado."
+          },
+          {
+            "text": "Las ruedas delanteras tendrán un agarre superior sobre el pavimento mojado."
+          },
+          {
+            "text": "No afectará en absoluto la dirección si el automóvil cuenta con tracción delantera."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Cargar el peso en la zona trasera levanta el tren delantero, perdiendo adherencia la dirección, lo que genera sobreviraje (girar de más) y luces mal enfocadas.",
+        "sourcePageStart": 113,
+        "sourcePageEnd": 113,
+        "sourceReference": "Pág. 113, Conducción con carga",
+        "groundingExcerpt": "Con una carga pesada en la parte posterior de tu automóvil sentirás el volante más liviano y el vehículo tenderá a girar más de lo esperado; también pueden salirse de foco los faros delanteros.",
+        "reviewNotes": "Distribución del peso y dinámica vehicular.",
+        "tags": [
+          "carga",
+          "direccion"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q015",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q015",
+        "prompt": "Al transportar bultos o carga en el estante de atrás (luneta trasera) del automóvil, ¿cuál es el peligro latente en caso de una frenada brusca?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Que la carga puede salir proyectada hacia adelante, transformándose en un peligroso proyectil."
+          },
+          {
+            "text": "Que se produzca un aumento drástico del consumo de combustible."
+          },
+          {
+            "text": "Que la suspensión trasera se hunda bloqueando el sistema ABS."
+          },
+          {
+            "text": "Que se altere el enfoque de las luces altas de forma permanente."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Cualquier objeto suelto en la parte trasera mantiene la inercia durante un choque, saliendo disparado con fuerza hacia los pasajeros delanteros.",
+        "sourcePageStart": 114,
+        "sourcePageEnd": 114,
+        "sourceReference": "Pág. 114, Conducción con carga",
+        "groundingExcerpt": "Nunca lleves objetos duros, con puntas o pesados en el estante de atrás, ya que con un pequeño choque o una frenada brusca, pueden se pueden mover hacia adelante, transformarse en proyectiles.",
+        "reviewNotes": "Seguridad interior y carga.",
+        "tags": [
+          "carga",
+          "seguridad-pasiva"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q016",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q016",
+        "prompt": "La Licencia de Conducir Clase B le autoriza a conducir un automóvil enganchado a un remolque ligero. ¿Cuál es la restricción de peso total permitida (vehículo más remolque) en este caso?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El peso total no debe superar los 2.000 kilogramos."
+          },
+          {
+            "text": "El peso total no debe superar los 3.500 kilogramos."
+          },
+          {
+            "text": "El peso del remolque puede ser hasta tres veces el peso del automóvil."
+          },
+          {
+            "text": "No existe límite de peso siempre que el remolque posea frenos eléctricos."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "La ley permite arrastrar un remolque ligero siempre que su peso no supere la tara (peso vacío) del automóvil y el conjunto completo no exceda los 3.500 kg.",
+        "sourcePageStart": 114,
+        "sourcePageEnd": 114,
+        "sourceReference": "Pág. 114, Conducción con remolque",
+        "groundingExcerpt": "La Licencia de Conducir Clase B te permite conducir tu automóvil con un remolque ligero, cuyo peso no exceda la tara de unidad motriz, y siempre que el peso total no supere los 3.500 kilogramos.",
+        "reviewNotes": "Limitaciones legales de la licencia Clase B.",
+        "tags": [
+          "remolque",
+          "licencia-clase-b"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q017",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q017",
+        "prompt": "Al arrastrar un remolque cuya capacidad de carga es superior a 750 kilogramos, la normativa exige que este cuente con:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Un sistema de frenos propio, además de un freno para casos de emergencia."
+          },
+          {
+            "text": "Únicamente luces de advertencia de peligro en su parte posterior."
+          },
+          {
+            "text": "Un motor auxiliar eléctrico para evitar forzar la tracción del automóvil."
+          },
+          {
+            "text": "Una suspensión independiente en cada eje sin necesidad de frenos adicionales."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Por el alto riesgo de la inercia, todo remolque de más de 750 kg debe incorporar sistema de frenado (usualmente de empuje) y freno de emergencia en caso de desacople.",
+        "sourcePageStart": 115,
+        "sourcePageEnd": 115,
+        "sourceReference": "Pág. 115, Frenos",
+        "groundingExcerpt": "Cuando los remolques tienen capacidad de carga superior a 750 kilogramos, deben poseer frenos... Además, los remolques con frenos deben poseer uno para casos de emergencia, que funcione automáticamente al romperse el dispositivo de arrastre.",
+        "reviewNotes": "Normativa técnica de seguridad en remolques.",
+        "tags": [
+          "remolque",
+          "frenos"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q018",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q018",
+        "prompt": "Al cargar un remolque, ¿qué ocurre si la presión ejercida sobre la esfera de enganche (bola de arrastre) es demasiado baja o nula por un mal estibaje?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "La parte trasera del automóvil baja y las ruedas delanteras pierden presión."
+          },
+          {
+            "text": "Se eleva la parte trasera del automóvil, el vehículo comienza a serpentear y el remolque puede voltear."
+          },
+          {
+            "text": "El vehículo frena de forma automática gracias al sistema de enganche esférico."
+          },
+          {
+            "text": "La dirección del automóvil se vuelve rígida, impidiendo los virajes."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Si el peso del remolque está muy atrás, empuja el enganche hacia arriba, levantando las ruedas traseras del auto y generando un serpenteo incontrolable.",
+        "sourcePageStart": 115,
+        "sourcePageEnd": 115,
+        "sourceReference": "Pág. 115, Enganche esférico",
+        "groundingExcerpt": "Cuando la presión sobre la esfera es baja o nula, se eleva la parte trasera del automóvil. La presión de las ruedas traseras disminuye... El vehículo entero comienza a serpentear y el remolque puede voltear.",
+        "reviewNotes": "Dinámica de distribución de peso en remolques.",
+        "tags": [
+          "remolque",
+          "carga"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q019",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q019",
+        "prompt": "Si mientras arrastra un remolque, usted nota que éste comienza a zigzaguear o serpentear en la vía, ¿cuál es la acción correcta a tomar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Pisar fuertemente el freno para detener el conjunto de inmediato."
+          },
+          {
+            "text": "Acelerar a fondo para que el remolque se alinee por tensión."
+          },
+          {
+            "text": "Soltar el acelerador lentamente hasta que recupere la estabilidad."
+          },
+          {
+            "text": "Mover el volante en zigzag en sentido contrario al movimiento del remolque."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Frenar bruscamente o maniobrar el volante agravará el zigzagueo (efecto tijera). La solución segura es dejar de acelerar de a poco para que la inercia se disipe sola.",
+        "sourcePageStart": 115,
+        "sourcePageEnd": 115,
+        "sourceReference": "Pág. 115, Antes de comenzar a conducir con remolque",
+        "groundingExcerpt": "Si el remolque comienza a zigzaguear suelta el acelerador lentamente hasta que recuperes la estabilidad y puedas seguir tu ruta.",
+        "reviewNotes": "Procedimiento de emergencia con remolques.",
+        "tags": [
+          "remolque",
+          "emergencias"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q020",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q020",
+        "prompt": "¿Cuál es la función principal y la forma correcta de utilizar la pista de aceleración al ingresar a una autopista?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Se usa para adelantar a los vehículos pesados por la derecha antes de ingresar al flujo."
+          },
+          {
+            "text": "Se debe permanecer en ella para adaptar la velocidad al flujo de la autopista y esperar una brecha segura para incorporarse."
+          },
+          {
+            "text": "Obliga a detenerse completamente al final de la pista antes de ingresar a la autopista."
+          },
+          {
+            "text": "Es una zona de estacionamiento de emergencia exclusiva."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "La pista de aceleración permite que el conductor aumente su velocidad para igualarla a la de los vehículos que ya transitan por la autopista, facilitando una incorporación suave.",
+        "sourcePageStart": 116,
+        "sourcePageEnd": 116,
+        "sourceReference": "Pág. 116, Al tomar la autopista",
+        "groundingExcerpt": "Debes permanecer en esta pista mientras adaptas tu velocidad al flujo de la autopista y hasta que se produzca una brecha entre vehículos que te permita incorporarte a ellos con seguridad.",
+        "reviewNotes": "Regla de ingreso seguro a vías de alta velocidad.",
+        "tags": [
+          "autopistas",
+          "incorporacion"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q021",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q021",
+        "prompt": "Al transitar por una autopista y verse en la necesidad de detener el vehículo por una falla mecánica (emergencia), ¿dónde debe ubicar su automóvil?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "En la berma, deteniéndose lo más lejos posible de la calzada."
+          },
+          {
+            "text": "Justo en el centro de las pistas para forzar a los otros vehículos a desviar y evitar un choque."
+          },
+          {
+            "text": "En el bandejón central o mediana verde de la autopista."
+          },
+          {
+            "text": "Al inicio de una pista de aceleración de la entrada más cercana."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Detenerse en las pistas de circulación de una autopista es mortal; ante una emergencia, el vehículo debe orillarse al máximo en la berma derecha.",
+        "sourcePageStart": 117,
+        "sourcePageEnd": 117,
+        "sourceReference": "Pág. 117, Fallas mecánicas en autopistas",
+        "groundingExcerpt": "Si no puedes hacerlo, debes: ... Ubicarte en la berma, deteniéndote lo más lejos posible de la calzada.",
+        "reviewNotes": "Procedimiento de detención en autopista por avería.",
+        "tags": [
+          "autopistas",
+          "emergencias",
+          "berma"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q022",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q022",
+        "prompt": "Si su vehículo sufre un desperfecto en la autopista y debe salir del auto para buscar un teléfono SOS, ¿qué precauciones obligatorias debe tomar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Debe encender una fogata pequeña cerca de la berma para ser visible de noche."
+          },
+          {
+            "text": "Salir del vehículo por la puerta derecha (lejos del tráfico) asegurándose que los pasajeros hagan lo mismo, y vestir chaleco reflectante."
+          },
+          {
+            "text": "Instalar de inmediato un triángulo en el centro de la pista de circulación."
+          },
+          {
+            "text": "Caminar por el centro de la autopista haciendo señas a los autos."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Salir por la izquierda expone al conductor al tráfico rápido. Debe hacerse por la derecha, usar chaleco reflectante y evitar caminar en la vía.",
+        "sourcePageStart": 117,
+        "sourcePageEnd": 118,
+        "sourceReference": "Págs. 117-118, Fallas mecánicas en autopistas",
+        "groundingExcerpt": "Salir del vehículo por la puerta derecha asegurándote que tus pasajeros hagan lo mismo... Si lo haces, debes llevar tu chaleco reflectante puesto.",
+        "reviewNotes": "Protocolo de evacuación de vehículo averiado en vía rápida.",
+        "tags": [
+          "autopistas",
+          "seguridad-pasiva",
+          "emergencias"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q023",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q023",
+        "prompt": "Respecto a la instalación de dispositivos de advertencia (triángulos) ante una pana en una autopista de alta velocidad, el manual indica taxativamente que:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Deben ubicarse a 50 metros del vehículo sobre la pista de circulación."
+          },
+          {
+            "text": "No se debe intentar colocar un triángulo u otro dispositivo en la calzada de la autopista, por el alto riesgo."
+          },
+          {
+            "text": "Tienen que instalarse a 100 metros por detrás y por delante del vehículo averiado."
+          },
+          {
+            "text": "Solo son obligatorios si la falla mecánica ocurre durante la noche."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Ingresar a pie a la calzada de una autopista para poner un triángulo es un riesgo inaceptable de atropello mortal por los vehículos que circulan a 120 km/h.",
+        "sourcePageStart": 118,
+        "sourcePageEnd": 118,
+        "sourceReference": "Pág. 118, Fallas mecánicas en autopistas",
+        "groundingExcerpt": "No intentes colocar un triángulo u otro dispositivo reflectante en la calzada de la autopista, ni intentes realizar la más mínima reparación.",
+        "reviewNotes": "Excepción a la regla general del uso del triángulo por seguridad extrema.",
+        "tags": [
+          "autopistas",
+          "emergencias",
+          "triangulo"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q024",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q024",
+        "prompt": "¿Qué fenómeno perceptivo ocurre tras conducir largas decenas de kilómetros por una autopista, y que constituye un riesgo al salir de ella?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El conductor experimenta mejoras significativas en su visión periférica."
+          },
+          {
+            "text": "Se deja cegar por la velocidad, creyendo que circula mucho más lento de lo que realmente va."
+          },
+          {
+            "text": "Desarrolla una hipersensibilidad a los ruidos del motor."
+          },
+          {
+            "text": "Se acostumbra a la distancia, dejando un espacio de 200 metros con el vehículo delantero."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "La monotonía y el silencio relativo de la autopista anestesian los sentidos, causando la 'ceguera de velocidad'; 80 km/h pueden parecer 50 km/h al momento de salir.",
+        "sourcePageStart": 117,
+        "sourcePageEnd": 117,
+        "sourceReference": "Pág. 117, En la autopista",
+        "groundingExcerpt": "Otro riesgo al conducir por una autopista es que después de unas decenas de kilómetros te dejas cegar por la velocidad. Entonces creerás que la velocidad es menor de lo que realmente es...",
+        "reviewNotes": "Peligros psicológicos/físicos en autopistas.",
+        "tags": [
+          "autopistas",
+          "percepcion-velocidad"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q025",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q025",
+        "prompt": "Al transitar por un túnel de gran longitud, si el tráfico se detiene abruptamente produciendo un atochamiento (taco), ¿qué instrucción fundamental de seguridad debe seguir?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Tocar la bocina constantemente para pedir a los de adelante que avancen."
+          },
+          {
+            "text": "Encienda las luces de emergencia y apague el motor de su vehículo mientras esté sin movimiento."
+          },
+          {
+            "text": "Acelerar en vacío (en neutro) para evitar que la batería se descargue."
+          },
+          {
+            "text": "Descender del vehículo de inmediato y caminar hacia la salida más cercana."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Apagar el motor evita la acumulación de gases tóxicos en el recinto cerrado del túnel, y las luces de emergencia advierten del peligro a quienes entran al túnel.",
+        "sourcePageStart": 119,
+        "sourcePageEnd": 119,
+        "sourceReference": "Pág. 119, Conducción en túneles",
+        "groundingExcerpt": "Si se produce un atochamiento, enciende tus luces de emergencia inmediatamente y mantén una distancia de seguridad con el vehículo de adelante... recuerda apagar el motor de tu vehículo.",
+        "reviewNotes": "Protocolos vitales de emergencia en túneles.",
+        "tags": [
+          "tuneles",
+          "emergencias"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q026",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q026",
+        "prompt": "¿Por qué es altamente peligroso conducir cuando caen las primeras gotas de lluvia tras un largo período de sequía?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Porque las primeras gotas de lluvia obstruyen la salida del tubo de escape."
+          },
+          {
+            "text": "Porque el agua interfiere con las señales de radio e impide usar el GPS."
+          },
+          {
+            "text": "Porque al mezclarse el agua con el polvo y aceite del asfalto, la calzada se torna sumamente resbaladiza."
+          },
+          {
+            "text": "Porque la lluvia inicial causa condensación inmediata que nubla por completo los espejos exteriores."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "El barro resbaladizo ('jaboncillo') que se forma al inicio de la lluvia con la suciedad del camino reduce drásticamente el roce y la tracción del neumático.",
+        "sourcePageStart": 120,
+        "sourcePageEnd": 120,
+        "sourceReference": "Pág. 120, La Lluvia",
+        "groundingExcerpt": "Sin embargo, es con las primeras gotas de lluvia cuando más precauciones hay que tomar, porque al mezclarse el agua con el polvo o el aceite que se encuentra en el asfalto, la calzada se torna muy resbaladiza...",
+        "reviewNotes": "Fenómeno físico meteorológico en vías.",
+        "tags": [
+          "lluvia",
+          "adherencia"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q027",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q027",
+        "prompt": "Si su vehículo NO cuenta con sistema de frenos ABS y usted debe frenar de emergencia sobre un pavimento mojado, ¿cómo debe aplicar el pedal de freno para evitar patinar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Pisando el freno a fondo y manteniéndolo presionado firmemente hasta detenerse."
+          },
+          {
+            "text": "Frenando con suavidad, progresivamente y a pedaladas cortas (efecto bombeo)."
+          },
+          {
+            "text": "Utilizando únicamente el freno de mano."
+          },
+          {
+            "text": "Bombeando el embrague junto con el acelerador simultáneamente."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Frenar bruscamente sin ABS bloquea las ruedas y hace deslizar (derrapar) el vehículo. Las pedaladas cortas simulan mecánicamente la función antibloqueo del ABS.",
+        "sourcePageStart": 121,
+        "sourcePageEnd": 121,
+        "sourceReference": "Pág. 121, Medidas... prevenir deslizamientos",
+        "groundingExcerpt": "Frena con suavidad, progresivamente y a pedaladas cortas, no de manera brusca, porque ello puede provocar el bloqueo de las ruedas y el vehículo se deslizaría sobre ellas, patinando. Este efecto no se produce cuando el vehículo cuenta con frenos ABS.",
+        "reviewNotes": "Técnicas de frenado diferencial según tecnología del vehículo.",
+        "tags": [
+          "lluvia",
+          "frenos",
+          "derrape"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q028",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q028",
+        "prompt": "Durante lluvias muy intensas se puede producir el peligroso efecto denominado 'aquaplaning' (o hidroplaning). ¿En qué consiste este fenómeno?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El motor se apaga repentinamente al entrar agua por el tubo de escape."
+          },
+          {
+            "text": "Los frenos se pegan a los discos por la oxidación rápida del agua."
+          },
+          {
+            "text": "El vehículo se desliza y planea sobre una capa de agua, sin que los neumáticos tengan contacto real con la calzada."
+          },
+          {
+            "text": "La dirección del vehículo se bloquea hidráulicamente impidiendo virar."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Cuando hay exceso de agua y velocidad, las estrías del neumático no logran evacuar el líquido, generando una cuña de agua bajo la rueda y haciendo que el auto flote sin control.",
+        "sourcePageStart": 121,
+        "sourcePageEnd": 121,
+        "sourceReference": "Pág. 121, Aquaplaning o Hidroplaning",
+        "groundingExcerpt": "El vehículo se desliza, planea y se desplaza sin que haya contacto real con la superficie de la calzada... Este fenómeno se conoce comúnmente con el nombre de “aquaplaning” o “hidroplaning”.",
+        "reviewNotes": "Dinámica de fluidos y pérdida de control por aquaplaning.",
+        "tags": [
+          "lluvia",
+          "aquaplaning",
+          "adherencia"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q029",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q029",
+        "prompt": "Si no tiene alternativa y se ve en la obligación de atravesar un tramo de vía inundado con agua (charco profundo), ¿cómo debe conducir para sortearlo?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A alta velocidad para cruzarlo lo antes posible."
+          },
+          {
+            "text": "En marcha neutra (desenganchado) dejando que el impulso cruce el charco."
+          },
+          {
+            "text": "Circulando lentamente, en primera marcha y a velocidad constante."
+          },
+          {
+            "text": "Aplicando intermitentemente los frenos mientras atraviesa el agua."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Atravesar agua lentamente en primera asegura que el motor mantenga revoluciones para no apagarse, y evita levantar un oleaje que podría ingresar al sistema de admisión o mojar otros vehículos.",
+        "sourcePageStart": 122,
+        "sourcePageEnd": 122,
+        "sourceReference": "Pág. 122, Cuando la calzada esté anegada",
+        "groundingExcerpt": "Si no tienes alternativa y te ves en la obligación de pasar por un tramo inundado, circula lentamente en primera y a velocidad constante.",
+        "reviewNotes": "Técnica de superación de anegamientos.",
+        "tags": [
+          "lluvia",
+          "anegamiento"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q030",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q030",
+        "prompt": "Inmediatamente después de salir de un charco profundo o tramo inundado de agua, ¿cuál es la medida de seguridad que debe adoptar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Detener el motor durante unos minutos para que se enfríe."
+          },
+          {
+            "text": "Comprobar la eficacia de los frenos presionando el pedal ligeramente para secarlos."
+          },
+          {
+            "text": "Acelerar bruscamente para sacudir el agua de las ruedas."
+          },
+          {
+            "text": "Desinflar levemente los neumáticos para ganar mayor tracción posterior."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "El agua entre la pastilla y el disco reduce temporalmente la fuerza de frenado. La fricción de pisar suavemente el pedal genera calor que evapora la humedad rápidamente.",
+        "sourcePageStart": 122,
+        "sourcePageEnd": 122,
+        "sourceReference": "Pág. 122, Cuando la calzada esté anegada",
+        "groundingExcerpt": "Cuando salgas del agua... comprueba la eficacia de tus frenos presionando el pedal ligeramente. Si no funcionan bien, sécalos frenando suavemente.",
+        "reviewNotes": "Recuperación de eficacia de frenos por humedad.",
+        "tags": [
+          "lluvia",
+          "frenos"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q031",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q031",
+        "prompt": "Para conducir bajo condiciones de nieve en la calzada y reducir el riesgo de que las ruedas de tracción patinen (resbalen), usted debe:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Acelerar de forma repentina en cada curva."
+          },
+          {
+            "text": "Usar siempre la primera marcha sin importar la velocidad."
+          },
+          {
+            "text": "Usar la marcha más alta que razonablemente sea posible emplear y evitar los cambios."
+          },
+          {
+            "text": "Mantener permanentemente pisado el pedal de embrague."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Emplear marchas altas (ej. salir en segunda o tercera en vez de primera) reduce la fuerza que se entrega a las ruedas, impidiendo que giren en banda sobre el piso resbaladizo.",
+        "sourcePageStart": 123,
+        "sourcePageEnd": 123,
+        "sourceReference": "Pág. 123, Medidas para mejorar adherencia en nieve",
+        "groundingExcerpt": "Usa la marcha más alta que razonablemente sea posible emplear, ya que así conseguirás el mínimo incremento de velocidad de las ruedas motrices y se reducirá el riesgo de que patinen. Evita los cambios de marcha.",
+        "reviewNotes": "Técnica de tracción en baja adherencia.",
+        "tags": [
+          "nieve",
+          "caja-de-cambios"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q032",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q032",
+        "prompt": "Si mientras está nevando decide encender las luces altas, ¿qué efecto perjudicial se generará en su visibilidad?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "La nieve derretida en los focos producirá cortes de luz."
+          },
+          {
+            "text": "La luz no atravesará la cortina de copos de nieve, volviéndose contra usted y provocando un deslumbramiento."
+          },
+          {
+            "text": "Las luces altas calentarán demasiado los cristales y formarán hielo."
+          },
+          {
+            "text": "Se cegará a todos los vehículos que vienen detrás suyo mediante el espejo retrovisor."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Los copos de nieve actúan como millones de pequeños espejos blancos; al usar luces altas (potentes y elevadas), la luz rebota hacia los ojos del conductor (efecto pantalla).",
+        "sourcePageStart": 124,
+        "sourcePageEnd": 124,
+        "sourceReference": "Pág. 124, Medidas para mejorar la visibilidad (Nieve)",
+        "groundingExcerpt": "Aunque sea de noche, no conviene encender las luces altas cuando esté nevando porque estas no atraviesan la cortina de copos de nieve, volviendose contra ti con posibilidad de provocar un deslumbramiento.",
+        "reviewNotes": "Fenómeno óptico en conducción con precipitaciones sólidas.",
+        "tags": [
+          "nieve",
+          "luces-altas",
+          "visibilidad"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q033",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q033",
+        "prompt": "Al aproximarse a un tramo de la vía que, producto de las bajas temperaturas y humedad, está cubierto por placas de hielo, el conductor debe tener presente que la distancia de frenado:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Se mantendrá igual si los neumáticos tienen buen dibujo."
+          },
+          {
+            "text": "Se reducirá debido al rápido enfriamiento de las pastillas de freno."
+          },
+          {
+            "text": "Puede aumentar hasta 10 veces por encima de lo normal."
+          },
+          {
+            "text": "Se duplica exclusivamente si el vehículo no cuenta con sistema ABS."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "El hielo representa la superficie con el coeficiente de roce más bajo posible en la vía pública, anulando la eficacia de los frenos casi en su totalidad.",
+        "sourcePageStart": 124,
+        "sourcePageEnd": 124,
+        "sourceReference": "Pág. 124, Medidas para mejorar adherencia en hielo",
+        "groundingExcerpt": "Hay que resaltar que cuando la calzada está helada, la distancia de frenado puede aumentar hasta 10 veces por encima de lo normal...",
+        "reviewNotes": "Factor crítico de la distancia de detención.",
+        "tags": [
+          "hielo",
+          "distancia-frenado"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q034",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q034",
+        "prompt": "¿En qué lugares específicos del camino o carretera es más probable y rápido que se formen y mantengan placas de hielo durante un día frío?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "En las rectas amplias donde da el sol de frente todo el día."
+          },
+          {
+            "text": "En los tramos con pavimento de asfalto oscuro."
+          },
+          {
+            "text": "En los cruces regulados por semáforos debido a la detención de vehículos."
+          },
+          {
+            "text": "En los puentes y en las partes de la calzada que reciben sombra de los árboles."
+          }
+        ],
+        "correctOptionIndexes": [
+          3
+        ],
+        "publicExplanation": "Los puentes se congelan primero al estar rodeados de aire frío (sin el aislamiento de la tierra abajo), y las zonas sombrías evitan que el sol derrita la escarcha.",
+        "sourcePageStart": 124,
+        "sourcePageEnd": 124,
+        "sourceReference": "Pág. 124, ¿Cuándo y dónde es más probable... resbaladiza?",
+        "groundingExcerpt": "En los días fríos y húmedos, las sombras que proyectan los árboles... Las partes que reciben sombra son las primeras en congelarse y las últimas en descongelarse y secarse. Los puentes también pueden disimular partes heladas. Sus superficies tienden a congelarse mucho antes que el resto del camino.",
+        "reviewNotes": "Detección de condiciones meteorológicas locales y microclimas viales.",
+        "tags": [
+          "hielo",
+          "peligros-ocultos"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q035",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q035",
+        "prompt": "¿Qué indicio físico transmitido a través de la dirección del vehículo le podría estar advirtiendo que está conduciendo sobre una placa de hielo invisible (hielo negro)?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El volante vibra violentamente y los neumáticos hacen un fuerte zumbido."
+          },
+          {
+            "text": "La dirección del vehículo se siente excesivamente ligera, como si flotara."
+          },
+          {
+            "text": "El volante se vuelve rígido y muy pesado de girar."
+          },
+          {
+            "text": "El pedal de freno comienza a hundirse hasta el fondo por sí solo."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "La pérdida total de fricción entre la rueda y el asfalto provoca que el volante pierda la resistencia normal del peso del auto, sintiéndose blando o 'flotando'.",
+        "sourcePageStart": 124,
+        "sourcePageEnd": 124,
+        "sourceReference": "Pág. 124, El Hielo",
+        "groundingExcerpt": "Si notas que la dirección del vehículo está excesivamente ligera, como si flotara, ello es un indicio que debes tener en cuenta.",
+        "reviewNotes": "Identificación táctil de pérdida de adherencia.",
+        "tags": [
+          "hielo",
+          "direccion",
+          "adherencia"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q036",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q036",
+        "prompt": "Al descender por un tramo de la carretera fuertemente nevado y con pendiente en bajada, ¿cómo debe frenar y controlar el vehículo de manera segura?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Pisar el freno a fondo para evitar que tome velocidad."
+          },
+          {
+            "text": "Bajar desenganchado (en neutro) y frenar intermitentemente."
+          },
+          {
+            "text": "A velocidad muy moderada, en una marcha baja y usando principalmente el freno de motor."
+          },
+          {
+            "text": "Bajar en cuarta o quinta marcha para que el vehículo traccione más."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Utilizar marchas bajas (retención de motor) evita el uso excesivo del pedal de freno, lo cual podría provocar un derrape o bloqueo fatal en la nieve.",
+        "sourcePageStart": 123,
+        "sourcePageEnd": 123,
+        "sourceReference": "Pág. 123, Medidas para mejorar adherencia en nieve",
+        "groundingExcerpt": "Desciende las pendientes lentamente, a velocidad muy moderada y en una marcha baja. Frena con el motor y usando los frenos lo imprescindible, con mucha suavidad y anticipación, para evitar los derrapes.",
+        "reviewNotes": "Técnicas de conducción en pendientes con baja adherencia.",
+        "tags": [
+          "nieve",
+          "pendientes",
+          "freno-motor"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q037",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q037",
+        "prompt": "Al presentarse bancos de niebla espesa durante su viaje en carretera, ¿qué iluminación debe mantener encendida su vehículo?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Las luces altas para penetrar mejor el banco de niebla."
+          },
+          {
+            "text": "Solo las luces de estacionamiento intermitentes."
+          },
+          {
+            "text": "Las luces bajas y, de poseerlos, los focos neblineros."
+          },
+          {
+            "text": "Toda la iluminación del vehículo apagada si viaja de día, para no confundir."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Las luces bajas iluminan el pavimento sin reflejarse en las gotas de niebla (como sí lo hacen las altas), y los neblineros añaden visibilidad a corta distancia.",
+        "sourcePageStart": 125,
+        "sourcePageEnd": 125,
+        "sourceReference": "Pág. 125, Medidas que debes adoptar (Niebla)",
+        "groundingExcerpt": "Mantén encendidas tus luces bajas. Estas, al proyectarse directamente hacia el suelo se ven más y mejor... Si tu vehículo cuenta con focos neblineros delanteros, enciéndelos, simultáneamente con las luces bajas.",
+        "reviewNotes": "Uso reglamentario y físico de luces ante niebla.",
+        "tags": [
+          "niebla",
+          "luces"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q038",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q038",
+        "prompt": "Usted circula por una carretera estrecha y de pronto se levantan fuertes ráfagas de viento lateral. ¿Qué acción inmediata le aconseja el manual realizar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Aumentar la marcha para cruzar el área de viento rápidamente."
+          },
+          {
+            "text": "Reducir la velocidad a una marcha más baja para que el peso del vehículo ayude a afirmarse."
+          },
+          {
+            "text": "Frenar enérgicamente cada vez que sienta la fuerza del viento."
+          },
+          {
+            "text": "Acercarse lo máximo posible al eje central de la calzada."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "La reducción de velocidad baja el empuje aerodinámico y ayuda al auto a aferrarse al asfalto. Al bajar la marcha, el motor retiene más firmemente la tracción.",
+        "sourcePageStart": 125,
+        "sourcePageEnd": 125,
+        "sourceReference": "Pág. 125, El viento fuerte",
+        "groundingExcerpt": "Reducir la velocidad: A mayor fuerza del viento, más baja debe ser la marcha. Así el peso del vehículo ayuda a que se afirme mejor.",
+        "reviewNotes": "Técnica de control aerodinámico y meteorológico.",
+        "tags": [
+          "viento",
+          "velocidad"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q039",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q039",
+        "prompt": "Al momento de intentar corregir las desviaciones de trayectoria provocadas por el fuerte viento de lado (viento racheado lateral), la recomendación es:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Soltar el volante levemente para que se alinee solo."
+          },
+          {
+            "text": "Sujetar el volante con firmeza y girarlo contra el viento."
+          },
+          {
+            "text": "Girar el volante hacia el mismo lado que empuja el viento."
+          },
+          {
+            "text": "Usar el freno de mano intermitentemente para estabilizar la marcha."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Para mantener el vehículo en su pista, es necesario contrarrestar la fuerza del viento empujando ligeramente el volante hacia la dirección de donde proviene la ráfaga.",
+        "sourcePageStart": 125,
+        "sourcePageEnd": 125,
+        "sourceReference": "Pág. 125, El viento fuerte",
+        "groundingExcerpt": "Corregir las desviaciones para corregir la trayectoria: Para ello, sujeta el volante con firmeza y gíralo contra el viento.",
+        "reviewNotes": "Maniobra física ante empuje lateral.",
+        "tags": [
+          "viento",
+          "direccion"
+        ],
+        "chapterId": "chapter-7"
+      }
+    },
+    {
+      "externalId": "7-q040",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "7-q040",
+        "prompt": "Durante la conducción con viento racheado o fuerte viento lateral, además del control de su vehículo, ¿hacia qué otro usuario vulnerable debe tener especial cuidado al momento de adelantar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Hacia los camiones pesados y buses interurbanos."
+          },
+          {
+            "text": "Hacia los vehículos 4x4 o todoterreno."
+          },
+          {
+            "text": "Hacia una persona ciclista o motociclista, debiendo mantener una distancia lateral segura."
+          },
+          {
+            "text": "Hacia vehículos que remolquen casas rodantes."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Las motocicletas y bicicletas son extremadamente sensibles al empuje lateral del viento, pudiendo caer o invadir la pista del auto de forma imprevista.",
+        "sourcePageStart": 125,
+        "sourcePageEnd": 125,
+        "sourceReference": "Pág. 125, El viento fuerte",
+        "groundingExcerpt": "Recuerda que una persona ciclista o motociclista podría tambalear o ver desviada su trayectoria debido al viento, por lo que si vas a adelantar o sobrepasar debes mantener una distancia lateral segura.",
+        "reviewNotes": "Consideración de usuarios vulnerables en eventos meteorológicos.",
+        "tags": [
+          "viento",
+          "ciclistas",
+          "motociclistas"
+        ],
+        "chapterId": "chapter-7"
+      }
+    }
+  ]
+}

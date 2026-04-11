@@ -1,0 +1,1014 @@
+{
+  "batchId": "4-batch-2026-04-10-01",
+  "editionId": "edition-2026",
+  "chapterId": "chapter-4",
+  "sourceDocumentId": "manual-claseb-2026",
+  "sourceDocumentTitle": "Libro del Nuevo Conductor Clase B 2026",
+  "generatedAt": "2026-04-11T01:53:00Z",
+  "generator": {
+    "provider": "frontier-ai",
+    "model": "gemini-1.5-pro"
+  },
+  "questions": [
+    {
+      "externalId": "4-q001",
+      "prompt": "En la conducción, ¿qué efecto visual se produce cuando las líneas convergentes parecieran encontrarse en un punto más alejado de lo que realmente están?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Densidad de pauta." },
+        { "text": "Perspectiva lineal." },
+        { "text": "Tamaño relativo." },
+        { "text": "Sobrecubrimiento." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La perspectiva lineal es una ilusión óptica en la que las líneas paralelas parecen converger a la distancia.",
+      "sourcePageStart": 37,
+      "sourcePageEnd": 37,
+      "sourceReference": "Pág. 37, Efectos visuales en la conducción",
+      "groundingExcerpt": "Perspectiva lineal: las líneas convergentes parecieran encontrarse en un punto que está más alejado de lo que realmente se encuentra.",
+      "reviewNotes": "Pregunta de reconocimiento de conceptos visuales.",
+      "tags": ["efectos-visuales", "percepcion"]
+    },
+    {
+      "externalId": "4-q002",
+      "prompt": "Según estadísticas internacionales, ¿cuál es la frecuencia con la que los conductores principiantes sufren siniestros de tránsito sin involucrar a otros vehículos, en comparación con conductores experimentados?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "2 veces mayor." },
+        { "text": "5 veces mayor." },
+        { "text": "10 veces mayor." },
+        { "text": "20 veces mayor." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "La inexperiencia lleva a los principiantes a verse involucrados en siniestros en solitario con una frecuencia diez veces superior.",
+      "sourcePageStart": 37,
+      "sourcePageEnd": 37,
+      "sourceReference": "Pág. 37, La persona en el tránsito",
+      "groundingExcerpt": "Estadísticas internacionales señalan que las personas conductoras principiantes sufren siniestros de tránsito (en los que no se ven involucrados otros vehículos) con una frecuencia 10 veces mayor que aquellas con más experiencia en la conducción.",
+      "reviewNotes": "Dato estadístico clave sobre la experiencia de conducción.",
+      "tags": ["estadistica", "principiantes"]
+    },
+    {
+      "externalId": "4-q003",
+      "prompt": "En situaciones reales que requieren reacciones complejas, ¿qué grupo de edad tiene un tiempo de reacción más rápido?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Entre 18 y 25 años." },
+        { "text": "Entre 25 y 35 años." },
+        { "text": "Entre 35 y 50 años." },
+        { "text": "Mayores de 50 años." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "Aunque los jóvenes responden rápido a estímulos simples, las reacciones complejas que exigen experiencia favorecen al grupo de 35 a 50 años.",
+      "sourcePageStart": 40,
+      "sourcePageEnd": 40,
+      "sourceReference": "Pág. 40, Capacidad de reacción",
+      "groundingExcerpt": "En situaciones reales que requieren reacciones complejas, en las que deben interpretarse rápidamente muchas impresiones, las personas conductoras expertas tienen una reacción mucho más rápida. El grupo de edad “más rápido” corresponde a quienes tienen entre 35 y 50 años.",
+      "reviewNotes": "Clarifica un mito común sobre el tiempo de reacción y la edad.",
+      "tags": ["reaccion", "edad"]
+    },
+    {
+      "externalId": "4-q004",
+      "prompt": "Si usted sufre una ceguera real temporal al mirar directamente a los focos de un vehículo, ¿cuál es su distancia de visibilidad en ese momento?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "0 metros." },
+        { "text": "5 metros." },
+        { "text": "10 metros." },
+        { "text": "15 metros." }
+      ],
+      "correctOptionIndexes": [0],
+      "publicExplanation": "El deslumbramiento o ceguera temporal bloquea totalmente la visión durante unos instantes, reduciendo la visibilidad a cero.",
+      "sourcePageStart": 40,
+      "sourcePageEnd": 40,
+      "sourceReference": "Pág. 40, Capacidad visual",
+      "groundingExcerpt": "Cuando se produce un efecto de ceguera temporal, la distancia de visibilidad es de 0 metros.",
+      "reviewNotes": "Pregunta sobre el efecto fisiológico del encandilamiento.",
+      "tags": ["vision", "encandilamiento"]
+    },
+    {
+      "externalId": "4-q005",
+      "prompt": "¿Aproximadamente de cuántos metros es la distancia de visibilidad en un cruce con vehículos que transitan en sentido contrario y con luces bajas?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "No supera los 15 o 20 metros." },
+        { "text": "Hasta unos 50 metros." },
+        { "text": "Hasta unos 70 metros." },
+        { "text": "Al menos 100 metros." }
+      ],
+      "correctOptionIndexes": [0],
+      "publicExplanation": "Debido a las limitaciones del ojo y las luces bajas, la visión se restringe fuertemente en cruces nocturnos.",
+      "sourcePageStart": 40,
+      "sourcePageEnd": 40,
+      "sourceReference": "Pág. 40, Capacidad visual",
+      "groundingExcerpt": "la distancia de visibilidad en un cruce de vehículos que van con luces bajas no supera los 15 o 20 metros;",
+      "reviewNotes": "Dato específico de distancia visual nocturna.",
+      "tags": ["vision-nocturna", "distancia"]
+    },
+    {
+      "externalId": "4-q006",
+      "prompt": "¿Qué porcentaje de luz refleja la ropa oscura, afectando la visibilidad del peatón en la noche?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Solo el 5%." },
+        { "text": "Alrededor del 20%." },
+        { "text": "Entre el 40% y 50%." },
+        { "text": "Cerca del 80%." }
+      ],
+      "correctOptionIndexes": [0],
+      "publicExplanation": "La ropa oscura es un peligro en la vía pública porque apenas refleja el 5% de la luz, en contraste con los materiales reflectantes que reflejan más del 90%.",
+      "sourcePageStart": 41,
+      "sourcePageEnd": 41,
+      "sourceReference": "Pág. 41, Cómo aportar a aumentar tu visibilidad",
+      "groundingExcerpt": "La ropa oscura refleja sólo el 5% de la luz; la ropa blanca un 80%, y los materiales reflectantes entre un 90 y 98%.",
+      "reviewNotes": "Comparación de índices de reflexión en vestimenta.",
+      "tags": ["visibilidad", "peatones"]
+    },
+    {
+      "externalId": "4-q007",
+      "prompt": "¿Cómo se denomina al fenómeno en que el cerebro del conductor selecciona a qué estímulos prestará atención, dependiendo de sus expectativas y necesidades?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Visión de túnel." },
+        { "text": "Ceguera temporal." },
+        { "text": "Percepción selectiva." },
+        { "text": "Efecto de sobrecubrimiento." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "La percepción selectiva hace que veamos principalmente lo que esperamos ver, lo que puede causar que omitamos peligros imprevistos.",
+      "sourcePageStart": 41,
+      "sourcePageEnd": 41,
+      "sourceReference": "Pág. 41, Percepción selectiva",
+      "groundingExcerpt": "Esta selección e interpretación no dependen de la casualidad, sino que se ven influenciadas por las expectativas, necesidades y por el estado de vigilancia. Lo anterior es aplicable a todas las personas y suele llamarse percepción selectiva.",
+      "reviewNotes": "Definición psicológica aplicada a la conducción.",
+      "tags": ["percepcion", "psicologia"]
+    },
+    {
+      "externalId": "4-q008",
+      "prompt": "¿Qué característica tiene el punto del ojo conocido como mancha o mácula ciega?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Permite percibir los objetos con máxima nitidez durante la noche." },
+        { "text": "En esta zona no hay células visuales, por lo que el reflejo de un objeto no puede ser percibido." },
+        { "text": "Se encarga únicamente de procesar la visión periférica en movimiento." },
+        { "text": "Es la zona responsable de adaptar la vista a los cambios bruscos de iluminación." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La mácula ciega es el lugar donde el nervio óptico se conecta con el ojo, careciendo de células visuales, generando un punto sin visión.",
+      "sourcePageStart": 42,
+      "sourcePageEnd": 42,
+      "sourceReference": "Pág. 42, Cómo funciona el ojo humano",
+      "groundingExcerpt": "En el punto en que el nervio óptico entra en el ojo se encuentra la llamada mancha o mácula ciega. En esta no hay células visuales, por lo que el reflejo de un objeto en él no puede ser percibido.",
+      "reviewNotes": "Anatomía del ojo y su implicancia visual.",
+      "tags": ["vision", "anatomia"]
+    },
+    {
+      "externalId": "4-q009",
+      "prompt": "¿Qué relación existe entre la visión directa y la visión periférica al momento de conducir?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Se descubren las cosas con la visión periférica y se reconocen con la visión directa." },
+        { "text": "Se reconocen las cosas con la visión periférica y se descubren con la visión directa." },
+        { "text": "La visión periférica solo funciona durante la noche y la directa durante el día." },
+        { "text": "Ambas visiones ofrecen la misma nitidez para reconocer señales de tránsito." }
+      ],
+      "correctOptionIndexes": [0],
+      "publicExplanation": "La visión periférica detecta movimientos en los bordes del campo visual, provocando que movamos los ojos (visión directa) para identificar de qué se trata.",
+      "sourcePageStart": 43,
+      "sourcePageEnd": 43,
+      "sourceReference": "Pág. 43, Visión periférica",
+      "groundingExcerpt": "Se descubren las cosas con la visión periférica y se reconocen con la visión directa.",
+      "reviewNotes": "Interacción de los tipos de visión.",
+      "tags": ["vision-periferica", "conduccion"]
+    },
+    {
+      "externalId": "4-q010",
+      "prompt": "¿A qué se debe principalmente el fenómeno denominado 'visión de túnel' durante la conducción?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "A la falta prolongada de iluminación en carreteras rurales." },
+        { "text": "A la reducción del campo visual a medida que aumenta la velocidad." },
+        { "text": "A la acumulación de suciedad en el parabrisas y los espejos retrovisores." },
+        { "text": "Al deslumbramiento causado por las luces altas de los vehículos contrarios." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "A medida que aumenta la velocidad, el cerebro focaliza la visión hacia adelante, reduciendo la amplitud del campo visual lateral.",
+      "sourcePageStart": 44,
+      "sourcePageEnd": 44,
+      "sourceReference": "Pág. 44, Procesamiento limitado de información",
+      "groundingExcerpt": "Como ejemplo se puede mencionar el fenómeno denominado visión de túnel, en donde el campo visual se reduce a medida que aumenta la velocidad.",
+      "reviewNotes": "Efecto de la velocidad sobre la percepción del entorno.",
+      "tags": ["vision-tunel", "velocidad"]
+    },
+    {
+      "externalId": "4-q011",
+      "prompt": "Al intentar calcular el punto de cruce con un vehículo que viene en sentido contrario, ¿qué error suele cometer el cerebro al procesar esta información?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Presupone que el vehículo contrario viaja al doble de nuestra velocidad." },
+        { "text": "Considera que el vehículo que viene de frente está completamente detenido." },
+        { "text": "Calcula que el cruce será exactamente el doble de la distancia visual actual." },
+        { "text": "Presupone que los vehículos circulan exactamente a la misma velocidad." }
+      ],
+      "correctOptionIndexes": [3],
+      "publicExplanation": "El cerebro tiende a estimar el punto de encuentro en la mitad de la distancia, asumiendo equívocamente que ambos llevan igual velocidad.",
+      "sourcePageStart": 44,
+      "sourcePageEnd": 44,
+      "sourceReference": "Pág. 44, Procesamiento limitado de información",
+      "groundingExcerpt": "la estimación del lugar en el que se cruzaran los vehículos resulta ser una estimación del punto medio de la distancia entre ambos; es decir, el cerebro presupone que los vehículos circulan exactamente a la misma velocidad",
+      "reviewNotes": "Limitación neurológica en el cálculo de colisiones/cruces.",
+      "tags": ["calculo-distancia", "velocidad"]
+    },
+    {
+      "externalId": "4-q012",
+      "prompt": "¿Cuál de las siguientes es una característica propia de los conductores jóvenes que incrementa su vulnerabilidad a sufrir siniestros de tránsito?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Su excesiva experiencia en la conducción en zonas urbanas congestionadas." },
+        { "text": "La percepción exagerada y temerosa de todos los riesgos del entorno vial." },
+        { "text": "Su capacidad de conducción sobrevalorada, evitando tomar medidas de seguridad." },
+        { "text": "El estricto seguimiento y temor a desobedecer las normas del tránsito." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "Los jóvenes suelen pecar de exceso de confianza en sus habilidades al volante, lo que se traduce en omisión de medidas preventivas.",
+      "sourcePageStart": 45,
+      "sourcePageEnd": 45,
+      "sourceReference": "Pág. 45, Capacidad de raciocinio y decisión",
+      "groundingExcerpt": "Capacidad de conducción sobrevalorada, por lo que no consideran necesario tomar medidas de seguridad como ponerse el cinturón.",
+      "reviewNotes": "Factor de riesgo demográfico y psicológico.",
+      "tags": ["jovenes", "conducta"]
+    },
+    {
+      "externalId": "4-q013",
+      "prompt": "De acuerdo con el manual, ¿cómo se describe la actitud de la mayoría de los jóvenes frente al tránsito?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Adoptan posturas excesivamente prudentes en todo momento." },
+        { "text": "No perciben la conducción como algo que puede llegar a ser peligroso." },
+        { "text": "Ceden el control a conductores mayores por miedo a los accidentes." },
+        { "text": "Consideran que todas las reglas son necesarias y deben obedecerse sin excusas." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La falta de percepción del riesgo es un factor clave en la alta siniestralidad de este rango etario.",
+      "sourcePageStart": 45,
+      "sourcePageEnd": 45,
+      "sourceReference": "Pág. 45, Actitud frente al tránsito",
+      "groundingExcerpt": "Actitud frente al tránsito. No perciben la conducción como algo que puede llegar a ser peligroso, por lo que, difícilmente adoptarán comportamientos prudentes al conducir.",
+      "reviewNotes": "Análisis de la percepción de peligro.",
+      "tags": ["percepcion-riesgo", "jovenes"]
+    },
+    {
+      "externalId": "4-q014",
+      "prompt": "¿Qué consecuencia directa tiene la agresividad en la toma de decisiones al volante?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Permite reaccionar más rápido y de manera más segura." },
+        { "text": "Provoca que se juzgue erróneamente una situación y se tomen decisiones impulsivas." },
+        { "text": "Ayuda a mantener una concentración prolongada durante el viaje." },
+        { "text": "Desarrolla una mayor empatía hacia el comportamiento de los otros conductores." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "El estado de agresividad distorsiona el juicio, precipitando decisiones erróneas e impulsivas.",
+      "sourcePageStart": 47,
+      "sourcePageEnd": 47,
+      "sourceReference": "Pág. 47, Autocontrol",
+      "groundingExcerpt": "La agresividad provoca que se perciba y juzge erróneamente una situación y además, lleva a tomar decisiones impulsivas.",
+      "reviewNotes": "Impacto de las emociones en la seguridad.",
+      "tags": ["emociones", "agresividad"]
+    },
+    {
+      "externalId": "4-q015",
+      "prompt": "¿Qué conducta que implica riesgos al conducir se define como 'actuar sin pensar y no previendo las consecuencias'?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Formación de reacción." },
+        { "text": "Validación." },
+        { "text": "Represión." },
+        { "text": "La impulsividad." }
+      ],
+      "correctOptionIndexes": [3],
+      "publicExplanation": "La impulsividad es una acción instintiva carente de evaluación de los riesgos, frecuentemente negativa en el tránsito.",
+      "sourcePageStart": 48,
+      "sourcePageEnd": 48,
+      "sourceReference": "Pág. 48, La impulsividad",
+      "groundingExcerpt": "La impulsividad, que significa que se actúa sin pensar, no previendo las consecuencias, es casi siempre negativa.",
+      "reviewNotes": "Definición de conductas de riesgo.",
+      "tags": ["impulsividad", "psicologia"]
+    },
+    {
+      "externalId": "4-q016",
+      "prompt": "¿Cómo se denomina el mecanismo psicológico donde el conductor trata de apartar o ignorar conscientemente un peligro, por ejemplo, mantener la velocidad en pavimento mojado por tener prisa?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Formación de reacción." },
+        { "text": "La represión." },
+        { "text": "La validación." },
+        { "text": "No asumir la culpa." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La represión ocurre cuando el deseo de llegar rápido anula la percepción consciente de un riesgo inminente.",
+      "sourcePageStart": 49,
+      "sourcePageEnd": 49,
+      "sourceReference": "Pág. 49, La represión",
+      "groundingExcerpt": "La represión. En diferentes situaciones de la vida las personas tratan de reprimir o dejar de lado los pensamientos que, de alguna manera, están impidiendo lograr sus objetivos.",
+      "reviewNotes": "Mecanismo de represión en contexto vial.",
+      "tags": ["psicologia", "riesgos"]
+    },
+    {
+      "externalId": "4-q017",
+      "prompt": "Si una persona es naturalmente tímida e insegura, pero al volante adopta un comportamiento excesivamente agresivo o atrevido para no quedar en ridículo, ¿qué mecanismo de defensa está empleando?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Validación." },
+        { "text": "Impulsividad." },
+        { "text": "Formación de reacción." },
+        { "text": "Empatía compensatoria." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "La formación de reacción ocurre cuando una emoción o rasgo inaceptable se enmascara actuando de la forma diametralmente opuesta.",
+      "sourcePageStart": 49,
+      "sourcePageEnd": 49,
+      "sourceReference": "Pág. 49, Formación de reacción",
+      "groundingExcerpt": "Formación de reacción... una persona insegura muestre un comportamiento agresivo. En determinadas circunstancias, una persona tímida puede desear mostrarse atrevida para sobresalir",
+      "reviewNotes": "Identificación de mecanismos de defensa psicológicos.",
+      "tags": ["psicologia", "conducta"]
+    },
+    {
+      "externalId": "4-q018",
+      "prompt": "¿Qué conducta de riesgo se manifiesta cuando el conductor intenta demostrar su competencia a sus acompañantes y se siente superior al resto?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Represión." },
+        { "text": "Formación de reacción." },
+        { "text": "Impulsividad." },
+        { "text": "Validación." }
+      ],
+      "correctOptionIndexes": [3],
+      "publicExplanation": "La validación busca reafirmar la identidad o destreza del conductor frente a terceros, asumiendo riesgos innecesarios.",
+      "sourcePageStart": 49,
+      "sourcePageEnd": 49,
+      "sourceReference": "Pág. 49, Validación",
+      "groundingExcerpt": "Validación. Quizás alguien desea mostrar a sus acompañantes lo competente que es como persona conductora... Sentir que eres superior al resto o pensar que tienes más derechos",
+      "reviewNotes": "Concepto de validación grupal al volante.",
+      "tags": ["psicologia", "presion-social"]
+    },
+    {
+      "externalId": "4-q019",
+      "prompt": "De acuerdo con la legislación vigente en Chile, ¿cuál es el rango de concentración de alcohol en la sangre que determina la conducción 'Bajo la influencia del alcohol'?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Entre 0,10 y 0,30 gramos por mil." },
+        { "text": "Entre 0,31 y 0,79 gramos por mil." },
+        { "text": "Entre 0,80 y 1,00 gramos por mil." },
+        { "text": "Más de 1,20 gramos por mil." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La Ley de Tránsito establece que el estado 'bajo la influencia del alcohol' corresponde al rango de 0,31 a 0,79 g/l.",
+      "sourcePageStart": 50,
+      "sourcePageEnd": 50,
+      "sourceReference": "Pág. 50, Tabla de alcohol y conducción",
+      "groundingExcerpt": "Bajo la influencia del alcohol: 0,31 - 0,79 gramos por mil de alcohol en la sangre.",
+      "reviewNotes": "Límite legal estricto para bajo la influencia.",
+      "tags": ["alcohol", "leyes", "limites"]
+    },
+    {
+      "externalId": "4-q020",
+      "prompt": "En Chile, ¿qué concentración de alcohol en la sangre marca el inicio legal del 'Estado de ebriedad' para un conductor?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "0,5 o más gramos por mil." },
+        { "text": "0,8 o más gramos por mil." },
+        { "text": "1,0 o más gramos por mil." },
+        { "text": "1,5 o más gramos por mil." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "Desde la promulgación de la Ley Tolerancia Cero, 0,8 g/l en la sangre constituye estado de ebriedad.",
+      "sourcePageStart": 50,
+      "sourcePageEnd": 50,
+      "sourceReference": "Pág. 50, Tabla de alcohol y conducción",
+      "groundingExcerpt": "Estado de ebriedad: 0,8 o más gramos por mil de alcohol en la sangre.",
+      "reviewNotes": "Límite legal estricto para estado de ebriedad.",
+      "tags": ["alcohol", "leyes", "limites"]
+    },
+    {
+      "externalId": "4-q021",
+      "prompt": "¿Qué normativa chilena sanciona con cárcel efectiva de al menos un año al conductor que en estado de ebriedad provoque lesiones gravísimas o la muerte a terceros?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Ley de Tránsito Urbano." },
+        { "text": "Ley Emilia." },
+        { "text": "Ley Tolerancia Cero." },
+        { "text": "Ley de Convivencia Vial." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La Ley Emilia es la disposición legal que endureció las penas corporales (cárcel) para los conductores ebrios que causan la muerte o lesiones gravísimas.",
+      "sourcePageStart": 51,
+      "sourcePageEnd": 51,
+      "sourceReference": "Pág. 51, Sobre el alcohol en la conducción",
+      "groundingExcerpt": "Ley Emilia, sanciona con cárcel efectiva de al menos un año a las personas conductoras, que en estado de ebriedad, generan lesiones gravísimas o la muerte a terceros.",
+      "reviewNotes": "Identificación de leyes viales específicas.",
+      "tags": ["ley-emilia", "penalidades"]
+    },
+    {
+      "externalId": "4-q022",
+      "prompt": "Comparado con alguien sobrio, ¿cuánto se incrementa el riesgo de sufrir un siniestro si el conductor presenta una alcoholemia entre 0,3 y 0,5 g/l?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Permanece idéntico, pues la dosis es muy baja." },
+        { "text": "El riesgo aumenta al doble." },
+        { "text": "El riesgo se multiplica por cinco." },
+        { "text": "El riesgo se decuplica (10 veces más)." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "Incluso concentraciones bajas de alcohol (0,3 - 0,5) duplican el riesgo estadístico de accidentabilidad.",
+      "sourcePageStart": 50,
+      "sourcePageEnd": 50,
+      "sourceReference": "Pág. 50, Sobre el alcohol en la conducción",
+      "groundingExcerpt": "Con una alcoholemia entre 0,3 y 0,5 g/l el riesgo de sufrir un siniestro es el doble que si no hubiera bebido.",
+      "reviewNotes": "Estadística de riesgo por consumo de alcohol.",
+      "tags": ["alcohol", "riesgos"]
+    },
+    {
+      "externalId": "4-q023",
+      "prompt": "¿Qué sanción arriesga el conductor partícipe de un siniestro de tránsito si se niega injustificadamente a practicarse las pruebas de detección de alcohol?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Se asume su inocencia y se le cursa solo un parte leve." },
+        { "text": "Debe pagar la alcoholemia de las demás partes involucradas." },
+        { "text": "Se le sanciona exclusivamente con la cancelación definitiva de la licencia." },
+        { "text": "Suspensión de licencia, multas y penas de cárcel que podrían llegar a ser efectivas." }
+      ],
+      "correctOptionIndexes": [3],
+      "publicExplanation": "La negativa a la prueba respiratoria o científica de alcohol está fuertemente penada, asumiéndose el agravante legal.",
+      "sourcePageStart": 51,
+      "sourcePageEnd": 51,
+      "sourceReference": "Pág. 51, Sobre el alcohol en la conducción",
+      "groundingExcerpt": "Si la persona conductora que participa en un siniestro se negase injustificadamente a realizarse las pruebas de detección de alcohol... será sancionada con suspensión de licencia, multas y penas de cárcel que podrían llegar a ser efectivas",
+      "reviewNotes": "Penalidad por rechazo de alcotest o alcoholemia.",
+      "tags": ["fiscalizacion", "alcohol"]
+    },
+    {
+      "externalId": "4-q024",
+      "prompt": "¿En qué funciones orgánicas o procesos se perciben los primeros efectos de la ingesta de alcohol?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "En la coordinación motriz gruesa de extremidades." },
+        { "text": "En el sistema respiratorio, acelerando el pulso." },
+        { "text": "En el ámbito psicológico, alterando la atención, percepción y procesamiento de información." },
+        { "text": "En el sistema digestivo, generando náuseas instantáneas." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "Antes de que se noten los fallos motrices evidentes, el alcohol deprime las funciones cognitivas superiores y la atención.",
+      "sourcePageStart": 51,
+      "sourcePageEnd": 51,
+      "sourceReference": "Pág. 51, Efectos del alcohol en el organismo",
+      "groundingExcerpt": "Los primeros efectos del alcohol se manifiestan en el ámbito psicológico, como por ejemplo: la atención, percepción y procesamiento de la información.",
+      "reviewNotes": "Primeros síntomas del alcohol en el SNC.",
+      "tags": ["alcohol", "fisiologia"]
+    },
+    {
+      "externalId": "4-q025",
+      "prompt": "Aunque tras tomar unos tragos el conductor sienta que su visión directa es buena, ¿qué problema visual se produce inadvertidamente por el alcohol?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "La persona sufre ceguera cromática temporal (daltonismo)." },
+        { "text": "El iris se bloquea y los ojos se cierran involuntariamente." },
+        { "text": "La visión periférica disminuye, dificultando descubrir obstáculos a tiempo." },
+        { "text": "Se desarrolla hipersensibilidad, viendo destellos inexistentes." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "El campo de visión lateral o periférica es el primero en sufrir el efecto del alcohol, reduciendo la percepción del entorno sin que el sujeto lo note.",
+      "sourcePageStart": 51,
+      "sourcePageEnd": 51,
+      "sourceReference": "Pág. 51, Efectos del alcohol en el organismo",
+      "groundingExcerpt": "lo que no se percibe es que la visión periférica sí disminuye, lo que podría provocar que la persona no logre descubrir los obstáculos a tiempo.",
+      "reviewNotes": "Impacto del alcohol en la visión.",
+      "tags": ["alcohol", "vision-periferica"]
+    },
+    {
+      "externalId": "4-q026",
+      "prompt": "¿Cuánto tiempo demora aproximadamente el alcohol ingerido en ser detectado en la sangre de una persona?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "5 minutos." },
+        { "text": "30 minutos." },
+        { "text": "1 hora." },
+        { "text": "2 horas." }
+      ],
+      "correctOptionIndexes": [0],
+      "publicExplanation": "La absorción del alcohol en el torrente sanguíneo comienza casi de inmediato, siendo detectable a los 5 minutos.",
+      "sourcePageStart": 52,
+      "sourcePageEnd": 52,
+      "sourceReference": "Pág. 52, Cómo varía la tasa de alcohol",
+      "groundingExcerpt": "El alcohol se detecta en la sangre 5 minutos después de haber sido ingerido.",
+      "reviewNotes": "Tiempo de detección inicial de alcohol.",
+      "tags": ["alcohol", "metabolismo"]
+    },
+    {
+      "externalId": "4-q027",
+      "prompt": "¿En qué momento, en promedio, la concentración de alcohol en el organismo alcanza su nivel máximo (meseta)?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "A los 10 minutos de beber." },
+        { "text": "A la hora después de haber bebido." },
+        { "text": "A las 3 horas desde la última copa." },
+        { "text": "A las 6 horas durante la fase de reposo." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La curva de alcoholemia indica que el punto de mayor intoxicación sanguínea ocurre promediando una hora tras el consumo.",
+      "sourcePageStart": 52,
+      "sourcePageEnd": 52,
+      "sourceReference": "Pág. 52, Cómo varía la tasa de alcohol",
+      "groundingExcerpt": "En el organismo la tasa de alcoholemia aumenta muy rápido hasta llegar a su nivel máximo, el que se alcanza, en promedio, a la hora después de haber bebido.",
+      "reviewNotes": "Fase de absorción máxima de alcohol.",
+      "tags": ["alcohol", "metabolismo"]
+    },
+    {
+      "externalId": "4-q028",
+      "prompt": "En una persona promedio y sana de 70 kilos, ¿a qué ritmo metabólico constante disminuye la concentración de alcohol en la sangre?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Entre 0,10 a 0,15 g por litro de sangre por hora." },
+        { "text": "Entre 0,50 a 0,80 g por litro de sangre por hora." },
+        { "text": "Alrededor de 1,00 g por litro de sangre cada dos horas." },
+        { "text": "Aproximadamente 0,05 g por litro de sangre al día." }
+      ],
+      "correctOptionIndexes": [0],
+      "publicExplanation": "El hígado metaboliza el alcohol de forma lenta y a un ritmo constante, promediando 0.10 a 0.15 g/l por hora.",
+      "sourcePageStart": 52,
+      "sourcePageEnd": 52,
+      "sourceReference": "Pág. 52, Cómo varía la tasa de alcohol",
+      "groundingExcerpt": "Se calcula que en una persona promedio y sana de 70 kilos la presencia de alcohol disminuye a razón de entre 0,10 a 0,15 g de alcohol por litro de sangre por hora.",
+      "reviewNotes": "Tasa metabólica de eliminación de alcohol.",
+      "tags": ["alcohol", "metabolismo"]
+    },
+    {
+      "externalId": "4-q029",
+      "prompt": "Si dos personas consumen exactamente la misma cantidad y tipo de alcohol, ¿qué influencia tiene su masa corporal en el resultado de su alcoholemia?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "La persona de mayor peso alcanzará una tasa superior de alcoholemia." },
+        { "text": "Ambas registrarán la misma tasa, pues no depende del peso." },
+        { "text": "La persona de menor peso va a tener una mayor tasa de alcoholemia." },
+        { "text": "El peso solo afecta la fase descendente, no la concentración máxima." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "El alcohol se diluye en los líquidos corporales; una persona de menor masa concentra el alcohol de manera más notoria.",
+      "sourcePageStart": 52,
+      "sourcePageEnd": 52,
+      "sourceReference": "Pág. 52, Cómo varía la tasa de alcohol",
+      "groundingExcerpt": "La masa corporal: A menor peso corporal se alcanza una mayor tasa de alcoholemia. Esto significa que, si dos personas beben exactamente la misma cantidad, aquella que tenga menor peso va a tener una mayor tasa de alcoholemia.",
+      "reviewNotes": "Factor físico en la absorción de alcohol.",
+      "tags": ["alcohol", "fisiologia"]
+    },
+    {
+      "externalId": "4-q030",
+      "prompt": "¿Qué efecto particular provoca el consumo de marihuana sobre la capacidad visual y espacial del conductor?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Aumenta la capacidad visual periférica, causando distracciones con el paisaje." },
+        { "text": "Altera la percepción del tiempo, espacio y velocidad, causando cálculos errados de distancia." },
+        { "text": "Acelera el tiempo de reacción, provocando frenadas demasiado bruscas." },
+        { "text": "Elimina totalmente el campo visual central." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La marihuana es un alucinógeno depresor que afecta la capacidad cerebral de calcular distancias y velocidades.",
+      "sourcePageStart": 53,
+      "sourcePageEnd": 53,
+      "sourceReference": "Pág. 53, Marihuana",
+      "groundingExcerpt": "Se altera la percepción del tiempo, del espacio y de la velocidad, lo que causa cálculos errados de distancia.",
+      "reviewNotes": "Efectos cognitivos y perceptivos de la marihuana.",
+      "tags": ["drogas", "marihuana"]
+    },
+    {
+      "externalId": "4-q031",
+      "prompt": "De los siguientes efectos en el comportamiento, ¿cuál es característico del consumo de cocaína al momento de conducir?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Fuerte sensación de apatía y cansancio extremo." },
+        { "text": "Comportamiento en extremo cauteloso por miedo al entorno." },
+        { "text": "Comportamiento más competitivo, agresivo y sobreestimación de capacidades." },
+        { "text": "Aumento drástico de la tolerancia y paciencia hacia otros conductores." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "Como droga estimulante, la cocaína aumenta la agresividad y reduce la percepción de riesgo del conductor.",
+      "sourcePageStart": 53,
+      "sourcePageEnd": 54,
+      "sourceReference": "Págs. 53-54, Cocaína",
+      "groundingExcerpt": "Produce un comportamiento más competitivo e incluso agresivo... Se sobreestiman las capacidades, lo que conlleva asumir mayores niveles de riesgo",
+      "reviewNotes": "Efectos psicológicos de drogas estimulantes.",
+      "tags": ["drogas", "cocaina"]
+    },
+    {
+      "externalId": "4-q032",
+      "prompt": "Al consumir Pasta Base de Cocaína (PBC), la fase en la que se genera una 'falsa sensación de capacidad y disminución del sueño' se denomina:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Etapa de disforia." },
+        { "text": "Etapa de euforia." },
+        { "text": "Etapa de consumo ininterrumpido." },
+        { "text": "Etapa de sicosis." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La etapa inicial tras fumar pasta base causa éxtasis y una falsa seguridad, siendo altamente peligrosa al conducir.",
+      "sourcePageStart": 54,
+      "sourcePageEnd": 54,
+      "sourceReference": "Pág. 54, Pasta Base",
+      "groundingExcerpt": "Etapa de euforia: caracterizada por un estado de euforia, disminución de inhibiciones... falsa sensación de capacidad y competencia... disminución de hambre, sueño y fatiga.",
+      "reviewNotes": "Fases toxicológicas de la PBC.",
+      "tags": ["drogas", "pasta-base"]
+    },
+    {
+      "externalId": "4-q033",
+      "prompt": "¿Qué manifestación óptica peligrosa para la conducción suele presentar una persona bajo los efectos del éxtasis?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Pérdida absoluta de la capacidad de distinguir los colores rojo y verde." },
+        { "text": "Agudización de la visión directa a costa de la pérdida de la audición." },
+        { "text": "Ilusiones ópticas, como flashes en la periferia del campo visual." },
+        { "text": "Una dilatación permanente que permite ver mejor de noche." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "El éxtasis altera la percepción sensorial visual, provocando sensibilidad y visión de flashes inexistentes.",
+      "sourcePageStart": 54,
+      "sourcePageEnd": 54,
+      "sourceReference": "Pág. 54, Éxtasis",
+      "groundingExcerpt": "Ilusiones ópticas, como flashes en la periferia del campo visual, lo que podría ocasionar la acción de maniobras evasivas bruscas y peligrosas.",
+      "reviewNotes": "Efectos sensoriales del éxtasis.",
+      "tags": ["drogas", "extasis"]
+    },
+    {
+      "externalId": "4-q034",
+      "prompt": "Según el manual, ¿qué tipo de patologías representan el mayor riesgo de ocurrencia de siniestros de tránsito entre las enfermedades médicas?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Las enfermedades cardiovasculares (hipertensión)." },
+        { "text": "Los trastornos en el sistema motor y artritis." },
+        { "text": "Las alergias respiratorias severas." },
+        { "text": "Los trastornos neurológicos." }
+      ],
+      "correctOptionIndexes": [3],
+      "publicExplanation": "Las patologías neurológicas y la adicción a medicamentos figuran a la cabeza en el riesgo de siniestros.",
+      "sourcePageStart": 56,
+      "sourcePageEnd": 56,
+      "sourceReference": "Pág. 56, Enfermedades que pueden afectar...",
+      "groundingExcerpt": "los trastornos neurológicos son los que tienen mayor riesgo de ocurrencia de siniestros, seguidos de adicciones a medicamentos",
+      "reviewNotes": "Prevalencia de riesgo según tipología médica.",
+      "tags": ["salud", "neurologia"]
+    },
+    {
+      "externalId": "4-q035",
+      "prompt": "¿Por qué padecer un resfrío común o una alergia respiratoria (rinitis) resulta un peligro subestimado al momento de conducir?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Porque estos cuadros clínicos obligan por ley a conducir con luces de emergencia encendidas." },
+        { "text": "Porque los estornudos provocan períodos de ceguera temporal en los que el vehículo avanza ciegamente varios metros." },
+        { "text": "Porque causan que el conductor aumente bruscamente la velocidad de forma involuntaria." },
+        { "text": "Porque invalidan permanentemente la licencia de conducir." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "El acto de estornudar cierra los ojos del conductor. A 90 km/h, un estornudo de un segundo equivale a transitar 25 metros ciego.",
+      "sourcePageStart": 58,
+      "sourcePageEnd": 58,
+      "sourceReference": "Pág. 58, Alergias Respiratorias",
+      "groundingExcerpt": "En un viaje por carretera circulando a 90 km/h, durante un estornudo de un segundo de duración, el vehículo recorre unos 25 metros sin que se pueda prestar atención a las condiciones de la vía.",
+      "reviewNotes": "Demostración física de un riesgo cotidiano.",
+      "tags": ["salud", "alergias"]
+    },
+    {
+      "externalId": "4-q036",
+      "prompt": "¿Qué recomendación se entrega a los conductores alérgicos para evitar cuadros o crisis de alergia al interior del vehículo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Circular exclusivamente durante las horas del amanecer." },
+        { "text": "Evitar conducir por zonas húmedas y no abrir las ventanas para impedir el ingreso de polen." },
+        { "text": "Automedicarse siempre con antihistamínicos fuertes de rápida acción antes de subir al auto." },
+        { "text": "Mantener siempre el aire acondicionado al máximo de potencia directo al rostro." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "Prevenir el ingreso del polen manteniendo ventanas cerradas y evitar climas que favorezcan su liberación ayuda a mitigar las alergias.",
+      "sourcePageStart": 58,
+      "sourcePageEnd": 58,
+      "sourceReference": "Pág. 58, Consejos útiles para personas alérgicas",
+      "groundingExcerpt": "Intentar no abrir las ventanas durante la conducción, las corrientes de aire pueden aumentar las crisis, ya que contienen polen... Evitar conducir al amanecer y por zonas húmedas",
+      "reviewNotes": "Medidas de mitigación en caso de alergia.",
+      "tags": ["alergias", "prevencion"]
+    },
+    {
+      "externalId": "4-q037",
+      "prompt": "Al experimentar un alto nivel de estrés al volante, una de las reacciones peligrosas que puede sufrir el conductor es:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "La hiper-relajación muscular y aumento extremo de la agudeza visual." },
+        { "text": "Darse por vencido ante situaciones, mostrando pasividad o incluso llegando al pánico." },
+        { "text": "Un descenso en su frecuencia cardíaca que induce un estado de coma." },
+        { "text": "La capacidad para resolver lógicamente el origen del estrés sin detenerse." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "El estrés crónico puede saturar al conductor, generando respuestas pasivas ante el peligro o cuadros de pánico.",
+      "sourcePageStart": 59,
+      "sourcePageEnd": 59,
+      "sourceReference": "Pág. 59, Estrés",
+      "groundingExcerpt": "Otra reacción de la persona conductora, que se desencadena a causa del estrés, es el darse por vencida ante ciertas situaciones... pasiva y, en el peor de los casos, alejada de sí misma... pueda tener reacciones de pánico.",
+      "reviewNotes": "Repercusiones conductuales del estrés.",
+      "tags": ["estres", "psicologia"]
+    },
+    {
+      "externalId": "4-q038",
+      "prompt": "¿De qué manera influye un cuadro de depresión grave sobre las capacidades necesarias para una conducción segura?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Produce mayor empatía hacia otros conductores y reduce la velocidad de circulación." },
+        { "text": "Mejora el estado de alerta del conductor producto del insomnio previo." },
+        { "text": "Aumenta la somnolencia y fatiga, causando inseguridad y desconexión con el entorno vial." },
+        { "text": "Genera que el conductor actúe con extrema prudencia para evitar empeorar su situación." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "La apatía y lentitud producto de la depresión aíslan al conductor, incrementando el cansancio y el riesgo de choque.",
+      "sourcePageStart": 59,
+      "sourcePageEnd": 59,
+      "sourceReference": "Pág. 59, Depresión",
+      "groundingExcerpt": "La depresión produce inseguridad, lo que facilita cometer errores o comportarse de forma inesperada... conlleva mayor probabilidad de sufrir estados de somnolencia y de fatiga",
+      "reviewNotes": "La depresión clínica y el tránsito.",
+      "tags": ["salud-mental", "depresion"]
+    },
+    {
+      "externalId": "4-q039",
+      "prompt": "¿A qué nivel de intoxicación etílica se equipara el riesgo de conducir tras ingerir ciertos antihistamínicos que provocan somnolencia?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Equivale a una tasa de 0,1 a 0,3 g/l de alcohol." },
+        { "text": "Equivale al riesgo de conducir con 0,5 a 0,8 g/l (bajo la influencia del alcohol)." },
+        { "text": "Equivale a conducir en estado de ebriedad severa (1,5 g/l)." },
+        { "text": "El riesgo es nulo, ya que son medicamentos autorizados." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "Los efectos sedantes de la medicación para alergias merman la respuesta sensoriomotora casi tanto como una ingesta moderada a alta de alcohol.",
+      "sourcePageStart": 60,
+      "sourcePageEnd": 60,
+      "sourceReference": "Pág. 60, Antihistamínicos",
+      "groundingExcerpt": "Se ha comprobado que el riesgo de conducir bajo los efectos de algunos de estos medicamentos es equivalente al riesgo de conducir con una tasa de alcohol en la sangre de 0,5 g/l a 0,8 g/l, esto es, conducir bajo la influencia del alcohol.",
+      "reviewNotes": "Peligro oculto en medicamentos comunes.",
+      "tags": ["medicamentos", "alergias"]
+    },
+    {
+      "externalId": "4-q040",
+      "prompt": "¿Qué es un microsueño al momento de estar al volante?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Un reposo voluntario de 20 minutos que se realiza en la berma." },
+        { "text": "Un período de algunos segundos en los que el conductor queda ligeramente dormido sin darse cuenta." },
+        { "text": "El acto de soñar despierto manteniendo los ojos totalmente abiertos sin perder el control." },
+        { "text": "El estado de adormecimiento causado únicamente por psicofármacos." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "Los microsueños son desconexiones cerebrales breves e involuntarias, sumamente peligrosas porque el sujeto no percibe que se durmió.",
+      "sourcePageStart": 62,
+      "sourcePageEnd": 62,
+      "sourceReference": "Pág. 62, Efectos del cansancio y del sueño",
+      "groundingExcerpt": "Pueden presentarse microsueños, que son períodos de algunos segundos en que la persona conductora, sin darse cuenta, se queda ligeramente dormida y totalmente ajena a lo que ocurre a su alrededor.",
+      "reviewNotes": "Definición de fenómeno biológico riesgoso.",
+      "tags": ["fatiga", "sueno"]
+    },
+    {
+      "externalId": "4-q041",
+      "prompt": "Aunque haya dormido lo suficiente durante la noche, ¿en qué horarios es más probable o favorable la aparición de somnolencia al volante?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Entre las 8 y las 10 AM, y entre las 18 y 20 PM." },
+        { "text": "Exclusivamente después de las 22:00 horas." },
+        { "text": "En la madrugada (3 a 5 horas) y a primeras horas de la tarde (14 a 16 horas)." },
+        { "text": "Entre el mediodía (12:00) y las 13:00 horas." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "El reloj biológico (ritmo circadiano) provoca valles naturales de alerta durante la madrugada y tras la hora de almuerzo.",
+      "sourcePageStart": 63,
+      "sourcePageEnd": 63,
+      "sourceReference": "Pág. 63, Factores que favorecen el sueño",
+      "groundingExcerpt": "El momento del día. La madrugada, especialmente entre las 3 y las 5 horas, y las primeras horas de la tarde, entre las 14 y las 16 horas, son especialmente favorables para la aparición de somnolencia",
+      "reviewNotes": "Ciclo circadiano y fatiga vial.",
+      "tags": ["fatiga", "horarios"]
+    },
+    {
+      "externalId": "4-q042",
+      "prompt": "En viajes largos, para prevenir los efectos de la fatiga, ¿cuál es el régimen de descanso recomendado para el conductor?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Detenerse al menos 10 minutos por cada 4 horas de conducción continua." },
+        { "text": "Descansar al menos 20 a 30 minutos cada 2 horas o 200 kilómetros de conducción." },
+        { "text": "Descansar únicamente cuando sienta los párpados pesados." },
+        { "text": "Hacer pausas de 5 minutos cada vez que cambie de provincia." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "Se establece la regla de descanso de 2 horas o 200 km como parámetro seguro para que el cuerpo mitigue el desgaste de conducir.",
+      "sourcePageStart": 66,
+      "sourcePageEnd": 66,
+      "sourceReference": "Pág. 66, Consejos en caso de fatiga",
+      "groundingExcerpt": "En viajes largos, descansa al menos 20 a 30 minutos cada 2 horas o 200 kilómetros de conducción, como máximo.",
+      "reviewNotes": "Norma universal de prevención de fatiga en viajes.",
+      "tags": ["fatiga", "prevencion"]
+    },
+    {
+      "externalId": "4-q043",
+      "prompt": "¿Qué efecto engañoso puede tener el consumo de sustancias estimulantes (como café o bebidas energéticas) para combatir el sueño en ruta?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Mejoran permanentemente la coordinación motriz por el resto del día." },
+        { "text": "Pueden producir un efecto rebote, donde el sueño aparece de forma repentina cuando cesa su efecto." },
+        { "text": "Anulan totalmente la necesidad de dormir durante al menos 24 horas." },
+        { "text": "Reducen el campo visual lateral de manera permanente." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "Los estimulantes solo enmascaran temporalmente la fatiga; cuando su efecto decae, el agotamiento retorna violentamente (efecto rebote).",
+      "sourcePageStart": 64,
+      "sourcePageEnd": 64,
+      "sourceReference": "Pág. 64, Sustancias estimulantes",
+      "groundingExcerpt": "El café, té, hierba mate y las bebidas energéticas pueden resultar útiles en el momento inmediato... sin embargo cuando cesa su efecto, se puede producir un efecto rebote, es decir, el sueño aparecerá repentinamente.",
+      "reviewNotes": "Peligros del uso de estimulantes comerciales.",
+      "tags": ["fatiga", "estimulantes"]
+    },
+    {
+      "externalId": "4-q044",
+      "prompt": "¿Cómo se suele manifestar la primera fase del cansancio en el conductor?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Con una aceleración involuntaria de la velocidad del vehículo." },
+        { "text": "Con pérdida del conocimiento y caída brusca de la cabeza hacia el volante." },
+        { "text": "Con una falta de interés frente a los estímulos, cierta sensación de pereza y bostezos." },
+        { "text": "Con dolores musculares agudos en la zona lumbar exclusivamente." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "La fatiga se instala de forma sutil, iniciando con distracción pasiva y bostezos antes de que el sueño sea incontrolable.",
+      "sourcePageStart": 63,
+      "sourcePageEnd": 63,
+      "sourceReference": "Pág. 63, Diferentes fases de cansancio",
+      "groundingExcerpt": "La primera señal de cansancio se manifiesta con una falta de interés frente a los estímulos y cierta sensación de pereza ante la actividad intelectual. En esta fase inicial se presencian los primeros bostezos.",
+      "reviewNotes": "Identificación temprana de los síntomas del sueño.",
+      "tags": ["fatiga", "sintomas"]
+    },
+    {
+      "externalId": "4-q045",
+      "prompt": "¿Qué alteración en la toma de decisiones sufre un conductor al que le ha sobrevenido la fatiga?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Mejora la capacidad de procesar datos, pero demora en reaccionar físicamente." },
+        { "text": "Comienza a calcular mejor las distancias debido a la tensión muscular." },
+        { "text": "Disminuye la cantidad y calidad de información recogida, facilitando malinterpretar situaciones." },
+        { "text": "Decide circular por la vía más larga para disfrutar el viaje." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "La fatiga afecta el nivel de atención, haciendo que el conductor capture menos datos del entorno y analice mal lo poco que observa.",
+      "sourcePageStart": 65,
+      "sourcePageEnd": 65,
+      "sourceReference": "Pág. 65, Efectos de la fatiga",
+      "groundingExcerpt": "La cantidad y calidad de información que se recoge del entorno disminuye, lo que facilita malinterpretar situaciones o comportamientos de las demás personas.",
+      "reviewNotes": "Impacto cognitivo del cansancio extremo.",
+      "tags": ["fatiga", "cognicion"]
+    },
+    {
+      "externalId": "4-q046",
+      "prompt": "¿A qué se debe principalmente la necesidad de prever el comportamiento de los demás usuarios viales (como peatones o ciclistas)?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "A que el conductor humano tiene un límite en su capacidad de procesamiento de información y tiempo de reacción." },
+        { "text": "A que los demás usuarios no conocen las normas del tránsito." },
+        { "text": "A que las vías chilenas no están diseñadas para peatones." },
+        { "text": "A que el vehículo tiene una inercia incontrolable." }
+      ],
+      "correctOptionIndexes": [0],
+      "publicExplanation": "Dado que el cerebro no puede procesar todos los estímulos simultáneamente ni reaccionar de forma instantánea, el conductor debe intentar prever qué harán los demás para compensar esas limitaciones.",
+      "sourcePageStart": 37,
+      "sourcePageEnd": 37,
+      "sourceReference": "Pág. 37, La persona en el tránsito",
+      "groundingExcerpt": "Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar el volante. Por ello, es importante... estés consciente de cómo actúan las y los usuarios del tránsito",
+      "reviewNotes": "Concepto introductorio sobre limitaciones humanas.",
+      "tags": ["capacidades-humanas", "anticipacion"]
+    },
+    {
+      "externalId": "4-q047",
+      "prompt": "Al conducir en la oscuridad, las limitaciones visuales hacen que el cerebro pueda interpretar erróneamente la distancia. ¿Qué factor contribuye principalmente a esto?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "El exceso de reflectividad en las líneas del pavimento." },
+        { "text": "Que a distancias cortas los indicios y pistas son nulos." },
+        { "text": "Que los colores y contornos claros, esenciales para calcular distancias, se difuminan." },
+        { "text": "El funcionamiento acelerado de la mácula lútea." }
+      ],
+      "correctOptionIndexes": [2],
+      "publicExplanation": "El cálculo de distancia depende fuertemente de la nitidez de los bordes y los colores, factores que se pierden con la caída de la luz natural.",
+      "sourcePageStart": 109,
+      "sourcePageEnd": 109,
+      "sourceReference": "Pág. 109, Conducción en la oscuridad",
+      "groundingExcerpt": "Nuestra capacidad de calcular distancias depende de que veamos colores y contornos claros. En la oscuridad, estos se difuminan.",
+      "reviewNotes": "Visión nocturna (también presente en los efectos visuales, Cap 7 lo menciona pero Cap 4 introduce ceguera y juicios erróneos. Este extracto exacto es p109 pero se vincula a limitaciones del ojo. Usaremos el texto literal).",
+      "tags": ["vision-nocturna", "distancia"]
+    },
+    {
+      "externalId": "4-q048",
+      "prompt": "¿Qué nos enseña la Ley de Tránsito chilena respecto de la mezcla de medicamentos como los antihistamínicos con la conducción?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Que siempre es ilegal conducir luego de ingerir un antihistamínico." },
+        { "text": "Que el riesgo por somnolencia puede equipararse al de conducir bajo la influencia del alcohol." },
+        { "text": "Que deben consumirse junto a bebidas estimulantes para contrarrestar el efecto." },
+        { "text": "Que no existen antihistamínicos seguros para los conductores." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "Se debe tener cuidado porque los efectos sedantes de los antialérgicos de primera generación son comparables a llevar entre 0.5 y 0.8 g/l de alcohol.",
+      "sourcePageStart": 60,
+      "sourcePageEnd": 60,
+      "sourceReference": "Pág. 60, Antihistamínicos",
+      "groundingExcerpt": "Se ha comprobado que el riesgo de conducir bajo los efectos de algunos de estos medicamentos es equivalente al riesgo de conducir con una tasa de alcohol en la sangre de 0,5 g/l a 0,8 g/l",
+      "reviewNotes": "Comparativa de riesgos medicación vs alcohol.",
+      "tags": ["medicamentos", "riesgos"]
+    },
+    {
+      "externalId": "4-q049",
+      "prompt": "Al transitar por una vía larga y monótona a altas velocidades, ¿por qué es común que el conductor subestime su propia velocidad?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Porque el velocímetro digital suele marcar una velocidad inferior a la real en viajes largos." },
+        { "text": "Porque se acostumbra a la velocidad y los autos modernos son silenciosos y sin vibraciones." },
+        { "text": "Porque la visión periférica aumenta su nitidez con el tiempo." },
+        { "text": "Porque se incrementa el nivel de la mácula ciega del ojo." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La falta de ruido, vibración y la monotonía visual causan un fenómeno de habituación donde el conductor pierde la noción real de la rapidez con la que avanza.",
+      "sourcePageStart": 43,
+      "sourcePageEnd": 43,
+      "sourceReference": "Pág. 43, Procesamiento limitado de información",
+      "groundingExcerpt": "tal subestimación se produce al acostumbrarse a cierta velocidad y a no recibir las impresiones sensoriales necesarias para darse cuenta... Los automóviles modernos tienen una marcha bastante silenciosa y sin vibraciones",
+      "reviewNotes": "Subestimación de velocidad por habituación.",
+      "tags": ["velocidad", "percepcion"]
+    },
+    {
+      "externalId": "4-q050",
+      "prompt": "Un conductor sometido a la presión de sus acompañantes (presión social) puede ser inducido a...",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        { "text": "Ser mucho más precavido de lo habitual, mejorando la seguridad." },
+        { "text": "Llevar a cabo acciones imprevistas, como conducir más rápido o agresivamente." },
+        { "text": "Metabolizar el alcohol en la sangre de manera más lenta." },
+        { "text": "Sentir una mayor empatía por los ciclistas y peatones." }
+      ],
+      "correctOptionIndexes": [1],
+      "publicExplanation": "La influencia del grupo o acompañantes a menudo propicia que el conductor adopte conductas riesgosas que no realizaría estando solo, por temor a burlas o para encajar.",
+      "sourcePageStart": 47,
+      "sourcePageEnd": 47,
+      "sourceReference": "Pág. 47, Manejo de la presión social",
+      "groundingExcerpt": "La influencia del grupo puede ser altamente negativa y contribuir a que efectues acciones imprevistas... a actuar siguiendo los deseos del grupo.",
+      "reviewNotes": "Impacto social en la toma de decisiones al volante.",
+      "tags": ["presion-social", "psicologia"]
+    }
+  ]
+}

@@ -10,3 +10,4 @@ vite.config.d.ts
 .codex/
 .env
 .env.local
+.env.production.local

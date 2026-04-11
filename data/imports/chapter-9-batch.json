@@ -1,0 +1,1357 @@
+{
+  "batchId": "9-batch-2026-04-10-01",
+  "editionId": "edition-2026",
+  "chapterId": "9",
+  "sourceDocumentId": "manual-claseb-2026",
+  "sourceDocumentTitle": "Libro del Nuevo Conductor Clase B 2026",
+  "generatedAt": "2026-04-10T23:32:00Z",
+  "generator": {
+    "provider": "frontier-ai",
+    "model": "gemini-1.5-pro"
+  },
+  "questions": [
+    {
+      "externalId": "9-q001",
+      "prompt": "¿Qué obligaciones impone la ley a toda persona que participe en un siniestro de tránsito del cual resulten lesiones o muerte?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Detener su marcha, prestar la ayuda que fuese posible y dar cuenta a la autoridad policial más cercana."
+        },
+        {
+          "text": "Avisar a su compañía de seguros antes de intentar mover su vehículo o a los heridos."
+        },
+        {
+          "text": "Detenerse solo si considera objetivamente que tuvo la culpa del siniestro vial."
+        },
+        {
+          "text": "Continuar su marcha si hay más personas ayudando y presentarse en la comisaría en un plazo de 24 horas."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La ley de tránsito obliga, sin importar la culpabilidad, a detenerse, ayudar y llamar a la policía en todo siniestro con víctimas.",
+      "sourcePageStart": 136,
+      "sourcePageEnd": 136,
+      "sourceReference": "Pág. 136, Cómo comportarse en caso de siniestro",
+      "groundingExcerpt": "Toda persona, con culpa o sin ella, que participe en un siniestro de tránsito en el que resulten personas lesionadas y/o muertas está obligada a detener su marcha, prestar la ayuda que fuese posible y dar cuenta a la autoridad policial más cercana.",
+      "reviewNotes": "Deber de auxilio legal.",
+      "tags": [
+        "siniestros",
+        "obligaciones-legales"
+      ]
+    },
+    {
+      "externalId": "9-q002",
+      "prompt": "¿Qué consecuencia legal penal tiene el darse a la fuga y no dar aviso a la policía tras participar en un siniestro con personas lesionadas?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Es un delito que puede ser sancionado con la inhabilidad de por vida para conducir vehículos y penas de cárcel efectiva."
+        },
+        {
+          "text": "Es considerado solo una falta gravísima que implica una alta multa monetaria al juzgado."
+        },
+        {
+          "text": "Resulta en la suspensión temporal de la licencia de conducir por un máximo de 45 días hábiles."
+        },
+        {
+          "text": "Solo se obliga al conductor a pagar todos los daños médicos y materiales de los afectados."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Huir del lugar del accidente omitiendo el auxilio a las víctimas es un delito grave penado incluso con presidio e inhabilitación perpetua.",
+      "sourcePageStart": 136,
+      "sourcePageEnd": 136,
+      "sourceReference": "Pág. 136, Cómo comportarse en caso de siniestro",
+      "groundingExcerpt": "El darse a la fuga y no dar aviso a la autoridad policial es un delito que puede ser sancionado incluso con la inhabilidad de por vida para conducir vehículos y penas de cárcel efectiva de al menos un año.",
+      "reviewNotes": "Penalidad por omisión de socorro/fuga.",
+      "tags": [
+        "delitos",
+        "siniestros",
+        "penalidades"
+      ]
+    },
+    {
+      "externalId": "9-q003",
+      "prompt": "Si usted se detiene para ayudar en un siniestro y nota que uno de los vehículos involucrados posee un distintivo de 'Vehículo Eléctrico' o 'Híbrido', ¿qué precaución extrema debe tomar de inmediato?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Nunca debe manipularlos sin capacitación y por ningún motivo tocar la línea de alto voltaje que es de color naranjo."
+        },
+        {
+          "text": "Desconectar de inmediato los gruesos cables azules de la batería principal para evitar electrocuciones."
+        },
+        {
+          "text": "Rociar agua abundante sobre el capó del motor para prevenir el recalentamiento de las celdas de batería."
+        },
+        {
+          "text": "Tratar de encender el vehículo girando la llave para verificar si el circuito de alto voltaje sigue activo."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Los vehículos eléctricos/híbridos cuentan con líneas de alto voltaje (usualmente naranja) que pueden ser mortales si se manipulan sin entrenamiento tras un impacto.",
+      "sourcePageStart": 136,
+      "sourcePageEnd": 136,
+      "sourceReference": "Pág. 136, Cómo comportarse en caso de siniestro",
+      "groundingExcerpt": "identifica si los vehículos involucrados son eléctricos o híbridos... nunca debes manipularlos si no tienes una capacitación y, por ningún motivo, debes tocar la línea de alto voltaje que se encuentra en la parte interna del vehículo y que se denota internacionalmente con un material aislante de color naranjo.",
+      "reviewNotes": "Precaución con nuevas tecnologías en accidentes.",
+      "tags": [
+        "emergencias",
+        "vehiculos-electricos"
+      ]
+    },
+    {
+      "externalId": "9-q004",
+      "prompt": "Al prestar primeros auxilios en un siniestro, ¿en qué circunstancia excepcional se justifica mover o trasladar a una persona lesionada del lugar del accidente antes de que llegue la ambulancia?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Únicamente cuando el escenario imponga un peligro inminente para su vida o la de quien ayuda, como amenaza de incendio, explosión o riesgo de atropello."
+        },
+        {
+          "text": "Cuando la persona lesionada se queje de frío extremo y solicite voluntariamente ser trasladada a la vereda."
+        },
+        {
+          "text": "Cuando los servicios de emergencia de la carretera tarden más de 15 minutos en llegar al sitio del suceso."
+        },
+        {
+          "text": "Siempre se debe apartar a los heridos hacia la berma para no obstruir ni detener el flujo del resto de los vehículos."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Mover a un accidentado puede agravar gravemente lesiones espinales; solo el peligro inminente (fuego, colisión secundaria) justifica su movimiento inexperto.",
+      "sourcePageStart": 137,
+      "sourcePageEnd": 137,
+      "sourceReference": "Pág. 137, Los primeros auxilios",
+      "groundingExcerpt": "Independiente de cómo se vean las personas, evita moverlas y trasladarlas del lugar sin la debida autorización por parte del equipo de salud, a menos que el escenario imponga peligro inminente para la vida de las personas lesionadas o de quien presta primeros auxilios, por ejemplo, un peligro realmente amenazante de incendio o explosión, o de que puedan ser atropelladas en la calzada.",
+      "reviewNotes": "Criterio de movilización de heridos.",
+      "tags": [
+        "primeros-auxilios",
+        "siniestros"
+      ]
+    },
+    {
+      "externalId": "9-q005",
+      "prompt": "Si en un siniestro de tránsito la persona afectada es un motociclista o ciclista que yace en el suelo con su casco protector puesto, ¿qué debe hacer usted respecto a dicho casco?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "No debe quitárselo nunca, ya que al hacerlo podría provocar una lesión grave en la columna cervical."
+        },
+        {
+          "text": "Debe quitárselo de inmediato pero con mucho cuidado, para facilitar el paso del oxígeno a las vías respiratorias."
+        },
+        {
+          "text": "Debe desabrocharlo y dejarlo puesto bajo la nuca a modo de almohada inmovilizadora."
+        },
+        {
+          "text": "Debe quitárselo exclusivamente si la persona se encuentra totalmente consciente y se lo solicita."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Retirar el casco a una víctima requiere tracción y técnicas que, si se hacen mal, pueden cortar la médula espinal ante una fractura cervical oculta.",
+      "sourcePageStart": 137,
+      "sourcePageEnd": 137,
+      "sourceReference": "Pág. 137, Los primeros auxilios",
+      "groundingExcerpt": "Si la persona afectada es motociclista o ciclista con casco, no debes quitárselo nunca, ya que al hacerlo, podrías provocar una lesión en la columna cervical.",
+      "reviewNotes": "Norma estricta de rescate sobre cascos.",
+      "tags": [
+        "primeros-auxilios",
+        "motociclistas"
+      ]
+    },
+    {
+      "externalId": "9-q006",
+      "prompt": "Aplicando el orden de atención de primeros auxilios (XABCDE), en la fase 'X' (Control de hemorragias graves), si la presión directa sobre una herida en las extremidades no basta para contener la sangre, ¿qué maniobra se indica?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Realizar un torniquete en la zona más superior posible de dicha extremidad."
+        },
+        {
+          "text": "Aplicar hielo de forma directa sobre la herida para provocar constricción vascular."
+        },
+        {
+          "text": "Elevar inmediatamente las extremidades inferiores de la víctima por encima del nivel de su corazón."
+        },
+        {
+          "text": "Suministrar agua fresca para evitar que la persona pierda el conocimiento por hipovolemia."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Para hemorragias masivas exanguinantes (letra X), si la presión directa falla, la directriz actual de trauma es la colocación de un torniquete alto.",
+      "sourcePageStart": 137,
+      "sourcePageEnd": 137,
+      "sourceReference": "Pág. 137, X: Control de hemorragias graves",
+      "groundingExcerpt": "Si esta herida es en las extremidades superiores o inferiores y no es posible contener la hemorragia con la presión directa, realiza un torniquete en la zona más superior posible de dicha extremidad.",
+      "reviewNotes": "Protocolo de trauma XABCDE: letra X.",
+      "tags": [
+        "primeros-auxilios",
+        "hemorragias"
+      ]
+    },
+    {
+      "externalId": "9-q007",
+      "prompt": "Al realizar la evaluación de primeros auxilios 'A' (Abrir la vía aérea) a una persona que no responde a estímulos, ¿qué maniobra física debe realizar para evitar que su lengua obstruya el paso de aire?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Realizar la maniobra frente-mentón, poniendo una mano en la frente y la otra elevando el mentón."
+        },
+        {
+          "text": "Girar bruscamente la cabeza de la víctima hacia el lado izquierdo para liberar la lengua."
+        },
+        {
+          "text": "Empujar el pecho de la víctima hacia abajo repetidas veces con ambas manos entrelazadas."
+        },
+        {
+          "text": "Introducir los dedos en la garganta de la persona para sacar la lengua hacia afuera."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La técnica universal para despejar la vía respiratoria en un paciente inconsciente es extender el cuello elevando el mentón y empujando la frente hacia atrás.",
+      "sourcePageStart": 137,
+      "sourcePageEnd": 137,
+      "sourceReference": "Pág. 137, A: Abrir la vía aérea",
+      "groundingExcerpt": "En el caso que la persona no responda a estímulos, es probable que la lengua caiga hacia la parte posterior de su boca y obstruya el normal paso del aire. En este caso, deberás abrir la vía aérea para despejarla utilizando la maniobra frente-mentón. Para realizarla debes poner una mano en la frente y la otra en el mentón elevándolo...",
+      "reviewNotes": "Protocolo de trauma XABCDE: letra A.",
+      "tags": [
+        "primeros-auxilios",
+        "via-aerea"
+      ]
+    },
+    {
+      "externalId": "9-q008",
+      "prompt": "Si usted presencia un siniestro donde se ve involucrado un camión que porta un rombo amarillo con el símbolo de una flama negra u otros rótulos de cargas peligrosas, ¿qué precaución inicial debe tomar?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Mantenerse a una distancia prudente y en una ubicación tal que el viento no corra desde el vehículo involucrado hacia usted."
+        },
+        {
+          "text": "Acercarse lo antes posible a las válvulas del estanque para comprobar visualmente la existencia de fugas."
+        },
+        {
+          "text": "Intentar abrir las puertas traseras del semirremolque para permitir que los gases peligrosos se ventilen rápido."
+        },
+        {
+          "text": "Rociar rápidamente el contorno del camión con agua u otros líquidos refrigerantes."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Los materiales químicos, tóxicos o inflamables exigen mantenerse alejado y preferentemente a favor del viento, para no inhalar ni entrar en contacto con sustancias letales.",
+      "sourcePageStart": 138,
+      "sourcePageEnd": 138,
+      "sourceReference": "Pág. 138, Siniestro con vehículo que transporta cargas peligrosas",
+      "groundingExcerpt": "Frente a un siniestro de tránsito en que se vea involucrado un camión que porte rótulos como los antes señalados, tienes que tener extrema cautela. Mantente a una distancia prudente de él y en una ubicación tal que el viento no corra desde el vehículo involucrado hacia ti; no enciendas alguna llama ni fumes...",
+      "reviewNotes": "Manejo de emergencias HazMat básicas.",
+      "tags": [
+        "siniestros",
+        "cargas-peligrosas",
+        "emergencias"
+      ]
+    },
+    {
+      "externalId": "9-q009",
+      "prompt": "De acuerdo a las disposiciones legales, ¿qué conjunto de documentos es indispensable portar para que un vehículo motorizado pueda circular legalmente por las vías chilenas?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La placa patente, el permiso de circulación municipal, el Seguro Obligatorio de Accidentes Personales (SOAP) y el certificado de revisión técnica o de homologación."
+        },
+        {
+          "text": "Exclusivamente el permiso de circulación anual y el certificado de revisión técnica aprobada."
+        },
+        {
+          "text": "La factura original de compra del vehículo, el carnet de identidad del propietario y la licencia de conducir."
+        },
+        {
+          "text": "Un seguro privado voluntario contra terceros, la placa patente única y el certificado de emisiones de gases al día."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Circular requiere que el vehículo esté plenamente identificado (patente), pague su derecho (permiso), asegure a las víctimas (SOAP) y cumpla estándares técnicos (Revisión/Homologación).",
+      "sourcePageStart": 139,
+      "sourcePageEnd": 139,
+      "sourceReference": "Pág. 139, Disposiciones aplicables a los vehículos",
+      "groundingExcerpt": "Los vehículos motorizados no pueden circular sin su placa patente, el permiso de circulación otorgado por la respectiva Municipalidad y el certificado de un Seguro Obligatorio de Accidentes Personales... Asimismo, en los vehículos debe portarse el certificado de su revisión técnica o de homologación, los que deben encontrarse siempre vigentes.",
+      "reviewNotes": "Documentación básica del vehículo.",
+      "tags": [
+        "documentacion",
+        "normativa"
+      ]
+    },
+    {
+      "externalId": "9-q010",
+      "prompt": "¿Cuál es la sanción o medida inmediata contemplada si un vehículo es sorprendido circulando sin su placa patente, sin su permiso de circulación o sin el seguro obligatorio (SOAP)?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El vehículo es retirado de la circulación de forma inmediata por Carabineros o Inspectores Municipales y puesto a disposición del Juzgado de Policía Local."
+        },
+        {
+          "text": "Se cursa una infracción o parte al conductor, pero se le permite continuar el viaje hasta su domicilio."
+        },
+        {
+          "text": "El automóvil pasa a ser incautado definitivamente y rematado a favor del Fisco chileno."
+        },
+        {
+          "text": "Se le retiene temporalmente la Licencia de Conducir a la persona al volante hasta que pague la respectiva multa."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La falta de los documentos críticos del vehículo o de su patente imposibilita la circulación segura y legal, obligando al retiro del móvil a los corrales municipales.",
+      "sourcePageStart": 139,
+      "sourcePageEnd": 139,
+      "sourceReference": "Pág. 139, Disposiciones aplicables a los vehículos",
+      "groundingExcerpt": "El no cumplimiento de estas obligaciones es causal de que el vehículo sea retirado de la circulación por Carabineros o Inspectores Municipales, quedando este a disposición del Juzgado de Policía Local que corresponda.",
+      "reviewNotes": "Consecuencias de conducir sin la documentación base.",
+      "tags": [
+        "fiscalizacion",
+        "documentacion"
+      ]
+    },
+    {
+      "externalId": "9-q011",
+      "prompt": "La 'Ley Patente Cero Días', vigente desde el año 2023, establece una prohibición y obligación estricta respecto a los vehículos motorizados nuevos. ¿Cuál es esta norma?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Todo vehículo nuevo debe ser entregado por el comercializador u automotora con sus Placas Patentes Únicas ya instaladas."
+        },
+        {
+          "text": "El comprador dispone de un permiso especial de gracia válido por 5 días para transitar sin las patentes definitivas."
+        },
+        {
+          "text": "Los vehículos nuevos pueden circular exhibiendo la factura de compra pegada en el parabrisas trasero durante su primer mes."
+        },
+        {
+          "text": "Exime a los vehículos eléctricos del uso de placas patentes durante su primer año de uso comercial."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Para evitar los delitos asociados a la circulación de autos sin placas, se eliminó cualquier plazo de gracia para circular sin ellas tras la compra.",
+      "sourcePageStart": 139,
+      "sourcePageEnd": 139,
+      "sourceReference": "Pág. 139, Patente única",
+      "groundingExcerpt": "La Ley Patente Cero Días, vigente desde febrero del año 2023, obliga que todo vehículo motorizado nuevo que se comercialice en el país deberá entregarse por parte de los comercializadores con sus Placas Patentes Únicas instaladas.",
+      "reviewNotes": "Reglamentación de la Ley Patente Cero Días.",
+      "tags": [
+        "patente",
+        "normativa"
+      ]
+    },
+    {
+      "externalId": "9-q012",
+      "prompt": "Al momento de acudir a la municipalidad correspondiente a pagar o renovar el Permiso de Circulación anual de su automóvil, ¿qué condiciones o requisitos debe acreditar previamente el vehículo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Que cuenta con la revisión técnica vigente y que está debidamente cubierto por el Seguro Obligatorio de Accidentes Personales (SOAP)."
+        },
+        {
+          "text": "Que la persona conductora o dueña del vehículo no posee deudas comerciales o morosidad bancaria."
+        },
+        {
+          "text": "Que el vehículo no ha sufrido alteraciones físicas en la carrocería ni cambios en el tono original de pintura."
+        },
+        {
+          "text": "Que el motor ha recibido mantenimiento en un taller certificado por el Ministerio de Transportes durante el último año."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El permiso de circulación se emite solo si el auto prueba estar en buen estado técnico (Revisión) y poseer el seguro contra daños a personas (SOAP).",
+      "sourcePageStart": 139,
+      "sourcePageEnd": 139,
+      "sourceReference": "Pág. 139, Permiso de circulación",
+      "groundingExcerpt": "Para obtener este permiso, los vehículos deben tener su revisión técnica vigente y estar cubiertos por el Seguro Obligatorio de Accidentes Personales (SOAP).",
+      "reviewNotes": "Requisitos administrativos para el permiso de circulación.",
+      "tags": [
+        "documentacion",
+        "permiso-circulacion"
+      ]
+    },
+    {
+      "externalId": "9-q013",
+      "prompt": "Respecto a la cobertura legal del Seguro Obligatorio de Accidentes Personales (SOAP), ante la ocurrencia de un siniestro de tránsito, este seguro cubre riesgos de muerte y lesiones de:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La persona conductora del vehículo, las personas transportadas (pasajeros) en él y cualquier tercer afectado, sin importar quién tuvo la culpa del accidente."
+        },
+        {
+          "text": "Solamente al conductor del vehículo y sus acompañantes directos, eximiendo la cobertura sobre peatones o terceros en la vía."
+        },
+        {
+          "text": "Toda persona involucrada en el accidente, pero excluyendo explícitamente a aquel conductor que se declare o compruebe culpable del choque."
+        },
+        {
+          "text": "Únicamente a los peatones o ciclistas que hayan sido víctimas directas de un atropello, excluyendo a los ocupantes del auto."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El SOAP es un seguro universal para víctimas físicas del tránsito, cubriendo a todos los humanos envueltos en el accidente amparado por el vehículo asegurado, independiente de responsabilidades viales.",
+      "sourcePageStart": 139,
+      "sourcePageEnd": 139,
+      "sourceReference": "Pág. 139, Seguro Obligatorio - SOAP",
+      "groundingExcerpt": "El seguro obligatorio cubre los riesgos de muerte y lesiones corporales que sufra la persona conductora del vehículo, las personas transportadas en él o cualquier tercero afectado, independientemente de quién sea culpable ante la ocurrencia de un siniestro de tránsito ocasionado por un vehículo motorizado.",
+      "reviewNotes": "Detalle de las coberturas del SOAP.",
+      "tags": [
+        "seguros",
+        "soap",
+        "siniestros"
+      ]
+    },
+    {
+      "externalId": "9-q014",
+      "prompt": "Para organizar administrativamente el país, a menos que se trate de vehículos nuevos, ¿en qué mes del año corresponde usualmente realizar el pago de los permisos de circulación de automóviles particulares y motocicletas?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Durante el mes de marzo."
+        },
+        {
+          "text": "En el transcurso del mes de enero."
+        },
+        {
+          "text": "A finales del mes de mayo."
+        },
+        {
+          "text": "Durante el mes de septiembre, previo a las festividades."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Por calendario oficial nacional, la renovación anual del permiso de circulación de autos particulares, camionetas, furgones y motos vence tradicionalmente en marzo.",
+      "sourcePageStart": 140,
+      "sourcePageEnd": 140,
+      "sourceReference": "Pág. 140, Responsabilidad de la persona conductora (Revisión técnica)",
+      "groundingExcerpt": "Considerando que, a menos que se trate de vehículos nuevos, los permisos de circulación deben ser pagados durante meses específicos según los distintos tipos de estos (marzo, en el caso de automóviles particulares y motocicletas).",
+      "reviewNotes": "Mes establecido para el trámite del permiso de circulación.",
+      "tags": [
+        "documentacion",
+        "tramites"
+      ]
+    },
+    {
+      "externalId": "9-q015",
+      "prompt": "Los vehículos que salen de la automotora como cero kilómetros o nuevos no requieren revisión técnica inmediata. ¿Qué documento oficial reemplaza a la revisión técnica y certifica que cumplen con las normas de emisiones y seguridad?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El Certificado de Homologación Individual emitido por el Ministerio de Transportes a través del 3CV."
+        },
+        {
+          "text": "El Certificado de Anotaciones Vigentes impreso por el Registro Civil."
+        },
+        {
+          "text": "La Factura Comercial de la Concesionaria timbrada por el Servicio de Impuestos Internos."
+        },
+        {
+          "text": "El Certificado Electrónico del Seguro Obligatorio (SOAP)."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La Homologación garantiza que la marca fabricante probó en el laboratorio nacional que ese modelo de vehículo es seguro y limpio, eximiéndolo de la revisión tradicional los primeros años.",
+      "sourcePageStart": 140,
+      "sourcePageEnd": 140,
+      "sourceReference": "Pág. 140, Responsabilidad de la persona conductora",
+      "groundingExcerpt": "En caso de vehículos nuevos, estos deben contar con su Certificado de Homologación Individual, el cual es un documento que emite el Ministerio de Transportes y Telecomunicaciones, a través del Centro de Control y Certificación Vehicular, 3CV, en el que se acredita que el vehículo cumple con las normas de emisiones y seguridad vigentes en el país.",
+      "reviewNotes": "Definición y función de la Homologación Vehicular.",
+      "tags": [
+        "documentacion",
+        "homologacion",
+        "revision-tecnica"
+      ]
+    },
+    {
+      "externalId": "9-q016",
+      "prompt": "Como conductor, usted tiene la obligación legal de portar siempre su Licencia de Conducir. En caso de que esta le haya sido retenida, ¿qué documento puede sustituirla excepcionalmente y exhibir ante una fiscalización?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Un permiso provisional otorgado por los Tribunales o una boleta de citación vigente al Juzgado."
+        },
+        {
+          "text": "Una fotocopia de la licencia retenida validada y timbrada ante un notario público."
+        },
+        {
+          "text": "El último comprobante de pago del permiso de circulación de la municipalidad."
+        },
+        {
+          "text": "No existe documento de reemplazo; queda estrictamente prohibido tomar el volante."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La ley de tránsito chilena permite circular transitoriamente con el parte/citación extendido por Carabineros o Juzgado mientras dura el proceso de una infracción no inhabilitante.",
+      "sourcePageStart": 141,
+      "sourcePageEnd": 141,
+      "sourceReference": "Pág. 141, Responsabilidad de la persona conductora",
+      "groundingExcerpt": "Como persona conductora tienes la obligación de portar siempre con la Licencia de Conducir... En el caso de que esta te haya sido retenida, en su reemplazo puedes exhibir un permiso provisional otorgado por los Tribunales o una boleta de citación al Juzgado.",
+      "reviewNotes": "Documentos sustitutivos legales de la licencia.",
+      "tags": [
+        "licencia",
+        "fiscalizacion"
+      ]
+    },
+    {
+      "externalId": "9-q017",
+      "prompt": "¿Qué establece fundamentalmente la 'Ley No Chat' respecto del uso de dispositivos como celulares durante la conducción de un vehículo o ciclo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Prohíbe manipular (operar con una o ambas manos) el dispositivo en todo momento de la conducción, incluyendo las detenciones en semáforos en rojo o señales PARE."
+        },
+        {
+          "text": "Prohíbe su uso únicamente al circular por autopistas y carreteras con velocidades máximas sobre 80 km/h."
+        },
+        {
+          "text": "Permite el envío de mensajes de texto cortos solo si el vehículo se encuentra detenido temporalmente en un taco."
+        },
+        {
+          "text": "Exige que el dispositivo móvil no viaje en la misma cabina, debiendo ser transportado obligatoriamente en el maletero del auto."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La Ley No Chat busca suprimir la distracción digital. Detenerse en un semáforo rojo sigue siendo parte de la conducción activa, por lo que usar el celular ahí está igualmente prohibido.",
+      "sourcePageStart": 141,
+      "sourcePageEnd": 141,
+      "sourceReference": "Pág. 141, Ley No Chat",
+      "groundingExcerpt": "La normativa detalla: No se puede manipular, esto es, operar con una o ambas manos, un celular o uno de los artefactos mencionados, incluso en los momentos en los que la persona que conduce está esperando en una luz roja, en un taco, en una señal “PARE”, etc.",
+      "reviewNotes": "Restricciones específicas de la Ley No Chat.",
+      "tags": [
+        "ley-no-chat",
+        "distracciones",
+        "normativa"
+      ]
+    },
+    {
+      "externalId": "9-q018",
+      "prompt": "Según el reglamento de la 'Ley No Chat', ¿cuál de los siguientes sistemas o posiciones NO se considera jurídicamente como un dispositivo de 'manos libres'?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Sostener o afirmar el dispositivo atrapándolo con el hombro contra la cabeza, o mantenerlo apoyado sobre las piernas."
+        },
+        {
+          "text": "Un sistema de audio integrado en la radio del auto que se empareja mediante conexión Bluetooth."
+        },
+        {
+          "text": "Los asistentes de voz integrados en el vehículo operados desde los botones del volante."
+        },
+        {
+          "text": "Un altavoz posicionado y fijado permanentemente en el quitasol del automóvil."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Cualquier método que exija posturas corporales forzadas o sujete el teléfono al cuerpo (hombro, piernas) no califica como manos libres, al generar distracción física.",
+      "sourcePageStart": 141,
+      "sourcePageEnd": 141,
+      "sourceReference": "Pág. 141, Ley No Chat",
+      "groundingExcerpt": "El reglamento de la Ley No Chat establece que no son “manos libres” los siguientes equipos:... Aquellos sistemas que para su uso requieran que la persona conductora los sostenga con su hombro, contra su cabeza o con otras partes del cuerpo, tales como sujeto sobre sus piernas o en su muñeca.",
+      "reviewNotes": "Definición legal de lo que NO es un manos libres.",
+      "tags": [
+        "ley-no-chat",
+        "manos-libres"
+      ]
+    },
+    {
+      "externalId": "9-q019",
+      "prompt": "En el marco de la 'Ley No Chat', si usted necesita emplear una aplicación celular de mapas (GPS) para orientarse a su destino, ¿cómo debe operarla correctamente?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Debe programar la ruta en la aplicación antes de iniciar el viaje, con el vehículo estacionado, y recibir instrucciones únicamente vía audio durante el trayecto."
+        },
+        {
+          "text": "Puede digitar la dirección en la pantalla libremente mientras conduce a baja velocidad en zona urbana."
+        },
+        {
+          "text": "Está autorizado a manipular el GPS cada vez que el vehículo detenga su marcha en un cruce con señal PARE."
+        },
+        {
+          "text": "La ley permite tocar el teléfono adherido al soporte magnético siempre y cuando no despegue las dos manos del volante al mismo tiempo."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El teléfono usado como GPS solo sirve visual y sonoramente; ingresar direcciones o tocar la pantalla mientras se está inserto en el tránsito constituye infracción gravísima.",
+      "sourcePageStart": 141,
+      "sourcePageEnd": 141,
+      "sourceReference": "Pág. 141, Ley No Chat",
+      "groundingExcerpt": "Para utilizar las aplicaciones de georreferenciación u otras, la persona conductora debe programar la ruta en la aplicación antes de iniciar el viaje, con el vehículo estacionado en un lugar seguro. Durante el trayecto puede recibir instrucciones vía audio.",
+      "reviewNotes": "Uso permitido del GPS en el vehículo.",
+      "tags": [
+        "ley-no-chat",
+        "gps",
+        "normativa"
+      ]
+    },
+    {
+      "externalId": "9-q020",
+      "prompt": "Un joven de 17 años ha obtenido excepcionalmente su Licencia de Conducir Clase B. Hasta que alcance la mayoría de edad (18 años), ¿qué condición estricta le impone la ley para poder conducir en la vía pública?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Debe ir siempre acompañado en el asiento delantero por alguien en condiciones de sustituirlo, que posea una licencia que lo habilite con no menos de 5 años de antigüedad."
+        },
+        {
+          "text": "Debe conducir obligatoria y exclusivamente acompañado de uno de sus padres o apoderado legal, sin importar si estos poseen licencia de conducir."
+        },
+        {
+          "text": "Está autorizado a conducir en solitario, pero tiene prohibido estrictamente ingresar a vías interurbanas o autopistas concesionadas."
+        },
+        {
+          "text": "Debe llevar adosado al parabrisas trasero y delantero del vehículo el distintivo triangular verde de 'Conductor Principiante'."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La licencia para jóvenes de 17 años obliga a transitar bajo supervisión directa (de un copiloto hábil y experimentado de al menos 5 años de licencia) para mitigar el riesgo de su falta de madurez y pericia.",
+      "sourcePageStart": 142,
+      "sourcePageEnd": 142,
+      "sourceReference": "Pág. 142, Acompañante de una persona conductora de 17 años",
+      "groundingExcerpt": "Hasta que la persona no cumpla 18 años, deberá conducir siempre acompañada, en el asiento delantero, de una persona conductora que esté en condiciones de sustituirlo en la conducción. Esta debe tener una Licencia de Conducir que la habilite para conducir los tipos de vehículos autorizados para la Clase B de no menos de 5 años de antigüedad.",
+      "reviewNotes": "Restricción legal del permiso de menor de edad.",
+      "tags": [
+        "licencia",
+        "menores",
+        "acompanante"
+      ]
+    },
+    {
+      "externalId": "9-q021",
+      "prompt": "Al emitir o renovar la licencia, el médico del gabinete psicotécnico puede estipular restricciones al conductor, como por ejemplo la 'utilización de lentes'. Respecto a estas restricciones, es obligatorio que:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Sean cumplidas estrictamente en todo momento mientras la persona se encuentre conduciendo un vehículo."
+        },
+        {
+          "text": "Se cumplan únicamente cuando se conduce en autopistas o vías donde el límite supere los 80 km/h."
+        },
+        {
+          "text": "Sean aplicadas a discreción del conductor si siente la vista cansada, portando los lentes en la guantera."
+        },
+        {
+          "text": "Afectan solo a conductores profesionales, siendo sugerencias menores para la licencia Clase B."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Toda anotación restrictiva en el plástico de la licencia (lentes, prótesis, caja automática) tiene peso de ley obligatoria en todo trayecto.",
+      "sourcePageStart": 142,
+      "sourcePageEnd": 142,
+      "sourceReference": "Pág. 142, Restricción a la Licencia de Conducir",
+      "groundingExcerpt": "Estas restricciones deben ser cumplidas en todo momento mientras conduzcas. Por ejemplo, si el médico dictaminó el uso de lentes, no puedes manejar sin ellos.",
+      "reviewNotes": "Validez jurídica de las restricciones en la licencia.",
+      "tags": [
+        "licencia",
+        "restricciones"
+      ]
+    },
+    {
+      "externalId": "9-q022",
+      "prompt": "Según la tabla de suspensión y cancelación contenida en el manual, si un conductor excede el límite máximo de velocidad permitida en más de 20 km/h, ¿qué sanción a su Licencia de Conducir arriesga inicialmente?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La suspensión de la Licencia de Conducir por un lapso entre 5 y 45 días."
+        },
+        {
+          "text": "La suspensión obligatoria de la Licencia por un tiempo base de 3 meses."
+        },
+        {
+          "text": "La inhabilitación perpetua o de por vida para poder conducir vehículos motorizados."
+        },
+        {
+          "text": "No acarrea suspensión, solo el cobro de una papeleta por multa gravísima."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Exceder sobre los 20 km/h constituye una infracción gravísima, cuyo castigo inmediato contempla quitar el documento para manejar por entre 5 a 45 jornadas.",
+      "sourcePageStart": 142,
+      "sourcePageEnd": 142,
+      "sourceReference": "Pág. 142, Suspensión y cancelación de la Licencia",
+      "groundingExcerpt": "Entre 5 y 45 días*... Exceder en más de 20 km/h un límite de velocidad máxima.",
+      "reviewNotes": "Tabulación de sanciones por velocidad.",
+      "tags": [
+        "suspension",
+        "velocidad",
+        "infracciones"
+      ]
+    },
+    {
+      "externalId": "9-q023",
+      "prompt": "La transgresión a normas fundamentales de seguridad, como no detenerse de forma completa ante la luz roja de un semáforo o ante una señal PARE, se castiga con multas monetarias y además acarrea:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La suspensión de la Licencia de Conducir por un plazo determinado entre 5 y 45 días."
+        },
+        {
+          "text": "El retiro inmediato e impostergable del vehículo de circulación hacia corrales municipales."
+        },
+        {
+          "text": "Una anotación de demérito que prohíbe renovar la licencia en los próximos 10 años."
+        },
+        {
+          "text": "Una citación de advertencia si no se provocaron accidentes con resultado de muerte."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Saltarse las dos señales principales de detención es la falta gravísima más letal y común, penándose siempre con el decomiso transitorio de la licencia del conductor.",
+      "sourcePageStart": 142,
+      "sourcePageEnd": 143,
+      "sourceReference": "Pág. 142-143, Suspensión y cancelación...",
+      "groundingExcerpt": "Entre 5 y 45 días*... No detenerse ante una luz roja del semáforo o ante una señal PARE.",
+      "reviewNotes": "Castigo administrativo a pasarse la roja o pare.",
+      "tags": [
+        "suspension",
+        "semaforos",
+        "infracciones"
+      ]
+    },
+    {
+      "externalId": "9-q024",
+      "prompt": "Para incentivar el resguardo de la infancia, la normativa elevó a categoría de falta gravísima con suspensión de Licencia de Conducir (de 5 a 45 días) el omitir la utilización de:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El Sistema de Retención Infantil (silla) al transportar niños de hasta 8 años o de 135 cm y 33 kg en los asientos traseros."
+        },
+        {
+          "text": "Los chalecos reflectantes amarillos en caso de detención rural portando niños a bordo."
+        },
+        {
+          "text": "El bloqueo electrónico de ventanas traseras y alzavidrios infantiles del vehículo."
+        },
+        {
+          "text": "Señalización de advertencia triangular de 'Bebé a Bordo' pegada al parabrisas posterior."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "No amarrar al niño en su correspondiente silla SRI no solo es una multa de dinero, sino que conlleva suspensión de licencia directa en tribunales.",
+      "sourcePageStart": 142,
+      "sourcePageEnd": 142,
+      "sourceReference": "Pág. 142, Suspensión y cancelación...",
+      "groundingExcerpt": "Entre 5 y 45 días*... No utilizar Sistema de Retención Infantil en el traslado de niñas y niños de hasta 8 años, inclusive, o estatura de 135 centímetros y 33 kilogramos de peso, en los asientos traseros.",
+      "reviewNotes": "Fiscalización de la seguridad pasiva infantil.",
+      "tags": [
+        "suspension",
+        "sri",
+        "ninos"
+      ]
+    },
+    {
+      "externalId": "9-q025",
+      "prompt": "Independientemente de las sanciones aisladas, el juez procederá a suspender adicionalmente la Licencia de Conducir de una persona si comete y acumula:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Dos infracciones o contravenciones de carácter gravísimo o grave en el corto período de doce meses (1 año)."
+        },
+        {
+          "text": "Tres partes o multas leves por mal estacionamiento en un lapso de treinta días seguidos."
+        },
+        {
+          "text": "Cualquier combinación de faltas municipales por peajes impagos durante el último trienio fiscal."
+        },
+        {
+          "text": "Un accidente leve con culpa, incluso si este causó únicamente rasguños en la pintura de un tercero."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El reincidir constantemente en faltas peligrosas (como excesos de velocidad o uso de teléfono) en un plazo menor a un año genera un castigo extra de suspensión temporal del permiso.",
+      "sourcePageStart": 143,
+      "sourcePageEnd": 143,
+      "sourceReference": "Pág. 143, Suspensión y cancelación...",
+      "groundingExcerpt": "De igual modo, una licencia es suspendida por la acumulación de dos infracciones gravísimas o graves en un período de doce meses.",
+      "reviewNotes": "Efectos del historial del conductor.",
+      "tags": [
+        "suspension",
+        "infracciones"
+      ]
+    },
+    {
+      "externalId": "9-q026",
+      "prompt": "Al transitar por las calles de Chile, ¿cuál de las siguientes faltas es tipificada y sancionada con la máxima dureza bajo la clasificación de contravención GRAVÍSIMA?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Conducir o maniobrar un vehículo motorizado sin haber obtenido la respectiva Licencia de Conducir."
+        },
+        {
+          "text": "Aparcar o detener temporalmente el automóvil a una distancia de menos de 10 metros del encuentro de una esquina."
+        },
+        {
+          "text": "Circular con la inspección técnica de gases vencida hace más de dos meses."
+        },
+        {
+          "text": "Abstenerse de utilizar el intermitente al ejecutar una incorporación a la vía o un viraje lento."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Manejar sin tener autorización del Estado denota una ausencia total de aptitudes testeadas, constituyendo una falta gravísima en la tipificación legal.",
+      "sourcePageStart": 143,
+      "sourcePageEnd": 143,
+      "sourceReference": "Pág. 143, Son infracciones o contravenciones gravísimas...",
+      "groundingExcerpt": "Son infracciones o contravenciones gravísimas, las siguientes:... Conducir un vehículo motorizado o a tracción animal sin haber obtenido Licencia de Conducir.",
+      "reviewNotes": "Identificación de faltas gravísimas.",
+      "tags": [
+        "infracciones",
+        "gravísimas",
+        "licencia"
+      ]
+    },
+    {
+      "externalId": "9-q027",
+      "prompt": "Colocar a un niño menor de 12 años como pasajero en el asiento delantero o del copiloto (a excepción de las camionetas de cabina simple con equipamiento apropiado) está penalizado por ley como:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Una infracción o contravención de calificación GRAVÍSIMA."
+        },
+        {
+          "text": "Una infracción de calificación GRAVE, si el airbag no fue desconectado previamente."
+        },
+        {
+          "text": "Una simple falta o contravención MENOS GRAVE si el niño iba con el cinturón puesto."
+        },
+        {
+          "text": "Una advertencia o contravención LEVE que no amerita citación judicial."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La protección a los infantes de impactos frontales directos o explosiones de bolsas de aire es primordial, siendo el romper esta regla una de las faltas máximas.",
+      "sourcePageStart": 143,
+      "sourcePageEnd": 143,
+      "sourceReference": "Pág. 143, Son infracciones o contravenciones gravísimas...",
+      "groundingExcerpt": "Son infracciones o contravenciones gravísimas... El traslado de menores de 12 años en los asientos delanteros del vehículo. Excepto en vehículos de cabina simple y con un SRI apropiado.",
+      "reviewNotes": "Identificación de faltas relativas a menores.",
+      "tags": [
+        "infracciones",
+        "gravísimas",
+        "ninos"
+      ]
+    },
+    {
+      "externalId": "9-q028",
+      "prompt": "Con el propósito de burlar las cámaras de control o pago de peajes, algunos conductores ocultan o dañan la placa de su vehículo. Manejar con la placa patente adulterada, oculta, en mal estado o ilegible es calificado expresamente como:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Una infracción GRAVÍSIMA."
+        },
+        {
+          "text": "Una infracción GRAVE."
+        },
+        {
+          "text": "Una infracción MENOS GRAVE o de carácter administrativo."
+        },
+        {
+          "text": "Una falta LEVE castigada con reponer la placa de inmediato."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El entorpecimiento a la labor fiscalizadora y de investigación policial encubriendo el móvil es gravemente castigado, cayendo en la máxima categoría.",
+      "sourcePageStart": 143,
+      "sourcePageEnd": 143,
+      "sourceReference": "Pág. 143, Son infracciones o contravenciones gravísimas...",
+      "groundingExcerpt": "Son infracciones o contravenciones gravísimas... Conducir un vehículo con la placa patente oculta o que utilice objetos, accesorios, luces o aditamentos que obstaculicen su plena percepción, o si la placa patente se encuentra en mal estado y dificulte la identificación...",
+      "reviewNotes": "Fiscalización de placas vehiculares y su tipificación.",
+      "tags": [
+        "infracciones",
+        "gravísimas",
+        "patente"
+      ]
+    },
+    {
+      "externalId": "9-q029",
+      "prompt": "Si durante un control se detecta que la persona conduce el vehículo padeciendo de condiciones físicas o psíquicas deficientes evidentes (por ejemplo, fatiga extrema o enfermedad sin haber consumido drogas o alcohol), la ley sanciona el acto como:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Una infracción GRAVE."
+        },
+        {
+          "text": "Una infracción GRAVÍSIMA que genera retiro definitivo de licencia."
+        },
+        {
+          "text": "Un DELITO formal con pena de presidio inmediato."
+        },
+        {
+          "text": "Una falta LEVE debido a que la persona no lo hace con premeditación."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Si no hay sustancias de por medio (lo que elevaría la pena y podría configurarlo de otra forma), el conducir incapacitado físicamente (por ejemplo, con yesos invalidantes o sueño profundo) está tipificado como infracción Grave.",
+      "sourcePageStart": 143,
+      "sourcePageEnd": 143,
+      "sourceReference": "Pág. 143, Algunas infracciones graves",
+      "groundingExcerpt": "Algunas infracciones graves: Conducir un vehículo en condiciones físicas o psíquicas deficientes.",
+      "reviewNotes": "Identificación de faltas graves relativas a la salud.",
+      "tags": [
+        "infracciones",
+        "graves",
+        "salud"
+      ]
+    },
+    {
+      "externalId": "9-q030",
+      "prompt": "Identifique cuál de los siguientes hechos de la vía corresponde en la ley a una infracción GRAVE (y no Gravísima o Menos Grave):",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Sobrepasar o efectuar la maniobra de adelantamiento a otro vehículo en plena aproximación a la cima de una cuesta empinada, curva o paso de peatones."
+        },
+        {
+          "text": "Decidir avanzar y no efectuar una detención completa ante la luz roja intermitente o continua de un semáforo operativo."
+        },
+        {
+          "text": "Tomar el control del volante y conducir tras ingerir e ir bajo la influencia de cocaína o sustancias estupefacientes."
+        },
+        {
+          "text": "Manipular activamente la pantalla de una tableta electrónica o del celular personal con las manos despegadas del volante."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Pasar semáforo rojo, usar el teléfono o manejar drogado figuran entre las gravísimas o delitos/suspensiones extremas. Adelantar en sitios ciegos como cimas o curvas está en la lista de infracciones Graves.",
+      "sourcePageStart": 143,
+      "sourcePageEnd": 143,
+      "sourceReference": "Pág. 143, Algunas infracciones graves",
+      "groundingExcerpt": "Algunas infracciones graves:... Sobrepasar o adelantar a otro vehículo al aproximarse a la cima de una cuesta o gradiente, o a una curva.",
+      "reviewNotes": "Distinción de niveles de gravedad en maniobras de alto riesgo.",
+      "tags": [
+        "infracciones",
+        "graves",
+        "adelantamiento"
+      ]
+    },
+    {
+      "externalId": "9-q031",
+      "prompt": "Como medida para desalentar el robo y receptación de repuestos en el país, ¿qué obligación visual respecto a la placa patente figura en el listado de infracciones graves si el conductor no la acata?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Se debe conducir el vehículo asegurándose que la placa patente única esté grabada, de forma permanente, en los vidrios y en los espejos laterales."
+        },
+        {
+          "text": "Se deben arrancar las láminas protectoras u obscurecedoras polarizadas que impidan contrastar visualmente el exterior del cristal de la placa."
+        },
+        {
+          "text": "Es obligatorio exhibir una copia física firmada y validada notarialmente del permiso de circulación y padrón pegada en el parabrisas delantero."
+        },
+        {
+          "text": "Si el vehículo cambia de propietario de manera particular, se debe pulir o suprimir de inmediato todo registro o grabado original de la concesionaria en las ventanas."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La exigencia de grabar las placas en vidrios y espejos es una normativa obligatoria chilena; incumplirla somete al conductor al castigo de una falta de carácter Grave.",
+      "sourcePageStart": 144,
+      "sourcePageEnd": 144,
+      "sourceReference": "Pág. 144, Algunas infracciones graves",
+      "groundingExcerpt": "Algunas infracciones graves:... Conducir un vehículo sin la placa patente única grabada, de forma permanente, en sus vidrios y espejos laterales.",
+      "reviewNotes": "Legislación nueva sobre seguridad y robo de autos.",
+      "tags": [
+        "infracciones",
+        "graves",
+        "grabado-vidrios"
+      ]
+    },
+    {
+      "externalId": "9-q032",
+      "prompt": "Ciertas maniobras en la calle están restringidas a casos excepcionales. Si usted ejecuta la conducción marcha atrás (retroceso) fuera de las exenciones autorizadas de manera legal (estacionar o salir de paso), comete:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Una infracción considerada como MENOS GRAVE dentro del marco normativo."
+        },
+        {
+          "text": "Una contravención catalogada como GRAVÍSIMA por poner en grave peligro a posibles transeúntes detrás del auto."
+        },
+        {
+          "text": "Un acto tipificado de manera estricta y penal como infracción GRAVE del código."
+        },
+        {
+          "text": "Una mera falta o contravención de tipo LEVE que casi nunca deviene en cobros onerosos al conductor."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Aunque es una maniobra riesgosa, la Ley de Tránsito ubica retroceder injustificadamente en el listado penal de faltas Menos Graves, por debajo de excesos de velocidad o desobedecer PARE.",
+      "sourcePageStart": 144,
+      "sourcePageEnd": 144,
+      "sourceReference": "Pág. 144, Infracciones... menos graves",
+      "groundingExcerpt": "Además de las infracciones clasificadas como graves, hay otras que se encuentran en las categorías de menos graves, algunos ejemplos son:... Conducir marcha atrás, salvo las excepciones legales.",
+      "reviewNotes": "Identificación de faltas menos graves.",
+      "tags": [
+        "infracciones",
+        "menos-graves",
+        "retroceso"
+      ]
+    },
+    {
+      "externalId": "9-q033",
+      "prompt": "Más allá de las infracciones monetarias comunes y corrientes, existen ciertas conductas al mando de un vehículo que cruzan el umbral penal y se transforman en DELITOS juzgables que pueden significar privación de libertad (cárcel). Señale cuál es una de ellas:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Ponerse al volante de un vehículo valiéndose y portando una licencia manifiestamente falsa, obtenida de manera fraudulenta o que esté a nombre de otra persona."
+        },
+        {
+          "text": "Descuidar la mantención y conducir un automóvil que cuente con su trámite de inspección técnica vencido por encima de los 30 días calendarios de gracia."
+        },
+        {
+          "text": "Aparcar u obstaculizar con el automóvil encendido la zona franca de evacuación correspondiente a un recinto de servicios asistenciales como ambulancias o bomberos."
+        },
+        {
+          "text": "Violar con pleno dolo las restricciones de velocidad interurbana pisando el acelerador para exceder los 20 km/h por encima del tope máximo tolerado."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Falsificar documentos públicos como la Licencia, las patentes o manejar bajo la ebriedad, no solo arrojan multas sino que configuran delitos penales perseguibles con cárcel en la república.",
+      "sourcePageStart": 145,
+      "sourcePageEnd": 145,
+      "sourceReference": "Pág. 145, Delitos",
+      "groundingExcerpt": "Además, es importante que sepas que la Ley de Tránsito contempla delitos que pueden ser sancionados con cárcel. Por ejemplo, será condenada a prisión quien conduzca con una licencia falsa, obtenida en forma fraudulenta o perteneciente a otra persona...",
+      "reviewNotes": "Identificación de las tipificaciones delictivas del tránsito.",
+      "tags": [
+        "delitos",
+        "penalidades",
+        "falsificacion"
+      ]
+    },
+    {
+      "externalId": "9-q034",
+      "prompt": "Ante un peligro inminente cruzando la calzada que demanda reaccionar mediante una detención violenta del vehículo, si su auto cuenta e incorpora un sistema antibloqueo inteligente de frenos (ABS), el protocolo de actuación correcto indica que usted debe:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Pisar el pedal de manera tajante, enérgica y continua, sosteniendo allí aplicadamente la mayor fuerza sin aflojar ni declinar hasta lograr que el automóvil se pare del todo."
+        },
+        {
+          "text": "Empujar el freno vigorosamente y luego dejar de aplicarlo, liberándolo intermitentemente en cortos intervalos o bombeos manuales para no perder dirección y adherencia en las llantas."
+        },
+        {
+          "text": "Juntar suavidad y tracción accionando el tirador manual de emergencia, aplicando los frenos mecánicos progresivamente para evitar reventar las mangueras."
+        },
+        {
+          "text": "Acompañar y complementar el freno yendo enganchado, disminuyendo drásticamente todas las marchas seguidas pero jamás estrujando de lleno el disco central del pie."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El mecanismo ABS suprime el bloqueo ejecutando micro descompresiones más rápidas de lo que puede hacer el humano. El rol del chofer consiste únicamente en aplicar la máxima fuerza, permitiendo a la electrónica bombear para poder guiar o esquivar durante el derrape inminente.",
+      "sourcePageStart": 145,
+      "sourcePageEnd": 145,
+      "sourceReference": "Pág. 145, frenos con abs",
+      "groundingExcerpt": "Frenos con ABS: Debes pisar enérgicamente el pedal de freno, manteniendo la máxima presión hasta el final. El sistema ABS liberará las ruedas que se bloqueen de forma automática, permitiéndote así controlar la dirección.",
+      "reviewNotes": "Manejo defensivo dependiente del nivel tecnológico del móvil.",
+      "tags": [
+        "emergencias",
+        "frenado",
+        "abs"
+      ]
+    },
+    {
+      "externalId": "9-q035",
+      "prompt": "Al hundir y requerir firmemente al sistema el freno en las situaciones extremas o sorpresivas al volante, el dispositivo electrónico y mecánico denominado de Antibloqueo (ABS) genera cierta reacción característica palpable sobre la pierna del chofer. ¿Cuál es este efecto particular o sensación táctil que la guía insta a no extrañar?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Un temblor tenue o ligera vibración perceptible que trepida rítmicamente el pedal al momento de pulsar."
+        },
+        {
+          "text": "Que la placa resorte del apoyo central caiga totalmente vacía, solapándose contra la goma de la alfombrilla del suelo perdiendo repentinamente dureza hidráulica."
+        },
+        {
+          "text": "El endurecimiento rígido como tablón del recorrido palanqueado inhabilitando físicamente proseguir su contracción y trancando el empuje a mitad de fondo."
+        },
+        {
+          "text": "La emanación auditiva o chirrido incesante que activa como chicharra continua desde el interior o el habitáculo como mensaje sonoro inquebrantable de alarma."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Al activar y liberar instantáneamente los balatas o pastillas, el equipo ABS envía un remezón físico tipo trepidación sobre el pedal. Entrar en pánico soltando el freno por esto incrementa enormemente los riesgos del desastre inminente.",
+      "sourcePageStart": 145,
+      "sourcePageEnd": 145,
+      "sourceReference": "Pág. 145, frenos con abs",
+      "groundingExcerpt": "Con el funcionamiento del sistema ABS se produce un leve temblor en el pedal del freno. No debes asustarte al notarlo.",
+      "reviewNotes": "Psicología y fisiología del auxilio mecánico moderno.",
+      "tags": [
+        "emergencias",
+        "frenado",
+        "abs"
+      ]
+    },
+    {
+      "externalId": "9-q036",
+      "prompt": "Frente a contingencias bruscas en ruta manejando un rodado automotor añejo que NO POSEE y está carente de asistencia antibloqueo en sus ejes de rodaje, el actuar prescrito si los neumáticos sufren de derrape al aplicar el frenado duro señala que se ha de:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Reducir tenuemente y destensar algo de fuerza encima del pedal hasta evidenciar la recuperación tractora logrando que las llantas dejen la patinada y vuelvan a adherir a la senda."
+        },
+        {
+          "text": "Perdurar acoplando todo el pesaje en la estampa de frenaje impidiéndole rebote pase lo que deba pasar sosteniendo el encuadre forzado del derrape completo sin variar la posición en la silla."
+        },
+        {
+          "text": "Cortar los contactos o desactivar girando llave de cilindros y en un solo accionar jalar raudamente el resguardo auxiliar interrumpiendo tajante los giros libres en la vía por emergencia vital."
+        },
+        {
+          "text": "Oprimir simultáneamente con ahínco el embargue despegando fuerzas al propulsor junto de lanzar el pestillo parquímetro cortando giro bruscamente."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La pérdida del control lateral o 'derrape' con los cauchos bloqueados y arrastrados inutiliza poder direccionar para desviar, precisando modular o distender presiones con el pie del individuo a fin que logre circular rodamiento sin desatar el caos patinado.",
+      "sourcePageStart": 145,
+      "sourcePageEnd": 145,
+      "sourceReference": "Pág. 145, frenos sin abs",
+      "groundingExcerpt": "Frenos sin ABS: ... Si las ruedas se bloquean, debes reducir ligeramente la presión sobre el pedal, hasta que las ruedas dejen de patinar y recuperes la adherencia de tus neumáticos al pavimento.",
+      "reviewNotes": "Conducta correctiva ante sistemas mecánicos preteritos o tradicionales.",
+      "tags": [
+        "emergencias",
+        "frenado",
+        "derrape"
+      ]
+    },
+    {
+      "externalId": "9-q037",
+      "prompt": "Al transitar por un descenso montañoso su coche sufre un colapso gravoso y un decaimiento total de retención (quedando sin frenos). Entre la gradación o escalera de primeros apoyos tácticos que le entrega o aconseja la autoridad para sortear el descalabro sin cundir el pánico encabeza:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Hacer la pulsación o efecto de bombar intermitentemente apretando y destrabando rápido el mismo pedal del suelo intentando reconstituir presión hidráulica por aire colado."
+        },
+        {
+          "text": "Aniquilar el giro extinguiendo la ignición, clausurar el traspaso de contacto en el acto del switch extrayendo llaves evitando el seguir avante en marchas vivas."
+        },
+        {
+          "text": "Abrazar tenaz palanqueo propinando una trabazón al freno estacionario cortando a cero revuelos tractores de improviso con resquicios inamovibles."
+        },
+        {
+          "text": "Propagar un aumento o ventolera extrema bajando todo vidrio blindado a fin de atrapar mayor viento enlentecedor por rozamientos antes de precipitar."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Presionar múltiples veces puede cebar líneas dañadas si hay vapores calientes o intrusiones de aire y rescatar el uso temporal; acto seguido se pide el enganche en fuerza de motor desescalando o descendiendo desarrollos.",
+      "sourcePageStart": 146,
+      "sourcePageEnd": 146,
+      "sourceReference": "Pág. 146, lo que debes hacer ante una falla total de frenos",
+      "groundingExcerpt": "Si vas manejando tu vehículo y sufres una falla total de frenos... Presionar y soltar el pedal varias veces. Si hay aire en el sistema de frenos, con esta maniobra vuelve a funcionar.",
+      "reviewNotes": "Instrucción ante siniestro catastrófico sin choques.",
+      "tags": [
+        "emergencias",
+        "frenos"
+      ]
+    },
+    {
+      "externalId": "9-q038",
+      "prompt": "Desatado un suceso trágico donde usted no tiene retención en bajada (falla los frenos sin remedio) y deba rozarse contra cunetas y matorrales contiguos, ¿qué accionar desesperado y común censura o previene determinantemente el documento no obrar porque agravará letalmente y sellará una pérdida absoluta de comando o pilotaje?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Desenergizar completamente, cerrar o claudicar la actividad del motor, por el peligro implícito de desconectar o paralizar los servos y la dirección hidráulica haciéndola durísima o trabada."
+        },
+        {
+          "text": "Mudar el engranaje del vehículo propiciando una baja de escalada hacia secuencias menores sirviéndose del peso retardatorio de tracción revolutiva interior de piezas mecánicas."
+        },
+        {
+          "text": "Activar en un modo precautorio toda la luminaria dispuesta además de propagar sonoridad extrema acudiendo a vocingleras para espantar transeúntes inocentes."
+        },
+        {
+          "text": "Mantener abrazado al cinto firmemente con aferramiento perenne la cabecera rotativa de maniobra de sus dos extremidades altas en guardia."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Apagar un motor actual no frena, sino que corta el bombeo del aceite hidráulico de guía bloqueando o haciendo inamovible el control direccional que necesitamos para buscar la ladera.",
+      "sourcePageStart": 146,
+      "sourcePageEnd": 146,
+      "sourceReference": "Pág. 146, lo que debes hacer ante una falla total de frenos",
+      "groundingExcerpt": "Si te encuentras ante un peligro inminente, puedes tratar de rozar el vehículo contra un borde de cerro... No apagues el motor. Apagar el motor podría desactivar la dirección asistida y perderías el control de tu vehículo.",
+      "reviewNotes": "Contraindicaciones en manejos catastróficos.",
+      "tags": [
+        "emergencias",
+        "frenos",
+        "motor"
+      ]
+    },
+    {
+      "externalId": "9-q039",
+      "prompt": "Como resultado de la propulsión térmica derivada del automóvil tradicional a ignición fósil brotan polutos emanados. Acorde con la ciencia resumida, identifique el gas listado responsable directo por ser catalogado tóxico como metal pesado induciendo padecimientos neurales o degeneraciones del sistema central intrínseco humano:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Plomo, un metal pesado capaz de ocasionar padecimientos letales que minan la operatividad del sistema rector central orgánico de neurotransmisiones."
+        },
+        {
+          "text": "Monóxidos de carbono invisibles sin aromas detectables los cuales precipitan de súbito inusitadas ansias de vómito y sofocaciones severas cráneo encefálicas agudas."
+        },
+        {
+          "text": "Gas o dióxidos azufrados culpables predominantes generadores de picazones alérgicas e innegables acidificaciones y llagas tisulares severas aéreas del medio ambiente."
+        },
+        {
+          "text": "Toda familia diversa o variopinta abocada en la clase hidrocarburos alquitranados no combustos plenos sembrando el cáncer al depositar o anidar residuos oxidantes fotográficos forestales."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "A pesar de sus erradicaciones recientes, el listado tóxico del glosario acusa directamente al plomo en su rol devastador hacia el cerebro y red nerviosa si pervive o se reimplanta de quemas automotrices dudosas.",
+      "sourcePageStart": 147,
+      "sourcePageEnd": 147,
+      "sourceReference": "Pág. 147, Tránsito y medio ambiente",
+      "groundingExcerpt": "Plomo: Es un metal pesado que provoca lesiones en el sistema nervioso central.",
+      "reviewNotes": "Química ambiental o ecología del conductor.",
+      "tags": [
+        "medio-ambiente",
+        "contaminacion"
+      ]
+    },
+    {
+      "externalId": "9-q040",
+      "prompt": "La coloración visible exhalada desde la parte terminal del caño exhaustivo es una rúbrica indicativa de su salud motora. Si el móvil emana o despide profusas humaredas consistentes en pigmentaciones puramente azules durante la labor térmica, la dolencia apunta acusatoriamente a:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Una devoración patológica inusual de material lubrificante viscoso o aceite propio adentrándose a espacios quemantes, acentuándose de ser desoído."
+        },
+        {
+          "text": "La escurridiza fuga latente de componente hídrico glacial u orgánico refrigerante que penetra hasta lo profundo en cámaras internas del equipo tractor rodante."
+        },
+        {
+          "text": "La sobrante o ahogada profusión rociada de energéticos crudos, carburante petrolero no quemado a cabalidad, enturbiando escapes por estropeamiento de válvulas regidoras o tamices aéreos colmatados densamente de inmundicias."
+        },
+        {
+          "text": "Al uso delincuencial inexperto, el recargo indebido, de aditivación fósil de octano exacerbadamente incompatible al modelo originario exigido desde fábrica automotriz de ensamble inicial."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Físicamente, la quema errática del líquido de lubricación del motor (aceite traspasando sellos) se tiñe azul; humo negro deata gasolina ahogada, y el humo albo evoca vapor y entrada de agua (refrigerante).",
+      "sourcePageStart": 147,
+      "sourcePageEnd": 147,
+      "sourceReference": "Pág. 147, Tránsito y medio ambiente",
+      "groundingExcerpt": "Si tu vehículo emite humo azul por el tubo de escape es debido a un consumo anormal de aceite de motor, que con el tiempo podría empeorar.",
+      "reviewNotes": "Física y lectura de señales de anomalía y ecología.",
+      "tags": [
+        "mecanica",
+        "medio-ambiente",
+        "diagnostico"
+      ]
+    }
+  ]
+}

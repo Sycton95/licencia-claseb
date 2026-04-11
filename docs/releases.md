@@ -144,3 +144,13 @@
 - Increased chapter 3 prepared grounding from `2` to `7` chunks using manual-backed material from pages `33` to `35`.
 - Increased chapter 3 published seed coverage from `12` to `20` questions.
 - Added exact source references for the new chapter 3 batch and kept the release outside the AI/Beta suggestion path.
+
+## 2026-04-11 Formal chapter alignment and reviewed import merge
+
+- Rebased the runtime catalog to the formal 9-chapter manual structure.
+- Merged reviewed import candidates into the published bank for chapters `4` through `9`.
+- Corrected the import verifier so `chapter-6` no longer rejects `6-q030` as a false explanation conflict.
+- Preserved two reviewed exclusions:
+  - `4-q047` rejected for chapter-scope mismatch
+  - `5-q033` rejected for annex/glossary sourcing
+- Prepared the release to sync the updated published bank to the live Supabase-backed site.

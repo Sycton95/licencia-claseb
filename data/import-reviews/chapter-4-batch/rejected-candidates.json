@@ -1,0 +1,47 @@
+[
+  {
+    "externalId": "4-q047",
+    "errors": [
+      {
+        "code": "chapter_scope_mismatch",
+        "message": "Source pages 109-109 fall outside the accepted chapter-4 source window 37-67.",
+        "field": "sourcePageStart"
+      }
+    ],
+    "warnings": [],
+    "normalizedQuestion": {
+      "externalId": "4-q047",
+      "prompt": "Al conducir en la oscuridad, las limitaciones visuales hacen que el cerebro pueda interpretar erróneamente la distancia. ¿Qué factor contribuye principalmente a esto?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El exceso de reflectividad en las líneas del pavimento."
+        },
+        {
+          "text": "Que a distancias cortas los indicios y pistas son nulos."
+        },
+        {
+          "text": "Que los colores y contornos claros, esenciales para calcular distancias, se difuminan."
+        },
+        {
+          "text": "El funcionamiento acelerado de la mácula lútea."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "El cálculo de distancia depende fuertemente de la nitidez de los bordes y los colores, factores que se pierden con la caída de la luz natural.",
+      "sourcePageStart": 109,
+      "sourcePageEnd": 109,
+      "sourceReference": "Pág. 109, Conducción en la oscuridad",
+      "groundingExcerpt": "Nuestra capacidad de calcular distancias depende de que veamos colores y contornos claros. En la oscuridad, estos se difuminan.",
+      "reviewNotes": "Visión nocturna (también presente en los efectos visuales, Cap 7 lo menciona pero Cap 4 introduce ceguera y juicios erróneos. Este extracto exacto es p109 pero se vincula a limitaciones del ojo. Usaremos el texto literal).",
+      "tags": [
+        "vision-nocturna",
+        "distancia"
+      ],
+      "chapterId": "chapter-4"
+    }
+  }
+]

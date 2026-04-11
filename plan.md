@@ -266,19 +266,21 @@ Status:
 
 ## Current content baseline
 
-- Published seeded questions currently exist only in:
+- Published questions currently exist in:
   - `chapter-1`: 28
   - `chapter-3`: 20
+  - `chapter-4`: 49
+  - `chapter-5`: 39
+  - `chapter-6`: 40
+  - `chapter-7`: 40
+  - `chapter-8`: 40
+  - `chapter-9`: 40
 - Prepared source chunks currently exist only in:
   - `chapter-1`: 2
   - `chapter-3`: 7
-- Remaining uncovered chapters:
+- Remaining chapter without baseline coverage:
   - `chapter-2`
-  - `chapter-4`
-  - `chapter-5`
-  - `chapter-6`
-  - `chapter-7`
-  - `chapter-8`
+- Runtime chapter taxonomy is aligned to the formal 9-chapter manual structure.
 
 ## Chapter rollout policy
 
@@ -292,34 +294,37 @@ Status:
 
 ## Chapter rollout order
 
-### Wave 1
+The reviewed frontier imports for `chapter-4` through `chapter-9` are already merged into the runtime baseline.
 
-1. `chapter-7` — Normas de circulación
-2. `chapter-5` — Alcohol, drogas, enfermedades y fatiga
-3. `chapter-4` — Capacidad visual, reacción y percepción
+Current baseline by chapter:
 
-### Wave 2
+1. `chapter-1` — `28` published
+2. `chapter-2` — `0` published
+3. `chapter-3` — `20` published
+4. `chapter-4` — `49` published
+5. `chapter-5` — `39` published
+6. `chapter-6` — `40` published
+7. `chapter-7` — `40` published
+8. `chapter-8` — `40` published
+9. `chapter-9` — `40` published
 
-4. `chapter-6` — Usuarios vulnerables
-5. `chapter-2` — Principios de la conducción
-6. `chapter-8` — Conducción eficiente e informaciones importantes
+Excluded reviewed imports:
+
+- `4-q047` remains excluded because it cites page `109`, which belongs to `chapter-7`.
+- `5-q033` remains excluded because it cites page `162`, which belongs to the annex section.
 
 ## Current next actions
 
-1. Keep the accepted Milestone 6A UI baseline and resume delivery on `main`.
-2. Keep Milestone 5A diagnostics active as the quality gate for content scaling.
-3. Use Milestone 5E only as a local pilot track:
+1. Keep the runtime catalog aligned to the formal 9-chapter manual structure.
+2. Keep Milestone 5A diagnostics active as the quality gate for imported and locally authored content.
+3. Keep Milestone 5E as a local-only pilot track:
    - opt-in
    - verifier-gated
    - never production-default
-4. Run the release gate on milestone changes before each production release:
+4. Expand `sourcePreparation` to catch up with the imported runtime bank, starting with `chapter-4` through `chapter-9`.
+5. Build baseline published coverage for `chapter-2`, which is the only remaining chapter without live questions.
+6. Keep annexes out of the runtime question bank until a separate annex ingestion policy exists.
+7. Run the release gate on each production content update:
    - `npm run validate:content`
    - `npm run build`
    - `npm run release:check`
-5. Start chapter expansion as an editorial pipeline:
-   - add source preparation
-   - generate AI suggestions
-   - review in `/admin`
-   - convert accepted suggestions into drafts
-   - publish reviewed questions
-   - progressively activate chapters as they hit the baseline threshold

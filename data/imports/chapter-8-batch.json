@@ -1,0 +1,1339 @@
+{
+  "batchId": "8-batch-2026-04-10-01",
+  "editionId": "edition-2026",
+  "chapterId": "8",
+  "sourceDocumentId": "manual-claseb-2026",
+  "sourceDocumentTitle": "Libro del Nuevo Conductor Clase B 2026",
+  "generatedAt": "2026-04-10T23:24:00Z",
+  "generator": {
+    "provider": "frontier-ai",
+    "model": "gemini-1.5-pro"
+  },
+  "questions": [
+    {
+      "externalId": "8-q001",
+      "prompt": "¿Qué se entiende por 'Conducción Eficiente' según el manual del conductor?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Es la capacidad de llegar a un destino en el menor tiempo posible utilizando autopistas."
+        },
+        {
+          "text": "Es una actitud y un tipo de conducción que permite obtener un mayor rendimiento energético en el vehículo."
+        },
+        {
+          "text": "Es el conjunto de técnicas exclusivas para el manejo de vehículos eléctricos o híbridos."
+        },
+        {
+          "text": "Es el conocimiento detallado de la mecánica interna del motor para realizar reparaciones rápidas."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "La conducción eficiente se define como una actitud y estilo de manejo enfocado en maximizar el rendimiento energético del automóvil.",
+      "sourcePageStart": 127,
+      "sourcePageEnd": 127,
+      "sourceReference": "Pág. 127, ¿Qué entendemos por conducción eficiente?",
+      "groundingExcerpt": "Utilizamos el concepto de Conducción Eficiente para referirnos a una actitud y un tipo de conducción que te permitirá obtener un mayor rendimiento energético en tu vehículo.",
+      "reviewNotes": "Definición principal del concepto del capítulo.",
+      "tags": [
+        "conduccion-eficiente",
+        "definicion"
+      ]
+    },
+    {
+      "externalId": "8-q002",
+      "prompt": "Según estudios de la Agencia Chilena de Eficiencia Energética (AChEE), ¿qué porcentaje de consumo de combustible se puede reducir al aplicar técnicas de conducción eficiente?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Entre un 2 y un 5%."
+        },
+        {
+          "text": "Entre un 10 y un 15%."
+        },
+        {
+          "text": "Aproximadamente un 25%."
+        },
+        {
+          "text": "Más de un 40% en zonas urbanas."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "La aplicación de estas técnicas permite reducir de forma comprobada entre un 10 y un 15% del consumo de combustible.",
+      "sourcePageStart": 127,
+      "sourcePageEnd": 127,
+      "sourceReference": "Pág. 127, Conducción Eficiente",
+      "groundingExcerpt": "Diversos estudios realizados por la Agencia Chilena de Eficiencia Energética (AChEE) han demostrado que aplicar técnicas en Conducción Eficiente permite reducir entre un 10 y un 15% el consumo de combustible.",
+      "reviewNotes": "Dato estadístico oficial del capítulo.",
+      "tags": [
+        "estadistica",
+        "ahorro",
+        "combustible"
+      ]
+    },
+    {
+      "externalId": "8-q003",
+      "prompt": "Además de la reducción de costos, ¿qué gas contaminante, principal causante del efecto invernadero, se reduce mediante la conducción eficiente?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El dióxido de carbono."
+        },
+        {
+          "text": "El monóxido de plomo."
+        },
+        {
+          "text": "El oxígeno residual."
+        },
+        {
+          "text": "El nitrógeno atmosférico."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La conducción eficiente reduce la emisión de contaminantes atmosféricos, destacando el dióxido de carbono, causante del efecto invernadero.",
+      "sourcePageStart": 127,
+      "sourcePageEnd": 127,
+      "sourceReference": "Pág. 127, ¿Cómo incide la Conducción Eficiente en el consumo?",
+      "groundingExcerpt": "la forma de conducir es esencial en la reducción de diversos contaminantes atmosféricos, entre ellos el dióxido de carbono, uno de los principales causantes del efecto invernadero...",
+      "reviewNotes": "Impacto ambiental de la conducción eficiente.",
+      "tags": [
+        "medio-ambiente",
+        "emisiones"
+      ]
+    },
+    {
+      "externalId": "8-q004",
+      "prompt": "¿Qué beneficios económicos directos obtiene la persona conductora al aplicar técnicas de conducción eficiente?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Exención en el pago del permiso de circulación."
+        },
+        {
+          "text": "Menor costo del viaje y menor costo en el mantenimiento del vehículo."
+        },
+        {
+          "text": "Descuentos obligatorios en las plazas de peaje."
+        },
+        {
+          "text": "Rebaja en la prima del Seguro Obligatorio de Accidentes Personales (SOAP)."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "La conducción eficiente repercute directamente en el bolsillo del conductor a través del ahorro en combustible (costo del viaje) y un menor desgaste de piezas (mantenimiento).",
+      "sourcePageStart": 127,
+      "sourcePageEnd": 127,
+      "sourceReference": "Pág. 127, ¿Cómo incide la Conducción Eficiente en el consumo?",
+      "groundingExcerpt": "Los beneficios de la Conducción Eficiente se manifiestan principalmente en un menor costo del viaje y menor costo en el mantenimiento del vehículo.",
+      "reviewNotes": "Beneficios tangibles de la conducción eficiente.",
+      "tags": [
+        "beneficios",
+        "mantenimiento"
+      ]
+    },
+    {
+      "externalId": "8-q005",
+      "prompt": "Como medida antes de iniciar un viaje, el manual recomienda planificar la ruta. ¿Por qué optar por vías menos congestionadas mejora el rendimiento del vehículo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Porque permite circular siempre por el carril izquierdo a máxima velocidad."
+        },
+        {
+          "text": "Porque una ruta con baja congestión permite mantener una velocidad constante."
+        },
+        {
+          "text": "Porque las calles sin congestión son más cortas en distancia."
+        },
+        {
+          "text": "Porque exime al conductor de respetar los semáforos."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Mantener una velocidad constante sin detenciones continuas por congestión es clave para el ahorro de combustible y la eficiencia energética.",
+      "sourcePageStart": 128,
+      "sourcePageEnd": 128,
+      "sourceReference": "Pág. 128, Planifica tu recorrido",
+      "groundingExcerpt": "Además, una ruta con baja congestión te permitirá mantener una velocidad constante y, por lo tanto, obtener un mejor rendimiento.",
+      "reviewNotes": "Relación entre flujo constante y rendimiento.",
+      "tags": [
+        "planificacion",
+        "rendimiento"
+      ]
+    },
+    {
+      "externalId": "8-q006",
+      "prompt": "Al momento de planificar las actividades del día, ¿qué recomendación entrega la conducción eficiente respecto a los traslados en vehículo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Realizar un trámite por viaje para no sobrecargar el vehículo."
+        },
+        {
+          "text": "Efectuar todos los trayectos exclusivamente en horario nocturno."
+        },
+        {
+          "text": "Reunir varios trámites en un mismo viaje para evitar viajes innecesarios."
+        },
+        {
+          "text": "Evitar siempre el uso del maletero para transportar compras."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Agrupar actividades en un solo recorrido optimiza el tiempo y reduce la cantidad de veces que el vehículo se pone en marcha, ahorrando combustible.",
+      "sourcePageStart": 128,
+      "sourcePageEnd": 128,
+      "sourceReference": "Pág. 128, Planifica tu recorrido",
+      "groundingExcerpt": "Te recomendamos preparar con antelación las cosas que harás o las que necesitarás, como por ejemplo, reunir varios trámites en un mismo viaje, de esta forma evitarás viajes innecesarios, reduciendo las veces que sacas tu vehículo a la calle.",
+      "reviewNotes": "Logística del viaje y eficiencia.",
+      "tags": [
+        "planificacion",
+        "eficiencia"
+      ]
+    },
+    {
+      "externalId": "8-q007",
+      "prompt": "Si usted requiere utilizar una aplicación de GPS en su teléfono celular para seguir una ruta, ¿qué precaución fundamental debe tomar según el manual?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Mantener el teléfono en la mano derecha para revisarlo rápidamente."
+        },
+        {
+          "text": "Programar la ruta antes del viaje y escuchar las indicaciones a través del audio sin manipular el teléfono mientras conduce."
+        },
+        {
+          "text": "Revisar la pantalla del GPS únicamente cuando se detenga en los semáforos en rojo."
+        },
+        {
+          "text": "Entregarle el teléfono a un niño en los asientos traseros para que le dicte la ruta."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Por seguridad y cumplimiento legal, el GPS debe programarse antes de iniciar la marcha y el conductor debe guiarse por las instrucciones audibles sin manipular el dispositivo.",
+      "sourcePageStart": 128,
+      "sourcePageEnd": 128,
+      "sourceReference": "Pág. 128, Planifica tu recorrido",
+      "groundingExcerpt": "Si tienes un GPS o tu teléfono celular cuenta con uno, utilízalo para planificar la ruta antes del viaje... Recuerda no manipular tu teléfono mientras estés conduciendo, escucha las indicaciones del GPS a través del audio de cada aplicación.",
+      "reviewNotes": "Uso seguro de tecnología de navegación.",
+      "tags": [
+        "planificacion",
+        "seguridad",
+        "gps"
+      ]
+    },
+    {
+      "externalId": "8-q008",
+      "prompt": "¿Cómo afecta el peso extra en el vehículo al consumo de combustible?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El peso extra reduce el consumo al otorgar mayor inercia en bajadas."
+        },
+        {
+          "text": "Mientras mayor peso se tenga en el vehículo, mayor será el consumo de combustible debido a la fuerza requerida para moverlo."
+        },
+        {
+          "text": "El peso no afecta el consumo si el vehículo transita exclusivamente en zona urbana."
+        },
+        {
+          "text": "El consumo disminuye porque el vehículo se adhiere mejor al pavimento."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Físicamente, a mayor masa (carga) se requiere de un mayor esfuerzo energético del motor para iniciar y mantener el movimiento, aumentando el gasto de combustible.",
+      "sourcePageStart": 128,
+      "sourcePageEnd": 128,
+      "sourceReference": "Pág. 128, Prepara tu vehículo para el viaje",
+      "groundingExcerpt": "Así, mientras mayor peso se tenga en el vehículo, mayor será el consumo de combustible. Verifica no tener objetos de excesivo peso para el viaje... cuando no sean realmente necesarios.",
+      "reviewNotes": "Relación entre masa y consumo energético.",
+      "tags": [
+        "carga",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q009",
+      "prompt": "¿Por qué llevar un portaequipajes o un bulto en el techo del vehículo aumenta significativamente el consumo de combustible, especialmente a altas velocidades?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Porque obliga a usar marchas más bajas en todo momento."
+        },
+        {
+          "text": "Porque el techo absorbe más radiación solar, calentando el interior."
+        },
+        {
+          "text": "Porque se produce una mayor resistencia aerodinámica que se opone al movimiento del vehículo."
+        },
+        {
+          "text": "Porque altera el centro de gravedad, afectando solo a los frenos."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Cualquier objeto en el techo rompe el diseño aerodinámico del auto, generando una fuerza contraria (resistencia del viento) que el motor debe vencer con más combustible.",
+      "sourcePageStart": 129,
+      "sourcePageEnd": 129,
+      "sourceReference": "Pág. 129, Cuida la aerodinámica",
+      "groundingExcerpt": "Los equipos portaequipajes y bultos en el techo tienen otro efecto adicional que aumenta el consumo de combustible. Especialmente a altas velocidades, se produce una resistencia aerodinámica, que tiene que ver con la oposición del aire al movimiento del vehículo.",
+      "reviewNotes": "Efectos aerodinámicos en la conducción.",
+      "tags": [
+        "aerodinamica",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q010",
+      "prompt": "Al transitar por carretera con un bulto en el techo, ¿en qué porcentaje aproximado se puede incrementar el consumo de combustible por la resistencia aerodinámica?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Alrededor de un 5%."
+        },
+        {
+          "text": "Un 10% máximo."
+        },
+        {
+          "text": "Por sobre un 20%."
+        },
+        {
+          "text": "Más de un 50%."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "La ruptura de la aerodinámica del vehículo por objetos en el techo es uno de los factores que más encarecen el viaje en autopistas o carreteras.",
+      "sourcePageStart": 129,
+      "sourcePageEnd": 129,
+      "sourceReference": "Pág. 129, Cuida la aerodinámica",
+      "groundingExcerpt": "Si tienes un portaequipajes o bulto en el techo, el consumo se puede incrementar por sobre un 20% en carretera.",
+      "reviewNotes": "Dato porcentual del impacto aerodinámico.",
+      "tags": [
+        "aerodinamica",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q011",
+      "prompt": "Respecto al mantenimiento y la presión de aire de los neumáticos, ¿con qué frecuencia mínima el manual recomienda revisar su estado para no perjudicar el consumo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Antes de encender el motor todos los días."
+        },
+        {
+          "text": "Al menos cada dos semanas o antes de un viaje largo."
+        },
+        {
+          "text": "Una vez cada seis meses junto con el cambio de aceite."
+        },
+        {
+          "text": "Solo cuando se cambian al realizar la revisión técnica anual."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Mantener la presión óptima exige controles rutinarios frecuentes. El manual sugiere, como mínimo, hacerlo cada quincena o previo a trayectos extensos.",
+      "sourcePageStart": 129,
+      "sourcePageEnd": 129,
+      "sourceReference": "Pág. 129, Controla la presión de aire...",
+      "groundingExcerpt": "Es necesario revisar la presión de tus neumáticos regularmente, en la frecuencia descrita por el fabricante en el manual del vehículo, o al menos cada dos semanas. ... también debe ser efectuada antes de iniciar un viaje largo...",
+      "reviewNotes": "Hábito de mantenimiento preventivo.",
+      "tags": [
+        "neumaticos",
+        "mantenimiento"
+      ]
+    },
+    {
+      "externalId": "8-q012",
+      "prompt": "Conducir con neumáticos que tienen una presión inferior a la recomendada por el fabricante genera un esfuerzo adicional. Si existe una reducción de 5 PSI del nivel óptimo, ¿en cuánto se estima el incremento del consumo de combustible?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "En un 1%."
+        },
+        {
+          "text": "En un 3%."
+        },
+        {
+          "text": "En un 10%."
+        },
+        {
+          "text": "En un 15%."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "La deficiencia de aire en los neumáticos incrementa la superficie de fricción con el piso, traduciéndose en un alza medible del 3% en el consumo energético.",
+      "sourcePageStart": 129,
+      "sourcePageEnd": 129,
+      "sourceReference": "Pág. 129, Controla la presión de aire...",
+      "groundingExcerpt": "Se estima que una reducción en 5 PSI del nivel óptimo de aire en los neumáticos puede incrementar el consumo de combustible en un 3%.",
+      "reviewNotes": "Dato específico de penalización por sub-inflado.",
+      "tags": [
+        "neumaticos",
+        "presion"
+      ]
+    },
+    {
+      "externalId": "8-q013",
+      "prompt": "¿Por qué un filtro de combustible en mal estado o saturado incrementa el gasto energético del vehículo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Porque permite que el aire ingrese directamente al estanque de bencina."
+        },
+        {
+          "text": "Porque la bomba debe hacer más fuerza para llevar el combustible hasta el motor."
+        },
+        {
+          "text": "Porque evapora el combustible antes de que llegue a los inyectores."
+        },
+        {
+          "text": "Porque el combustible pierde su octanaje al pasar por un filtro sucio."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Un filtro obstruido actúa como un tapón; la bomba de combustible debe trabajar a mayor exigencia y presión para superarlo, consumiendo más energía.",
+      "sourcePageStart": 130,
+      "sourcePageEnd": 130,
+      "sourceReference": "Pág. 130, Beneficios de un buen mantenimiento",
+      "groundingExcerpt": "Un filtro de combustible en mal estado puede incrementar el consumo en un 0,5%, debido a que la bomba debe hacer más fuerza para llevarlo hasta el motor.",
+      "reviewNotes": "Mecánica básica asociada al consumo.",
+      "tags": [
+        "mantenimiento",
+        "filtro-combustible"
+      ]
+    },
+    {
+      "externalId": "8-q014",
+      "prompt": "El mantenimiento adecuado del filtro de aire es esencial en la conducción eficiente. ¿Cuánto puede llegar a perjudicar el rendimiento si el filtro de aire se encuentra sucio?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "En un 0,1%."
+        },
+        {
+          "text": "En un 0,5%."
+        },
+        {
+          "text": "En un 1,5%."
+        },
+        {
+          "text": "En un 5,0%."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Un filtro de aire obstruido ahoga el motor, impidiendo la proporción exacta de mezcla de aire y combustible, lo que castiga el rendimiento en hasta un 1,5%.",
+      "sourcePageStart": 130,
+      "sourcePageEnd": 130,
+      "sourceReference": "Pág. 130, Beneficios de un buen mantenimiento",
+      "groundingExcerpt": "Un filtro de aire sucio puede llegar a perjudicar en un 1,5% el rendimiento, pues al no haber suficiente aire disponible, o bien al estar contaminado, el combustible no se logra utilizar en un 100%.",
+      "reviewNotes": "Dato específico de impacto por filtro de aire.",
+      "tags": [
+        "mantenimiento",
+        "filtro-aire"
+      ]
+    },
+    {
+      "externalId": "8-q015",
+      "prompt": "¿Qué fenómeno mecánico indeseado se produce cuando, a causa de un filtro de aire sucio, no hay suficiente oxígeno disponible para la quema en el motor?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Combustión espontánea."
+        },
+        {
+          "text": "Combustión limpia sin residuos."
+        },
+        {
+          "text": "Combustión incompleta, donde parte del recurso energético no se aprovecha."
+        },
+        {
+          "text": "Oxidación de la bomba de combustible."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "El motor requiere una mezcla precisa de aire y combustible para quemar el 100% de la energía. Sin suficiente aire, parte del combustible se desecha sin generar movimiento (combustión incompleta).",
+      "sourcePageStart": 130,
+      "sourcePageEnd": 130,
+      "sourceReference": "Pág. 130, Beneficios de un buen mantenimiento",
+      "groundingExcerpt": "Lo anterior podría generar una combustión incompleta, esto es, aquella en que no se aprovecha el total de energía disponible.",
+      "reviewNotes": "Concepto mecánico de pérdida de eficiencia.",
+      "tags": [
+        "combustion",
+        "eficiencia"
+      ]
+    },
+    {
+      "externalId": "8-q016",
+      "prompt": "Al momento de dar contacto y encender el motor de su vehículo antes de iniciar la marcha, ¿cuál es la instrucción del manual para no gastar combustible innecesariamente?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Pisar el acelerador a fondo dos veces para cebar la bomba."
+        },
+        {
+          "text": "Encender el motor sin pisar el acelerador."
+        },
+        {
+          "text": "Pisar levemente el freno y el acelerador en conjunto."
+        },
+        {
+          "text": "Encender el motor e inmediatamente acelerar a altas revoluciones para calentarlo."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Los vehículos actuales gestionan electrónicamente la inyección al momento de la partida; acelerar durante el encendido solo derrocha combustible.",
+      "sourcePageStart": 130,
+      "sourcePageEnd": 130,
+      "sourceReference": "Pág. 130, Enciende el motor sin pisar el acelerador",
+      "groundingExcerpt": "Cuando enciendas el motor, prefiere no pisar el acelerador, pues tal acción sólo provoca un incremento en el consumo. Los vehículos modernos están provistos de un sistema electrónico que permite regular la partida e inyección de combustible...",
+      "reviewNotes": "Práctica eficiente en el arranque.",
+      "tags": [
+        "encendido",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q017",
+      "prompt": "¿Qué impacto tiene en el vehículo la costumbre de acelerar de manera rápida y a fondo (aceleraciones bruscas)?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Mejora el rendimiento porque alcanza la velocidad deseada más pronto."
+        },
+        {
+          "text": "Limpia el sistema de inyección, mejorando la eficiencia general."
+        },
+        {
+          "text": "Genera un consumo excesivo de combustible en comparación a acelerar paulatinamente."
+        },
+        {
+          "text": "Aumenta la vida útil de las pastillas de freno."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "La inyección excesiva y violenta de combustible ahoga la eficiencia del motor, malgastando energía comparado con ganar velocidad de forma gradual.",
+      "sourcePageStart": 131,
+      "sourcePageEnd": 131,
+      "sourceReference": "Pág. 131, Acelera de manera suave",
+      "groundingExcerpt": "Evita acelerar a fondo. Las aceleraciones a fondo generan un consumo excesivo de combustible. Una persona conductora que usualmente acelera a fondo tendrá un gasto energético mucho mayor que una que lo hace de forma paulatina.",
+      "reviewNotes": "Comportamiento del conductor frente al acelerador.",
+      "tags": [
+        "aceleracion",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q018",
+      "prompt": "Al transitar por una autopista, se debe tener presente que las altas velocidades influyen negativamente en el rendimiento del vehículo. ¿En cuánto se reduce el rendimiento al sobrepasar velocidades altas (por ejemplo, sobre 100 km/h)?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Se reduce del orden de un 2%."
+        },
+        {
+          "text": "Se reduce del orden de un 5%."
+        },
+        {
+          "text": "Se reduce del orden de un 10% y más."
+        },
+        {
+          "text": "No se reduce si se transita en 5ta o 6ta marcha."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "A altas velocidades, el esfuerzo aerodinámico y mecánico castigan el rendimiento de forma importante, disminuyéndolo en un 10% o más.",
+      "sourcePageStart": 131,
+      "sourcePageEnd": 131,
+      "sourceReference": "Pág. 131, Velocidad óptima",
+      "groundingExcerpt": "...se debe tener en cuenta que a altas velocidades el rendimiento de combustible se reduce bastante, del orden de un 10% y más.",
+      "reviewNotes": "Impacto de la alta velocidad en la economía de combustible.",
+      "tags": [
+        "velocidad",
+        "rendimiento"
+      ]
+    },
+    {
+      "externalId": "8-q019",
+      "prompt": "Para lograr un menor consumo de combustible en un vehículo con transmisión manual, la norma general de conducción eficiente sugiere respecto a las marchas (cambios):",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Mantener marchas o cambios más bajos (1ª o 2ª) la mayor parte del tiempo."
+        },
+        {
+          "text": "Circular exclusivamente en neutro (desenganchado) durante las rectas."
+        },
+        {
+          "text": "Procurar mantener marchas o cambios más altos durante su conducción (3ª, 4ª o superiores)."
+        },
+        {
+          "text": "Cambiar de marcha repetidamente para revolucionar el motor de forma óptima."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Al utilizar marchas altas, el motor requiere menos revoluciones por minuto (RPM) para mantener la misma velocidad, inyectando menos combustible.",
+      "sourcePageStart": 131,
+      "sourcePageEnd": 131,
+      "sourceReference": "Pág. 131, Evita exigir el motor",
+      "groundingExcerpt": "Un motor exigido a mayores revoluciones tendrá un mayor consumo de combustible. Es por ello que se recomienda mantener las revoluciones en rangos relativamente bajos. Esto se logra procurando mantener marchas o cambios más altos durante su conducción (3ª, 4ª o superiores).",
+      "reviewNotes": "Uso eficiente de la caja de cambios manual.",
+      "tags": [
+        "caja-de-cambios",
+        "eficiencia"
+      ]
+    },
+    {
+      "externalId": "8-q020",
+      "prompt": "Si usted conduce a una velocidad de 70 km/h en un camino plano con un vehículo manual, y su caja tiene hasta 5 velocidades, ¿qué opción le brindará el mayor rendimiento de combustible?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Conducir en 3ª marcha para que el motor responda rápido."
+        },
+        {
+          "text": "Conducir en 4ª marcha, ya que es la adecuada para carreteras."
+        },
+        {
+          "text": "Preferir la marcha más alta posible, en este caso la 5ª marcha."
+        },
+        {
+          "text": "Pasar a neutro para aprovechar el vuelo sin que el motor trabaje."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Mientras más alta sea la marcha, el motor girará a menos revoluciones, maximizando la distancia recorrida por cada litro inyectado de bencina.",
+      "sourcePageStart": 131,
+      "sourcePageEnd": 131,
+      "sourceReference": "Pág. 131, Evita exigir el motor",
+      "groundingExcerpt": "Por ejemplo, para andar a 70 km/h, aunque puede hacerse en 4ª o en 5ª, prefiere la marcha más alta (en este caso, la 5ª), donde se alcanza el mayor rendimiento.",
+      "reviewNotes": "Ejemplo práctico de uso de marchas para eficiencia.",
+      "tags": [
+        "caja-de-cambios",
+        "rendimiento"
+      ]
+    },
+    {
+      "externalId": "8-q021",
+      "prompt": "En el caso de los vehículos con caja de cambios automática, ¿qué ocurre con el consumo de combustible si la persona se acostumbra a presionar el acelerador a fondo repentinamente?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El sistema corta la inyección protegiendo el motor, ahorrando combustible."
+        },
+        {
+          "text": "El vehículo selecciona la marcha más alta posible de inmediato."
+        },
+        {
+          "text": "El vehículo puede seleccionar marchas más bajas para incrementar la potencia, lo que aumenta el consumo."
+        },
+        {
+          "text": "La caja pasa automáticamente a modo económico, mitigando el gasto."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Acelerar a fondo en un vehículo automático fuerza el sistema (kick-down) a rebajar marchas (ej: pasar de 5ta a 3ra) para entregar potencia, revolucionando el motor y disparando el consumo.",
+      "sourcePageStart": 131,
+      "sourcePageEnd": 131,
+      "sourceReference": "Pág. 131, Evita exigir el motor",
+      "groundingExcerpt": "...si te acostumbras a presionar el acelerador a fondo, el vehículo puede seleccionar marchas más bajas para incrementar la potencia, lo que finalmente aumenta el consumo.",
+      "reviewNotes": "Eficiencia energética en cajas automáticas.",
+      "tags": [
+        "transmision-automatica",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q022",
+      "prompt": "Mantener una distancia muy reducida ('ir pegado') respecto al vehículo que le antecede en la vía lo obliga a efectuar una acción que afecta gravemente el consumo de combustible. ¿A qué acción se refiere?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Cambiar las luces altas a bajas de forma repetida."
+        },
+        {
+          "text": "Frenar y acelerar constantemente."
+        },
+        {
+          "text": "Hacer uso continuo de la bocina."
+        },
+        {
+          "text": "Mantener el pedal del embrague medio pisado."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Al no dejar distancia de seguridad, el conductor no tiene espacio para usar la inercia, debiendo copiar cada frenada y acelerón del auto delantero, gastando energía de forma ineficiente.",
+      "sourcePageStart": 131,
+      "sourcePageEnd": 132,
+      "sourceReference": "Págs. 131-132, Mantén una distancia prudente",
+      "groundingExcerpt": "...al mantener una distancia suficiente, evitarás frenar y acelerar constantemente. Esta última práctica conlleva una exigencia repetida de potencia al motor, generando un mayor consumo de combustible.",
+      "reviewNotes": "Relación entre distancia de seguridad y consumo.",
+      "tags": [
+        "distancia-seguridad",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q023",
+      "prompt": "¿Qué beneficio principal, desde la óptica de la conducción eficiente, se obtiene al programar el frenado y detenerse de forma suave y anticipada?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Se enfrían más rápido los neumáticos delanteros."
+        },
+        {
+          "text": "Se evita perder el tiempo y se gana velocidad al volver a arrancar."
+        },
+        {
+          "text": "Se ahorra combustible durante una buena parte de la maniobra de detención."
+        },
+        {
+          "text": "El vehículo se limpia aerodinámicamente antes de detenerse."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Dejar que el vehículo ruede con la inercia o usar el freno de motor en vez de acelerar hasta el final, ahorra combustible durante esos metros finales.",
+      "sourcePageStart": 132,
+      "sourcePageEnd": 132,
+      "sourceReference": "Pág. 132, Evita frenadas de último minuto",
+      "groundingExcerpt": "Si programas tu frenado ante una detención inminente, reducirás las posibilidades de un siniestro y ahorrarás combustible durante una buena parte de la maniobra.",
+      "reviewNotes": "Técnica de detención eficiente.",
+      "tags": [
+        "frenado",
+        "ahorro"
+      ]
+    },
+    {
+      "externalId": "8-q024",
+      "prompt": "Al aproximarse a un semáforo que se encuentra en rojo, la técnica recomendada de conducción eficiente indica que usted debe:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Poner la caja de cambios en posición neutro y usar sólo los frenos de disco."
+        },
+        {
+          "text": "Mantener pisado a fondo el pedal de embrague mientras se acerca al semáforo."
+        },
+        {
+          "text": "Reducir la velocidad paulatinamente manteniendo el cambio puesto (sin pisar el embrague ni pasar a neutro)."
+        },
+        {
+          "text": "Apagar el motor mediante la llave de contacto antes de que el vehículo se detenga por completo."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Aprovechar la 'retención' o 'freno de motor' manteniendo la marcha inserta corta el paso de combustible, logrando un consumo nulo mientras se desacelera.",
+      "sourcePageStart": 132,
+      "sourcePageEnd": 132,
+      "sourceReference": "Pág. 132, Evita frenadas de último minuto",
+      "groundingExcerpt": "Si ves un semáforo en rojo o una señal PARE, puedes ir reduciendo paulatinamente tu velocidad ayudándote con la caja de cambios. En primera instancia debes mantener el cambio puesto (sin pisar el embrague ni pasar a la posición neutro)...",
+      "reviewNotes": "Uso del freno de motor para ahorrar combustible.",
+      "tags": [
+        "frenado",
+        "caja-de-cambios"
+      ]
+    },
+    {
+      "externalId": "8-q025",
+      "prompt": "¿Por qué motivo técnico, en un vehículo moderno, reducir la velocidad manteniendo un cambio puesto (freno de motor) resulta en un menor consumo final?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Porque carga las baterías del sistema eléctrico del vehículo con mayor eficiencia."
+        },
+        {
+          "text": "Porque se corta la inyección de combustible hacia el motor."
+        },
+        {
+          "text": "Porque lubrica de mejor forma los cilindros de la caja de transmisión."
+        },
+        {
+          "text": "Porque aumenta la presión aerodinámica del tubo de escape."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Cuando el vehículo se mueve por inercia y con la marcha puesta, el sistema de inyección electrónica corta completamente el paso de combustible a los cilindros, haciendo que el consumo sea cero en ese tramo.",
+      "sourcePageStart": 132,
+      "sourcePageEnd": 132,
+      "sourceReference": "Pág. 132, Evita frenadas de último minuto",
+      "groundingExcerpt": "El reducir la velocidad manteniendo un cambio puesto corta la inyección de combustible, por lo que tu consumo final en el viaje será menor si lo adoptas como práctica.",
+      "reviewNotes": "Justificación mecánica de la técnica eficiente.",
+      "tags": [
+        "mecanica",
+        "freno-motor"
+      ]
+    },
+    {
+      "externalId": "8-q026",
+      "prompt": "Al enfrentar una congestión vehicular muy pesada, una detención por obras o un siniestro, ¿cuál es la medida más económica si la espera durará más de un minuto?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Mantener el motor en 'ralentí' (encendido pero sin acelerar)."
+        },
+        {
+          "text": "Acelerar leve y continuamente para que la batería no se descargue."
+        },
+        {
+          "text": "Apagar el motor del vehículo y volverlo a encender después."
+        },
+        {
+          "text": "Poner la palanca de cambios en primera y mantener el pie en el embrague a fondo."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "El motor en marcha lenta (ralentí) continúa consumiendo combustible. Si la detención es extensa (más de un minuto), apagar y encender el motor gasta menos que mantenerlo funcionando en el sitio.",
+      "sourcePageStart": 133,
+      "sourcePageEnd": 133,
+      "sourceReference": "Pág. 133, Si te detienes por más de un minuto...",
+      "groundingExcerpt": "En estas ocasiones y, como regla general, en cualquier detención mayor a un minuto, es más económico apagar el motor y volverlo a encender después.",
+      "reviewNotes": "Técnica de ahorro en detenciones prolongadas.",
+      "tags": [
+        "detencion",
+        "ahorro",
+        "motor"
+      ]
+    },
+    {
+      "externalId": "8-q027",
+      "prompt": "Frente a un semáforo con luz roja, ¿qué aconseja el manual respecto a la detención del motor para ahorrar combustible?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Que se debe apagar el motor inmediatamente al detenerse en cada semáforo rojo."
+        },
+        {
+          "text": "Que los rojos del semáforo, en general, duran menos de un minuto, por lo que no conviene apagar el motor."
+        },
+        {
+          "text": "Que solo se debe apagar el motor si hay más de 3 vehículos delante en la fila."
+        },
+        {
+          "text": "Que apagar el motor en un semáforo descalibra el sistema de inyección electrónica."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Las detenciones inferiores a un minuto no justifican el ciclo de apagado y encendido del motor, el cual implicaría un mayor desgaste de los componentes de arranque.",
+      "sourcePageStart": 133,
+      "sourcePageEnd": 133,
+      "sourceReference": "Pág. 133, Si te detienes por más de un minuto...",
+      "groundingExcerpt": "Los rojos del semáforo, en general, duran menos de un minuto, así que, en este caso, no conviene apagar el motor.",
+      "reviewNotes": "Excepción a la regla de apagar el motor.",
+      "tags": [
+        "semaforos",
+        "detencion"
+      ]
+    },
+    {
+      "externalId": "8-q028",
+      "prompt": "Al enfrentar una situación de emergencia en la vía o al realizar maniobras exigentes como los adelantamientos, ¿qué criterio debe primar según el manual?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La economía, manteniendo la velocidad lo más baja posible."
+        },
+        {
+          "text": "El rendimiento del combustible, cuidando de no pasar de la 3ª marcha."
+        },
+        {
+          "text": "La seguridad por sobre la economía, evitando poner en riesgo la integridad de las personas."
+        },
+        {
+          "text": "La conducción ecológica, sin usar el freno bajo ninguna circunstancia."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Las reglas de ahorro de combustible se subordinan totalmente a la seguridad vial. Si un adelantamiento requiere potencia para ser seguro, se debe exigir al motor.",
+      "sourcePageStart": 133,
+      "sourcePageEnd": 133,
+      "sourceReference": "Pág. 133, Adelantamientos y situaciones de emergencia",
+      "groundingExcerpt": "En estas situaciones debe primar la seguridad por sobre la economía, es decir, se pueden obviar algunos consejos de Conducción Eficiente para evitar que se ponga en riesgo la seguridad en el viaje.",
+      "reviewNotes": "Priorización entre seguridad y eficiencia.",
+      "tags": [
+        "seguridad",
+        "adelantamientos",
+        "emergencias"
+      ]
+    },
+    {
+      "externalId": "8-q029",
+      "prompt": "Desde el punto de vista humano y de actitudes al volante, conducir bajo condiciones severas de estrés puede convertirse en:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Un método efectivo para mantenerse despierto en viajes largos."
+        },
+        {
+          "text": "Una ventaja aerodinámica al tensar la postura del conductor."
+        },
+        {
+          "text": "Una causa de consumo excesivo de combustible."
+        },
+        {
+          "text": "Una garantía de realizar cambios de marcha perfectos."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "El estrés induce a un comportamiento impaciente, brusco y agresivo al volante, lo que destroza los principios de manejo suave y constante, elevando el gasto energético.",
+      "sourcePageStart": 133,
+      "sourcePageEnd": 133,
+      "sourceReference": "Pág. 133, Adelantamientos y situaciones de emergencia",
+      "groundingExcerpt": "Por ello, se reitera la recomendación de evitar conducir bajo condiciones severas de estrés... que puede convertirse en una causa de consumo excesivo de combustible.",
+      "reviewNotes": "Factor psicológico relacionado con la eficiencia.",
+      "tags": [
+        "estres",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q030",
+      "prompt": "De acuerdo con el análisis de la seguridad y eficiencia del capítulo 8, ¿cómo afecta un estado de frustración o estrés en la aplicación de las técnicas de conducción eficiente?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El conductor se vuelve más arriesgado e ignora las técnicas, incurriendo en un mayor consumo."
+        },
+        {
+          "text": "El conductor estresado tiende a circular más lento de lo normal, ahorrando combustible."
+        },
+        {
+          "text": "El conductor presta excesiva atención a los indicadores, optimizando la marcha perfecta."
+        },
+        {
+          "text": "No existe relación entre el estrés del conductor y la aplicación de técnicas mecánicas."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El estado mental alterado provoca agresividad al manejar (acelerones, frenazos, alta velocidad), lo que anula cualquier ahorro y aumenta el peligro.",
+      "sourcePageStart": 134,
+      "sourcePageEnd": 134,
+      "sourceReference": "Pág. 134, Seguridad",
+      "groundingExcerpt": "Los estados de frustración y/o estrés convierten a quien conduce en una potencial persona agresiva, quien al volverse más arriesgada ignora las técnicas de Conducción Eficiente, incurriendo en un mayor consumo de combustible...",
+      "reviewNotes": "Conducta vial ineficiente por estrés.",
+      "tags": [
+        "estres",
+        "agresividad",
+        "eficiencia"
+      ]
+    },
+    {
+      "externalId": "8-q031",
+      "prompt": "¿Cuál es la premisa o relación fundamental que establece el manual entre la Conducción Eficiente y la Seguridad Vial?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La conducción eficiente sacrifica ciertos grados de seguridad a favor del ahorro."
+        },
+        {
+          "text": "Una conducción segura es la base para una Conducción Eficiente."
+        },
+        {
+          "text": "La seguridad vial y la eficiencia energética son conceptos excluyentes e independientes."
+        },
+        {
+          "text": "Conducir despacio por autopistas asegura eficiencia pero es inseguro."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Los hábitos que nos hacen predecibles, cuidadosos y moderados en la vía (seguridad) coinciden directamente con los hábitos que evitan el gasto innecesario de energía.",
+      "sourcePageStart": 134,
+      "sourcePageEnd": 134,
+      "sourceReference": "Pág. 134, Seguridad",
+      "groundingExcerpt": "Es más, una conducción segura es la base para una Conducción Eficiente, la que contempla principios y técnicas que, junto con resguardar la seguridad personal y de terceros, tienden al correcto uso y funcionamiento del vehículo...",
+      "reviewNotes": "Concepto global de sinergia entre seguridad y eficiencia.",
+      "tags": [
+        "seguridad-vial",
+        "conceptos"
+      ]
+    },
+    {
+      "externalId": "8-q032",
+      "prompt": "Para que el motor de su vehículo extraiga la máxima energía de cada litro de combustible (combustión completa y eficiente), ¿qué es técnicamente indispensable?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Que el filtro de aire restrinja completamente el paso del viento al motor."
+        },
+        {
+          "text": "Que la presión en los neumáticos traseros sea muy baja."
+        },
+        {
+          "text": "Que exista una proporción óptima de aire y combustible al momento de la ignición."
+        },
+        {
+          "text": "Que el aceite del motor esté en su nivel mínimo y sin viscosidad."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "La combustión requiere tanto combustible como oxígeno (aire limpio) en medidas exactas; si falla una de las partes (ej. filtro tapado), se malgasta la energía.",
+      "sourcePageStart": 130,
+      "sourcePageEnd": 130,
+      "sourceReference": "Pág. 130, Beneficios de un buen mantenimiento",
+      "groundingExcerpt": "Existe una proporción óptima de aire y combustible que permite extraer la máxima energía de este último en la combustión.",
+      "reviewNotes": "Fundamento mecánico del consumo.",
+      "tags": [
+        "mecanica",
+        "combustion"
+      ]
+    },
+    {
+      "externalId": "8-q033",
+      "prompt": "¿En qué lugares de fácil acceso puede encontrar normalmente la información sobre la presión de aire adecuada que requieren los neumáticos de su vehículo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "En el techo del vehículo y bajo las alfombras."
+        },
+        {
+          "text": "En el manual del vehículo o en una tabla adosada al marco de la puerta de quien conduce."
+        },
+        {
+          "text": "Impresa de fábrica en el volante y palanca de cambios."
+        },
+        {
+          "text": "Únicamente tallada en la cubierta superior del motor."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Los fabricantes estipulan la presión óptima en el manual del propietario y suelen adherir una placa informativa en el pilar B del automóvil (marco de la puerta delantera izquierda).",
+      "sourcePageStart": 129,
+      "sourcePageEnd": 129,
+      "sourceReference": "Pág. 129, Controla la presión de aire...",
+      "groundingExcerpt": "La presión a utilizar también se puede encontrar en el marco de una de las puertas, generalmente en la de la persona que conduce.",
+      "reviewNotes": "Datos de ubicación de información técnica.",
+      "tags": [
+        "neumaticos",
+        "informacion"
+      ]
+    },
+    {
+      "externalId": "8-q034",
+      "prompt": "Al transitar por una carretera con un portaesquís vacío o barras portaequipaje sin carga instaladas en el techo, desde el punto de vista de la eficiencia, usted:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Ahorra combustible porque el vehículo se estabiliza con el viento."
+        },
+        {
+          "text": "Gasta más combustible debido a la resistencia aerodinámica, incluso si no llevan bultos voluminosos."
+        },
+        {
+          "text": "No altera el consumo de combustible, ya que solo los bultos cerrados afectan la aerodinámica."
+        },
+        {
+          "text": "Mejora el rendimiento porque se produce sustentación aerodinámica del eje delantero."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Cualquier alteración a la forma lisa del vehículo, como barras y anclajes, 'choca' con el viento a alta velocidad y representa un lastre energético.",
+      "sourcePageStart": 129,
+      "sourcePageEnd": 129,
+      "sourceReference": "Pág. 129, Cuida la aerodinámica",
+      "groundingExcerpt": "Los equipos portaequipajes y bultos en el techo tienen otro efecto adicional que aumenta el consumo de combustible. Especialmente a altas velocidades, se produce una resistencia aerodinámica...",
+      "reviewNotes": "Interpretación aplicada del concepto de resistencia aerodinámica.",
+      "tags": [
+        "aerodinamica",
+        "equipamiento"
+      ]
+    },
+    {
+      "externalId": "8-q035",
+      "prompt": "Según el resumen del manual, al prestar adecuada 'Atención a las condiciones que rodean a la persona conductora', usted favorece la eficiencia porque:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Evita tener que encender el aire acondicionado en días calurosos."
+        },
+        {
+          "text": "Permite reaccionar apropiadamente, frenar con anticipación y usar la caja de cambios adecuadamente."
+        },
+        {
+          "text": "Le permite conducir a altas velocidades sin percibir la fatiga."
+        },
+        {
+          "text": "Se reduce el roce de los neumáticos en las curvas cerradas."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "La observación lejana y atenta del camino permite planificar maniobras en vez de reaccionar de improviso, propiciando un manejo fluido y económico.",
+      "sourcePageStart": 134,
+      "sourcePageEnd": 134,
+      "sourceReference": "Pág. 134, Seguridad",
+      "groundingExcerpt": "Atención a las condiciones que rodean a la persona conductora: te permitirá reaccionar apropiadamente y evitar siniestros. Asimismo, un frenado con la suficiente anticipación y el uso apropiado de la caja de cambios, reducen el consumo de combustible.",
+      "reviewNotes": "Principios conjuntos de seguridad y economía.",
+      "tags": [
+        "atencion",
+        "ahorro"
+      ]
+    },
+    {
+      "externalId": "8-q036",
+      "prompt": "En base al esquema 'Cómo incide la Conducción Eficiente en el consumo', ¿cuál es uno de los beneficios directos que afecta a la vida operativa del automóvil?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Mayor disponibilidad del vehículo y aumento en la vida útil de sus componentes."
+        },
+        {
+          "text": "Aumento en la depreciación comercial del motor por falta de uso intensivo."
+        },
+        {
+          "text": "Reducción en el tamaño y desgaste de la batería del sistema eléctrico."
+        },
+        {
+          "text": "Pérdida de la garantía de fábrica por conducir a bajas revoluciones."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Conducir de manera suave estresa menos la caja de cambios, frenos y motor, retrasando las fallas mecánicas y manteniendo el auto operativo.",
+      "sourcePageStart": 130,
+      "sourcePageEnd": 130,
+      "sourceReference": "Pág. 130, Beneficios de un buen mantenimiento",
+      "groundingExcerpt": "Aumentas la vida útil de sus componentes. Mayor disponibilidad del vehículo.",
+      "reviewNotes": "Identificación de beneficios secundarios en la mecánica.",
+      "tags": [
+        "mantenimiento",
+        "beneficios"
+      ]
+    },
+    {
+      "externalId": "8-q037",
+      "prompt": "Al realizar adelantamientos en la carretera, la regla principal de la Conducción Eficiente y Segura indica que usted debe:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Acelerar siempre a fondo hasta llegar al corte de inyección para pasarlo rápido."
+        },
+        {
+          "text": "Pegarse todo lo posible al vehículo que antecede para aprovechar su 'succión' aerodinámica antes de salir."
+        },
+        {
+          "text": "Tener plena seguridad de contar con la distancia necesaria, para no forzar el motor y no elevar demasiado las RPM."
+        },
+        {
+          "text": "Realizar la maniobra en 5ta o 6ta marcha exclusivamente, aunque tome varios minutos el sobrepaso."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Un adelantamiento seguro exige distancia y planificación, evitando llevar el motor al extremo de sus revoluciones en una maniobra desesperada.",
+      "sourcePageStart": 134,
+      "sourcePageEnd": 134,
+      "sourceReference": "Pág. 134, Seguridad",
+      "groundingExcerpt": "Adelantamientos: se debe tener plena seguridad de contar con la distancia necesaria para la maniobra. Esto evitará elevar demasiado las RPM del vehículo, generando consumos excesivos.",
+      "reviewNotes": "Procedimiento eficiente para adelantar.",
+      "tags": [
+        "adelantamientos",
+        "rpm"
+      ]
+    },
+    {
+      "externalId": "8-q038",
+      "prompt": "Si usted frena su vehículo siempre a último minuto, además de exponerse a causar un siniestro por alcance, usted:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Perderá la oportunidad de ahorrar combustible y no ganará nada de tiempo."
+        },
+        {
+          "text": "Protegerá mejor el desgaste de las balatas y discos de freno."
+        },
+        {
+          "text": "Mantendrá el motor a una temperatura de trabajo más óptima."
+        },
+        {
+          "text": "Evitará el bloqueo automático del sistema de embrague."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Mantener el acelerador presionado hasta el último segundo derrocha la gasolina que se podría haber ahorrado dejando avanzar el vehículo por inercia hacia la detención.",
+      "sourcePageStart": 132,
+      "sourcePageEnd": 132,
+      "sourceReference": "Pág. 132, Evita frenadas de último minuto",
+      "groundingExcerpt": "Si frenas a último minuto, además de exponerte a siniestros, perderás la oportunidad de ahorrar y no ganarás nada de tiempo.",
+      "reviewNotes": "Consecuencias ineficientes de frenadas tardías.",
+      "tags": [
+        "frenado",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q039",
+      "prompt": "Respecto a la preparación del vehículo, si usted transporta objetos pesados como cajas de herramientas que no necesita para su viaje diario, la recomendación del manual es:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Acomodarlos en el piso de los asientos traseros para bajar el centro de gravedad."
+        },
+        {
+          "text": "Guardarlos en otro lugar (fuera del auto) donde no impliquen un gasto de energía innecesario."
+        },
+        {
+          "text": "Repartir equitativamente el peso en el maletero para no afectar el consumo de combustible."
+        },
+        {
+          "text": "Trasladarlos en un remolque ligero para que el automóvil no sufra el desgaste de amortiguación."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "Todo peso extra exige más trabajo del motor, quemando más gasolina. Lo que no es indispensable debe removerse del automóvil.",
+      "sourcePageStart": 128,
+      "sourcePageEnd": 128,
+      "sourceReference": "Pág. 128, Prepara tu vehículo para el viaje",
+      "groundingExcerpt": "Verifica no tener objetos de excesivo peso para el viaje, como cajas de herramientas o portaequipajes en el techo, cuando no sean realmente necesarios. Guárdalos en otro lugar donde no impliquen un gasto de energía.",
+      "reviewNotes": "Gestión del peso inútil en la cabina/maletero.",
+      "tags": [
+        "carga",
+        "consumo"
+      ]
+    },
+    {
+      "externalId": "8-q040",
+      "prompt": "En términos de movilidad y eficiencia energética de los viajes de una persona, ¿cuál frase describe mejor la filosofía expuesta en el manual?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La eficiencia energética consiste en hacer menos traslados y no visitar a nadie."
+        },
+        {
+          "text": "La eficiencia energética es utilizar únicamente vehículos que no requieran combustible, como las bicicletas."
+        },
+        {
+          "text": "La eficiencia energética no es hacer menos, sino hacer lo mismo pero gastando menos."
+        },
+        {
+          "text": "La eficiencia energética es delegar los trámites urbanos a servicios de encomienda motorizada."
+        }
+      ],
+      "correctOptionIndexes": [
+        2
+      ],
+      "publicExplanation": "Planificar bien la ruta y agrupar actividades permite mantener la calidad de vida y las obligaciones cumplidas, pero consumiendo menos recursos energéticos y tiempo.",
+      "sourcePageStart": 128,
+      "sourcePageEnd": 128,
+      "sourceReference": "Pág. 128, Planifica tu recorrido",
+      "groundingExcerpt": "La eficiencia energética no es hacer menos, sino hacer lo mismo pero gastando menos. ¿Para qué hacer dos viajes, si en uno puedes hacer todos los trámites?",
+      "reviewNotes": "Concepto filosófico/social de la eficiencia vial.",
+      "tags": [
+        "eficiencia",
+        "planificacion"
+      ]
+    }
+  ]
+}

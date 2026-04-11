@@ -1,0 +1,53 @@
+[
+  {
+    "externalId": "5-q033",
+    "errors": [
+      {
+        "code": "chapter_scope_mismatch",
+        "message": "Source pages 162-162 fall outside the accepted chapter-5 source window 68-76.",
+        "field": "sourcePageStart"
+      },
+      {
+        "code": "annex_scope_mismatch",
+        "message": "Source pages 162-162 fall inside annex pages 149-169, which are out of scope for chapter imports.",
+        "field": "sourcePageStart"
+      }
+    ],
+    "warnings": [],
+    "normalizedQuestion": {
+      "externalId": "5-q033",
+      "prompt": "Según la legislación vigente sobre los 'ciclos', además de bicicletas y triciclos de tracción humana, ¿qué otro vehículo se considera legalmente como 'ciclo' (vehículo no motorizado)?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Cualquier vehículo motorizado ligero que no alcance los 50 km/h."
+        },
+        {
+          "text": "Vehículos de una o más ruedas provistos de un motor eléctrico auxiliar de hasta 250 watts que se corta al superar los 25 km/h o al dejar de pedalear."
+        },
+        {
+          "text": "Únicamente las patinetas manuales."
+        },
+        {
+          "text": "Las motocicletas cilindrada 50cc conocidas como 'mosquito'."
+        }
+      ],
+      "correctOptionIndexes": [
+        1
+      ],
+      "publicExplanation": "La ley incorpora bajo la definición de ciclo a las bicicletas de 'pedaleo asistido' con motores muy pequeños (hasta 250W) cuya asistencia no supera los 25 km/h, separándolas de las motocicletas tradicionales.",
+      "sourcePageStart": 162,
+      "sourcePageEnd": 162,
+      "sourceReference": "Pág. 162, Glosario: Ciclo",
+      "groundingExcerpt": "También se consideran ciclos aquellos vehículos de una o más ruedas que cuenten con un motor auxiliar eléctrico, de una potencia nominal continua máxima de 250 watts, en los que la alimentación es reducida o interrumpida cuando el vehículo alcanza una velocidad máxima de 25 km/h...",
+      "reviewNotes": "Utilización de la definición legal de 'ciclo' del glosario.",
+      "tags": [
+        "ciclos",
+        "normativa",
+        "glosario"
+      ],
+      "chapterId": "chapter-5"
+    }
+  }
+]

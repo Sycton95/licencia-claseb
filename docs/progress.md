@@ -58,19 +58,21 @@
 
 ## Current content baseline
 
-- Published seed coverage exists only for:
+- Published question coverage now exists for:
   - `chapter-1`: 28 questions
   - `chapter-3`: 20 questions
-- Source-preparation chunks exist only for:
+  - `chapter-4`: 49 questions
+  - `chapter-5`: 39 questions
+  - `chapter-6`: 40 questions
+  - `chapter-7`: 40 questions
+  - `chapter-8`: 40 questions
+  - `chapter-9`: 40 questions
+- Source-preparation chunks still exist only for:
   - `chapter-1`: 2 chunks
   - `chapter-3`: 7 chunks
-- The remaining manual chapters without baseline coverage are:
+- Remaining chapter without baseline question coverage:
   - `chapter-2`
-  - `chapter-4`
-  - `chapter-5`
-  - `chapter-6`
-  - `chapter-7`
-  - `chapter-8`
+- Runtime chapter taxonomy is now aligned to the formal 9-chapter manual structure.
 
 ## Outcomes from the Milestone 6A close-out pass
 
@@ -124,6 +126,22 @@
 - Production verification:
   - escalated `npm run smoke:prod` passed against `https://licencia-claseb.vercel.app`
 
+## 2026-04-11 Reviewed import merge and chapter-model alignment
+
+- Aligned the runtime chapter catalog to the formal 9-chapter manual structure.
+- Promoted reviewed import candidates directly into the published seed bank for:
+  - `chapter-4`
+  - `chapter-5`
+  - `chapter-6`
+  - `chapter-7`
+  - `chapter-8`
+  - `chapter-9`
+- Fixed the verifier false-positive that had rejected `6-q030`.
+- Kept two reviewed import exclusions out of the bank:
+  - `4-q047` (chapter 7 source inside a chapter 4 batch)
+  - `5-q033` (annex/glossary source on page 162)
+- Current published total is `296` questions.
+
 ## Open risks
 
 - Current production AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
@@ -134,7 +152,9 @@
   - browser-local persistence only in this phase
 - Chapter 3 was expanded directly from the formal manual PDF in a fast-track pass.
   - The new batch is grounded to pages 33, 34, and 35 only.
-  - Broader chapter rollout remains deferred; coverage is still uneven outside chapters 1 and 3.
+- Source-preparation coverage still lags behind the expanded runtime bank:
+  - only chapters 1 and 3 have prepared grounding chunks
+  - chapter 2 remains without baseline question coverage
 
 ## Blocked or manual steps
 
@@ -165,12 +185,6 @@
    - verifier-gated local Ollama adapter
    - isolated beta storage
    - local Admin Beta panel
-3. Start remaining chapter expansion with a baseline-first, progressive-activation policy.
-4. Roll out chapter coverage in two waves:
-   - Wave 1: `chapter-7`, `chapter-5`, `chapter-4`
-   - Wave 2: `chapter-6`, `chapter-2`, `chapter-8`
-5. Activate each chapter publicly only after it reaches:
-   - at least `10` published questions
-   - at least `3` prepared source chunks
-   - clear source references
-   - no unresolved critical editorial warnings
+3. Expand formal source preparation beyond chapters 1 and 3 so editorial automation matches the live bank.
+4. Build baseline published coverage for `chapter-2`.
+5. Keep annex content excluded until a separate annex policy is implemented.
