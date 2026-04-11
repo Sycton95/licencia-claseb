@@ -112,6 +112,18 @@
 - Remaining UI refinements are deferred until after Milestone 5 and baseline chapter expansion.
 - Work now proceeds on `main`.
 
+## 2026-04-10 Chapter 3 release verification
+
+- Added 8 new published chapter 3 questions grounded only in `Libro-ClaseB-2026.pdf`.
+- Increased chapter 3 published coverage from `12` to `20`.
+- Increased chapter 3 prepared grounding from `2` to `7` chunks.
+- Local release gate status:
+  - `npm run validate:content` passed
+  - `npm run build` passed
+  - `npm run release:check` failed only under sandboxed network access
+- Production verification:
+  - escalated `npm run smoke:prod` passed against `https://licencia-claseb.vercel.app`
+
 ## Open risks
 
 - Current production AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
