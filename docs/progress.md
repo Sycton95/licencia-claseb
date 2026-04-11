@@ -60,10 +60,10 @@
 
 - Published seed coverage exists only for:
   - `chapter-1`: 28 questions
-  - `chapter-3`: 12 questions
+  - `chapter-3`: 20 questions
 - Source-preparation chunks exist only for:
   - `chapter-1`: 2 chunks
-  - `chapter-3`: 2 chunks
+  - `chapter-3`: 7 chunks
 - The remaining manual chapters without baseline coverage are:
   - `chapter-2`
   - `chapter-4`
@@ -120,6 +120,9 @@
   - bounded local runs only
   - suggestion output quality still unproven on target hardware
   - browser-local persistence only in this phase
+- Chapter 3 was expanded directly from the formal manual PDF in a fast-track pass.
+  - The new batch is grounded to pages 33, 34, and 35 only.
+  - Broader chapter rollout remains deferred; coverage is still uneven outside chapters 1 and 3.
 
 ## Blocked or manual steps
 

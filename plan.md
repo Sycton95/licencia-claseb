@@ -268,10 +268,10 @@ Status:
 
 - Published seeded questions currently exist only in:
   - `chapter-1`: 28
-  - `chapter-3`: 12
+  - `chapter-3`: 20
 - Prepared source chunks currently exist only in:
   - `chapter-1`: 2
-  - `chapter-3`: 2
+  - `chapter-3`: 7
 - Remaining uncovered chapters:
   - `chapter-2`
   - `chapter-4`

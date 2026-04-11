@@ -137,3 +137,10 @@
   - no public route dependency
   - no direct path to published content
   - no production dependency on the beta panel
+
+## 2026-04-10 Chapter 3 Fast-Track Expansion
+
+- Expanded chapter 3 directly from the formal source manual PDF `Libro-ClaseB-2026.pdf`.
+- Increased chapter 3 prepared grounding from `2` to `7` chunks using manual-backed material from pages `33` to `35`.
+- Increased chapter 3 published seed coverage from `12` to `20` questions.
+- Added exact source references for the new chapter 3 batch and kept the release outside the AI/Beta suggestion path.
