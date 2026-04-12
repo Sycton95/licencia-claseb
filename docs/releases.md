@@ -154,3 +154,13 @@
   - `4-q047` rejected for chapter-scope mismatch
   - `5-q033` rejected for annex/glossary sourcing
 - Prepared the release to sync the updated published bank to the live Supabase-backed site.
+
+## 2026-04-12 Chapter 2 baseline import
+
+- Merged reviewed import candidates into the published bank for `chapter-2`.
+- Closed the only remaining chapter without published baseline coverage under the formal 9-chapter manual model.
+- Kept the import-review boundary unchanged:
+  - raw file in `data/imports`
+  - review output in `data/import-reviews`
+  - merge from `accepted-candidates.json` only
+- Left encoding cleanup and source-preparation catch-up as the next post-import milestones.

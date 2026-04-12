@@ -268,6 +268,7 @@ Status:
 
 - Published questions currently exist in:
   - `chapter-1`: 28
+  - `chapter-2`: 40
   - `chapter-3`: 20
   - `chapter-4`: 49
   - `chapter-5`: 39
@@ -278,8 +279,6 @@ Status:
 - Prepared source chunks currently exist only in:
   - `chapter-1`: 2
   - `chapter-3`: 7
-- Remaining chapter without baseline coverage:
-  - `chapter-2`
 - Runtime chapter taxonomy is aligned to the formal 9-chapter manual structure.
 
 ## Chapter rollout policy
@@ -294,19 +293,19 @@ Status:
 
 ## Chapter rollout order
 
-The reviewed frontier imports for `chapter-4` through `chapter-9` are already merged into the runtime baseline.
+The reviewed frontier imports for `chapter-2` and `chapter-4` through `chapter-9` are already merged into the runtime baseline.
 
 Current baseline by chapter:
 
-1. `chapter-1` — `28` published
-2. `chapter-2` — `0` published
-3. `chapter-3` — `20` published
-4. `chapter-4` — `49` published
-5. `chapter-5` — `39` published
-6. `chapter-6` — `40` published
-7. `chapter-7` — `40` published
-8. `chapter-8` — `40` published
-9. `chapter-9` — `40` published
+1. `chapter-1` - `28` published
+2. `chapter-2` - `40` published
+3. `chapter-3` - `20` published
+4. `chapter-4` - `49` published
+5. `chapter-5` - `39` published
+6. `chapter-6` - `40` published
+7. `chapter-7` - `40` published
+8. `chapter-8` - `40` published
+9. `chapter-9` - `40` published
 
 Excluded reviewed imports:
 
@@ -321,10 +320,11 @@ Excluded reviewed imports:
    - opt-in
    - verifier-gated
    - never production-default
-4. Expand `sourcePreparation` to catch up with the imported runtime bank, starting with `chapter-4` through `chapter-9`.
-5. Build baseline published coverage for `chapter-2`, which is the only remaining chapter without live questions.
+4. Run a deterministic encoding cleanup pass for mojibake in seeded and imported content.
+5. Expand `sourcePreparation` to catch up with the imported runtime bank, starting with `chapter-4` through `chapter-9`, then `chapter-2`.
 6. Keep annexes out of the runtime question bank until a separate annex ingestion policy exists.
 7. Run the release gate on each production content update:
    - `npm run validate:content`
    - `npm run build`
    - `npm run release:check`
+

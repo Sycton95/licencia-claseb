@@ -1,3 +1,4 @@
+import chapter2Accepted from '../../data/import-reviews/chapter-2-batch/accepted-candidates.json' with { type: 'json' };
 import chapter4Accepted from '../../data/import-reviews/chapter-4-batch/accepted-candidates.json' with { type: 'json' };
 import chapter5Accepted from '../../data/import-reviews/chapter-5-batch/accepted-candidates.json' with { type: 'json' };
 import chapter6Accepted from '../../data/import-reviews/chapter-6-batch/accepted-candidates.json' with { type: 'json' };
@@ -83,6 +84,7 @@ function buildImportedQuestion(question: ReviewedImportQuestion): Question {
 }
 
 const REVIEWED_IMPORT_BATCHES = [
+  chapter2Accepted,
   chapter4Accepted,
   chapter5Accepted,
   chapter6Accepted,

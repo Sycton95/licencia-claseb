@@ -15,12 +15,10 @@
 
 ## Active milestone
 
-- Milestone 5E local LLM suggestion pilot:
-  - local-only
-  - opt-in
-  - verifier-gated
-  - heuristic provider remains production-default
-  - local Admin `Beta` section now available behind env flags
+- Post-import data correctness and grounding alignment:
+  - chapter-2 baseline coverage is now merged
+  - next priority is deterministic encoding cleanup
+  - after cleanup, expand `sourcePreparation` beyond chapters `1` and `3`
 
 ## Completed milestones
 
@@ -60,6 +58,7 @@
 
 - Published question coverage now exists for:
   - `chapter-1`: 28 questions
+  - `chapter-2`: 40 questions
   - `chapter-3`: 20 questions
   - `chapter-4`: 49 questions
   - `chapter-5`: 39 questions
@@ -70,8 +69,6 @@
 - Source-preparation chunks still exist only for:
   - `chapter-1`: 2 chunks
   - `chapter-3`: 7 chunks
-- Remaining chapter without baseline question coverage:
-  - `chapter-2`
 - Runtime chapter taxonomy is now aligned to the formal 9-chapter manual structure.
 
 ## Outcomes from the Milestone 6A close-out pass
@@ -142,6 +139,16 @@
   - `5-q033` (annex/glossary source on page 162)
 - Current published total is `296` questions.
 
+## 2026-04-12 Chapter 2 baseline import
+
+- Promoted reviewed import candidates into the published bank for `chapter-2`.
+- Accepted review result for `chapter-2-batch.json`:
+  - `40` accepted
+  - `0` rejected
+- `chapter-2` is no longer empty in the live runtime bank.
+- Current published total is `336` questions.
+- This closes the baseline chapter-coverage gap under the formal 9-chapter model.
+
 ## Open risks
 
 - Current production AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
@@ -154,7 +161,8 @@
   - The new batch is grounded to pages 33, 34, and 35 only.
 - Source-preparation coverage still lags behind the expanded runtime bank:
   - only chapters 1 and 3 have prepared grounding chunks
-  - chapter 2 remains without baseline question coverage
+- imported chapters now exceed private grounding coverage
+- text encoding debt still exists in seeded/imported content and should be treated as the next deterministic cleanup pass
 
 ## Blocked or manual steps
 
@@ -179,12 +187,12 @@
 
 ## Next approved work blocks
 
-1. Keep Milestone 5A as the active quality gate for content review.
-2. Add the local-only Milestone 5E pilot:
+1. Run a deterministic encoding cleanup pass for mojibake in seeded and imported content.
+2. Expand formal source preparation beyond chapters 1 and 3 so editorial automation matches the live bank.
+3. Keep Milestone 5A as the quality gate for imported and locally authored content.
+4. Keep Milestone 5E local-only and non-production:
    - provider abstraction
    - verifier-gated local Ollama adapter
    - isolated beta storage
    - local Admin Beta panel
-3. Expand formal source preparation beyond chapters 1 and 3 so editorial automation matches the live bank.
-4. Build baseline published coverage for `chapter-2`.
 5. Keep annex content excluded until a separate annex policy is implemented.

@@ -1,0 +1,1624 @@
+{
+  "sourceFile": "data/imports/chapter-2-batch.json",
+  "reviewedAt": "2026-04-12T00:54:45.518Z",
+  "batch": {
+    "batchId": "chapter-2-batch-2026-04-11-01",
+    "chapterIdRaw": "chapter-2",
+    "chapterIdNormalized": "chapter-2",
+    "sourceDocumentId": "manual-claseb-2026",
+    "questionCount": 40
+  },
+  "summary": {
+    "acceptedCount": 40,
+    "rejectedCount": 0,
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "normalizations": [],
+  "warnings": [],
+  "errors": [],
+  "items": [
+    {
+      "externalId": "chapter-2-q001",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q001",
+        "prompt": "En el panel de instrumentos del vehículo, ¿qué función cumple el odómetro?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Mide y muestra el valor de la rapidez instantánea del vehículo."
+          },
+          {
+            "text": "Indica la distancia total o parcial recorrida por el vehículo."
+          },
+          {
+            "text": "Muestra la velocidad del motor en revoluciones por minuto."
+          },
+          {
+            "text": "Advierte sobre un posible problema a revisar en el motor."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "El odómetro es el instrumento encargado de llevar el registro del kilometraje o distancia que ha recorrido el vehículo.",
+        "sourcePageStart": 11,
+        "sourcePageEnd": 11,
+        "sourceReference": "Pág. 11, Funcionamiento del automóvil",
+        "groundingExcerpt": "Odómetro: Indica la distancia total o parcial recorrida por el vehículo.",
+        "reviewNotes": "Identificación de instrumentos del tablero.",
+        "tags": [
+          "panel-instrumentos",
+          "odometro"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q002",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q002",
+        "prompt": "¿Qué información entrega el tacómetro en el panel de instrumentos?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "La distancia total recorrida por el vehículo."
+          },
+          {
+            "text": "El nivel de combustible en el estanque."
+          },
+          {
+            "text": "La rapidez instantánea del vehículo en kilómetros por hora."
+          },
+          {
+            "text": "La velocidad del motor en revoluciones por minuto."
+          }
+        ],
+        "correctOptionIndexes": [
+          3
+        ],
+        "publicExplanation": "El tacómetro muestra las RPM (revoluciones por minuto), indicando cuán rápido está girando internamente el motor.",
+        "sourcePageStart": 11,
+        "sourcePageEnd": 11,
+        "sourceReference": "Pág. 11, Funcionamiento del automóvil",
+        "groundingExcerpt": "Tacómetro: Velocidad del motor en revoluciones por minuto.",
+        "reviewNotes": "Identificación de instrumentos del tablero.",
+        "tags": [
+          "panel-instrumentos",
+          "tacometro"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q003",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q003",
+        "prompt": "Si en el panel de instrumentos se enciende un testigo de color rojo, ¿qué indica generalmente?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Informa que el vehículo ha sido puesto en funcionamiento."
+          },
+          {
+            "text": "Advierte sobre un posible problema menor que debe revisarse en el futuro."
+          },
+          {
+            "text": "Informa atención inmediata por una avería grave."
+          },
+          {
+            "text": "Indica que las luces altas se encuentran encendidas."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Los testigos rojos advierten de problemas críticos que requieren detener el vehículo para evitar daños severos o accidentes.",
+        "sourcePageStart": 11,
+        "sourcePageEnd": 11,
+        "sourceReference": "Pág. 11, Funcionamiento del automóvil",
+        "groundingExcerpt": "Testigos color rojo: Informan atención inmediata, avería grave.",
+        "reviewNotes": "Clasificación de colores en el panel de instrumentos.",
+        "tags": [
+          "panel-instrumentos",
+          "testigos"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q004",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q004",
+        "prompt": "Si al conducir se enciende en el panel de instrumentos la luz indicadora de la presión de aceite, ¿qué debe hacer?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Acelerar el motor para aumentar la presión del aceite en los conductos."
+          },
+          {
+            "text": "Continuar conduciendo a baja velocidad hasta el taller más cercano."
+          },
+          {
+            "text": "Detener el motor de inmediato y no ponerlo en marcha hasta haberlo reparado."
+          },
+          {
+            "text": "Cambiar el filtro de aire y continuar la marcha normalmente."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "La falta de lubricación puede fundir y destruir el motor rápidamente, por lo que la detención inmediata es vital.",
+        "sourcePageStart": 12,
+        "sourcePageEnd": 12,
+        "sourceReference": "Pág. 12, El sistema de lubricación",
+        "groundingExcerpt": "Si esta se enciende, debes detener el motor de inmediato y no ponerlo en marcha hasta haberlo reparado, ya que le puedes causar averías graves.",
+        "reviewNotes": "Acción ante emergencia de lubricación.",
+        "tags": [
+          "lubricacion",
+          "emergencias"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q005",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q005",
+        "prompt": "¿Cuál es la función del alternador en el sistema eléctrico del vehículo?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Convertir la energía eléctrica en mecánica para mover las ruedas."
+          },
+          {
+            "text": "Almacenar la energía generada directamente del combustible."
+          },
+          {
+            "text": "Convertir la energía mecánica en eléctrica gracias al movimiento de una correa."
+          },
+          {
+            "text": "Proteger los fusibles de posibles cortocircuitos por sobrecarga."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "El alternador carga la batería y alimenta los sistemas eléctricos mientras el motor está funcionando.",
+        "sourcePageStart": 12,
+        "sourcePageEnd": 12,
+        "sourceReference": "Pág. 12, El sistema eléctrico",
+        "groundingExcerpt": "El alternador convierte la energía mecánica en eléctrica gracias al movimiento de una correa que viene desde el motor.",
+        "reviewNotes": "Componentes y función del sistema eléctrico.",
+        "tags": [
+          "sistema-electrico",
+          "alternador"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q006",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q006",
+        "prompt": "Si al dar contacto el motor de su vehículo no se enciende, ¿cuál es la causa más probable?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Que el motor carezca por completo de líquido refrigerante."
+          },
+          {
+            "text": "Que la batería se encuentre descargada o desconectada."
+          },
+          {
+            "text": "Que los fusibles de las luces exteriores estén fundidos."
+          },
+          {
+            "text": "Que el tanque de combustible tenga exceso de presión de gases."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "El motor de partida requiere una gran cantidad de energía eléctrica de la batería para iniciar el giro del motor.",
+        "sourcePageStart": 12,
+        "sourcePageEnd": 12,
+        "sourceReference": "Pág. 12, El sistema eléctrico",
+        "groundingExcerpt": "Cuando el motor de tu vehículo no se enciende al darle contacto es muy probable que la batería se encuentre descargada o desconectada.",
+        "reviewNotes": "Diagnóstico de falla de encendido eléctrico.",
+        "tags": [
+          "sistema-electrico",
+          "bateria"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q007",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q007",
+        "prompt": "Al momento de cargar gasolina en un servicentro, ¿cuál de las siguientes acciones es una obligación de seguridad?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Mantener las ventanas abiertas para ventilar los vapores."
+          },
+          {
+            "text": "Apagar el motor del vehículo."
+          },
+          {
+            "text": "Encender las luces intermitentes de advertencia de peligro."
+          },
+          {
+            "text": "Dejar la llave de contacto en posición de encendido para el marcador."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Mantener el motor apagado evita posibles chispas en el sistema eléctrico o de escape que podrían encender los vapores del combustible.",
+        "sourcePageStart": 13,
+        "sourcePageEnd": 13,
+        "sourceReference": "Pág. 13, El sistema de combustible",
+        "groundingExcerpt": "AL CARGAR GASOLINA, RECUERDA: Apagar el motor del vehículo.",
+        "reviewNotes": "Precauciones en el manejo de combustible.",
+        "tags": [
+          "combustible",
+          "seguridad"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q008",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q008",
+        "prompt": "En el indicador de temperatura del líquido refrigerante, ¿qué significa que la aguja apunte a la letra H?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Indica que el motor está frío (del inglés 'Hielo')."
+          },
+          {
+            "text": "Indica que la presión hidráulica es normal."
+          },
+          {
+            "text": "Indica que el motor está caliente (del inglés 'Hot')."
+          },
+          {
+            "text": "Indica que el nivel de agua está a la mitad (del inglés 'Half')."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "La letra H advierte que la temperatura ha subido a niveles críticos, riesgo de sobrecalentamiento.",
+        "sourcePageStart": 13,
+        "sourcePageEnd": 13,
+        "sourceReference": "Pág. 13, El sistema de refrigeración",
+        "groundingExcerpt": "En el indicador de temperatura, la letra C significa frío, del inglés “Cold”, y la letra H, caliente, del inglés “Hot”.",
+        "reviewNotes": "Lectura de indicadores de tablero.",
+        "tags": [
+          "refrigeracion",
+          "panel-instrumentos"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q009",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q009",
+        "prompt": "El sistema de escape expulsa gases generados en la combustión. ¿Qué gas altamente venenoso, incoloro e inoloro se encuentra entre ellos?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El dióxido de carbono."
+          },
+          {
+            "text": "El monóxido de carbono."
+          },
+          {
+            "text": "El oxígeno puro."
+          },
+          {
+            "text": "El nitrógeno gaseoso."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "El monóxido de carbono es producto de la combustión y es letal si se filtra a la cabina, ya que no se puede oler ni ver.",
+        "sourcePageStart": 14,
+        "sourcePageEnd": 14,
+        "sourceReference": "Pág. 14, El sistema de escape",
+        "groundingExcerpt": "Estos gases de escape contienen sustancias tóxicas, entre ellas se encuentra el monóxido de carbono, un componente venenoso, incoloro e inoloro.",
+        "reviewNotes": "Conocimiento de gases tóxicos vehiculares.",
+        "tags": [
+          "escape",
+          "gases"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q010",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q010",
+        "prompt": "Si se produce una filtración de gases de escape al interior de la cabina, ¿cuáles son los primeros síntomas de intoxicación?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Euforia y aceleración del ritmo cardíaco."
+          },
+          {
+            "text": "Dolor de cabeza y vómitos."
+          },
+          {
+            "text": "Visión de túnel y ceguera temporal."
+          },
+          {
+            "text": "Adormecimiento de las extremidades inferiores."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "La intoxicación por monóxido comienza con dolor de cabeza y náuseas, progresando rápidamente a la pérdida de conciencia.",
+        "sourcePageStart": 14,
+        "sourcePageEnd": 14,
+        "sourceReference": "Pág. 14, El sistema de escape",
+        "groundingExcerpt": "Los primeros síntomas de intoxicación con monóxido de carbono, son el dolor de cabeza y los vómitos.",
+        "reviewNotes": "Síntomas de exposición a monóxido de carbono.",
+        "tags": [
+          "escape",
+          "salud"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q011",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q011",
+        "prompt": "¿Qué consecuencia directa tiene para la conducción el mantener presionado el pedal del embrague durante un tiempo mayor al necesario?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Se reduce el control sobre el vehículo."
+          },
+          {
+            "text": "Se mejora la capacidad de frenado en caso de emergencia."
+          },
+          {
+            "text": "Se ahorra una cantidad significativa de combustible."
+          },
+          {
+            "text": "Se aumenta la tracción de las ruedas delanteras en curvas."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Al presionar el embrague se desconecta el motor de las ruedas, perdiendo la capacidad de retención (freno de motor) y reduciendo el control general.",
+        "sourcePageStart": 14,
+        "sourcePageEnd": 14,
+        "sourceReference": "Pág. 14, La transmisión",
+        "groundingExcerpt": "Debes saber que al conducir presionando el embrague durante un tiempo mayor al necesario se reduce el control sobre el vehículo.",
+        "reviewNotes": "Uso adecuado del embrague.",
+        "tags": [
+          "transmision",
+          "embrague"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q012",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q012",
+        "prompt": "Al frenar, si su vehículo se inclina excesivamente hacia adelante y se levanta de atrás, es un síntoma claro de:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Neumáticos con presión de aire demasiado alta."
+          },
+          {
+            "text": "Frenos ABS descalibrados."
+          },
+          {
+            "text": "Amortiguadores en mal estado."
+          },
+          {
+            "text": "Embrague desgastado o patinando."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Los amortiguadores defectuosos no pueden sostener la transferencia de masa al frenar, causando inestabilidad y cabeceo.",
+        "sourcePageStart": 15,
+        "sourcePageEnd": 15,
+        "sourceReference": "Pág. 15, La suspensión y la amortiguación",
+        "groundingExcerpt": "SÍNTOMAS DE AMORTIGUADORES EN MAL ESTADO: Al frenar, el vehículo se inclina hacia adelante y se levanta de atrás de forma excesiva.",
+        "reviewNotes": "Diagnóstico de fallas en amortiguación.",
+        "tags": [
+          "suspension",
+          "amortiguadores"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q013",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q013",
+        "prompt": "¿Cuál es una de las consecuencias peligrosas de conducir con amortiguadores en malas condiciones?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Disminución drástica de la aceleración inicial."
+          },
+          {
+            "text": "Bloqueo permanente de la dirección hidráulica."
+          },
+          {
+            "text": "Aumento de la distancia de frenado, sobre todo con pavimento irregular o mojado."
+          },
+          {
+            "text": "Consumo excesivo de líquido de frenos."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Al no mantener la rueda firme contra el suelo, el frenado pierde eficacia y el vehículo recorre más metros antes de detenerse.",
+        "sourcePageStart": 16,
+        "sourcePageEnd": 16,
+        "sourceReference": "Pág. 16, La suspensión y la amortiguación",
+        "groundingExcerpt": "Un amortiguador en malas condiciones puede tener consecuencias peligrosas... Aumento de la distancia de frenado, sobre todo con pavimento irregular o mojado...",
+        "reviewNotes": "Efectos adversos de amortiguación dañada.",
+        "tags": [
+          "suspension",
+          "frenado"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q014",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q014",
+        "prompt": "Muchos automóviles poseen un sistema de servofrenos que aumenta la fuerza de frenado. ¿Qué condición es indispensable para que esta tecnología funcione?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Que la batería se encuentre con carga máxima."
+          },
+          {
+            "text": "Que el vehículo circule a más de 50 km/h."
+          },
+          {
+            "text": "Que el freno de estacionamiento (mano) esté suelto."
+          },
+          {
+            "text": "Que el motor del vehículo esté en marcha."
+          }
+        ],
+        "correctOptionIndexes": [
+          3
+        ],
+        "publicExplanation": "El servofreno aprovecha el vacío generado por el motor funcionando; si el motor se apaga, el pedal se volverá extremadamente duro.",
+        "sourcePageStart": 16,
+        "sourcePageEnd": 16,
+        "sourceReference": "Pág. 16, Los frenos",
+        "groundingExcerpt": "Muchos automóviles poseen un sistema de servofrenos, que aumenta considerablemente la fuerza de frenado. Esta tecnología funciona sólo con el motor en marcha.",
+        "reviewNotes": "Condiciones de operatividad del servofreno.",
+        "tags": [
+          "frenos",
+          "servofreno"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q015",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q015",
+        "prompt": "En un vehículo sin frenos ABS, ¿cuál es uno de los mayores riesgos si las ruedas se bloquean y deslizan durante una frenada brusca?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Que la distancia de frenado aumentará notablemente y será imposible controlar la dirección."
+          },
+          {
+            "text": "Que los neumáticos estallarán inevitablemente por el aumento de temperatura."
+          },
+          {
+            "text": "Que el motor se detendrá provocando un incendio en el sistema de escape."
+          },
+          {
+            "text": "Que el freno de mano se activará automáticamente de forma irreversible."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "Las ruedas bloqueadas no pueden dirigir el auto y el roce de deslizamiento es menor que el de rodadura, extendiendo el frenado.",
+        "sourcePageStart": 17,
+        "sourcePageEnd": 17,
+        "sourceReference": "Pág. 17, Los frenos",
+        "groundingExcerpt": "...uno de los mayores riesgos ante una frenada brusca es que las ruedas del vehículo se bloqueen y se deslicen sobre el pavimento. Cuando esto ocurre la distancia de frenado aumentará notablemente. Además, en estas condiciones es imposible controlar la dirección del vehículo...",
+        "reviewNotes": "Peligros del frenado brusco sin asistencia.",
+        "tags": [
+          "frenado",
+          "derrape"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q016",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q016",
+        "prompt": "¿Cuál es la ventaja principal del sistema de frenado antibloqueo (ABS) ante una situación de emergencia?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Detiene siempre el vehículo en la mitad de la distancia que los frenos convencionales."
+          },
+          {
+            "text": "Permite que las ruedas sigan girando, manteniendo el control sobre la dirección del vehículo."
+          },
+          {
+            "text": "Evita que las pastillas de freno se calienten al aplicar presión continua."
+          },
+          {
+            "text": "Bloquea todas las ruedas al mismo tiempo para frenar en línea recta perfecta."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Al evitar el bloqueo, el neumático no pierde adherencia lateral, permitiendo girar el volante para esquivar obstáculos mientras se frena.",
+        "sourcePageStart": 17,
+        "sourcePageEnd": 17,
+        "sourceReference": "Pág. 17, Los frenos",
+        "groundingExcerpt": "El ABS (sistema de frenado antibloqueo)... Permite que las ruedas sigan girando y que la persona conductora mantenga el control sobre la dirección del vehículo.",
+        "reviewNotes": "Función tecnológica del ABS.",
+        "tags": [
+          "frenos",
+          "abs"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q017",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q017",
+        "prompt": "Respecto al nivel del líquido de frenos de su vehículo, ¿qué aseveración es correcta según el manual?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Debe rellenarse todos los días porque se evapora con el calor del motor."
+          },
+          {
+            "text": "Se consume naturalmente con el kilometraje, por lo que requiere recargas frecuentes."
+          },
+          {
+            "text": "Este no se consume; por lo tanto, si disminuye es porque hay algún defecto mecánico o fuga."
+          },
+          {
+            "text": "Funciona correctamente incluso si el nivel está muy por debajo del mínimo indicado."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "El circuito de frenos es sellado. Una baja de líquido indica fuga en las cañerías o desgaste de pastillas y requiere inspección mecánica.",
+        "sourcePageStart": 17,
+        "sourcePageEnd": 17,
+        "sourceReference": "Pág. 17, Recuerda controlar:",
+        "groundingExcerpt": "El nivel del liquido de frenos periódicamente... Este no se consume, por lo tanto, si disminuye es porque hay algún defecto mecánico.",
+        "reviewNotes": "Control del sistema hidráulico de frenos.",
+        "tags": [
+          "frenos",
+          "mantenimiento"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q018",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q018",
+        "prompt": "Para que los neumáticos cumplan bien sus funciones y eviten riesgos como el aquaplaning, ¿cuál es la profundidad mínima aconsejable que deben tener sus surcos?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "0,5 mm."
+          },
+          {
+            "text": "1,6 mm."
+          },
+          {
+            "text": "3 mm."
+          },
+          {
+            "text": "5 mm."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Aunque la ley marca 1.6 mm como límite, la profundidad aconsejable para un drenaje seguro de agua es de al menos 3 mm.",
+        "sourcePageStart": 18,
+        "sourcePageEnd": 18,
+        "sourceReference": "Pág. 18, Los neumáticos",
+        "groundingExcerpt": "...los dibujos o surcos de sus bandas de rodamiento deben tener una profundidad aconsejable mínima de 3 mm.",
+        "reviewNotes": "Parámetro técnico aconsejado para neumáticos.",
+        "tags": [
+          "neumaticos",
+          "seguridad"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q019",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q019",
+        "prompt": "¿Qué efecto produce en la conducción tener una baja presión de aire en una rueda delantera?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Hace que el vehículo tienda a torcer hacia ese lado."
+          },
+          {
+            "text": "Aumenta la potencia y aceleración del motor."
+          },
+          {
+            "text": "Impide el funcionamiento de la caja de cambios."
+          },
+          {
+            "text": "Provoca que el vehículo se incline excesivamente hacia atrás."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La rueda desinflada opone mayor resistencia a rodar (arrastra), tirando la dirección del auto hacia su propio costado.",
+        "sourcePageStart": 18,
+        "sourcePageEnd": 18,
+        "sourceReference": "Pág. 18, Presión de los neumáticos",
+        "groundingExcerpt": "Una baja presión de aire en una rueda delantera hace que el vehículo tienda a torcer hacia ese lado.",
+        "reviewNotes": "Efectos en la dirección por presión desbalanceada.",
+        "tags": [
+          "neumaticos",
+          "presion"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q020",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q020",
+        "prompt": "Si usted nota un desgaste notorio exclusivamente en la zona central de la banda de rodamiento de sus neumáticos, esto indica que:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Se han usado con exceso de presión de aire."
+          },
+          {
+            "text": "Se han usado con menor presión de aire de la recomendada."
+          },
+          {
+            "text": "Hay un problema severo de alineación en las cuatro ruedas."
+          },
+          {
+            "text": "Los amortiguadores están completamente destruidos."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "El exceso de presión infla el centro del neumático separando los bordes del suelo, provocando que solo el medio roce y se desgaste prematuramente.",
+        "sourcePageStart": 19,
+        "sourcePageEnd": 19,
+        "sourceReference": "Pág. 19, Los neumáticos",
+        "groundingExcerpt": "Un desgaste notorio en la zona central de la banda de rodamiento significa que los neumáticos se han usado con exceso de aire...",
+        "reviewNotes": "Patrones de desgaste de neumáticos.",
+        "tags": [
+          "neumaticos",
+          "desgaste"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q021",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q021",
+        "prompt": "Si al ir conduciendo se revienta de manera imprevista un neumático trasero, ¿qué maniobra debe realizar?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Frenar a fondo inmediatamente y sujetar el volante derecho."
+          },
+          {
+            "text": "Girar el volante hacia el lado contrario al que se desvía la cola del vehículo."
+          },
+          {
+            "text": "Girar el volante hacia el lado en que se desvía la cola del vehículo."
+          },
+          {
+            "text": "Acelerar a fondo para estabilizar la inercia del vehículo."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Acompañar el derrape trasero girando hacia el mismo lado contrarresta la guiñada y ayuda a enderezar la trayectoria del vehículo.",
+        "sourcePageStart": 19,
+        "sourcePageEnd": 19,
+        "sourceReference": "Pág. 19, Qué hacer en caso de reventar un neumático",
+        "groundingExcerpt": "Si al ir conduciendo se revienta un neumático trasero, debes girar el volante hacia el lado en que se desvía la cola del vehículo.",
+        "reviewNotes": "Técnica correctiva ante reventones traseros.",
+        "tags": [
+          "neumaticos",
+          "emergencias"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q022",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q022",
+        "prompt": "Para obtener una lectura correcta al controlar la presión de aire de los neumáticos, usted debe hacerlo preferentemente cuando estos:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Estén calientes luego de un viaje en carretera."
+          },
+          {
+            "text": "Estén completamente fríos."
+          },
+          {
+            "text": "Estén soportando la carga máxima del vehículo."
+          },
+          {
+            "text": "Se encuentren sobre superficies mojadas o húmedas."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "El aire se expande con el calor del rodamiento. Medir los neumáticos en caliente entregará una presión falsa superior a la real.",
+        "sourcePageStart": 19,
+        "sourcePageEnd": 19,
+        "sourceReference": "Pág. 19, Recuerda:",
+        "groundingExcerpt": "Controlar la presión de los neumáticos cuando estos estén fríos y respetar las recomendaciones del fabricante.",
+        "reviewNotes": "Condiciones para medición de neumáticos.",
+        "tags": [
+          "neumaticos",
+          "mantenimiento"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q023",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q023",
+        "prompt": "Aún cuando tengan poco uso y el dibujo de sus surcos esté en buenas condiciones, ¿cada cuánto tiempo máximo se recomienda cambiar los neumáticos porque el material envejece?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Al menos cada 2 años."
+          },
+          {
+            "text": "Al menos cada 5 años."
+          },
+          {
+            "text": "Al menos cada 10 años."
+          },
+          {
+            "text": "No es necesario cambiarlos si el dibujo está bien."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "La goma del neumático se cristaliza y endurece con los años perdiendo agarre, aunque no se hayan gastado los surcos.",
+        "sourcePageStart": 19,
+        "sourcePageEnd": 19,
+        "sourceReference": "Pág. 19, Recuerda:",
+        "groundingExcerpt": "Los neumáticos deben ser cambiados al menos cada 5 años. Aunque tengan poco uso y su dibujo esté bien, el material envejece y pierden sus propiedades para rodar con seguridad.",
+        "reviewNotes": "Caducidad de los compuestos del neumático.",
+        "tags": [
+          "neumaticos",
+          "vida-util"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q024",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q024",
+        "prompt": "¿En qué situaciones está permitido utilizar las luces intermitentes de advertencia de peligro (luces de emergencia)?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Para excusar un estacionamiento ilegal frente a un comercio rápido."
+          },
+          {
+            "text": "Cuando el vehículo se encuentra detenido a consecuencia de una falla o avería, u obstruyendo la circulación temporalmente."
+          },
+          {
+            "text": "Siempre que se circule marcha atrás por más de 10 metros."
+          },
+          {
+            "text": "Al ingresar a un túnel que carezca de iluminación pública."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Estas luces están diseñadas para alertar a otros conductores de una detención inusual o peligro, nunca para legitimar infracciones viales.",
+        "sourcePageStart": 20,
+        "sourcePageEnd": 21,
+        "sourceReference": "Pág. 20-21, Las luces",
+        "groundingExcerpt": "Las luces intermitentes de advertencia de peligro sólo deben utilizarse cuando el vehículo se encuentra detenido a consecuencia de una falla o avería, para avisar que temporalmente se está obstruyendo la circulación...",
+        "reviewNotes": "Regulación del uso de luces de advertencia.",
+        "tags": [
+          "luces",
+          "emergencias"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q025",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q025",
+        "prompt": "Si desea controlar que el nivel de sus luces bajas esté correctamente ajustado para no cegar a otros conductores, ¿a qué distancia de una pared o superficie plana debe estacionar su vehículo?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "A unos 5 metros."
+          },
+          {
+            "text": "A unos 10 metros."
+          },
+          {
+            "text": "A unos 20 metros."
+          },
+          {
+            "text": "A unos 50 metros."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Proyectar la luz sobre una pared a 10 metros permite verificar que el haz no supere la altura de los faros, evitando el encandilamiento.",
+        "sourcePageStart": 20,
+        "sourcePageEnd": 20,
+        "sourceReference": "Pág. 20, Las luces",
+        "groundingExcerpt": "Puedes controlar tus luces bajas para que no cieguen a otras personas estacionando tu vehículo en un lugar plano y a unos 10 m de una pared o algo similar...",
+        "reviewNotes": "Parámetro técnico de ajuste lumínico.",
+        "tags": [
+          "luces",
+          "mantenimiento"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q026",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q026",
+        "prompt": "Debido a que la mayoría de los espejos laterales de los automóviles son convexos, las imágenes reflejadas en ellos:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Se visualizan más cercanas de lo que están en realidad."
+          },
+          {
+            "text": "Se perciben en un ángulo ciego donde no se pueden distinguir distancias."
+          },
+          {
+            "text": "Se visualizan más lejanas y/o más pequeñas de lo que están en la realidad."
+          },
+          {
+            "text": "Aparecen del tamaño real y a la distancia exacta."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "La curvatura convexa abarca más área visual (menos punto ciego), pero a costa de achicar los objetos, falseando su lejanía.",
+        "sourcePageStart": 21,
+        "sourcePageEnd": 21,
+        "sourceReference": "Pág. 21, Los espejos",
+        "groundingExcerpt": "La mayoría de los espejos laterales son convexos, por lo que las imágenes se visualizan más lejanas y/o más pequeñas de lo que están en la realidad.",
+        "reviewNotes": "Propiedad óptica de los espejos.",
+        "tags": [
+          "espejos",
+          "vision"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q027",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q027",
+        "prompt": "Al conducir un vehículo, siempre existirá una zona lateral y trasera sobre la cual usted no tendrá visión a pesar de mirar los espejos. ¿Cómo se denominan estos sectores?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Ángulos reflectantes."
+          },
+          {
+            "text": "Zonas de penumbra."
+          },
+          {
+            "text": "Zonas de aproximación."
+          },
+          {
+            "text": "Puntos ciegos o ángulos muertos."
+          }
+        ],
+        "correctOptionIndexes": [
+          3
+        ],
+        "publicExplanation": "Pese al reglaje correcto, los pilares del vehículo y la geometría de los espejos ocultan zonas por donde transitan autos, motos y bicicletas.",
+        "sourcePageStart": 21,
+        "sourcePageEnd": 21,
+        "sourceReference": "Pág. 21, Los espejos",
+        "groundingExcerpt": "Ten presente que aun cuando tus espejos estén muy bien regulados, al conducir siempre existirá una zona sobre la cual no tendrás visión. Estos sectores son denominados puntos ciegos o ángulos muertos...",
+        "reviewNotes": "Definición de zonas sin cobertura visual.",
+        "tags": [
+          "espejos",
+          "puntos-ciegos"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q028",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q028",
+        "prompt": "Antes de iniciar la marcha, debe asegurarse de adoptar una posición correcta al volante. La postura adecuada requiere que:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Sus brazos queden completamente estirados y rígidos."
+          },
+          {
+            "text": "Sus brazos queden ligeramente flexionados."
+          },
+          {
+            "text": "El volante toque directamente su pecho."
+          },
+          {
+            "text": "Su cuerpo esté reclinado lo más atrás posible para relajar la espalda."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Con los brazos ligeramente flexionados, el conductor mantiene rango de movimiento rápido y protección en caso de impacto.",
+        "sourcePageStart": 22,
+        "sourcePageEnd": 22,
+        "sourceReference": "Pág. 22, Siempre debes asegurarte de:",
+        "groundingExcerpt": "Que al tomar el volante, tus brazos queden ligeramente flexionados.",
+        "reviewNotes": "Ergonomía y posición de conducción.",
+        "tags": [
+          "postura",
+          "volante"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q029",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q029",
+        "prompt": "Físicamente, si usted circula por una carretera y aumenta su velocidad al doble, ¿qué sucede con la energía del movimiento de su vehículo?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "La energía del movimiento se mantiene constante."
+          },
+          {
+            "text": "La energía del movimiento aumenta al doble."
+          },
+          {
+            "text": "La energía del movimiento aumenta 4 veces."
+          },
+          {
+            "text": "La energía del movimiento disminuye a la mitad para compensar."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "La energía cinética crece al cuadrado con la velocidad. Por eso, chocar al doble de velocidad es en realidad recibir cuatro veces el daño o fuerza de impacto.",
+        "sourcePageStart": 23,
+        "sourcePageEnd": 23,
+        "sourceReference": "Pág. 23, La energía del movimiento",
+        "groundingExcerpt": "Al aumentar la velocidad al doble, la energía del movimiento aumenta 4 veces...",
+        "reviewNotes": "Leyes físicas aplicadas al tránsito (energía cinética).",
+        "tags": [
+          "velocidad",
+          "fisica"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q030",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q030",
+        "prompt": "La distancia total de detención de un vehículo (el espacio recorrido desde que se percibe un peligro hasta que se detiene por completo) es la suma de:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "La distancia de visión y la distancia aerodinámica."
+          },
+          {
+            "text": "La distancia de reacción y la distancia de frenado."
+          },
+          {
+            "text": "La distancia de aceleración y la distancia de derrape."
+          },
+          {
+            "text": "La fricción del asfalto y el tiempo de respuesta mecánica."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Detenerse involucra un tiempo de pensamiento humano (distancia de reacción) más el tiempo físico del auto actuando sobre el suelo (distancia de frenado).",
+        "sourcePageStart": 23,
+        "sourcePageEnd": 23,
+        "sourceReference": "Pág. 23, La distancia de detención",
+        "groundingExcerpt": "La distancia de detención (S) es la suma de la distancia de reacción (R) y la distancia de frenado (F).",
+        "reviewNotes": "Componentes de la distancia de detención.",
+        "tags": [
+          "frenado",
+          "distancia"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q031",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q031",
+        "prompt": "Una regla sencilla para estimar aproximadamente la distancia de reacción en metros de un conductor en condiciones normales es:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Dividir la velocidad por dos."
+          },
+          {
+            "text": "Multiplicar por tres la primera cifra de la velocidad."
+          },
+          {
+            "text": "Sumar diez a la velocidad actual del vehículo."
+          },
+          {
+            "text": "Multiplicar por cinco la segunda cifra de la velocidad."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "A 1 segundo de tiempo de reacción, un vehículo recorre en metros aproximadamente 3 veces la decena de su velocidad (ej. a 60 km/h: 6 x 3 = 18 metros).",
+        "sourcePageStart": 23,
+        "sourcePageEnd": 24,
+        "sourceReference": "Pág. 23-24, La distancia de detención",
+        "groundingExcerpt": "Puedes estimar aproximadamente la distancia de reacción, multiplicando por tres la primera cifra de la velocidad.",
+        "reviewNotes": "Cálculo mental de distancia de reacción.",
+        "tags": [
+          "reaccion",
+          "calculo"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q032",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q032",
+        "prompt": "Si usted duplica la velocidad de su vehículo, ¿cómo se ve afectada matemáticamente la distancia de frenado?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Aumenta al doble."
+          },
+          {
+            "text": "Aumenta tres veces."
+          },
+          {
+            "text": "Aumenta cuatro veces."
+          },
+          {
+            "text": "Aumenta ocho veces."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Dado que la distancia de frenado es producto de la energía cinética (crece al cuadrado), duplicar la velocidad eleva los metros de frenado al cuadrado (2² = 4).",
+        "sourcePageStart": 24,
+        "sourcePageEnd": 24,
+        "sourceReference": "Pág. 24, La distancia de detención",
+        "groundingExcerpt": "La distancia de frenado crece al cuadrado con el aumento de la velocidad. Así, si duplicas la velocidad, la distancia de frenado aumenta cuatro veces...",
+        "reviewNotes": "Cálculo físico de frenado ante exceso de velocidad.",
+        "tags": [
+          "frenado",
+          "fisica"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q033",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q033",
+        "prompt": "Al conducir por pendientes pronunciadas en bajada, ¿qué medida de seguridad es vital para mantener el control y no sobrecalentar los frenos?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Conducir en neutro para evitar que el motor empuje el vehículo."
+          },
+          {
+            "text": "Apagar el motor y usar solo el freno de mano progresivamente."
+          },
+          {
+            "text": "Conducir en una marcha baja para que el motor vaya frenando y nunca desenganchar."
+          },
+          {
+            "text": "Presionar y soltar el freno constantemente mientras se va en la marcha más alta posible."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "Enganchar el vehículo en marchas cortas permite aprovechar el 'freno de motor', quitando la carga a las pastillas de freno que podrían arder y perder fricción.",
+        "sourcePageStart": 25,
+        "sourcePageEnd": 25,
+        "sourceReference": "Pág. 25, La fuerza de gravedad",
+        "groundingExcerpt": "...a veces, es necesario conducir en una marcha baja para que el motor vaya frenando y no se calienten los frenos. Recuerda nunca desenganchar el motor ya que pierdes el control del vehículo.",
+        "reviewNotes": "Técnica segura en conducción montañosa.",
+        "tags": [
+          "frenado",
+          "pendientes"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q034",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q034",
+        "prompt": "¿Qué ocurre con la conducción si coloca una carga muy pesada en la parte trasera (posterior) de su automóvil, alterando su centro de gravedad?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El vehículo tenderá a girar menos de lo esperado en las curvas."
+          },
+          {
+            "text": "Tenderá a girar más de lo esperado y podría perder fricción, dando un giro de 180°."
+          },
+          {
+            "text": "Mejorará el frenado delantero por el alivianamiento del eje."
+          },
+          {
+            "text": "Las luces delanteras apuntarán hacia el suelo, mejorando la visión cercana."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "El sobrepeso en el eje trasero eleva la parte frontal, haciendo que la dirección pierda adherencia y el vehículo sobregire o 'colee' incontrolablemente.",
+        "sourcePageStart": 25,
+        "sourcePageEnd": 25,
+        "sourceReference": "Pág. 25, Características de los vehículos y su influencia",
+        "groundingExcerpt": "...si colocas una carga pesada en su parte trasera, tenderá a girar más de lo esperado y, al perder la fricción con el pavimento, dará un giro de 180°...",
+        "reviewNotes": "Peligros del mal estibaje y peso.",
+        "tags": [
+          "carga",
+          "centro-gravedad"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q035",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q035",
+        "prompt": "Los sistemas de seguridad de un vehículo se dividen en activa y pasiva. ¿Qué elementos corresponden a la seguridad pasiva?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Los neumáticos, los frenos y las luces."
+          },
+          {
+            "text": "La dirección hidráulica y los espejos retrovisores."
+          },
+          {
+            "text": "El cinturón de seguridad y el airbag, que contribuyen a evitar o reducir las consecuencias de un siniestro."
+          },
+          {
+            "text": "El motor y la caja de cambios."
+          }
+        ],
+        "correctOptionIndexes": [
+          2
+        ],
+        "publicExplanation": "La seguridad pasiva interviene una vez que el accidente es inevitable (mitigando los daños), a diferencia de los frenos que evitan que suceda (seguridad activa).",
+        "sourcePageStart": 26,
+        "sourcePageEnd": 26,
+        "sourceReference": "Pág. 26, Elementos de seguridad",
+        "groundingExcerpt": "ELEMENTOS DE SEGURIDA PASIVA: Son los componentes de seguridad del vehículo que contribuyen a evitar o reducir las consecuencias de un siniestro de tránsito. Por ejemplo, el cinturón de seguridad y el airbag.",
+        "reviewNotes": "Identificación de tipos de seguridad vehicular.",
+        "tags": [
+          "seguridad-pasiva",
+          "airbag",
+          "cinturon"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q036",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q036",
+        "prompt": "Según el manual, la fuerza de impacto en un choque a 50 km/h sin llevar puesto el cinturón de seguridad equivale a:",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Tropezar y caer corriendo a máxima velocidad."
+          },
+          {
+            "text": "Tirarse a la calle desde un cuarto piso sin red de seguridad."
+          },
+          {
+            "text": "Caer desde un primer piso sobre el asfalto."
+          },
+          {
+            "text": "Lanzarse desde un séptimo piso."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Esta analogía ayuda a comprender la enorme cantidad de energía que absorbe el cuerpo humano al detenerse bruscamente desde 50 km/h.",
+        "sourcePageStart": 26,
+        "sourcePageEnd": 26,
+        "sourceReference": "Pág. 26, El cinturón de seguridad",
+        "groundingExcerpt": "Un choque a 50 km/h sin llevar puesto el cinturón de seguridad, es como tirarse a la calle desde un cuarto piso sin red de seguridad.",
+        "reviewNotes": "Ejemplo comparativo de fuerzas destructivas en accidentes.",
+        "tags": [
+          "cinturon",
+          "fisica"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q037",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q037",
+        "prompt": "Para evitar lesiones internas graves durante un choque, ¿cómo debe colocarse correctamente la banda abdominal del cinturón de seguridad?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Justo por encima del ombligo, apoyada en el estómago blando."
+          },
+          {
+            "text": "Sobre los huesos de la cadera, siempre por debajo del abdomen, incluso en personas embarazadas."
+          },
+          {
+            "text": "Rodeando las costillas inferiores y cruzando el pecho."
+          },
+          {
+            "text": "Muy suelta sobre las piernas para permitir el movimiento de la pelvis."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Los huesos pélvicos son la estructura más resistente del cuerpo para aguantar la compresión del choque; el abdomen puede sufrir rupturas fatales de órganos.",
+        "sourcePageStart": 27,
+        "sourcePageEnd": 27,
+        "sourceReference": "Pág. 27, Uso correcto del cinturón de seguridad",
+        "groundingExcerpt": "La banda abdominal debe colocarse sobre los huesos de la cadera, siempre por debajo del abdomen, incluso en el caso de una persona embarazada.",
+        "reviewNotes": "Uso fisiológico correcto de elementos de seguridad.",
+        "tags": [
+          "cinturon",
+          "posicion"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q038",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q038",
+        "prompt": "¿Qué es el 'efecto submarino' que se produce durante una frenada brusca o siniestro?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Es cuando el vehículo se sumerge al pasar a alta velocidad por un charco profundo."
+          },
+          {
+            "text": "Es cuando el conductor se desliza por debajo de la banda abdominal del cinturón de seguridad debido a un uso incorrecto."
+          },
+          {
+            "text": "Es la sensación de falta de aire que se produce por la presión del cinturón toráxico."
+          },
+          {
+            "text": "Es el hundimiento de la suspensión delantera del automóvil al clavar los frenos."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Conducir semi-acostado o llevar cojines altera la retención; ante impacto, el sujeto resbala debajo de la correa, comprimiendo el cuello y abdomen.",
+        "sourcePageStart": 28,
+        "sourcePageEnd": 28,
+        "sourceReference": "Pág. 28, Cómo evitar el efecto submarino",
+        "groundingExcerpt": "...evita el llamado efecto submarino, el cual se produce cuando la persona, durante frenadas bruscas o siniestros, se desliza por debajo de la banda abdominal.",
+        "reviewNotes": "Definición del riesgo mecánico en postura.",
+        "tags": [
+          "cinturon",
+          "efecto-submarino"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q039",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q039",
+        "prompt": "En caso de accidente con activación del airbag frontal, ¿qué advierte el manual sobre la eficacia de este sistema?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "El airbag no es eficaz si no se utiliza junto con el cinturón de seguridad, pudiendo incluso provocar lesiones graves por la fuerza del golpe."
+          },
+          {
+            "text": "El airbag reemplaza por completo la necesidad de usar cinturón de seguridad en impactos frontales a más de 50 km/h."
+          },
+          {
+            "text": "El airbag solo es eficaz si el vehículo transita a menos de 30 km/h al momento del impacto."
+          },
+          {
+            "text": "El airbag detiene el vehículo mecánicamente absorbiendo toda la energía del motor frontal."
+          }
+        ],
+        "correctOptionIndexes": [
+          0
+        ],
+        "publicExplanation": "La bolsa se infla a 300 km/h. Si la persona no está retenida por su cinturón, chocará su rostro violentamente contra el airbag en plena explosión, lo que es mortal.",
+        "sourcePageStart": 30,
+        "sourcePageEnd": 30,
+        "sourceReference": "Pág. 30, El airbag",
+        "groundingExcerpt": "El airbag no es eficaz si no se utiliza junto con el cinturón de seguridad.",
+        "reviewNotes": "Relación entre airbag y cinturón de seguridad.",
+        "tags": [
+          "airbag",
+          "cinturon",
+          "seguridad"
+        ],
+        "chapterId": "chapter-2"
+      }
+    },
+    {
+      "externalId": "chapter-2-q040",
+      "status": "accepted",
+      "warnings": [],
+      "errors": [],
+      "normalizedQuestion": {
+        "externalId": "chapter-2-q040",
+        "prompt": "Para prevenir el peligroso efecto latigazo en caso de un choque por alcance, ¿cuál debe ser la separación máxima entre la cabeza del ocupante y el apoya cabezas?",
+        "selectionMode": "single",
+        "instruction": "Marque una respuesta.",
+        "options": [
+          {
+            "text": "Una separación de al menos 10 centímetros para evitar golpes leves."
+          },
+          {
+            "text": "La separación debe ser la mínima posible y nunca superior a 4 cm."
+          },
+          {
+            "text": "La cabeza debe quedar a 15 centímetros para permitir la oscilación normal."
+          },
+          {
+            "text": "No hay límite mientras el apoya cabezas quede por debajo de la línea de los hombros."
+          }
+        ],
+        "correctOptionIndexes": [
+          1
+        ],
+        "publicExplanation": "Si la cabeza está lejos del respaldo, chicoteará hacia atrás por la inercia del choque antes de golpear el cojín, causando grave daño cervical.",
+        "sourcePageStart": 31,
+        "sourcePageEnd": 31,
+        "sourceReference": "Pág. 31, El correcto uso del apoya cabezas",
+        "groundingExcerpt": "La separación entre la cabeza y el apoya cabezas debe ser la mínima posible y nunca superior a 4 cm.",
+        "reviewNotes": "Ajuste ergonómico de seguridad pasiva.",
+        "tags": [
+          "apoya-cabezas",
+          "efecto-latigazo"
+        ],
+        "chapterId": "chapter-2"
+      }
+    }
+  ]
+}
