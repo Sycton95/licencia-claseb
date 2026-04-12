@@ -237,7 +237,23 @@
   - critical/warning totals
   - verifier issue-code breakdown
 - Surfaced the latest baseline report and prior-run deltas in the local beta admin panel so repeated runs can be compared before any UI expansion.
-- The current workspace still needs a dedicated preview branch push plus env sync before preview can become a strict blocking gate for this milestone.
+- The current workspace still needed a dedicated preview branch push plus env sync before preview could become a strict blocking gate for this milestone.
+
+## 2026-04-12 Preview branch sync for release discipline
+
+- Created and pushed the branch `codex/release-discipline-5e-baseline` to formalize the current repo state before any further roadmap work.
+- Synced the minimum Supabase preview env set to that branch scope in Vercel:
+  - `VITE_SUPABASE_URL`
+  - `VITE_SUPABASE_PUBLISHABLE_KEY`
+  - `SUPABASE_SERVICE_ROLE_KEY`
+- Triggered a fresh preview deployment after the env sync:
+  - deployment id: `dpl_7vEHfuBNi7FKEe9H3XU28rN5wrLB`
+  - preview URL: `https://licencia-claseb-j54ro6qt7-sycton.vercel.app`
+  - branch alias: `https://licencia-claseb-git-codex-release-discipline-5e-baseline-sycton.vercel.app`
+- Anonymous smoke checks against that preview returned `401` on all routes, which indicates Vercel deployment protection rather than app-level health failure.
+- Operational consequence:
+  - preview parity now depends on authenticated Vercel fetch or a temporary share URL when deployment protection is enabled
+  - anonymous `npm run smoke:url` is no longer sufficient by itself for protected preview deployments
 
 ## Open risks
 
@@ -247,6 +263,7 @@
   - bounded local runs only
   - suggestion output quality still unproven on target hardware
   - browser-local persistence only in this phase
+- The fixed Milestone `5E` evaluation set is wired and documented, but repeated baseline runs still require the local dev beta panel plus a reachable Ollama instance.
 - Preview env parity is still branch-scoped and must be synced explicitly for each release branch that is used as a preview gate.
 - Chapter 3 was expanded directly from the formal manual PDF in a fast-track pass.
   - The new batch is grounded to pages 33, 34, and 35 only.
@@ -282,4 +299,4 @@
    - improve local beta review ergonomics only if the verifier data supports it
    - keep provider selection, beta storage, and UI fully env-gated and non-production
 3. Keep annex content excluded until a separate annex policy is implemented.
-4. Push the next release branch, sync its preview envs, and re-run the preview smoke gate so preview becomes a blocking pre-production check instead of a partial check.
+4. Validate the pushed preview branch with authenticated Vercel access, then use that protected-preview workflow as the blocking pre-production gate going forward.

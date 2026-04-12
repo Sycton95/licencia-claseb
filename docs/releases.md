@@ -241,3 +241,19 @@
   - heuristic remains the production default
   - beta storage remains local-only
   - no pilot result is promoted into the verified suggestion bank or public content
+
+## 2026-04-12 Preview branch sync for release discipline
+
+- Created and pushed `codex/release-discipline-5e-baseline` as the explicit milestone boundary branch.
+- Synced the required Supabase preview envs for that branch in Vercel:
+  - `VITE_SUPABASE_URL`
+  - `VITE_SUPABASE_PUBLISHABLE_KEY`
+  - `SUPABASE_SERVICE_ROLE_KEY`
+- Triggered a new preview deployment after syncing envs:
+  - deployment id: `dpl_7vEHfuBNi7FKEe9H3XU28rN5wrLB`
+  - preview URL: `https://licencia-claseb-j54ro6qt7-sycton.vercel.app`
+  - branch alias: `https://licencia-claseb-git-codex-release-discipline-5e-baseline-sycton.vercel.app`
+- Observed that anonymous smoke requests now return `401` on the preview routes because the deployment is protected by Vercel Authentication.
+- Locked the preview-gate rule accordingly:
+  - protected previews must be checked with authenticated Vercel access or a temporary share URL
+  - anonymous `smoke:url` alone is not a sufficient verdict for protected preview branches

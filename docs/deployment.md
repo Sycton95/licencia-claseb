@@ -117,6 +117,7 @@ Para validar una rama preview sin magic link:
 4. verificar `/`, `/practice`, `/exam`, `/admin`, `/api/health`
 5. para una URL preview concreta:
    - `RELEASE_CHECK_BASE_URL=https://preview-url npm run smoke:url -- --require-schema=v1`
+   - si el preview estÃ¡ protegido por Vercel Authentication, usar un fetch autenticado o una share URL temporal antes de interpretar un `401`
 6. registrar la URL exacta y el resultado en `docs/progress.md` o `docs/releases.md`
 
 ### Gate producciÃ³n
@@ -144,6 +145,7 @@ Para una URL distinta de producciÃ³n:
 1. define `RELEASE_CHECK_BASE_URL`
 2. ejecuta `npm run smoke:url`
 3. agrega `--require-schema=v1` cuando corresponda
+4. si la respuesta es `401` en un preview protegido, valida la misma URL con acceso autenticado de Vercel antes de tratarlo como un fallo de la app
 
 `npm run release:check` es ahora el gate normal y exige `schema: v1`.
 `npm run release:check:compat` queda solo como fallback temporal.
