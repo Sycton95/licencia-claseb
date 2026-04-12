@@ -1,0 +1,1117 @@
+{
+  "batchId": "chapter-1-batch-2026-04-11-01",
+  "editionId": "edition-2026",
+  "chapterId": "chapter-1",
+  "sourceDocumentId": "manual-claseb-2026",
+  "sourceDocumentTitle": "Libro del Nuevo Conductor Clase B 2026",
+  "generatedAt": "2026-04-12T01:34:00Z",
+  "generator": {
+    "provider": "frontier-ai",
+    "model": "gemini-1.5-pro"
+  },
+  "questions": [
+    {
+      "externalId": "chapter-1-q001",
+      "prompt": "¿Por qué el manual señala que es un error llamar a los siniestros de tránsito 'accidentes'?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Porque la gran mayoría se puede evitar si se identifican y controlan los factores de riesgo."
+        },
+        {
+          "text": "Porque el término legal 'accidente' solo aplica cuando hay víctimas fatales involucradas."
+        },
+        {
+          "text": "Porque ocurren exclusivamente debido a fallas mecánicas de los vehículos."
+        },
+        {
+          "text": "Porque son eventos completamente azarosos y producto de la casualidad pura."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El término 'accidente' sugiere un evento incontrolable y fortuito. El manual adopta el término 'siniestros' porque estos eventos se pueden prevenir identificando las causas de riesgo.",
+      "sourcePageStart": 6,
+      "sourcePageEnd": 6,
+      "sourceReference": "Pág. 6, Los siniestros de tránsito",
+      "groundingExcerpt": "...un error llamar a los siniestros de tránsito “accidentes” ... tienen poco de azarosos o de impredecibles y se pueden evitar.",
+      "reviewNotes": "Concepto central y base del capítulo.",
+      "tags": [
+        "siniestros",
+        "definicion",
+        "prevencion"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q002",
+      "prompt": "Según la Organización Mundial de la Salud (OMS), ¿cómo son catalogados los siniestros de tránsito a nivel global?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Como un problema prioritario de salud pública en todo el mundo."
+        },
+        {
+          "text": "Como una epidemia controlada que afecta solo a países en vías de desarrollo."
+        },
+        {
+          "text": "Como un daño colateral inevitable del crecimiento económico e industrial."
+        },
+        {
+          "text": "Como un problema que concierne exclusivamente al ámbito policial y de infraestructura."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La OMS considera los siniestros de tránsito un problema prioritario de salud pública debido a su alta tasa de mortalidad y a las graves lesiones que generan en la población.",
+      "sourcePageStart": 6,
+      "sourcePageEnd": 6,
+      "sourceReference": "Pág. 6, Los siniestros de tránsito",
+      "groundingExcerpt": "La Organización Mundial de la Salud (OMS) cataloga a los siniestros de tránsito como un problema prioritario de salud pública en todo el mundo.",
+      "reviewNotes": "Perspectiva de la OMS frente al tránsito.",
+      "tags": [
+        "oms",
+        "salud-publica"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q003",
+      "prompt": "¿Qué impacto estadístico tienen los siniestros de tránsito en la mortalidad de niñas y niños entre 1 y 14 años en Chile?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Son la primera causa de muerte."
+        },
+        {
+          "text": "Son la segunda causa de muerte."
+        },
+        {
+          "text": "Representan menos del 1% de las causas de muerte infantil."
+        },
+        {
+          "text": "Se sitúan por debajo de las enfermedades respiratorias como causa principal."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Para el rango etario de 1 a 14 años, los siniestros de tránsito constituyen la principal causa de mortalidad en el país.",
+      "sourcePageStart": 6,
+      "sourcePageEnd": 6,
+      "sourceReference": "Pág. 6, Los siniestros de tránsito",
+      "groundingExcerpt": "En Chile, son la primera causa de muerte en niñas y niños de 1 a 14 años...",
+      "reviewNotes": "Dato estadístico demográfico clave.",
+      "tags": [
+        "estadisticas",
+        "mortalidad-infantil"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q004",
+      "prompt": "En la población joven de Chile (entre 15 y 29 años), ¿qué lugar ocupan los siniestros de tránsito como causa de mortalidad?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Son la segunda causa de muerte, después de los suicidios."
+        },
+        {
+          "text": "Son la primera causa de muerte de forma absoluta."
+        },
+        {
+          "text": "Son la tercera causa de muerte, antecedida por enfermedades cardiovasculares."
+        },
+        {
+          "text": "No configuran una estadística relevante de muerte en este grupo específico."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "En el tramo de edad de 15 a 29 años, los siniestros viales son la segunda causa de fallecimiento, superados únicamente por los suicidios.",
+      "sourcePageStart": 6,
+      "sourcePageEnd": 6,
+      "sourceReference": "Pág. 6, Los siniestros de tránsito",
+      "groundingExcerpt": "...y la segunda causa de muerte en jóvenes (15 a 29 años), después de los suicidios.",
+      "reviewNotes": "Dato estadístico sobre mortalidad juvenil.",
+      "tags": [
+        "estadisticas",
+        "jovenes"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q005",
+      "prompt": "¿Qué argumento lógico y estadístico utiliza el manual para evidenciar que los siniestros de tránsito no son producto del azar o la casualidad?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El hecho de que aumentan cuando llueve o durante las noches, lo que indica que dependen de factores externos y comportamientos evitables."
+        },
+        {
+          "text": "Que la cantidad de siniestros es idéntica todos los días del año, demostrando que son una cuota fija de la circulación."
+        },
+        {
+          "text": "El descubrimiento de que la gran mayoría ocurre por fallas mecánicas de fábrica imprevistas en los vehículos."
+        },
+        {
+          "text": "La demostración de que solo ocurren de día a causa del gran volumen de tráfico y la saturación de vías."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Si los choques fuesen eventos de azar ('accidentes'), su frecuencia no variaría con el clima (lluvia) o la hora (noche o fines de semana con alcohol). Esta variación prueba que son evitables.",
+      "sourcePageStart": 6,
+      "sourcePageEnd": 6,
+      "sourceReference": "Pág. 6, Los siniestros de tránsito",
+      "groundingExcerpt": "Si un siniestro de tránsito fuera un suceso eventual ... ¿por qué aumentan cuando llueve? o ¿por qué hay tantos fallecidos en las noches y fines de semana?",
+      "reviewNotes": "Reflexión argumentativa del manual sobre la causalidad.",
+      "tags": [
+        "causas",
+        "prevencion"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q006",
+      "prompt": "Desde la perspectiva económica y según las cifras de la Organización Mundial de la Salud (OMS), ¿a cuánto ascienden anualmente los costos de los siniestros de tránsito para un país como Chile?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Alrededor del 2% del Producto Interno Bruto (PIB)."
+        },
+        {
+          "text": "Cerca del 5% del Producto Interno Bruto (PIB)."
+        },
+        {
+          "text": "No superan el 0,5% del Producto Interno Bruto (PIB)."
+        },
+        {
+          "text": "El equivalente a un 10% del total del gasto estatal en infraestructura."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El impacto económico que asume el país, que engloba daños materiales, humanos, de salud y administrativos, se calcula en torno a un 2% de su PIB.",
+      "sourcePageStart": 7,
+      "sourcePageEnd": 7,
+      "sourceReference": "Pág. 7, Los siniestros de tránsito",
+      "groundingExcerpt": "...tienen enormes costos económicos, los que se calculan alcanzan alrededor del 2% del PIB, según cifras de la OMS.",
+      "reviewNotes": "Impacto macroeconómico de los siniestros.",
+      "tags": [
+        "costos",
+        "pib",
+        "economia"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q007",
+      "prompt": "Para dimensionar el altísimo impacto económico a escala individual, el manual afirma que cada ciudadano chileno asume un costo promedio anual producto de los siniestros de tránsito. ¿A cuánto asciende dicho monto?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Un poco más de 6 millones de pesos anuales."
+        },
+        {
+          "text": "Alrededor de 1 millón de pesos anuales."
+        },
+        {
+          "text": "Aproximadamente 10 millones de pesos anuales."
+        },
+        {
+          "text": "Cerca de 500 mil pesos anuales."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El gasto derivado de los siniestros (daños, salud, policía, etc.) se reparte en la sociedad, representando una carga invisible superior a los 6 millones de pesos anuales por persona.",
+      "sourcePageStart": 7,
+      "sourcePageEnd": 7,
+      "sourceReference": "Pág. 7, Los siniestros de tránsito",
+      "groundingExcerpt": "Para comprender el impacto económico, cada ciudadana o ciudadano paga en una media un poco más de 6 millones de pesos anuales.",
+      "reviewNotes": "Impacto microeconómico del tránsito en los ciudadanos.",
+      "tags": [
+        "costos",
+        "economia"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q008",
+      "prompt": "Más allá de las pérdidas materiales, ¿cuántas personas del círculo cercano (familiares, amigos) se estima que sufren dolor o pérdida de calidad de vida por cada fallecido en un siniestro de tránsito?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Alrededor de 100 personas."
+        },
+        {
+          "text": "Aproximadamente 10 personas."
+        },
+        {
+          "text": "Un máximo de 5 familiares directos."
+        },
+        {
+          "text": "Cerca de 500 individuos en la comunidad."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El daño emocional y psicológico se irradia a un promedio de 100 personas cercanas a cada víctima fatal.",
+      "sourcePageStart": 7,
+      "sourcePageEnd": 7,
+      "sourceReference": "Pág. 7, Los siniestros de tránsito",
+      "groundingExcerpt": "Además, se estima que 100 personas cercanas a un fallecido en un siniestro de tránsito, sufren dolor o pérdida de calidad de vida.",
+      "reviewNotes": "Impacto emocional y social extendido.",
+      "tags": [
+        "consecuencias",
+        "sociedad"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q009",
+      "prompt": "De acuerdo con la clasificación entregada en el manual, ¿qué elemento forma parte de la categoría de 'Costos Humanos' provocados por un siniestro?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La pérdida de capacidad laboral y el sufrimiento físico y psicológico."
+        },
+        {
+          "text": "Las atenciones de primeros auxilios y los traslados en ambulancia."
+        },
+        {
+          "text": "El daño estructural a la vía pública y al medio ambiente."
+        },
+        {
+          "text": "Los gastos derivados de procedimientos legales y juicios civiles."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El dolor humano, el sufrimiento psicológico y la pérdida de productividad o capacidad de trabajar recaen directamente en la categoría de Costos Humanos.",
+      "sourcePageStart": 7,
+      "sourcePageEnd": 7,
+      "sourceReference": "Pág. 7, Tipos de costos",
+      "groundingExcerpt": "Costos humanos: Sufrimiento físico y psicológico de las personas lesionadas y sus familiares... Pérdida de productividad... Pérdida de la capacidad laboral.",
+      "reviewNotes": "Clasificación de costos viales.",
+      "tags": [
+        "costos-humanos",
+        "consecuencias"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q010",
+      "prompt": "En el contexto de las consecuencias de los accidentes en la vía, la gestión de seguros, los costos legales y el despliegue de Policía y Bomberos se agrupan en la categoría de:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Costos administrativos."
+        },
+        {
+          "text": "Costos materiales."
+        },
+        {
+          "text": "Costos de salud."
+        },
+        {
+          "text": "Costos de infraestructura."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Todos los servicios gubernamentales o privados que se activan para ordenar, limpiar, investigar o asegurar un siniestro representan un fuerte costo administrativo.",
+      "sourcePageStart": 7,
+      "sourcePageEnd": 7,
+      "sourceReference": "Pág. 7, Tipos de costos",
+      "groundingExcerpt": "Costos administrativos: Policía y Bomberos. Gestión de seguros. Legales...",
+      "reviewNotes": "Clasificación de costos viales.",
+      "tags": [
+        "costos-administrativos",
+        "instituciones"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q011",
+      "prompt": "¿A qué clasificación de costos de un siniestro vial corresponden los recursos gastados en tratamientos médicos, traslados en ambulancia y posteriores terapias de rehabilitación?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "A la categoría de Costos de Salud."
+        },
+        {
+          "text": "A la categoría de Costos Humanos."
+        },
+        {
+          "text": "A la categoría de Costos Materiales Indirectos."
+        },
+        {
+          "text": "A la categoría de Daños Colaterales del Estado."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Cualquier intervención clínica desde la asistencia prehospitalaria (ambulancia) hasta la rehabilitación física prolongada se imputa a los costos de salud.",
+      "sourcePageStart": 7,
+      "sourcePageEnd": 7,
+      "sourceReference": "Pág. 7, Tipos de costos",
+      "groundingExcerpt": "Costos de salud: Primeros auxilios, traslado en ambulancia... Tratamientos médicos. Rehabilitación.",
+      "reviewNotes": "Clasificación de costos viales.",
+      "tags": [
+        "costos-salud",
+        "rehabilitacion"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q012",
+      "prompt": "Según las estadísticas oficiales expuestas, ¿cuántos siniestros de tránsito ocurren en promedio anualmente en Chile?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Más de 86.000 siniestros al año."
+        },
+        {
+          "text": "Aproximadamente 25.000 siniestros al año."
+        },
+        {
+          "text": "Cerca de 150.000 siniestros al año."
+        },
+        {
+          "text": "Un máximo de 10.000 siniestros anuales."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La gran frecuencia de este problema de salud pública se refleja en la ocurrencia de más de ochenta y seis mil eventos de tránsito con daños al año a nivel nacional.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "En Chile se registran más de 86.000 siniestros al año.",
+      "reviewNotes": "Magnitud volumétrica del problema en Chile.",
+      "tags": [
+        "estadisticas",
+        "frecuencia"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q013",
+      "prompt": "Producto de los miles de siniestros que ocurren en Chile cada año, se registra un trágico promedio de fatalidad diaria. ¿Cuántas personas fallecen al día por esta causa?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Mueren diariamente entre 4 y 5 personas."
+        },
+        {
+          "text": "Mueren diariamente en promedio 10 personas."
+        },
+        {
+          "text": "Fallece 1 persona cada dos días."
+        },
+        {
+          "text": "Mueren cerca de 15 personas al día durante el invierno."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Los 1.600 fallecidos anuales promedian una lamentable cifra de entre 4 y 5 víctimas fatales que no regresan a casa cada día.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "Dichos siniestros provocan aproximadamente 1.600 personas fallecidas al año, lo que significa que diariamente mueren entre 4 y 5 personas...",
+      "reviewNotes": "Estadística diaria de mortalidad en el tránsito.",
+      "tags": [
+        "estadisticas",
+        "mortalidad"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q014",
+      "prompt": "A nivel nacional, un importante porcentaje de las personas fallecidas anualmente en el tránsito (aproximadamente un tercio del total de víctimas) pertenece a un grupo de usuarios vulnerables. ¿A qué grupo específico se refiere el manual cuando señala una cifra de 550 víctimas al año?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "A peatones atropellados."
+        },
+        {
+          "text": "A ciclistas transitando por bermas."
+        },
+        {
+          "text": "A conductores de motocicletas que derrapan."
+        },
+        {
+          "text": "A pasajeros infantes en transporte público."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Los peatones son los actores más frágiles del entorno vial; en Chile, alrededor de 550 peatones mueren al año al ser impactados por vehículos.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "En promedio, 550 de ellas son peatones atropellados.",
+      "reviewNotes": "Identificación de vulnerabilidad específica en estadísticas.",
+      "tags": [
+        "peatones",
+        "atropellos",
+        "estadisticas"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q015",
+      "prompt": "¿En qué entorno vial se produce la abrumadora mayoría de los siniestros de tránsito (alrededor del 80%) en el país?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "En zonas urbanas (las vías dentro de las ciudades)."
+        },
+        {
+          "text": "En zonas no urbanas o rurales."
+        },
+        {
+          "text": "Exclusivamente en caminos no pavimentados (de tierra o ripio)."
+        },
+        {
+          "text": "A lo largo de las autopistas interurbanas de cuota (concesionadas)."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "El volumen de tráfico vehicular, los cruces peatonales y las múltiples intersecciones propician que 8 de cada 10 accidentes sucedan en la ciudad.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "La mayor parte de los siniestros (80%) se produce en zonas urbanas...",
+      "reviewNotes": "Distribución geográfica de la siniestralidad.",
+      "tags": [
+        "estadisticas",
+        "zonas-urbanas"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q016",
+      "prompt": "Al focalizarnos exclusivamente en los siniestros que ocurren dentro de las ciudades (zonas urbanas), ¿qué lugar geométrico de la vía concentra la mayor cantidad de estos choques?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "En las intersecciones o cruces de calles."
+        },
+        {
+          "text": "En los grandes estacionamientos comerciales o subterráneos."
+        },
+        {
+          "text": "Justo a la mitad de cuadra en pasajes sin salida."
+        },
+        {
+          "text": "En los puentes y pasos sobre nivel vehiculares."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Las intersecciones son puntos de encuentro de trayectorias donde a menudo no se respeta el derecho a vía, los semáforos o las señales PARE, provocando colisiones.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "La mayor parte de los siniestros (80%) se produce en zonas urbanas, y de éstos, la mayoría ocurre en intersecciones o cruces de calles.",
+      "reviewNotes": "Análisis del riesgo por punto geográfico.",
+      "tags": [
+        "intersecciones",
+        "zonas-urbanas"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q017",
+      "prompt": "La gravedad de un accidente determina las posibilidades de sobrevivir. Si bien el 80% de los siniestros son en zona urbana, ¿dónde se registra la mayor cantidad de personas fallecidas?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "En vías interurbanas o no urbanas (carreteras), acumulando hasta un 63% de los fallecidos."
+        },
+        {
+          "text": "En las vías urbanas céntricas, debido al alto volumen de peatones en tránsito."
+        },
+        {
+          "text": "En los estacionamientos, al realizar maniobras de retroceso."
+        },
+        {
+          "text": "La proporción de fallecidos se divide matemáticamente en un 50% exacto para zonas urbanas y no urbanas."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Las zonas no urbanas (rutas y carreteras) permiten mayores límites de velocidad; a mayor velocidad, mayor energía cinética, lo que vuelve los impactos altamente letales.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "...sin embargo, la mayor cantidad de personas fallecidas (hasta un 63%) se registran en los siniestros ocurridos en vías interurbanas o no urbanas.",
+      "reviewNotes": "Paradoja estadística: Más siniestros urbanos vs más letalidad rural.",
+      "tags": [
+        "estadisticas",
+        "vias-interurbanas",
+        "mortalidad"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q018",
+      "prompt": "¿Por qué motivo fundamental el manual afirma que los siniestros ocurridos en vías interurbanas registran una mayor cantidad de fallecidos?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Debido a que las velocidades por las cuales se transita en estas carreteras resultan ser mucho mayores que en áreas urbanas."
+        },
+        {
+          "text": "Debido a que Carabineros nunca realiza fiscalizaciones fuera del límite urbano."
+        },
+        {
+          "text": "Porque las vías no urbanas carecen en su totalidad de asfalto y señalización."
+        },
+        {
+          "text": "Porque el 100% de esos accidentes involucran a conductores novatos sin licencia."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La letalidad en carreteras es una función directa del incremento drástico en la velocidad de circulación.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "Lo anterior se explica debido a que las velocidades por las cuales se transita en las vías no urbanas (carreteras), resultan ser mucho mayores...",
+      "reviewNotes": "Relación causal entre velocidad y muerte en carretera.",
+      "tags": [
+        "velocidad",
+        "vias-interurbanas"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q019",
+      "prompt": "El cuadro 'Siniestros en relación a la velocidad del vehículo' demuestra la fragilidad del peatón. Si un peatón es impactado a una velocidad de 30 km/h, ¿qué probabilidad estadística tiene de sobrevivir?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Alrededor del 90% de probabilidades de sobrevivir."
+        },
+        {
+          "text": "Solamente un 50% de probabilidades de sobrevivir."
+        },
+        {
+          "text": "Apenas un 10% de probabilidades de evitar el desenlace fatal."
+        },
+        {
+          "text": "Es seguro que morirá de forma instantánea."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "A 30 km/h o menos, la fuerza del impacto es soportable para el cuerpo en la gran mayoría de los casos, por eso esta es la velocidad obligatoria en zonas escolares y de alto flujo peatonal.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Siniestros en relación a la velocidad...",
+      "groundingExcerpt": "30 km/h: El peatón tiene un 90% de posibilidades de sobrevivir.",
+      "reviewNotes": "Importancia de los límites de velocidad urbanos lentos.",
+      "tags": [
+        "velocidad",
+        "peatones",
+        "sobrevivencia"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q020",
+      "prompt": "El gráfico que relaciona la velocidad del impacto con el daño a peatones indica que hay un umbral a partir del cual el cuerpo humano no soporta la energía. ¿A partir de qué velocidad de impacto es 'muy probable' que el peatón atropellado fallezca?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "A partir de 65 km/h."
+        },
+        {
+          "text": "A partir de 40 km/h."
+        },
+        {
+          "text": "Solamente si la velocidad excede los 100 km/h."
+        },
+        {
+          "text": "A partir de 120 km/h."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Un atropello a más de 65 km/h transfiere tal magnitud de energía a los órganos vitales y estructura ósea que las probabilidades de sobrevida del peatón son casi nulas.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Siniestros en relación a la velocidad...",
+      "groundingExcerpt": "65 km/h: Es muy probable que el peatón muera.",
+      "reviewNotes": "Umbral de velocidad fatal para usuarios vulnerables.",
+      "tags": [
+        "velocidad",
+        "peatones",
+        "mortalidad"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q021",
+      "prompt": "Un ligero incremento en la forma de presionar el acelerador tiene consecuencias mortales al transitar por zonas residenciales. Si la velocidad del auto sube de 30 km/h a 50 km/h, ¿qué sucede con la probabilidad de muerte para un peatón en caso de atropello?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La probabilidad de que el peatón muera se multiplica por ocho."
+        },
+        {
+          "text": "La probabilidad de que el peatón muera se incrementa en un factor de dos (el doble)."
+        },
+        {
+          "text": "El riesgo aumenta de forma insignificante si el conductor frena a tiempo."
+        },
+        {
+          "text": "La probabilidad de lesión grave disminuye al rebotar el cuerpo en el capó."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Incrementar la velocidad solo 20 km/h extra reduce enormemente el tiempo de reacción disponible y aumenta la energía del impacto logarítmicamente, multiplicando por 8 el riesgo letal.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Siniestros en relación a la velocidad...",
+      "groundingExcerpt": "La probabilidad de que un peatón muera atropellado se multiplica por ocho cuando la velocidad del vehículo sube de 30 a 50 km/h.",
+      "reviewNotes": "Justificación clave para zonas urbanas restringidas a 50 km/h.",
+      "tags": [
+        "velocidad",
+        "fisica",
+        "atropellos"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q022",
+      "prompt": "¿Qué elemento o factor es catalogado unánimemente como el de mayor incidencia en la ocurrencia de siniestros de tránsito en el país?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "La falla humana, presente en más del 90% de los casos."
+        },
+        {
+          "text": "La mantención deficiente de neumáticos y frenos de los automóviles."
+        },
+        {
+          "text": "El diseño erróneo de las carreteras y la mala calidad del pavimento."
+        },
+        {
+          "text": "La lluvia y neblina que caracterizan ciertas épocas del año."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Decisiones equivocadas, imprudencias, distracciones o conducir bajo efectos de alcohol configuran la 'falla humana', estando detrás de casi la totalidad de la accidentabilidad.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Falla Humana",
+      "groundingExcerpt": "La falla humana es el factor de mayor incidencia en la ocurrencia de siniestros, estando presente en más del 90% de estos.",
+      "reviewNotes": "La responsabilidad de las decisiones al volante.",
+      "tags": [
+        "causas",
+        "falla-humana"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q023",
+      "prompt": "El manual establece perfiles estadísticos sobre quiénes son las víctimas fatales. Al contabilizar el total de las personas conductoras que fallecen en el tránsito chileno, ¿qué porcentaje aproximado corresponde a hombres?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Alrededor del 92% de los conductores fallecidos son varones."
+        },
+        {
+          "text": "Cerca del 50%, dividiéndose en partes iguales la fatalidad."
+        },
+        {
+          "text": "Alrededor del 30% de los conductores fallecidos son varones."
+        },
+        {
+          "text": "Los varones representan el 100% de las muertes viales."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La inmensa mayoría de las muertes al volante afecta al género masculino, estadísticamente relacionado a conductas de conducción más riesgosas y a una mayor exposición kilométrica.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "A nivel general, el 92% de las personas conductoras que fallecen en siniestros de tránsito son varones...",
+      "reviewNotes": "Demografía de la siniestralidad.",
+      "tags": [
+        "estadisticas",
+        "demografia",
+        "conductores"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q024",
+      "prompt": "Si se agrupan absolutamente todas las personas fallecidas en la vía (sumando conductores, pasajeros y peatones) sin distinción de su rol, ¿qué porcentaje de esas víctimas fatales a nivel general son varones?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Cerca del 79% del total de fallecidos a nivel general."
+        },
+        {
+          "text": "Exactamente el 50% de la cifra total."
+        },
+        {
+          "text": "Cerca del 15% del total de fallecidos."
+        },
+        {
+          "text": "Alrededor del 99% de las víctimas fatales totales."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Al sumar acompañantes y peatones, la cifra desciende del 92% (solo conductores), pero se mantiene dominantemente masculina (79% de todo tipo de víctimas fatales).",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "...y representan cerca del 79% de los fallecidos a nivel general.",
+      "reviewNotes": "Demografía total de la siniestralidad.",
+      "tags": [
+        "estadisticas",
+        "demografia"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q025",
+      "prompt": "Al desglosar a los conductores fallecidos por tramos de edad, se evidencia un rango de mayor vulnerabilidad y letalidad. ¿Qué grupo etario representa la mayor cantidad de conductores fallecidos (cerca del 29%)?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El grupo de jóvenes de entre 18 y 29 años."
+        },
+        {
+          "text": "Los adultos maduros de entre 45 y 55 años."
+        },
+        {
+          "text": "Las personas de edad avanzada mayores de 70 años."
+        },
+        {
+          "text": "Los infantes de entre 10 y 14 años sin licencia."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La inexperiencia unida a conductas de riesgo, menor percepción del peligro o ingesta de alcohol provoca que el grupo más joven ostente el récord de muertes al volante.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "En el caso de las personas conductoras, el rango de edad más numeroso corresponde al grupo entre los 18 a 29 años, representando cerca del 29% de los fallecidos.",
+      "reviewNotes": "Edad y riesgo vial en estadísticas chilenas.",
+      "tags": [
+        "estadisticas",
+        "jovenes",
+        "edades"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q026",
+      "prompt": "¿Cuáles son algunos de los factores directos mencionados explícitamente en el manual que agravan fatalmente las consecuencias de cualquier siniestro propiciado por falla humana?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El consumo de alcohol y el exceso de velocidad."
+        },
+        {
+          "text": "Conducir con las luces apagadas al interior de zonas urbanas."
+        },
+        {
+          "text": "El desuso de elementos sonoros como la bocina frente a un peatón."
+        },
+        {
+          "text": "Usar combustible de un octanaje distinto al sugerido por el fabricante."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Mientras la distracción causa el accidente, el ir ebrio o demasiado rápido garantiza que sus consecuencias impliquen lesiones catastróficas y no solo daños menores.",
+      "sourcePageStart": 8,
+      "sourcePageEnd": 8,
+      "sourceReference": "Pág. 8, Estadísticas de siniestros en Chile",
+      "groundingExcerpt": "Asimismo, factores como el consumo de alcohol y el exceso de velocidad son elementos que agravan las consecuencias de cualquier siniestro.",
+      "reviewNotes": "Identificación de agravantes de letalidad.",
+      "tags": [
+        "alcohol",
+        "velocidad",
+        "agravantes"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q027",
+      "prompt": "El Estado chileno implementa la Política Nacional de Seguridad de Tránsito mediante la adopción de un modelo llamado 'Visión Cero' (o Sistema Seguro). ¿Cuál es la premisa o meta absoluta en que se apoya este modelo?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Que las muertes y lesiones graves en el tránsito son totalmente inaceptables y nadie debe morir por circular en la vía."
+        },
+        {
+          "text": "Que el total de vehículos circulantes debe rebajarse a cero mediante el fomento extremo del transporte público."
+        },
+        {
+          "text": "Que se debe aplicar tolerancia cero exclusiva y únicamente respecto a las drogas, sin importar otras conductas."
+        },
+        {
+          "text": "Que la construcción de carreteras es infalible y los errores de conducción deben ser pagados con cárcel de por vida."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La filosofía de Visión Cero se niega a aceptar que la pérdida de vidas humanas sea el 'precio a pagar' por el derecho a la movilidad, enfocando los esfuerzos en erradicar la muerte vial.",
+      "sourcePageStart": 9,
+      "sourcePageEnd": 9,
+      "sourceReference": "Pág. 9, Sistema Seguro",
+      "groundingExcerpt": "Chile adoptó un enfoque de Sistema Seguro (Visión Cero), para su Política Nacional de Seguridad de Tránsito. Este modelo se apoya en que las muertes y lesiones graves en el tránsito son inaceptables y subraya el principio ético de que nadie debería morir o quedar con secuelas por circular en la vía.",
+      "reviewNotes": "Definición de la Visión Cero en seguridad pública.",
+      "tags": [
+        "sistema-seguro",
+        "vision-cero",
+        "etica"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q028",
+      "prompt": "El primer principio funcional del Sistema Seguro se titula 'Errar es humano'. ¿A qué obliga este principio al momento de organizar y diseñar el tránsito de una ciudad?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Obliga a que el sistema de tránsito esté diseñado de forma de perdonar y contener los errores humanos para que estos no deriven en muertes."
+        },
+        {
+          "text": "Implica que los conductores pueden manejar de manera descuidada, ya que sus faltas siempre serán eximidas de multas por el juez."
+        },
+        {
+          "text": "Obliga a dotar exclusivamente de tecnología autónoma a los vehículos para erradicar definitivamente la conducción manual humana."
+        },
+        {
+          "text": "Señala que los errores solo deben corregirse penalmente cuando involucran daños catastróficos al patrimonio nacional."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Puesto que es imposible impedir totalmente el error humano (distracción, somnolencia), las calles y normas deben construirse para 'absorber' ese fallo y minimizar su castigo (ej: protecciones, lomos de toro).",
+      "sourcePageStart": 9,
+      "sourcePageEnd": 9,
+      "sourceReference": "Pág. 9, Principios del Sistema Seguro",
+      "groundingExcerpt": "Errar es humano: El ser humano comete errores por naturaleza. Un sistema de tránsito seguro tiene que estar diseñado y construido de forma tal de perdonar o contener estos errores.",
+      "reviewNotes": "Comprensión funcional de los principios base.",
+      "tags": [
+        "sistema-seguro",
+        "error-humano"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q029",
+      "prompt": "El segundo pilar fundamental del Sistema Seguro es la 'Vulnerabilidad' de la persona. Este principio biológico establece que:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "El cuerpo humano tiene una capacidad física extremadamente limitada para tolerar las fuerzas de impacto sin sufrir lesiones gravísimas."
+        },
+        {
+          "text": "Las personas más pobres no pueden adquirir automóviles modernos y con buena tecnología, resultando más vulnerables."
+        },
+        {
+          "text": "Las motocicletas y los ciclistas no deberían transitar por las calles debido a que carecen de un chasis resistente."
+        },
+        {
+          "text": "Los niños son los únicos vulnerables y por tanto la velocidad en carreteras solo debe regularse si ellos viajan a bordo."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Anatómicamente no estamos diseñados para aguantar detenciones violentas (fuerza G) sin destrozar nuestros órganos y huesos; toda velocidad en ciudad debe considerar este tope natural.",
+      "sourcePageStart": 9,
+      "sourcePageEnd": 9,
+      "sourceReference": "Pág. 9, Principios del Sistema Seguro",
+      "groundingExcerpt": "Vulnerabilidad: El cuerpo humano tiene una capacidad física limitada para tolerar las fuerzas y energías producto de la fuerza del impacto en un siniestro de tránsito, sin sufrir daños o lesiones graves.",
+      "reviewNotes": "Identificación de los límites biológicos de choque.",
+      "tags": [
+        "sistema-seguro",
+        "vulnerabilidad",
+        "lesiones"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q030",
+      "prompt": "Frente a la ocurrencia de un siniestro de tránsito, el Sistema Seguro promueve el principio de 'Responsabilidad compartida', lo cual dictamina que la culpa o el deber de prevención no recae solamente en los conductores, sino también en:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Quienes diseñan, operan, proveen y fiscalizan las vías, ya que ellos deben prever y resguardar el sistema."
+        },
+        {
+          "text": "Las compañías aseguradoras privadas que deben garantizar el uso de vehículos invulnerables antes de asegurar."
+        },
+        {
+          "text": "El servicio meteorológico, quien debe anunciar a diario si es apto que los civiles saquen sus autos de la vivienda."
+        },
+        {
+          "text": "Los médicos que realizan los exámenes psicotécnicos, los cuales son infalibles en detectar al 100% las enfermedades futuras."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "La ingeniería del tránsito, el Estado (al diseñar calles y cruces) y la policía (fiscalizando) también son co-responsables si el entorno propicia el error en vez de evitarlo.",
+      "sourcePageStart": 9,
+      "sourcePageEnd": 9,
+      "sourceReference": "Pág. 9, Principios del Sistema Seguro",
+      "groundingExcerpt": "Responsabilidad compartida: No basta solo con la responsabilidad de las personas usuarias de las vías, sino también de quienes las diseñan, operan, proveen y fiscalizan.",
+      "reviewNotes": "Enfoque sistémico de la prevención vial.",
+      "tags": [
+        "sistema-seguro",
+        "responsabilidad-compartida"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q031",
+      "prompt": "Al definir la infraestructura vial como un 'Sistema fortificado', el manual de tránsito se refiere a un mecanismo donde:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Si uno de los componentes falla (como un error humano), las otras partes del sistema vial se activan y continúan protegiendo a las personas."
+        },
+        {
+          "text": "Todas las carreteras deben ser amuralladas con bloques de concreto para separar físicamente los sentidos del tránsito."
+        },
+        {
+          "text": "El conductor viaja aislado dentro de un auto blindado, indiferente a lo que suceda afuera de su cabina."
+        },
+        {
+          "text": "Se eliminan completamente todas las intersecciones del mapa urbano para sustituirlas por túneles."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Un sistema es 'fuerte' (fortificado) si no colapsa letalmente ante una sola equivocación; el diseño de la vía o la seguridad del auto operan como barreras de defensa secundarias.",
+      "sourcePageStart": 9,
+      "sourcePageEnd": 9,
+      "sourceReference": "Pág. 9, Principios del Sistema Seguro",
+      "groundingExcerpt": "Sistema fortificado: Todos los componentes del sistema deben estar fortalecidos y si uno falla, las otras partes continúan protegiendo a las personas involucradas.",
+      "reviewNotes": "Sinergia en la prevención de mortalidad.",
+      "tags": [
+        "sistema-seguro",
+        "prevencion"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q032",
+      "prompt": "¿Por qué es tan complejo calcular y estimar el valor monetario del costo real de una muerte producida en el tránsito para el país?",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Porque al calcular su valor no se consideran únicamente los recursos materiales perdidos, sino también el valor de una vida humana y el sufrimiento físico y emocional."
+        },
+        {
+          "text": "Porque las compañías de seguros se niegan legalmente a entregar sus registros contables para llevar a cabo los cálculos estadísticos globales."
+        },
+        {
+          "text": "Debido a que Carabineros no archiva la información referida a los destrozos estructurales generados en el patrimonio público, por secreto de sumario."
+        },
+        {
+          "text": "Porque es imposible contabilizar y tasar de modo alguno los honorarios correspondientes al tiempo que pierden los jueces dictando las sentencias penales."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Es fácil ponerle precio a un vehículo destruido, pero el dolor, el sufrimiento de 100 allegados y el costo moral y vital son invaluables pero a la vez determinantes en la tragedia socio-económica de la siniestralidad.",
+      "sourcePageStart": 7,
+      "sourcePageEnd": 7,
+      "sourceReference": "Pág. 7, Los siniestros de tránsito",
+      "groundingExcerpt": "Es muy difícil llegar a calcular los costos con total exactitud, debido a que al calcular su valor no se consideran únicamente los recursos materiales, sino también el valor de una vida humana o el sufrimiento físico y psicológico.",
+      "reviewNotes": "Reflexión transversal sobre el impacto material y humano.",
+      "tags": [
+        "costos",
+        "valor-vida",
+        "consecuencias"
+      ]
+    },
+    {
+      "externalId": "chapter-1-q033",
+      "prompt": "La premisa de que los siniestros de tránsito NO son fortuitos se fundamenta en un aspecto probabilístico y de previsibilidad. Según el texto, un evento azaroso e impredecible se definiría bajo la condición de que:",
+      "selectionMode": "single",
+      "instruction": "Marque una respuesta.",
+      "options": [
+        {
+          "text": "Las probabilidades de que el siniestro ocurriera y de sufrir consecuencias resultasen iguales y constantes para toda y cualquier persona, sin importar sus actos."
+        },
+        {
+          "text": "Aumentaran drásticamente siempre durante el mes exacto y horario en que el conductor acudió a renovar el plástico de su Licencia de conducir."
+        },
+        {
+          "text": "Un 90% de los afectados no fuesen chilenos y el resto si, de acuerdo a la fatalidad climatológica y no a la ingesta de licores."
+        },
+        {
+          "text": "Los peatones sobreviviesen milagrosamente siempre al cruzar en carretera sin observar el flujo constante."
+        }
+      ],
+      "correctOptionIndexes": [
+        0
+      ],
+      "publicExplanation": "Un accidente real sería aquel que ataca por igual al prudente y al ebrio. Como no ocurre así (le pasa más a quien conduce ebrio, rápido o con lluvia), el siniestro no es un simple accidente fortuito.",
+      "sourcePageStart": 6,
+      "sourcePageEnd": 6,
+      "sourceReference": "Pág. 6, Los siniestros de tránsito",
+      "groundingExcerpt": "Si un siniestro de tránsito fuera un suceso eventual, las probabilidades de sufrir o de estar expuesto a ser protagonista de un evento así dependerían exclusivamente del azar y, en consecuencia, las probabilidades de sufrir sus consecuencias serían iguales para todas las personas.",
+      "reviewNotes": "Razonamiento lógico de la prevención vial y el riesgo personal diferenciado.",
+      "tags": [
+        "siniestros",
+        "probabilidad",
+        "factores-riesgo"
+      ]
+    }
+  ]
+}

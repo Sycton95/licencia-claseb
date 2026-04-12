@@ -123,11 +123,50 @@ export interface AiPilotRunSummary {
   rewriteCount: number;
 }
 
+export interface AiPilotEvaluationSet {
+  id: string;
+  title: string;
+  description: string;
+  newQuestionChunkIds: string[];
+  rewriteQuestionIds: string[];
+}
+
+export interface AiPilotEvaluationItemReport {
+  evaluationItemId: string;
+  targetId: string;
+  label: string;
+  suggestionType: 'new_question' | 'rewrite';
+  verifierStatus: AiPilotVerifierStatus;
+  criticalCount: number;
+  warningCount: number;
+  issueCodes: AiPilotVerifierCode[];
+}
+
+export interface AiPilotEvaluationReport {
+  id: string;
+  evaluationSetId: string;
+  runId: string;
+  provider: AiProvider;
+  model: string;
+  mode: AiPilotRunMode;
+  createdAt: string;
+  durationMs: number;
+  attemptedCount: number;
+  passedCount: number;
+  failedCount: number;
+  criticalIssueCount: number;
+  warningIssueCount: number;
+  issueBreakdown: Partial<Record<AiPilotVerifierCode, number>>;
+  items: AiPilotEvaluationItemReport[];
+}
+
 export interface AiPilotRun {
   id: string;
   provider: AiProvider;
   model: string;
   actorEmail: string;
+  evaluationSetId: string;
+  attemptedItemIds: string[];
   mode: AiPilotRunMode;
   status: AiPilotRunStatus;
   summary: AiPilotRunSummary;
@@ -138,5 +177,7 @@ export interface AiPilotRun {
 export interface AiPilotWorkspace {
   suggestions: AiPilotSuggestionRecord[];
   runs: AiPilotRun[];
+  reports: AiPilotEvaluationReport[];
   sourcePreparation: SourcePreparationChunk[];
+  evaluationSet: AiPilotEvaluationSet;
 }

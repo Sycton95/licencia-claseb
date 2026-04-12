@@ -1,5 +1,6 @@
 ﻿import { SEED_CONTENT } from '../data/seedContent';
 import { SOURCE_PREPARATION } from '../data/sourcePreparation';
+import { resolveAiPilotEvaluationTargets } from '../data/aiPilotEvaluation';
 import { buildDraftQuestionFromSuggestion } from './aiSuggestionEngine';
 import { generateHeuristicWorkspace, generateLocalPilotWorkspace } from './aiProvider.js';
 import {
@@ -12,6 +13,7 @@ import {
   loadLocalAiWorkspace,
   removeLocalAiPilotSuggestion,
   updateLocalAiSuggestion,
+  upsertLocalAiPilotReport,
   upsertLocalAiPilotRun,
   upsertLocalAiPilotSuggestions,
   upsertLocalAiRun,
@@ -843,20 +845,30 @@ export async function generateLocalAiPilotWorkspace(
   const catalog = await getContentCatalog();
   const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
   const editionId = catalog.activeEdition?.id ?? catalog.examRuleSet.editionId;
-  const chunks = SOURCE_PREPARATION.filter((item) => item.editionId === editionId);
-  const questions = catalog.questions
-    .filter((question) => question.status !== 'archived')
-    .slice(0, 3);
+  const evaluationTargets = resolveAiPilotEvaluationTargets(
+    catalog,
+    SOURCE_PREPARATION.filter((item) => item.editionId === editionId),
+  );
   const workspace = await generateLocalPilotWorkspace(provider, {
     catalog,
     actorEmail,
-    chunks,
-    questions,
+    evaluationSetId: evaluationTargets.evaluationSet.id,
+    maxItems:
+      mode === 'mixed'
+        ? evaluationTargets.chunks.length + evaluationTargets.questions.length
+        : mode === 'new_question'
+          ? evaluationTargets.chunks.length
+          : evaluationTargets.questions.length,
+    chunks: evaluationTargets.chunks,
+    questions: evaluationTargets.questions,
     mode,
   });
 
   if (workspace.runs[0]) {
     upsertLocalAiPilotRun(workspace.runs[0]);
+  }
+  if (workspace.reports[0]) {
+    upsertLocalAiPilotReport(workspace.reports[0]);
   }
   upsertLocalAiPilotSuggestions(workspace.suggestions);
 

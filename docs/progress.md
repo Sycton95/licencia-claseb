@@ -59,7 +59,7 @@
 ## Current content baseline
 
 - Published question coverage now exists for:
-  - `chapter-1`: 28 questions
+  - `chapter-1`: 61 questions
   - `chapter-2`: 40 questions
   - `chapter-3`: 20 questions
   - `chapter-4`: 49 questions
@@ -69,7 +69,7 @@
   - `chapter-8`: 40 questions
   - `chapter-9`: 40 questions
 - Source-preparation chunks now exist for:
-  - `chapter-1`: 2 chunks
+  - `chapter-1`: 3 chunks
   - `chapter-2`: 3 chunks
   - `chapter-3`: 7 chunks
   - `chapter-4`: 3 chunks
@@ -171,7 +171,73 @@
   - `chapter-8`
   - `chapter-9`
 - Imported chapter grounding now reaches the minimum `3` chunks per live imported chapter.
-- `chapter-1` remains at `2` prepared chunks and is now the only active chapter below the `3`-chunk private grounding target.
+
+## 2026-04-11 Integrity recovery and chapter-1 baseline closeout
+
+- Treated the dirty `chapter-1-batch` and `chapter-2-batch` review artifacts as legitimate in-flight review state and kept the raw/reviewed import boundary unchanged:
+  - raw source in `data/imports/`
+  - reviewed outputs in `data/import-reviews/`
+- Promoted reviewed import candidates from `chapter-1-batch` into the runtime published bank.
+- Accepted review result for `chapter-1-batch.json`:
+  - `33` accepted
+  - `0` rejected
+- Increased `chapter-1` runtime published coverage from `28` to `61`.
+- Increased the runtime published total from `336` to `369`.
+- Added one more formal manual-backed source-preparation chunk for `chapter-1`, bringing it from `2` to `3` chunks.
+- All active chapters now meet the private `3`-chunk grounding threshold.
+- Local integrity verification after the recovery pass:
+  - `npm run validate:content` passed
+  - `npm run build` passed
+  - `npm run release:check` failed only at the network-bound `smoke:prod` fetch step under sandboxed access
+
+## 2026-04-12 Production health recovery and release verification
+
+- Fixed the production `/api/health` regression introduced by the mojibake repair path:
+  - `String.prototype.matchAll` had been called with a non-global regex
+  - the fix shipped in `src/lib/textEncoding.ts`
+- Preview validation confirmed the serverless crash was gone before production promotion:
+  - preview deployment: `https://licencia-claseb-d4tzsl8j8-sycton.vercel.app`
+  - preview `/api/health` returned structured JSON instead of `FUNCTION_INVOCATION_FAILED`
+  - preview still lacked full Supabase env parity, so it remains a partial pre-production gate
+- Production deployment and final validation completed:
+  - deployment: `dpl_J8ZqeG5v2qieKFm9gbMuVTGzaij4`
+  - production URL: `https://licencia-claseb.vercel.app`
+  - `/api/health` returned `200`
+  - `/`, `/practice`, `/exam`, and `/admin` returned `200`
+  - `schema: v1`
+  - `usesServiceRole: true`
+  - `databaseReachable: true`
+- The production bundle now includes both:
+  - the `/api/health` regression fix
+  - the `chapter-1` reviewed-import closeout already prepared in the repo
+
+## 2026-04-12 Release discipline and Milestone 5E baseline wiring
+
+- Standardized the release workflow into three explicit gates:
+  - local
+  - preview
+  - production
+- Added `npm run smoke:url` so any preview URL can be checked with the same route contract used in production.
+- Documented the current Vercel preview reality:
+  - Preview env parity is branch-scoped when preview overrides are configured by git branch
+  - the branch must exist remotely before preview envs can be attached and validated
+- Fixed the local Ollama runner to use `globalThis` timers instead of `window` so the pilot logic is not unnecessarily browser-bound.
+- Added a fixed Milestone `5E` baseline evaluation set:
+  - set id: `pilot-baseline-v1`
+  - `new_question` targets:
+    - `prep-system-safe-components`
+    - `prep-convivencia-vial-space`
+  - `rewrite` targets:
+    - `week1-q01`
+    - `import-chapter-2-q001`
+- Added deterministic evaluation metadata and local report storage for the beta panel:
+  - `evaluationSetId`
+  - attempted item ids
+  - pass/fail counts
+  - critical/warning totals
+  - verifier issue-code breakdown
+- Surfaced the latest baseline report and prior-run deltas in the local beta admin panel so repeated runs can be compared before any UI expansion.
+- The current workspace still needs a dedicated preview branch push plus env sync before preview can become a strict blocking gate for this milestone.
 
 ## Open risks
 
@@ -181,9 +247,9 @@
   - bounded local runs only
   - suggestion output quality still unproven on target hardware
   - browser-local persistence only in this phase
+- Preview env parity is still branch-scoped and must be synced explicitly for each release branch that is used as a preview gate.
 - Chapter 3 was expanded directly from the formal manual PDF in a fast-track pass.
   - The new batch is grounded to pages 33, 34, and 35 only.
-- `chapter-1` still needs one additional prepared chunk to meet the same `3`-chunk grounding threshold now reached by the imported live chapters.
 - Import-review artifacts may still contain legacy mojibake text in stored JSON, but runtime promotion and preparation paths now repair it deterministically.
 
 ## Blocked or manual steps
@@ -209,11 +275,11 @@
 
 ## Next approved work blocks
 
-1. Add one more formal source-preparation chunk for `chapter-1` so every active chapter meets the `3`-chunk grounding threshold.
-2. Keep Milestone 5A as the quality gate for imported and locally authored content.
-3. Keep Milestone 5E local-only and non-production:
-   - provider abstraction
-   - verifier-gated local Ollama adapter
-   - isolated beta storage
-   - local Admin Beta panel
-4. Keep annex content excluded until a separate annex policy is implemented.
+1. Keep Milestone 5A as the quality gate for imported and locally authored content.
+2. Continue Milestone 5E local-only and non-production in this order:
+   - define a fixed local evaluation set for beta suggestions
+   - measure verifier pass/fail quality against that set
+   - improve local beta review ergonomics only if the verifier data supports it
+   - keep provider selection, beta storage, and UI fully env-gated and non-production
+3. Keep annex content excluded until a separate annex policy is implemented.
+4. Push the next release branch, sync its preview envs, and re-run the preview smoke gate so preview becomes a blocking pre-production check instead of a partial check.

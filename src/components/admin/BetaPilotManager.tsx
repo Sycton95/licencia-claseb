@@ -1,5 +1,10 @@
 import { ChevronLeftIcon, FlaskIcon } from './AdminIcons';
-import type { AiPilotRunMode, AiPilotSuggestionRecord, AiPilotWorkspace } from '../../types/ai';
+import type {
+  AiPilotEvaluationReport,
+  AiPilotRunMode,
+  AiPilotSuggestionRecord,
+  AiPilotWorkspace,
+} from '../../types/ai';
 
 type Props = {
   isBusy: boolean;
@@ -40,6 +45,24 @@ function groupRecords(records: AiPilotSuggestionRecord[]) {
   };
 }
 
+function getTopIssueBreakdown(report: AiPilotEvaluationReport | null) {
+  if (!report) {
+    return [];
+  }
+
+  return Object.entries(report.issueBreakdown)
+    .sort((left, right) => (right[1] ?? 0) - (left[1] ?? 0))
+    .slice(0, 3);
+}
+
+function formatDelta(value: number) {
+  if (value === 0) {
+    return '0';
+  }
+
+  return value > 0 ? `+${value}` : `${value}`;
+}
+
 export function BetaPilotManager({
   isBusy,
   isEnabled,
@@ -59,6 +82,16 @@ export function BetaPilotManager({
   const selectedSuggestion =
     records.find((record) => record.id === selectedSuggestionId) ?? null;
   const latestRun = workspace?.runs[0] ?? null;
+  const evaluationSet = workspace?.evaluationSet ?? null;
+  const latestReport = workspace?.reports[0] ?? null;
+  const previousReport =
+    workspace?.reports.find(
+      (report) =>
+        report.id !== latestReport?.id &&
+        report.evaluationSetId === latestReport?.evaluationSetId &&
+        report.mode === latestReport?.mode,
+    ) ?? null;
+  const topIssueBreakdown = getTopIssueBreakdown(latestReport);
 
   return (
     <div className="relative flex h-full w-full flex-1 overflow-hidden">
@@ -98,6 +131,28 @@ export function BetaPilotManager({
               </div>
             </dl>
           </div>
+
+          {evaluationSet && (
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="mb-2 flex items-center justify-between">
+                <h3 className="text-sm font-semibold text-slate-900">Set de evaluación</h3>
+                <span className="rounded-md border border-slate-200 bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase text-slate-600">
+                  {evaluationSet.id}
+                </span>
+              </div>
+              <p className="text-xs leading-relaxed text-slate-500">{evaluationSet.description}</p>
+              <dl className="mt-3 grid grid-cols-2 gap-3 text-xs text-slate-600">
+                <div>
+                  <dt className="font-semibold text-slate-900">Nuevas</dt>
+                  <dd>{evaluationSet.newQuestionChunkIds.length}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-slate-900">Reescrituras</dt>
+                  <dd>{evaluationSet.rewriteQuestionIds.length}</dd>
+                </div>
+              </dl>
+            </div>
+          )}
 
           <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="mb-3 flex items-center justify-between">
@@ -158,6 +213,59 @@ export function BetaPilotManager({
               </div>
             )}
           </div>
+
+          {latestReport && (
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="mb-3 flex items-center justify-between">
+                <h3 className="text-sm font-semibold text-slate-900">Reporte base</h3>
+                <span className="rounded-md border border-slate-200 bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase text-slate-600">
+                  {latestReport.mode}
+                </span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 rounded-lg bg-slate-50 p-3 text-xs text-slate-600">
+                <div>
+                  <span className="font-semibold text-slate-900">Intentos</span>
+                  <div>{latestReport.attemptedCount}</div>
+                </div>
+                <div>
+                  <span className="font-semibold text-slate-900">Issues</span>
+                  <div>{latestReport.criticalIssueCount + latestReport.warningIssueCount}</div>
+                </div>
+                <div>
+                  <span className="font-semibold text-emerald-700">Pasan</span>
+                  <div>{latestReport.passedCount}</div>
+                </div>
+                <div>
+                  <span className="font-semibold text-rose-700">Fallan</span>
+                  <div>{latestReport.failedCount}</div>
+                </div>
+              </div>
+              {topIssueBreakdown.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {topIssueBreakdown.map(([code, count]) => (
+                    <span
+                      key={code}
+                      className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600"
+                    >
+                      {code.replace(/_/g, ' ')}: {count}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {previousReport && (
+                <div className="mt-3 grid grid-cols-2 gap-2 rounded-lg border border-slate-200 p-3 text-xs text-slate-600">
+                  <div>
+                    <span className="font-semibold text-slate-900">Delta pasan</span>
+                    <div>{formatDelta(latestReport.passedCount - previousReport.passedCount)}</div>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-slate-900">Delta fallan</span>
+                    <div>{formatDelta(latestReport.failedCount - previousReport.failedCount)}</div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         <div className="flex-1 overflow-y-auto bg-slate-50/30 p-2.5">

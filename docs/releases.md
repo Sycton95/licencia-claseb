@@ -177,3 +177,67 @@
   - `chapter-8`
   - `chapter-9`
 - Left the next follow-up as a small chapter-1 grounding top-up plus any later local-only Milestone 5E work.
+
+## 2026-04-11 Integrity recovery and chapter-1 baseline closeout
+
+- Preserved the raw/reviewed import workflow during recovery:
+  - raw batch files remain in `data/imports`
+  - deterministic review artifacts remain in `data/import-reviews`
+  - runtime merge still consumes `accepted-candidates.json` only
+- Merged the reviewed `chapter-1-batch` candidates into the runtime published bank.
+- Closed the remaining chapter-1 live baseline gap:
+  - `33` accepted
+  - `0` rejected
+  - `chapter-1` coverage increased from `28` to `61`
+  - total runtime published questions increased from `336` to `369`
+- Added one more formal source-preparation chunk for `chapter-1` so every active chapter now has at least `3` private grounding chunks.
+- Reconciled the milestone log with the actual recovered repo state before continuing Milestone `5E`.
+- Revalidated local gates after the recovery pass:
+  - `npm run validate:content`
+  - `npm run build`
+- `npm run release:check` still stops at the sandboxed network fetch inside `smoke:prod`, so final live confirmation remains a post-push Vercel verification step.
+
+## 2026-04-12 Production health recovery and live verification
+
+- Fixed the `api/health` production regression caused by the text-repair helper:
+  - `repairPotentialMojibake()` now uses a global regex compatible with `matchAll`
+- Verified the crash was removed in preview before promotion:
+  - preview deployment: `https://licencia-claseb-d4tzsl8j8-sycton.vercel.app`
+  - preview `/api/health` returned JSON and no longer failed with `FUNCTION_INVOCATION_FAILED`
+- Promoted the validated workspace to production:
+  - deployment id: `dpl_J8ZqeG5v2qieKFm9gbMuVTGzaij4`
+  - production alias: `https://licencia-claseb.vercel.app`
+- Final production smoke verification passed:
+  - `/api/health`
+  - `/`
+  - `/practice`
+  - `/exam`
+  - `/admin`
+- The production release now includes:
+  - the `/api/health` runtime fix
+  - the `chapter-1` reviewed-import merge
+  - the third `chapter-1` grounding chunk
+- Remaining follow-up after this release:
+  - finish preview env parity so preview can act as a true blocking gate
+  - continue Milestone `5E` with a fixed local evaluation set and reportable verifier outcomes
+
+## 2026-04-12 Release discipline and Milestone 5E baseline wiring
+
+- Added a reusable preview smoke entry point:
+  - `npm run smoke:url`
+- Updated deployment guidance so preview validation is no longer ambiguous:
+  - Preview health parity requires `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY`, and `SUPABASE_SERVICE_ROLE_KEY`
+  - when Preview overrides are branch-scoped in Vercel, the branch must be pushed before those envs can be attached and validated
+- Hardened the local Ollama pilot for future non-browser execution by replacing `window` timer usage with `globalThis`.
+- Added the first fixed Milestone `5E` evaluation set:
+  - `pilot-baseline-v1`
+  - two deterministic `new_question` targets
+  - two deterministic `rewrite` targets
+- Added local beta evaluation reporting:
+  - run-level evaluation metadata
+  - issue-code breakdown
+  - latest-vs-previous delta display in the admin beta panel
+- Kept the entire pilot isolated from production:
+  - heuristic remains the production default
+  - beta storage remains local-only
+  - no pilot result is promoted into the verified suggestion bank or public content

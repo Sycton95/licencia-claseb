@@ -1,5 +1,7 @@
 import { SOURCE_PREPARATION } from '../data/sourcePreparation';
+import { AI_PILOT_BASELINE_EVALUATION_SET } from '../data/aiPilotEvaluation';
 import type {
+  AiPilotEvaluationReport,
   AiPilotRun,
   AiPilotSuggestionRecord,
   AiPilotWorkspace,
@@ -27,7 +29,9 @@ function normalizeBetaWorkspace(rawWorkspace: Partial<AiPilotWorkspace>): AiPilo
   return {
     suggestions: rawWorkspace.suggestions ?? [],
     runs: rawWorkspace.runs ?? [],
+    reports: rawWorkspace.reports ?? [],
     sourcePreparation: rawWorkspace.sourcePreparation ?? SOURCE_PREPARATION,
+    evaluationSet: rawWorkspace.evaluationSet ?? AI_PILOT_BASELINE_EVALUATION_SET,
   };
 }
 
@@ -154,6 +158,16 @@ export function upsertLocalAiPilotRun(run: AiPilotRun) {
   saveLocalAiBetaWorkspace({
     ...workspace,
     runs: nextRuns,
+  });
+}
+
+export function upsertLocalAiPilotReport(report: AiPilotEvaluationReport) {
+  const workspace = loadLocalAiBetaWorkspace();
+  const nextReports = [report, ...workspace.reports.filter((item) => item.id !== report.id)];
+
+  saveLocalAiBetaWorkspace({
+    ...workspace,
+    reports: nextReports,
   });
 }
 

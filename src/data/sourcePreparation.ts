@@ -79,6 +79,38 @@ const CORE_SOURCE_PREPARATION: SourcePreparationChunk[] = [
     },
   },
   {
+    id: 'prep-vulnerable-road-users',
+    editionId: ACTIVE_EDITION_ID,
+    chapterId: 'chapter-1',
+    sourceDocumentId: 'manual-claseb-2026',
+    sourcePageStart: 8,
+    sourcePageEnd: 8,
+    topicKey: 'vulnerable-road-users',
+    topicTitle: 'Usuarios mÃ¡s vulnerables en el trÃ¡nsito',
+    referenceLabel: 'PÃ¡g. 8',
+    groundingSummary:
+      'El manual identifica como mÃ¡s vulnerables a niÃ±os, personas mayores, personas con discapacidad y usuarios de vehÃ­culos de dos ruedas, porque la energÃ­a del impacto recae directamente sobre sus cuerpos.',
+    rationale:
+      'Completa el grounding privado de chapter-1 con una base conceptual distinta a costos y Sistema Seguro, manteniendo foco en prevenciÃ³n y protecciÃ³n.',
+    candidateQuestion: {
+      prompt:
+        'SegÃºn el manual, Â¿por quÃ© ciertos usuarios del trÃ¡nsito se consideran especialmente vulnerables frente a un siniestro?',
+      selectionMode: 'single',
+      instruction: 'Marque una respuesta.',
+      options: [
+        'Porque siempre circulan a menor velocidad que el resto de los vehÃ­culos.',
+        'Porque normalmente no estÃ¡n cubiertos por ningÃºn sistema de seguridad vial.',
+        'Porque la fuerza del impacto recae directamente sobre sus cuerpos y tienen menor protecciÃ³n fÃ­sica.',
+        'Porque la normativa les otorga prioridad absoluta en cualquier vÃ­a.',
+      ],
+      correctOptionIndexes: [2],
+      publicExplanation:
+        'La vulnerabilidad aumenta cuando el cuerpo recibe directamente la energÃ­a del impacto, como ocurre con peatones y usuarios de vehÃ­culos de dos ruedas, ademÃ¡s de otros grupos con mayor fragilidad.',
+      reviewNotes:
+        'Chunk formal adicional para completar el umbral privado de tres apoyos de grounding en chapter-1.',
+    },
+  },
+  {
     id: 'prep-convivencia-vial-space',
     editionId: ACTIVE_EDITION_ID,
     chapterId: 'chapter-3',

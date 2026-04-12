@@ -1,5 +1,7 @@
 import type { ContentCatalog, Question } from '../types/content.js';
 import type {
+  AiPilotEvaluationItemReport,
+  AiPilotEvaluationReport,
   AiPilotRun,
   AiPilotRunMode,
   AiPilotSuggestionRecord,
@@ -33,6 +35,7 @@ type OllamaQuestionShape = {
 };
 
 type LocalOllamaPilotOptions = {
+  evaluationSetId?: string;
   provider?: AiProvider;
   maxItems?: number;
   chunks?: SourcePreparationChunk[];
@@ -114,7 +117,7 @@ function buildRewritePrompt(question: Question) {
 
 async function requestOllama(prompt: string) {
   const controller = new AbortController();
-  const timeoutId = window.setTimeout(() => controller.abort(), ollamaMaxGenerationMs);
+  const timeoutId = globalThis.setTimeout(() => controller.abort(), ollamaMaxGenerationMs);
 
   try {
     const response = await fetch(`${ollamaBaseUrl}/api/generate`, {
@@ -140,7 +143,7 @@ async function requestOllama(prompt: string) {
 
     return (await response.json()) as OllamaGenerateResponse;
   } finally {
-    window.clearTimeout(timeoutId);
+    globalThis.clearTimeout(timeoutId);
   }
 }
 
@@ -260,11 +263,41 @@ async function generateRewriteRecord(
   return buildPilotSuggestionRecord('ollama_qwen25_3b', suggestion, catalog, rawOutput);
 }
 
+function buildEvaluationItemReport(
+  record: AiPilotSuggestionRecord,
+): AiPilotEvaluationItemReport {
+  const criticalCount = record.verifierIssues.filter((issue) => issue.severity === 'critical').length;
+  const warningCount = record.verifierIssues.filter((issue) => issue.severity === 'warning').length;
+
+  return {
+    evaluationItemId: record.suggestion.dedupeKey,
+    targetId: record.suggestion.targetQuestionId ?? record.suggestion.dedupeKey,
+    label: record.suggestion.sourceReference,
+    suggestionType: record.suggestion.suggestionType as 'new_question' | 'rewrite',
+    verifierStatus: record.verifierStatus,
+    criticalCount,
+    warningCount,
+    issueCodes: [...new Set(record.verifierIssues.map((issue) => issue.code))],
+  };
+}
+
+function buildIssueBreakdown(records: AiPilotSuggestionRecord[]) {
+  const counts: AiPilotEvaluationReport['issueBreakdown'] = {};
+
+  for (const record of records) {
+    for (const issue of record.verifierIssues) {
+      counts[issue.code] = (counts[issue.code] ?? 0) + 1;
+    }
+  }
+
+  return counts as AiPilotEvaluationReport['issueBreakdown'];
+}
+
 export async function runLocalOllamaPilot(
   catalog: ContentCatalog,
   actorEmail: string,
   options: LocalOllamaPilotOptions = {},
-): Promise<{ run: AiPilotRun; suggestions: AiPilotSuggestionRecord[] }> {
+): Promise<{ run: AiPilotRun; report: AiPilotEvaluationReport; suggestions: AiPilotSuggestionRecord[] }> {
   if (!isLocalOllamaEnabled) {
     throw new Error('El piloto local de Ollama está deshabilitado.');
   }
@@ -277,6 +310,7 @@ export async function runLocalOllamaPilot(
 
   const startedAt = Date.now();
   const runId = `pilot-run-${startedAt}`;
+  const evaluationSetId = options.evaluationSetId ?? 'ad-hoc';
   const maxItems = options.maxItems ?? ollamaMaxItemsPerRun;
   const chunkBudget =
     mode === 'new_question' ? maxItems : mode === 'rewrite' ? 0 : Math.max(1, Math.ceil(maxItems / 2));
@@ -295,29 +329,61 @@ export async function runLocalOllamaPilot(
   }
 
   const completedAt = Date.now();
+  const attemptedItemIds = suggestionRecords.map((record) => record.suggestion.dedupeKey);
+  const criticalIssueCount = suggestionRecords.reduce(
+    (total, record) =>
+      total + record.verifierIssues.filter((issue) => issue.severity === 'critical').length,
+    0,
+  );
+  const warningIssueCount = suggestionRecords.reduce(
+    (total, record) =>
+      total + record.verifierIssues.filter((issue) => issue.severity === 'warning').length,
+    0,
+  );
+  const run: AiPilotRun = {
+    id: runId,
+    provider,
+    model: ollamaModel,
+    actorEmail,
+    evaluationSetId,
+    attemptedItemIds,
+    mode,
+    status: 'completed',
+    createdAt: new Date(startedAt).toISOString(),
+    durationMs: completedAt - startedAt,
+    summary: {
+      attemptedCount: suggestionRecords.length,
+      passedCount: suggestionRecords.filter((item) => item.verifierStatus === 'passed').length,
+      failedCount: suggestionRecords.filter((item) => item.verifierStatus === 'failed').length,
+      newQuestionCount: suggestionRecords.filter(
+        (item) => item.suggestion.suggestionType === 'new_question',
+      ).length,
+      rewriteCount: suggestionRecords.filter(
+        (item) => item.suggestion.suggestionType === 'rewrite',
+      ).length,
+    },
+  };
+  const report: AiPilotEvaluationReport = {
+    id: `pilot-report-${runId}`,
+    evaluationSetId,
+    runId,
+    provider,
+    model: ollamaModel,
+    mode,
+    createdAt: run.createdAt,
+    durationMs: run.durationMs,
+    attemptedCount: run.summary.attemptedCount,
+    passedCount: run.summary.passedCount,
+    failedCount: run.summary.failedCount,
+    criticalIssueCount,
+    warningIssueCount,
+    issueBreakdown: buildIssueBreakdown(suggestionRecords),
+    items: suggestionRecords.map(buildEvaluationItemReport),
+  };
 
   return {
-    run: {
-      id: runId,
-      provider,
-      model: ollamaModel,
-      actorEmail,
-      mode,
-      status: 'completed',
-      createdAt: new Date(startedAt).toISOString(),
-      durationMs: completedAt - startedAt,
-      summary: {
-        attemptedCount: suggestionRecords.length,
-        passedCount: suggestionRecords.filter((item) => item.verifierStatus === 'passed').length,
-        failedCount: suggestionRecords.filter((item) => item.verifierStatus === 'failed').length,
-        newQuestionCount: suggestionRecords.filter(
-          (item) => item.suggestion.suggestionType === 'new_question',
-        ).length,
-        rewriteCount: suggestionRecords.filter(
-          (item) => item.suggestion.suggestionType === 'rewrite',
-        ).length,
-      },
-    },
+    run,
+    report,
     suggestions: suggestionRecords,
   };
 }

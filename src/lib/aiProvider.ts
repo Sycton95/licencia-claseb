@@ -1,4 +1,5 @@
 import { SOURCE_PREPARATION } from '../data/sourcePreparation.js';
+import { AI_PILOT_BASELINE_EVALUATION_SET } from '../data/aiPilotEvaluation.js';
 import { generateAiSuggestions } from './aiSuggestionEngine.js';
 import { runLocalOllamaPilot } from './localOllamaPilot.js';
 import type { ContentCatalog, Question } from '../types/content.js';
@@ -16,6 +17,7 @@ type ProviderContext = {
 };
 
 type PilotProviderContext = ProviderContext & {
+  evaluationSetId?: string;
   chunks?: SourcePreparationChunk[];
   questions?: Question[];
   maxItems?: number;
@@ -41,6 +43,7 @@ export async function generateLocalPilotWorkspace(
   {
     catalog,
     actorEmail,
+    evaluationSetId,
     chunks,
     questions,
     maxItems,
@@ -50,6 +53,7 @@ export async function generateLocalPilotWorkspace(
   switch (provider) {
     case 'ollama_qwen25_3b': {
       const result = await runLocalOllamaPilot(catalog, actorEmail, {
+        evaluationSetId,
         provider,
         chunks,
         questions,
@@ -59,6 +63,8 @@ export async function generateLocalPilotWorkspace(
       const editionId = catalog.activeEdition?.id ?? catalog.examRuleSet.editionId;
 
       return {
+        evaluationSet: AI_PILOT_BASELINE_EVALUATION_SET,
+        reports: [result.report],
         suggestions: result.suggestions,
         runs: [result.run],
         sourcePreparation: SOURCE_PREPARATION.filter((item) => item.editionId === editionId),

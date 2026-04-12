@@ -70,3 +70,36 @@ Future model-backed providers are allowed only if they preserve:
 - server-side execution
 - auditable review flow
 - no auto-publish guarantees
+
+## Local pilot evaluation
+
+Milestone `5E` remains local-only and non-production.
+
+Fixed baseline set:
+
+- `pilot-baseline-v1`
+- `new_question` chunks:
+  - `prep-system-safe-components`
+  - `prep-convivencia-vial-space`
+- `rewrite` questions:
+  - `week1-q01`
+  - `import-chapter-2-q001`
+
+Operational rule:
+
+- compare runs only against the fixed set above
+- keep reports in local beta storage only
+- do not treat beta output as part of the verified suggestion bank
+- do not ship pilot results to public routes, admin production routes, or Supabase-backed editorial entities
+
+Local rerun prerequisites:
+
+- `VITE_ENABLE_ADMIN_BETA_PANEL=true`
+- `VITE_ENABLE_LOCAL_OLLAMA=true`
+- local Ollama reachable at `VITE_OLLAMA_BASE_URL`
+- repeated runs should be compared by:
+  - attempted count
+  - passed count
+  - failed count
+  - critical vs warning totals
+  - top repeated verifier issue codes

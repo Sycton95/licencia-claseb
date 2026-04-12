@@ -21,6 +21,21 @@ Servidor:
 
 - `SUPABASE_SERVICE_ROLE_KEY` para endurecer mutaciones editoriales
 
+Preview mÃ­nimo para validar `GET /api/health`:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+Regla de separaciÃ³n:
+
+- en este proyecto los env de Preview pueden quedar acoplados al `git branch` cuando se usan overrides por rama
+- primero se empuja la rama preview
+- despuÃ©s se agregan o sincronizan las tres variables para esa rama concreta
+- luego se redeploya y se ejecuta el smoke check contra esa URL preview
+- `VITE_ENABLE_PREVIEW_ADMIN_BYPASS` controla solo el acceso UI en preview
+- no sustituye la paridad del health check contra Supabase
+
 Mapa con Supabase:
 
 - `Publishable key` -> `VITE_SUPABASE_PUBLISHABLE_KEY`
@@ -82,6 +97,34 @@ Para validar una rama preview sin magic link:
 2. redeploy de la rama preview
 3. abre la URL preview en `/admin`
 
+## Gate de release en 3 capas
+
+1. Gate local
+2. Gate preview
+3. Gate producciÃ³n
+
+### Gate local
+
+1. `npm run validate:content`
+2. `npm run build`
+3. `npm run release:check`
+
+### Gate preview
+
+1. empujar la rama preview si todavÃ­a no existe en el remoto
+2. sincronizar `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` y `SUPABASE_SERVICE_ROLE_KEY` en el scope Preview de esa rama
+3. desplegar preview desde la rama o workspace activo
+4. verificar `/`, `/practice`, `/exam`, `/admin`, `/api/health`
+5. para una URL preview concreta:
+   - `RELEASE_CHECK_BASE_URL=https://preview-url npm run smoke:url -- --require-schema=v1`
+6. registrar la URL exacta y el resultado en `docs/progress.md` o `docs/releases.md`
+
+### Gate producciÃ³n
+
+1. promover la build validada
+2. verificar `/`, `/practice`, `/exam`, `/admin`, `/api/health`
+3. registrar deployment y resultado final en `docs/progress.md` o `docs/releases.md`
+
 Resultado esperado:
 
 - no se pide magic link en preview
@@ -95,6 +138,12 @@ Antes de considerar un release sano:
 1. `npm run validate:content`
 2. `npm run build`
 3. `npm run smoke:prod`
+
+Para una URL distinta de producciÃ³n:
+
+1. define `RELEASE_CHECK_BASE_URL`
+2. ejecuta `npm run smoke:url`
+3. agrega `--require-schema=v1` cuando corresponda
 
 `npm run release:check` es ahora el gate normal y exige `schema: v1`.
 `npm run release:check:compat` queda solo como fallback temporal.
