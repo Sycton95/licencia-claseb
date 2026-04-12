@@ -163,4 +163,17 @@
   - raw file in `data/imports`
   - review output in `data/import-reviews`
   - merge from `accepted-candidates.json` only
-- Left encoding cleanup and source-preparation catch-up as the next post-import milestones.
+
+## 2026-04-12 Encoding cleanup and source-preparation catch-up
+
+- Added deterministic mojibake repair to seeded-question and reviewed-import runtime promotion paths.
+- Enabled `chapter-2` in the seeded runtime chapter catalog so the published bank and chapter activation state match.
+- Expanded private `sourcePreparation` coverage for:
+  - `chapter-2`
+  - `chapter-4`
+  - `chapter-5`
+  - `chapter-6`
+  - `chapter-7`
+  - `chapter-8`
+  - `chapter-9`
+- Left the next follow-up as a small chapter-1 grounding top-up plus any later local-only Milestone 5E work.

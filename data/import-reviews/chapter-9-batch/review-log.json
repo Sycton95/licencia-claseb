@@ -1,6 +1,6 @@
 {
   "sourceFile": "data/imports/chapter-9-batch.json",
-  "reviewedAt": "2026-04-11T03:38:57.336Z",
+  "reviewedAt": "2026-04-12T01:09:10.038Z",
   "batch": {
     "batchId": "9-batch-2026-04-10-01",
     "chapterIdRaw": "9",
@@ -22,6 +22,14 @@
       "action": "chapter_id_normalized",
       "before": "9",
       "after": "chapter-9"
+    },
+    {
+      "scope": "question",
+      "target": "9-q018",
+      "field": "groundingExcerpt",
+      "action": "mojibake_recovered",
+      "before": "El reglamento de la Ley No Chat establece que no son “manos libres” los siguientes equipos:... Aquellos sistemas que para su uso requieran que la persona conductora los sostenga con su hombro, contra su cabeza o con otras partes del cuerpo, tales como sujeto sobre sus piernas o en su muñeca.",
+      "after": "El reglamento de la Ley No Chat establece que no son \u001cmanos libres\u001d los siguientes equipos:... Aquellos sistemas que para su uso requieran que la persona conductora los sostenga con su hombro, contra su cabeza o con otras partes del cuerpo, tales como sujeto sobre sus piernas o en su mu�eca."
     }
   ],
   "warnings": [],
@@ -743,7 +751,7 @@
         "sourcePageStart": 141,
         "sourcePageEnd": 141,
         "sourceReference": "Pág. 141, Ley No Chat",
-        "groundingExcerpt": "El reglamento de la Ley No Chat establece que no son “manos libres” los siguientes equipos:... Aquellos sistemas que para su uso requieran que la persona conductora los sostenga con su hombro, contra su cabeza o con otras partes del cuerpo, tales como sujeto sobre sus piernas o en su muñeca.",
+        "groundingExcerpt": "El reglamento de la Ley No Chat establece que no son \u001cmanos libres\u001d los siguientes equipos:... Aquellos sistemas que para su uso requieran que la persona conductora los sostenga con su hombro, contra su cabeza o con otras partes del cuerpo, tales como sujeto sobre sus piernas o en su mu�eca.",
         "reviewNotes": "Definición legal de lo que NO es un manos libres.",
         "tags": [
           "ley-no-chat",

@@ -10,28 +10,17 @@ const CHAPTER_SOURCE_WINDOWS = {
   'chapter-9': { start: 136, end: 148, label: 'Informaciones importantes' },
 };
 
-const MOJIBAKE_REPLACEMENTS = new Map([
-  ['Ã¡', 'á'],
-  ['Ã©', 'é'],
-  ['Ã­', 'í'],
-  ['Ã³', 'ó'],
-  ['Ãº', 'ú'],
-  ['Ã', 'Á'],
-  ['Ã‰', 'É'],
-  ['Ã', 'Í'],
-  ['Ã“', 'Ó'],
-  ['Ãš', 'Ú'],
-  ['Ã±', 'ñ'],
-  ['Ã‘', 'Ñ'],
-  ['Ã¼', 'ü'],
-  ['Ãœ', 'Ü'],
-  ['â', '’'],
-  ['â', '“'],
-  ['â', '”'],
-  ['â', '–'],
-  ['â', '—'],
-  ['â¦', '…'],
-]);
+const utf8Decoder = new TextDecoder('utf-8', { fatal: false });
+const suspiciousPattern = /(\u00C3.|\u00C2.|\u00E2\u20AC|\u00E2\u20AC\u201C|\u00E2\u20AC\u201D|\u00E2\u20AC\u0153|\u00E2\u20AC\u009D|\u00E2\u20AC\u02DC|\u00E2\u20AC\u2122|\u00EF\u00BF\u00BD)/g;
+
+function countSuspiciousMarkers(value) {
+  return [...value.matchAll(suspiciousPattern)].length;
+}
+
+function decodeLatin1AsUtf8(value) {
+  const bytes = Uint8Array.from([...value].map((character) => character.charCodeAt(0) & 0xff));
+  return utf8Decoder.decode(bytes);
+}
 
 /**
  * @typedef {{
@@ -71,8 +60,12 @@ function normalizeWhitespace(value) {
 
 function recoverMojibake(value) {
   let next = value;
-  for (const [before, after] of MOJIBAKE_REPLACEMENTS.entries()) {
-    next = next.split(before).join(after);
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const candidate = decodeLatin1AsUtf8(next);
+    if (candidate === next || countSuspiciousMarkers(candidate) >= countSuspiciousMarkers(next)) {
+      break;
+    }
+    next = candidate;
   }
   return next;
 }
@@ -712,3 +705,4 @@ export function renderReviewSummary(reviewLog) {
 
   return `${lines.join('\n')}\n`;
 }
+

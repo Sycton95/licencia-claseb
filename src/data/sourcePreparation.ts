@@ -1,8 +1,17 @@
+import chapter2Accepted from '../../data/import-reviews/chapter-2-batch/accepted-candidates.json' with { type: 'json' };
+import chapter4Accepted from '../../data/import-reviews/chapter-4-batch/accepted-candidates.json' with { type: 'json' };
+import chapter5Accepted from '../../data/import-reviews/chapter-5-batch/accepted-candidates.json' with { type: 'json' };
+import chapter6Accepted from '../../data/import-reviews/chapter-6-batch/accepted-candidates.json' with { type: 'json' };
+import chapter7Accepted from '../../data/import-reviews/chapter-7-batch/accepted-candidates.json' with { type: 'json' };
+import chapter8Accepted from '../../data/import-reviews/chapter-8-batch/accepted-candidates.json' with { type: 'json' };
+import chapter9Accepted from '../../data/import-reviews/chapter-9-batch/accepted-candidates.json' with { type: 'json' };
+import { repairPotentialMojibake } from '../lib/textEncoding.js';
+import type { SelectionMode } from '../types/content.js';
 import type { SourcePreparationChunk } from '../types/ai.js';
 
 const ACTIVE_EDITION_ID = 'edition-2026';
 
-export const SOURCE_PREPARATION: SourcePreparationChunk[] = [
+const CORE_SOURCE_PREPARATION: SourcePreparationChunk[] = [
   {
     id: 'prep-system-safe-components',
     editionId: ACTIVE_EDITION_ID,
@@ -293,4 +302,146 @@ export const SOURCE_PREPARATION: SourcePreparationChunk[] = [
         'Basada en ejemplos explícitos del cierre de la página 35.',
     },
   },
+];
+
+type ReviewedImportQuestion = {
+  externalId: string;
+  prompt: string;
+  selectionMode: SelectionMode;
+  instruction: string;
+  options: Array<{ text: string }>;
+  correctOptionIndexes: number[];
+  publicExplanation?: string;
+  sourcePageStart: number;
+  sourcePageEnd: number;
+  sourceReference: string;
+  groundingExcerpt: string;
+  reviewNotes: string;
+  tags: string[];
+  chapterId: string;
+};
+
+function cleanText(value: string) {
+  return repairPotentialMojibake(value).replace(/\s+/g, ' ').trim();
+}
+
+function cleanOptions(options: string[]) {
+  return options.map((option) => cleanText(option));
+}
+
+function toTopicKey(tags: string[], fallback: string) {
+  const cleanedTags = tags.map((tag) => cleanText(tag)).filter(Boolean);
+  if (cleanedTags.length > 0) {
+    return cleanedTags.slice(0, 2).join('-');
+  }
+
+  return fallback;
+}
+
+function toTopicTitle(tags: string[], fallback: string) {
+  const cleanedTags = tags.map((tag) => cleanText(tag)).filter(Boolean);
+  if (cleanedTags.length > 0) {
+    return cleanedTags
+      .slice(0, 2)
+      .map((tag) => tag.split('-').map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join(' '))
+      .join(' y ');
+  }
+
+  return fallback;
+}
+
+function pickPreparationQuestions(batch: ReviewedImportQuestion[], count = 3) {
+  const questionsByPage = new Map<number, ReviewedImportQuestion[]>();
+
+  for (const question of batch) {
+    const page = question.sourcePageStart;
+    const bucket = questionsByPage.get(page) ?? [];
+    bucket.push(question);
+    questionsByPage.set(page, bucket);
+  }
+
+  const pages = [...questionsByPage.keys()].sort((left, right) => left - right);
+  if (pages.length === 0) {
+    return [];
+  }
+
+  const targetIndexes = new Set<number>([0, Math.floor((pages.length - 1) / 2), pages.length - 1]);
+  const selectedPages = [...targetIndexes].sort((left, right) => left - right).slice(0, count).map((index) => pages[index]);
+
+  return selectedPages
+    .map((page) => questionsByPage.get(page)?.[0] ?? null)
+    .filter((question): question is ReviewedImportQuestion => question !== null);
+}
+
+function buildImportedPreparationChunk(question: ReviewedImportQuestion): SourcePreparationChunk {
+  const topicKey = toTopicKey(question.tags, question.externalId);
+  const topicTitle = toTopicTitle(question.tags, cleanText(question.prompt));
+
+  return {
+    id: `prep-${question.chapterId}-${question.externalId}`,
+    editionId: ACTIVE_EDITION_ID,
+    chapterId: question.chapterId,
+    sourceDocumentId: 'manual-claseb-2026',
+    sourcePageStart: question.sourcePageStart,
+    sourcePageEnd: question.sourcePageEnd,
+    topicKey,
+    topicTitle,
+    referenceLabel: cleanText(question.sourceReference),
+    groundingSummary: cleanText(question.groundingExcerpt),
+    rationale: `Extiende el grounding privado de ${question.chapterId} con un punto ya revisado y publicado del manual formal.`,
+    candidateQuestion: {
+      prompt: cleanText(question.prompt),
+      selectionMode: question.selectionMode,
+      instruction: cleanText(question.instruction),
+      options: cleanOptions(question.options.map((option) => option.text)),
+      correctOptionIndexes: question.correctOptionIndexes,
+      publicExplanation: question.publicExplanation ? cleanText(question.publicExplanation) : undefined,
+      reviewNotes: cleanText(question.reviewNotes),
+    },
+  };
+}
+
+function cleanSourcePreparationChunk(chunk: SourcePreparationChunk): SourcePreparationChunk {
+  return {
+    ...chunk,
+    topicKey: cleanText(chunk.topicKey),
+    topicTitle: cleanText(chunk.topicTitle),
+    referenceLabel: cleanText(chunk.referenceLabel),
+    groundingSummary: cleanText(chunk.groundingSummary),
+    rationale: cleanText(chunk.rationale),
+    benchmarkNote: chunk.benchmarkNote ? cleanText(chunk.benchmarkNote) : undefined,
+    candidateQuestion: chunk.candidateQuestion
+      ? {
+          ...chunk.candidateQuestion,
+          prompt: cleanText(chunk.candidateQuestion.prompt),
+          instruction: cleanText(chunk.candidateQuestion.instruction),
+          options: cleanOptions(chunk.candidateQuestion.options),
+          publicExplanation: chunk.candidateQuestion.publicExplanation
+            ? cleanText(chunk.candidateQuestion.publicExplanation)
+            : undefined,
+          reviewNotes: chunk.candidateQuestion.reviewNotes
+            ? cleanText(chunk.candidateQuestion.reviewNotes)
+            : undefined,
+        }
+      : undefined,
+  };
+}
+
+const REVIEWED_PREPARATION_BATCHES = [
+  chapter4Accepted,
+  chapter5Accepted,
+  chapter6Accepted,
+  chapter7Accepted,
+  chapter8Accepted,
+  chapter9Accepted,
+  chapter2Accepted,
+] as ReviewedImportQuestion[][];
+
+const REVIEWED_PREPARATION_CHUNKS = REVIEWED_PREPARATION_BATCHES.flatMap((batch) =>
+  pickPreparationQuestions(batch).map(buildImportedPreparationChunk),
+);
+
+export const SOURCE_PREPARATION: SourcePreparationChunk[] = [
+  ...CORE_SOURCE_PREPARATION.map(cleanSourcePreparationChunk),
+  ...REVIEWED_PREPARATION_CHUNKS,
 ];

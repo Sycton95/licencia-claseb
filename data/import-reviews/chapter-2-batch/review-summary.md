@@ -2,7 +2,7 @@
 
 ## Batch overview
 - Source file: `data/imports/chapter-2-batch.json`
-- Reviewed at: `2026-04-12T00:54:45.518Z`
+- Reviewed at: `2026-04-12T01:08:56.533Z`
 - Chapter: `chapter-2`
 - Source document: `manual-claseb-2026`
 - Total questions: 40
@@ -57,7 +57,7 @@
 - None
 
 ## Normalization warnings
-- None
+- `chapter-2-q008` groundingExcerpt: mojibake_recovered
 
 ## Next operator action
 - All items passed review. Continue with the later merge workflow from `accepted-candidates.json`.

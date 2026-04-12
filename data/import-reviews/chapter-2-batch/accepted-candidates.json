@@ -263,7 +263,7 @@
     "sourcePageStart": 13,
     "sourcePageEnd": 13,
     "sourceReference": "Pág. 13, El sistema de refrigeración",
-    "groundingExcerpt": "En el indicador de temperatura, la letra C significa frío, del inglés “Cold”, y la letra H, caliente, del inglés “Hot”.",
+    "groundingExcerpt": "En el indicador de temperatura, la letra C significa fr�o, del ingl�s \u001cCold\u001d, y la letra H, caliente, del ingl�s \u001cHot\u001d.",
     "reviewNotes": "Lectura de indicadores de tablero.",
     "tags": [
       "refrigeracion",

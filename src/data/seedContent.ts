@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   Chapter,
   ContentCatalog,
   Edition,
@@ -8,6 +8,7 @@
   QuestionOption,
   SourceDocument,
 } from '../types/content.js';
+import { repairPotentialMojibake } from '../lib/textEncoding.js';
 import { REVIEWED_IMPORTED_QUESTIONS } from './reviewedImports.js';
 
 const ACTIVE_EDITION_ID = 'edition-2026';
@@ -56,8 +57,8 @@ export const SOURCE_DOCUMENTS: SourceDocument[] = [
   },
   {
     id: 'puchuncavi-cuestionario-claseb',
-    title: 'Cuestionario Clase B Municipalidad de PuchuncavÃ­',
-    issuer: 'Municipalidad de PuchuncavÃ­',
+    title: repairPotentialMojibake('Cuestionario Clase B Municipalidad de PuchuncavÃ­'),
+    issuer: repairPotentialMojibake('Municipalidad de PuchuncavÃ­'),
     year: 2026,
     url: 'https://munipuchuncavi.cl/2.0/sitio10/pdf/formularios/transito/cuestionario%20clase%20b.pdf',
     type: 'municipal-questionnaire',
@@ -91,7 +92,7 @@ export const CHAPTERS: Chapter[] = [
     title: 'Los principios de la conducción',
     description: 'Funcionamiento del vehículo, leyes físicas y seguridad activa/pasiva.',
     order: 2,
-    isActive: false,
+    isActive: true,
   },
   {
     id: 'chapter-3',
@@ -156,7 +157,12 @@ export const CHAPTERS: Chapter[] = [
     order: 9,
     isActive: true,
   },
-];
+].map((chapter) => ({
+  ...chapter,
+  code: repairPotentialMojibake(chapter.code),
+  title: repairPotentialMojibake(chapter.title),
+  description: repairPotentialMojibake(chapter.description),
+}));
 
 export const EXAM_RULE_SET: ExamRuleSet = {
   code: 'class-b-current',
@@ -206,27 +212,33 @@ function buildQuestion(input: SeedQuestionInput): Question {
     editionId: ACTIVE_EDITION_ID,
     chapterId: input.chapterId,
     week: input.week,
-    prompt: input.prompt,
+    prompt: repairPotentialMojibake(input.prompt),
     selectionMode,
     instruction:
-      input.instruction ??
-      (selectionMode === 'multiple'
-        ? `Marque ${input.correctOptionIndexes.length} respuestas.`
-        : 'Marque una respuesta.'),
+      repairPotentialMojibake(input.instruction ?? '') ||
+      repairPotentialMojibake(
+        selectionMode === 'multiple'
+          ? `Marque ${input.correctOptionIndexes.length} respuestas.`
+          : 'Marque una respuesta.',
+      ),
     sourceDocumentId: 'manual-claseb-2026',
     sourcePage: input.sourcePage,
-    sourceReference: input.sourceReference ?? `PÃ¡g. ${input.sourcePage}`,
-    explanation: input.explanation,
-    publicExplanation: input.explanation,
+    sourceReference: repairPotentialMojibake(input.sourceReference ?? `PÃ¡g. ${input.sourcePage}`),
+    explanation: repairPotentialMojibake(input.explanation ?? ''),
+    publicExplanation: repairPotentialMojibake(input.explanation ?? ''),
     status: 'published',
     isOfficialExamEligible: true,
     doubleWeight: input.doubleWeight ?? false,
-    reviewNotes: input.reviewNotes,
+    reviewNotes: input.reviewNotes ? repairPotentialMojibake(input.reviewNotes) : undefined,
     createdBy: SEED_AUTHOR,
     updatedBy: SEED_AUTHOR,
     reviewedAt: REVIEWED_AT,
     publishedAt: PUBLISHED_AT,
-    options: buildOptions(input.id, input.options, input.correctOptionIndexes),
+    options: buildOptions(
+      input.id,
+      input.options.map((option) => repairPotentialMojibake(option)),
+      input.correctOptionIndexes,
+    ),
     media: [],
   };
 }

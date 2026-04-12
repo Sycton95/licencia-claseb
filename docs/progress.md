@@ -15,10 +15,12 @@
 
 ## Active milestone
 
-- Post-import data correctness and grounding alignment:
-  - chapter-2 baseline coverage is now merged
-  - next priority is deterministic encoding cleanup
-  - after cleanup, expand `sourcePreparation` beyond chapters `1` and `3`
+- Milestone 5E local LLM suggestion pilot:
+  - local-only
+  - opt-in
+  - verifier-gated
+  - heuristic provider remains production-default
+  - content baseline, import review, and source-preparation coverage are now materially stronger than before
 
 ## Completed milestones
 
@@ -66,9 +68,16 @@
   - `chapter-7`: 40 questions
   - `chapter-8`: 40 questions
   - `chapter-9`: 40 questions
-- Source-preparation chunks still exist only for:
+- Source-preparation chunks now exist for:
   - `chapter-1`: 2 chunks
+  - `chapter-2`: 3 chunks
   - `chapter-3`: 7 chunks
+  - `chapter-4`: 3 chunks
+  - `chapter-5`: 3 chunks
+  - `chapter-6`: 3 chunks
+  - `chapter-7`: 3 chunks
+  - `chapter-8`: 3 chunks
+  - `chapter-9`: 3 chunks
 - Runtime chapter taxonomy is now aligned to the formal 9-chapter manual structure.
 
 ## Outcomes from the Milestone 6A close-out pass
@@ -149,6 +158,21 @@
 - Current published total is `336` questions.
 - This closes the baseline chapter-coverage gap under the formal 9-chapter model.
 
+## 2026-04-12 Encoding cleanup and source-preparation catch-up
+
+- Added deterministic mojibake repair in the runtime promotion paths for seeded and reviewed-imported questions.
+- Enabled `chapter-2` in the seeded runtime chapter catalog so the formal 9-chapter model is internally consistent.
+- Expanded `sourcePreparation` with reviewed, PDF-grounded chunks for:
+  - `chapter-2`
+  - `chapter-4`
+  - `chapter-5`
+  - `chapter-6`
+  - `chapter-7`
+  - `chapter-8`
+  - `chapter-9`
+- Imported chapter grounding now reaches the minimum `3` chunks per live imported chapter.
+- `chapter-1` remains at `2` prepared chunks and is now the only active chapter below the `3`-chunk private grounding target.
+
 ## Open risks
 
 - Current production AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
@@ -159,10 +183,8 @@
   - browser-local persistence only in this phase
 - Chapter 3 was expanded directly from the formal manual PDF in a fast-track pass.
   - The new batch is grounded to pages 33, 34, and 35 only.
-- Source-preparation coverage still lags behind the expanded runtime bank:
-  - only chapters 1 and 3 have prepared grounding chunks
-- imported chapters now exceed private grounding coverage
-- text encoding debt still exists in seeded/imported content and should be treated as the next deterministic cleanup pass
+- `chapter-1` still needs one additional prepared chunk to meet the same `3`-chunk grounding threshold now reached by the imported live chapters.
+- Import-review artifacts may still contain legacy mojibake text in stored JSON, but runtime promotion and preparation paths now repair it deterministically.
 
 ## Blocked or manual steps
 
@@ -187,12 +209,11 @@
 
 ## Next approved work blocks
 
-1. Run a deterministic encoding cleanup pass for mojibake in seeded and imported content.
-2. Expand formal source preparation beyond chapters 1 and 3 so editorial automation matches the live bank.
-3. Keep Milestone 5A as the quality gate for imported and locally authored content.
-4. Keep Milestone 5E local-only and non-production:
+1. Add one more formal source-preparation chunk for `chapter-1` so every active chapter meets the `3`-chunk grounding threshold.
+2. Keep Milestone 5A as the quality gate for imported and locally authored content.
+3. Keep Milestone 5E local-only and non-production:
    - provider abstraction
    - verifier-gated local Ollama adapter
    - isolated beta storage
    - local Admin Beta panel
-5. Keep annex content excluded until a separate annex policy is implemented.
+4. Keep annex content excluded until a separate annex policy is implemented.

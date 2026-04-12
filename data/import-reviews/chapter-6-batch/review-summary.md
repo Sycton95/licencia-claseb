@@ -2,7 +2,7 @@
 
 ## Batch overview
 - Source file: `data/imports/chapter-6-batch.json`
-- Reviewed at: `2026-04-11T04:14:59.436Z`
+- Reviewed at: `2026-04-12T01:08:56.560Z`
 - Chapter: `chapter-6`
 - Source document: `manual-claseb-2026`
 - Total questions: 40

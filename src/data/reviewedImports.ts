@@ -5,6 +5,7 @@ import chapter6Accepted from '../../data/import-reviews/chapter-6-batch/accepted
 import chapter7Accepted from '../../data/import-reviews/chapter-7-batch/accepted-candidates.json' with { type: 'json' };
 import chapter8Accepted from '../../data/import-reviews/chapter-8-batch/accepted-candidates.json' with { type: 'json' };
 import chapter9Accepted from '../../data/import-reviews/chapter-9-batch/accepted-candidates.json' with { type: 'json' };
+import { repairPotentialMojibake } from '../lib/textEncoding.js';
 import type { Question, QuestionOption } from '../types/content.js';
 
 const IMPORT_AUTHOR = 'frontier-import@licencia-claseb.local';
@@ -56,19 +57,20 @@ function buildImportedQuestion(question: ReviewedImportQuestion): Question {
     editionId: 'edition-2026',
     chapterId: question.chapterId,
     week: getChapterWeek(question.chapterId),
-    prompt: question.prompt,
+    prompt: repairPotentialMojibake(question.prompt),
     selectionMode: question.selectionMode,
-    instruction: question.instruction,
+    instruction: repairPotentialMojibake(question.instruction),
     sourceDocumentId: 'manual-claseb-2026',
     sourcePage,
-    sourceReference: question.sourceReference || `Pág. ${sourcePage}`,
-    explanation: question.publicExplanation,
-    publicExplanation: question.publicExplanation,
+    sourceReference: repairPotentialMojibake(question.sourceReference || `Pág. ${sourcePage}`),
+    explanation: repairPotentialMojibake(question.publicExplanation),
+    publicExplanation: repairPotentialMojibake(question.publicExplanation),
     status: 'published',
     isOfficialExamEligible: true,
     doubleWeight: false,
     reviewNotes: [question.reviewNotes, `Importada desde batch revisado (${question.externalId}).`]
       .filter(Boolean)
+      .map((value) => repairPotentialMojibake(value))
       .join(' '),
     createdBy: IMPORT_AUTHOR,
     updatedBy: IMPORT_AUTHOR,
@@ -76,7 +78,7 @@ function buildImportedQuestion(question: ReviewedImportQuestion): Question {
     publishedAt: IMPORT_PUBLISHED_AT,
     options: buildOptions(
       questionId,
-      question.options.map((option) => option.text),
+      question.options.map((option) => repairPotentialMojibake(option.text)),
       question.correctOptionIndexes,
     ),
     media: [],

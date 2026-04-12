@@ -608,7 +608,7 @@
     "sourcePageStart": 141,
     "sourcePageEnd": 141,
     "sourceReference": "Pág. 141, Ley No Chat",
-    "groundingExcerpt": "El reglamento de la Ley No Chat establece que no son “manos libres” los siguientes equipos:... Aquellos sistemas que para su uso requieran que la persona conductora los sostenga con su hombro, contra su cabeza o con otras partes del cuerpo, tales como sujeto sobre sus piernas o en su muñeca.",
+    "groundingExcerpt": "El reglamento de la Ley No Chat establece que no son \u001cmanos libres\u001d los siguientes equipos:... Aquellos sistemas que para su uso requieran que la persona conductora los sostenga con su hombro, contra su cabeza o con otras partes del cuerpo, tales como sujeto sobre sus piernas o en su mu�eca.",
     "reviewNotes": "Definición legal de lo que NO es un manos libres.",
     "tags": [
       "ley-no-chat",

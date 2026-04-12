@@ -276,9 +276,16 @@ Status:
   - `chapter-7`: 40
   - `chapter-8`: 40
   - `chapter-9`: 40
-- Prepared source chunks currently exist only in:
+- Prepared source chunks currently exist in:
   - `chapter-1`: 2
+  - `chapter-2`: 3
   - `chapter-3`: 7
+  - `chapter-4`: 3
+  - `chapter-5`: 3
+  - `chapter-6`: 3
+  - `chapter-7`: 3
+  - `chapter-8`: 3
+  - `chapter-9`: 3
 - Runtime chapter taxonomy is aligned to the formal 9-chapter manual structure.
 
 ## Chapter rollout policy
@@ -320,11 +327,9 @@ Excluded reviewed imports:
    - opt-in
    - verifier-gated
    - never production-default
-4. Run a deterministic encoding cleanup pass for mojibake in seeded and imported content.
-5. Expand `sourcePreparation` to catch up with the imported runtime bank, starting with `chapter-4` through `chapter-9`, then `chapter-2`.
-6. Keep annexes out of the runtime question bank until a separate annex ingestion policy exists.
-7. Run the release gate on each production content update:
+4. Add one more formal source-preparation chunk for `chapter-1` so every active chapter meets the private `3`-chunk grounding threshold.
+5. Keep annexes out of the runtime question bank until a separate annex ingestion policy exists.
+6. Run the release gate on each production content update:
    - `npm run validate:content`
    - `npm run build`
    - `npm run release:check`
-
