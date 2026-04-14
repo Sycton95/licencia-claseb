@@ -1,6 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * STYLING PHILOSOPHY: HYBRID CSS VARIABLES + TAILWIND
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * This application uses a hybrid approach to CSS that leverages both CSS custom
+ * properties (variables) and Tailwind CSS utilities:
+ *
+ * CSS VARIABLES (--color-*, --spacing-*, --font-*):
+ * - Define semantic design tokens (colors, spacing, typography)
+ * - Used in @layer components for reusable component patterns
+ * - Centralized in :root for easy theme switching (future Dark Mode)
+ * - Example: background-color: var(--color-primary-600)
+ *
+ * TAILWIND UTILITIES:
+ * - Primary building blocks for layout, composition, and responsive design
+ * - Used directly in component className attributes
+ * - Provides rapid UI development and consistency
+ * - Example: className="flex gap-4 px-4 py-3"
+ *
+ * WHEN TO USE WHICH:
+ * ├─ CSS Variables: Global reusable patterns, theme-aware properties
+ * ├─ Tailwind Utilities: Component-level styling, layout, spacing, responsive
+ * └─ @layer components: Combine both for complex patterns (buttons, cards)
+ *
+ * FUTURE DARK MODE:
+ * To implement Dark Mode in the future, only CSS variables need to be updated:
+ * Simply add @media (prefers-color-scheme: dark) or a .dark class to :root
+ * and swap variable values. All components using variables will auto-adapt.
+ * Components using raw Tailwind colors (e.g., bg-red-500) will NOT adapt.
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Color Tokens */
+  --color-primary-50: #F0F7FF;
+  --color-primary-100: #E0EEFF;
+  --color-primary-400: #60A5FA;
+  --color-primary-600: #2563EB;
+  --color-primary-700: #1D4ED8;
+  --color-primary-900: #1E3A8A;
+
+  --color-success-50: #F0FDFD;
+  --color-success-400: #2DD4BF;
+  --color-success-600: #0D9488;
+
+  --color-warning-50: #FEF8F5;
+  --color-warning-400: #F97316;
+  --color-warning-600: #C2410C;
+
+  --color-neutral-50: #FAFAF9;
+  --color-neutral-100: #F5F5F4;
+  --color-neutral-200: #E7E5E4;
+  --color-neutral-600: #57534E;
+  --color-neutral-900: #1C1917;
+
+  --color-sage-50: #F6FDF5;
+  --color-sage-400: #86EFAC;
+  --color-sage-600: #16A34A;
+
+  /* Spacing Tokens */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 32px;
+  --spacing-4xl: 40px;
+
+  /* Typography Scales */
+  --font-poppins: 'Poppins', sans-serif;
+  --font-geist: 'Geist', system-ui, sans-serif;
+
+  --font-h1-size: 32px;
+  --font-h2-size: 24px;
+  --font-h3-size: 20px;
+  --font-body-size: 16px;
+  --font-label-size: 14px;
+  --font-small-size: 14px;
+  --font-xs-size: 12px;
+  --font-tiny-size: 11px;
+
+  /* Responsive Typography (tablet+) */
+  --font-h1-size-md: 36px;
+  --font-h2-size-md: 28px;
+  --font-h3-size-md: 24px;
+  --font-body-size-md: 18px;
+
+  /* Responsive Typography (desktop+) */
+  --font-h1-size-lg: 40px;
+  --font-h2-size-lg: 28px;
+  --font-h3-size-lg: 24px;
+  --font-body-size-lg: 18px;
+}
 
 /* Only keep fundamental resets here */
 html, body, #root {
@@ -9,9 +107,293 @@ html, body, #root {
 }
 
 html {
-  -webkit-tap-highlight-color: rgba(99, 102, 241, 0.18);
+  -webkit-tap-highlight-color: rgba(37, 99, 235, 0.18);
+  font-family: var(--font-geist);
 }
 
 body {
   text-rendering: optimizeLegibility;
+  color: var(--color-neutral-600);
+  background-color: var(--color-neutral-50);
+}
+
+/* Semantic Component Utility Classes */
+@layer components {
+  .text-h1 {
+    @apply text-h1 font-poppins font-black leading-tight text-neutral-900;
+  }
+
+  .text-h2 {
+    @apply text-h2 font-poppins font-extrabold leading-tight text-neutral-900;
+  }
+
+  .text-h3 {
+    @apply text-h3 font-poppins font-bold leading-tight text-neutral-900;
+  }
+
+  .text-body {
+    @apply text-body font-geist leading-normal text-neutral-600;
+  }
+
+  .text-label {
+    @apply text-label font-medium uppercase tracking-wide text-neutral-900;
+  }
+
+  .text-small {
+    @apply text-small font-geist text-neutral-600;
+  }
+
+  /* Button Base Styles - Touch-friendly minimum height */
+  .btn-base {
+    @apply min-h-[48px] px-4 py-2 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-900 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-neutral-100 text-neutral-900 hover:bg-neutral-200 active:bg-neutral-300 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+  }
+
+  /* Card Base Styles */
+  .card-base {
+    @apply bg-white rounded-lg shadow-sm border border-neutral-200;
+  }
+
+  /* Focus Indicator */
+  .focus-ring {
+    @apply focus:ring-2 focus:ring-offset-0 focus:ring-primary-500 focus:outline-none;
+  }
+
+  /* Touch-friendly interactive elements */
+  button, a, input, select, textarea {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-1;
+  }
+
+  /* Navigation item polish */
+  nav a {
+    @apply transition-transform duration-200;
+  }
+
+  /* Prevent double-tap zoom on navigation */
+  nav a {
+    touch-action: manipulation;
+  }
+
+  /* Mobile touch target sizing */
+  @media (hover: none) and (pointer: coarse) {
+    button, a[role="button"], input[type="button"], input[type="checkbox"], input[type="radio"] {
+      @apply min-h-[44px] min-w-[44px];
+    }
+
+    /* Ensure adequate spacing between touch targets */
+    button + button, a + a, label + label {
+      @apply ml-2;
+    }
+  }
+
+  /* Image responsive handling */
+  img {
+    @apply max-w-full h-auto;
+    /* Prevent oversized images on small screens */
+    display: block;
+    /* Smooth rendering on mobile */
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  /* Figure element styling */
+  figure {
+    @apply m-0 p-0;
+  }
+
+  /* Lazy-loaded image optimization */
+  img[loading="lazy"] {
+    /* Ensure lazy images don't cause layout shift */
+    @apply aspect-auto;
+  }
+
+  /* Responsive text input sizing */
+  input[type="text"], input[type="number"], input[type="email"], textarea, select {
+    @apply min-h-[44px] px-3 py-2 text-base;
+    font-size: 16px; /* Prevent iOS auto-zoom on focus */
+  }
+
+  /* Checkbox and radio button sizing for mobile touch */
+  input[type="checkbox"], input[type="radio"] {
+    @apply min-h-[20px] min-w-[20px] cursor-pointer;
+  }
+
+  /* Checkbox label touch target expansion */
+  label {
+    @apply transition-colors duration-200;
+  }
+
+  label > input[type="checkbox"],
+  label > input[type="radio"] {
+    @apply cursor-pointer;
+  }
+
+  /* Form input focus states */
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  textarea:focus,
+  select:focus {
+    @apply border-primary-400 bg-white ring-2 ring-primary-100;
+  }
+}
+
+/* Progress Bar Styles */
+.progress-shell {
+  @apply flex flex-col gap-2 px-4 py-3 border-b border-neutral-200 bg-white shadow-sm;
+}
+
+.progress-meta {
+  @apply flex items-center justify-between text-xs font-bold text-neutral-600 uppercase tracking-wide;
+}
+
+.progress-track {
+  @apply h-2 w-full overflow-hidden rounded-full bg-neutral-200;
+}
+
+.progress-fill {
+  @apply h-full bg-gradient-to-r from-primary-400 to-primary-600 transition-all duration-300 ease-out;
+}
+
+/* Landscape orientation optimization */
+@media (orientation: landscape) {
+  :root {
+    /* Reduce spacing in landscape to maximize content area */
+    --spacing-lg: 12px;
+    --spacing-xl: 16px;
+  }
+
+  /* Landscape header: compact height (48px) */
+  header {
+    height: 48px !important;
+  }
+
+  /* Landscape header content: reduce padding */
+  header .mx-auto {
+    @apply px-3 md:px-4;
+  }
+
+  /* Landscape header text: smaller size */
+  header span {
+    @apply text-sm md:text-base;
+  }
+
+  /* Landscape main content: constrain height and allow scrolling */
+  main {
+    @apply overflow-y-auto;
+    max-height: calc(100dvh - 48px - 64px);
+  }
+
+  /* Landscape progress shell: compact */
+  .progress-shell {
+    @apply px-4 py-1.5;
+  }
+
+  .progress-meta {
+    @apply text-[10px];
+  }
+
+  .progress-track {
+    @apply h-1.5;
+  }
+
+  /* Landscape bottom nav: maintain fixed position with proper height */
+  nav.fixed {
+    height: 64px !important;
+  }
+
+  /* Landscape nav flex container */
+  nav.fixed .flex {
+    height: 64px;
+  }
+
+  /* Landscape nav labels: reduce text size */
+  nav.fixed .flex span:last-child {
+    @apply text-[9px];
+  }
+}
+
+/* Extra-compact landscape (<500px height, i.e. very wide phones) */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    height: 44px !important;
+  }
+
+  main {
+    max-height: calc(100dvh - 44px - 56px);
+  }
+
+  nav.fixed {
+    height: 56px !important;
+  }
+
+  nav.fixed .flex {
+    height: 56px;
+  }
+
+  nav.fixed .flex > * {
+    @apply gap-0.5;
+  }
+
+  nav.fixed .flex svg {
+    @apply w-4 h-4;
+  }
+
+  .progress-shell {
+    @apply px-3 py-1;
+  }
+}
+
+/* Smooth scroll behavior across all browsers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Momentum scrolling optimization for iOS */
+.overflow-y-auto, main {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent horizontal scroll on mobile */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Optimize scroll performance with GPU acceleration */
+.overflow-y-auto, main, [role="region"] {
+  will-change: scroll-position;
+  @apply transform-gpu;
+}
+
+/* Mobile-first responsive adjustments */
+@media (min-width: 641px) {
+  :root {
+    --font-h1-size: var(--font-h1-size-md);
+    --font-h2-size: var(--font-h2-size-md);
+    --font-h3-size: var(--font-h3-size-md);
+    --font-body-size: var(--font-body-size-md);
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --font-h1-size: var(--font-h1-size-lg);
+    --font-h2-size: var(--font-h2-size-lg);
+    --font-h3-size: var(--font-h3-size-lg);
+    --font-body-size: var(--font-body-size-lg);
+  }
+}
+
+/* Safe area support for notched devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
 }

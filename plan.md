@@ -47,6 +47,59 @@ The product must not claim to replicate the non-public official question bank. I
   - blocked items
 - If a milestone introduces external dependencies or manual infra actions, the code should degrade cleanly and document the missing step rather than breaking the current admin/public flows.
 
+## UI/UX Track (Delegated)
+
+**As of 2026-04-14**, UI/UX milestones have been delegated to a dedicated track:
+
+### Scope (UI/UX Track ONLY)
+- Pure UI/UX improvements to public routes (`/`, `/practice`, `/exam`)
+- Visual polish, layout refinement, accessibility enhancements
+- Keyboard navigation, form interactions, responsive design
+- Typography, spacing, color, and component hierarchy
+
+### Strictly Off-Limits (DO NOT TOUCH)
+- ❌ Data-fetching logic (hooks like `usePublishedCatalog`)
+- ❌ Supabase clients or API route modifications
+- ❌ React Router navigation logic
+- ❌ Core application state (context, Redux, global hooks)
+- ❌ Feature additions (Ollama pilot, chapter imports, content pipeline)
+- ❌ Component props or data flow between components
+
+### UI/UX Progress Tracking
+
+- **Roadmap**: `.builder/plans/ui-ux-roadmap.md`
+- **Progress Log**: `.builder/progress.md`
+- **Operatinal Rules**: See UI/UX roadmap section on state management and boundaries
+
+### Current UI/UX Milestones
+
+**UI/UX-M1**: Design System (✅ Complete)
+- Semantic color palette, typography scale, icon library
+- CSS variables for theme support (Dark Mode ready)
+
+**UI/UX-M2**: Public Quiz Experience (🔄 In Progress)
+- HomePage enhancements, QuizRunner improvements, QuizSummary filtering
+- Keyboard navigation and accessibility refinements
+
+**UI/UX-M3**: Admin Interface (❌ Blocked - Lower Priority)
+- Deferred per Milestone 6A decision. Will resume after content work stabilizes.
+
+**UI/UX-M4**: Mobile Optimization (⏸️ Pending)
+- Touch targets, landscape support, responsive refinements
+
+**UI/UX-M5**: Accessibility Deep-Dive (🔄 In Progress)
+- WCAG 2.1 AA compliance, semantic HTML, ARIA roles
+
+### Relationship to Main Roadmap
+
+This plan.md remains the source of truth for:
+- Content accuracy and traceability (Milestones 1-5E)
+- Chapter rollout and editorial workflow
+- Supabase schema and backend operations
+- Release discipline and production health
+
+UI/UX milestones are now tracked independently in `.builder/plans/` to maintain clean separation of concerns.
+
 ## Release discipline
 
 Normal release gate:
@@ -321,15 +374,28 @@ Excluded reviewed imports:
 
 ## Current next actions
 
+### Main Track (Content & Editorial)
+
 1. Keep the runtime catalog aligned to the formal 9-chapter manual structure.
 2. Keep Milestone 5A diagnostics active as the quality gate for imported and locally authored content.
 3. Keep Milestone 5E as a local-only pilot track:
    - opt-in
    - verifier-gated
    - never production-default
-4. Add one more formal source-preparation chunk for `chapter-1` so every active chapter meets the private `3`-chunk grounding threshold.
+4. ✅ COMPLETE: Add one more formal source-preparation chunk for `chapter-1` (Visual field limitations - pages 11-12)
 5. Keep annexes out of the runtime question bank until a separate annex ingestion policy exists.
 6. Run the release gate on each production content update:
    - `npm run validate:content`
    - `npm run build`
    - `npm run release:check`
+
+### UI/UX Track (Parallel)
+
+See `.builder/plans/ui-ux-roadmap.md` for detailed UI/UX milestones.
+
+**Current Focus**:
+- Complete UI/UX-M2: Public Quiz Experience (HomePage, QuizRunner, QuizSummary)
+- Continue UI/UX-M5: Accessibility Deep-Dive (keyboard nav, ARIA, screen reader testing)
+- Prepare for UI/UX-M4: Mobile Optimization (touch targets, landscape support)
+
+**Operational Constraint**: No backend logic, API changes, data-fetching modifications, or feature additions.
