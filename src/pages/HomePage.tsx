@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { ErrorAlert } from '../components/ErrorAlert';
 
 const PlayIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
@@ -40,7 +42,15 @@ const ArrowRightIcon = () => (
 );
 
 export function HomePage() {
-  const { catalog } = usePublishedCatalog('No se pudo cargar el catálogo público.');
+  const { catalog, error, isLoading } = usePublishedCatalog('No se pudo cargar el catálogo público.');
+
+  if (isLoading) {
+    return <LoadingSpinner message="Cargando catálogo..." />;
+  }
+
+  if (error) {
+    return <ErrorAlert message={error} />;
+  }
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-slate-50">

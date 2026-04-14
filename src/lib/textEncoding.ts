@@ -1,9 +1,10 @@
 const utf8Decoder = new TextDecoder('utf-8', { fatal: false });
-const suspiciousPattern = /(\u00C3.|\u00C2.|\u00E2\u20AC|\u00E2\u20AC\u201C|\u00E2\u20AC\u201D|\u00E2\u20AC\u0153|\u00E2\u20AC\u009D|\u00E2\u20AC\u02DC|\u00E2\u20AC\u2122|\u00EF\u00BF\u00BD)/g;
-const replacementPattern = /\uFFFD/g;
+const suspiciousPatternGlobal = /(\u00C3.|\u00C2.|\u00E2\u20AC|\u00E2\u20AC\u201C|\u00E2\u20AC\u201D|\u00E2\u20AC\u0153|\u00E2\u20AC\u009D|\u00E2\u20AC\u02DC|\u00E2\u20AC\u2122|\u00EF\u00BF\u00BD)/g;
+const suspiciousPatternTest = /(\u00C3.|\u00C2.|\u00E2\u20AC|\u00E2\u20AC\u201C|\u00E2\u20AC\u201D|\u00E2\u20AC\u0153|\u00E2\u20AC\u009D|\u00E2\u20AC\u02DC|\u00E2\u20AC\u2122|\u00EF\u00BF\u00BD)/;
+const replacementPatternGlobal = /\uFFFD/g;
 
 function countSuspiciousMarkers(value: string) {
-  return [...value.matchAll(suspiciousPattern)].length + [...value.matchAll(replacementPattern)].length * 2;
+  return [...value.matchAll(suspiciousPatternGlobal)].length + [...value.matchAll(replacementPatternGlobal)].length * 2;
 }
 
 function decodeLatin1AsUtf8(value: string) {
@@ -12,7 +13,7 @@ function decodeLatin1AsUtf8(value: string) {
 }
 
 export function repairPotentialMojibake(value: string) {
-  if (!value || !suspiciousPattern.test(value)) {
+  if (!value || !suspiciousPatternTest.test(value)) {
     return value;
   }
 

@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { MobileNav } from './MobileNav';
 
 const CarIcon = () => (
   <svg
@@ -68,9 +69,11 @@ export function AppLayout() {
         </div>
       </header>
 
-      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-hidden">
+      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-hidden pb-16 md:pb-0">
         <Outlet />
       </main>
+
+      <MobileNav />
     </div>
   );
 }
