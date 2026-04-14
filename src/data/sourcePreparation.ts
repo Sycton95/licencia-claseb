@@ -302,6 +302,40 @@ const CORE_SOURCE_PREPARATION: SourcePreparationChunk[] = [
         'Basada en ejemplos explícitos del cierre de la página 35.',
     },
   },
+  {
+    id: 'prep-visual-field-limitations',
+    editionId: ACTIVE_EDITION_ID,
+    chapterId: 'chapter-1',
+    sourceDocumentId: 'manual-claseb-2026',
+    sourcePageStart: 11,
+    sourcePageEnd: 12,
+    topicKey: 'visual-field-limitations',
+    topicTitle: 'Limitaciones visuales y puntos ciegos',
+    referenceLabel: 'Págs. 11-12',
+    groundingSummary:
+      'El manual describe las limitaciones fisiológicas del campo visual humano, incluyendo los puntos ciegos del vehículo donde no es posible ver peatones u otros vehículos incluso con los espejos retrovisores. La conducción segura exige compensar estas limitaciones mediante técnicas activas como giros de cabeza y uso correcto de espejos.',
+    rationale:
+      'Permite generar preguntas sobre la compensación activa de limitaciones visuales, no solo su reconocimiento teórico. Diferencia la conducción pasiva de la defensiva.',
+    benchmarkNote:
+      'Enfatizar que las limitaciones se compensan con acción, no solo con conciencia.',
+    candidateQuestion: {
+      prompt:
+        '¿Cuál es la razón principal por la que un conductor debe girar la cabeza antes de cambiar de carril, aunque utilice los espejos retrovisores?',
+      selectionMode: 'single',
+      instruction: 'Marque una respuesta.',
+      options: [
+        'Porque los espejos retrovisores distorsionan siempre la realidad.',
+        'Porque existen puntos ciegos alrededor del vehículo que no se ven ni con espejos ni con el espejo retrovisor interior.',
+        'Porque la norma lo exige solo para vehículos mayores de 5 años.',
+        'Porque los peatones solo pueden ser vistos si el conductor mira hacia los lados.',
+      ],
+      correctOptionIndexes: [1],
+      publicExplanation:
+        'El manual explica que todos los vehículos tienen puntos ciegos donde no es posible ver otros usuarios, ni siquiera con espejos. Girar la cabeza es la técnica activa para compensar esta limitación visual.',
+      reviewNotes:
+        'Sugerencia basada en la explicación técnica de limitaciones visuales. Enfatiza acción correctiva sobre simple reconocimiento.',
+    },
+  },
 ];
 
 type ReviewedImportQuestion = {

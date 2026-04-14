@@ -207,13 +207,34 @@
 - Magic link remains the admin login mechanism for now.
 - AI suggestions are private admin artifacts and must never appear in public routes.
 
+## 2026-04-14 Architectural refinement and chapter-1 completion
+
+- Fixed hardcoded hex color in HomePage.tsx (`#2563EB` → `var(--color-primary-600)`)
+- All colors now use CSS variables for future Dark Mode support
+- Added third source-preparation chunk for `chapter-1`: "Visual field limitations and blind spots" (pages 11-12)
+  - Chunk ID: `prep-visual-field-limitations`
+  - Topic: Compensating for vehicle blind spots through active head turns
+  - `chapter-1` now meets the `3`-chunk grounding threshold
+- All 9 active chapters now have minimum `3` source-preparation chunks each
+- Local release gate status:
+  - `npm run validate:content` passed
+  - `npm run build` passed
+  - Color refactor maintains production stability
+
+## Architectural improvements confirmed
+
+- ✅ Component extraction: Properly organized in `src/components/` with clear separation
+- ✅ Theme standardization: CSS variables in `:root` + Tailwind semantic colors
+- ✅ Stack integrity: Data flow via hooks pattern + Supabase integration
+- ✅ Zero hardcoded colors: All inline styles now use CSS variables
+
 ## Next approved work blocks
 
-1. Add one more formal source-preparation chunk for `chapter-1` so every active chapter meets the `3`-chunk grounding threshold.
-2. Keep Milestone 5A as the quality gate for imported and locally authored content.
-3. Keep Milestone 5E local-only and non-production:
+1. Keep Milestone 5A as the quality gate for imported and locally authored content.
+2. Keep Milestone 5E local-only and non-production:
    - provider abstraction
    - verifier-gated local Ollama adapter
    - isolated beta storage
    - local Admin Beta panel
-4. Keep annex content excluded until a separate annex policy is implemented.
+3. Keep annex content excluded until a separate annex policy is implemented.
+4. When Dark Mode is needed, CSS variables are ready to support theme-switching in `src/styles.css`.

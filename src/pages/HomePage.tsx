@@ -38,7 +38,7 @@ export function HomePage() {
           aria-hidden="true"
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: 'radial-gradient(#2563EB 1px, transparent 1px)',
+            backgroundImage: `radial-gradient(var(--color-primary-600) 1px, transparent 1px)`,
             backgroundSize: '28px 28px',
           }}
         />
