@@ -19,10 +19,21 @@ export function AdminListItem({
   onClick,
   className = '',
 }: Props) {
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (onClick && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <div
       onClick={onClick}
-      className={`flex min-h-14 items-center justify-between rounded-lg border transition-colors px-4 py-3 ${
+      onKeyDown={handleKeyDown}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      aria-pressed={onClick && isSelected ? true : undefined}
+      className={`flex min-h-14 items-center justify-between rounded-lg border transition-colors px-4 py-3 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-500 ${
         isSelected
           ? 'bg-neutral-100 border-primary-300'
           : 'border-neutral-200 hover:bg-neutral-50'

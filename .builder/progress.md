@@ -562,6 +562,50 @@
 
 ---
 
+## 2026-04-14: PR Review Feedback - Addressed
+
+**Milestone**: Code Review Fixes (chatgpt-codex-connector PR #1)
+
+**Status**: ✅ COMPLETE
+
+**Review Comments Addressed**:
+
+1. ✅ **P2: Define all custom color shades referenced by Tailwind classes**
+   - **Issue**: Color palette only defined subset of shades (primary had 50/100/400/600/700/900) but components used missing shades (500, 200, 300, 800)
+   - **Fix**: Added complete shade range (50, 100, 200, 300, 400, 500, 600, 700, 800, 900) for all color palettes:
+     - Primary: Now has all shades
+     - Success: Now has all shades
+     - Warning: Now has all shades (added 500 which was missing)
+     - Neutral: Now has all shades (added 300, 400, 500, 700, 800)
+     - Sage: Now has all shades (added 100, 200, 300, 500, 700, 800, 900)
+   - **Files**: `tailwind.config.js`, `src/styles.css` (CSS variables)
+   - **Impact**: All Tailwind color utilities now have proper definitions; no missing classes
+
+2. ✅ **P2: Keep catalog row selection keyboard-accessible**
+   - **Issue**: AdminListItem rendered plain `<div>` with `onClick` but no button semantics, tabindex, or keyboard handlers
+   - **Fix**:
+     - Added `role="button"` when onClick is present
+     - Added `tabIndex={0}` for keyboard focus
+     - Added `onKeyDown` handler for Enter and Space key activation
+     - Added `aria-pressed` attribute for selection state
+     - Added focus-visible ring for visual feedback
+   - **File**: `src/components/admin/AdminListItem.tsx`
+   - **Impact**: Keyboard users can now tab to list items and activate with Enter/Space
+
+**Build Status**:
+- ✅ `npm run build` - PASSED (1103.90 kB, gzip: 291.92 kB)
+- ✅ No TypeScript errors
+- ✅ No breaking changes
+- ✅ Backwards compatible
+
+**Technical Impact**:
+- ✅ Complete color palette now available for all components
+- ✅ Full keyboard accessibility for list selection
+- ✅ Better compliance with accessibility standards (WCAG)
+- ✅ No performance impact
+
+---
+
 ## Next Approved Work Blocks
 
 1. **Admin Interface Polish (UI/UX-M3)** - *COMPLETE*
@@ -575,6 +619,11 @@
    - ✅ HomePage mobile landscape optimized
    - ✅ AdminPage scrollability fixed
    - ✅ Footer white band removed
+   - ✅ Build passing
+
+3. **PR Review Feedback Fixes** - *COMPLETE*
+   - ✅ Complete color palette shades added
+   - ✅ Keyboard accessibility for list items
    - ✅ Build passing
 
 ---
