@@ -108,6 +108,7 @@ export function PracticePage() {
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
           <button
             onClick={() => navigate('/')}
+            aria-label="Volver a la página principal"
             className="rounded-xl px-2 py-1 text-xs font-bold text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
             type="button"
           >
@@ -152,6 +153,7 @@ export function PracticePage() {
                       checked={isSelected}
                       disabled={isDisabled}
                       onChange={() => toggleChapter(chapter.id)}
+                      aria-label={`${chapter.title}. ${chapter.description}${isDisabled ? ' (No disponible)' : ''}`}
                       className="h-5 w-5 shrink-0 rounded border-neutral-300 text-primary-600 focus:ring-primary-500"
                     />
                     <div className="min-w-0 flex-1">
@@ -221,6 +223,7 @@ export function PracticePage() {
                     ),
                   )
                 }
+                aria-label={`Número personalizado de preguntas. Mínimo 1, máximo ${Math.max(1, availableQuestionCount)}`}
                 className="w-full rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-base font-semibold text-neutral-900 outline-none ring-0 transition focus:border-primary-400 focus:bg-white"
               />
             </label>

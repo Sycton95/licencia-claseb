@@ -65,6 +65,7 @@ export function ExamPage() {
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
           <button
             onClick={() => navigate('/')}
+            aria-label="Volver a la página principal"
             className="rounded-xl px-2 py-1 text-xs font-bold text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sage-200"
             type="button"
           >

@@ -257,7 +257,14 @@ export function QuizRunner({
             <XIcon />
           </button>
           <div className="flex-1">
-            <div className="h-2.5 overflow-hidden rounded-full border border-neutral-200 bg-neutral-100 shadow-inner">
+            <div
+              className="h-2.5 overflow-hidden rounded-full border border-neutral-200 bg-neutral-100 shadow-inner"
+              role="progressbar"
+              aria-valuenow={state.currentIndex + 1}
+              aria-valuemin={1}
+              aria-valuemax={questions.length}
+              aria-label={`Pregunta ${state.currentIndex + 1} de ${questions.length}`}
+            >
               <div
                 className={`h-full rounded-full transition-all duration-500 ${
                   mode === 'exam' ? 'bg-sage-500' : 'bg-primary-500'
@@ -405,6 +412,9 @@ export function QuizRunner({
                   className={`flex items-center gap-2 text-lg font-black ${
                     isCorrectAnswerSelected ? 'text-success-800' : 'text-warning-800'
                   }`}
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
                 >
                   <span
                     className={`flex h-9 w-9 items-center justify-center rounded-full ${
@@ -419,7 +429,12 @@ export function QuizRunner({
                 </div>
 
                 {hasQuickReference && (
-                  <div className="max-h-40 overflow-y-auto rounded-2xl bg-white/80 px-3 py-3 text-sm leading-6 text-neutral-600 shadow-sm md:max-h-48">
+                  <div
+                    className="max-h-40 overflow-y-auto rounded-2xl bg-white/80 px-3 py-3 text-sm leading-6 text-neutral-600 shadow-sm md:max-h-48"
+                    role="region"
+                    aria-label="Explicación de respuesta"
+                    aria-live="polite"
+                  >
                     {currentQuestion.publicExplanation && <p>{currentQuestion.publicExplanation}</p>}
                     {!currentQuestion.publicExplanation && currentQuestion.sourceReference && (
                       <p>{currentQuestion.sourceReference}</p>

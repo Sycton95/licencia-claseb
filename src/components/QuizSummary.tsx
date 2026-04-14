@@ -127,7 +127,9 @@ export function QuizSummary({
                   : 'border-warning-200 bg-warning-50'
                 : 'border-primary-200 bg-primary-50'
             }`}
+            role="status"
             aria-live="polite"
+            aria-atomic="true"
           >
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -166,7 +168,10 @@ export function QuizSummary({
 
           {/* Category Breakdown */}
           {categoryStats.length > 0 && (
-            <section className="rounded-[30px] border border-neutral-200 bg-white p-5 shadow-sm md:p-6">
+            <section
+              className="rounded-[30px] border border-neutral-200 bg-white p-5 shadow-sm md:p-6"
+              aria-label="Desglose de desempeño por categoría o capítulo"
+            >
               <h2 className="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
                 Desempeño por categoría
               </h2>
@@ -200,16 +205,21 @@ export function QuizSummary({
           )}
 
           {/* Review Filters */}
-          <section className="rounded-[30px] border border-neutral-200 bg-white p-5 shadow-sm md:p-6">
+          <section
+            className="rounded-[30px] border border-neutral-200 bg-white p-5 shadow-sm md:p-6"
+            aria-label="Revisión detallada de respuestas con opción de filtrado"
+          >
             <div className="flex items-center justify-between gap-3">
               <h2 className="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
                 Revisión de respuestas
               </h2>
-              <div className="flex gap-2">
+              <div className="flex gap-2" role="group" aria-label="Filtrar respuestas">
                 {(['all', 'correct', 'incorrect'] as const).map((filter) => (
                   <button
                     key={filter}
                     onClick={() => setReviewFilter(filter)}
+                    aria-pressed={reviewFilter === filter}
+                    aria-label={filter === 'all' ? `Todas las respuestas (${totalQuestions})` : filter === 'correct' ? `Solo respuestas correctas (${correctCount})` : `Solo respuestas incorrectas (${incorrectCount})`}
                     className={`rounded-lg px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors ${
                       reviewFilter === filter
                         ? filter === 'correct'
