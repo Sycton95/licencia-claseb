@@ -65,7 +65,7 @@ export function AppLayout() {
         </div>
       </header>
 
-      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-hidden pb-16 md:pb-0 landscape:overflow-y-auto landscape:pb-0">
+      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-y-auto pb-16 md:overflow-hidden md:pb-0 landscape:overflow-y-auto landscape:pb-0 landscape:md:overflow-hidden">
         <Outlet />
       </main>
 
