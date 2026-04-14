@@ -1,6 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Color Tokens */
+  --color-primary-50: #F0F7FF;
+  --color-primary-100: #E0EEFF;
+  --color-primary-400: #60A5FA;
+  --color-primary-600: #2563EB;
+  --color-primary-700: #1D4ED8;
+  --color-primary-900: #1E3A8A;
+
+  --color-success-50: #F0FDFD;
+  --color-success-400: #2DD4BF;
+  --color-success-600: #0D9488;
+
+  --color-warning-50: #FEF8F5;
+  --color-warning-400: #F97316;
+  --color-warning-600: #C2410C;
+
+  --color-neutral-50: #FAFAF9;
+  --color-neutral-100: #F5F5F4;
+  --color-neutral-200: #E7E5E4;
+  --color-neutral-600: #57534E;
+  --color-neutral-900: #1C1917;
+
+  --color-sage-50: #F6FDF5;
+  --color-sage-400: #86EFAC;
+  --color-sage-600: #16A34A;
+
+  /* Spacing Tokens */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 32px;
+  --spacing-4xl: 40px;
+
+  /* Typography Scales */
+  --font-poppins: 'Poppins', sans-serif;
+  --font-geist: 'Geist', system-ui, sans-serif;
+
+  --font-h1-size: 32px;
+  --font-h2-size: 24px;
+  --font-h3-size: 20px;
+  --font-body-size: 16px;
+  --font-label-size: 14px;
+  --font-small-size: 14px;
+  --font-xs-size: 12px;
+  --font-tiny-size: 11px;
+
+  /* Responsive Typography (tablet+) */
+  --font-h1-size-md: 36px;
+  --font-h2-size-md: 28px;
+  --font-h3-size-md: 24px;
+  --font-body-size-md: 18px;
+
+  /* Responsive Typography (desktop+) */
+  --font-h1-size-lg: 40px;
+  --font-h2-size-lg: 28px;
+  --font-h3-size-lg: 24px;
+  --font-body-size-lg: 18px;
+}
 
 /* Only keep fundamental resets here */
 html, body, #root {
@@ -9,9 +74,98 @@ html, body, #root {
 }
 
 html {
-  -webkit-tap-highlight-color: rgba(99, 102, 241, 0.18);
+  -webkit-tap-highlight-color: rgba(37, 99, 235, 0.18);
+  font-family: var(--font-geist);
 }
 
 body {
   text-rendering: optimizeLegibility;
+  color: var(--color-neutral-600);
+  background-color: var(--color-neutral-50);
+}
+
+/* Semantic Component Utility Classes */
+@layer components {
+  .text-h1 {
+    @apply text-h1 font-poppins font-black leading-tight text-neutral-900;
+  }
+
+  .text-h2 {
+    @apply text-h2 font-poppins font-extrabold leading-tight text-neutral-900;
+  }
+
+  .text-h3 {
+    @apply text-h3 font-poppins font-bold leading-tight text-neutral-900;
+  }
+
+  .text-body {
+    @apply text-body font-geist leading-normal text-neutral-600;
+  }
+
+  .text-label {
+    @apply text-label font-medium uppercase tracking-wide text-neutral-900;
+  }
+
+  .text-small {
+    @apply text-small font-geist text-neutral-600;
+  }
+
+  /* Button Base Styles */
+  .btn-base {
+    @apply min-h-[48px] px-4 py-2 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-900 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-neutral-100 text-neutral-900 hover:bg-neutral-200 active:bg-neutral-300 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+  }
+
+  /* Card Base Styles */
+  .card-base {
+    @apply bg-white rounded-lg shadow-sm border border-neutral-200;
+  }
+
+  /* Focus Indicator */
+  .focus-ring {
+    @apply focus:ring-2 focus:ring-offset-0 focus:ring-primary-500 focus:outline-none;
+  }
+}
+
+/* Progress Bar Styles */
+.progress-shell {
+  @apply flex flex-col gap-2 px-4 py-3 border-b border-neutral-200 bg-white shadow-sm;
+}
+
+.progress-meta {
+  @apply flex items-center justify-between text-xs font-bold text-neutral-600 uppercase tracking-wide;
+}
+
+.progress-track {
+  @apply h-2 w-full overflow-hidden rounded-full bg-neutral-200;
+}
+
+.progress-fill {
+  @apply h-full bg-gradient-to-r from-primary-400 to-primary-600 transition-all duration-300 ease-out;
+}
+
+/* Mobile-first responsive adjustments */
+@media (min-width: 641px) {
+  :root {
+    --font-h1-size: var(--font-h1-size-md);
+    --font-h2-size: var(--font-h2-size-md);
+    --font-h3-size: var(--font-h3-size-md);
+    --font-body-size: var(--font-body-size-md);
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --font-h1-size: var(--font-h1-size-lg);
+    --font-h2-size: var(--font-h2-size-lg);
+    --font-h3-size: var(--font-h3-size-lg);
+    --font-body-size: var(--font-body-size-lg);
+  }
 }
