@@ -121,7 +121,7 @@ export function PracticePage() {
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 md:px-6 md:py-4">
+      <div className="min-h-0 flex-1 overflow-y-auto px-3 py-2 md:px-6 md:py-4">
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
           {isLoading && (
             <div className="rounded-3xl border border-neutral-200 bg-white px-5 py-4 text-sm font-semibold text-neutral-500 shadow-sm">

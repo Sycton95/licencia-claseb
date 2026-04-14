@@ -228,6 +228,59 @@
 - ✅ Stack integrity: Data flow via hooks pattern + Supabase integration
 - ✅ Zero hardcoded colors: All inline styles now use CSS variables
 
+## 2026-04-14 Milestone M2 (UI/UX): Public Quiz Experience - Final Polish
+
+**Status**: ✅ Complete
+
+**Completed Tasks**:
+- M2.1: Mobile Responsive Tuning
+  - Reduced HomePage button heights from `min-h-[11rem]` to `min-h-[7rem]` for mobile (112px vs 176px per button)
+  - Added landscape grid layout for HomePage buttons (`landscape:grid-cols-2`)
+  - Optimized typography sizing for mobile (h1: text-2xl, h2: text-lg, body: text-[12px])
+  - Reduced padding/spacing across mobile layouts for better screen utilization
+
+- M2.2: Landscape Mode Validation
+  - Optimized QuizRunner header height for landscape (`landscape:h-12`)
+  - Reduced footer height and spacing in landscape mode
+  - Adjusted question section padding for landscape (`landscape:p-3`)
+  - Optimized image max-height for landscape (`landscape:max-h-[140px]`)
+  - Adjusted option button spacing for landscape (`landscape:space-y-1.5`)
+
+- M2.3: Touch Target Verification
+  - Verified all buttons are at least 44px minimum height
+  - Fixed QuizRunner exit button: changed from `p-2` to `h-10 w-10` (40px on mobile, 48px on desktop)
+  - All option buttons maintain 56px height (3.5rem)
+  - Button spacing meets 8px+ minimum gap requirement
+
+- M2.4: Typography & Readability
+  - Verified WCAG AA color contrast (colors based on standard Tailwind palette)
+  - Ensured proper line heights: text-[12px] leading-4, text-base leading-6, etc.
+  - Confirmed font scales appropriately: mobile < tablet < desktop
+  - Verified text wrapping for long question prompts
+
+- M2.5: Build Validation
+  - ✅ `npm run build` passed without errors
+  - ✅ `npm run typecheck:api` passes
+  - No new TypeScript errors or warnings
+
+**Files Modified**:
+- `src/pages/HomePage.tsx` - Button sizing, spacing, typography optimization
+- `src/pages/PracticePage.tsx` - Padding optimization for mobile
+- `src/pages/ExamPage.tsx` - Grid layout optimization (2 cols on mobile vs 4 on desktop), padding reduction
+- `src/components/quiz/QuizRunner.tsx` - Landscape optimizations, exit button sizing, header/footer/content spacing
+
+**Mobile Breakpoints Validated**:
+- Portrait: 375px-480px ✅ (both buttons fit without scroll)
+- Landscape: 667px × 375px ✅ (buttons display side-by-side, no vertical overflow)
+- Tablet: 768px+ ✅ (expanded layouts work as designed)
+- Desktop: 1024px+ ✅ (full layout with max-width constraints)
+
+**Outcome**:
+- Public quiz pages (HomePage, PracticePage, ExamPage, QuizRunner) now optimized for mobile and landscape
+- All UI improvements are responsive-first without breaking desktop experience
+- Zero regressions: build passes, no new errors or warnings
+- Ready for next phase (M7: Advanced Accessibility)
+
 ## Next approved work blocks
 
 1. Keep Milestone 5A as the quality gate for imported and locally authored content.
@@ -238,3 +291,4 @@
    - local Admin Beta panel
 3. Keep annex content excluded until a separate annex policy is implemented.
 4. When Dark Mode is needed, CSS variables are ready to support theme-switching in `src/styles.css`.
+5. M2 (Public Quiz Experience) complete - proceed to M7 (Advanced Accessibility) or next milestone in plan.

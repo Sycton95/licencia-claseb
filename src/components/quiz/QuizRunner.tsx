@@ -246,11 +246,11 @@ export function QuizRunner({
 
   return (
     <div ref={containerRef} tabIndex={-1} className="flex min-h-0 flex-1 flex-col overflow-hidden bg-neutral-50 focus:outline-none">
-      <header className="z-20 flex h-14 shrink-0 items-center border-b border-neutral-200 bg-white shadow-sm md:h-16">
+      <header className="z-20 flex h-14 shrink-0 items-center border-b border-neutral-200 bg-white shadow-sm md:h-16 landscape:h-12">
         <div className="mx-auto flex w-full max-w-3xl items-center gap-4 px-4">
           <button
             onClick={onRestart}
-            className="rounded-xl p-2 text-neutral-400 transition-colors hover:bg-neutral-50 hover:text-neutral-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
+            className="flex h-10 w-10 items-center justify-center rounded-xl text-neutral-400 transition-colors hover:bg-neutral-50 hover:text-neutral-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 md:h-12 md:w-12"
             aria-label="Salir del quiz"
             type="button"
           >
@@ -279,7 +279,7 @@ export function QuizRunner({
         </div>
       </header>
 
-      <main className="min-h-0 flex-1 overflow-y-auto px-4 py-3 md:px-6 md:py-4">
+      <main className="min-h-0 flex-1 overflow-y-auto px-4 py-2 md:px-6 md:py-4 landscape:px-3 landscape:py-1.5">
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-3">
           <div className="rounded-[24px] border border-neutral-200 bg-white px-4 py-3 shadow-sm md:px-5 md:py-4">
             <span
@@ -297,18 +297,18 @@ export function QuizRunner({
             </div>
           </div>
 
-          <section className="rounded-[30px] border border-neutral-200 bg-white p-4 shadow-sm md:p-6">
-            <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+          <section className="rounded-[30px] border border-neutral-200 bg-white p-4 shadow-sm md:p-6 landscape:p-3">
+            <div className="mb-3 flex flex-wrap items-start justify-between gap-2 md:gap-3 landscape:gap-2">
               <div className="min-w-0">
                 {mode === 'practice' && (
-                  <div className="text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400">
+                  <div className="text-[10px] font-black uppercase tracking-[0.15em] text-neutral-400 md:text-[11px] landscape:text-[10px]">
                     Manual oficial · página {currentQuestion.sourcePage}
                   </div>
                 )}
-                <h2 className="mt-3 text-xl font-black leading-tight tracking-tight text-neutral-900 md:text-[1.7rem]">
+                <h2 className="mt-2 text-lg font-black leading-tight tracking-tight text-neutral-900 md:text-[1.7rem] landscape:text-base landscape:mt-1">
                   {currentQuestion.prompt}
                 </h2>
-                <p className="mt-2 text-sm font-semibold leading-6 text-neutral-500">
+                <p className="mt-1.5 text-xs font-semibold leading-5 text-neutral-500 md:text-sm md:leading-6 landscape:text-[11px] landscape:leading-4 landscape:mt-1">
                   {currentQuestion.instruction}
                 </p>
               </div>
@@ -321,9 +321,9 @@ export function QuizRunner({
             </div>
 
             {currentQuestion.media[0] && (
-              <figure className="mb-5 overflow-hidden rounded-[24px] border border-neutral-200 bg-neutral-50">
+              <figure className="mb-3 overflow-hidden rounded-[24px] border border-neutral-200 bg-neutral-50 md:mb-5">
                 <img
-                  className="block w-full object-cover max-h-[250px] md:max-h-[350px]"
+                  className="block w-full object-cover max-h-[250px] md:max-h-[350px] landscape:max-h-[140px]"
                   src={currentQuestion.media[0].url}
                   alt={currentQuestion.media[0].altText}
                   loading="lazy"
@@ -337,7 +337,7 @@ export function QuizRunner({
                   ? 'Selecciona todas las respuestas correctas'
                   : 'Selecciona la respuesta correcta'}
               </legend>
-              <div className="space-y-3">
+              <div className="space-y-2 md:space-y-3 landscape:space-y-1.5">
               {currentQuestion.options.map((option) => {
                 const isSelected = state.selectedOptionIds.includes(option.id);
 
@@ -373,15 +373,15 @@ export function QuizRunner({
                     onClick={() => handleSelect(option.id)}
                     aria-pressed={isSelected}
                     aria-label={`${option.label}. ${option.text}${isSelected ? ' (Seleccionado)' : ''}`}
-                    className={`flex min-h-[3.5rem] w-full items-center justify-between gap-3 rounded-2xl border-2 px-4 py-3 text-left font-semibold transition-all ${cardClass}`}
+                    className={`flex min-h-[3.5rem] w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-2 md:py-3 md:gap-3 text-left font-semibold transition-all landscape:min-h-[2.8rem] landscape:px-3 landscape:py-1.5 landscape:gap-2 ${cardClass}`}
                   >
-                    <div className="flex min-w-0 items-center gap-3">
+                    <div className="flex min-w-0 items-center gap-2 md:gap-3 landscape:gap-2">
                       <span
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-black ${iconClass}`}
+                        className={`flex h-7 w-7 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-full text-[10px] md:text-xs font-black landscape:h-7 landscape:w-7 landscape:text-[10px] ${iconClass}`}
                       >
                         {option.label}
                       </span>
-                      <span className="text-[15px] leading-snug md:text-base">{option.text}</span>
+                      <span className="text-[14px] md:text-base leading-snug landscape:text-[12px]">{option.text}</span>
                     </div>
 
                     {state.isAnswered && option.isCorrect && (
@@ -404,7 +404,7 @@ export function QuizRunner({
       </main>
 
       <footer className={`shrink-0 border-t ${footerTone}`}>
-        <div className="mx-auto flex min-h-[6rem] w-full max-w-3xl flex-col gap-4 px-4 py-4 md:flex-row md:items-end md:justify-between md:px-6">
+        <div className="mx-auto flex min-h-[6rem] w-full max-w-3xl flex-col gap-3 px-4 py-3 md:flex-row md:items-end md:justify-between md:px-6 md:py-4 landscape:gap-2 landscape:py-2">
           <div className="min-h-0 flex-1">
             {state.isAnswered ? (
               <div className="flex flex-col gap-2">
