@@ -1,5 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * STYLING PHILOSOPHY: HYBRID CSS VARIABLES + TAILWIND
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * This application uses a hybrid approach to CSS that leverages both CSS custom
+ * properties (variables) and Tailwind CSS utilities:
+ *
+ * CSS VARIABLES (--color-*, --spacing-*, --font-*):
+ * - Define semantic design tokens (colors, spacing, typography)
+ * - Used in @layer components for reusable component patterns
+ * - Centralized in :root for easy theme switching (future Dark Mode)
+ * - Example: background-color: var(--color-primary-600)
+ *
+ * TAILWIND UTILITIES:
+ * - Primary building blocks for layout, composition, and responsive design
+ * - Used directly in component className attributes
+ * - Provides rapid UI development and consistency
+ * - Example: className="flex gap-4 px-4 py-3"
+ *
+ * WHEN TO USE WHICH:
+ * ├─ CSS Variables: Global reusable patterns, theme-aware properties
+ * ├─ Tailwind Utilities: Component-level styling, layout, spacing, responsive
+ * └─ @layer components: Combine both for complex patterns (buttons, cards)
+ *
+ * FUTURE DARK MODE:
+ * To implement Dark Mode in the future, only CSS variables need to be updated:
+ * Simply add @media (prefers-color-scheme: dark) or a .dark class to :root
+ * and swap variable values. All components using variables will auto-adapt.
+ * Components using raw Tailwind colors (e.g., bg-red-500) will NOT adapt.
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

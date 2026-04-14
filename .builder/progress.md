@@ -90,6 +90,61 @@
 
 ---
 
+## 2026-04-14: Tech Debt & Bug Remediation (UI/UX-M2.1)
+
+**Milestone**: UI/UX-M2.1 (Tech Debt & Bug Remediation)
+
+**Status**: ✅ COMPLETE
+
+**Bugs Fixed**:
+1. ✅ **QuizRunner Button Animation Broken**
+   - Issue: Tailwind classes corrupted (`tranneutral-y-*` instead of `translate-y-*`)
+   - Location: `src/components/quiz/QuizRunner.tsx` (buttons at footer)
+   - Fix: Restored proper `active:translate-y-[4px]` and `disabled:active:translate-y-0`
+   - Impact: Button press animations now work correctly
+
+2. ✅ **Global Keyboard Listener Scope**
+   - Issue: Keyboard events attached to `window`, affecting global page behavior
+   - Location: `src/components/quiz/QuizRunner.tsx` (useEffect)
+   - Fix: Scoped listener to component container ref; added auto-focus
+   - Impact: Keyboard navigation now isolated to quiz container, prevents unintended conflicts
+
+**Tech Debt Removed**:
+1. ✅ **Deleted ProgressBar.tsx**
+   - Reason: Orphaned component; QuizRunner has inline progress rendering
+   - Impact: Reduced maintenance burden
+
+2. ✅ **Deleted QuestionCard.tsx**
+   - Reason: Legacy component from earlier design iteration; not used in any route
+   - Impact: Cleaner codebase
+
+**Documentation Improved**:
+1. ✅ **Hybrid CSS Variable + Tailwind Philosophy**
+   - Added comprehensive comment block in `src/styles.css`
+   - Explains when to use CSS variables vs Tailwind
+   - Documents future Dark Mode implementation strategy
+   - Impact: Better developer understanding and onboarding
+
+**Files Modified**:
+- `src/components/quiz/QuizRunner.tsx` - Fixed button typos, scoped keyboard listener
+- `src/styles.css` - Added styling philosophy documentation
+- **Deleted**: `src/components/ProgressBar.tsx`, `src/components/QuestionCard.tsx`
+
+**Testing & Validation**:
+- ✅ `npm run build` - PASSED (no Tailwind errors)
+- ✅ `npm run typecheck` - PASSED (no TypeScript errors)
+- ✅ Visual verification - Button animations working correctly
+- ✅ Keyboard navigation - Arrow keys, Enter, Escape functioning properly
+- ✅ Container focus - Auto-focus on mount ensures keyboard capture
+
+**Technical Benefits**:
+- Restored proper button tactile feedback
+- Improved component isolation (no global side effects)
+- Reduced bundle size (removed 2 unused components)
+- Better code maintainability and documentation
+
+---
+
 ## Active Tasks (Current Sprint)
 
 ### QuizRunner Keyboard Navigation

@@ -113,6 +113,7 @@ export function QuizRunner({
   onRestart,
 }: QuizRunnerProps) {
   const [state, dispatch] = useReducer(quizReducer, INITIAL_STATE);
+  const containerRef = useRef<HTMLDivElement>(null);
   const currentQuestion = questions[state.currentIndex];
 
   const handleSelect = (optionId: string) => {
@@ -153,8 +154,16 @@ export function QuizRunner({
     dispatch({ type: 'next', totalQuestions: questions.length });
   };
 
+  // Auto-focus container on mount for keyboard accessibility
+  useEffect(() => {
+    containerRef.current?.focus();
+  }, []);
+
   // Keyboard navigation support
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (!currentQuestion) return;
 
@@ -198,8 +207,8 @@ export function QuizRunner({
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    container.addEventListener('keydown', handleKeyDown);
+    return () => container.removeEventListener('keydown', handleKeyDown);
   }, [state, currentQuestion, questions.length]);
 
   if (!currentQuestion) {
@@ -236,7 +245,7 @@ export function QuizRunner({
       : 'border-warning-200 bg-warning-50';
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-hidden bg-neutral-50">
+    <div ref={containerRef} tabIndex={-1} className="flex min-h-0 flex-1 flex-col overflow-hidden bg-neutral-50 focus:outline-none">
       <header className="z-20 flex h-14 shrink-0 items-center border-b border-neutral-200 bg-white shadow-sm md:h-16">
         <div className="mx-auto flex w-full max-w-3xl items-center gap-4 px-4">
           <button
@@ -426,7 +435,7 @@ export function QuizRunner({
               <button
                 onClick={handleConfirm}
                 disabled={state.selectedOptionIds.length === 0}
-                className="w-full rounded-2xl border-b-4 border-primary-800 bg-primary-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-primary-700 hover:bg-primary-500 active:tranneutral-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 disabled:border-neutral-200 disabled:bg-neutral-100 disabled:text-neutral-400 disabled:active:tranneutral-y-0 disabled:active:border-b-4 md:w-44"
+                className="w-full rounded-2xl border-b-4 border-primary-800 bg-primary-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-primary-700 hover:bg-primary-500 active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 disabled:border-neutral-200 disabled:bg-neutral-100 disabled:text-neutral-400 disabled:active:translate-y-0 disabled:active:border-b-4 md:w-44"
                 type="button"
               >
                 {currentQuestion.selectionMode === 'multiple' ? 'Comprobar' : 'Responder'}
@@ -434,7 +443,7 @@ export function QuizRunner({
             ) : (
               <button
                 onClick={handleNext}
-                className={`w-full rounded-2xl border-b-4 px-6 py-3.5 text-base font-black text-white transition-all active:tranneutral-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 md:w-44 ${
+                className={`w-full rounded-2xl border-b-4 px-6 py-3.5 text-base font-black text-white transition-all active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 md:w-44 ${
                   isCorrectAnswerSelected
                     ? 'border-success-800 bg-success-600 hover:border-success-700 hover:bg-sage-500 focus-visible:ring-success-200'
                     : 'border-warning-800 bg-warning-600 hover:border-warning-700 hover:bg-warning-500 focus-visible:ring-warning-200'
