@@ -144,7 +144,7 @@ export function PracticePage() {
                 return (
                   <label
                     key={chapter.id}
-                    className={`flex cursor-pointer items-center gap-4 border-b border-neutral-100 px-4 py-3.5 last:border-b-0 ${
+                    className={`flex min-h-[60px] cursor-pointer items-center gap-4 border-b border-neutral-100 px-4 py-4 last:border-b-0 transition-colors ${
                       isSelected ? 'bg-primary-50/70' : 'bg-white hover:bg-neutral-50'
                     } ${isDisabled ? 'cursor-not-allowed opacity-60' : ''}`}
                   >
@@ -154,7 +154,7 @@ export function PracticePage() {
                       disabled={isDisabled}
                       onChange={() => toggleChapter(chapter.id)}
                       aria-label={`${chapter.title}. ${chapter.description}${isDisabled ? ' (No disponible)' : ''}`}
-                      className="h-5 w-5 shrink-0 rounded border-neutral-300 text-primary-600 focus:ring-primary-500"
+                      className="h-6 w-6 shrink-0 rounded border-neutral-300 text-primary-600 focus:ring-primary-500 transition-transform"
                     />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-3">
@@ -180,7 +180,7 @@ export function PracticePage() {
               </h2>
             </div>
 
-            <div className="flex rounded-2xl border border-neutral-200 bg-neutral-200/70 p-1 shadow-inner">
+            <div className="flex gap-2 rounded-2xl border border-neutral-200 bg-neutral-200/70 p-1.5 shadow-inner md:gap-1 md:p-1">
               {[5, 10, 20, 35].map((amount) => {
                 const disabled = amount > availableQuestionCount || availableQuestionCount === 0;
 
@@ -193,9 +193,10 @@ export function PracticePage() {
                       disabled={disabled}
                       onChange={() => setQuestionCount(amount)}
                       className="peer sr-only"
+                      aria-label={`${amount} preguntas${disabled ? ' (No disponible)' : ''}`}
                     />
                     <div
-                      className={`rounded-xl py-2.5 text-center text-sm font-black transition-all ${
+                      className={`min-h-[44px] rounded-xl py-3 px-2 text-center text-sm font-black transition-all flex items-center justify-center ${
                         disabled
                           ? 'cursor-not-allowed text-neutral-400'
                           : 'text-neutral-500 hover:text-neutral-800 peer-checked:bg-white peer-checked:text-primary-700 peer-checked:shadow-sm'
@@ -209,7 +210,7 @@ export function PracticePage() {
             </div>
 
             <label className="mt-4 block">
-              <span className="mb-2 block text-sm font-bold text-neutral-700">Personalizado</span>
+              <span className="mb-3 block text-sm font-bold text-neutral-700">Personalizado</span>
               <input
                 type="number"
                 min={1}
@@ -224,7 +225,7 @@ export function PracticePage() {
                   )
                 }
                 aria-label={`Número personalizado de preguntas. Mínimo 1, máximo ${Math.max(1, availableQuestionCount)}`}
-                className="w-full rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-base font-semibold text-neutral-900 outline-none ring-0 transition focus:border-primary-400 focus:bg-white"
+                className="w-full min-h-[44px] rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-base font-semibold text-neutral-900 outline-none transition focus:border-primary-400 focus:bg-white focus:ring-2 focus:ring-primary-200"
               />
             </label>
           </section>

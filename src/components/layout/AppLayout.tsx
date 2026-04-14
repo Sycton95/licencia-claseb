@@ -16,7 +16,7 @@ export function AppLayout() {
       >
         Saltar al contenido
       </a>
-      <header className="z-40 h-14 shrink-0 border-b border-neutral-200 bg-white/90 shadow-sm backdrop-blur-md md:h-16">
+      <header className="z-40 h-14 shrink-0 border-b border-neutral-200 bg-white/90 shadow-sm backdrop-blur-md md:h-16 landscape:h-12">
         <div className="mx-auto flex h-full max-w-5xl items-center justify-between px-4">
           <NavLink
             to="/"
@@ -65,7 +65,7 @@ export function AppLayout() {
         </div>
       </header>
 
-      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-hidden pb-16 md:pb-0">
+      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-hidden pb-16 md:pb-0 landscape:overflow-y-auto landscape:pb-0">
         <Outlet />
       </main>
 

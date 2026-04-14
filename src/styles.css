@@ -171,6 +171,16 @@ body {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-1;
   }
 
+  /* Navigation item polish */
+  nav a {
+    @apply transition-transform duration-200;
+  }
+
+  /* Prevent double-tap zoom on navigation */
+  nav a {
+    touch-action: manipulation;
+  }
+
   /* Mobile touch target sizing */
   @media (hover: none) and (pointer: coarse) {
     button, a[role="button"], input[type="button"], input[type="checkbox"], input[type="radio"] {
@@ -186,11 +196,51 @@ body {
   /* Image responsive handling */
   img {
     @apply max-w-full h-auto;
+    /* Prevent oversized images on small screens */
+    display: block;
+    /* Smooth rendering on mobile */
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  /* Figure element styling */
+  figure {
+    @apply m-0 p-0;
+  }
+
+  /* Lazy-loaded image optimization */
+  img[loading="lazy"] {
+    /* Ensure lazy images don't cause layout shift */
+    @apply aspect-auto;
   }
 
   /* Responsive text input sizing */
   input[type="text"], input[type="number"], input[type="email"], textarea, select {
     @apply min-h-[44px] px-3 py-2 text-base;
+    font-size: 16px; /* Prevent iOS auto-zoom on focus */
+  }
+
+  /* Checkbox and radio button sizing for mobile touch */
+  input[type="checkbox"], input[type="radio"] {
+    @apply min-h-[20px] min-w-[20px] cursor-pointer;
+  }
+
+  /* Checkbox label touch target expansion */
+  label {
+    @apply transition-colors duration-200;
+  }
+
+  label > input[type="checkbox"],
+  label > input[type="radio"] {
+    @apply cursor-pointer;
+  }
+
+  /* Form input focus states */
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  textarea:focus,
+  select:focus {
+    @apply border-primary-400 bg-white ring-2 ring-primary-100;
   }
 }
 
@@ -212,21 +262,113 @@ body {
 }
 
 /* Landscape orientation optimization */
-@media (max-height: 500px) and (orientation: landscape) {
+@media (orientation: landscape) {
   :root {
+    /* Reduce spacing in landscape to maximize content area */
     --spacing-lg: 12px;
     --spacing-xl: 16px;
   }
 
-  /* Reduce vertical padding in landscape */
-  .progress-shell {
-    @apply px-4 py-2;
+  /* Landscape header: compact height (48px) */
+  header {
+    height: 48px !important;
   }
 
-  /* Optimize main content for landscape */
+  /* Landscape header content: reduce padding */
+  header .mx-auto {
+    @apply px-3 md:px-4;
+  }
+
+  /* Landscape header text: smaller size */
+  header span {
+    @apply text-sm md:text-base;
+  }
+
+  /* Landscape main content: constrain height and allow scrolling */
   main {
     @apply overflow-y-auto;
+    max-height: calc(100dvh - 48px - 64px);
   }
+
+  /* Landscape progress shell: compact */
+  .progress-shell {
+    @apply px-4 py-1.5;
+  }
+
+  .progress-meta {
+    @apply text-[10px];
+  }
+
+  .progress-track {
+    @apply h-1.5;
+  }
+
+  /* Landscape bottom nav: maintain fixed position with proper height */
+  nav.fixed {
+    height: 64px !important;
+  }
+
+  /* Landscape nav flex container */
+  nav.fixed .flex {
+    height: 64px;
+  }
+
+  /* Landscape nav labels: reduce text size */
+  nav.fixed .flex span:last-child {
+    @apply text-[9px];
+  }
+}
+
+/* Extra-compact landscape (<500px height, i.e. very wide phones) */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    height: 44px !important;
+  }
+
+  main {
+    max-height: calc(100dvh - 44px - 56px);
+  }
+
+  nav.fixed {
+    height: 56px !important;
+  }
+
+  nav.fixed .flex {
+    height: 56px;
+  }
+
+  nav.fixed .flex > * {
+    @apply gap-0.5;
+  }
+
+  nav.fixed .flex svg {
+    @apply w-4 h-4;
+  }
+
+  .progress-shell {
+    @apply px-3 py-1;
+  }
+}
+
+/* Smooth scroll behavior across all browsers */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Momentum scrolling optimization for iOS */
+.overflow-y-auto, main {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent horizontal scroll on mobile */
+body, html {
+  overflow-x: hidden;
+}
+
+/* Optimize scroll performance with GPU acceleration */
+.overflow-y-auto, main, [role="region"] {
+  will-change: scroll-position;
+  @apply transform-gpu;
 }
 
 /* Mobile-first responsive adjustments */

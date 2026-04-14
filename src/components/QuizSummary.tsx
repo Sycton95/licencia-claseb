@@ -209,7 +209,7 @@ export function QuizSummary({
             className="rounded-[30px] border border-neutral-200 bg-white p-5 shadow-sm md:p-6"
             aria-label="Revisión detallada de respuestas con opción de filtrado"
           >
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <h2 className="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
                 Revisión de respuestas
               </h2>
@@ -220,7 +220,7 @@ export function QuizSummary({
                     onClick={() => setReviewFilter(filter)}
                     aria-pressed={reviewFilter === filter}
                     aria-label={filter === 'all' ? `Todas las respuestas (${totalQuestions})` : filter === 'correct' ? `Solo respuestas correctas (${correctCount})` : `Solo respuestas incorrectas (${incorrectCount})`}
-                    className={`rounded-lg px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition-colors ${
+                    className={`min-h-[44px] rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-wide transition-colors md:min-h-0 ${
                       reviewFilter === filter
                         ? filter === 'correct'
                           ? 'bg-success-600 text-white'

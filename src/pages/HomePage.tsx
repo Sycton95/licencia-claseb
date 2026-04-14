@@ -33,7 +33,7 @@ export function HomePage() {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-neutral-50">
-      <section className="relative flex min-h-full flex-1 items-center overflow-hidden bg-neutral-900 px-4 py-8 text-white sm:px-6">
+      <section className="relative flex min-h-full flex-1 items-center overflow-hidden bg-neutral-900 px-4 py-12 text-white sm:px-6">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-20"
@@ -62,7 +62,7 @@ export function HomePage() {
             )}
           </div>
 
-          <div className="grid w-full max-w-2xl gap-4">
+          <div className="grid w-full max-w-2xl gap-5 md:gap-4">
             <Link
               to="/practice"
               className="group flex min-h-[14rem] flex-col justify-between rounded-[28px] border border-primary-300/30 bg-white/95 p-6 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2"

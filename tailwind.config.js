@@ -73,5 +73,10 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('landscape', '@media (orientation: landscape)');
+      addVariant('portrait', '@media (orientation: portrait)');
+    },
+  ],
 };

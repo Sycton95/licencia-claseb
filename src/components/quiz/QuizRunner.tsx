@@ -323,7 +323,7 @@ export function QuizRunner({
             {currentQuestion.media[0] && (
               <figure className="mb-5 overflow-hidden rounded-[24px] border border-neutral-200 bg-neutral-50">
                 <img
-                  className="block max-h-[20rem] w-full object-cover"
+                  className="block w-full object-cover max-h-[250px] md:max-h-[350px]"
                   src={currentQuestion.media[0].url}
                   alt={currentQuestion.media[0].altText}
                   loading="lazy"
