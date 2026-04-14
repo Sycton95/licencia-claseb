@@ -65,39 +65,51 @@ export function HomePage() {
           <div className="grid w-full max-w-2xl gap-4">
             <Link
               to="/practice"
-              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-primary-300/30 bg-white/95 p-6 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
+              className="group flex min-h-[14rem] flex-col justify-between rounded-[28px] border border-primary-300/30 bg-white/95 p-6 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-600">
-                <PracticeIcon size={20} />
-              </div>
-              <div className="mt-8">
-                <h2 className="text-2xl font-black tracking-tight">Practica</h2>
-                <p className="mt-2 text-sm leading-6 text-neutral-500">
-                  Elige capítulos, define cantidad y empieza a responder.
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-600">
+                  <PracticeIcon size={20} />
+                </div>
+                <h2 className="mt-4 text-2xl font-black tracking-tight">Práctica</h2>
+                <p className="mt-2 text-sm leading-6 text-neutral-600">
+                  Personaliza tu aprendizaje. Elige capítulos y define la cantidad de preguntas.
                 </p>
               </div>
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-primary-600">
-                Iniciar práctica
-                <ArrowRightIcon />
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-3 rounded-lg bg-primary-50 px-3 py-2">
+                  <span className="text-xs font-bold uppercase tracking-wide text-primary-700">Tiempo estimado</span>
+                  <span className="text-sm font-black text-primary-900">5-35 minutos</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm font-black text-primary-600 group-hover:gap-3 transition-all">
+                  Iniciar práctica
+                  <ArrowRightIcon />
+                </div>
               </div>
             </Link>
 
             <Link
               to="/exam"
-              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-sage-300/30 bg-white/95 p-6 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-sage-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sage-200 focus-visible:ring-offset-2"
+              className="group flex min-h-[14rem] flex-col justify-between rounded-[28px] border border-sage-300/30 bg-white/95 p-6 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-sage-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sage-200 focus-visible:ring-offset-2"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-100 text-sage-600">
-                <ExamIcon size={20} />
-              </div>
-              <div className="mt-8">
-                <h2 className="text-2xl font-black tracking-tight">Simulador</h2>
-                <p className="mt-2 text-sm leading-6 text-neutral-500">
-                  Entra a una prueba completa con puntaje y aprobación.
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-100 text-sage-600">
+                  <ExamIcon size={20} />
+                </div>
+                <h2 className="mt-4 text-2xl font-black tracking-tight">Simulador</h2>
+                <p className="mt-2 text-sm leading-6 text-neutral-600">
+                  35 preguntas reales. Aprobación: 33 puntos de 38 totales. Cronómetro incluido.
                 </p>
               </div>
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-sage-600">
-                Iniciar simulador
-                <ArrowRightIcon />
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-3 rounded-lg bg-sage-50 px-3 py-2">
+                  <span className="text-xs font-bold uppercase tracking-wide text-sage-700">Tiempo estimado</span>
+                  <span className="text-sm font-black text-sage-900">~40 minutos</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm font-black text-sage-600 group-hover:gap-3 transition-all">
+                  Iniciar simulador
+                  <ArrowRightIcon />
+                </div>
               </div>
             </Link>
           </div>

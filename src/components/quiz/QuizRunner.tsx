@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useEffect, useRef } from 'react';
 import { QuizSummary } from '../QuizSummary';
 import { getQuestionPoints, isQuestionAnswerCorrect } from '../../lib/quizFactory';
 import { CheckIcon } from '../icons';
@@ -153,6 +153,55 @@ export function QuizRunner({
     dispatch({ type: 'next', totalQuestions: questions.length });
   };
 
+  // Keyboard navigation support
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!currentQuestion) return;
+
+      // Arrow keys for navigation between options
+      if (!state.isAnswered && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+        event.preventDefault();
+
+        const optionsCount = currentQuestion.options.length;
+        if (optionsCount === 0) return;
+
+        const currentIndex = state.selectedOptionIds.length > 0
+          ? currentQuestion.options.findIndex(o => o.id === state.selectedOptionIds[0])
+          : -1;
+
+        let nextIndex = currentIndex;
+        if (['ArrowDown', 'ArrowRight'].includes(event.key)) {
+          nextIndex = (currentIndex + 1) % optionsCount;
+        } else {
+          nextIndex = (currentIndex - 1 + optionsCount) % optionsCount;
+        }
+
+        handleSelect(currentQuestion.options[nextIndex].id);
+      }
+
+      // Enter or Space to confirm answer
+      if (!state.isAnswered && (event.key === 'Enter' || event.key === ' ') && state.selectedOptionIds.length > 0) {
+        event.preventDefault();
+        handleConfirm();
+      }
+
+      // Escape to exit quiz (with confirmation visual)
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        onRestart();
+      }
+
+      // After answer: Arrow keys or Enter to go to next question
+      if (state.isAnswered && (event.key === 'Enter' || event.key === ' ' || event.key === 'ArrowRight' || event.key === 'ArrowDown')) {
+        event.preventDefault();
+        handleNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [state, currentQuestion, questions.length]);
+
   if (!currentQuestion) {
     return (
       <QuizSummary
@@ -266,12 +315,18 @@ export function QuizRunner({
               </figure>
             )}
 
-            <div className="space-y-3">
+            <fieldset className="border-0 p-0 m-0">
+              <legend className="sr-only">
+                {currentQuestion.selectionMode === 'multiple'
+                  ? 'Selecciona todas las respuestas correctas'
+                  : 'Selecciona la respuesta correcta'}
+              </legend>
+              <div className="space-y-3">
               {currentQuestion.options.map((option) => {
                 const isSelected = state.selectedOptionIds.includes(option.id);
 
                 let cardClass =
-                  'border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 border-b-4 active:border-b-0 active:tranneutral-y-[4px]';
+                  'border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 border-b-4 active:border-b-0 active:translate-y-[4px]';
                 let iconClass = 'bg-neutral-100 text-neutral-500';
 
                 if (state.isAnswered) {
@@ -301,6 +356,7 @@ export function QuizRunner({
                     disabled={state.isAnswered}
                     onClick={() => handleSelect(option.id)}
                     aria-pressed={isSelected}
+                    aria-label={`${option.label}. ${option.text}${isSelected ? ' (Seleccionado)' : ''}`}
                     className={`flex min-h-[3.5rem] w-full items-center justify-between gap-3 rounded-2xl border-2 px-4 py-3 text-left font-semibold transition-all ${cardClass}`}
                   >
                     <div className="flex min-w-0 items-center gap-3">
@@ -325,7 +381,8 @@ export function QuizRunner({
                   </button>
                 );
               })}
-            </div>
+              </div>
+            </fieldset>
           </section>
         </div>
       </main>

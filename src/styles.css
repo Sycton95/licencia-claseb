@@ -110,7 +110,7 @@ body {
     @apply text-small font-geist text-neutral-600;
   }
 
-  /* Button Base Styles */
+  /* Button Base Styles - Touch-friendly minimum height */
   .btn-base {
     @apply min-h-[48px] px-4 py-2 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2;
   }
@@ -132,6 +132,33 @@ body {
   .focus-ring {
     @apply focus:ring-2 focus:ring-offset-0 focus:ring-primary-500 focus:outline-none;
   }
+
+  /* Touch-friendly interactive elements */
+  button, a, input, select, textarea {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-1;
+  }
+
+  /* Mobile touch target sizing */
+  @media (hover: none) and (pointer: coarse) {
+    button, a[role="button"], input[type="button"], input[type="checkbox"], input[type="radio"] {
+      @apply min-h-[44px] min-w-[44px];
+    }
+
+    /* Ensure adequate spacing between touch targets */
+    button + button, a + a, label + label {
+      @apply ml-2;
+    }
+  }
+
+  /* Image responsive handling */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Responsive text input sizing */
+  input[type="text"], input[type="number"], input[type="email"], textarea, select {
+    @apply min-h-[44px] px-3 py-2 text-base;
+  }
 }
 
 /* Progress Bar Styles */
@@ -151,6 +178,24 @@ body {
   @apply h-full bg-gradient-to-r from-primary-400 to-primary-600 transition-all duration-300 ease-out;
 }
 
+/* Landscape orientation optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  :root {
+    --spacing-lg: 12px;
+    --spacing-xl: 16px;
+  }
+
+  /* Reduce vertical padding in landscape */
+  .progress-shell {
+    @apply px-4 py-2;
+  }
+
+  /* Optimize main content for landscape */
+  main {
+    @apply overflow-y-auto;
+  }
+}
+
 /* Mobile-first responsive adjustments */
 @media (min-width: 641px) {
   :root {
@@ -167,5 +212,13 @@ body {
     --font-h2-size: var(--font-h2-size-lg);
     --font-h3-size: var(--font-h3-size-lg);
     --font-body-size: var(--font-body-size-lg);
+  }
+}
+
+/* Safe area support for notched devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
   }
 }

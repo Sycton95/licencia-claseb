@@ -9,9 +9,13 @@ export function ErrorAlert({
 }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-neutral-50 px-4">
-      <div className="rounded-lg border border-warning-200 bg-warning-50 p-6 max-w-md shadow-sm">
+      <div
+        className="rounded-lg border border-warning-200 bg-warning-50 p-6 max-w-md shadow-sm"
+        role="alert"
+        aria-live="assertive"
+      >
         <div className="flex items-start gap-4">
-          <div className="shrink-0 text-warning-600 mt-0.5">
+          <div className="shrink-0 text-warning-600 mt-0.5" aria-hidden="true">
             <AlertIcon size={20} />
           </div>
           <div className="min-w-0 flex-1">
@@ -20,7 +24,8 @@ export function ErrorAlert({
             {onRetry && (
               <button
                 onClick={onRetry}
-                className="mt-4 inline-flex items-center justify-center px-4 py-2 bg-warning-600 text-white text-sm font-medium rounded hover:bg-warning-700 transition-colors"
+                className="mt-4 inline-flex items-center justify-center px-4 py-2 bg-warning-600 text-white text-sm font-medium rounded hover:bg-warning-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-warning-500"
+                aria-label="Reintentar cargar contenido"
               >
                 Reintentar
               </button>
