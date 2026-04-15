@@ -281,6 +281,17 @@
 - Zero regressions: build passes, no new errors or warnings
 - Ready for next phase (M7: Advanced Accessibility)
 
+## 2026-04-15 Branch Merge: ai_main_a478b710cba6 → main
+
+- Merged M2 public quiz experience complete (mobile and landscape polish)
+- All four commits from ai_main branch successfully merged:
+  - Complete M2 public quiz experience with mobile and landscape polish
+  - Address PR review feedback: complete color palette and keyboard accessibility
+  - Implement Phase 8 responsive mobile and landscape fixes
+  - Merge remote-tracking branch from previous sync
+- Production baseline stable, ready for next phase
+- Proceeding to M7 (Advanced Accessibility) work
+
 ## Next approved work blocks
 
 1. Keep Milestone 5A as the quality gate for imported and locally authored content.
