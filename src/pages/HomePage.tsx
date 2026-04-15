@@ -64,31 +64,35 @@ export function HomePage() {
           <div className="grid w-full max-w-2xl gap-4 grid-cols-1 md:grid-cols-2">
     <Link
       to="/practice"
-      className="group relative flex min-h-[11rem] flex-col justify-center rounded-3xl border-2 border-neutral-200 bg-white p-6 transition-all hover:border-primary-500 hover:ring-4 hover:ring-primary-500/20 active:scale-[0.98]"
+      className="group flex min-h-[12rem] flex-col justify-between rounded-3xl border-2 border-slate-200 border-b-8 bg-white p-6 transition-all hover:bg-slate-50 active:border-b-2 active:translate-y-[6px]"
     >
-      <div className="flex items-center gap-4">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-          <PracticeIcon size={16} />
+      <div>
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-600">
+          <PracticeIcon size={24} />
         </div>
-        <div>
-          <h2 className="text-xl font-black text-neutral-900">Práctica</h2>
-          <p className="text-xs font-bold text-neutral-400 uppercase tracking-widest mt-1">Niveles & Capítulos</p>
-        </div>
+        <h2 className="mt-4 text-2xl font-black tracking-tight text-slate-900">Práctica</h2>
+        <p className="mt-2 text-sm leading-5 text-slate-500 font-medium">Personaliza tu aprendizaje. Elige capítulos y cantidad.</p>
+      </div>
+      <div className="mt-4 flex items-center justify-between">
+        <span className="rounded-lg bg-primary-50 px-3 py-1.5 text-xs font-bold text-primary-700 uppercase tracking-wide">5-35 min</span>
+        <div className="flex items-center gap-1 text-sm font-black text-primary-600">Iniciar <ArrowRightIcon /></div>
       </div>
     </Link>
 
     <Link
       to="/exam"
-      className="group relative flex min-h-[11rem] flex-col justify-center rounded-3xl border-2 border-neutral-200 bg-white p-6 transition-all hover:border-sage-500 hover:ring-4 hover:ring-sage-500/20 active:scale-[0.98]"
+      className="group flex min-h-[12rem] flex-col justify-between rounded-3xl border-2 border-slate-200 border-b-8 bg-white p-6 transition-all hover:bg-slate-50 active:border-b-2 active:translate-y-[6px]"
     >
-      <div className="flex items-center gap-4">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sage-50 text-sage-600 group-hover:bg-sage-600 group-hover:text-white transition-colors">
-          <ExamIcon size={16} />
+      <div>
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-100 text-sage-600">
+          <ExamIcon size={24} />
         </div>
-        <div>
-          <h2 className="text-xl font-black text-neutral-900">Simulador</h2>
-          <p className="text-xs font-bold text-neutral-400 uppercase tracking-widest mt-1">Examen Oficial</p>
-        </div>
+        <h2 className="mt-4 text-2xl font-black tracking-tight text-slate-900">Simulador</h2>
+        <p className="mt-2 text-sm leading-5 text-slate-500 font-medium">35 preguntas. Aprobación: 33/38. Reglas oficiales.</p>
+      </div>
+      <div className="mt-4 flex items-center justify-between">
+        <span className="rounded-lg bg-sage-50 px-3 py-1.5 text-xs font-bold text-sage-700 uppercase tracking-wide">~40 min</span>
+        <div className="flex items-center gap-1 text-sm font-black text-sage-600">Iniciar <ArrowRightIcon /></div>
       </div>
     </Link>
   </div>
