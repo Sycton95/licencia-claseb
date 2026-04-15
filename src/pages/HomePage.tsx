@@ -68,7 +68,7 @@ export function HomePage() {
     >
       <div className="flex items-center gap-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-          <PlayIcon />
+          <PracticeIcon size={16} />
         </div>
         <div>
           <h2 className="text-xl font-black text-neutral-900">Práctica</h2>
@@ -83,7 +83,7 @@ export function HomePage() {
     >
       <div className="flex items-center gap-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sage-50 text-sage-600 group-hover:bg-sage-600 group-hover:text-white transition-colors">
-          <AwardIcon />
+          <ExamIcon size={16} />
         </div>
         <div>
           <h2 className="text-xl font-black text-neutral-900">Simulador</h2>
