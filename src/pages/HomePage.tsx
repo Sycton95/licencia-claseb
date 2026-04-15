@@ -61,57 +61,41 @@ export function HomePage() {
             )}
           </div>
 
-          <div className="grid w-full max-w-2xl gap-3 grid-cols-1 md:gap-4 md:grid-cols-1 landscape:grid-cols-2 landscape:gap-2">
-            <Link
-              to="/practice"
-              className="group flex min-h-[7rem] flex-col justify-between rounded-[28px] border border-primary-300/30 bg-white/95 p-3 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2 md:min-h-[14rem] md:p-6 landscape:min-h-[10rem] landscape:p-3"
-            >
-              <div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 md:h-12 md:w-12">
-                  <PracticeIcon size={16} />
-                </div>
-                <h2 className="mt-1.5 text-lg font-black tracking-tight md:mt-4 md:text-2xl landscape:mt-1 landscape:text-base">Práctica</h2>
-                <p className="mt-0.5 text-[11px] leading-4 text-neutral-600 md:mt-2 md:text-sm md:leading-6 landscape:mt-0.5 landscape:text-[10px] landscape:leading-3">
-                  Personaliza tu aprendizaje. Elige capítulos y cantidad.
-                </p>
-              </div>
-              <div className="space-y-1 md:space-y-3 landscape:space-y-1.5">
-                <div className="flex items-center justify-between gap-1.5 rounded-lg bg-primary-50 px-2 py-1 md:gap-3 md:px-3 md:py-2 landscape:gap-2 landscape:px-2 landscape:py-1">
-                  <span className="text-[9px] font-bold uppercase tracking-wide text-primary-700 md:text-xs landscape:text-[9px]">Tiempo</span>
-                  <span className="text-[10px] font-black text-primary-900 md:text-sm landscape:text-xs">5-35 min</span>
-                </div>
-                <div className="flex items-center gap-2 text-[10px] font-black text-primary-600 group-hover:gap-3 transition-all md:text-sm landscape:text-xs">
-                  Iniciar
-                  <ArrowRightIcon />
-                </div>
-              </div>
-            </Link>
+          <div className="grid w-full max-w-2xl gap-4 grid-cols-1 md:grid-cols-2">
+    <Link
+      to="/practice"
+      className="group flex min-h-[12rem] flex-col justify-between rounded-3xl border-2 border-slate-200 border-b-8 bg-white p-6 transition-all hover:bg-slate-50 active:border-b-2 active:translate-y-[6px]"
+    >
+      <div>
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-600">
+          <PracticeIcon size={24} />
+        </div>
+        <h2 className="mt-4 text-2xl font-black tracking-tight text-slate-900">Práctica</h2>
+        <p className="mt-2 text-sm leading-5 text-slate-500 font-medium">Personaliza tu aprendizaje. Elige capítulos y cantidad.</p>
+      </div>
+      <div className="mt-4 flex items-center justify-between">
+        <span className="rounded-lg bg-primary-50 px-3 py-1.5 text-xs font-bold text-primary-700 uppercase tracking-wide">5-35 min</span>
+        <div className="flex items-center gap-1 text-sm font-black text-primary-600">Iniciar <ArrowRightIcon /></div>
+      </div>
+    </Link>
 
-            <Link
-              to="/exam"
-              className="group flex min-h-[7rem] flex-col justify-between rounded-[28px] border border-sage-300/30 bg-white/95 p-3 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-sage-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sage-200 focus-visible:ring-offset-2 md:min-h-[14rem] md:p-6 landscape:min-h-[10rem] landscape:p-3"
-            >
-              <div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-sage-100 text-sage-600 md:h-12 md:w-12">
-                  <ExamIcon size={16} />
-                </div>
-                <h2 className="mt-1.5 text-lg font-black tracking-tight md:mt-4 md:text-2xl landscape:mt-1 landscape:text-base">Simulador</h2>
-                <p className="mt-0.5 text-[11px] leading-4 text-neutral-600 md:mt-2 md:text-sm md:leading-6 landscape:mt-0.5 landscape:text-[10px] landscape:leading-3">
-                  35 preguntas. Aprobación: 33/38. Timer.
-                </p>
-              </div>
-              <div className="space-y-1 md:space-y-3 landscape:space-y-1.5">
-                <div className="flex items-center justify-between gap-1.5 rounded-lg bg-sage-50 px-2 py-1 md:gap-3 md:px-3 md:py-2 landscape:gap-2 landscape:px-2 landscape:py-1">
-                  <span className="text-[9px] font-bold uppercase tracking-wide text-sage-700 md:text-xs landscape:text-[9px]">Tiempo</span>
-                  <span className="text-[10px] font-black text-sage-900 md:text-sm landscape:text-xs">~40 min</span>
-                </div>
-                <div className="flex items-center gap-2 text-[10px] font-black text-sage-600 group-hover:gap-3 transition-all md:text-sm landscape:text-xs">
-                  Iniciar
-                  <ArrowRightIcon />
-                </div>
-              </div>
-            </Link>
-          </div>
+    <Link
+      to="/exam"
+      className="group flex min-h-[12rem] flex-col justify-between rounded-3xl border-2 border-slate-200 border-b-8 bg-white p-6 transition-all hover:bg-slate-50 active:border-b-2 active:translate-y-[6px]"
+    >
+      <div>
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-100 text-sage-600">
+          <ExamIcon size={24} />
+        </div>
+        <h2 className="mt-4 text-2xl font-black tracking-tight text-slate-900">Simulador</h2>
+        <p className="mt-2 text-sm leading-5 text-slate-500 font-medium">35 preguntas. Aprobación: 33/38. Reglas oficiales.</p>
+      </div>
+      <div className="mt-4 flex items-center justify-between">
+        <span className="rounded-lg bg-sage-50 px-3 py-1.5 text-xs font-bold text-sage-700 uppercase tracking-wide">~40 min</span>
+        <div className="flex items-center gap-1 text-sm font-black text-sage-600">Iniciar <ArrowRightIcon /></div>
+      </div>
+    </Link>
+  </div>
         </div>
       </section>
     </div>
