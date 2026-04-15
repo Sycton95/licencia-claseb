@@ -61,8 +61,7 @@ export function HomePage() {
             )}
           </div>
 
-         <div className="grid w-full max-w-2xl gap-6 grid-cols-1 md:grid-cols-2">
-    <div className="grid w-full max-w-2xl gap-4 grid-cols-1 md:grid-cols-2">
+          <div className="grid w-full max-w-2xl gap-4 grid-cols-1 md:grid-cols-2">
     <Link
       to="/practice"
       className="group relative overflow-hidden flex min-h-[12rem] flex-col justify-between rounded-3xl bg-gradient-to-br from-primary-500 to-primary-700 p-6 text-white shadow-lg shadow-primary-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/40"
