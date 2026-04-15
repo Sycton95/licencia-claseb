@@ -61,38 +61,36 @@ export function HomePage() {
             )}
           </div>
 
-          <div className="grid w-full max-w-2xl gap-4 grid-cols-1 md:grid-cols-2">
+          <div className="grid w-full max-w-2xl gap-6 grid-cols-1 md:grid-cols-2">
     <Link
       to="/practice"
-      className="group flex min-h-[12rem] flex-col justify-between rounded-3xl border-2 border-slate-200 border-b-8 bg-white p-6 transition-all hover:bg-slate-50 active:border-b-2 active:translate-y-[6px]"
+      className="group flex min-h-[12rem] flex-col justify-between rounded-2xl border-4 border-black bg-white p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
     >
       <div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-600">
-          <PracticeIcon size={24} />
-        </div>
-        <h2 className="mt-4 text-2xl font-black tracking-tight text-slate-900">Práctica</h2>
-        <p className="mt-2 text-sm leading-5 text-slate-500 font-medium">Personaliza tu aprendizaje. Elige capítulos y cantidad.</p>
+        <h2 className="text-2xl font-black tracking-tight text-black uppercase">Práctica</h2>
+        <p className="mt-2 text-sm leading-5 text-neutral-700 font-bold">Personaliza tu aprendizaje. Elige capítulos y cantidad.</p>
       </div>
-      <div className="mt-4 flex items-center justify-between">
-        <span className="rounded-lg bg-primary-50 px-3 py-1.5 text-xs font-bold text-primary-700 uppercase tracking-wide">5-35 min</span>
-        <div className="flex items-center gap-1 text-sm font-black text-primary-600">Iniciar <ArrowRightIcon /></div>
+      <div className="mt-4 flex items-center justify-between border-t-4 border-black pt-4">
+        <span className="font-mono text-sm font-bold text-black">5-35 MIN</span>
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-400 border-2 border-black text-black">
+          <ArrowRightIcon />
+        </div>
       </div>
     </Link>
 
     <Link
       to="/exam"
-      className="group flex min-h-[12rem] flex-col justify-between rounded-3xl border-2 border-slate-200 border-b-8 bg-white p-6 transition-all hover:bg-slate-50 active:border-b-2 active:translate-y-[6px]"
+      className="group flex min-h-[12rem] flex-col justify-between rounded-2xl border-4 border-black bg-primary-300 p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
     >
       <div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage-100 text-sage-600">
-          <ExamIcon size={24} />
-        </div>
-        <h2 className="mt-4 text-2xl font-black tracking-tight text-slate-900">Simulador</h2>
-        <p className="mt-2 text-sm leading-5 text-slate-500 font-medium">35 preguntas. Aprobación: 33/38. Reglas oficiales.</p>
+        <h2 className="text-2xl font-black tracking-tight text-black uppercase">Simulador</h2>
+        <p className="mt-2 text-sm leading-5 text-black font-bold">35 preguntas. Aprobación: 33/38. Timer.</p>
       </div>
-      <div className="mt-4 flex items-center justify-between">
-        <span className="rounded-lg bg-sage-50 px-3 py-1.5 text-xs font-bold text-sage-700 uppercase tracking-wide">~40 min</span>
-        <div className="flex items-center gap-1 text-sm font-black text-sage-600">Iniciar <ArrowRightIcon /></div>
+      <div className="mt-4 flex items-center justify-between border-t-4 border-black pt-4">
+        <span className="font-mono text-sm font-bold text-black">~40 MIN</span>
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sage-400 border-2 border-black text-black">
+          <ArrowRightIcon />
+        </div>
       </div>
     </Link>
   </div>
