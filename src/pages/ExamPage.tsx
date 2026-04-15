@@ -78,40 +78,40 @@ export function ExamPage() {
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 md:px-6 md:py-4">
+      <div className="min-h-0 flex-1 overflow-y-auto px-3 py-2 md:px-6 md:py-4">
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
           <section className="rounded-[28px] border border-neutral-200 bg-white p-4 shadow-sm md:p-5">
-            <div className="grid gap-3 sm:grid-cols-2">
-              <article className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4">
-                <div className="text-2xl font-black text-neutral-900">
+            <div className="grid gap-2 md:gap-3 grid-cols-2 md:grid-cols-4">
+              <article className="rounded-2xl border border-neutral-200 bg-neutral-50 px-3 py-3 md:px-4 md:py-4">
+                <div className="text-xl font-black text-neutral-900 md:text-2xl">
                   {catalog?.examRuleSet.questionCount ?? 35}
                 </div>
-                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-neutral-400">
+                <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-400 md:text-xs">
                   preguntas
                 </div>
               </article>
-              <article className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4">
-                <div className="text-2xl font-black text-neutral-900">
+              <article className="rounded-2xl border border-neutral-200 bg-neutral-50 px-3 py-3 md:px-4 md:py-4">
+                <div className="text-xl font-black text-neutral-900 md:text-2xl">
                   {catalog?.examRuleSet.maxPoints ?? 38}
                 </div>
-                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-neutral-400">
-                  puntos máximos
+                <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-400 md:text-xs">
+                  máximo
                 </div>
               </article>
-              <article className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4">
-                <div className="text-2xl font-black text-neutral-900">
+              <article className="rounded-2xl border border-neutral-200 bg-neutral-50 px-3 py-3 md:px-4 md:py-4">
+                <div className="text-xl font-black text-neutral-900 md:text-2xl">
                   {catalog?.examRuleSet.passingPoints ?? 33}
                 </div>
-                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-neutral-400">
-                  para aprobar
+                <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-400 md:text-xs">
+                  aprobación
                 </div>
               </article>
-              <article className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4">
-                <div className="text-2xl font-black text-neutral-900">
+              <article className="rounded-2xl border border-neutral-200 bg-neutral-50 px-3 py-3 md:px-4 md:py-4">
+                <div className="text-xl font-black text-neutral-900 md:text-2xl">
                   {catalog?.examRuleSet.doubleWeightCount ?? 3}
                 </div>
-                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-neutral-400">
-                  preguntas dobles
+                <div className="mt-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-400 md:text-xs">
+                  dobles
                 </div>
               </article>
             </div>

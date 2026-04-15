@@ -391,13 +391,13 @@ export function AdminPage() {
         showBeta={showBetaSection}
       />
 
-      <main className="relative flex h-full min-w-0 flex-1 flex-col overflow-hidden">
+      <main className="relative flex h-full min-w-0 flex-1 flex-col overflow-y-auto md:overflow-hidden landscape:md:overflow-hidden">
         <AdminTopStrip
           activeSection={activeSection}
           onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
         />
 
-        <div className="relative w-full flex-1 overflow-hidden">
+        <div className="relative w-full flex-1 overflow-y-auto md:overflow-hidden landscape:md:overflow-hidden">
           {activeSection === 'dashboard' && (
             <DashboardView
               summary={summary}
