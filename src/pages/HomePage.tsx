@@ -61,39 +61,33 @@ export function HomePage() {
             )}
           </div>
 
-          <div className="grid w-full max-w-2xl gap-6 grid-cols-1 md:grid-cols-2">
+          <div className="grid w-full max-w-2xl gap-4 grid-cols-1 md:grid-cols-2">
     <Link
       to="/practice"
-      className="group flex min-h-[12rem] flex-col justify-between rounded-[2rem] bg-neutral-100 p-6 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all hover:shadow-[inset_8px_8px_16px_#d1d5db,inset_-8px_-8px_16px_#ffffff]"
+      className="group relative flex min-h-[11rem] flex-col justify-center rounded-3xl border-2 border-neutral-200 bg-white p-6 transition-all hover:border-primary-500 hover:ring-4 hover:ring-primary-500/20 active:scale-[0.98]"
     >
-      <div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100 shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] text-primary-600">
-          <PracticeIcon size={20} />
+      <div className="flex items-center gap-4">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+          <PlayIcon />
         </div>
-        <h2 className="mt-5 text-xl font-black tracking-tight text-neutral-800">Práctica</h2>
-        <p className="mt-1 text-sm text-neutral-500 font-medium">Personaliza tu aprendizaje.</p>
-      </div>
-      <div className="mt-4 flex justify-end">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg transition-transform group-active:scale-90">
-          <ArrowRightIcon />
+        <div>
+          <h2 className="text-xl font-black text-neutral-900">Práctica</h2>
+          <p className="text-xs font-bold text-neutral-400 uppercase tracking-widest mt-1">Niveles & Capítulos</p>
         </div>
       </div>
     </Link>
 
     <Link
       to="/exam"
-      className="group flex min-h-[12rem] flex-col justify-between rounded-[2rem] bg-neutral-100 p-6 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all hover:shadow-[inset_8px_8px_16px_#d1d5db,inset_-8px_-8px_16px_#ffffff]"
+      className="group relative flex min-h-[11rem] flex-col justify-center rounded-3xl border-2 border-neutral-200 bg-white p-6 transition-all hover:border-sage-500 hover:ring-4 hover:ring-sage-500/20 active:scale-[0.98]"
     >
-      <div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100 shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] text-sage-600">
-          <ExamIcon size={20} />
+      <div className="flex items-center gap-4">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-sage-50 text-sage-600 group-hover:bg-sage-600 group-hover:text-white transition-colors">
+          <AwardIcon />
         </div>
-        <h2 className="mt-5 text-xl font-black tracking-tight text-neutral-800">Simulador</h2>
-        <p className="mt-1 text-sm text-neutral-500 font-medium">Test de 35 preguntas oficiales.</p>
-      </div>
-      <div className="mt-4 flex justify-end">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sage-600 text-white shadow-lg transition-transform group-active:scale-90">
-          <ArrowRightIcon />
+        <div>
+          <h2 className="text-xl font-black text-neutral-900">Simulador</h2>
+          <p className="text-xs font-bold text-neutral-400 uppercase tracking-widest mt-1">Examen Oficial</p>
         </div>
       </div>
     </Link>
