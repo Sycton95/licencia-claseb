@@ -61,7 +61,7 @@ export function HomePage() {
             )}
           </div>
 
-          <div className="grid w-full max-w-2xl gap-6 grid-cols-1 md:grid-cols-2">
+         <div className="grid w-full max-w-2xl gap-6 grid-cols-1 md:grid-cols-2">
     <Link
       to="/practice"
       className="group flex min-h-[12rem] flex-col justify-between rounded-2xl border-4 border-black bg-white p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
@@ -73,7 +73,7 @@ export function HomePage() {
       <div className="mt-4 flex items-center justify-between border-t-4 border-black pt-4">
         <span className="font-mono text-sm font-bold text-black">5-35 MIN</span>
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-400 border-2 border-black text-black">
-          <PlayIcon />
+          <ArrowRightIcon />
         </div>
       </div>
     </Link>
@@ -89,7 +89,7 @@ export function HomePage() {
       <div className="mt-4 flex items-center justify-between border-t-4 border-black pt-4">
         <span className="font-mono text-sm font-bold text-black">~40 MIN</span>
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sage-400 border-2 border-black text-black">
-          <PlayIcon />
+          <ArrowRightIcon />
         </div>
       </div>
     </Link>
