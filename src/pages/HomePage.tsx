@@ -62,35 +62,38 @@ export function HomePage() {
           </div>
 
          <div className="grid w-full max-w-2xl gap-6 grid-cols-1 md:grid-cols-2">
+    <div className="grid w-full max-w-2xl gap-4 grid-cols-1 md:grid-cols-2">
     <Link
       to="/practice"
-      className="group flex min-h-[12rem] flex-col justify-between rounded-2xl border-4 border-black bg-white p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+      className="group relative overflow-hidden flex min-h-[12rem] flex-col justify-between rounded-3xl bg-gradient-to-br from-primary-500 to-primary-700 p-6 text-white shadow-lg shadow-primary-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/40"
     >
-      <div>
-        <h2 className="text-2xl font-black tracking-tight text-black uppercase">Práctica</h2>
-        <p className="mt-2 text-sm leading-5 text-neutral-700 font-bold">Personaliza tu aprendizaje. Elige capítulos y cantidad.</p>
+      <div className="absolute -right-6 -top-6 opacity-10 text-white">
+        <PracticeIcon size={120} />
       </div>
-      <div className="mt-4 flex items-center justify-between border-t-4 border-black pt-4">
-        <span className="font-mono text-sm font-bold text-black">5-35 MIN</span>
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-400 border-2 border-black text-black">
-          <ArrowRightIcon />
-        </div>
+      <div className="relative z-10">
+        <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">5-35 min</span>
+        <h2 className="mt-4 text-2xl font-black tracking-tight">Práctica</h2>
+        <p className="mt-1 text-sm font-medium text-primary-100">Elige capítulos y avanza a tu ritmo.</p>
+      </div>
+      <div className="relative z-10 mt-4 flex items-center gap-2 font-bold group-hover:gap-3 transition-all">
+        Iniciar <ArrowRightIcon />
       </div>
     </Link>
 
     <Link
       to="/exam"
-      className="group flex min-h-[12rem] flex-col justify-between rounded-2xl border-4 border-black bg-primary-300 p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+      className="group relative overflow-hidden flex min-h-[12rem] flex-col justify-between rounded-3xl bg-gradient-to-br from-sage-500 to-sage-700 p-6 text-white shadow-lg shadow-sage-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-sage-500/40"
     >
-      <div>
-        <h2 className="text-2xl font-black tracking-tight text-black uppercase">Simulador</h2>
-        <p className="mt-2 text-sm leading-5 text-black font-bold">35 preguntas. Aprobación: 33/38. Timer.</p>
+      <div className="absolute -right-6 -top-6 opacity-10 text-white">
+        <ExamIcon size={120} />
       </div>
-      <div className="mt-4 flex items-center justify-between border-t-4 border-black pt-4">
-        <span className="font-mono text-sm font-bold text-black">~40 MIN</span>
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sage-400 border-2 border-black text-black">
-          <ArrowRightIcon />
-        </div>
+      <div className="relative z-10">
+        <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">~40 min</span>
+        <h2 className="mt-4 text-2xl font-black tracking-tight">Simulador</h2>
+        <p className="mt-1 text-sm font-medium text-sage-100">Test completo bajo reglas oficiales.</p>
+      </div>
+      <div className="relative z-10 mt-4 flex items-center gap-2 font-bold group-hover:gap-3 transition-all">
+        Iniciar <ArrowRightIcon />
       </div>
     </Link>
   </div>
