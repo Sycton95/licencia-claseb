@@ -61,38 +61,40 @@ export function HomePage() {
             )}
           </div>
 
-          <div className="grid w-full max-w-2xl gap-4 grid-cols-1 md:grid-cols-2">
+          <div className="grid w-full max-w-2xl gap-6 grid-cols-1 md:grid-cols-2">
     <Link
       to="/practice"
-      className="group relative overflow-hidden flex min-h-[12rem] flex-col justify-between rounded-3xl bg-gradient-to-br from-primary-500 to-primary-700 p-6 text-white shadow-lg shadow-primary-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/40"
+      className="group flex min-h-[12rem] flex-col justify-between rounded-[2rem] bg-neutral-100 p-6 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all hover:shadow-[inset_8px_8px_16px_#d1d5db,inset_-8px_-8px_16px_#ffffff]"
     >
-      <div className="absolute -right-6 -top-6 opacity-10 text-white">
-        <PracticeIcon size={120} />
+      <div>
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100 shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] text-primary-600">
+          <PracticeIcon size={20} />
+        </div>
+        <h2 className="mt-5 text-xl font-black tracking-tight text-neutral-800">Práctica</h2>
+        <p className="mt-1 text-sm text-neutral-500 font-medium">Personaliza tu aprendizaje.</p>
       </div>
-      <div className="relative z-10">
-        <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">5-35 min</span>
-        <h2 className="mt-4 text-2xl font-black tracking-tight">Práctica</h2>
-        <p className="mt-1 text-sm font-medium text-primary-100">Elige capítulos y avanza a tu ritmo.</p>
-      </div>
-      <div className="relative z-10 mt-4 flex items-center gap-2 font-bold group-hover:gap-3 transition-all">
-        Iniciar <ArrowRightIcon />
+      <div className="mt-4 flex justify-end">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg transition-transform group-active:scale-90">
+          <ArrowRightIcon />
+        </div>
       </div>
     </Link>
 
     <Link
       to="/exam"
-      className="group relative overflow-hidden flex min-h-[12rem] flex-col justify-between rounded-3xl bg-gradient-to-br from-sage-500 to-sage-700 p-6 text-white shadow-lg shadow-sage-500/30 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-sage-500/40"
+      className="group flex min-h-[12rem] flex-col justify-between rounded-[2rem] bg-neutral-100 p-6 shadow-[8px_8px_16px_#d1d5db,-8px_-8px_16px_#ffffff] transition-all hover:shadow-[inset_8px_8px_16px_#d1d5db,inset_-8px_-8px_16px_#ffffff]"
     >
-      <div className="absolute -right-6 -top-6 opacity-10 text-white">
-        <ExamIcon size={120} />
+      <div>
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-neutral-100 shadow-[inset_4px_4px_8px_#d1d5db,inset_-4px_-4px_8px_#ffffff] text-sage-600">
+          <ExamIcon size={20} />
+        </div>
+        <h2 className="mt-5 text-xl font-black tracking-tight text-neutral-800">Simulador</h2>
+        <p className="mt-1 text-sm text-neutral-500 font-medium">Test de 35 preguntas oficiales.</p>
       </div>
-      <div className="relative z-10">
-        <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">~40 min</span>
-        <h2 className="mt-4 text-2xl font-black tracking-tight">Simulador</h2>
-        <p className="mt-1 text-sm font-medium text-sage-100">Test completo bajo reglas oficiales.</p>
-      </div>
-      <div className="relative z-10 mt-4 flex items-center gap-2 font-bold group-hover:gap-3 transition-all">
-        Iniciar <ArrowRightIcon />
+      <div className="mt-4 flex justify-end">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sage-600 text-white shadow-lg transition-transform group-active:scale-90">
+          <ArrowRightIcon />
+        </div>
       </div>
     </Link>
   </div>
