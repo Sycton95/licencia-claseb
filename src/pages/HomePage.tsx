@@ -33,7 +33,7 @@ export function HomePage() {
   }
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-slate-50 selection:bg-indigo-200">
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto selection:bg-indigo-200 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <section className="relative flex w-full flex-1 flex-col items-center justify-center px-4 py-6 md:py-10 z-0">
 
         {/* Background Pattern */}

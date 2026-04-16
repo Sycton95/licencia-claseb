@@ -21,12 +21,11 @@ export function NavItem({ icon: Icon, label, size = 20, ...props }: NavItemProps
         `relative flex flex-1 flex-col items-center justify-center gap-1 transition-all duration-200
         active:scale-95 hover:scale-105
         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
-        ${
-          isActive
-            ? 'text-primary-600 before:absolute before:inset-0 before:-z-10 before:bg-primary-50 before:rounded-lg'
-            : 'text-neutral-500 hover:text-neutral-700'
-        }`
+        ${isActive ? 'before:absolute before:inset-0 before:-z-10 before:rounded-lg' : ''}`
       }
+      style={({ isActive }) => ({
+        color: isActive ? 'var(--color-primary-600)' : 'var(--color-text-secondary)',
+      })}
     >
       {/* Icon with smooth color transition */}
       <Icon size={size} />

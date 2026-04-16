@@ -9,7 +9,7 @@ const navItems = [
 
 export function MobileNav() {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 md:hidden bg-white border-t border-neutral-200 shadow-lg shadow-neutral-950/5 landscape:h-16">
+    <nav className="fixed bottom-0 left-0 right-0 md:hidden shadow-lg shadow-neutral-950/5 landscape:h-16 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-secondary)', borderColor: 'var(--color-border)', borderTopWidth: '1px' }}>
       <div className="flex h-16 landscape:h-16">
         {navItems.map((item) => (
           <NavItem
