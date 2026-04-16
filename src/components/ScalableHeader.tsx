@@ -79,7 +79,7 @@ export function ScalableHeader({
               {/* Text */}
               <h1
                 className={`
-                  text-[4em] font-black tracking-tighter leading-none
+                  text-[1em] font-black tracking-tighter leading-none
                   drop-shadow-sm ${isDarkMode ? 'text-white drop-shadow-md' : 'text-slate-900'}
                 `}
                 style={{
