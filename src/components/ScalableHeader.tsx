@@ -61,7 +61,7 @@ export function ScalableHeader({
             {/* Left Column (Lines & Text) */}
             <div className="flex flex-col items-center justify-between w-max max-w-full">
               {/* Top Stripped Lines */}
-              <div className="flex flex-row items-center w-full" style={{ gap: '0.12em' }}>
+              <div className="flex flex-row items-center justify-between w-full">
                 {[...Array(dashCount)].map((_, i) => (
                   <div
                     key={i}
@@ -70,7 +70,7 @@ export function ScalableHeader({
                     }`}
                     style={{
                       height: emDashThickness,
-                      flex: `1 1 ${100 / dashCount}%`,
+                      width: '12%',
                     }}
                   />
                 ))}
