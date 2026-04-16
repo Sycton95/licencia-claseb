@@ -52,7 +52,7 @@ export function HomePage() {
               {/* Left Column (Lines & Text) */}
               <div className="flex flex-col items-center justify-between w-max max-w-full">
                 {/* Top Stripped Lines */}
-                <div className="flex flex-row items-center w-full gap-2">
+                <div className="flex flex-row items-center w-full gap-10">
                   {[...Array(6)].map((_, i) => (
                     <div
                       key={i}
