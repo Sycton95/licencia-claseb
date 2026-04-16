@@ -28,7 +28,7 @@ export function ScalableHeader({
         relative flex w-full flex-col items-center overflow-x-hidden px-4
         text-[24px] sm:text-[32px] md:text-[64px] lg:text-[96px] landscape:text-[32px]
         py-[0.3em] sm:py-[0.35em] md:py-[0.4em] lg:py-[0.5em]
-        min-h-full ${isDarkMode ? 'bg-slate-900' : 'bg-white'}
+        ${isDarkMode ? 'bg-slate-900' : 'bg-white'}
       `}
     >
       {/* Background Pattern */}
