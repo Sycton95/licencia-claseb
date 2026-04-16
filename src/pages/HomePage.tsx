@@ -37,7 +37,7 @@ export function HomePage() {
         {/* Background Pattern */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 pointer-events-none opacity-[20]"
+          className="absolute inset-0 pointer-events-none opacity-[0.05]"
           style={{
             backgroundImage: `radial-gradient(#4f46e5 1px, transparent 1px)`,
             backgroundSize: '28px 28px',
