@@ -1,140 +1,79 @@
-interface ScalableHeaderProps {
-  // Em-based proportions (defaults based on 96px design)
-  emYellowThickness?: string;    // default: '0.104em' (10px / 96px)
-  emDashThickness?: string;      // default: '0.104em' (10px / 96px)
-  emDashMargin?: string;         // default: '0.146em' (14px / 96px)
-  emCwWidth?: string;            // default: '1.875em' (180px / 96px)
-  emCwStripeThickness?: string;  // default: '0.3125em' (30px / 96px)
-  emRightMargin?: string;        // default: '0.333em' (32px / 96px)
-  dashCount?: number;            // default: 6
-  cwCount?: number;              // default: 4
-  isDarkMode?: boolean;          // default: false
-}
+import React from 'react';
 
-export function ScalableHeader({
-  emYellowThickness = '0.104em',
-  emDashThickness = '0.104em',
-  emDashMargin = '0.146em',
-  emCwWidth = '1.875em',
-  emCwStripeThickness = '0.3125em',
-  emRightMargin = '0.333em',
-  dashCount = 6,
-  cwCount = 4,
-  isDarkMode = false,
-}: ScalableHeaderProps) {
+export function ScalableHeader() {
+  // Exact proportions mapped to a 96px baseline
+  const emYellowThickness = '0.104em';   // 10px / 96px
+  const emDashThickness = '0.104em';     // 10px / 96px
+  const emDashSpacing = '0.406em';       // 39px gap
+  const emDashMargin = '0.146em';        // 14px top/bottom
+  const emCwWidth = '1.26em';            // 121px width
+  const emCwStripeThickness = '0.219em'; // 21px stripe height
+  const emRightMargin = '0.333em';       // 32px spacing before crosswalk
+
+  const dashCount = 6;
+  const cwCount = 4;
+
   return (
-    <section
-      className={`
-        relative flex w-full flex-col items-center px-4
-        text-[24px] sm:text-[32px] md:text-[64px] lg:text-[96px] landscape:text-[32px]
-        py-[0.3em] sm:py-[0.35em] md:py-[0.4em] lg:py-[0.5em]
-        sticky top-0 z-50 sm:static sm:z-auto
-        overflow-y-hidden overflow-x-visible
-        ${isDarkMode ? 'bg-slate-900' : 'bg-white'}
-      `}
-    >
-      {/* Background Pattern */}
+    <div className="w-full max-w-5xl mx-auto flex flex-col items-center md:items-start z-10 px-4 md:px-0 mt-6 sm:mt-10 md:mt-12">
       <div
-        aria-hidden="true"
-        className={`absolute inset-0 pointer-events-none ${
-          isDarkMode ? 'opacity-20' : 'opacity-[0.05]'
-        }`}
-        style={{
-          backgroundImage: `radial-gradient(${isDarkMode ? '#ffffff' : '#4f46e5'} 1px, transparent 1px)`,
-          backgroundSize: '28px 28px',
-        }}
-      />
-      <div
-        className={`absolute inset-x-0 top-0 h-40 bg-gradient-to-b to-transparent pointer-events-none ${
-          isDarkMode ? 'from-indigo-500/20' : 'from-indigo-500/10'
-        }`}
-      />
+        className="flex flex-row items-stretch mx-auto md:mx-0 w-max max-w-full"
+        style={{ fontSize: 'clamp(2rem, 6vw, 6rem)' }}
+      >
+        {/* Left Column (Lines & Text) */}
+        <div className="flex flex-col items-center justify-between w-max max-w-full">
 
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-[0.5em] px-2 md:px-0">
-        {/* Asfalto Header (Intersection) */}
-        <div
-          className={`
-            max-w-full md:max-w-2xl lg:max-w-4xl text-center md:text-left flex flex-col items-center md:items-start
-            mx-auto md:mx-0 w-full
-          `}
-          style={{ paddingTop: '0.2em' }}
-        >
-          <div className="flex flex-row items-stretch mx-auto md:mx-0 w-max max-w-full">
-            {/* Left Column (Lines & Text) */}
-            <div className="flex flex-col items-center justify-between w-max max-w-full">
-              {/* Top Stripped Lines */}
-              <div className="flex flex-row items-center w-full" style={{ gap: '0.188em' }}>
-                {[...Array(dashCount)].map((_, i) => (
-                  <div
-                    key={i}
-                    className={`rounded-none transition-colors duration-300 ${
-                      isDarkMode ? 'bg-white' : 'bg-slate-900'
-                    }`}
-                    style={{
-                      height: emDashThickness,
-                      flex: `1 1 ${100 / (dashCount * 3.5)}%`,
-                    }}
-                  />
-                ))}
-              </div>
-
-              {/* Text */}
-              <h1
-                className={`
-                  text-[2.5em] font-black tracking-tighter leading-none whitespace-nowrap
-                  drop-shadow-sm ${isDarkMode ? 'text-white drop-shadow-md' : 'text-slate-900'}
-                `}
-                style={{
-                  marginTop: emDashMargin,
-                  marginBottom: emDashMargin,
-                }}
-              >
-                CLASE-B.CL
-              </h1>
-
-              {/* Bottom Yellow Line */}
+          {/* Top Stripped Lines */}
+          <div
+            className="flex flex-row items-center justify-between w-full"
+            style={{ gap: emDashSpacing }}
+          >
+            {[...Array(dashCount)].map((_, i) => (
               <div
-                className="bg-yellow-400 w-full rounded-none"
-                style={{ height: emYellowThickness }}
+                key={i}
+                className="bg-slate-900 rounded-none"
+                style={{ height: emDashThickness, flex: '1 1 auto' }}
               />
-            </div>
-
-            {/* Right Column (Crosswalk) */}
-            <div
-              className="flex flex-col justify-between shrink-0"
-              style={{
-                marginLeft: emRightMargin,
-                width: emCwWidth,
-              }}
-            >
-              {[...Array(cwCount)].map((_, i) => (
-                <div
-                  key={i}
-                  className={`rounded-none transition-colors duration-300 ${
-                    isDarkMode ? 'bg-white' : 'bg-slate-900'
-                  }`}
-                  style={{
-                    height: emCwStripeThickness,
-                    width: '100%',
-                  }}
-                />
-              ))}
-            </div>
+            ))}
           </div>
 
-          {/* Tagline / Subtitle */}
-          <p
-            className={`
-              font-bold whitespace-nowrap leading-relaxed mx-auto md:mx-0 px-4 md:px-0
-              text-[0.5em] md:text-[0.65em]
-              ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}
-            `}
-            style={{ marginTop: '0.3em' }}
+          {/* Text */}
+          <h1
+            className="font-black tracking-tighter leading-none whitespace-nowrap text-slate-900 drop-shadow-sm"
+            style={{
+              fontSize: '1em',
+              marginTop: emDashMargin,
+              marginBottom: emDashMargin
+            }}
           >
-            Practica y Aprende. Tu licencia te espera!
-          </p>
+            CLASE-B.CL
+          </h1>
+
+          {/* Bottom Yellow Line */}
+          <div
+            className="bg-yellow-400 w-full rounded-none"
+            style={{ height: emYellowThickness }}
+          />
+        </div>
+
+        {/* Right Column (Crosswalk) */}
+        <div
+          className="flex flex-col justify-between shrink-0"
+          style={{ width: emCwWidth, marginLeft: emRightMargin }}
+        >
+          {[...Array(cwCount)].map((_, i) => (
+            <div
+              key={i}
+              className="bg-slate-900 rounded-none w-full"
+              style={{ height: emCwStripeThickness }}
+            />
+          ))}
         </div>
       </div>
-    </section>
+
+      {/* Subtitle */}
+      <p className="mt-6 md:mt-8 text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap text-slate-600 mx-auto md:mx-0">
+        Practica y Aprende. Tu licencia te espera!
+      </p>
+    </div>
   );
 }
