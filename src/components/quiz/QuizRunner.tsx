@@ -1,7 +1,9 @@
 import { useReducer, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { QuizSummary } from '../QuizSummary';
 import { getQuestionPoints, isQuestionAnswerCorrect } from '../../lib/quizFactory';
 import { CheckIcon } from '../icons';
+import { useHaptics } from '../../hooks/useHaptics';
 import type { Question, QuizMode } from '../../types/content';
 import type { QuestionOutcome } from '../../types/quiz';
 
@@ -114,6 +116,7 @@ export function QuizRunner({
 }: QuizRunnerProps) {
   const [state, dispatch] = useReducer(quizReducer, INITIAL_STATE);
   const containerRef = useRef<HTMLDivElement>(null);
+  const haptics = useHaptics();
   const currentQuestion = questions[state.currentIndex];
 
   const handleSelect = (optionId: string) => {
@@ -121,6 +124,7 @@ export function QuizRunner({
       return;
     }
 
+    haptics.tap();
     dispatch({
       type: 'toggle-option',
       optionId,
@@ -136,6 +140,12 @@ export function QuizRunner({
     const isCorrect = isQuestionAnswerCorrect(currentQuestion, state.selectedOptionIds);
     const pointsAvailable = getQuestionPoints(currentQuestion, mode === 'exam');
     const pointsEarned = isCorrect ? pointsAvailable : 0;
+
+    if (isCorrect) {
+      haptics.success();
+    } else {
+      haptics.error();
+    }
 
     dispatch({
       type: 'confirm',
@@ -238,19 +248,15 @@ export function QuizRunner({
   const isCorrectAnswerSelected =
     state.isAnswered &&
     isQuestionAnswerCorrect(currentQuestion, state.selectedOptionIds);
-  const footerTone = !state.isAnswered
-    ? 'border-neutral-200 bg-white'
-    : isCorrectAnswerSelected
-      ? 'border-success-200 bg-success-50'
-      : 'border-warning-200 bg-warning-50';
 
   return (
-    <div ref={containerRef} tabIndex={-1} className="flex min-h-0 flex-1 flex-col overflow-hidden bg-neutral-50 focus:outline-none">
-      <header className="z-20 flex h-14 shrink-0 items-center border-b border-neutral-200 bg-white shadow-sm md:h-16 landscape:h-12">
+    <div ref={containerRef} tabIndex={-1} className="flex min-h-0 flex-1 flex-col overflow-hidden focus:outline-none transition-colors duration-200 dark:bg-neutral-900" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <header className="z-20 flex h-14 shrink-0 items-center shadow-sm md:h-16 landscape:h-12 transition-colors duration-200" style={{ borderColor: 'var(--color-header-border)', backgroundColor: 'var(--color-header-bg)', borderBottomWidth: '1px' }}>
         <div className="mx-auto flex w-full max-w-3xl items-center gap-4 px-4">
           <button
             onClick={onRestart}
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-neutral-400 transition-colors hover:bg-neutral-50 hover:text-neutral-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 md:h-12 md:w-12"
+            className="flex h-10 w-10 items-center justify-center rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 md:h-12 md:w-12 hover:opacity-80 dark:text-neutral-400"
+            style={{ color: 'var(--color-text-secondary)' }}
             aria-label="Salir del quiz"
             type="button"
           >
@@ -258,7 +264,8 @@ export function QuizRunner({
           </button>
           <div className="flex-1">
             <div
-              className="h-2.5 overflow-hidden rounded-full border border-neutral-200 bg-neutral-100 shadow-inner"
+              className="h-2.5 overflow-hidden rounded-full shadow-inner transition-colors duration-200"
+              style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-border)', borderWidth: '1px' }}
               role="progressbar"
               aria-valuenow={state.currentIndex + 1}
               aria-valuemin={1}
@@ -273,35 +280,35 @@ export function QuizRunner({
               />
             </div>
           </div>
-          <span className="w-14 text-right font-mono text-sm font-black text-neutral-400">
+          <span className="w-14 text-right font-mono text-sm font-black transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>
             {state.currentIndex + 1}/{questions.length}
           </span>
         </div>
       </header>
 
-      <main className="min-h-0 flex-1 overflow-y-auto px-4 py-2 md:px-6 md:py-4 landscape:px-3 landscape:py-1.5">
+      <main className="min-h-0 flex-1 overflow-y-auto px-4 py-2 md:px-6 md:py-4 landscape:px-3 landscape:py-1.5 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
         <div className="sr-only">
           <h1>{title}</h1>
           <p>{subtitle}</p>
         </div>
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-3">
-          <section className="rounded-[30px] border border-neutral-200 bg-white p-4 shadow-sm md:p-6 landscape:p-3">
+          <motion.section className="rounded-[30px] p-4 shadow-sm md:p-6 landscape:p-3 transition-colors duration-200" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg-secondary)', borderWidth: '1px' }} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}>
             <div className="mb-3 flex flex-wrap items-start justify-between gap-2 md:gap-3 landscape:gap-2">
               <div className="min-w-0">
                 {mode === 'practice' && (
-                  <div className="text-[10px] font-black uppercase tracking-[0.15em] text-neutral-400 md:text-[11px] landscape:text-[10px]">
+                  <div className="text-[10px] font-black uppercase tracking-[0.15em] md:text-[11px] landscape:text-[10px] transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>
                     Manual oficial · página {currentQuestion.sourcePage}
                   </div>
                 )}
-                <h2 className="mt-2 text-lg font-black leading-tight tracking-tight text-neutral-900 md:text-[1.7rem] landscape:text-base landscape:mt-1">
+                <h2 className="mt-2 text-lg font-black leading-tight tracking-tight md:text-[1.7rem] landscape:text-base landscape:mt-1 transition-colors duration-200" style={{ color: 'var(--color-text-primary)' }}>
                   {currentQuestion.prompt}
                 </h2>
-                <p className="mt-1.5 text-xs font-semibold leading-5 text-neutral-500 md:text-sm md:leading-6 landscape:text-[11px] landscape:leading-4 landscape:mt-1">
+                <p className="mt-1.5 text-xs font-semibold leading-5 md:text-sm md:leading-6 landscape:text-[11px] landscape:leading-4 landscape:mt-1 transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>
                   {currentQuestion.instruction}
                 </p>
               </div>
 
-              <span className="rounded-full bg-neutral-100 px-3 py-1.5 text-[11px] font-black uppercase tracking-wide text-neutral-500">
+              <span className="rounded-full px-3 py-1.5 text-[11px] font-black uppercase tracking-wide transition-colors duration-200" style={{ backgroundColor: 'var(--color-border)', color: 'var(--color-text-secondary)' }}>
                 {currentQuestion.selectionMode === 'multiple'
                   ? 'Selección múltiple'
                   : 'Selección única'}
@@ -309,7 +316,7 @@ export function QuizRunner({
             </div>
 
             {currentQuestion.media[0] && (
-              <figure className="mb-3 overflow-hidden rounded-[24px] border border-neutral-200 bg-neutral-50 md:mb-5">
+              <figure className="mb-3 overflow-hidden rounded-[24px] md:mb-5 transition-colors duration-200" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-border)', borderWidth: '1px' }}>
                 <img
                   className="block w-full object-cover max-h-[250px] md:max-h-[350px] landscape:max-h-[140px]"
                   src={currentQuestion.media[0].url}
@@ -354,7 +361,7 @@ export function QuizRunner({
                 }
 
                 return (
-                  <button
+                  <motion.button
                     key={option.id}
                     type="button"
                     disabled={state.isAnswered}
@@ -362,6 +369,10 @@ export function QuizRunner({
                     aria-pressed={isSelected}
                     aria-label={`${option.label}. ${option.text}${isSelected ? ' (Seleccionado)' : ''}`}
                     className={`flex min-h-[3.5rem] w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-2 md:py-3 md:gap-3 text-left font-semibold transition-all landscape:min-h-[2.8rem] landscape:px-3 landscape:py-1.5 landscape:gap-2 ${cardClass}`}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.05 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     <div className="flex min-w-0 items-center gap-2 md:gap-3 landscape:gap-2">
                       <span
@@ -382,20 +393,20 @@ export function QuizRunner({
                         <XIcon />
                       </span>
                     )}
-                  </button>
+                  </motion.button>
                 );
               })}
               </div>
             </fieldset>
-          </section>
+          </motion.section>
         </div>
       </main>
 
-      <footer className={`shrink-0 border-t ${footerTone}`}>
+      <footer className="shrink-0 border-t transition-colors duration-200" style={{ backgroundColor: !state.isAnswered ? 'var(--color-bg-secondary)' : isCorrectAnswerSelected ? 'var(--color-success-50)' : 'var(--color-warning-50)', borderColor: 'var(--color-border)' }}>
         <div className="mx-auto flex min-h-[6rem] w-full max-w-3xl flex-col gap-3 px-4 py-3 md:flex-row md:items-end md:justify-between md:px-6 md:py-4 landscape:gap-2 landscape:py-2">
           <div className="min-h-0 flex-1">
             {state.isAnswered ? (
-              <div className="flex flex-col gap-2">
+              <motion.div className="flex flex-col gap-2" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}>
                 <div
                   className={`flex items-center gap-2 text-lg font-black ${
                     isCorrectAnswerSelected ? 'text-success-800' : 'text-warning-800'
@@ -418,7 +429,8 @@ export function QuizRunner({
 
                 {hasQuickReference && (
                   <div
-                    className="max-h-40 overflow-y-auto rounded-2xl bg-white/80 px-3 py-3 text-sm leading-6 text-neutral-600 shadow-sm md:max-h-48"
+                    className="max-h-40 overflow-y-auto rounded-2xl px-3 py-3 text-sm leading-6 shadow-sm md:max-h-48 transition-colors duration-200"
+                    style={{ backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-secondary)' }}
                     role="region"
                     aria-label="Explicación de respuesta"
                     aria-live="polite"
@@ -429,7 +441,7 @@ export function QuizRunner({
                     )}
                   </div>
                 )}
-              </div>
+              </motion.div>
             ) : null}
           </div>
 

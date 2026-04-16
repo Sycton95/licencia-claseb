@@ -31,19 +31,20 @@ export function ScalableHeader() {
             {[...Array(dashCount)].map((_, i) => (
               <div
                 key={i}
-                className="bg-slate-900 rounded-none"
-                style={{ height: emDashThickness, flex: '1 1 auto' }}
+                className="rounded-none"
+                style={{ height: emDashThickness, flex: '1 1 auto', backgroundColor: 'var(--color-text-primary)' }}
               />
             ))}
           </div>
 
           {/* Text */}
           <h1
-            className="font-black tracking-tighter leading-none whitespace-nowrap text-slate-900 drop-shadow-sm"
+            className="font-black tracking-tighter leading-none whitespace-nowrap drop-shadow-sm"
             style={{
               fontSize: '1em',
               marginTop: emDashMargin,
-              marginBottom: emDashMargin
+              marginBottom: emDashMargin,
+              color: 'var(--color-text-primary)'
             }}
           >
             CLASE-B.CL
@@ -51,8 +52,8 @@ export function ScalableHeader() {
 
           {/* Bottom Yellow Line */}
           <div
-            className="bg-yellow-400 w-full rounded-none"
-            style={{ height: emYellowThickness }}
+            className="w-full rounded-none"
+            style={{ height: emYellowThickness, backgroundColor: '#FBBF24' }}
           />
         </div>
 
@@ -64,15 +65,15 @@ export function ScalableHeader() {
           {[...Array(cwCount)].map((_, i) => (
             <div
               key={i}
-              className="bg-slate-900 rounded-none w-full"
-              style={{ height: emCwStripeThickness }}
+              className="rounded-none w-full"
+              style={{ height: emCwStripeThickness, backgroundColor: 'var(--color-text-primary)' }}
             />
           ))}
         </div>
       </div>
 
       {/* Subtitle */}
-      <p className="mt-4 md:mt-6 text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap text-slate-600 mx-auto md:mx-0">
+      <p className="mt-4 md:mt-6 text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap mx-auto md:mx-0" style={{ color: 'var(--color-text-secondary)' }}>
         Practica y Aprende. Tu licencia te espera!
       </p>
     </div>
