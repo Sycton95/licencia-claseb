@@ -6,8 +6,8 @@ interface ScalableHeaderProps {
   emCwWidth?: string;            // default: '1.875em' (180px / 96px)
   emCwStripeThickness?: string;  // default: '0.3125em' (30px / 96px)
   emRightMargin?: string;        // default: '0.333em' (32px / 96px)
-  dashCount?: number;            // default: 8
-  cwCount?: number;              // default: 8
+  dashCount?: number;            // default: 6
+  cwCount?: number;              // default: 4
   isDarkMode?: boolean;          // default: false
 }
 
@@ -18,8 +18,8 @@ export function ScalableHeader({
   emCwWidth = '1.875em',
   emCwStripeThickness = '0.3125em',
   emRightMargin = '0.333em',
-  dashCount = 8,
-  cwCount = 8,
+  dashCount = 6,
+  cwCount = 4,
   isDarkMode = false,
 }: ScalableHeaderProps) {
   return (
