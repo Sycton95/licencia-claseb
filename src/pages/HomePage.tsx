@@ -3,6 +3,7 @@ import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
 import { LoadingSpinner } from '../components/LoadingSpinner';
 import { ErrorAlert } from '../components/ErrorAlert';
 import { PracticeIcon, ExamIcon } from '../components/icons';
+import { ScalableHeader } from '../components/ScalableHeader';
 
 const ArrowRightIcon = () => (
   <svg
@@ -33,78 +34,12 @@ export function HomePage() {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-neutral-50">
-      <section className="relative flex w-full flex-col items-center overflow-x-hidden px-4 py-12 md:py-20 min-h-full bg-white">
-        {/* Background Pattern */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none opacity-[0.05]"
-          style={{
-            backgroundImage: `radial-gradient(#4f46e5 1px, transparent 1px)`,
-            backgroundSize: '28px 28px',
-          }}
-        />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-indigo-500/10 to-transparent pointer-events-none" />
+      <ScalableHeader dashCount={8} cwCount={8} isDarkMode={false} />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12">
-          {/* Asfalto Header (Intersection) */}
-          <div className="max-w-2xl text-center md:text-left pt-6 flex flex-col items-center md:items-start mx-auto md:mx-0 w-full overflow-hidden">
-            <div className="flex flex-row items-stretch mx-auto md:mx-0 w-max max-w-full">
-              {/* Left Column (Lines & Text) */}
-              <div className="flex flex-col items-center justify-between w-max max-w-full">
-                {/* Top Stripped Lines */}
-                <div className="flex flex-row items-center w-full gap-10">
-                  {[...Array(6)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="bg-slate-900 rounded-none transition-colors duration-300"
-                      style={{
-                        height: '10px',
-                        flex: '1 1 12%',
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Text */}
-                <h1
-                  className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter leading-none text-slate-900 drop-shadow-sm"
-                  style={{
-                    marginTop: '24px',
-                    marginBottom: '24px',
-                  }}
-                >
-                  CLASE-B.CL
-                </h1>
-
-                {/* Bottom Yellow Line */}
-                <div
-                  className="bg-yellow-400 w-full rounded-none"
-                  style={{ height: '10px' }}
-                />
-              </div>
-
-              {/* Right Column (Crosswalk) */}
-              <div className="flex flex-col justify-between ml-4 sm:ml-6 md:ml-8 shrink-0" style={{ width: '120px' }}>
-                {[...Array(4)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="bg-slate-900 rounded-none transition-colors duration-300"
-                    style={{
-                      height: '20px',
-                      width: '100%',
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <p className="mt-8 text-lg md:text-2xl font-bold whitespace-nowrap leading-relaxed mx-auto md:mx-0 px-4 md:px-0 text-slate-600">
-              Practica y Aprende. Tu licencia te espera!
-            </p>
-          </div>
-
+      <section className="relative flex w-full flex-col items-center overflow-x-hidden px-4 py-[0.3em] sm:py-[0.35em] md:py-[0.4em] lg:py-[0.5em] min-h-full bg-white">
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-[0.5em]">
           {/* Cards Container */}
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full justify-center">
+          <div className="flex flex-col md:flex-row gap-[0.25em] md:gap-[0.3em] w-full justify-center">
             {/* Práctica Libre Card */}
             <Link
               to="/practice"
