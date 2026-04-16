@@ -34,7 +34,7 @@ export function HomePage() {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-neutral-50">
-      <ScalableHeader dashCount={8} cwCount={8} isDarkMode={false} />
+      <ScalableHeader isDarkMode={false} />
 
       <section className="relative flex w-full flex-col items-center overflow-x-hidden px-4 py-[0.3em] sm:py-[0.35em] md:py-[0.4em] lg:py-[0.5em] min-h-full bg-white">
         <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-[0.5em]">
