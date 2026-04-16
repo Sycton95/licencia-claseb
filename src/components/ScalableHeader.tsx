@@ -77,17 +77,15 @@ export function ScalableHeader({
               </div>
 
               {/* Text */}
-              <h1
-                className={`
-                  text-[2em] font-black tracking-tighter leading-none
-                  drop-shadow-sm ${isDarkMode ? 'text-white drop-shadow-md' : 'text-slate-900'}
-                `}
-                style={{
-                  marginTop: emDashMargin,
-                  marginBottom: emDashMargin,
-                }}
-              >
-                CLASE-B.CL
+              <h1 
+                  className={`font-black tracking-tighter leading-none whitespace-nowrap ${isDarkMode ? 'text-white drop-shadow-md' : 'text-slate-900 drop-shadow-sm'}`}
+                  style={{ 
+                    fontSize: '1em',
+                    marginTop: emDashMargin, 
+                    marginBottom: emDashMargin 
+                  }}
+                >
+                  CLASE-B.CL
               </h1>
 
               {/* Bottom Yellow Line */}
