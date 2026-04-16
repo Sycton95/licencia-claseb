@@ -1,3 +1,4 @@
+// src/components/ScalableHeader.tsx
 import React from 'react';
 
 export function ScalableHeader() {
@@ -14,7 +15,7 @@ export function ScalableHeader() {
   const cwCount = 4;
 
   return (
-    <div className="w-full max-w-5xl mx-auto flex flex-col items-center md:items-start z-10 px-4 md:px-0 mt-6 sm:mt-10 md:mt-12">
+    <div className="w-full max-w-5xl mx-auto flex flex-col items-center md:items-start z-10 px-4 md:px-0 mt-2 sm:mt-4 md:mt-6">
       <div
         className="flex flex-row items-stretch mx-auto md:mx-0 w-max max-w-full"
         style={{ fontSize: 'clamp(2rem, 6vw, 6rem)' }}
@@ -71,7 +72,7 @@ export function ScalableHeader() {
       </div>
 
       {/* Subtitle */}
-      <p className="mt-6 md:mt-8 text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap text-slate-600 mx-auto md:mx-0">
+      <p className="mt-4 md:mt-6 text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap text-slate-600 mx-auto md:mx-0">
         Practica y Aprende. Tu licencia te espera!
       </p>
     </div>
