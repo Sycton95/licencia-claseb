@@ -8,9 +8,10 @@ export function ErrorAlert({
   onRetry?: () => void;
 }) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-neutral-50 px-4">
+    <div className="flex min-h-screen items-center justify-center px-4 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <div
-        className="rounded-lg border border-warning-200 bg-warning-50 p-6 max-w-md shadow-sm"
+        className="rounded-lg p-6 max-w-md shadow-sm transition-colors duration-200"
+        style={{ borderColor: 'var(--color-warning-200)', backgroundColor: 'var(--color-warning-50)', borderWidth: '1px' }}
         role="alert"
         aria-live="assertive"
       >

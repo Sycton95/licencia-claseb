@@ -132,6 +132,89 @@
   --font-h2-size-lg: 28px;
   --font-h3-size-lg: 24px;
   --font-body-size-lg: 18px;
+
+  /* Background Colors for Light Mode */
+  --color-bg-primary: #FAFAF9;
+  --color-bg-secondary: #FFFFFF;
+  --color-text-primary: #1C1917;
+  --color-text-secondary: #57534E;
+  --color-border: #E7E5E4;
+  --color-input-bg: #FFFFFF;
+  --color-header-bg: #FFFFFF;
+  --color-header-border: #E7E5E4;
+}
+
+/* Dark Mode */
+:root.dark {
+  /* Color Tokens - Primary (Light Variants for Dark Mode) */
+  --color-primary-50: #1E3A8A;
+  --color-primary-100: #1E40AF;
+  --color-primary-200: #1E40AF;
+  --color-primary-300: #1D4ED8;
+  --color-primary-400: #2563EB;
+  --color-primary-500: #3B82F6;
+  --color-primary-600: #60A5FA;
+  --color-primary-700: #93C5FD;
+  --color-primary-800: #BFDBFE;
+  --color-primary-900: #DBEAFE;
+
+  /* Color Tokens - Success (Inverted Scale) */
+  --color-success-50: #0F766E;
+  --color-success-100: #115E59;
+  --color-success-200: #134E4A;
+  --color-success-300: #0F766E;
+  --color-success-400: #0D9488;
+  --color-success-500: #14B8A6;
+  --color-success-600: #2DD4BF;
+  --color-success-700: #5EEAD4;
+  --color-success-800: #99F6E4;
+  --color-success-900: #CCFBF1;
+
+  /* Color Tokens - Warning (Inverted) */
+  --color-warning-50: #7C2D12;
+  --color-warning-100: #9A3412;
+  --color-warning-200: #C2410C;
+  --color-warning-300: #EA580C;
+  --color-warning-400: #FB923C;
+  --color-warning-500: #FDBA74;
+  --color-warning-600: #FED7AA;
+  --color-warning-700: #FFEDD5;
+  --color-warning-800: #FEF8F5;
+  --color-warning-900: #FEF8F5;
+
+  /* Color Tokens - Neutral (Inverted) */
+  --color-neutral-50: #1C1917;
+  --color-neutral-100: #292524;
+  --color-neutral-200: #44403C;
+  --color-neutral-300: #57534E;
+  --color-neutral-400: #78716F;
+  --color-neutral-500: #A8A29E;
+  --color-neutral-600: #D6D3D1;
+  --color-neutral-700: #E7E5E4;
+  --color-neutral-800: #F5F5F4;
+  --color-neutral-900: #FAFAF9;
+
+  /* Color Tokens - Sage (Inverted) */
+  --color-sage-50: #166534;
+  --color-sage-100: #15803D;
+  --color-sage-200: #16A34A;
+  --color-sage-300: #4ADE80;
+  --color-sage-400: #86EFAC;
+  --color-sage-500: #BBF7D0;
+  --color-sage-600: #D1FAE5;
+  --color-sage-700: #ECFDF5;
+  --color-sage-800: #F6FDF5;
+  --color-sage-900: #F6FDF5;
+
+  /* Background Colors for Dark Mode */
+  --color-bg-primary: #1A1A1A;
+  --color-bg-secondary: #2D2D2D;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #B0B0B0;
+  --color-border: #3F3F3F;
+  --color-input-bg: #2D2D2D;
+  --color-header-bg: #1F1F1F;
+  --color-header-border: #3F3F3F;
 }
 
 /* Only keep fundamental resets here */
@@ -143,38 +226,46 @@ html, body, #root {
 html {
   -webkit-tap-highlight-color: rgba(37, 99, 235, 0.18);
   font-family: var(--font-geist);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body {
   text-rendering: optimizeLegibility;
-  color: var(--color-neutral-600);
-  background-color: var(--color-neutral-50);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Semantic Component Utility Classes */
 @layer components {
   .text-h1 {
-    @apply text-h1 font-poppins font-black leading-tight text-neutral-900;
+    @apply text-h1 font-poppins font-black leading-tight;
+    color: var(--color-text-primary);
   }
 
   .text-h2 {
-    @apply text-h2 font-poppins font-extrabold leading-tight text-neutral-900;
+    @apply text-h2 font-poppins font-extrabold leading-tight;
+    color: var(--color-text-primary);
   }
 
   .text-h3 {
-    @apply text-h3 font-poppins font-bold leading-tight text-neutral-900;
+    @apply text-h3 font-poppins font-bold leading-tight;
+    color: var(--color-text-primary);
   }
 
   .text-body {
-    @apply text-body font-geist leading-normal text-neutral-600;
+    @apply text-body font-geist leading-normal;
+    color: var(--color-text-secondary);
   }
 
   .text-label {
-    @apply text-label font-medium uppercase tracking-wide text-neutral-900;
+    @apply text-label font-medium uppercase tracking-wide;
+    color: var(--color-text-primary);
   }
 
   .text-small {
-    @apply text-small font-geist text-neutral-600;
+    @apply text-small font-geist;
+    color: var(--color-text-secondary);
   }
 
   /* Button Base Styles - Touch-friendly minimum height */
@@ -183,16 +274,23 @@ body {
   }
 
   .btn-primary {
-    @apply btn-base bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-900 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+    @apply btn-base text-white hover:opacity-90 active:opacity-75 focus:ring-2 focus:ring-offset-1 focus:outline-none;
+    background-color: var(--color-primary-600);
+    border-color: var(--color-primary-600);
   }
 
   .btn-secondary {
-    @apply btn-base bg-neutral-100 text-neutral-900 hover:bg-neutral-200 active:bg-neutral-300 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+    @apply btn-base hover:opacity-90 active:opacity-75 focus:ring-2 focus:ring-offset-1 focus:outline-none;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
   }
 
   /* Card Base Styles */
   .card-base {
-    @apply bg-white rounded-lg shadow-sm border border-neutral-200;
+    @apply rounded-lg shadow-sm;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
   }
 
   /* Focus Indicator */
@@ -280,19 +378,24 @@ body {
 
 /* Progress Bar Styles */
 .progress-shell {
-  @apply flex flex-col gap-2 px-4 py-3 border-b border-neutral-200 bg-white shadow-sm;
+  @apply flex flex-col gap-2 px-4 py-3 border-b shadow-sm;
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
 }
 
 .progress-meta {
-  @apply flex items-center justify-between text-xs font-bold text-neutral-600 uppercase tracking-wide;
+  @apply flex items-center justify-between text-xs font-bold uppercase tracking-wide;
+  color: var(--color-text-secondary);
 }
 
 .progress-track {
-  @apply h-2 w-full overflow-hidden rounded-full bg-neutral-200;
+  @apply h-2 w-full overflow-hidden rounded-full;
+  background-color: var(--color-border);
 }
 
 .progress-fill {
-  @apply h-full bg-gradient-to-r from-primary-400 to-primary-600 transition-all duration-300 ease-out;
+  @apply h-full transition-all duration-300 ease-out;
+  background: linear-gradient(to right, var(--color-primary-400), var(--color-primary-600));
 }
 
 /* Landscape orientation optimization */

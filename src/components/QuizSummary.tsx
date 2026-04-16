@@ -99,8 +99,8 @@ export function QuizSummary({
   }, [questions, outcomesByQuestionId, reviewFilter]);
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-hidden bg-neutral-50">
-      <div className="shrink-0 border-b border-neutral-200 bg-white px-4 py-6 shadow-sm md:py-7">
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <div className="shrink-0 px-4 py-6 shadow-sm md:py-7 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-secondary)', borderColor: 'var(--color-border)', borderBottomWidth: '1px' }}>
         <div className="mx-auto max-w-3xl">
           <span
             className={`inline-flex rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${
@@ -109,14 +109,14 @@ export function QuizSummary({
           >
             {mode === 'exam' ? 'Resultado del examen' : 'Resultado final'}
           </span>
-          <h1 className="mt-3 text-2xl font-black tracking-tight text-neutral-900 md:text-3xl">
+          <h1 className="mt-3 text-2xl font-black tracking-tight md:text-3xl transition-colors duration-200" style={{ color: 'var(--color-text-primary)' }}>
             {title}
           </h1>
-          <p className="mt-1 text-sm text-neutral-500">{subtitle}</p>
+          <p className="mt-1 text-sm transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>{subtitle}</p>
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6">
+      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
           {/* Results Card */}
           <section
