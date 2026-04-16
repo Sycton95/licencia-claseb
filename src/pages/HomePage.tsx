@@ -53,12 +53,12 @@ export function HomePage() {
               <div className="flex flex-col items-center justify-between w-max max-w-full">
                 {/* Top Stripped Lines */}
                 <div className="flex flex-row items-center w-full gap-2">
-                  {[...Array(8)].map((_, i) => (
+                  {[...Array(6)].map((_, i) => (
                     <div
                       key={i}
                       className="bg-slate-900 rounded-none transition-colors duration-300"
                       style={{
-                        height: '4px',
+                        height: '10px',
                         flex: '1 1 12%',
                       }}
                     />
@@ -79,18 +79,18 @@ export function HomePage() {
                 {/* Bottom Yellow Line */}
                 <div
                   className="bg-yellow-400 w-full rounded-none"
-                  style={{ height: '6px' }}
+                  style={{ height: '10px' }}
                 />
               </div>
 
               {/* Right Column (Crosswalk) */}
-              <div className="flex flex-col justify-between ml-4 sm:ml-6 md:ml-8 shrink-0" style={{ width: '20px' }}>
-                {[...Array(8)].map((_, i) => (
+              <div className="flex flex-col justify-between ml-4 sm:ml-6 md:ml-8 shrink-0" style={{ width: '120px' }}>
+                {[...Array(4)].map((_, i) => (
                   <div
                     key={i}
                     className="bg-slate-900 rounded-none transition-colors duration-300"
                     style={{
-                      height: '4px',
+                      height: '20px',
                       width: '100%',
                     }}
                   />
