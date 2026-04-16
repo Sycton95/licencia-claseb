@@ -19,7 +19,7 @@ export function AppLayout() {
         Saltar al contenido
       </a>
       <header className="z-40 h-14 shrink-0 shadow-sm backdrop-blur-md md:h-16 landscape:h-12 transition-colors duration-200" style={{ borderColor: 'var(--color-header-border)', backgroundColor: 'var(--color-header-bg)', borderBottomWidth: '1px' }}>
-        <div className="mx-auto flex h-full max-w-5xl items-center justify-between px-4">
+        <div className="mx-auto flex h-full w-full max-w-5xl items-center justify-between px-4">
           <NavLink
             to="/"
             className="flex items-center justify-center transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
@@ -29,7 +29,7 @@ export function AppLayout() {
             </span>
           </NavLink>
 
-          <nav className="hidden md:flex md:space-x-1 items-center">
+          <nav className="hidden md:flex md:space-x-1 items-center flex-1 ml-6">
             {links.map((link) => (
               <NavLink
                 key={link.to}
@@ -50,32 +50,33 @@ export function AppLayout() {
                 {link.label}
               </NavLink>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="ml-2 rounded-xl p-2 transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2 hover:opacity-80"
-              style={{ backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-primary)' }}
-              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-              title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            >
-              {theme === 'light' ? (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-              ) : (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="5"></circle>
-                  <line x1="12" y1="1" x2="12" y2="3"></line>
-                  <line x1="12" y1="21" x2="12" y2="23"></line>
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                  <line x1="1" y1="12" x2="3" y2="12"></line>
-                  <line x1="21" y1="12" x2="23" y2="12"></line>
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-              )}
-            </button>
           </nav>
+
+          <button
+            onClick={toggleTheme}
+            className="rounded-xl p-2 transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2 hover:opacity-80 ml-auto md:ml-2"
+            style={{ backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-primary)' }}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            )}
+          </button>
         </div>
       </header>
 
