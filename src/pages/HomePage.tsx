@@ -1,9 +1,12 @@
 // src/pages/HomePage.tsx
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
 import { LoadingSpinner } from '../components/LoadingSpinner';
 import { ErrorAlert } from '../components/ErrorAlert';
 import { ScalableHeader } from '../components/ScalableHeader';
+
+const MotionLink = motion.create(Link);
 
 const ArrowRightIcon = () => (
   <svg
@@ -54,12 +57,15 @@ export function HomePage() {
           <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col mt-8 md:mt-12 px-2 md:px-0">
 
             {/* Cards Container */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 w-full justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 w-full justify-center landscape:flex-row">
 
               {/* Práctica Libre Card */}
-              <Link
+              <MotionLink
                 to="/practice"
-                className="group relative flex flex-1 min-h-[12rem] sm:min-h-[14rem] md:min-h-[15rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#244ba6] p-5 md:p-8 text-white shadow-[0_0_0_4px_#244ba6] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_0_4px_#244ba6,0_15px_30px_-5px_rgba(36,75,166,0.4)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 focus-visible:ring-offset-2"
+                className="group relative flex flex-1 min-h-[12rem] sm:min-h-[14rem] md:min-h-[15rem] landscape:min-h-[10rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#244ba6] dark:bg-indigo-800 p-5 md:p-8 text-white shadow-[0_0_0_4px_#244ba6] dark:shadow-[0_0_0_4px_#3730a3] hover:shadow-[0_0_0_4px_#244ba6,0_15px_30px_-5px_rgba(36,75,166,0.4)] dark:hover:shadow-[0_0_0_4px_#3730a3,0_15px_30px_-5px_rgba(55,48,163,0.4)] focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 focus-visible:ring-offset-2"
+                whileHover={{ y: -8, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25, mass: 0.8 }}
               >
                 <div className="relative z-10">
                   <span className="inline-block bg-white px-3 py-1.5 text-xs font-black uppercase tracking-widest text-[#244ba6] rounded-md shadow-sm">
@@ -86,12 +92,15 @@ export function HomePage() {
                     <ArrowRightIcon />
                   </div>
                 </div>
-              </Link>
+              </MotionLink>
 
               {/* Simulador Oficial Card */}
-              <Link
+              <MotionLink
                 to="/exam"
-                className="group relative flex flex-1 min-h-[12rem] sm:min-h-[14rem] md:min-h-[15rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#00aa89] p-5 md:p-8 text-white shadow-[0_0_0_4px_#00aa89] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_0_4px_#00aa89,0_15px_30px_-5px_rgba(0,170,137,0.4)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 focus-visible:ring-offset-2"
+                className="group relative flex flex-1 min-h-[12rem] sm:min-h-[14rem] md:min-h-[15rem] landscape:min-h-[10rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#00aa89] dark:bg-emerald-800 p-5 md:p-8 text-white shadow-[0_0_0_4px_#00aa89] dark:shadow-[0_0_0_4px_#065f46] hover:shadow-[0_0_0_4px_#00aa89,0_15px_30px_-5px_rgba(0,170,137,0.4)] dark:hover:shadow-[0_0_0_4px_#065f46,0_15px_30px_-5px_rgba(6,95,70,0.4)] focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 focus-visible:ring-offset-2"
+                whileHover={{ y: -8, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25, mass: 0.8 }}
               >
                 <div className="relative z-10">
                   <span className="inline-block bg-white px-3 py-1.5 text-xs font-black uppercase tracking-widest text-[#00aa89] rounded-md shadow-sm">
@@ -118,7 +127,7 @@ export function HomePage() {
                     <ArrowRightIcon />
                   </div>
                 </div>
-              </Link>
+              </MotionLink>
 
             </div>
           </div>
