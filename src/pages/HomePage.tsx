@@ -6,12 +6,12 @@ import { PracticeIcon, ExamIcon } from '../components/icons';
 
 const ArrowRightIcon = () => (
   <svg
-    width="18"
-    height="18"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2.4"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
@@ -33,80 +33,137 @@ export function HomePage() {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-neutral-50">
-      <section className="relative flex min-h-full flex-1 items-center overflow-hidden bg-neutral-900 px-3 py-6 text-white sm:px-6 md:py-12 landscape:py-3">
+      <section className="relative flex w-full flex-col items-center overflow-x-hidden px-4 py-12 md:py-20 min-h-full bg-white">
+        {/* Background Pattern */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 pointer-events-none opacity-[0.05]"
           style={{
-            backgroundImage: `radial-gradient(var(--color-primary-600) 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(#4f46e5 1px, transparent 1px)`,
             backgroundSize: '28px 28px',
           }}
         />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary-500/20 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-indigo-500/10 to-transparent pointer-events-none" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col justify-center gap-4 py-2 md:gap-8 md:py-4 lg:flex-row lg:items-center lg:gap-12 landscape:gap-3 landscape:py-1">
-          <div className="max-w-xl">
-            <h1 className="text-2xl font-black tracking-tight text-white sm:text-3xl md:text-5xl lg:text-6xl landscape:text-xl">
-              Clase B,
-              <br className="md:hidden landscape:hidden" />
-              <span className="text-primary-400"> modo estudio.</span>
-            </h1>
-            <p className="mt-1.5 max-w-md text-[12px] leading-4 text-neutral-300 sm:text-sm md:mt-4 md:text-base md:leading-7 landscape:mt-1 landscape:text-xs landscape:leading-3">
-              Practica o simula el examen completo. Interfaz ligera y táctil.
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-12">
+          {/* Asfalto Header (Intersection) */}
+          <div className="max-w-2xl text-center md:text-left pt-6 flex flex-col items-center md:items-start mx-auto md:mx-0 w-full overflow-hidden">
+            <div className="flex flex-row items-stretch mx-auto md:mx-0 w-max max-w-full">
+              {/* Left Column (Lines & Text) */}
+              <div className="flex flex-col items-center justify-between w-max max-w-full">
+                {/* Top Stripped Lines */}
+                <div className="flex flex-row items-center w-full gap-2">
+                  {[...Array(8)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="bg-slate-900 rounded-none transition-colors duration-300"
+                      style={{
+                        height: '4px',
+                        flex: '1 1 12%',
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Text */}
+                <h1
+                  className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter leading-none text-slate-900 drop-shadow-sm"
+                  style={{
+                    marginTop: '24px',
+                    marginBottom: '24px',
+                  }}
+                >
+                  CLASE-B.CL
+                </h1>
+
+                {/* Bottom Yellow Line */}
+                <div
+                  className="bg-yellow-400 w-full rounded-none"
+                  style={{ height: '6px' }}
+                />
+              </div>
+
+              {/* Right Column (Crosswalk) */}
+              <div className="flex flex-col justify-between ml-4 sm:ml-6 md:ml-8 shrink-0" style={{ width: '20px' }}>
+                {[...Array(8)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="bg-slate-900 rounded-none transition-colors duration-300"
+                    style={{
+                      height: '4px',
+                      width: '100%',
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-8 text-lg md:text-2xl font-bold whitespace-nowrap leading-relaxed mx-auto md:mx-0 px-4 md:px-0 text-slate-600">
+              Practica y Aprende. Tu licencia te espera!
             </p>
-            {catalog?.activeEdition?.title && (
-              <p className="mt-2.5 text-[9px] font-black uppercase tracking-[0.2em] text-neutral-500 md:mt-5 md:text-[11px] landscape:mt-1.5 landscape:text-[8px]">
-                {catalog.activeEdition.title}
-              </p>
-            )}
           </div>
 
-          <div className="grid w-full max-w-2xl gap-3 grid-cols-1 md:gap-4 md:grid-cols-1 landscape:grid-cols-2 landscape:gap-2">
+          {/* Cards Container */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full justify-center">
+            {/* Práctica Libre Card */}
             <Link
               to="/practice"
-              className="group flex min-h-[7rem] flex-col justify-between rounded-[28px] border border-primary-300/30 bg-white/95 p-3 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-primary-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2 md:min-h-[14rem] md:p-6 landscape:min-h-[10rem] landscape:p-3"
+              className="group relative overflow-hidden flex flex-1 min-h-[16rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#244ba6] p-6 md:p-8 text-white shadow-[0_0_0_4px_#244ba6] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_0_4px_#244ba6,0_15px_30px_-5px_rgba(36,75,166,0.4)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 focus-visible:ring-offset-2"
             >
-              <div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 md:h-12 md:w-12">
-                  <PracticeIcon size={16} />
-                </div>
-                <h2 className="mt-1.5 text-lg font-black tracking-tight md:mt-4 md:text-2xl landscape:mt-1 landscape:text-base">Práctica</h2>
-                <p className="mt-0.5 text-[11px] leading-4 text-neutral-600 md:mt-2 md:text-sm md:leading-6 landscape:mt-0.5 landscape:text-[10px] landscape:leading-3">
+              <div className="relative z-10">
+                <span className="inline-block bg-white px-3 py-1.5 text-xs font-black uppercase tracking-widest text-[#244ba6] rounded-md shadow-sm">
+                  5-35 MIN
+                </span>
+
+                <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tighter leading-none text-white uppercase">
+                  Práctica
+                  <br />
+                  Libre
+                </h2>
+
+                <p className="mt-3 text-sm md:text-base font-bold text-white/90 max-w-[85%]">
                   Personaliza tu aprendizaje. Elige capítulos y cantidad.
                 </p>
               </div>
-              <div className="space-y-1 md:space-y-3 landscape:space-y-1.5">
-                <div className="flex items-center justify-between gap-1.5 rounded-lg bg-primary-50 px-2 py-1 md:gap-3 md:px-3 md:py-2 landscape:gap-2 landscape:px-2 landscape:py-1">
-                  <span className="text-[9px] font-bold uppercase tracking-wide text-primary-700 md:text-xs landscape:text-[9px]">Tiempo</span>
-                  <span className="text-[10px] font-black text-primary-900 md:text-sm landscape:text-xs">5-35 min</span>
-                </div>
-                <div className="flex items-center gap-2 text-[10px] font-black text-primary-600 group-hover:gap-3 transition-all md:text-sm landscape:text-xs">
+
+              <div className="relative z-10 mt-8 flex items-center justify-between w-full">
+                <span className="font-black uppercase tracking-widest text-sm text-white/90 group-hover:text-white transition-colors">
                   Iniciar
+                </span>
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/50 bg-transparent transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#244ba6]">
                   <ArrowRightIcon />
                 </div>
               </div>
             </Link>
 
+            {/* Simulador Oficial Card */}
             <Link
               to="/exam"
-              className="group flex min-h-[7rem] flex-col justify-between rounded-[28px] border border-sage-300/30 bg-white/95 p-3 text-neutral-900 shadow-lg shadow-neutral-950/10 transition-all hover:-translate-y-1 hover:border-sage-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sage-200 focus-visible:ring-offset-2 md:min-h-[14rem] md:p-6 landscape:min-h-[10rem] landscape:p-3"
+              className="group relative overflow-hidden flex flex-1 min-h-[16rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#00aa89] p-6 md:p-8 text-white shadow-[0_0_0_4px_#00aa89] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_0_4px_#00aa89,0_15px_30px_-5px_rgba(0,170,137,0.4)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 focus-visible:ring-offset-2"
             >
-              <div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-sage-100 text-sage-600 md:h-12 md:w-12">
-                  <ExamIcon size={16} />
-                </div>
-                <h2 className="mt-1.5 text-lg font-black tracking-tight md:mt-4 md:text-2xl landscape:mt-1 landscape:text-base">Simulador</h2>
-                <p className="mt-0.5 text-[11px] leading-4 text-neutral-600 md:mt-2 md:text-sm md:leading-6 landscape:mt-0.5 landscape:text-[10px] landscape:leading-3">
-                  35 preguntas. Aprobación: 33/38. Timer.
+              <div className="relative z-10">
+                <span className="inline-block bg-white px-3 py-1.5 text-xs font-black uppercase tracking-widest text-[#00aa89] rounded-md shadow-sm">
+                  ~40 MIN
+                </span>
+
+                <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tighter leading-none text-white uppercase">
+                  Simulador
+                  <br />
+                  Oficial
+                </h2>
+
+                <p className="mt-3 text-sm md:text-base font-bold text-white/90 max-w-[85%]">
+                  35 preguntas. Aprobación: 33/38. Reglas oficiales.
                 </p>
               </div>
-              <div className="space-y-1 md:space-y-3 landscape:space-y-1.5">
-                <div className="flex items-center justify-between gap-1.5 rounded-lg bg-sage-50 px-2 py-1 md:gap-3 md:px-3 md:py-2 landscape:gap-2 landscape:px-2 landscape:py-1">
-                  <span className="text-[9px] font-bold uppercase tracking-wide text-sage-700 md:text-xs landscape:text-[9px]">Tiempo</span>
-                  <span className="text-[10px] font-black text-sage-900 md:text-sm landscape:text-xs">~40 min</span>
-                </div>
-                <div className="flex items-center gap-2 text-[10px] font-black text-sage-600 group-hover:gap-3 transition-all md:text-sm landscape:text-xs">
+
+              <div className="relative z-10 mt-8 flex items-center justify-between w-full">
+                <span className="font-black uppercase tracking-widest text-sm text-white/90 group-hover:text-white transition-colors">
                   Iniciar
+                </span>
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/50 bg-transparent transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#00aa89]">
                   <ArrowRightIcon />
                 </div>
               </div>
