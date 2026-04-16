@@ -36,10 +36,10 @@ export function HomePage() {
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-neutral-50">
       <ScalableHeader isDarkMode={false} />
 
-      <section className="relative flex w-full flex-col items-center overflow-x-hidden px-4 py-[0.15em] sm:py-[0.2em] md:py-[0.25em] lg:py-[0.3em] bg-white">
+      <section className="relative flex w-full flex-col items-center overflow-x-hidden px-4 py-[0.3em] sm:py-[0.4em] md:py-[0.5em] lg:py-[0.6em] bg-white">
         <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-[0.2em]">
           {/* Cards Container */}
-          <div className="flex flex-col sm:flex-row gap-[0.15em] sm:gap-[0.2em] w-full justify-center">
+          <div className="flex flex-col sm:flex-row gap-[0.25em] sm:gap-[0.35em] w-full justify-center">
             {/* Práctica Libre Card */}
             <Link
               to="/practice"

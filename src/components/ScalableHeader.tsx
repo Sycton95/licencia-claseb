@@ -25,9 +25,11 @@ export function ScalableHeader({
   return (
     <section
       className={`
-        relative flex w-full flex-col items-center overflow-x-hidden px-4
+        relative flex w-full flex-col items-center px-4
         text-[24px] sm:text-[32px] md:text-[64px] lg:text-[96px] landscape:text-[32px]
         py-[0.3em] sm:py-[0.35em] md:py-[0.4em] lg:py-[0.5em]
+        sticky top-0 z-50 sm:static sm:z-auto
+        overflow-y-hidden overflow-x-visible
         ${isDarkMode ? 'bg-slate-900' : 'bg-white'}
       `}
     >
@@ -48,12 +50,12 @@ export function ScalableHeader({
         }`}
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-[0.5em]">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-[0.5em] px-2 md:px-0">
         {/* Asfalto Header (Intersection) */}
         <div
           className={`
-            max-w-2xl text-center md:text-left flex flex-col items-center md:items-start
-            mx-auto md:mx-0 w-full overflow-hidden
+            max-w-full md:max-w-2xl lg:max-w-4xl text-center md:text-left flex flex-col items-center md:items-start
+            mx-auto md:mx-0 w-full
           `}
           style={{ paddingTop: '0.2em' }}
         >
