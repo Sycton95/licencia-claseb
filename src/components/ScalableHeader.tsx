@@ -52,8 +52,7 @@ export function ScalableHeader({
         {/* Asfalto Header (Intersection) */}
         <div
           className={`
-            max-w-2xl text-center md:text-left flex flex-col items-center md:items-start
-            mx-auto md:mx-0 w-full overflow-hidden
+            text-center md:text-left flex flex-col items-center md:items-start mx-auto md:mx-0 w-full overflow-hidden
           `}
           style={{ paddingTop: '0.2em' }}
         >
