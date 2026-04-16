@@ -1,138 +1,111 @@
-interface ScalableHeaderProps {
-  // Em-based proportions (defaults based on 96px design)
-  emYellowThickness?: string;    // default: '0.104em' (10px / 96px)
-  emDashThickness?: string;      // default: '0.104em' (10px / 96px)
-  emDashMargin?: string;         // default: '0.146em' (14px / 96px)
-  emCwWidth?: string;            // default: '1.26em' (121px / 96px)
-  emCwStripeThickness?: string;  // default: '0.219em' (21px / 96px)
-  emRightMargin?: string;        // default: '0.333em' (32px / 96px)
-  dashCount?: number;            // default: 8
-  cwCount?: number;              // default: 8
-  isDarkMode?: boolean;          // default: false
-}
+import { Link } from 'react-router-dom';
+import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { ErrorAlert } from '../components/ErrorAlert';
+import { PracticeIcon, ExamIcon } from '../components/icons';
+import { ScalableHeader } from '../components/ScalableHeader';
 
-export function ScalableHeader({
-  emYellowThickness = '0.104em',
-  emDashThickness = '0.104em',
-  emDashMargin = '0.146em',
-  emCwWidth = '1.26em',
-  emCwStripeThickness = '0.219em',
-  emRightMargin = '0.333em',
-  dashCount = 6,
-  cwCount = 4,
-  isDarkMode = false,
-}: ScalableHeaderProps) {
+const ArrowRightIcon = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <polyline points="12 5 19 12 12 19" />
+  </svg>
+);
+
+export function HomePage() {
+  const { catalog, error, isLoading } = usePublishedCatalog('No se pudo cargar el catálogo público.');
+
+  if (isLoading) {
+    return <LoadingSpinner message="Cargando catálogo..." />;
+  }
+
+  if (error) {
+    return <ErrorAlert message={error} />;
+  }
+
   return (
-    <section
-      className={`
-        relative flex w-full flex-col items-center overflow-x-hidden px-4
-        text-[24px] sm:text-[32px] md:text-[64px] lg:text-[96px] landscape:text-[32px]
-        py-[0.3em] sm:py-[0.35em] md:py-[0.4em] lg:py-[0.5em]
-        min-h-full ${isDarkMode ? 'bg-slate-900' : 'bg-white'}
-      `}
-    >
-      {/* Background Pattern */}
-      <div
-        aria-hidden="true"
-        className={`absolute inset-0 pointer-events-none ${
-          isDarkMode ? 'opacity-20' : 'opacity-[0.05]'
-        }`}
-        style={{
-          backgroundImage: `radial-gradient(${isDarkMode ? '#ffffff' : '#4f46e5'} 1px, transparent 1px)`,
-          backgroundSize: '28px 28px',
-        }}
-      />
-      <div
-        className={`absolute inset-x-0 top-0 h-40 bg-gradient-to-b to-transparent pointer-events-none ${
-          isDarkMode ? 'from-indigo-500/20' : 'from-indigo-500/10'
-        }`}
-      />
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-neutral-50">
+      <ScalableHeader isDarkMode={false} />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-[0.5em]">
-        {/* Asfalto Header (Intersection) */}
-        <div
-          className={`
-            max-w-2xl text-center md:text-left flex flex-col items-center md:items-start
-            mx-auto md:mx-0 w-full overflow-hidden
-          `}
-          style={{ paddingTop: '0.2em' }}
-        >
-          <div className="flex flex-row items-stretch mx-auto md:mx-0 w-max max-w-full">
-            {/* Left Column (Lines & Text) */}
-            <div className="flex flex-col items-center justify-between w-max max-w-full">
-              {/* Top Stripped Lines */}
-              <div className="flex flex-row items-center w-full" style={{ gap: '0.073em' }}>
-                {[...Array(dashCount)].map((_, i) => (
-                  <div
-                    key={i}
-                    className={`rounded-none transition-colors duration-300 ${
-                      isDarkMode ? 'bg-white' : 'bg-slate-900'
-                    }`}
-                    style={{
-                      height: emDashThickness,
-                      flex: `1 1 ${100 / dashCount}%`,
-                    }}
-                  />
-                ))}
+      <section className="relative flex w-full flex-col items-center overflow-x-hidden px-4 py-[0.3em] sm:py-[0.35em] md:py-[0.4em] lg:py-[0.5em] min-h-full bg-white">
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-[0.5em]">
+          {/* Cards Container */}
+          <div className="flex flex-col md:flex-row gap-[0.25em] md:gap-[0.3em] w-full justify-center">
+            {/* Práctica Libre Card */}
+            <Link
+              to="/practice"
+              className="group relative overflow-hidden flex flex-1 min-h-[16rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#244ba6] p-6 md:p-8 text-white shadow-[0_0_0_4px_#244ba6] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_0_4px_#244ba6,0_15px_30px_-5px_rgba(36,75,166,0.4)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 focus-visible:ring-offset-2"
+            >
+              <div className="relative z-10">
+                <span className="inline-block bg-white px-3 py-1.5 text-xs font-black uppercase tracking-widest text-[#244ba6] rounded-md shadow-sm">
+                  5-35 MIN
+                </span>
+
+                <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tighter leading-none text-white uppercase">
+                  Práctica
+                  <br />
+                  Libre
+                </h2>
+
+                <p className="mt-3 text-sm md:text-base font-bold text-white/90 max-w-[85%]">
+                  Personaliza tu aprendizaje. Elige capítulos y cantidad.
+                </p>
               </div>
 
-              {/* Text */}
-              <h1
-                className={`
-                  text-[4em] font-black tracking-tighter leading-none
-                  drop-shadow-sm ${isDarkMode ? 'text-white drop-shadow-md' : 'text-slate-900'}
-                `}
-                style={{
-                  marginTop: emDashMargin,
-                  marginBottom: emDashMargin,
-                }}
-              >
-                CLASE-B.CL
-              </h1>
+              <div className="relative z-10 mt-8 flex items-center justify-between w-full">
+                <span className="font-black uppercase tracking-widest text-sm text-white/90 group-hover:text-white transition-colors">
+                  Iniciar
+                </span>
 
-              {/* Bottom Yellow Line */}
-              <div
-                className="bg-yellow-400 w-full rounded-none"
-                style={{ height: emYellowThickness }}
-              />
-            </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/50 bg-transparent transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#244ba6]">
+                  <ArrowRightIcon />
+                </div>
+              </div>
+            </Link>
 
-            {/* Right Column (Crosswalk) */}
-            <div
-              className="flex flex-col justify-between shrink-0"
-              style={{
-                marginLeft: emRightMargin,
-                width: emCwWidth,
-              }}
+            {/* Simulador Oficial Card */}
+            <Link
+              to="/exam"
+              className="group relative overflow-hidden flex flex-1 min-h-[16rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#00aa89] p-6 md:p-8 text-white shadow-[0_0_0_4px_#00aa89] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_0_4px_#00aa89,0_15px_30px_-5px_rgba(0,170,137,0.4)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 focus-visible:ring-offset-2"
             >
-              {[...Array(cwCount)].map((_, i) => (
-                <div
-                  key={i}
-                  className={`rounded-none transition-colors duration-300 ${
-                    isDarkMode ? 'bg-white' : 'bg-slate-900'
-                  }`}
-                  style={{
-                    height: emCwStripeThickness,
-                    width: '100%',
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+              <div className="relative z-10">
+                <span className="inline-block bg-white px-3 py-1.5 text-xs font-black uppercase tracking-widest text-[#00aa89] rounded-md shadow-sm">
+                  ~40 MIN
+                </span>
 
-          {/* Tagline / Subtitle */}
-          <p
-            className={`
-              font-bold whitespace-nowrap leading-relaxed mx-auto md:mx-0 px-4 md:px-0
-              text-[0.5em] md:text-[0.65em]
-              ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}
-            `}
-            style={{ marginTop: '0.3em' }}
-          >
-            Practica y Aprende. Tu licencia te espera!
-          </p>
+                <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tighter leading-none text-white uppercase">
+                  Simulador
+                  <br />
+                  Oficial
+                </h2>
+
+                <p className="mt-3 text-sm md:text-base font-bold text-white/90 max-w-[85%]">
+                  35 preguntas. Aprobación: 33/38. Reglas oficiales.
+                </p>
+              </div>
+
+              <div className="relative z-10 mt-8 flex items-center justify-between w-full">
+                <span className="font-black uppercase tracking-widest text-sm text-white/90 group-hover:text-white transition-colors">
+                  Iniciar
+                </span>
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/50 bg-transparent transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#00aa89]">
+                  <ArrowRightIcon />
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
