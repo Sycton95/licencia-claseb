@@ -18,8 +18,8 @@ export function ScalableHeader({
   emCwWidth = '1.26em',
   emCwStripeThickness = '0.219em',
   emRightMargin = '0.333em',
-  dashCount = 8,
-  cwCount = 8,
+  dashCount = 6,
+  cwCount = 4,
   isDarkMode = false,
 }: ScalableHeaderProps) {
   return (
