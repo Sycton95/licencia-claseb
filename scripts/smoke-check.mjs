@@ -1,4 +1,5 @@
 const baseUrl = process.env.RELEASE_CHECK_BASE_URL || 'https://licencia-claseb.vercel.app';
+const base = new URL(baseUrl);
 const schemaArg = process.argv.find((argument) => argument.startsWith('--require-schema='));
 const requiredSchema =
   schemaArg?.split('=')[1]?.trim() || process.env.RELEASE_REQUIRED_SCHEMA?.trim();
@@ -8,7 +9,11 @@ async function main() {
   const failures = [];
 
   for (const route of routes) {
-    const url = new URL(route, baseUrl).toString();
+    const urlObject = new URL(route, `${base.origin}/`);
+    for (const [key, value] of base.searchParams.entries()) {
+      urlObject.searchParams.set(key, value);
+    }
+    const url = urlObject.toString();
 
     try {
       const response = await fetch(url, {
