@@ -103,39 +103,40 @@ export function PracticePage() {
   }
 
   return (
-    <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden bg-slate-50">
-      <div className="shrink-0 border-b border-slate-200 bg-white px-4 py-3 shadow-sm md:py-4">
+    <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <div className="shrink-0 shadow-sm md:py-4 transition-colors duration-200 px-4 py-3" style={{ backgroundColor: 'var(--color-bg-secondary)', borderColor: 'var(--color-border)', borderBottomWidth: '1px' }}>
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
           <button
             onClick={() => navigate('/')}
-            className="rounded-xl px-2 py-1 text-xs font-bold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200"
+            aria-label="Volver a la página principal"
+            className="rounded-xl px-2 py-1 text-xs font-bold text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
             type="button"
           >
             Volver
           </button>
-          <span className="inline-flex rounded-full bg-indigo-50 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-indigo-600">
+          <span className="inline-flex rounded-full bg-primary-50 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-primary-600">
             Práctica
           </span>
           <div className="w-12" aria-hidden="true" />
         </div>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3 md:px-6 md:py-4">
+      <div className="min-h-0 flex-1 overflow-y-auto px-3 py-2 md:px-6 md:py-4">
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-4">
           {isLoading && (
-            <div className="rounded-3xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-500 shadow-sm">
+            <div className="rounded-3xl px-5 py-4 text-sm font-semibold shadow-sm transition-colors duration-200" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-secondary)', borderWidth: '1px' }}>
               Cargando práctica disponible…
             </div>
           )}
 
           {error && (
-            <div className="rounded-3xl border border-rose-200 bg-rose-50 px-5 py-4 text-sm font-semibold text-rose-700 shadow-sm">
+            <div className="rounded-3xl px-5 py-4 text-sm font-semibold text-warning-700 shadow-sm transition-colors duration-200" style={{ borderColor: 'var(--color-warning-200)', backgroundColor: 'var(--color-warning-50)', borderWidth: '1px' }}>
               {error}
             </div>
           )}
 
-          <section className="rounded-[28px] border border-slate-200 bg-white p-4 shadow-sm md:p-5">
-            <div className="overflow-hidden rounded-3xl border border-slate-200">
+          <section className="rounded-[28px] p-4 shadow-sm md:p-5 transition-colors duration-200" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg-secondary)', borderWidth: '1px' }}>
+            <div className="overflow-hidden rounded-3xl transition-colors duration-200" style={{ borderColor: 'var(--color-border)', borderWidth: '1px' }}>
               {chapterCards.map((chapter) => {
                 const isSelected = selectedChapterIds.includes(chapter.id);
                 const isDisabled = chapter.questionCount === 0;
@@ -143,27 +144,27 @@ export function PracticePage() {
                 return (
                   <label
                     key={chapter.id}
-                    className={`flex cursor-pointer items-center gap-4 border-b border-slate-100 px-4 py-3.5 last:border-b-0 ${
-                      isSelected ? 'bg-indigo-50/70' : 'bg-white hover:bg-slate-50'
-                    } ${isDisabled ? 'cursor-not-allowed opacity-60' : ''}`}
+                    className={`flex min-h-[60px] cursor-pointer items-center gap-4 px-4 py-4 last:border-b-0 transition-colors ${isDisabled ? 'cursor-not-allowed opacity-60' : ''}`}
+                    style={{ backgroundColor: isSelected ? 'var(--color-primary-50)' : 'var(--color-bg-secondary)', borderColor: 'var(--color-border)', borderBottomWidth: chapter !== chapterCards[chapterCards.length - 1] ? '1px' : '0' }}
                   >
                     <input
                       type="checkbox"
                       checked={isSelected}
                       disabled={isDisabled}
                       onChange={() => toggleChapter(chapter.id)}
-                      className="h-5 w-5 shrink-0 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                      aria-label={`${chapter.title}. ${chapter.description}${isDisabled ? ' (No disponible)' : ''}`}
+                      className="h-6 w-6 shrink-0 rounded border-neutral-300 text-primary-600 focus:ring-primary-500 transition-transform"
                     />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-3">
-                        <span className="truncate text-sm font-bold text-slate-900">
-                          {chapter.title}
-                        </span>
-                        <span className="shrink-0 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-500">
-                          {isDisabled ? 'Próximamente' : `${chapter.questionCount}`}
-                        </span>
-                      </div>
-                      <p className="mt-1 text-xs leading-5 text-slate-500">{chapter.description}</p>
+                        <span className="truncate text-sm font-bold transition-colors duration-200" style={{ color: 'var(--color-text-primary)' }}>
+                        {chapter.title}
+                      </span>
+                      <span className="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold transition-colors duration-200" style={{ backgroundColor: 'var(--color-border)', color: 'var(--color-text-secondary)' }}>
+                        {isDisabled ? 'Próximamente' : `${chapter.questionCount}`}
+                      </span>
+                    </div>
+                      <p className="mt-1 text-xs leading-5 transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>{chapter.description}</p>
                     </div>
                   </label>
                 );
@@ -171,14 +172,14 @@ export function PracticePage() {
             </div>
           </section>
 
-          <section className="rounded-[28px] border border-slate-200 bg-white p-4 shadow-sm md:p-5">
+          <section className="rounded-[28px] p-4 shadow-sm md:p-5 transition-colors duration-200" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg-secondary)', borderWidth: '1px' }}>
             <div className="mb-3">
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400">
+              <h2 className="text-xs font-black uppercase tracking-[0.2em] transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>
                 Cantidad de preguntas
               </h2>
             </div>
 
-            <div className="flex rounded-2xl border border-slate-200 bg-slate-200/70 p-1 shadow-inner">
+            <div className="flex gap-2 rounded-2xl p-1.5 shadow-inner md:gap-1 md:p-1 transition-colors duration-200" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-border)', borderWidth: '1px' }}>
               {[5, 10, 20, 35].map((amount) => {
                 const disabled = amount > availableQuestionCount || availableQuestionCount === 0;
 
@@ -191,13 +192,15 @@ export function PracticePage() {
                       disabled={disabled}
                       onChange={() => setQuestionCount(amount)}
                       className="peer sr-only"
+                      aria-label={`${amount} preguntas${disabled ? ' (No disponible)' : ''}`}
                     />
                     <div
-                      className={`rounded-xl py-2.5 text-center text-sm font-black transition-all ${
-                        disabled
-                          ? 'cursor-not-allowed text-slate-400'
-                          : 'text-slate-500 hover:text-slate-800 peer-checked:bg-white peer-checked:text-indigo-700 peer-checked:shadow-sm'
-                      }`}
+                      className="min-h-[44px] rounded-xl py-3 px-2 text-center text-sm font-black transition-all flex items-center justify-center"
+                      style={{
+                        color: disabled ? 'var(--color-text-secondary)' : 'var(--color-text-secondary)',
+                        backgroundColor: questionCount === amount && !disabled ? 'var(--color-bg-secondary)' : 'transparent',
+                        cursor: disabled ? 'not-allowed' : 'pointer'
+                      }}
                     >
                       {amount}
                     </div>
@@ -207,7 +210,7 @@ export function PracticePage() {
             </div>
 
             <label className="mt-4 block">
-              <span className="mb-2 block text-sm font-bold text-slate-700">Personalizado</span>
+              <span className="mb-3 block text-sm font-bold transition-colors duration-200" style={{ color: 'var(--color-text-primary)' }}>Personalizado</span>
               <input
                 type="number"
                 min={1}
@@ -221,17 +224,19 @@ export function PracticePage() {
                     ),
                   )
                 }
-                className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-base font-semibold text-slate-900 outline-none ring-0 transition focus:border-indigo-400 focus:bg-white"
+                aria-label={`Número personalizado de preguntas. Mínimo 1, máximo ${Math.max(1, availableQuestionCount)}`}
+                className="w-full min-h-[44px] rounded-2xl px-4 py-3 text-base font-semibold outline-none transition focus:ring-2 focus:ring-primary-200"
+                style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-primary)', borderWidth: '1px' }}
               />
             </label>
           </section>
         </div>
       </div>
 
-      <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-3">
+      <div className="shrink-0 px-4 py-3 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-secondary)', borderColor: 'var(--color-border)', borderTopWidth: '1px' }}>
         <div className="mx-auto max-w-3xl">
           <button
-            className="w-full rounded-2xl border-b-4 border-indigo-800 bg-indigo-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-indigo-700 hover:bg-indigo-500 active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4"
+            className="w-full rounded-2xl border-b-4 border-primary-800 bg-primary-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-primary-700 hover:bg-primary-500 active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 disabled:border-neutral-200 disabled:bg-neutral-100 disabled:text-neutral-400 disabled:active:translate-y-0 disabled:active:border-b-4"
             type="button"
             onClick={startPractice}
             disabled={isLoading || selectedChapterIds.length === 0 || availableQuestionCount === 0}

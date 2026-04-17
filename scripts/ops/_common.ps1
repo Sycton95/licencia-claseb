@@ -234,3 +234,46 @@ function Get-ShareUrlFromAlias {
 
   return $null
 }
+
+function Get-ShareLinkInfoFromAlias {
+  param(
+    [Parameter(Mandatory = $true)]
+    [object]$AliasRecord
+  )
+
+  if (-not ($AliasRecord.PSObject.Properties.Name -contains 'protectionBypass')) {
+    return $null
+  }
+
+  if (-not $AliasRecord.protectionBypass) {
+    return $null
+  }
+
+  foreach ($entry in $AliasRecord.protectionBypass.PSObject.Properties) {
+    $secret = $entry.Name
+    $details = $entry.Value
+
+    if ($details.scope -ne 'shareable-link') {
+      continue
+    }
+
+    $expires = $null
+    if ($details.PSObject.Properties.Name -contains 'expires' -and $null -ne $details.expires) {
+      $expires = [double]$details.expires
+    }
+
+    $isExpired = $false
+    if ($null -ne $expires -and $expires -lt [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()) {
+      $isExpired = $true
+    }
+
+    return [pscustomobject]@{
+      Secret = $secret
+      Url = "https://$($AliasRecord.alias)?_vercel_share=$secret"
+      Expires = $expires
+      IsExpired = $isExpired
+    }
+  }
+
+  return $null
+}

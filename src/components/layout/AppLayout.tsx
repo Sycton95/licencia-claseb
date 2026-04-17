@@ -1,23 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
-
-const CarIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
-    <circle cx="7" cy="17" r="2" />
-    <path d="M9 17h6" />
-    <circle cx="17" cy="17" r="2" />
-  </svg>
-);
+import { useTheme } from '../../context/ThemeContext';
+import { MobileNav } from './MobileNav';
 
 const links = [
   { to: '/', label: 'Inicio' },
@@ -26,51 +9,82 @@ const links = [
 ];
 
 export function AppLayout() {
+  const { theme, toggleTheme } = useTheme();
   return (
-    <div className="flex h-[100dvh] w-full flex-col overflow-hidden bg-slate-50 font-sans">
+    <div className="flex h-[100dvh] w-full flex-col overflow-hidden font-sans" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
       <a
         href="#main-content"
-        className="absolute left-4 top-3 z-[60] -translate-y-16 rounded-xl bg-slate-950 px-4 py-2 text-sm font-bold text-white transition-transform focus-visible:translate-y-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-300"
+        className="absolute left-4 top-3 z-[60] -translate-y-16 rounded-xl bg-neutral-900 px-4 py-2 text-sm font-bold text-white transition-transform focus-visible:translate-y-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-300"
       >
         Saltar al contenido
       </a>
-      <header className="z-40 h-14 shrink-0 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur-md md:h-16">
-        <div className="mx-auto flex h-full max-w-5xl items-center justify-between px-4">
+      <header className="z-40 h-14 shrink-0 shadow-sm backdrop-blur-md md:h-16 landscape:h-12 transition-colors duration-200" style={{ borderColor: 'var(--color-header-border)', backgroundColor: 'var(--color-header-bg)', borderBottomWidth: '1px' }}>
+        <div className="mx-auto flex h-full w-full max-w-5xl items-center justify-between px-4">
           <NavLink
             to="/"
-            className="flex items-center space-x-2 text-indigo-900 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200 focus-visible:ring-offset-2"
+            className="flex items-center justify-center transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
           >
-            <div className="rounded-lg bg-indigo-600 p-1.5 text-white shadow-sm">
-              <CarIcon />
-            </div>
-            <span className="text-base font-bold tracking-tight md:text-lg">
-              Clase B<span className="text-indigo-500">.cl</span>
+            <span className="text-sm font-black tracking-tighter md:text-base drop-shadow-sm whitespace-nowrap leading-none" style={{ color: 'var(--color-text-primary)' }}>
+              CLASE-B<span className="text-yellow-400">.CL</span>
             </span>
           </NavLink>
 
-          <nav className="hidden md:flex md:space-x-1">
+          <nav className="hidden md:flex md:space-x-1 items-center flex-1 ml-6">
             {links.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `rounded-xl px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200 focus-visible:ring-offset-2 ${
+                  `rounded-xl px-4 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2 ${
                     isActive
-                      ? 'border border-slate-200/50 bg-slate-100 text-slate-900 shadow-inner'
-                      : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
+                      ? 'border shadow-inner'
+                      : 'hover:opacity-80'
                   }`
                 }
+                style={({ isActive }) => ({
+                  backgroundColor: isActive ? 'var(--color-neutral-100)' : 'transparent',
+                  color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                  borderColor: isActive ? 'var(--color-border)' : 'transparent',
+                })}
               >
                 {link.label}
               </NavLink>
             ))}
           </nav>
+
+          <button
+            onClick={toggleTheme}
+            className="rounded-xl p-2 transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 focus-visible:ring-offset-2 hover:opacity-80 ml-auto md:ml-2"
+            style={{ backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-primary)' }}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          >
+            {theme === 'light' ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            )}
+          </button>
         </div>
       </header>
 
-      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-hidden">
+      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-y-auto pb-16 md:overflow-hidden md:pb-0 landscape:overflow-y-auto landscape:pb-0 landscape:md:overflow-hidden transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
         <Outlet />
       </main>
+
+      <MobileNav />
     </div>
   );
 }

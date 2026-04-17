@@ -8,10 +8,10 @@ param(
 . (Join-Path $PSScriptRoot '_common.ps1')
 
 $resolved = Get-PreviewAliasRecord -UrlOrId $Url
-$existing = Get-ShareUrlFromAlias -AliasRecord $resolved.Alias
+$existing = Get-ShareLinkInfoFromAlias -AliasRecord $resolved.Alias
 
-if ($existing) {
-  Write-Output $existing
+if ($existing -and -not $existing.IsExpired) {
+  Write-Output $existing.Url
   exit 0
 }
 
@@ -19,11 +19,35 @@ $metadata = Get-OpsProjectMetadata
 $tempFile = [System.IO.Path]::GetTempFileName()
 
 try {
-  $json = @{ ttl = $TtlSeconds } | ConvertTo-Json -Compress
+  if ($existing -and $existing.IsExpired) {
+    $payload = @{
+      ttl = $TtlSeconds
+      revoke = @{
+        secret = $existing.Secret
+        regenerate = $true
+      }
+    }
+  } else {
+    $payload = @{ ttl = $TtlSeconds }
+  }
+
+  $json = $payload | ConvertTo-Json -Compress
   $encoding = [System.Text.UTF8Encoding]::new($false)
   [System.IO.File]::WriteAllText($tempFile, $json, $encoding)
   $endpoint = "/aliases/$($resolved.Alias.uid)/protection-bypass?teamId=$($metadata.orgId)"
-  [void](Invoke-VercelJson -Endpoint $endpoint -Method PATCH -InputFile $tempFile)
+  try {
+    [void](Invoke-VercelJson -Endpoint $endpoint -Method PATCH -InputFile $tempFile)
+  } catch {
+    $fallbackRecord = Get-PreviewAliasRecord -UrlOrId $resolved.Alias.alias
+    $fallbackShare = Get-ShareLinkInfoFromAlias -AliasRecord $fallbackRecord.Alias
+
+    if ($fallbackShare -and -not $fallbackShare.IsExpired) {
+      Write-Output $fallbackShare.Url
+      exit 0
+    }
+
+    throw
+  }
 } finally {
   if (Test-Path -LiteralPath $tempFile) {
     Remove-Item -LiteralPath $tempFile -Force
@@ -31,10 +55,10 @@ try {
 }
 
 $reloaded = Get-PreviewAliasRecord -UrlOrId $resolved.Alias.alias
-$shareUrl = Get-ShareUrlFromAlias -AliasRecord $reloaded.Alias
+$shareInfo = Get-ShareLinkInfoFromAlias -AliasRecord $reloaded.Alias
 
-if (-not $shareUrl) {
+if (-not $shareInfo -or $shareInfo.IsExpired) {
   throw "No se pudo derivar la share URL para '$($resolved.Alias.alias)'."
 }
 
-Write-Output $shareUrl
+Write-Output $shareInfo.Url

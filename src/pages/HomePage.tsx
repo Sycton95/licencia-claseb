@@ -1,36 +1,18 @@
+// src/pages/HomePage.tsx
 import { Link } from 'react-router-dom';
 import { usePublishedCatalog } from '../hooks/usePublishedCatalog';
-
-const PlayIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-    <polygon points="5 3 19 12 5 21 5 3" />
-  </svg>
-);
-
-const AwardIcon = () => (
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="8" r="7" />
-    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
-  </svg>
-);
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { ErrorAlert } from '../components/ErrorAlert';
+import { ScalableHeader } from '../components/ScalableHeader';
 
 const ArrowRightIcon = () => (
   <svg
-    width="18"
-    height="18"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="2.4"
+    strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
@@ -40,77 +22,105 @@ const ArrowRightIcon = () => (
 );
 
 export function HomePage() {
-  const { catalog } = usePublishedCatalog('No se pudo cargar el catálogo público.');
+  const { catalog, error, isLoading } = usePublishedCatalog('No se pudo cargar el catálogo público.');
+
+  if (isLoading) {
+    return <LoadingSpinner message="Cargando catálogo..." />;
+  }
+
+  if (error) {
+    return <ErrorAlert message={error} />;
+  }
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-slate-50">
-      <section className="relative flex min-h-full flex-1 items-center overflow-hidden bg-slate-950 px-4 py-8 text-white sm:px-6">
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto selection:bg-indigo-200 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <section className="relative flex w-full flex-1 flex-col items-center justify-center px-4 py-6 md:py-10 z-0">
+
+        {/* Background Pattern */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 pointer-events-none opacity-[0.05]"
           style={{
-            backgroundImage: 'radial-gradient(#6366f1 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(#4f46e5 1px, transparent 1px)',
             backgroundSize: '28px 28px',
           }}
         />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-indigo-500/20 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-indigo-500/10 to-transparent pointer-events-none" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col justify-center gap-8 py-4 lg:flex-row lg:items-center lg:gap-12">
-          <div className="max-w-xl">
-            <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl">
-              Clase B,
-              <br />
-              <span className="text-indigo-400">modo estudio.</span>
-            </h1>
-            <p className="mt-4 max-w-md text-sm leading-7 text-slate-300 sm:text-base">
-              Entra directo a practicar o simula el examen completo con una interfaz ligera,
-              rápida y táctil.
-            </p>
-            {catalog?.activeEdition?.title && (
-              <p className="mt-5 text-[11px] font-black uppercase tracking-[0.24em] text-slate-500">
-                {catalog.activeEdition.title}
-              </p>
-            )}
-          </div>
+        <div className="relative w-full max-w-5xl mx-auto flex flex-col items-center justify-center flex-1">
+          {/* Scalable Header Component */}
+          <ScalableHeader />
 
-          <div className="grid w-full max-w-2xl gap-4">
-            <Link
-              to="/practice"
-              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-indigo-300/30 bg-white/95 p-6 text-slate-900 shadow-lg shadow-slate-950/10 transition-all hover:-translate-y-1 hover:border-indigo-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200 focus-visible:ring-offset-2"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600">
-                <PlayIcon />
-              </div>
-              <div className="mt-8">
-                <h2 className="text-2xl font-black tracking-tight">Practica</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-500">
-                  Elige capítulos, define cantidad y empieza a responder.
-                </p>
-              </div>
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-indigo-600">
-                Iniciar práctica
-                <ArrowRightIcon />
-              </div>
-            </Link>
+          <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col mt-8 md:mt-12 px-2 md:px-0">
 
-            <Link
-              to="/exam"
-              className="group flex min-h-[12rem] flex-col justify-between rounded-[28px] border border-emerald-300/30 bg-white/95 p-6 text-slate-900 shadow-lg shadow-slate-950/10 transition-all hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-200 focus-visible:ring-offset-2"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600">
-                <AwardIcon />
-              </div>
-              <div className="mt-8">
-                <h2 className="text-2xl font-black tracking-tight">Simulador</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-500">
-                  Entra a una prueba completa con puntaje y aprobación.
-                </p>
-              </div>
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-emerald-600">
-                Iniciar simulador
-                <ArrowRightIcon />
-              </div>
-            </Link>
+            {/* Cards Container */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 w-full justify-center">
+
+              {/* Práctica Libre Card */}
+              <Link
+                to="/practice"
+                className="group relative flex flex-1 min-h-[12rem] sm:min-h-[14rem] md:min-h-[15rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#244ba6] p-5 md:p-8 text-white shadow-[0_0_0_4px_#244ba6] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_0_4px_#244ba6,0_15px_30px_-5px_rgba(36,75,166,0.4)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-300 focus-visible:ring-offset-2"
+              >
+                <div className="relative z-10">
+                  <span className="inline-block bg-white px-3 py-1.5 text-xs font-black uppercase tracking-widest text-[#244ba6] rounded-md shadow-sm">
+                    5-35 MIN
+                  </span>
+
+                  <h2 className="mt-4 sm:mt-6 text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter leading-none text-white uppercase">
+                    Práctica
+                    <br />
+                    Libre
+                  </h2>
+
+                  <p className="mt-2 sm:mt-3 text-sm md:text-base font-bold text-white/90 max-w-[90%]">
+                    Personaliza tu aprendizaje. Elige capítulos y cantidad.
+                  </p>
+                </div>
+
+                <div className="relative z-10 mt-6 md:mt-8 flex items-center justify-between w-full">
+                  <span className="font-black uppercase tracking-widest text-xs sm:text-sm text-white/90 group-hover:text-white transition-colors">
+                    Iniciar
+                  </span>
+
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-white/50 bg-transparent transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#244ba6]">
+                    <ArrowRightIcon />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Simulador Oficial Card */}
+              <Link
+                to="/exam"
+                className="group relative flex flex-1 min-h-[12rem] sm:min-h-[14rem] md:min-h-[15rem] flex-col justify-between text-left rounded-2xl border-[3px] border-white bg-[#00aa89] p-5 md:p-8 text-white shadow-[0_0_0_4px_#00aa89] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_0_4px_#00aa89,0_15px_30px_-5px_rgba(0,170,137,0.4)] active:translate-y-0 active:scale-[0.98] focus:outline-none focus-visible:ring-4 focus-visible:ring-green-300 focus-visible:ring-offset-2"
+              >
+                <div className="relative z-10">
+                  <span className="inline-block bg-white px-3 py-1.5 text-xs font-black uppercase tracking-widest text-[#00aa89] rounded-md shadow-sm">
+                    ~40 MIN
+                  </span>
+
+                  <h2 className="mt-4 sm:mt-6 text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter leading-none text-white uppercase">
+                    Simulador
+                    <br />
+                    Oficial
+                  </h2>
+
+                  <p className="mt-2 sm:mt-3 text-sm md:text-base font-bold text-white/90 max-w-[90%]">
+                    35 preguntas. Aprobación: 33/38. Reglas oficiales.
+                  </p>
+                </div>
+
+                <div className="relative z-10 mt-6 md:mt-8 flex items-center justify-between w-full">
+                  <span className="font-black uppercase tracking-widest text-xs sm:text-sm text-white/90 group-hover:text-white transition-colors">
+                    Iniciar
+                  </span>
+
+                  <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-white/50 bg-transparent transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#00aa89]">
+                    <ArrowRightIcon />
+                  </div>
+                </div>
+              </Link>
+
+            </div>
           </div>
         </div>
       </section>

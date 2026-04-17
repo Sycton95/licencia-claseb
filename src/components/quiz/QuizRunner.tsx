@@ -1,6 +1,9 @@
-import { useReducer } from 'react';
+import { useReducer, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { QuizSummary } from '../QuizSummary';
 import { getQuestionPoints, isQuestionAnswerCorrect } from '../../lib/quizFactory';
+import { CheckIcon } from '../icons';
+import { useHaptics } from '../../hooks/useHaptics';
 import type { Question, QuizMode } from '../../types/content';
 import type { QuestionOutcome } from '../../types/quiz';
 
@@ -35,20 +38,6 @@ const INITIAL_STATE: QuizState = {
   outcomes: [],
 };
 
-const CheckIcon = () => (
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="3"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polyline points="20 6 9 17 4 12" />
-  </svg>
-);
 
 const XIcon = () => (
   <svg
@@ -126,6 +115,8 @@ export function QuizRunner({
   onRestart,
 }: QuizRunnerProps) {
   const [state, dispatch] = useReducer(quizReducer, INITIAL_STATE);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const haptics = useHaptics();
   const currentQuestion = questions[state.currentIndex];
 
   const handleSelect = (optionId: string) => {
@@ -133,6 +124,7 @@ export function QuizRunner({
       return;
     }
 
+    haptics.tap();
     dispatch({
       type: 'toggle-option',
       optionId,
@@ -148,6 +140,12 @@ export function QuizRunner({
     const isCorrect = isQuestionAnswerCorrect(currentQuestion, state.selectedOptionIds);
     const pointsAvailable = getQuestionPoints(currentQuestion, mode === 'exam');
     const pointsEarned = isCorrect ? pointsAvailable : 0;
+
+    if (isCorrect) {
+      haptics.success();
+    } else {
+      haptics.error();
+    }
 
     dispatch({
       type: 'confirm',
@@ -165,6 +163,63 @@ export function QuizRunner({
   const handleNext = () => {
     dispatch({ type: 'next', totalQuestions: questions.length });
   };
+
+  // Auto-focus container on mount for keyboard accessibility
+  useEffect(() => {
+    containerRef.current?.focus();
+  }, []);
+
+  // Keyboard navigation support
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!currentQuestion) return;
+
+      // Arrow keys for navigation between options
+      if (!state.isAnswered && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+        event.preventDefault();
+
+        const optionsCount = currentQuestion.options.length;
+        if (optionsCount === 0) return;
+
+        const currentIndex = state.selectedOptionIds.length > 0
+          ? currentQuestion.options.findIndex(o => o.id === state.selectedOptionIds[0])
+          : -1;
+
+        let nextIndex = currentIndex;
+        if (['ArrowDown', 'ArrowRight'].includes(event.key)) {
+          nextIndex = (currentIndex + 1) % optionsCount;
+        } else {
+          nextIndex = (currentIndex - 1 + optionsCount) % optionsCount;
+        }
+
+        handleSelect(currentQuestion.options[nextIndex].id);
+      }
+
+      // Enter or Space to confirm answer
+      if (!state.isAnswered && (event.key === 'Enter' || event.key === ' ') && state.selectedOptionIds.length > 0) {
+        event.preventDefault();
+        handleConfirm();
+      }
+
+      // Escape to exit quiz (with confirmation visual)
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        onRestart();
+      }
+
+      // After answer: Arrow keys or Enter to go to next question
+      if (state.isAnswered && (event.key === 'Enter' || event.key === ' ' || event.key === 'ArrowRight' || event.key === 'ArrowDown')) {
+        event.preventDefault();
+        handleNext();
+      }
+    };
+
+    container.addEventListener('keydown', handleKeyDown);
+    return () => container.removeEventListener('keydown', handleKeyDown);
+  }, [state, currentQuestion, questions.length]);
 
   if (!currentQuestion) {
     return (
@@ -193,75 +248,67 @@ export function QuizRunner({
   const isCorrectAnswerSelected =
     state.isAnswered &&
     isQuestionAnswerCorrect(currentQuestion, state.selectedOptionIds);
-  const footerTone = !state.isAnswered
-    ? 'border-slate-200 bg-white'
-    : isCorrectAnswerSelected
-      ? 'border-emerald-200 bg-emerald-50'
-      : 'border-rose-200 bg-rose-50';
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-hidden bg-slate-50">
-      <header className="z-20 flex h-14 shrink-0 items-center border-b border-slate-200 bg-white shadow-sm md:h-16">
+    <div ref={containerRef} tabIndex={-1} className="flex min-h-0 flex-1 flex-col overflow-hidden focus:outline-none transition-colors duration-200 dark:bg-neutral-900" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <header className="z-20 flex h-14 shrink-0 items-center shadow-sm md:h-16 landscape:h-12 transition-colors duration-200" style={{ borderColor: 'var(--color-header-border)', backgroundColor: 'var(--color-header-bg)', borderBottomWidth: '1px' }}>
         <div className="mx-auto flex w-full max-w-3xl items-center gap-4 px-4">
           <button
             onClick={onRestart}
-            className="rounded-xl p-2 text-slate-400 transition-colors hover:bg-slate-50 hover:text-slate-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200"
+            className="flex h-10 w-10 items-center justify-center rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 md:h-12 md:w-12 hover:opacity-80 dark:text-neutral-400"
+            style={{ color: 'var(--color-text-secondary)' }}
             aria-label="Salir del quiz"
             type="button"
           >
             <XIcon />
           </button>
           <div className="flex-1">
-            <div className="h-2.5 overflow-hidden rounded-full border border-slate-200 bg-slate-100 shadow-inner">
+            <div
+              className="h-2.5 overflow-hidden rounded-full shadow-inner transition-colors duration-200"
+              style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-border)', borderWidth: '1px' }}
+              role="progressbar"
+              aria-valuenow={state.currentIndex + 1}
+              aria-valuemin={1}
+              aria-valuemax={questions.length}
+              aria-label={`Pregunta ${state.currentIndex + 1} de ${questions.length}`}
+            >
               <div
                 className={`h-full rounded-full transition-all duration-500 ${
-                  mode === 'exam' ? 'bg-emerald-500' : 'bg-indigo-500'
+                  mode === 'exam' ? 'bg-sage-500' : 'bg-primary-500'
                 }`}
                 style={{ width: `${progress}%` }}
               />
             </div>
           </div>
-          <span className="w-14 text-right font-mono text-sm font-black text-slate-400">
+          <span className="w-14 text-right font-mono text-sm font-black transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>
             {state.currentIndex + 1}/{questions.length}
           </span>
         </div>
       </header>
 
-      <main className="min-h-0 flex-1 overflow-y-auto px-4 py-3 md:px-6 md:py-4">
+      <main className="min-h-0 flex-1 overflow-y-auto px-4 py-2 md:px-6 md:py-4 landscape:px-3 landscape:py-1.5 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+        <div className="sr-only">
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
+        </div>
         <div className="mx-auto flex w-full max-w-3xl flex-col gap-3">
-          <div className="rounded-[24px] border border-slate-200 bg-white px-4 py-3 shadow-sm md:px-5 md:py-4">
-            <span
-              className={`inline-flex rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${
-                mode === 'exam'
-                  ? 'bg-emerald-50 text-emerald-600'
-                  : 'bg-indigo-50 text-indigo-600'
-              }`}
-            >
-              {mode === 'exam' ? 'Simulador' : 'Práctica'}
-            </span>
-            <div className="sr-only">
-              <h1>{title}</h1>
-              <p>{subtitle}</p>
-            </div>
-          </div>
-
-          <section className="rounded-[30px] border border-slate-200 bg-white p-4 shadow-sm md:p-6">
-            <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+          <motion.section className="rounded-[30px] p-4 shadow-sm md:p-6 landscape:p-3 transition-colors duration-200" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-bg-secondary)', borderWidth: '1px' }} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}>
+            <div className="mb-3 flex flex-wrap items-start justify-between gap-2 md:gap-3 landscape:gap-2">
               <div className="min-w-0">
                 {mode === 'practice' && (
-                  <div className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
+                  <div className="text-[10px] font-black uppercase tracking-[0.15em] md:text-[11px] landscape:text-[10px] transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>
                     Manual oficial · página {currentQuestion.sourcePage}
                   </div>
                 )}
-                <h2 className="mt-3 text-xl font-black leading-tight tracking-tight text-slate-900 md:text-[1.7rem]">
+                <h2 className="mt-2 text-lg font-black leading-tight tracking-tight md:text-[1.7rem] landscape:text-base landscape:mt-1 transition-colors duration-200" style={{ color: 'var(--color-text-primary)' }}>
                   {currentQuestion.prompt}
                 </h2>
-                <p className="mt-2 text-sm font-semibold leading-6 text-slate-500">
+                <p className="mt-1.5 text-xs font-semibold leading-5 md:text-sm md:leading-6 landscape:text-[11px] landscape:leading-4 landscape:mt-1 transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>
                   {currentQuestion.instruction}
                 </p>
               </div>
 
-              <span className="rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-black uppercase tracking-wide text-slate-500">
+              <span className="rounded-full px-3 py-1.5 text-[11px] font-black uppercase tracking-wide transition-colors duration-200" style={{ backgroundColor: 'var(--color-border)', color: 'var(--color-text-secondary)' }}>
                 {currentQuestion.selectionMode === 'multiple'
                   ? 'Selección múltiple'
                   : 'Selección única'}
@@ -269,9 +316,9 @@ export function QuizRunner({
             </div>
 
             {currentQuestion.media[0] && (
-              <figure className="mb-5 overflow-hidden rounded-[24px] border border-slate-200 bg-slate-50">
+              <figure className="mb-3 overflow-hidden rounded-[24px] md:mb-5 transition-colors duration-200" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-border)', borderWidth: '1px' }}>
                 <img
-                  className="block max-h-[20rem] w-full object-cover"
+                  className="block w-full object-cover max-h-[250px] md:max-h-[350px] landscape:max-h-[140px]"
                   src={currentQuestion.media[0].url}
                   alt={currentQuestion.media[0].altText}
                   loading="lazy"
@@ -279,101 +326,122 @@ export function QuizRunner({
               </figure>
             )}
 
-            <div className="space-y-3">
+            <fieldset className="border-0 p-0 m-0">
+              <legend className="sr-only">
+                {currentQuestion.selectionMode === 'multiple'
+                  ? 'Selecciona todas las respuestas correctas'
+                  : 'Selecciona la respuesta correcta'}
+              </legend>
+              <div className="space-y-2 md:space-y-3 landscape:space-y-1.5">
               {currentQuestion.options.map((option) => {
                 const isSelected = state.selectedOptionIds.includes(option.id);
 
                 let cardClass =
-                  'border-slate-200 bg-white text-slate-700 hover:bg-slate-50 border-b-4 active:border-b-0 active:translate-y-[4px]';
-                let iconClass = 'bg-slate-100 text-slate-500';
+                  'border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50 border-b-4 active:border-b-0 active:translate-y-[4px]';
+                let iconClass = 'bg-neutral-100 text-neutral-500';
 
                 if (state.isAnswered) {
                   if (option.isCorrect) {
                     cardClass =
-                      'border-emerald-500 bg-emerald-50 text-emerald-950 border-b-[3px] shadow-sm';
-                    iconClass = 'bg-emerald-100 text-emerald-700';
+                      'border-success-500 bg-sage-50 text-success-950 border-b-[3px] shadow-sm';
+                    iconClass = 'bg-success-100 text-success-700';
                   } else if (isSelected) {
                     cardClass =
-                      'border-rose-400 bg-rose-50 text-rose-950 border-b-[3px] shadow-sm';
-                    iconClass = 'bg-rose-100 text-rose-700';
+                      'border-warning-400 bg-warning-50 text-warning-950 border-b-[3px] shadow-sm';
+                    iconClass = 'bg-warning-100 text-warning-700';
                   } else {
                     cardClass =
-                      'border-slate-200 bg-white text-slate-400 border-b-[3px] opacity-60';
-                    iconClass = 'bg-slate-100 text-slate-400';
+                      'border-neutral-200 bg-white text-neutral-400 border-b-[3px] opacity-60';
+                    iconClass = 'bg-neutral-100 text-neutral-400';
                   }
                 } else if (isSelected) {
                   cardClass =
-                    'border-indigo-400 bg-indigo-50 text-indigo-950 border-b-4 shadow-sm';
-                  iconClass = 'bg-indigo-100 text-indigo-700';
+                    'border-primary-400 bg-primary-50 text-primary-950 border-b-4 shadow-sm';
+                  iconClass = 'bg-primary-100 text-primary-700';
                 }
 
                 return (
-                  <button
+                  <motion.button
                     key={option.id}
                     type="button"
                     disabled={state.isAnswered}
                     onClick={() => handleSelect(option.id)}
                     aria-pressed={isSelected}
-                    className={`flex min-h-[3.5rem] w-full items-center justify-between gap-3 rounded-2xl border-2 px-4 py-3 text-left font-semibold transition-all ${cardClass}`}
+                    aria-label={`${option.label}. ${option.text}${isSelected ? ' (Seleccionado)' : ''}`}
+                    className={`flex min-h-[3.5rem] w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-2 md:py-3 md:gap-3 text-left font-semibold transition-all landscape:min-h-[2.8rem] landscape:px-3 landscape:py-1.5 landscape:gap-2 ${cardClass}`}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.05 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <div className="flex min-w-0 items-center gap-3">
+                    <div className="flex min-w-0 items-center gap-2 md:gap-3 landscape:gap-2">
                       <span
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-black ${iconClass}`}
+                        className={`flex h-7 w-7 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-full text-[10px] md:text-xs font-black landscape:h-7 landscape:w-7 landscape:text-[10px] ${iconClass}`}
                       >
                         {option.label}
                       </span>
-                      <span className="text-[15px] leading-snug md:text-base">{option.text}</span>
+                      <span className="text-[14px] md:text-base leading-snug landscape:text-[12px]">{option.text}</span>
                     </div>
 
                     {state.isAnswered && option.isCorrect && (
-                      <span className="shrink-0 text-emerald-600">
-                        <CheckIcon />
+                      <span className="shrink-0 text-sage-600">
+                        <CheckIcon size={20} />
                       </span>
                     )}
                     {state.isAnswered && isSelected && !option.isCorrect && (
-                      <span className="shrink-0 text-rose-500">
+                      <span className="shrink-0 text-warning-500">
                         <XIcon />
                       </span>
                     )}
-                  </button>
+                  </motion.button>
                 );
               })}
-            </div>
-          </section>
+              </div>
+            </fieldset>
+          </motion.section>
         </div>
       </main>
 
-      <footer className={`shrink-0 border-t ${footerTone}`}>
-        <div className="mx-auto flex min-h-[6rem] w-full max-w-3xl flex-col gap-4 px-4 py-4 md:flex-row md:items-end md:justify-between md:px-6">
+      <footer className="shrink-0 border-t transition-colors duration-200" style={{ backgroundColor: !state.isAnswered ? 'var(--color-bg-secondary)' : isCorrectAnswerSelected ? 'var(--color-success-50)' : 'var(--color-warning-50)', borderColor: 'var(--color-border)' }}>
+        <div className="mx-auto flex min-h-[6rem] w-full max-w-3xl flex-col gap-3 px-4 py-3 md:flex-row md:items-end md:justify-between md:px-6 md:py-4 landscape:gap-2 landscape:py-2">
           <div className="min-h-0 flex-1">
             {state.isAnswered ? (
-              <div className="flex flex-col gap-2">
+              <motion.div className="flex flex-col gap-2" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 300, damping: 25 }}>
                 <div
                   className={`flex items-center gap-2 text-lg font-black ${
-                    isCorrectAnswerSelected ? 'text-emerald-800' : 'text-rose-800'
+                    isCorrectAnswerSelected ? 'text-success-800' : 'text-warning-800'
                   }`}
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
                 >
                   <span
                     className={`flex h-9 w-9 items-center justify-center rounded-full ${
                       isCorrectAnswerSelected
-                        ? 'bg-emerald-200/70 text-emerald-700'
-                        : 'bg-rose-200/70 text-rose-700'
+                        ? 'bg-success-200/70 text-success-700'
+                        : 'bg-warning-200/70 text-warning-700'
                     }`}
                   >
-                    {isCorrectAnswerSelected ? <CheckIcon /> : <XIcon />}
+                    {isCorrectAnswerSelected ? <CheckIcon size={20} /> : <XIcon />}
                   </span>
                   <span>{isCorrectAnswerSelected ? 'Correcta' : 'Incorrecta'}</span>
                 </div>
 
                 {hasQuickReference && (
-                  <div className="max-h-40 overflow-y-auto rounded-2xl bg-white/80 px-3 py-3 text-sm leading-6 text-slate-600 shadow-sm md:max-h-48">
+                  <div
+                    className="max-h-40 overflow-y-auto rounded-2xl px-3 py-3 text-sm leading-6 shadow-sm md:max-h-48 transition-colors duration-200"
+                    style={{ backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-secondary)' }}
+                    role="region"
+                    aria-label="Explicación de respuesta"
+                    aria-live="polite"
+                  >
                     {currentQuestion.publicExplanation && <p>{currentQuestion.publicExplanation}</p>}
                     {!currentQuestion.publicExplanation && currentQuestion.sourceReference && (
                       <p>{currentQuestion.sourceReference}</p>
                     )}
                   </div>
                 )}
-              </div>
+              </motion.div>
             ) : null}
           </div>
 
@@ -382,7 +450,7 @@ export function QuizRunner({
               <button
                 onClick={handleConfirm}
                 disabled={state.selectedOptionIds.length === 0}
-                className="w-full rounded-2xl border-b-4 border-indigo-800 bg-indigo-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-indigo-700 hover:bg-indigo-500 active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:active:translate-y-0 disabled:active:border-b-4 md:w-44"
+                className="w-full rounded-2xl border-b-4 border-primary-800 bg-primary-600 px-6 py-3.5 text-base font-black text-white transition-all hover:border-primary-700 hover:bg-primary-500 active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200 disabled:border-neutral-200 disabled:bg-neutral-100 disabled:text-neutral-400 disabled:active:translate-y-0 disabled:active:border-b-4 md:w-44"
                 type="button"
               >
                 {currentQuestion.selectionMode === 'multiple' ? 'Comprobar' : 'Responder'}
@@ -392,8 +460,8 @@ export function QuizRunner({
                 onClick={handleNext}
                 className={`w-full rounded-2xl border-b-4 px-6 py-3.5 text-base font-black text-white transition-all active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 md:w-44 ${
                   isCorrectAnswerSelected
-                    ? 'border-emerald-800 bg-emerald-600 hover:border-emerald-700 hover:bg-emerald-500 focus-visible:ring-emerald-200'
-                    : 'border-rose-800 bg-rose-600 hover:border-rose-700 hover:bg-rose-500 focus-visible:ring-rose-200'
+                    ? 'border-success-800 bg-success-600 hover:border-success-700 hover:bg-sage-500 focus-visible:ring-success-200'
+                    : 'border-warning-800 bg-warning-600 hover:border-warning-700 hover:bg-warning-500 focus-visible:ring-warning-200'
                 }`}
                 type="button"
               >
