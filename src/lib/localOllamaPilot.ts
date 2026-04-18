@@ -1,5 +1,7 @@
 import type { ContentCatalog, Question } from '../types/content.js';
 import type {
+  AiPilotActiveRun,
+  AiPilotRunConfig,
   AiPilotEvaluationItemReport,
   AiPilotEvaluationReport,
   AiPilotRun,
@@ -11,12 +13,9 @@ import type {
 } from '../types/ai.js';
 import { buildPilotSuggestionRecord } from './aiSuggestionVerifier.js';
 import {
-  isLocalOllamaEnabled,
-  ollamaBaseUrl,
-  ollamaMaxGenerationMs,
-  ollamaMaxItemsPerRun,
-  ollamaModel,
-} from './supabase.js';
+  getLocalOllamaRuntimeConfig,
+  type LocalOllamaRuntimeConfig,
+} from './ollamaRuntimeConfig.js';
 
 type OllamaGenerateResponse = {
   response?: string;
@@ -41,7 +40,32 @@ type LocalOllamaPilotOptions = {
   chunks?: SourcePreparationChunk[];
   questions?: Question[];
   mode?: AiPilotRunMode;
+  signal?: AbortSignal;
+  runtimeConfig?: Partial<LocalOllamaRuntimeConfig>;
+  onProgress?: (
+    progress: Pick<
+      AiPilotActiveRun,
+      | 'status'
+      | 'completedItems'
+      | 'totalItems'
+      | 'currentItemLabel'
+      | 'currentStep'
+      | 'progressPercent'
+    >,
+  ) => void;
 };
+
+export type LocalOllamaPilotTaskInput =
+  | {
+      type: 'new_question';
+      label: string;
+      chunk: SourcePreparationChunk;
+    }
+  | {
+      type: 'rewrite';
+      label: string;
+      question: Question;
+    };
 
 function nowIso() {
   return new Date().toISOString();
@@ -78,15 +102,15 @@ function extractJsonPayload(rawOutput: string): OllamaQuestionShape | null {
 
 function buildNewQuestionPrompt(chunk: SourcePreparationChunk) {
   return [
-    'Actúa como editor de preguntas para Licencia Clase B en Chile.',
-    'Devuelve solo JSON válido con este esquema:',
+    'Actua como editor de preguntas para Licencia Clase B en Chile.',
+    'Devuelve solo JSON valido con este esquema:',
     '{"prompt":"","selectionMode":"single|multiple","instruction":"","options":[""],"correctOptionIndexes":[0],"publicExplanation":"","reviewNotes":"","rationale":"","groundingExcerpt":""}',
     'Reglas:',
     '- No inventes fuentes fuera del fragmento entregado.',
-    '- Mantén tono de examen claro y neutro.',
-    '- Si la evidencia es insuficiente, devuelve un JSON con prompt vacío.',
+    '- Manten tono de examen claro y neutro.',
+    '- Si la evidencia es insuficiente, devuelve un JSON con prompt vacio.',
     '',
-    `Capítulo: ${chunk.chapterId}`,
+    `Capitulo: ${chunk.chapterId}`,
     `Referencia: ${chunk.referenceLabel}`,
     `Resumen base: ${chunk.groundingSummary}`,
     `Rationale editorial: ${chunk.rationale}`,
@@ -100,34 +124,65 @@ function buildRewritePrompt(question: Question) {
     .join('\n');
 
   return [
-    'Actúa como editor de preguntas para Licencia Clase B en Chile.',
+    'Actua como editor de preguntas para Licencia Clase B en Chile.',
     'Reescribe el enunciado y las alternativas solo si mejora claridad sin cambiar el hecho base.',
-    'Devuelve solo JSON válido con este esquema:',
+    'Devuelve solo JSON valido con este esquema:',
     '{"prompt":"","selectionMode":"single|multiple","instruction":"","options":[""],"correctOptionIndexes":[0],"publicExplanation":"","reviewNotes":"","rationale":"","groundingExcerpt":""}',
-    'No cambies el tipo de selección ni inventes nueva fuente.',
+    'No cambies el tipo de seleccion ni inventes nueva fuente.',
     '',
     `Pregunta actual: ${question.prompt}`,
-    `Instrucción: ${question.instruction}`,
-    `Referencia: ${question.sourceReference ?? `Pág. ${question.sourcePage}`}`,
-    `Explicación pública: ${question.publicExplanation ?? question.explanation ?? 'N/A'}`,
+    `Instruccion: ${question.instruction}`,
+    `Referencia: ${question.sourceReference ?? `Pag. ${question.sourcePage}`}`,
+    `Explicacion publica: ${question.publicExplanation ?? question.explanation ?? 'N/A'}`,
     'Alternativas:',
     options,
   ].join('\n');
 }
 
-async function requestOllama(prompt: string) {
+function buildProgressSnapshot(
+  completedItems: number,
+  totalItems: number,
+  currentStep: AiPilotActiveRun['currentStep'],
+  currentItemLabel?: string,
+  status: AiPilotActiveRun['status'] = 'running',
+) {
+  return {
+    status,
+    completedItems,
+    totalItems,
+    currentItemLabel,
+    currentStep,
+    progressPercent: totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0,
+  } satisfies Pick<
+    AiPilotActiveRun,
+    'status' | 'completedItems' | 'totalItems' | 'currentItemLabel' | 'currentStep' | 'progressPercent'
+  >;
+}
+
+async function requestOllama(
+  prompt: string,
+  runtimeConfig: LocalOllamaRuntimeConfig,
+  signal?: AbortSignal,
+) {
   const controller = new AbortController();
-  const timeoutId = globalThis.setTimeout(() => controller.abort(), ollamaMaxGenerationMs);
+  const timeoutId = globalThis.setTimeout(() => controller.abort(), runtimeConfig.maxGenerationMs);
+  const abortHandler = () => controller.abort();
 
   try {
-    const response = await fetch(`${ollamaBaseUrl}/api/generate`, {
+    if (signal?.aborted) {
+      controller.abort();
+    } else if (signal) {
+      signal.addEventListener('abort', abortHandler, { once: true });
+    }
+
+    const response = await fetch(`${runtimeConfig.baseUrl}/api/generate`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       signal: controller.signal,
       body: JSON.stringify({
-        model: ollamaModel,
+        model: runtimeConfig.model,
         prompt,
         stream: false,
         format: 'json',
@@ -138,12 +193,15 @@ async function requestOllama(prompt: string) {
     });
 
     if (!response.ok) {
-      throw new Error(`Ollama devolvió ${response.status}.`);
+      throw new Error(`Ollama devolvio ${response.status}.`);
     }
 
     return (await response.json()) as OllamaGenerateResponse;
   } finally {
     globalThis.clearTimeout(timeoutId);
+    if (signal) {
+      signal.removeEventListener('abort', abortHandler);
+    }
   }
 }
 
@@ -201,7 +259,7 @@ function buildRewriteSuggestion(
     editionId: question.editionId,
     chapterId: question.chapterId,
     sourceDocumentId: question.sourceDocumentId,
-    sourceReference: question.sourceReference ?? `Pág. ${question.sourcePage}`,
+    sourceReference: question.sourceReference ?? `Pag. ${question.sourcePage}`,
     suggestionType: 'rewrite',
     status: 'pending',
     prompt,
@@ -218,10 +276,10 @@ function buildRewriteSuggestion(
       payload?.groundingExcerpt?.trim() ??
       question.publicExplanation ??
       question.explanation ??
-      `Referencia: ${question.sourceReference ?? `Pág. ${question.sourcePage}`}.`,
+      `Referencia: ${question.sourceReference ?? `Pag. ${question.sourcePage}`}.`,
     rationale:
       payload?.rationale?.trim() ??
-      'Reescritura local generada por Ollama para revisión editorial.',
+      'Reescritura local generada por Ollama para revision editorial.',
     confidence: 0.38,
     provider: 'ollama_qwen25_3b',
     dedupeKey: `ollama:rewrite:${question.id}`,
@@ -238,9 +296,11 @@ async function generateNewQuestionRecord(
   chunk: SourcePreparationChunk,
   actorEmail: string,
   runId: string,
+  runtimeConfig: LocalOllamaRuntimeConfig,
+  signal?: AbortSignal,
 ): Promise<AiPilotSuggestionRecord> {
   const prompt = buildNewQuestionPrompt(chunk);
-  const response = await requestOllama(prompt);
+  const response = await requestOllama(prompt, runtimeConfig, signal);
   const rawOutput = response.response ?? '';
   const payload = extractJsonPayload(rawOutput);
   const suggestion = buildSuggestionFromChunk(chunk, payload, actorEmail, runId);
@@ -253,9 +313,11 @@ async function generateRewriteRecord(
   question: Question,
   actorEmail: string,
   runId: string,
+  runtimeConfig: LocalOllamaRuntimeConfig,
+  signal?: AbortSignal,
 ): Promise<AiPilotSuggestionRecord> {
   const prompt = buildRewritePrompt(question);
-  const response = await requestOllama(prompt);
+  const response = await requestOllama(prompt, runtimeConfig, signal);
   const rawOutput = response.response ?? '';
   const payload = extractJsonPayload(rawOutput);
   const suggestion = buildRewriteSuggestion(question, payload, actorEmail, runId);
@@ -263,9 +325,22 @@ async function generateRewriteRecord(
   return buildPilotSuggestionRecord('ollama_qwen25_3b', suggestion, catalog, rawOutput);
 }
 
-function buildEvaluationItemReport(
-  record: AiPilotSuggestionRecord,
-): AiPilotEvaluationItemReport {
+export async function runLocalOllamaPilotTask(
+  catalog: ContentCatalog,
+  actorEmail: string,
+  task: LocalOllamaPilotTaskInput,
+  runId: string,
+  runtimeConfig: LocalOllamaRuntimeConfig,
+  signal?: AbortSignal,
+) {
+  if (task.type === 'new_question') {
+    return generateNewQuestionRecord(catalog, task.chunk, actorEmail, runId, runtimeConfig, signal);
+  }
+
+  return generateRewriteRecord(catalog, task.question, actorEmail, runId, runtimeConfig, signal);
+}
+
+function buildEvaluationItemReport(record: AiPilotSuggestionRecord): AiPilotEvaluationItemReport {
   const criticalCount = record.verifierIssues.filter((issue) => issue.severity === 'critical').length;
   const warningCount = record.verifierIssues.filter((issue) => issue.severity === 'warning').length;
 
@@ -293,97 +368,191 @@ function buildIssueBreakdown(records: AiPilotSuggestionRecord[]) {
   return counts as AiPilotEvaluationReport['issueBreakdown'];
 }
 
-export async function runLocalOllamaPilot(
-  catalog: ContentCatalog,
-  actorEmail: string,
-  options: LocalOllamaPilotOptions = {},
-): Promise<{ run: AiPilotRun; report: AiPilotEvaluationReport; suggestions: AiPilotSuggestionRecord[] }> {
-  if (!isLocalOllamaEnabled) {
-    throw new Error('El piloto local de Ollama está deshabilitado.');
-  }
-
-  const provider = options.provider ?? 'ollama_qwen25_3b';
-  const mode = options.mode ?? 'mixed';
-  if (provider !== 'ollama_qwen25_3b') {
-    throw new Error('El proveedor local solicitado no está soportado todavía.');
-  }
-
-  const startedAt = Date.now();
-  const runId = `pilot-run-${startedAt}`;
-  const evaluationSetId = options.evaluationSetId ?? 'ad-hoc';
-  const maxItems = options.maxItems ?? ollamaMaxItemsPerRun;
-  const chunkBudget =
-    mode === 'new_question' ? maxItems : mode === 'rewrite' ? 0 : Math.max(1, Math.ceil(maxItems / 2));
-  const rewriteBudget =
-    mode === 'rewrite' ? maxItems : mode === 'new_question' ? 0 : Math.max(0, maxItems - chunkBudget);
-  const chunkTargets = (options.chunks ?? []).slice(0, chunkBudget);
-  const rewriteTargets = (options.questions ?? []).slice(0, rewriteBudget);
-  const suggestionRecords: AiPilotSuggestionRecord[] = [];
-
-  for (const chunk of chunkTargets) {
-    suggestionRecords.push(await generateNewQuestionRecord(catalog, chunk, actorEmail, runId));
-  }
-
-  for (const question of rewriteTargets) {
-    suggestionRecords.push(await generateRewriteRecord(catalog, question, actorEmail, runId));
-  }
-
-  const completedAt = Date.now();
-  const attemptedItemIds = suggestionRecords.map((record) => record.suggestion.dedupeKey);
-  const criticalIssueCount = suggestionRecords.reduce(
+export function buildLocalOllamaPilotCompletedResult(params: {
+  provider: AiProvider;
+  runtimeConfig: LocalOllamaRuntimeConfig;
+  actorEmail: string;
+  runId: string;
+  evaluationSetId: string;
+  mode: AiPilotRunMode;
+  config: AiPilotRunConfig;
+  startedAt: string;
+  durationMs: number;
+  suggestions: AiPilotSuggestionRecord[];
+}) {
+  const { provider, runtimeConfig, actorEmail, runId, evaluationSetId, mode, config, startedAt, durationMs, suggestions } = params;
+  const attemptedItemIds = suggestions.map((record) => record.suggestion.dedupeKey);
+  const criticalIssueCount = suggestions.reduce(
     (total, record) =>
       total + record.verifierIssues.filter((issue) => issue.severity === 'critical').length,
     0,
   );
-  const warningIssueCount = suggestionRecords.reduce(
+  const warningIssueCount = suggestions.reduce(
     (total, record) =>
       total + record.verifierIssues.filter((issue) => issue.severity === 'warning').length,
     0,
   );
+
   const run: AiPilotRun = {
     id: runId,
     provider,
-    model: ollamaModel,
+    model: runtimeConfig.model,
     actorEmail,
     evaluationSetId,
     attemptedItemIds,
     mode,
     status: 'completed',
-    createdAt: new Date(startedAt).toISOString(),
-    durationMs: completedAt - startedAt,
+    config,
+    createdAt: startedAt,
+    durationMs,
     summary: {
-      attemptedCount: suggestionRecords.length,
-      passedCount: suggestionRecords.filter((item) => item.verifierStatus === 'passed').length,
-      failedCount: suggestionRecords.filter((item) => item.verifierStatus === 'failed').length,
-      newQuestionCount: suggestionRecords.filter(
+      attemptedCount: suggestions.length,
+      passedCount: suggestions.filter((item) => item.verifierStatus === 'passed').length,
+      failedCount: suggestions.filter((item) => item.verifierStatus === 'failed').length,
+      newQuestionCount: suggestions.filter(
         (item) => item.suggestion.suggestionType === 'new_question',
       ).length,
-      rewriteCount: suggestionRecords.filter(
+      rewriteCount: suggestions.filter(
         (item) => item.suggestion.suggestionType === 'rewrite',
       ).length,
     },
   };
+
   const report: AiPilotEvaluationReport = {
     id: `pilot-report-${runId}`,
     evaluationSetId,
     runId,
     provider,
-    model: ollamaModel,
+    model: runtimeConfig.model,
     mode,
-    createdAt: run.createdAt,
+    createdAt: startedAt,
     durationMs: run.durationMs,
     attemptedCount: run.summary.attemptedCount,
     passedCount: run.summary.passedCount,
     failedCount: run.summary.failedCount,
     criticalIssueCount,
     warningIssueCount,
-    issueBreakdown: buildIssueBreakdown(suggestionRecords),
-    items: suggestionRecords.map(buildEvaluationItemReport),
+    issueBreakdown: buildIssueBreakdown(suggestions),
+    items: suggestions.map(buildEvaluationItemReport),
   };
 
   return {
     run,
     report,
+    suggestions,
+  };
+}
+
+export async function runLocalOllamaPilot(
+  catalog: ContentCatalog,
+  actorEmail: string,
+  options: LocalOllamaPilotOptions = {},
+): Promise<{ run: AiPilotRun; report: AiPilotEvaluationReport; suggestions: AiPilotSuggestionRecord[] }> {
+  const provider = options.provider ?? 'ollama_qwen25_3b';
+  const mode = options.mode ?? 'mixed';
+  const runtimeConfig = getLocalOllamaRuntimeConfig(options.runtimeConfig);
+
+  if (provider !== 'ollama_qwen25_3b') {
+    throw new Error('El proveedor local solicitado no esta soportado todavia.');
+  }
+
+  const startedAt = Date.now();
+  const runId = `pilot-run-${startedAt}`;
+  const evaluationSetId = options.evaluationSetId ?? 'ad-hoc';
+  const maxItems = options.maxItems ?? runtimeConfig.maxItemsPerRun;
+  const config: AiPilotRunConfig = {
+    timeoutMs: runtimeConfig.maxGenerationMs,
+    maxItems,
+    newQuestionCount:
+      mode === 'rewrite' ? 0 : mode === 'new_question' ? maxItems : Math.max(1, Math.ceil(maxItems / 2)),
+    rewriteCount:
+      mode === 'new_question' ? 0 : mode === 'rewrite' ? maxItems : Math.max(0, maxItems - Math.max(1, Math.ceil(maxItems / 2))),
+  };
+  const chunkBudget =
+    mode === 'new_question' ? maxItems : mode === 'rewrite' ? 0 : Math.max(1, Math.ceil(maxItems / 2));
+  const rewriteBudget =
+    mode === 'rewrite' ? maxItems : mode === 'new_question' ? 0 : Math.max(0, maxItems - chunkBudget);
+  const chunkTargets = (options.chunks ?? []).slice(0, chunkBudget);
+  const rewriteTargets = (options.questions ?? []).slice(0, rewriteBudget);
+  const totalItems = chunkTargets.length + rewriteTargets.length;
+  const suggestionRecords: AiPilotSuggestionRecord[] = [];
+  let completedItems = 0;
+
+  options.onProgress?.(
+    buildProgressSnapshot(0, totalItems, 'queued', undefined, totalItems > 0 ? 'queued' : 'running'),
+  );
+
+  for (const chunk of chunkTargets) {
+    options.signal?.throwIfAborted?.();
+    options.onProgress?.(
+      buildProgressSnapshot(completedItems, totalItems, 'generating', chunk.referenceLabel),
+    );
+    const record = await generateNewQuestionRecord(
+      catalog,
+      chunk,
+      actorEmail,
+      runId,
+      runtimeConfig,
+      options.signal,
+    );
+    options.onProgress?.(
+      buildProgressSnapshot(completedItems, totalItems, 'verifying', chunk.referenceLabel),
+    );
+    suggestionRecords.push(record);
+    completedItems += 1;
+    options.onProgress?.(
+      buildProgressSnapshot(completedItems, totalItems, 'persisting', chunk.referenceLabel),
+    );
+  }
+
+  for (const question of rewriteTargets) {
+    options.signal?.throwIfAborted?.();
+    const itemLabel = question.sourceReference ?? question.id;
+    options.onProgress?.(
+      buildProgressSnapshot(completedItems, totalItems, 'generating', itemLabel),
+    );
+    const record = await generateRewriteRecord(
+      catalog,
+      question,
+      actorEmail,
+      runId,
+      runtimeConfig,
+      options.signal,
+    );
+    options.onProgress?.(
+      buildProgressSnapshot(completedItems, totalItems, 'verifying', itemLabel),
+    );
+    suggestionRecords.push(record);
+    completedItems += 1;
+    options.onProgress?.(
+      buildProgressSnapshot(completedItems, totalItems, 'persisting', itemLabel),
+    );
+  }
+
+  const completedResult = buildLocalOllamaPilotCompletedResult({
+    provider,
+    runtimeConfig,
+    actorEmail,
+    runId,
+    evaluationSetId,
+    mode,
+    config,
+    startedAt: new Date(startedAt).toISOString(),
+    durationMs: Date.now() - startedAt,
     suggestions: suggestionRecords,
+  });
+
+  options.onProgress?.(
+    buildProgressSnapshot(
+      suggestionRecords.length,
+      totalItems,
+      'completed',
+      suggestionRecords[suggestionRecords.length - 1]?.suggestion.sourceReference,
+      'completed',
+    ),
+  );
+
+  return {
+    ...completedResult,
   };
 }

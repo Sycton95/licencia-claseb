@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, AdminButton, AdminInput, AdminLabel, AdminCard, AdminSection, AdminBadge } from './index';
+import { ChevronLeftIcon, AdminButton, AdminLabel, AdminCard, AdminSection, AdminBadge } from './index';
 import type { EditorialDiagnostic } from '../../lib/editorialDiagnostics';
 import type { Chapter, EditorialAction, Question, SelectionMode, SourceDocument } from '../../types/content';
 
@@ -13,14 +13,36 @@ type Props = {
   onUpdateField: <K extends keyof Question>(field: K, val: Question[K]) => void;
   onUpdateOptionText: (id: string, text: string) => void;
   onUpdateOptionCorrect: (id: string, checked: boolean) => void;
+  onOpenManual: (sourceDocumentId: string, page?: number) => void;
+  onOpenReference: (id: string) => void;
   chapters: Chapter[];
   sourceDocuments: SourceDocument[];
 };
 
-function getSeverityClasses(severity: EditorialDiagnostic['severity']) {
-  return severity === 'critical'
-    ? 'border-rose-200 bg-rose-50 text-rose-700'
-    : 'border-amber-200 bg-amber-50 text-amber-700';
+function renderDiagnosticDetail(
+  diagnostic: EditorialDiagnostic,
+  onOpenReference: (id: string) => void,
+) {
+  if (!diagnostic.referenceTargetId) {
+    return <p className="mt-1 text-sm leading-relaxed text-neutral-700">{diagnostic.detail}</p>;
+  }
+
+  const token = diagnostic.referenceTargetId;
+  const parts = diagnostic.detail.split(token);
+
+  return (
+    <p className="mt-1 text-sm leading-relaxed text-neutral-700">
+      {parts[0]}
+      <button
+        type="button"
+        onClick={() => onOpenReference(token)}
+        className="font-semibold text-blue-700 underline underline-offset-2"
+      >
+        {token}
+      </button>
+      {parts.slice(1).join(token)}
+    </p>
+  );
 }
 
 export function EditorPanel({
@@ -34,6 +56,8 @@ export function EditorPanel({
   onUpdateField,
   onUpdateOptionText,
   onUpdateOptionCorrect,
+  onOpenManual,
+  onOpenReference,
   chapters,
   sourceDocuments,
 }: Props) {
@@ -52,7 +76,7 @@ export function EditorPanel({
   }
 
   return (
-    <div className="relative flex h-full min-w-0 flex-1 flex-col bg-white">
+    <div className="relative flex h-full min-h-0 min-w-0 flex-1 flex-col bg-white">
       <div className="z-10 flex h-14 shrink-0 items-center justify-between border-b border-neutral-200 bg-white px-4 shadow-sm">
         <div className="flex items-center space-x-2">
           <button
@@ -64,7 +88,7 @@ export function EditorPanel({
             <ChevronLeftIcon size={20} />
           </button>
           <div className="flex items-center space-x-2">
-            <h2 className="hidden text-sm font-semibold text-neutral-900 sm:block">Modo edición</h2>
+            <h2 className="hidden text-sm font-semibold text-neutral-900 sm:block">Modo edicion</h2>
             <code className="rounded bg-neutral-100 px-2 py-1 font-mono text-xs text-neutral-600">
               {draftQuestion.id}
             </code>
@@ -76,17 +100,13 @@ export function EditorPanel({
       </div>
 
       <div className="flex-1 overflow-y-auto bg-neutral-50/30 p-4 pb-28 md:p-8 md:pb-32">
-        <div className="mx-auto max-w-3xl space-y-6 md:space-y-8">
+        <div className="mx-auto min-h-full max-w-3xl space-y-6 md:space-y-8">
           {statusMessage && (
-            <AdminCard
-              variant={statusTone === 'error' ? 'subtle' : 'subtle'}
-              padding="standard"
-            >
-              <div aria-live="polite" className={`text-sm font-medium ${
-                statusTone === 'error'
-                  ? 'text-warning-700'
-                  : 'text-success-700'
-              }`}>
+            <AdminCard variant="subtle" padding="standard">
+              <div
+                aria-live="polite"
+                className={`text-sm font-medium ${statusTone === 'error' ? 'text-warning-700' : 'text-success-700'}`}
+              >
                 {statusMessage}
               </div>
             </AdminCard>
@@ -110,7 +130,7 @@ export function EditorPanel({
                     </AdminBadge>
                   </div>
                   <p className="text-sm font-semibold text-neutral-900">{diagnostic.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-neutral-700">{diagnostic.detail}</p>
+                  {renderDiagnosticDetail(diagnostic, onOpenReference)}
                 </AdminCard>
               ))}
             </div>
@@ -120,7 +140,7 @@ export function EditorPanel({
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               <div>
                 <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-neutral-600">
-                  Capítulo base
+                  Capitulo base
                 </label>
                 <select
                   value={draftQuestion.chapterId}
@@ -155,22 +175,20 @@ export function EditorPanel({
             <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
               <div>
                 <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-neutral-600">
-                  Modo de selección
+                  Modo de seleccion
                 </label>
                 <select
                   value={draftQuestion.selectionMode}
-                  onChange={(event) =>
-                    onUpdateField('selectionMode', event.target.value as SelectionMode)
-                  }
+                  onChange={(event) => onUpdateField('selectionMode', event.target.value as SelectionMode)}
                   className="w-full rounded-lg border border-neutral-200 bg-white p-2.5 text-sm shadow-sm outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
                 >
-                  <option value="single">Única</option>
-                  <option value="multiple">Múltiple</option>
+                  <option value="single">Unica</option>
+                  <option value="multiple">Multiple</option>
                 </select>
               </div>
               <div>
                 <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-neutral-600">
-                  Página fuente
+                  Pagina fuente
                 </label>
                 <input
                   type="number"
@@ -189,8 +207,17 @@ export function EditorPanel({
                   value={draftQuestion.sourceReference || ''}
                   onChange={(event) => onUpdateField('sourceReference', event.target.value)}
                   className="w-full rounded-lg border border-neutral-200 bg-white p-2.5 text-sm shadow-sm outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
-                  placeholder="Pág. 34"
+                  placeholder="Pag. 34"
                 />
+                <div className="mt-2">
+                  <button
+                    type="button"
+                    onClick={() => onOpenManual(draftQuestion.sourceDocumentId, draftQuestion.sourcePage)}
+                    className="rounded border border-neutral-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-700 hover:bg-neutral-100"
+                  >
+                    Abrir manual
+                  </button>
+                </div>
               </div>
             </div>
           </AdminSection>
@@ -206,13 +233,13 @@ export function EditorPanel({
                   onChange={(event) => onUpdateField('prompt', event.target.value)}
                   className="w-full resize-y rounded-lg border border-neutral-200 bg-white p-3.5 text-sm leading-relaxed shadow-sm outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
                   rows={3}
-                  placeholder="Escribe el enunciado aquí…"
+                  placeholder="Escribe el enunciado aqui..."
                 />
               </div>
 
               <div>
                 <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-neutral-600">
-                  Instrucción visible
+                  Instruccion visible
                 </label>
                 <input
                   type="text"
@@ -225,14 +252,14 @@ export function EditorPanel({
 
               <div>
                 <label className="mb-2 block text-[11px] font-bold uppercase tracking-wider text-neutral-600">
-                  Explicación o feedback público (opcional)
+                  Explicacion o feedback publico (opcional)
                 </label>
                 <textarea
                   value={draftQuestion.publicExplanation || ''}
                   onChange={(event) => onUpdateField('publicExplanation', event.target.value)}
                   className="w-full resize-y rounded-lg border border-neutral-200 bg-white p-3 text-sm shadow-sm outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
                   rows={2}
-                  placeholder="Se muestra al usuario al revisar el test…"
+                  placeholder="Se muestra al usuario al revisar el test..."
                 />
               </div>
             </div>
@@ -241,7 +268,7 @@ export function EditorPanel({
           <AdminSection title="Opciones de respuesta">
             <div className="mb-4 flex items-center justify-between">
               <AdminLabel variant="metadata">
-                {draftQuestion.selectionMode === 'single' ? 'Selección única' : 'Selección múltiple'}
+                {draftQuestion.selectionMode === 'single' ? 'Seleccion unica' : 'Seleccion multiple'}
               </AdminLabel>
             </div>
             <div className="space-y-3">
@@ -249,9 +276,7 @@ export function EditorPanel({
                 <div
                   key={option.id}
                   className={`flex items-start space-x-3 rounded-xl border p-3 shadow-sm transition-colors ${
-                    option.isCorrect
-                      ? 'border-success-300 bg-success-50'
-                      : 'border-neutral-200 bg-white'
+                    option.isCorrect ? 'border-success-300 bg-success-50' : 'border-neutral-200 bg-white'
                   }`}
                 >
                   <div className="flex h-10 shrink-0 items-center justify-center">
@@ -259,7 +284,7 @@ export function EditorPanel({
                       type="checkbox"
                       checked={option.isCorrect}
                       onChange={(event) => onUpdateOptionCorrect(option.id, event.target.checked)}
-                      aria-label={`Marcar opción ${option.label} como correcta`}
+                      aria-label={`Marcar opcion ${option.label} como correcta`}
                       className="h-4 w-4 cursor-pointer rounded border-neutral-300 text-success-600 focus:ring-success-500"
                     />
                   </div>
@@ -267,7 +292,7 @@ export function EditorPanel({
                     value={option.text}
                     onChange={(event) => onUpdateOptionText(option.id, event.target.value)}
                     rows={1}
-                    placeholder="Texto de la alternativa…"
+                    placeholder="Texto de la alternativa..."
                     className="min-h-[40px] w-full resize-none bg-transparent py-2 text-sm text-neutral-900 outline-none"
                   />
                 </div>
@@ -317,7 +342,7 @@ export function EditorPanel({
             disabled={isBusy}
             className="hidden md:block"
           >
-            Aprobar revisión
+            Aprobar revision
           </AdminButton>
           <AdminButton
             variant="primary"

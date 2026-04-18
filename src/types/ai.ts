@@ -8,6 +8,11 @@ export type AiRunType = 'suggestion_refresh';
 export type AiPilotRunMode = 'new_question' | 'rewrite' | 'mixed';
 export type AiPilotVerifierSeverity = 'critical' | 'warning';
 export type AiPilotVerifierStatus = 'passed' | 'failed';
+export type AiPilotActiveRunStatus = 'queued' | 'running' | 'completed' | 'failed' | 'cancelled';
+export type AiPilotProgressStep = 'queued' | 'generating' | 'verifying' | 'persisting' | 'completed';
+export type AiPilotTaskStatus = 'queued' | 'running' | 'completed' | 'failed' | 'cancelled';
+export type AiPilotTaskType = 'new_question' | 'rewrite';
+export type AiPilotLogLevel = 'info' | 'success' | 'warning' | 'error';
 export type AiPilotVerifierCode =
   | 'invalid_shape'
   | 'missing_grounding'
@@ -102,6 +107,8 @@ export interface AiPilotVerifierIssue {
   code: AiPilotVerifierCode;
   severity: AiPilotVerifierSeverity;
   message: string;
+  referenceTargetId?: string;
+  referenceTargetType?: 'question' | 'suggestion';
 }
 
 export interface AiPilotSuggestionRecord {
@@ -129,6 +136,35 @@ export interface AiPilotEvaluationSet {
   description: string;
   newQuestionChunkIds: string[];
   rewriteQuestionIds: string[];
+}
+
+export interface AiPilotRunConfig {
+  timeoutMs: number;
+  maxItems: number;
+  newQuestionCount: number;
+  rewriteCount: number;
+}
+
+export interface AiPilotTask {
+  id: string;
+  type: AiPilotTaskType;
+  targetId: string;
+  label: string;
+  status: AiPilotTaskStatus;
+  startedAt?: string;
+  completedAt?: string;
+  verifierStatus?: AiPilotVerifierStatus;
+  criticalCount?: number;
+  warningCount?: number;
+  error?: string;
+}
+
+export interface AiPilotLogEntry {
+  id: string;
+  timestamp: string;
+  level: AiPilotLogLevel;
+  message: string;
+  taskId?: string;
 }
 
 export interface AiPilotEvaluationItemReport {
@@ -169,6 +205,7 @@ export interface AiPilotRun {
   attemptedItemIds: string[];
   mode: AiPilotRunMode;
   status: AiPilotRunStatus;
+  config: AiPilotRunConfig;
   summary: AiPilotRunSummary;
   createdAt: string;
   durationMs: number;
@@ -180,4 +217,57 @@ export interface AiPilotWorkspace {
   reports: AiPilotEvaluationReport[];
   sourcePreparation: SourcePreparationChunk[];
   evaluationSet: AiPilotEvaluationSet;
+}
+
+export interface AiPilotCompletedResult {
+  run: AiPilotRun;
+  report: AiPilotEvaluationReport;
+  suggestions: AiPilotSuggestionRecord[];
+}
+
+export interface AiPilotActiveRun {
+  runId: string;
+  provider: AiProvider;
+  model: string;
+  mode: AiPilotRunMode;
+  evaluationSetId: string;
+  config: AiPilotRunConfig;
+  status: AiPilotActiveRunStatus;
+  startedAt: string;
+  completedAt?: string;
+  totalItems: number;
+  completedItems: number;
+  currentItemLabel?: string;
+  currentStep: AiPilotProgressStep;
+  progressPercent: number;
+  queuedTasks: AiPilotTask[];
+  currentTask?: AiPilotTask;
+  completedTasks: AiPilotTask[];
+  logEntries: AiPilotLogEntry[];
+  error?: string;
+  result?: AiPilotCompletedResult;
+}
+
+export interface LocalOllamaMetrics {
+  timestamp: string;
+  cpuPercent: number;
+  memoryUsedPercent: number;
+  memoryUsedBytes: number;
+  memoryTotalBytes: number;
+  gpuAvailable: boolean;
+  gpuPercent?: number;
+  gpuStatus: string;
+  warnings: string[];
+}
+
+export interface LocalOllamaHealth {
+  workerAvailable: boolean;
+  ollamaReachable: boolean;
+  model: string;
+  baseUrl: string;
+  currentRun: Pick<
+    AiPilotActiveRun,
+    'runId' | 'status' | 'mode' | 'progressPercent' | 'currentItemLabel' | 'currentStep' | 'config'
+  > | null;
+  error?: string;
 }

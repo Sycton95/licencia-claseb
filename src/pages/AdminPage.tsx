@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { AdminSidebar } from '../components/admin/AdminSidebar';
 import { AdminTopStrip } from '../components/admin/AdminTopStrip';
 import { DashboardView } from '../components/admin/DashboardView';
@@ -6,6 +6,8 @@ import { CatalogManager } from '../components/admin/CatalogManager';
 import { EditorPanel } from '../components/admin/EditorPanel';
 import { AiQueueManager } from '../components/admin/AiQueueManager';
 import { BetaPilotManager } from '../components/admin/BetaPilotManager';
+import { AdminReferenceDrawer } from '../components/admin/AdminReferenceDrawer';
+import { AdminManualReader } from '../components/admin/AdminManualReader';
 import type { AdminHealth, AdminReportSummary, AdminSection } from '../components/admin/types';
 import { buildDraftQuestionFromSuggestion } from '../lib/aiSuggestionEngine';
 import {
@@ -29,24 +31,33 @@ import {
 import {
   discardLocalAiPilotSuggestion,
   generateAiWorkspace,
-  generateLocalAiPilotWorkspace,
   getAiWorkspace,
   getContentCatalog,
   getCurrentSession,
   getLocalAiPilotWorkspace,
+  getLocalAiPilotRunStatus,
+  getLocalAiPilotWorkerHealth,
+  getLocalAiPilotWorkerMetrics,
   isCurrentUserAdmin,
   markAiSuggestionApplied,
+  persistLocalAiPilotRunResult,
   requestAdminMagicLink,
   saveQuestion,
   signOutAdmin,
+  startLocalAiPilotRun,
   transitionAiSuggestion,
+  cancelLocalAiPilotRun,
 } from '../lib/contentRepository';
 import type {
+  AiPilotActiveRun,
+  AiPilotRunConfig,
   AiPilotRunMode,
   AiPilotSuggestionRecord,
   AiPilotWorkspace,
   AiSuggestion,
   AiWorkspace,
+  LocalOllamaHealth,
+  LocalOllamaMetrics,
 } from '../types/ai';
 import type { ContentCatalog, EditorialAction, EditorialStatus, Question } from '../types/content';
 
@@ -77,6 +88,24 @@ export function AdminPage() {
   const [adminHealth, setAdminHealth] = useState<AdminHealth | null>(null);
   const [editorStatusMessage, setEditorStatusMessage] = useState<string | null>(null);
   const [editorStatusTone, setEditorStatusTone] = useState<StatusTone>('success');
+  const [activeBetaRun, setActiveBetaRun] = useState<AiPilotActiveRun | null>(null);
+  const [betaHealth, setBetaHealth] = useState<LocalOllamaHealth | null>(null);
+  const [betaMetrics, setBetaMetrics] = useState<LocalOllamaMetrics | null>(null);
+  const [betaSetupError, setBetaSetupError] = useState<string | null>(null);
+  const [isBetaBusy, setIsBetaBusy] = useState(false);
+  const [catalogListCollapsed, setCatalogListCollapsed] = useState(false);
+  const [aiListCollapsed, setAiListCollapsed] = useState(false);
+  const [betaListCollapsed, setBetaListCollapsed] = useState(false);
+  const [referenceQuestionId, setReferenceQuestionId] = useState<string | null>(null);
+  const [manualDocumentId, setManualDocumentId] = useState<string | null>(null);
+  const [manualInitialPage, setManualInitialPage] = useState<number | undefined>(undefined);
+  const [betaRunConfig, setBetaRunConfig] = useState<AiPilotRunConfig>({
+    timeoutMs: ollamaMaxGenerationMs,
+    maxItems: ollamaMaxItemsPerRun,
+    newQuestionCount: 2,
+    rewriteCount: 2,
+  });
+  const syncedBetaRunIdsRef = useRef(new Set<string>());
 
   const canUseLocalAdmin = useLocalAdminMode;
   const showBetaSection = isAdminBetaPanelEnabled && (canUseLocalAdmin || isAdminAuthorized);
@@ -121,10 +150,132 @@ export function AdminPage() {
   }, [canUseLocalAdmin, isAdminAuthorized]);
 
   useEffect(() => {
-    if (showBetaSection) {
-      getLocalAiPilotWorkspace().then(setBetaWorkspace);
+    if (!showBetaSection) {
+      setActiveBetaRun(null);
+      setBetaHealth(null);
+      setBetaMetrics(null);
+      setBetaSetupError(null);
+      return;
     }
-  }, [showBetaSection]);
+
+    let isCancelled = false;
+
+    const loadBetaPanel = async () => {
+      try {
+        const workspace = await getLocalAiPilotWorkspace();
+        if (isCancelled) {
+          return;
+        }
+        setBetaWorkspace(workspace);
+
+        if (!isLocalOllamaEnabled) {
+          setBetaHealth(null);
+          setBetaMetrics(null);
+          setActiveBetaRun(null);
+          setBetaSetupError(null);
+          return;
+        }
+
+        const [health, metrics] = await Promise.all([
+          getLocalAiPilotWorkerHealth(),
+          getLocalAiPilotWorkerMetrics(),
+        ]);
+
+        if (isCancelled) {
+          return;
+        }
+
+        setBetaHealth(health);
+        setBetaMetrics(metrics);
+        setBetaSetupError(null);
+
+        if (health.currentRun?.runId) {
+          const runState = await getLocalAiPilotRunStatus(health.currentRun.runId);
+          if (isCancelled) {
+            return;
+          }
+          if (runState.status === 'completed' && runState.result) {
+            syncedBetaRunIdsRef.current.add(runState.runId);
+            setBetaWorkspace(await persistLocalAiPilotRunResult(runState.result));
+          }
+          setBetaRunConfig(runState.config);
+          setActiveBetaRun(runState);
+        } else {
+          setActiveBetaRun(null);
+        }
+      } catch (error) {
+        if (isCancelled) {
+          return;
+        }
+        setBetaSetupError(
+          error instanceof Error
+            ? error.message
+            : 'No se pudo conectar con el worker local de Ollama.',
+        );
+      }
+    };
+
+    void loadBetaPanel();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [showBetaSection, isLocalOllamaEnabled]);
+
+  useEffect(() => {
+    if (
+      !showBetaSection ||
+      !activeBetaRun ||
+      !['queued', 'running'].includes(activeBetaRun.status)
+    ) {
+      return;
+    }
+
+    let isCancelled = false;
+    const intervalId = window.setInterval(async () => {
+      try {
+        const [runState, metrics, health] = await Promise.all([
+          getLocalAiPilotRunStatus(activeBetaRun.runId),
+          getLocalAiPilotWorkerMetrics(),
+          getLocalAiPilotWorkerHealth(),
+        ]);
+
+        if (isCancelled) {
+          return;
+        }
+
+        setBetaMetrics(metrics);
+        setBetaHealth(health);
+        setActiveBetaRun(runState);
+        setBetaRunConfig(runState.config);
+        setBetaSetupError(null);
+
+        if (
+          runState.status === 'completed' &&
+          runState.result &&
+          !syncedBetaRunIdsRef.current.has(runState.runId)
+        ) {
+          syncedBetaRunIdsRef.current.add(runState.runId);
+          setBetaWorkspace(await persistLocalAiPilotRunResult(runState.result));
+          setEditorStatus(`Corrida Beta completada en modo ${runState.mode}.`, 'success');
+        }
+      } catch (error) {
+        if (isCancelled) {
+          return;
+        }
+        setBetaSetupError(
+          error instanceof Error
+            ? error.message
+            : 'No se pudo refrescar el estado local de Ollama.',
+        );
+      }
+    }, 1500);
+
+    return () => {
+      isCancelled = true;
+      window.clearInterval(intervalId);
+    };
+  }, [activeBetaRun, showBetaSection]);
 
   const filteredQuestions = useMemo(() => {
     if (!catalog) {
@@ -204,6 +355,21 @@ export function AdminPage() {
   const chapterCoverage = useMemo(
     () => (catalog ? buildChapterCoverage(catalog.chapters, catalog.questions) : []),
     [catalog],
+  );
+  const referenceQuestion = useMemo(
+    () => catalog?.questions.find((question) => question.id === referenceQuestionId) ?? null,
+    [catalog, referenceQuestionId],
+  );
+  const referenceChapter = useMemo(
+    () =>
+      referenceQuestion
+        ? catalog?.chapters.find((chapter) => chapter.id === referenceQuestion.chapterId) ?? null
+        : null,
+    [catalog, referenceQuestion],
+  );
+  const manualDocument = useMemo(
+    () => catalog?.sourceDocuments.find((source) => source.id === manualDocumentId) ?? null,
+    [catalog, manualDocumentId],
   );
 
   const setEditorStatus = (message: string | null, tone: StatusTone = 'success') => {
@@ -314,13 +480,35 @@ export function AdminPage() {
     setEditorStatus('Borrador cargado desde Beta local.', 'success');
   };
 
-  const handleRunBetaPilot = async (mode: AiPilotRunMode) => {
-    setIsBusy(true);
+  const handleOpenReference = (id: string) => {
+    setReferenceQuestionId(id);
+  };
+
+  const handleOpenManual = (sourceDocumentId: string, page?: number) => {
+    setManualDocumentId(sourceDocumentId);
+    setManualInitialPage(page);
+  };
+
+  const handleUpdateBetaRunConfig = (patch: Partial<AiPilotRunConfig>) => {
+    setBetaRunConfig((current) => {
+      const next = { ...current, ...patch };
+      const boundedMaxItems = Math.max(1, Math.min(next.maxItems, ollamaMaxItemsPerRun));
+      return {
+        ...next,
+        maxItems: boundedMaxItems,
+      };
+    });
+  };
+
+  const handleRunBetaPilot = async (mode: AiPilotRunMode, config: AiPilotRunConfig) => {
+    setIsBetaBusy(true);
 
     try {
-      setBetaWorkspace(await generateLocalAiPilotWorkspace('ollama_qwen25_3b', mode));
+      const nextRun = await startLocalAiPilotRun('ollama_qwen25_3b', mode, config);
+      setActiveBetaRun(nextRun);
       setSelectedBetaSuggestionId(null);
-      setEditorStatus(`Corrida Beta ejecutada en modo ${mode}.`, 'success');
+      setBetaSetupError(null);
+      setEditorStatus(`Corrida Beta iniciada en modo ${mode}.`, 'success');
     } catch (error) {
       const message =
         error instanceof Error
@@ -328,13 +516,61 @@ export function AdminPage() {
           : 'No se pudo ejecutar el piloto local de Ollama.';
       setEditorStatus(message, 'error');
     } finally {
-      setIsBusy(false);
+      setIsBetaBusy(false);
     }
   };
 
   const handleDiscardBetaSuggestion = async (id: string) => {
     setBetaWorkspace(await discardLocalAiPilotSuggestion(id));
     setSelectedBetaSuggestionId((current) => (current === id ? null : current));
+  };
+
+  const handleRefreshBetaRuntime = async () => {
+    if (!isLocalOllamaEnabled) {
+      return;
+    }
+
+    setIsBetaBusy(true);
+    try {
+      const [health, metrics] = await Promise.all([
+        getLocalAiPilotWorkerHealth(),
+        getLocalAiPilotWorkerMetrics(),
+      ]);
+      setBetaHealth(health);
+      setBetaMetrics(metrics);
+      setBetaSetupError(null);
+
+      if (health.currentRun?.runId) {
+        const runState = await getLocalAiPilotRunStatus(health.currentRun.runId);
+        setBetaRunConfig(runState.config);
+        setActiveBetaRun(runState);
+      }
+    } catch (error) {
+      setBetaSetupError(
+        error instanceof Error
+          ? error.message
+          : 'No se pudo refrescar el worker local de Ollama.',
+      );
+    } finally {
+      setIsBetaBusy(false);
+    }
+  };
+
+  const handleCancelBetaRun = async (runId: string) => {
+    setIsBetaBusy(true);
+    try {
+      const runState = await cancelLocalAiPilotRun(runId);
+      setBetaRunConfig(runState.config);
+      setActiveBetaRun(runState);
+      setEditorStatus('Corrida Beta cancelada.', 'success');
+    } catch (error) {
+      setEditorStatus(
+        error instanceof Error ? error.message : 'No se pudo cancelar la corrida local.',
+        'error',
+      );
+    } finally {
+      setIsBetaBusy(false);
+    }
   };
 
   if (isLoading) {
@@ -379,7 +615,7 @@ export function AdminPage() {
   }
 
   return (
-    <div className="flex h-[100dvh] w-full overflow-hidden bg-slate-50 font-sans text-slate-900">
+    <div className="flex h-[100dvh] w-full items-stretch overflow-hidden bg-slate-50 font-sans text-slate-900">
       <AdminSidebar
         activeSection={activeSection}
         onNavigate={setActiveSection}
@@ -391,13 +627,13 @@ export function AdminPage() {
         showBeta={showBetaSection}
       />
 
-      <main className="relative flex h-full min-w-0 flex-1 flex-col overflow-y-auto md:overflow-hidden landscape:md:overflow-hidden">
+      <main className="relative flex min-h-0 min-w-0 flex-1 self-stretch flex-col overflow-hidden">
         <AdminTopStrip
           activeSection={activeSection}
           onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
         />
 
-        <div className="relative w-full flex-1 overflow-y-auto md:overflow-hidden landscape:md:overflow-hidden">
+        <div className="relative flex min-h-0 w-full flex-1 flex-col overflow-y-auto md:overflow-hidden">
           {activeSection === 'dashboard' && (
             <DashboardView
               summary={summary}
@@ -417,6 +653,8 @@ export function AdminPage() {
               filterStatus={filterStatus}
               setFilterStatus={setFilterStatus}
               diagnosticsByQuestionId={questionDiagnosticsById}
+              isListCollapsed={catalogListCollapsed}
+              onToggleListCollapsed={() => setCatalogListCollapsed((current) => !current)}
               editorPanel={
                 <EditorPanel
                   draftQuestion={draftQuestion}
@@ -459,6 +697,8 @@ export function AdminPage() {
                         : previous,
                     )
                   }
+                  onOpenManual={handleOpenManual}
+                  onOpenReference={handleOpenReference}
                   chapters={catalog?.chapters || []}
                   sourceDocuments={catalog?.sourceDocuments || []}
                 />
@@ -471,13 +711,17 @@ export function AdminPage() {
               filteredSuggestions={aiWorkspace?.suggestions || []}
               diagnosticsBySuggestionId={suggestionDiagnosticsById}
               isBusy={isBusy}
+              isListCollapsed={aiListCollapsed}
               selectedSuggestionId={selectedSuggestionId}
               selectedSuggestion={
                 aiWorkspace?.suggestions.find((suggestion) => suggestion.id === selectedSuggestionId) ||
                 null
               }
               onSelectSuggestion={setSelectedSuggestionId}
+              onToggleListCollapsed={() => setAiListCollapsed((current) => !current)}
               onLoadSuggestionIntoEditor={handleLoadSuggestionIntoEditor}
+              onOpenManual={handleOpenManual}
+              onOpenReference={handleOpenReference}
               onGenerateSuggestions={async () => setAiWorkspace(await generateAiWorkspace())}
               onTransitionSuggestion={async (id, status) =>
                 setAiWorkspace(await transitionAiSuggestion(id, status))
@@ -487,21 +731,51 @@ export function AdminPage() {
 
           {activeSection === 'beta' && showBetaSection && (
             <BetaPilotManager
-              isBusy={isBusy}
+              activeRun={activeBetaRun}
+              health={betaHealth}
               isEnabled={isLocalOllamaEnabled}
+              isBusy={isBetaBusy}
+              isListCollapsed={betaListCollapsed}
               maxItemsPerRun={ollamaMaxItemsPerRun}
+              metrics={betaMetrics}
               model={ollamaModel}
               providerId="ollama_qwen25_3b"
+              runConfig={betaRunConfig}
               selectedSuggestionId={selectedBetaSuggestionId}
+              setupError={betaSetupError}
               timeoutMs={ollamaMaxGenerationMs}
               workspace={betaWorkspace}
+              onCancelRun={handleCancelBetaRun}
               onDiscardSuggestion={handleDiscardBetaSuggestion}
               onLoadIntoEditor={handleLoadBetaSuggestionIntoEditor}
+              onOpenManual={handleOpenManual}
+              onOpenReference={handleOpenReference}
+              onRefreshRuntime={handleRefreshBetaRuntime}
               onRunPilot={handleRunBetaPilot}
               onSelectSuggestion={setSelectedBetaSuggestionId}
+              onToggleListCollapsed={() => setBetaListCollapsed((current) => !current)}
+              onUpdateRunConfig={handleUpdateBetaRunConfig}
             />
           )}
         </div>
+        <AdminReferenceDrawer
+          chapter={referenceChapter}
+          question={referenceQuestion}
+          sourceDocument={
+            referenceQuestion
+              ? catalog?.sourceDocuments.find((source) => source.id === referenceQuestion.sourceDocumentId) ?? null
+              : null
+          }
+          onClose={() => setReferenceQuestionId(null)}
+        />
+        <AdminManualReader
+          document={manualDocument}
+          initialPage={manualInitialPage}
+          onClose={() => {
+            setManualDocumentId(null);
+            setManualInitialPage(undefined);
+          }}
+        />
       </main>
     </div>
   );

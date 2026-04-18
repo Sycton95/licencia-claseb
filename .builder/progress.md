@@ -4,6 +4,8 @@
 
 **Operational Rule**: No backend logic, data-fetching, API route, or core state changes. UI state and visual polish only.
 
+**Admin Ownership**: `/admin` local-beta, Ollama workflow, and editorial tooling are now handled in the main roadmap. This log covers only public-route UI/UX work.
+
 ---
 
 ## 2026-04-14: Design System Implementation Complete

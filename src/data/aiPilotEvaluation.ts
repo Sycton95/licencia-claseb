@@ -1,5 +1,9 @@
 import type { ContentCatalog, Question } from '../types/content.js';
-import type { AiPilotEvaluationSet, SourcePreparationChunk } from '../types/ai.js';
+import type {
+  AiPilotEvaluationSet,
+  AiPilotRunConfig,
+  SourcePreparationChunk,
+} from '../types/ai.js';
 
 export const AI_PILOT_BASELINE_EVALUATION_SET: AiPilotEvaluationSet = {
   id: 'pilot-baseline-v1',
@@ -47,5 +51,31 @@ export function resolveAiPilotEvaluationTargets(
       evaluationSet.rewriteQuestionIds,
       'preguntas',
     ),
+  };
+}
+
+export function buildAiPilotExecutionTargets(
+  catalog: ContentCatalog,
+  sourcePreparation: SourcePreparationChunk[],
+  config: AiPilotRunConfig,
+  evaluationSet: AiPilotEvaluationSet = AI_PILOT_BASELINE_EVALUATION_SET,
+): {
+  evaluationSet: AiPilotEvaluationSet;
+  chunks: SourcePreparationChunk[];
+  questions: Question[];
+} {
+  const resolved = resolveAiPilotEvaluationTargets(catalog, sourcePreparation, evaluationSet);
+  const maxItems = Math.max(1, config.maxItems);
+  const newQuestionCount = Math.max(0, Math.min(config.newQuestionCount, resolved.chunks.length));
+  const rewriteCount = Math.max(0, Math.min(config.rewriteCount, resolved.questions.length));
+
+  const boundedChunks = resolved.chunks.slice(0, Math.min(newQuestionCount, maxItems));
+  const remaining = Math.max(0, maxItems - boundedChunks.length);
+  const boundedQuestions = resolved.questions.slice(0, Math.min(rewriteCount, remaining));
+
+  return {
+    evaluationSet: resolved.evaluationSet,
+    chunks: boundedChunks,
+    questions: boundedQuestions,
   };
 }

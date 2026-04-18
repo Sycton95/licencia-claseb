@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:admin-beta": "node scripts/dev-admin-beta.mjs",
     "build": "tsc --noEmit -p tsconfig.app.json && vite build",
     "preview": "vite preview",
     "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
@@ -31,6 +32,7 @@
     "postcss": "^8.5.9",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.6.3",
+    "tsx": "^4.20.6",
     "vite": "^5.4.10"
   }
 }

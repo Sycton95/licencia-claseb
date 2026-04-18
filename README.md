@@ -32,11 +32,18 @@ Frontend:
 - `VITE_SUPABASE_ANON_KEY` como fallback legado
 - `VITE_ENABLE_LOCAL_ADMIN`
 - `VITE_ENABLE_PREVIEW_ADMIN_BYPASS`
+- `VITE_ENABLE_ADMIN_BETA_PANEL`
+- `VITE_ENABLE_LOCAL_OLLAMA`
+- `VITE_OLLAMA_BASE_URL`
+- `VITE_OLLAMA_MODEL`
+- `VITE_OLLAMA_MAX_GENERATION_MS`
+- `VITE_OLLAMA_MAX_ITEMS_PER_RUN`
 - `VITE_PUBLIC_ADMIN_URL`
 
 Servidor:
 
 - `SUPABASE_SERVICE_ROLE_KEY` para escrituras editoriales desde `api/`
+- `LOCAL_OLLAMA_WORKER_PORT` para el worker local del panel Beta
 
 Mapa con la UI actual de Supabase:
 
@@ -86,6 +93,27 @@ Reglas:
 - en Vercel Preview se habilita solo con `VITE_ENABLE_PREVIEW_ADMIN_BYPASS=true`
 - para probar auth real, desactiva el bypass y usa el flujo normal desde producción
 
+## Beta local Ollama en `/admin`
+
+Usa [`docs/admin-local-beta.md`](./docs/admin-local-beta.md) como documento operativo principal.
+
+Flujo corto:
+
+1. define en `.env.local`:
+   - `VITE_ENABLE_LOCAL_ADMIN=true`
+   - `VITE_ENABLE_ADMIN_BETA_PANEL=true`
+   - `VITE_ENABLE_LOCAL_OLLAMA=true`
+2. asegúrate de tener Ollama levantado localmente
+3. ejecuta `npm run dev:admin-beta`
+4. abre `http://localhost:5173/admin`
+
+Comportamiento esperado:
+
+- el panel `Beta` aparece dentro de `/admin`
+- las corridas usan un worker local con progreso en vivo
+- CPU y RAM se reportan siempre; GPU es best-effort
+- los resultados completados siguen siendo locales y nunca públicos
+
 ## Arquitectura
 
 - frontend público: `Vite + React Router`
@@ -102,6 +130,7 @@ Reglas:
 - [`docs/deployment.md`](./docs/deployment.md): flujo de release y despliegue
 - [`docs/automation-recommendations.md`](./docs/automation-recommendations.md): automatizaciones sugeridas
 - [`docs/progress.md`](./docs/progress.md): bitácora operativa y estado de milestones
+- [`docs/admin-local-beta.md`](./docs/admin-local-beta.md): enablement y operación del Beta local con Ollama
 - [`docs/ai-editorial-policy.md`](./docs/ai-editorial-policy.md): reglas de uso y límites de la capa AI
 - [`docs/question-bank-audit.md`](./docs/question-bank-audit.md): auditoría léxica inicial del banco
 - [`supabase/migrations/0001_base.sql`](./supabase/migrations/0001_base.sql): esquema base original
@@ -117,5 +146,6 @@ Reglas:
 - panel admin con flujo editorial controlado
 - panel admin con tarjeta de estado operativo
 - panel admin con inbox privado de sugerencias AI
+- panel admin con track local Beta para Ollama, progreso y telemetría local
 - rutas `api/` para escrituras editoriales en producción
 - esquema `v1` activo con trazabilidad editorial

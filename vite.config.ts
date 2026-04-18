@@ -8,6 +8,7 @@ const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.met
 };
 
 let buildSha = 'dev';
+const localWorkerPort = Number(process.env.LOCAL_OLLAMA_WORKER_PORT ?? 4789);
 
 try {
   buildSha = execSync('git rev-parse --short HEAD', { stdio: ['ignore', 'pipe', 'ignore'] })
@@ -19,6 +20,14 @@ try {
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      '/__local': {
+        target: `http://127.0.0.1:${localWorkerPort}`,
+        changeOrigin: false,
+      },
+    },
+  },
   define: {
     __APP_VERSION__: JSON.stringify(packageJson.version),
     __APP_BUILD__: JSON.stringify(buildSha),

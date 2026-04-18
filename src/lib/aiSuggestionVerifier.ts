@@ -16,11 +16,13 @@ function buildIssue(
   code: AiPilotVerifierIssue['code'],
   severity: AiPilotVerifierIssue['severity'],
   message: string,
+  reference?: Pick<AiPilotVerifierIssue, 'referenceTargetId' | 'referenceTargetType'>,
 ): AiPilotVerifierIssue {
   return {
     code,
     severity,
     message,
+    ...reference,
   };
 }
 
@@ -131,6 +133,10 @@ export function verifyAiSuggestion(
         mapDiagnosticCode(diagnostic.category),
         diagnostic.severity,
         diagnostic.detail,
+        {
+          referenceTargetId: diagnostic.referenceTargetId,
+          referenceTargetType: diagnostic.referenceTargetType,
+        },
       ),
     );
   }

@@ -17,6 +17,8 @@ export type EditorialDiagnostic = {
   severity: EditorialDiagnosticSeverity;
   title: string;
   detail: string;
+  referenceTargetId?: string;
+  referenceTargetType?: 'question' | 'suggestion';
 };
 
 export type EditorialWarning = {
@@ -128,6 +130,7 @@ function buildDiagnostic(
   severity: EditorialDiagnosticSeverity,
   title: string,
   detail: string,
+  reference?: Pick<EditorialDiagnostic, 'referenceTargetId' | 'referenceTargetType'>,
 ) {
   return {
     id: `${entity.entityType}-${entity.id}-${category}-${normalizeText(title).replace(/\s+/g, '-')}`,
@@ -137,6 +140,7 @@ function buildDiagnostic(
     severity,
     title,
     detail,
+    ...reference,
   } satisfies EditorialDiagnostic;
 }
 
@@ -209,6 +213,10 @@ function getDuplicateDiagnostics(
           'critical',
           'Prompt duplicado',
           `El enunciado coincide con ${peer.entityType === 'question' ? 'otra pregunta' : 'otra sugerencia'} (${peer.id}).`,
+          {
+            referenceTargetId: peer.id,
+            referenceTargetType: peer.entityType,
+          },
         ),
       );
       return diagnostics;
@@ -222,6 +230,10 @@ function getDuplicateDiagnostics(
           'warning',
           'Prompt muy similar',
           `El enunciado se parece demasiado a ${peer.entityType === 'question' ? 'otra pregunta' : 'otra sugerencia'} (${peer.id}).`,
+          {
+            referenceTargetId: peer.id,
+            referenceTargetType: peer.entityType,
+          },
         ),
       );
       return diagnostics;

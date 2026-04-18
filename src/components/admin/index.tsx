@@ -9,6 +9,7 @@ export { AdminStatusIndicator } from './AdminStatusIndicator';
 export { AdminSection } from './AdminSection';
 export { AdminPanel } from './AdminPanel';
 export { AdminEmptyState } from './AdminEmptyState';
+export { AdminTooltip } from './AdminTooltip';
 
 // Icons
 export {

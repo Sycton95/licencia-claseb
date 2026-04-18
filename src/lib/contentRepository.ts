@@ -1,6 +1,6 @@
 ﻿import { SEED_CONTENT } from '../data/seedContent';
 import { SOURCE_PREPARATION } from '../data/sourcePreparation';
-import { resolveAiPilotEvaluationTargets } from '../data/aiPilotEvaluation';
+import { buildAiPilotExecutionTargets } from '../data/aiPilotEvaluation';
 import { buildDraftQuestionFromSuggestion } from './aiSuggestionEngine';
 import { generateHeuristicWorkspace, generateLocalPilotWorkspace } from './aiProvider.js';
 import {
@@ -20,6 +20,13 @@ import {
   upsertLocalAiSuggestions,
 } from './localAiStore';
 import {
+  cancelLocalOllamaWorkerRun,
+  getLocalOllamaWorkerHealth,
+  getLocalOllamaWorkerMetrics,
+  getLocalOllamaWorkerRun,
+  startLocalOllamaWorkerRun,
+} from './localOllamaWorkerClient';
+import {
   isLocalOllamaEnabled,
   isSupabaseConfigured,
   supabase,
@@ -38,10 +45,14 @@ import type {
   SourceDocument,
 } from '../types/content';
 import type {
+  AiPilotActiveRun,
+  AiPilotRunConfig,
   AiPilotRunMode,
   AiPilotWorkspace,
   AiProvider,
   AiSuggestion,
+  LocalOllamaHealth,
+  LocalOllamaMetrics,
   AiWorkspace,
 } from '../types/ai';
 
@@ -845,20 +856,25 @@ export async function generateLocalAiPilotWorkspace(
   const catalog = await getContentCatalog();
   const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
   const editionId = catalog.activeEdition?.id ?? catalog.examRuleSet.editionId;
-  const evaluationTargets = resolveAiPilotEvaluationTargets(
+  const defaultConfig = {
+    timeoutMs: 90000,
+    maxItems:
+      mode === 'mixed'
+        ? 4
+        : 2,
+    newQuestionCount: mode === 'rewrite' ? 0 : 2,
+    rewriteCount: mode === 'new_question' ? 0 : 2,
+  };
+  const evaluationTargets = buildAiPilotExecutionTargets(
     catalog,
     SOURCE_PREPARATION.filter((item) => item.editionId === editionId),
+    defaultConfig,
   );
   const workspace = await generateLocalPilotWorkspace(provider, {
     catalog,
     actorEmail,
     evaluationSetId: evaluationTargets.evaluationSet.id,
-    maxItems:
-      mode === 'mixed'
-        ? evaluationTargets.chunks.length + evaluationTargets.questions.length
-        : mode === 'new_question'
-          ? evaluationTargets.chunks.length
-          : evaluationTargets.questions.length,
+    maxItems: evaluationTargets.chunks.length + evaluationTargets.questions.length,
     chunks: evaluationTargets.chunks,
     questions: evaluationTargets.questions,
     mode,
@@ -872,6 +888,65 @@ export async function generateLocalAiPilotWorkspace(
   }
   upsertLocalAiPilotSuggestions(workspace.suggestions);
 
+  return getLocalAiPilotWorkspace();
+}
+
+export async function startLocalAiPilotRun(
+  provider: AiProvider = 'ollama_qwen25_3b',
+  mode: AiPilotRunMode = 'mixed',
+  config?: Partial<AiPilotRunConfig>,
+) {
+  if (!isLocalOllamaEnabled) {
+    throw new Error('Habilita VITE_ENABLE_LOCAL_OLLAMA para usar el piloto local.');
+  }
+
+  const catalog = await getContentCatalog();
+  const actorEmail = (await getCurrentSession())?.user.email ?? 'local-admin';
+  const editionId = catalog.activeEdition?.id ?? catalog.examRuleSet.editionId;
+  const nextConfig: AiPilotRunConfig = {
+    timeoutMs: config?.timeoutMs ?? 90000,
+    maxItems: Math.max(1, config?.maxItems ?? 4),
+    newQuestionCount: Math.max(0, config?.newQuestionCount ?? (mode === 'rewrite' ? 0 : 2)),
+    rewriteCount: Math.max(0, config?.rewriteCount ?? (mode === 'new_question' ? 0 : 2)),
+  };
+  const evaluationTargets = buildAiPilotExecutionTargets(
+    catalog,
+    SOURCE_PREPARATION.filter((item) => item.editionId === editionId),
+    nextConfig,
+  );
+
+  return startLocalOllamaWorkerRun({
+    actorEmail,
+    provider,
+    mode,
+    config: nextConfig,
+    evaluationSet: evaluationTargets.evaluationSet,
+    catalog,
+    chunks: evaluationTargets.chunks,
+    questions: evaluationTargets.questions,
+  });
+}
+
+export async function getLocalAiPilotRunStatus(runId: string) {
+  return getLocalOllamaWorkerRun(runId);
+}
+
+export async function cancelLocalAiPilotRun(runId: string) {
+  return cancelLocalOllamaWorkerRun(runId);
+}
+
+export async function getLocalAiPilotWorkerHealth(): Promise<LocalOllamaHealth> {
+  return getLocalOllamaWorkerHealth();
+}
+
+export async function getLocalAiPilotWorkerMetrics(): Promise<LocalOllamaMetrics> {
+  return getLocalOllamaWorkerMetrics();
+}
+
+export async function persistLocalAiPilotRunResult(result: NonNullable<AiPilotActiveRun['result']>) {
+  upsertLocalAiPilotRun(result.run);
+  upsertLocalAiPilotReport(result.report);
+  upsertLocalAiPilotSuggestions(result.suggestions);
   return getLocalAiPilotWorkspace();
 }
 

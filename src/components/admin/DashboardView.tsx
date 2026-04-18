@@ -11,8 +11,8 @@ type Props = {
 
 export function DashboardView({ summary, chapterCoverage, health, reviewTasks }: Props) {
   return (
-    <div className="flex-1 overflow-y-auto bg-neutral-50 p-4 md:p-8">
-      <div className="mx-auto max-w-6xl space-y-6">
+    <div className="flex h-full min-h-0 flex-1 overflow-y-auto bg-neutral-50 p-4 md:p-8">
+      <div className="mx-auto min-h-full max-w-6xl space-y-6">
         <div>
           <h1 className="text-xl font-bold text-neutral-900">Resumen editorial</h1>
           <p className="mt-1 text-sm text-neutral-600">

@@ -20,7 +20,14 @@
   - opt-in
   - verifier-gated
   - heuristic provider remains production-default
-  - content baseline, import review, and source-preparation coverage are now materially stronger than before
+  - `/admin` is the active implementation surface in this sandbox
+  - current step is the sequential local worker queue, sticky telemetry/task log, and richer `/admin` review surfaces
+
+## Delegated public UI/UX track
+
+- Public `/`, `/practice`, and `/exam` UI/UX work continues in the delegated branch.
+- `/admin` improvements are not part of that delegated public-route track.
+- The local Beta/Ollama operator console belongs to the main track here.
 
 ## Completed milestones
 
@@ -251,6 +258,38 @@
   - preview URL: `https://licencia-claseb-j54ro6qt7-sycton.vercel.app`
   - branch alias: `https://licencia-claseb-git-codex-release-discipline-5e-baseline-sycton.vercel.app`
 - Anonymous smoke checks against that preview returned `401` on all routes, which indicates Vercel deployment protection rather than app-level health failure.
+
+## 2026-04-17 Admin queue UX and Beta operator console
+
+- Documented the admin AI workflows separately:
+  - `docs/admin-ai-queue.md`
+  - `docs/admin-beta-ollama.md`
+- Upgraded `Cola AI` with:
+  - confidence percentage badge
+  - reusable tooltip explaining model confidence
+  - collapsible desktop master pane
+  - manual-link action and clickable related-question diagnostics
+- Upgraded `Catálogo` and editor review with:
+  - collapsible desktop master pane
+  - read-only related-question drawer
+  - local-first `Abrir manual` action from source metadata
+- Reworked Beta local runs from fixed batch cards into a sequential operator-driven queue:
+  - editable timeout
+  - editable max items
+  - editable counts for nuevas and reescrituras
+  - one Ollama task at a time
+  - append-only live batch log
+  - queued/current/completed task state
+- Reworked the Beta layout into:
+  - collapsible left operator/results pane
+  - center review surface
+  - sticky telemetry and batch-log rail
+- Added a local-first embedded PDF reader for manual references using the repo manual asset:
+  - `Libro-ClaseB-2026.pdf`
+  - page open
+  - next/previous
+  - zoom controls
+  - page jump
 - Operational consequence:
   - preview parity now depends on authenticated Vercel fetch or a temporary share URL when deployment protection is enabled
   - anonymous `npm run smoke:url` is no longer sufficient by itself for protected preview deployments
@@ -259,10 +298,9 @@
 
 - Current production AI provider is heuristic and grounded, not model-backed. This is intentional for safety, but it limits suggestion breadth.
 - The local Ollama pilot is intentionally not production-ready:
-  - no background worker yet
-  - bounded local runs only
   - suggestion output quality still unproven on target hardware
-  - browser-local persistence only in this phase
+  - completed history is browser-local by design in this phase
+  - the new dev-only worker remains local infrastructure, not production infrastructure
 - The fixed Milestone `5E` evaluation set is wired and documented, but repeated baseline runs still require the local dev beta panel plus a reachable Ollama instance.
 - Preview env parity is still branch-scoped and must be synced explicitly for each release branch that is used as a preview gate.
 - Chapter 3 was expanded directly from the formal manual PDF in a fast-track pass.
@@ -378,16 +416,13 @@
 ## Next approved work blocks
 
 1. Keep Milestone 5A as the quality gate for imported and locally authored content.
-2. Finish the protected-preview gate so release validation no longer depends on anonymous fetch:
+2. Continue Milestone 5E local-only and non-production inside `/admin`:
+   - run Ollama through the dev-only local worker, not a blocking browser call
+   - expose live progress, active run state, and local CPU/RAM telemetry with GPU best-effort
+   - keep provider selection, worker runtime, storage, and beta UI fully env-gated and non-production
+3. Rerun the fixed `pilot-baseline-v1` evaluation set at least twice with reachable Ollama after the new worker path is stable.
+4. Finish the protected-preview gate only where it directly blocks admin release discipline:
    - use authenticated Vercel access or a temporary share URL for protected previews
    - keep the `scripts/ops/*` wrapper flow as the standard pre-production path
    - repair preview `/api/health` if the branch-scoped Supabase env set is still incomplete
-3. Keep annex content excluded until a separate annex policy is implemented.
-4. Continue Milestone 5E local-only and non-production in this order:
-   - rerun the fixed `pilot-baseline-v1` evaluation set at least twice with reachable Ollama
-   - compare verifier pass/fail counts, critical vs warning totals, and repeated issue codes
-   - improve beta review ergonomics only if the measured baseline justifies it
-   - keep provider selection, beta storage, and beta UI fully env-gated and non-production
-5. Treat the merged M2 public quiz work as complete and stable:
-   - Dark Mode remains enabled by the CSS-variable foundation when it is actually scheduled
-   - M7 accessibility or further UI polish stays behind preview-gate repair and 5E baseline measurement
+5. Keep annex content excluded until a separate annex policy is implemented.
