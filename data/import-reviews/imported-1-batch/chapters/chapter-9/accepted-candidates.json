@@ -1,0 +1,335 @@
+[
+  {
+    "externalId": "imported-1-batch-257",
+    "prompt": "¿Cuáles serían las sanciones a una persona conductora que conduzca bajo la influencia del alcohol?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Multas y suspensión de licencia."
+      },
+      {
+        "text": "Solo multas."
+      },
+      {
+        "text": "Solo suspensión de licencia."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 136,
+    "sourcePageEnd": 136,
+    "sourceReference": "Informaciones importantes",
+    "groundingExcerpt": "El incumplimiento de lo anterior será sancionado, El darse a la fuga y no dar aviso a la autoridad dependiendo de los daños y lesiones que se ocapolicial es un delito que puede ser sancionado sionen, con multas, suspensión de licencia o inhaincluso con la inhabilidad de por vida ",
+    "reviewNotes": "Importado desde competitor_audit (257).",
+    "tags": [],
+    "chapterId": "chapter-9",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-5-73-49",
+      "fact-chapter-5-73-50",
+      "fact-chapter-5-73-51",
+      "fact-chapter-5-73-52",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH9-P136-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 2
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-377",
+    "prompt": "¿Qué documentos está obligado a portar siempre en su vehículo una persona conductora?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Solo licencia de conducir."
+      },
+      {
+        "text": "Revisión técnica, permiso de circulación, SOAP, licencia de conducir y padrón del vehículo."
+      },
+      {
+        "text": "Revisión técnica vencida y licencia de conducir."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 136,
+    "sourcePageEnd": 136,
+    "sourceReference": "Informaciones importantes",
+    "groundingExcerpt": "El incumplimiento de lo anterior será sancionado, El darse a la fuga y no dar aviso a la autoridad dependiendo de los daños y lesiones que se ocapolicial es un delito que puede ser sancionado sionen, con multas, suspensión de licencia o inhaincluso con la inhabilidad de por vida ",
+    "reviewNotes": "Importado desde competitor_audit (377).",
+    "tags": [],
+    "chapterId": "chapter-9",
+    "manualFactRefs": [
+      "fact-chapter-4-45-31",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-5-73-49",
+      "fact-chapter-5-73-50",
+      "fact-chapter-5-73-51",
+      "fact-chapter-5-73-52",
+      "fact-chapter-9-142-82",
+      "fact-chapter-9-142-83",
+      "fact-chapter-9-142-84",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH9-P136-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 4
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-646",
+    "prompt": "¿Qué sanción tiene conducir sin haber obtenido licencia de conducir?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falta grave."
+      },
+      {
+        "text": "Falta gravísima y presidio menor en su grado mínimo si hay reincidencia."
+      },
+      {
+        "text": "Falta leve."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 136,
+    "sourcePageEnd": 136,
+    "sourceReference": "Informaciones importantes",
+    "groundingExcerpt": "El incumplimiento de lo anterior será sancionado, El darse a la fuga y no dar aviso a la autoridad dependiendo de los daños y lesiones que se ocapolicial es un delito que puede ser sancionado sionen, con multas, suspensión de licencia o inhaincluso con la inhabilidad de por vida ",
+    "reviewNotes": "Importado desde competitor_audit (646).",
+    "tags": [],
+    "chapterId": "chapter-9",
+    "manualFactRefs": [
+      "fact-chapter-4-45-31",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-5-73-49",
+      "fact-chapter-5-73-50",
+      "fact-chapter-5-73-51",
+      "fact-chapter-5-73-52",
+      "fact-chapter-9-142-82",
+      "fact-chapter-9-142-83",
+      "fact-chapter-9-142-84",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH9-P136-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 2
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-700",
+    "prompt": "¿Qué indica una línea segmentada blanca al centro de la calzada?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Peligro."
+      },
+      {
+        "text": "Permiso para adelantar o sobrepasar siempre que sea seguro."
+      },
+      {
+        "text": "Fin de la vía."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 139,
+    "sourcePageEnd": 139,
+    "sourceReference": "Informaciones importantes",
+    "groundingExcerpt": "informaciones importantes Disposiciones aplicables a los vehículos Los vehículos motorizados no pueden circular sin su placa patente, el permiso de circulación otorgado por la respectiva Municipalidad y el certificado de un Seguro Obligatorio de Accidentes Personales. El no cumpl",
+    "reviewNotes": "Importado desde competitor_audit (700).",
+    "tags": [],
+    "chapterId": "chapter-9",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH9-P139-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 2
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-920",
+    "prompt": "¿Qué indica una línea continua blanca al centro de la calzada?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Permiso para adelantar."
+      },
+      {
+        "text": "Prohibición de traspasar el eje de la calzada."
+      },
+      {
+        "text": "Vía exclusiva para buses."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 143,
+    "sourcePageEnd": 143,
+    "sourceReference": "Informaciones importantes",
+    "groundingExcerpt": "Conducir por la izquierda del eje de la calzada de una vía con tránsito en ambos sentidos, a menos que se esté efectuando un adelantamiento conforme a las normas que regulan la realización de esta maniobra. Estacionar o detener un vehículo dentro de un cruce, en un puente, túnel,",
+    "reviewNotes": "Importado desde competitor_audit (920).",
+    "tags": [],
+    "chapterId": "chapter-9",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH9-P143-S8"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 2
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 25.2,
+    "duplicateClusterId": "dup-cluster-100",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-989",
+    "prompt": "¿Qué indica una línea segmentada?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "No pasar."
+      },
+      {
+        "text": "Permiso para adelantar si es seguro."
+      },
+      {
+        "text": "Fin de camino."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 139,
+    "sourcePageEnd": 139,
+    "sourceReference": "Informaciones importantes",
+    "groundingExcerpt": "informaciones importantes Disposiciones aplicables a los vehículos Los vehículos motorizados no pueden circular sin su placa patente, el permiso de circulación otorgado por la respectiva Municipalidad y el certificado de un Seguro Obligatorio de Accidentes Personales. El no cumpl",
+    "reviewNotes": "Importado desde competitor_audit (989).",
+    "tags": [],
+    "chapterId": "chapter-9",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH9-P139-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 2
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  }
+]

@@ -1,0 +1,645 @@
+[
+  {
+    "externalId": "imported-1-batch-120",
+    "prompt": "¿En qué momento debe usted utilizar las luces neblineras?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Cuando está oscureciendo y usted circule por una vía urbana con buen alumbrado público."
+      },
+      {
+        "text": "Las luces neblineras no tienen un uso específico."
+      },
+      {
+        "text": "Se debe utilizar cuando no tenga buena visibilidad, ya sea a consecuencia de una lluvia torrencial, y deben apagarse tan pronto mejore la visibilidad."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Luego piensa que debe haber sido un animal pequeño. Al día siguiente, lee en el periódico que un peatón fue atropellado por un automovilista que huyó. El lugar del siniestro coincide aproximadamente con el lugar en el que sintió el golpe en la carrocería, y un terrible pensamient",
+    "reviewNotes": "Importado desde competitor_audit (120).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-223",
+    "prompt": "¿Cuándo es alto el riesgo de interpretar erróneamente la realidad al conducir? I- Cuando va por un camino montañoso y con muchas sinuosidades, y la visibilidad es muy mala. II- Cuando usted está muy cansado, especialmente si conduce de noche. III- Cuando va por carretera y existe una densa niebla.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "I y II."
+      },
+      {
+        "text": "II y III."
+      },
+      {
+        "text": "I, II y III."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Luego de unos días va a Carabineros, donde se confirma que tiene que haber sido él quien atropelló y mató a una persona. Desgraciadamente esta historia no es ficción, sino que ha ocurrido en la realidad y podría suceder a cualquiera que carezca de los conocimientos y práctica nec",
+    "reviewNotes": "Importado desde competitor_audit (223).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 4,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-240",
+    "prompt": "¿Cuál o cuáles son las 2 maneras que puede usted contribuir con mayor eficacia a la seguridad de tránsito? (Doble Puntaje) I- Contando siempre con tiempo de sobra para conducir. II- Evitando conducir durante la noche. III- Conduciendo a la defensiva.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "I y III."
+      },
+      {
+        "text": "II y III."
+      },
+      {
+        "text": "I y II."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Luego de unos días va a Carabineros, donde se confirma que tiene que haber sido él quien atropelló y mató a una persona. Desgraciadamente esta historia no es ficción, sino que ha ocurrido en la realidad y podría suceder a cualquiera que carezca de los conocimientos y práctica nec",
+    "reviewNotes": "Importado desde competitor_audit (240).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "2",
+        "value": "2",
+        "unit": "",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-349",
+    "prompt": "Una persona que trabaja de día y duerme durante la noche, ¿En cuál de los siguientes horarios es más fácil que aparezca el sueño al conducir?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Entre las 11 a 12 horas y entre las 18 y 20 horas."
+      },
+      {
+        "text": "Entre las 3 y 5 am y entre las 14 y 16 pm horas."
+      },
+      {
+        "text": "Entre las 8 a 10 horas y entre las 20 y 22 horas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Luego piensa que debe haber sido un animal pequeño. Al día siguiente, lee en el periódico que un peatón fue atropellado por un automovilista que huyó. El lugar del siniestro coincide aproximadamente con el lugar en el que sintió el golpe en la carrocería, y un terrible pensamient",
+    "reviewNotes": "Importado desde competitor_audit (349).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "3",
+        "value": "3",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "5",
+        "value": "5",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "14",
+        "value": "14",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "16",
+        "value": "16",
+        "unit": "",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-357",
+    "prompt": "¿En qué momento se pueden sentir los síntomas de la fatiga al volante?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Solo de noche."
+      },
+      {
+        "text": "La fatiga puede presentarse en cualquier momento; si conduces durante largo tiempo, tarde o temprano sentirás sus síntomas."
+      },
+      {
+        "text": "La fatiga solo la podrás sentir en la mañana al conducir."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Nuestros ojos tardan algún tiempo en acomodarse a la oscuridad cuando abandonamos una habitación iluminada. De igual modo, como ya hemos visto, al conducir en la oscuridad y aunque no miremos directamente los focos de los vehículos, que vienen en Para prevenir siniestros, aumenta",
+    "reviewNotes": "Importado desde competitor_audit (357).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-358",
+    "prompt": "¿En cuáles circunstancias de la vía o en el entorno al conducir favorecen la aparición de la fatiga al volante?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Circular por una vía con mucho tráfico, conducir por una vía en mal estado."
+      },
+      {
+        "text": "Conducir por un camino no conocido, conducir de noche o con condiciones climatológicas no favorables."
+      },
+      {
+        "text": "Todas las anteriores."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 110,
+    "sourcePageEnd": 110,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "conducción en circunstancias especiales Distancias de visibilidad ropas oscuras ropas claras ropas con reflectante 25 m 60 m 125 m con luces bajas 150 m 300 m 450 m con luces altas 0 25 50 75 100 125 150 175 200 225 250 275 300 325 350 375 400 425 450 metros 0 25 50 75 100 125 15",
+    "reviewNotes": "Importado desde competitor_audit (358).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P110-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-590",
+    "prompt": "¿Se deben encender las luces si las condiciones climáticas reducen la visibilidad (niebla, lluvia) durante el día?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sí, es obligatorio."
+      },
+      {
+        "text": "No, solo de noche."
+      },
+      {
+        "text": "Solo si el conductor lo desea."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Luego piensa que debe haber sido un animal pequeño. Al día siguiente, lee en el periódico que un peatón fue atropellado por un automovilista que huyó. El lugar del siniestro coincide aproximadamente con el lugar en el que sintió el golpe en la carrocería, y un terrible pensamient",
+    "reviewNotes": "Importado desde competitor_audit (590).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 6,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-606",
+    "prompt": "¿Qué es el aquaplaning o hidroplaneo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Una técnica de conducción en agua."
+      },
+      {
+        "text": "La pérdida de contacto de los neumáticos con el pavimento debido a una capa de agua, haciendo que el vehículo flote y se pierda el control."
+      },
+      {
+        "text": "Un sistema de seguridad para frenar en mojado."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "La capacidad de reflejar la luz que tenga el obstáculo. La potencia de las luces del vehículo que viene en sentido contrario.",
+    "reviewNotes": "Importado desde competitor_audit (606).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S7"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 3,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 6,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-745",
+    "prompt": "¿Cuál es el principal riesgo de conducir con niebla?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el auto se ensucie."
+      },
+      {
+        "text": "Reducción drástica de la visibilidad y pavimento húmedo que reduce la adherencia."
+      },
+      {
+        "text": "Que se agoten las luces."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Nuestra capacidad de calcular distancias depende de que veamos colores y contornos claros. En la oscuridad, estos se difuminan. Lo mismo sucede cuando la visibilidad se encuentra reducida por efecto de la niebla o la lluvia.",
+    "reviewNotes": "Importado desde competitor_audit (745).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-933",
+    "prompt": "¿Cuál es la función de los neblineros?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Alumbrar más lejos."
+      },
+      {
+        "text": "Mejorar la visibilidad de la calzada en condiciones de niebla sin encandilar."
+      },
+      {
+        "text": "Adornar el auto."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Nuestra capacidad de calcular distancias depende de que veamos colores y contornos claros. En la oscuridad, estos se difuminan. Lo mismo sucede cuando la visibilidad se encuentra reducida por efecto de la niebla o la lluvia.",
+    "reviewNotes": "Importado desde competitor_audit (933).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-945",
+    "prompt": "¿Cuál es el riesgo de conducir con lluvia (primeras gotas)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Ninguno."
+      },
+      {
+        "text": "La mezcla de agua y polvo forma un lodo extremadamente resbaladizo."
+      },
+      {
+        "text": "Se limpia el auto."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 114,
+    "sourcePageEnd": 114,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Si ves que a un vehículo se le cae algún objeto de su carga, da aviso a través de un teléfono SOS. Conducción con remolque La Licencia de Conducir Clase B te permite conducir tu automóvil con un remolque ligero, cuyo peso no exceda la tara de unidad motriz, y siempre que el peso ",
+    "reviewNotes": "Importado desde competitor_audit (945).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P114-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1215",
+    "prompt": "¿Qué debe hacer si al conducir de noche las luces del tablero se apagan de repente?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Seguir conduciendo."
+      },
+      {
+        "text": "Detenerse en un lugar seguro, ya que podría ser el inicio de una falla eléctrica total."
+      },
+      {
+        "text": "Acelerar más."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 109,
+    "sourcePageEnd": 109,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Luego piensa que debe haber sido un animal pequeño. Al día siguiente, lee en el periódico que un peatón fue atropellado por un automovilista que huyó. El lugar del siniestro coincide aproximadamente con el lugar en el que sintió el golpe en la carrocería, y un terrible pensamient",
+    "reviewNotes": "Importado desde competitor_audit (1215).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P109-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 2,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1309",
+    "prompt": "¿Qué es el 'aquaplaning'?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Una maniobra para limpiar los neumáticos."
+      },
+      {
+        "text": "La pérdida de contacto del neumático con el pavimento debido a una capa de agua."
+      },
+      {
+        "text": "El exceso de presión en el sistema de refrigeración."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 120,
+    "sourcePageEnd": 120,
+    "sourceReference": "Conducción en circunstancias especiales",
+    "groundingExcerpt": "Conducción en distintas condiciones climáticas Cuando las condiciones climáticas son desfavorables, la primera regla de seguridad es preguntarse si desplazarse en tales condiciones con un vehículo es indispensable. Si debes conducir, asegúrate de que el vehículo se encuentra en p",
+    "reviewNotes": "Importado desde competitor_audit (1309).",
+    "tags": [],
+    "chapterId": "chapter-7",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH7-P120-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 3,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  }
+]

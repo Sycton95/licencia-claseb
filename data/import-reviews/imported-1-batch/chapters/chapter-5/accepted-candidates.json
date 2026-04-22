@@ -1,0 +1,2158 @@
+[
+  {
+    "externalId": "imported-1-batch-209",
+    "prompt": "¿Cuánto es el porcentaje de reflectividad de luz de un peatón que va circulando con ropa blanca?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Un peatón que utilice ropa blanca refleja sólo el 80% de la luz."
+      },
+      {
+        "text": "Un peatón que utilice ropa blanca refleja solo el 50% de la luz."
+      },
+      {
+        "text": "Un peatón que utilice ropa blanca refleja solo el 70% de la luz."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (209).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "80%",
+        "value": "80",
+        "unit": "%",
+        "factRefIds": []
+      }
+    ],
+    "qualityScore": 28.6,
+    "duplicateClusterId": "dup-cluster-52",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-210",
+    "prompt": "¿Cuánto es el porcentaje de reflectividad de luz de un peatón que va circulando con ropa reflectante?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Un peatón que circule con ropa reflectante puede reflejar entre un 80 y 85% de la luz."
+      },
+      {
+        "text": "Un peatón que circule con ropa reflectante puede reflejar entre un 90 y 98% de la luz."
+      },
+      {
+        "text": "Un peatón que circule con ropa reflectante puede reflejar entre un 5 y 10% de la luz."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (210).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "90",
+        "value": "90",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "98%",
+        "value": "98",
+        "unit": "%",
+        "factRefIds": []
+      }
+    ],
+    "qualityScore": 29.1,
+    "duplicateClusterId": "dup-cluster-53",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-215",
+    "prompt": "Al encontrarse en la oscuridad y en una vía no urbana con otro vehículo que se acerca en sentido contrario, usted deberá...",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Cambiar a luces altas para no cegar a su conductor, excepto a los ciclistas."
+      },
+      {
+        "text": "Cambiar a luces altas para cegar a su conductor, también con ciclistas."
+      },
+      {
+        "text": "Cambiar a luces bajas para no cegar a su conductor, también con ciclistas."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables El deterioro de las capacidades psicomotoras necesarias para la conducción puede suponer, por ejemplo, pérdida de fuerza al momento de frenar, peor manejo del volante, disminución en la capacidad para mantener la atención, procesamiento más lento de",
+    "reviewNotes": "Importado desde competitor_audit (215).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P70-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 31.3,
+    "duplicateClusterId": "dup-cluster-58",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-366",
+    "prompt": "Mientras conduce los peatones pueden...",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Aparecer repentinamente principalmente detrás o delante de un vehículo estacionado."
+      },
+      {
+        "text": "No aparecer nunca en el camino."
+      },
+      {
+        "text": "Acompañarle en el camino."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (366).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-367",
+    "prompt": "¿En dónde usted debe tener especial cuidado con los y las peatones?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "En carreteras o autopistas."
+      },
+      {
+        "text": "En calles comerciales muy concurridas, áreas residenciales, cerca de establecimientos educacionales."
+      },
+      {
+        "text": "En caminos rurales con poco tránsito peatonal."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (367).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-381",
+    "prompt": "Los niños no tienen la vista completamente desarrollada, ¿A qué edad se desarrolla completamente la vista de una persona?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "La vista no se desarrolla completamente hasta los 5 años."
+      },
+      {
+        "text": "La vista no se desarrolla completamente hasta los 15 años."
+      },
+      {
+        "text": "La vista no se desarrolla completamente hasta los 10 años."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables El deterioro de las capacidades psicomotoras necesarias para la conducción puede suponer, por ejemplo, pérdida de fuerza al momento de frenar, peor manejo del volante, disminución en la capacidad para mantener la atención, procesamiento más lento de",
+    "reviewNotes": "Importado desde competitor_audit (381).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [
+      "fact-chapter-5-70-46"
+    ],
+    "manualCitationRefs": [
+      "2026-CH5-P70-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "fact_auto",
+    "autoGroundingConfidence": 0.8500000000000001,
+    "extractedEntities": [
+      {
+        "raw": "15 años",
+        "value": "15",
+        "unit": "años",
+        "factRefIds": [
+          "fact-chapter-5-70-46"
+        ]
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-383",
+    "prompt": "¿Desde qué edad se puede considerar relativamente seguro a un niño en el tránsito?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "A partir de los 4 - 8 años."
+      },
+      {
+        "text": "A partir de los 6 - 10 años."
+      },
+      {
+        "text": "A partir de los 9 - 12 años."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables El deterioro de las capacidades psicomotoras necesarias para la conducción puede suponer, por ejemplo, pérdida de fuerza al momento de frenar, peor manejo del volante, disminución en la capacidad para mantener la atención, procesamiento más lento de",
+    "reviewNotes": "Importado desde competitor_audit (383).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [
+      "fact-chapter-5-70-47"
+    ],
+    "manualCitationRefs": [
+      "2026-CH5-P70-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "fact_auto",
+    "autoGroundingConfidence": 0.8500000000000001,
+    "extractedEntities": [
+      {
+        "raw": "9",
+        "value": "9",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "12 años",
+        "value": "12",
+        "unit": "años",
+        "factRefIds": [
+          "fact-chapter-5-70-47"
+        ]
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-386",
+    "prompt": "¿Por qué usted debe estar atento con los niños y niñas presentes en las vías?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque los niños siempre están jugando y no consideran que el tránsito puede ser peligroso."
+      },
+      {
+        "text": "Porque los niños tienen completamente la visual desarrollada."
+      },
+      {
+        "text": "Usted no debe estar atento a los niños; es responsabilidad de los padres."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Las y los usuarios vulnerables Si bien todas las personas usuarias de las vías públicas están Peatones, ciclistas y motociclistas, propensas a sufrir algún tipo de siniestro de tránsito, hay ciertas junto con sus pasajeros, represenpersonas que son ",
+    "reviewNotes": "Importado desde competitor_audit (386).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-394",
+    "prompt": "¿Dónde debe tener usted especial cuidado con los motociclistas?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "En una estación de servicio."
+      },
+      {
+        "text": "En las intersecciones."
+      },
+      {
+        "text": "En las proximidades de un área de servicio."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Motociclistas Las motocicletas son un medio de transporte utilizado cada vez con mayor frecuencia. Esto puede deberse a las ventajas que ofrece su movilidad y tamaño reducido. Pese a sus ventajas, la falta de carrocería produce que los siniestros sufridos en este tipo de vehículo",
+    "reviewNotes": "Importado desde competitor_audit (394).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P71-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 6,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-395",
+    "prompt": "Usted desea adelantar a un motociclista que va delante suyo, ¿Qué hace usted?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Trata de pasarlo en una curva."
+      },
+      {
+        "text": "Pasa cerca de él y lo más rápido posible."
+      },
+      {
+        "text": "Le da tanto espacio lateral como le daría a un automóvil."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables muchos vehículos en contra, no te acerques demasiado y espera hasta que los vehículos hayan pasado para adelantarle. Mantén una distancia lateral prudente. No hagas señales luminosas o acústicas ni aceleres el motor en cercanía de animales ya que es",
+    "reviewNotes": "Importado desde competitor_audit (395).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P71-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 6,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-396",
+    "prompt": "Cuando el viento está soplando muy fuerte, ¿Por qué debe usted dejar un espacio lateral extra al adelantar a un motociclista?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque el motociclista podría doblar repentinamente."
+      },
+      {
+        "text": "Porque el motociclista podría detenerse repentinamente."
+      },
+      {
+        "text": "Porque el motociclista podría tambalear o ver desviada su trayectoria a consecuencia del viento."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 69,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Una persona mayor puede necesitar 4 segundos más que una persona joven para cruzar una calle de 16 metros de ancho. Pueden tener problemas con la orientación cuando no conocen bien las calles. Una persona mayor, al cruzar la calle, podría devolverse antes de alcanzar la vereda, o",
+    "reviewNotes": "Importado desde competitor_audit (396).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P69-S6"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 6,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-397",
+    "prompt": "Usted llega al lugar de un accidente en el que ha participado un motociclista. El motociclista yace consciente, pero en estado de shock. ¿De qué debería asegurarse usted?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el motociclista se saque el casco."
+      },
+      {
+        "text": "Que el motociclista no se saque el casco."
+      },
+      {
+        "text": "Que al motociclista se le ayude a ponerse de pie."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Motociclistas Las motocicletas son un medio de transporte utilizado cada vez con mayor frecuencia. Esto puede deberse a las ventajas que ofrece su movilidad y tamaño reducido. Pese a sus ventajas, la falta de carrocería produce que los siniestros sufridos en este tipo de vehículo",
+    "reviewNotes": "Importado desde competitor_audit (397).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P71-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 6,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-398",
+    "prompt": "De los siguientes usuarios de las vías públicas, ¿Quiénes serán los más vulnerables de los accidentes de tránsito? I- Los niños. II- Los motociclistas. III- Personas ancianas o ebrias.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "I y II."
+      },
+      {
+        "text": "II y III."
+      },
+      {
+        "text": "I, II y III."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Las y los usuarios vulnerables Si bien todas las personas usuarias de las vías públicas están Peatones, ciclistas y motociclistas, propensas a sufrir algún tipo de siniestro de tránsito, hay ciertas junto con sus pasajeros, represenpersonas que son ",
+    "reviewNotes": "Importado desde competitor_audit (398).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 8,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-399",
+    "prompt": "¿Por qué es prudente dejar al menos 1,5 m de espacio lateral a un ciclista?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Debido a que el ciclista puede circular por donde él quiera."
+      },
+      {
+        "text": "Porque un ciclista siempre tendrá la preferencia en el tránsito."
+      },
+      {
+        "text": "Debido a que el ciclista podría desviarse o tambalear."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables muchos vehículos en contra, no te acerques demasiado y espera hasta que los vehículos hayan pasado para adelantarle. Mantén una distancia lateral prudente. No hagas señales luminosas o acústicas ni aceleres el motor en cercanía de animales ya que es",
+    "reviewNotes": "Importado desde competitor_audit (399).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P71-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "1,5",
+        "value": "1.5",
+        "unit": "",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-401",
+    "prompt": "Cuando el viento sopla muy fuertemente usted necesita tener especial cuidado...",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Al usar los frenos."
+      },
+      {
+        "text": "Al comenzar a subir una pendiente."
+      },
+      {
+        "text": "Al pasar cerca de ciclistas."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "COMO PERSONA CONDUCTORA DEBES: Estar siempre alerta y anticiparte a las posiAl pasar cerca de un bus detenido en una bles infracciones de las y los peatones. parada, debes disminuir tu velocidad ya que un peatón podría aparecer sorpresivamente en la Si conduces por la pista izqui",
+    "reviewNotes": "Importado desde competitor_audit (401).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-402",
+    "prompt": "Usted se encuentra muy próximo a un cruce en el que pretende virar a la derecha. Delante suyo va un ciclista. ¿Qué hace usted?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Adelanta al ciclista antes del cruce."
+      },
+      {
+        "text": "Rodea al ciclista en el cruce."
+      },
+      {
+        "text": "Se mantiene detrás del ciclista hasta que este haya pasado la intersección."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Por ello, una persona conductora encuentra más difícil anticiparse al comportamiento de las y los usuarios vulnerables. Además, las y los peatones suelen cometer muchas infracciones, entre las que destacan descender sorpresivamente a la calzada y cruzar de manera indebida, es dec",
+    "reviewNotes": "Importado desde competitor_audit (402).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-404",
+    "prompt": "¿Cuál es la probabilidad de reducir lesiones en la cabeza de un ciclista al utilizar casco?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Hasta cinco veces."
+      },
+      {
+        "text": "Hasta tres veces."
+      },
+      {
+        "text": "Hasta seis veces."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Considera también, la presencia de triciclos motorizados de carga, que suelen circular a una velocidad reducida y, en general, no cuentan con carrocería para proteger a quien los conduce. Personas ciclistas Se entiende como persona ciclista a toda aquella que utiliza algún ciclo ",
+    "reviewNotes": "Importado desde competitor_audit (404).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P71-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-406",
+    "prompt": "Tratándose de ciclistas, ¿este tipo de señales con el brazo son incorrectas?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Verdadero."
+      },
+      {
+        "text": "Falso."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Las y los usuarios vulnerables Si bien todas las personas usuarias de las vías públicas están Peatones, ciclistas y motociclistas, propensas a sufrir algún tipo de siniestro de tránsito, hay ciertas junto con sus pasajeros, represenpersonas que son ",
+    "reviewNotes": "Importado desde competitor_audit (406).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 2,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-410",
+    "prompt": "¿En qué momento un ciclista puede ver desviada su trayectoria?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Al subir una cuesta o cuando hay viento fuerte."
+      },
+      {
+        "text": "De día."
+      },
+      {
+        "text": "Cuando están circulando por las ciclovías."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 69,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Una persona mayor puede necesitar 4 segundos más que una persona joven para cruzar una calle de 16 metros de ancho. Pueden tener problemas con la orientación cuando no conocen bien las calles. Una persona mayor, al cruzar la calle, podría devolverse antes de alcanzar la vereda, o",
+    "reviewNotes": "Importado desde competitor_audit (410).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P69-S6"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-423",
+    "prompt": "¿Cómo se selecciona el sistema de retención infantil (SRI) de un niño?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Por marca y color."
+      },
+      {
+        "text": "Peso, altura, sexo del niño y edad del niño/a."
+      },
+      {
+        "text": "Peso, altura, edad del niño/a, nivel de desarrollo."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Es tu responsabilidad que no ocurra un siniestro. Debes saber que las niñas y niños: Tienen una estatura pequeña: por eso, con facilidad pueden no ser vistos cuando juegan detrás de un vehículo estacionado. No tienen la vista completamente desarrollada: la vista no se desarrolla ",
+    "reviewNotes": "Importado desde competitor_audit (423).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [
+      "fact-chapter-2-26-18",
+      "fact-chapter-2-26-19",
+      "fact-chapter-2-26-20",
+      "fact-chapter-2-26-21",
+      "fact-chapter-2-29-22",
+      "fact-chapter-2-30-23",
+      "fact-chapter-5-73-48",
+      "fact-chapter-9-143-93",
+      "fact-chapter-9-143-94"
+    ],
+    "manualCitationRefs": [
+      "2026-CH5-P70-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-424",
+    "prompt": "¿En qué factores debe fijarse usted para comprar un (SRI) adecuado para transportar a un niño/a? (Doble Puntaje)",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Un SRI adecuado se debe elegir en base el peso, talla y nivel de desarrollo del niño/a."
+      },
+      {
+        "text": "Un SRI adecuado es solo si tiene un sistema de anclaje LATCH."
+      },
+      {
+        "text": "Solo en el color de la silla y que coincida con la edad del niño."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Es tu responsabilidad que no ocurra un siniestro. Debes saber que las niñas y niños: Tienen una estatura pequeña: por eso, con facilidad pueden no ser vistos cuando juegan detrás de un vehículo estacionado. No tienen la vista completamente desarrollada: la vista no se desarrolla ",
+    "reviewNotes": "Importado desde competitor_audit (424).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P70-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-430",
+    "prompt": "¿Desde qué edad es uso obligatorio para los niños utilizar un SRI?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Niños menores de 12 años."
+      },
+      {
+        "text": "Niños menores de 8 años inclusive (hasta un día antes que cumplan los 9 años)."
+      },
+      {
+        "text": "Niños menores de 5 años."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 73,
+    "sourcePageEnd": 73,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Niñas y niños en el automóvil Cuando lleves niñas y/o niños en tu vehículo enfrentarás algunas exigencias. Puede ser agotador escucharles jugar o pelearse cuando vas conduciendo. Por ello, debes estimularles para que viajen con tranquilidad, y no ol",
+    "reviewNotes": "Importado desde competitor_audit (430).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [
+      "fact-chapter-5-73-49"
+    ],
+    "manualCitationRefs": [
+      "2026-CH5-P73-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "fact_auto",
+    "autoGroundingConfidence": 0.8500000000000001,
+    "extractedEntities": [
+      {
+        "raw": "8 años",
+        "value": "8",
+        "unit": "años",
+        "factRefIds": [
+          "fact-chapter-5-73-49"
+        ]
+      },
+      {
+        "raw": "9 años",
+        "value": "9",
+        "unit": "años",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-433",
+    "prompt": "Según la ley de tránsito. ¿Qué requisitos debe cumplir un niño para NO utilizar un SRI? (Doble Puntaje)",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Debe ser igual o mayor a 9 años, con estatura igual o mayor a 135 cm y 33 kg de peso."
+      },
+      {
+        "text": "Debe ser menor de 5 años."
+      },
+      {
+        "text": "Debe tener una estatura igual o menor a 120 centímetros."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 73,
+    "sourcePageEnd": 73,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Niñas y niños en el automóvil Cuando lleves niñas y/o niños en tu vehículo enfrentarás algunas exigencias. Puede ser agotador escucharles jugar o pelearse cuando vas conduciendo. Por ello, debes estimularles para que viajen con tranquilidad, y no ol",
+    "reviewNotes": "Importado desde competitor_audit (433).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [
+      "fact-chapter-5-73-50"
+    ],
+    "manualCitationRefs": [
+      "2026-CH5-P73-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "fact_auto",
+    "autoGroundingConfidence": 0.8500000000000001,
+    "extractedEntities": [
+      {
+        "raw": "9 años",
+        "value": "9",
+        "unit": "años",
+        "factRefIds": [
+          "fact-chapter-5-73-50"
+        ]
+      },
+      {
+        "raw": "135",
+        "value": "135",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "33",
+        "value": "33",
+        "unit": "",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-436",
+    "prompt": "¿Qué efectos negativos podría tener un mal uso de un SRI en un niño/a?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Pueden generar lesiones importantes en los órganos ubicados en la zona abdominal como hígado, intestinos, vejiga y riñones."
+      },
+      {
+        "text": "Pueden generar lesiones muy leves."
+      },
+      {
+        "text": "No podrá viajar cómodo."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 69,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "En ocasiones existe dificultad para distinguir bien los colores del semáforo. Escasez de pasos peatonales en determinadas zonas. Las calles pueden resultar demasiado anchas para cruzar y pueden estar mal iluminadas.",
+    "reviewNotes": "Importado desde competitor_audit (436).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P69-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-456",
+    "prompt": "En un cruce hay peatones atravesando la calle hacia la cual usted está virando. ¿Qué debe hacer usted?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Hacerles señas con la mano para que continúen."
+      },
+      {
+        "text": "Tocar la bocina para hacerles notar que usted está ahí."
+      },
+      {
+        "text": "Esperar que crucen."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (456).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-457",
+    "prompt": "En un cruce hay peatones atravesando la calle hacia la cual usted está virando. ¿Qué hace usted?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Espera permitiéndoles que crucen."
+      },
+      {
+        "text": "Continúa ya que usted tiene el derecho preferente de paso."
+      },
+      {
+        "text": "Les hace señas para que retrocedan."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (457).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-465",
+    "prompt": "¿Qué son los semáforos peatonales?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Tienen el propósito de indicarle a los ciclistas las preferencias viales."
+      },
+      {
+        "text": "Permiten a los peatones cruzar las vías con seguridad, y alguno de estos son activados por las personas."
+      },
+      {
+        "text": "Los semáforos peatonales no tienen un propósito real en el tránsito."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Las y los usuarios vulnerables Si bien todas las personas usuarias de las vías públicas están Peatones, ciclistas y motociclistas, propensas a sufrir algún tipo de siniestro de tránsito, hay ciertas junto con sus pasajeros, represenpersonas que son ",
+    "reviewNotes": "Importado desde competitor_audit (465).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 6,
+      "chapter-6": 2,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-471",
+    "prompt": "Se prohíbe realizar un viraje en U:",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Aproximadamente a 300 metros de una curva."
+      },
+      {
+        "text": "A menos de 200 metros de las curvas, cimas, cruces ferroviarios, puentes, pasos peatonales y túneles."
+      },
+      {
+        "text": "A mitad de cuadra."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Por ello, una persona conductora encuentra más difícil anticiparse al comportamiento de las y los usuarios vulnerables. Además, las y los peatones suelen cometer muchas infracciones, entre las que destacan descender sorpresivamente a la calzada y cruzar de manera indebida, es dec",
+    "reviewNotes": "Importado desde competitor_audit (471).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "200 metros",
+        "value": "200",
+        "unit": "metros",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-492",
+    "prompt": "¿Cuál es el propósito de la demarcación de líneas de detención y paso de peatones?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Indicar la línea de detención de los vehículos y el paso de peatones/ciclistas."
+      },
+      {
+        "text": "Señalar el paso de peatones únicamente."
+      },
+      {
+        "text": "Permitir que usted pueda adelantar en ese lugar."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Las y los usuarios vulnerables Si bien todas las personas usuarias de las vías públicas están Peatones, ciclistas y motociclistas, propensas a sufrir algún tipo de siniestro de tránsito, hay ciertas junto con sus pasajeros, represenpersonas que son ",
+    "reviewNotes": "Importado desde competitor_audit (492).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 6,
+      "chapter-6": 2,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-493",
+    "prompt": "¿Cuál es el propósito de la zona de espera adelantada?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Indica en donde los ciclistas pueden dejar estacionada su bicicleta."
+      },
+      {
+        "text": "Zona entre la línea de detención y el paso de peatones para la espera especial de ciclos y/o motocicletas."
+      },
+      {
+        "text": "Zona para que los ciclos tengan la preferencia para virar a la izquierda."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (493).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 6,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-494",
+    "prompt": "¿Qué significa la demarcación de paso de cebra?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Son franjas blancas paralelas al eje de la vía que indican prioridad peatonal."
+      },
+      {
+        "text": "Indica que un motociclista pueda traspasarla para avanzar más rápido por la acera."
+      },
+      {
+        "text": "Que usted tiene permitido estacionarse en ese lugar."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "COMO PERSONA CONDUCTORA DEBES: Estar siempre alerta y anticiparte a las posiAl pasar cerca de un bus detenido en una bles infracciones de las y los peatones. parada, debes disminuir tu velocidad ya que un peatón podría aparecer sorpresivamente en la Si conduces por la pista izqui",
+    "reviewNotes": "Importado desde competitor_audit (494).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 9,
+      "chapter-6": 4,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-512",
+    "prompt": "¿Qué obligación tiene usted al salir de un estacionamiento o un inmueble?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Ceder el paso a los vehículos en tránsito, incluidos los ciclistas, así como a las y los peatones."
+      },
+      {
+        "text": "Tocar la bocina, para que los demás sepan de su intención."
+      },
+      {
+        "text": "Hacer un cambio de luces a los peatones para que no circulen cuando usted quiera poner en movimiento su vehículo."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Las y los usuarios vulnerables Si bien todas las personas usuarias de las vías públicas están Peatones, ciclistas y motociclistas, propensas a sufrir algún tipo de siniestro de tránsito, hay ciertas junto con sus pasajeros, represenpersonas que son ",
+    "reviewNotes": "Importado desde competitor_audit (512).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 6,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-559",
+    "prompt": "¿En qué lugares está prohibido adelantar? I- En curvas y cimas de cuestas. II- En pasos de peatones y cruces ferroviarios. III- Al aproximarse a un cruce de vías.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "I y II."
+      },
+      {
+        "text": "II y III."
+      },
+      {
+        "text": "I, II y III."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables Las y los usuarios vulnerables Si bien todas las personas usuarias de las vías públicas están Peatones, ciclistas y motociclistas, propensas a sufrir algún tipo de siniestro de tránsito, hay ciertas junto con sus pasajeros, represenpersonas que son ",
+    "reviewNotes": "Importado desde competitor_audit (559).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-563",
+    "prompt": "¿Está permitido sobrepasar en un paso de cebra?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sí, siempre que no haya peatones."
+      },
+      {
+        "text": "No, está prohibido sobrepasar en pasos de peatones."
+      },
+      {
+        "text": "Solo si el vehículo sobrepasado está detenido."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (563).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-568",
+    "prompt": "Al virar, ¿quién tiene la preferencia?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El vehículo que vira."
+      },
+      {
+        "text": "Los peatones que cruzan legalmente y los vehículos que circulan por la vía a la cual se va a entrar."
+      },
+      {
+        "text": "El vehículo que vira a la derecha sobre el que vira a la izquierda."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (568).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-598",
+    "prompt": "¿Qué es la berma?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Una pista exclusiva para buses."
+      },
+      {
+        "text": "La faja lateral de la vía, adyacente a la calzada, destinada al uso de peatones y detención de emergencia."
+      },
+      {
+        "text": "El espacio central que separa las calzadas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (598).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-678",
+    "prompt": "Usted va a virar a la derecha. ¿A quién debe ceder el paso primero?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "A los autos que vienen por la izquierda."
+      },
+      {
+        "text": "A los peatones que están cruzando por el paso peatonal de la calle a la que entrará."
+      },
+      {
+        "text": "A nadie, tengo preferencia."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (678).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-722",
+    "prompt": "¿Está permitido estacionar sobre la acera?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sí, si la calle es estrecha."
+      },
+      {
+        "text": "No, está prohibido estacionar en aceras, pasos de peatones o áreas de jardín."
+      },
+      {
+        "text": "Solo los fines de semana."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (722).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 2,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-756",
+    "prompt": "¿Qué debe hacer si se encuentra con un bus escolar detenido con balizas?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Pasarlo con cuidado."
+      },
+      {
+        "text": "Detenerse obligatoriamente si sus balizas están encendidas, ya que hay niños subiendo o bajando."
+      },
+      {
+        "text": "Tocar la bocina para saludar."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Por ello, una persona conductora encuentra más difícil anticiparse al comportamiento de las y los usuarios vulnerables. Además, las y los peatones suelen cometer muchas infracciones, entre las que destacan descender sorpresivamente a la calzada y cruzar de manera indebida, es dec",
+    "reviewNotes": "Importado desde competitor_audit (756).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-963",
+    "prompt": "¿Qué debe hacer al aproximarse a un paso de cebra con peatones?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Apurarlos."
+      },
+      {
+        "text": "Detenerse y cederles el paso."
+      },
+      {
+        "text": "Pasar rápido."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 68,
+    "sourcePageEnd": 68,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Peatones En Chile, los atropellos representan aproximadamente el 15% de los siniestros, sin embargo, las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas. La alta siniestralidad de estas personas usuarias de las vías",
+    "reviewNotes": "Importado desde competitor_audit (963).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P68-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-978",
+    "prompt": "¿Cuál es el riesgo de llevar niños en el asiento delantero?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que molesten."
+      },
+      {
+        "text": "Mayor riesgo de muerte o lesiones graves por impacto o airbag."
+      },
+      {
+        "text": "Ninguno."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 69,
+    "sourcePageEnd": 69,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "Una persona mayor puede necesitar 4 segundos más que una persona joven para cruzar una calle de 16 metros de ancho. Pueden tener problemas con la orientación cuando no conocen bien las calles. Una persona mayor, al cruzar la calle, podría devolverse antes de alcanzar la vereda, o",
+    "reviewNotes": "Importado desde competitor_audit (978).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [
+      "fact-chapter-2-26-18",
+      "fact-chapter-2-26-19",
+      "fact-chapter-2-26-20",
+      "fact-chapter-2-26-21",
+      "fact-chapter-2-29-22",
+      "fact-chapter-2-30-23",
+      "fact-chapter-5-73-48",
+      "fact-chapter-9-143-93",
+      "fact-chapter-9-143-94"
+    ],
+    "manualCitationRefs": [
+      "2026-CH5-P69-S6"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 2,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-979",
+    "prompt": "¿Qué debe hacer al adelantar a un ciclista?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Pasar cerca."
+      },
+      {
+        "text": "Dejar al menos 1.5 metros de distancia lateral."
+      },
+      {
+        "text": "Tocar la bocina."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 71,
+    "sourcePageEnd": 71,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables muchos vehículos en contra, no te acerques demasiado y espera hasta que los vehículos hayan pasado para adelantarle. Mantén una distancia lateral prudente. No hagas señales luminosas o acústicas ni aceleres el motor en cercanía de animales ya que es",
+    "reviewNotes": "Importado desde competitor_audit (979).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P71-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 3,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "1.5 metros",
+        "value": "1.5",
+        "unit": "metros",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-1266",
+    "prompt": "¿Qué indica un chillido al frenar?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Normal."
+      },
+      {
+        "text": "Pastillas gastadas."
+      },
+      {
+        "text": "Poca bencina."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 70,
+    "sourcePageEnd": 70,
+    "sourceReference": "Las y los usuarios vulnerables",
+    "groundingExcerpt": "las y los usuarios vulnerables El deterioro de las capacidades psicomotoras necesarias para la conducción puede suponer, por ejemplo, pérdida de fuerza al momento de frenar, peor manejo del volante, disminución en la capacidad para mantener la atención, procesamiento más lento de",
+    "reviewNotes": "Importado desde competitor_audit (1266).",
+    "tags": [],
+    "chapterId": "chapter-5",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH5-P70-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  }
+]

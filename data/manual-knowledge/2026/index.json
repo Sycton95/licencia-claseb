@@ -1,0 +1,109 @@
+{
+  "version": "2026",
+  "sourcePdf": "Libro-ClaseB-2026.pdf",
+  "generatedAt": "2026-04-22T00:16:02.760Z",
+  "pageCount": 170,
+  "segmentCount": 751,
+  "factCount": 95,
+  "chapters": [
+    {
+      "chapterId": "chapter-1",
+      "label": "Los siniestros de tránsito",
+      "pageRange": {
+        "start": 6,
+        "end": 10
+      },
+      "segmentCount": 25,
+      "factCount": 8,
+      "file": "chapters/chapter-1.json"
+    },
+    {
+      "chapterId": "chapter-2",
+      "label": "Los principios de la conducción",
+      "pageRange": {
+        "start": 11,
+        "end": 32
+      },
+      "segmentCount": 112,
+      "factCount": 15,
+      "file": "chapters/chapter-2.json"
+    },
+    {
+      "chapterId": "chapter-3",
+      "label": "Convivencia vial",
+      "pageRange": {
+        "start": 33,
+        "end": 36
+      },
+      "segmentCount": 19,
+      "factCount": 0,
+      "file": "chapters/chapter-3.json"
+    },
+    {
+      "chapterId": "chapter-4",
+      "label": "La persona en el tránsito",
+      "pageRange": {
+        "start": 37,
+        "end": 67
+      },
+      "segmentCount": 172,
+      "factCount": 22,
+      "file": "chapters/chapter-4.json"
+    },
+    {
+      "chapterId": "chapter-5",
+      "label": "Las y los usuarios vulnerables",
+      "pageRange": {
+        "start": 68,
+        "end": 76
+      },
+      "segmentCount": 45,
+      "factCount": 7,
+      "file": "chapters/chapter-5.json"
+    },
+    {
+      "chapterId": "chapter-6",
+      "label": "Normas de circulación",
+      "pageRange": {
+        "start": 77,
+        "end": 108
+      },
+      "segmentCount": 158,
+      "factCount": 23,
+      "file": "chapters/chapter-6.json"
+    },
+    {
+      "chapterId": "chapter-7",
+      "label": "Conducción en circunstancias especiales",
+      "pageRange": {
+        "start": 109,
+        "end": 126
+      },
+      "segmentCount": 104,
+      "factCount": 3,
+      "file": "chapters/chapter-7.json"
+    },
+    {
+      "chapterId": "chapter-8",
+      "label": "Conducción eficiente",
+      "pageRange": {
+        "start": 127,
+        "end": 135
+      },
+      "segmentCount": 41,
+      "factCount": 3,
+      "file": "chapters/chapter-8.json"
+    },
+    {
+      "chapterId": "chapter-9",
+      "label": "Informaciones importantes",
+      "pageRange": {
+        "start": 136,
+        "end": 148
+      },
+      "segmentCount": 75,
+      "factCount": 14,
+      "file": "chapters/chapter-9.json"
+    }
+  ]
+}

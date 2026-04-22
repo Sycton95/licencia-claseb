@@ -1,0 +1,103 @@
+{
+  "chapters": {
+    "chapter-1": {
+      "label": "Los siniestros de transito",
+      "keywords": {
+        "siniestro": 3,
+        "mortalidad": 2,
+        "pib": 3,
+        "costo": 2,
+        "sistema seguro": 3,
+        "accidente de transito": 2
+      }
+    },
+    "chapter-2": {
+      "label": "Los principios de la conduccion",
+      "keywords": {
+        "conduccion": 2,
+        "vehiculo": 1,
+        "frenado": 2,
+        "alcoholemia": 3,
+        "ebriedad": 3,
+        "ley emilia": 3,
+        "utm": 2
+      }
+    },
+    "chapter-3": {
+      "label": "Convivencia vial",
+      "keywords": {
+        "convivencia vial": 3,
+        "solidaridad": 2,
+        "precaucion": 2,
+        "confianza": 2,
+        "educacion vial": 2
+      }
+    },
+    "chapter-4": {
+      "label": "La persona en el transito",
+      "keywords": {
+        "reaccion": 3,
+        "tiempo de reaccion": 3,
+        "percepcion": 2,
+        "campo visual": 2,
+        "vision": 2,
+        "punto ciego": 2
+      }
+    },
+    "chapter-5": {
+      "label": "Las y los usuarios vulnerables",
+      "keywords": {
+        "peaton": 3,
+        "ciclista": 3,
+        "motociclista": 3,
+        "usuario vulnerable": 3,
+        "nino": 2,
+        "adulto mayor": 2
+      }
+    },
+    "chapter-6": {
+      "label": "Normas de circulacion",
+      "keywords": {
+        "velocidad": 3,
+        "senal": 2,
+        "adelantamiento": 2,
+        "prioridad": 2,
+        "semáforo": 2,
+        "estacionar": 2,
+        "km/h": 2
+      }
+    },
+    "chapter-7": {
+      "label": "Conduccion en circunstancias especiales",
+      "keywords": {
+        "aquaplaning": 3,
+        "hidroplaneo": 3,
+        "noche": 2,
+        "lluvia": 2,
+        "niebla": 2,
+        "circunstancias especiales": 2
+      }
+    },
+    "chapter-8": {
+      "label": "Conduccion eficiente",
+      "keywords": {
+        "combustible": 3,
+        "conduccion eficiente": 3,
+        "emisiones": 2,
+        "marcha": 2,
+        "consumo": 2
+      }
+    },
+    "chapter-9": {
+      "label": "Informaciones importantes",
+      "keywords": {
+        "licencia": 2,
+        "documentacion": 2,
+        "clase b": 2,
+        "examen": 2,
+        "permiso": 2
+      }
+    }
+  },
+  "ambiguityMargin": 1
+}

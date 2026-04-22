@@ -6,6 +6,7 @@ import { CatalogManager } from '../components/admin/CatalogManager';
 import { EditorPanel } from '../components/admin/EditorPanel';
 import { AiQueueManager } from '../components/admin/AiQueueManager';
 import { BetaPilotManager } from '../components/admin/BetaPilotManager';
+import { ImportReviewManager } from '../components/admin/ImportReviewManager';
 import { AdminReferenceDrawer } from '../components/admin/AdminReferenceDrawer';
 import { AdminManualReader } from '../components/admin/AdminManualReader';
 import type { AdminHealth, AdminReportSummary, AdminSection } from '../components/admin/types';
@@ -60,6 +61,7 @@ import type {
   LocalOllamaMetrics,
 } from '../types/ai';
 import type { ContentCatalog, EditorialAction, EditorialStatus, Question } from '../types/content';
+import type { ImportReviewManifest } from '../types/importReview';
 
 type StatusTone = 'success' | 'error';
 
@@ -96,6 +98,7 @@ export function AdminPage() {
   const [catalogListCollapsed, setCatalogListCollapsed] = useState(false);
   const [aiListCollapsed, setAiListCollapsed] = useState(false);
   const [betaListCollapsed, setBetaListCollapsed] = useState(false);
+  const [importReviewManifest, setImportReviewManifest] = useState<ImportReviewManifest | null>(null);
   const [referenceQuestionId, setReferenceQuestionId] = useState<string | null>(null);
   const [manualDocumentId, setManualDocumentId] = useState<string | null>(null);
   const [manualInitialPage, setManualInitialPage] = useState<number | undefined>(undefined);
@@ -221,6 +224,24 @@ export function AdminPage() {
       isCancelled = true;
     };
   }, [showBetaSection, isLocalOllamaEnabled]);
+
+  useEffect(() => {
+    if (activeSection !== 'imports' || importReviewManifest) {
+      return;
+    }
+
+    let isCancelled = false;
+
+    void import('../data/importReviewManifest').then((module) => {
+      if (!isCancelled) {
+        setImportReviewManifest(module.IMPORT_REVIEW_MANIFEST);
+      }
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [activeSection, importReviewManifest]);
 
   useEffect(() => {
     if (
@@ -712,12 +733,23 @@ export function AdminPage() {
               diagnosticsBySuggestionId={suggestionDiagnosticsById}
               isBusy={isBusy}
               isListCollapsed={aiListCollapsed}
+              referenceChapter={referenceChapter}
+              referenceQuestion={referenceQuestion}
+              referenceSourceDocument={
+                referenceQuestion
+                  ? catalog?.sourceDocuments.find((source) => source.id === referenceQuestion.sourceDocumentId) ?? null
+                  : null
+              }
               selectedSuggestionId={selectedSuggestionId}
               selectedSuggestion={
                 aiWorkspace?.suggestions.find((suggestion) => suggestion.id === selectedSuggestionId) ||
                 null
               }
-              onSelectSuggestion={setSelectedSuggestionId}
+              onCloseReference={() => setReferenceQuestionId(null)}
+              onSelectSuggestion={(id) => {
+                setSelectedSuggestionId(id);
+                setReferenceQuestionId(null);
+              }}
               onToggleListCollapsed={() => setAiListCollapsed((current) => !current)}
               onLoadSuggestionIntoEditor={handleLoadSuggestionIntoEditor}
               onOpenManual={handleOpenManual}
@@ -728,6 +760,15 @@ export function AdminPage() {
               }
             />
           )}
+
+          {activeSection === 'imports' &&
+            (importReviewManifest ? (
+              <ImportReviewManager manifest={importReviewManifest} />
+            ) : (
+              <div className="flex flex-1 items-center justify-center p-6 text-sm text-slate-500">
+                Cargando manifest de import review...
+              </div>
+            ))}
 
           {activeSection === 'beta' && showBetaSection && (
             <BetaPilotManager
@@ -758,16 +799,18 @@ export function AdminPage() {
             />
           )}
         </div>
-        <AdminReferenceDrawer
-          chapter={referenceChapter}
-          question={referenceQuestion}
-          sourceDocument={
-            referenceQuestion
-              ? catalog?.sourceDocuments.find((source) => source.id === referenceQuestion.sourceDocumentId) ?? null
-              : null
-          }
-          onClose={() => setReferenceQuestionId(null)}
-        />
+        {activeSection !== 'ai' ? (
+          <AdminReferenceDrawer
+            chapter={referenceChapter}
+            question={referenceQuestion}
+            sourceDocument={
+              referenceQuestion
+                ? catalog?.sourceDocuments.find((source) => source.id === referenceQuestion.sourceDocumentId) ?? null
+                : null
+            }
+            onClose={() => setReferenceQuestionId(null)}
+          />
+        ) : null}
         <AdminManualReader
           document={manualDocument}
           initialPage={manualInitialPage}

@@ -3,6 +3,7 @@ import {
   CloseIcon,
   DashboardIcon,
   FlaskIcon,
+  ImportReviewIcon,
   LogOutIcon,
   SparkIcon,
 } from './AdminIcons';
@@ -33,6 +34,7 @@ export function AdminSidebar({
     { id: 'dashboard', label: 'Resumen', Icon: DashboardIcon },
     { id: 'catalog', label: 'Catalogo', Icon: CatalogIcon },
     { id: 'ai', label: 'Cola AI', Icon: SparkIcon },
+    { id: 'imports' as const, label: 'Imports', Icon: ImportReviewIcon },
     ...(showBeta ? [{ id: 'beta' as const, label: 'Beta', Icon: FlaskIcon }] : []),
   ] as const;
 

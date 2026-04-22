@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 import type { Question, QuizMode } from '../types/content';
 import type { QuestionOutcome } from '../types/quiz';
@@ -16,21 +17,31 @@ type QuizSummaryProps = {
 
 type ReviewFilter = 'all' | 'correct' | 'incorrect';
 
+const BookIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+  </svg>
+);
+
+const CheckIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
+const XIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
+
 function formatCorrectAnswers(question: Question) {
   return question.options
     .filter((option) => option.isCorrect)
     .map((option) => `${option.label}. ${option.text}`)
     .join(' · ');
-}
-
-function getPerformanceTier(percentage: number): { tier: string; color: string } {
-  if (percentage >= 80) {
-    return { tier: 'Excelente', color: 'text-sage-700' };
-  }
-  if (percentage >= 60) {
-    return { tier: 'Bueno', color: 'text-primary-700' };
-  }
-  return { tier: 'Necesita mejorar', color: 'text-warning-700' };
 }
 
 export function QuizSummary({
@@ -49,7 +60,8 @@ export function QuizSummary({
   const totalQuestions = questions.length;
   const percentage = maxScore === 0 ? 0 : Math.round((score / maxScore) * 100);
   const passed = typeof passingScore === 'number' ? score >= passingScore : undefined;
-  const performanceTier = getPerformanceTier(percentage);
+  
+  const accentColor = mode === 'exam' ? 'var(--color-public-exam)' : 'var(--color-public-practice)';
 
   const outcomesByQuestionId = useMemo(
     () => new Map(outcomes.map((outcome) => [outcome.questionId, outcome])),
@@ -59,7 +71,6 @@ export function QuizSummary({
   const correctCount = outcomes.filter((outcome) => outcome.isCorrect).length;
   const incorrectCount = outcomes.filter((outcome) => !outcome.isCorrect).length;
 
-  // Category breakdown
   const categoryStats = useMemo(() => {
     const stats = new Map<string, { correct: number; total: number }>();
 
@@ -71,7 +82,9 @@ export function QuizSummary({
         stats.set(category, { correct: 0, total: 0 });
       }
 
-      const stat = stats.get(category)!;
+      const stat = stats.get(category);
+      if (!stat) return;
+
       stat.total += 1;
       if (outcome?.isCorrect) {
         stat.correct += 1;
@@ -82,216 +95,152 @@ export function QuizSummary({
       category,
       correct: stat.correct,
       total: stat.total,
-      percentage: stat.total === 0 ? 0 : Math.round((stat.correct / stat.total) * 100),
     }));
-  }, [questions, outcomesByQuestionId]);
+  }, [outcomesByQuestionId, questions]);
 
-  // Filtered questions for review
   const filteredQuestions = useMemo(() => {
     return questions.filter((question) => {
       const outcome = outcomesByQuestionId.get(question.id);
       if (!outcome) return false;
-
       if (reviewFilter === 'correct') return outcome.isCorrect;
       if (reviewFilter === 'incorrect') return !outcome.isCorrect;
       return true;
     });
-  }, [questions, outcomesByQuestionId, reviewFilter]);
+  }, [outcomesByQuestionId, questions, reviewFilter]);
+
+  const ringCircumference = 251.2;
+  const ringProgress = ringCircumference * (percentage / 100);
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-hidden transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
-      <div className="shrink-0 px-4 py-6 shadow-sm md:py-7 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-secondary)', borderColor: 'var(--color-border)', borderBottomWidth: '1px' }}>
-        <div className="mx-auto max-w-3xl">
-          <span
-            className={`inline-flex rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${
-              mode === 'exam' ? 'bg-sage-50 text-sage-600' : 'bg-primary-50 text-primary-600'
-            }`}
-          >
-            {mode === 'exam' ? 'Resultado del examen' : 'Resultado final'}
-          </span>
-          <h1 className="mt-3 text-2xl font-black tracking-tight md:text-3xl transition-colors duration-200" style={{ color: 'var(--color-text-primary)' }}>
-            {title}
-          </h1>
-          <p className="mt-1 text-sm transition-colors duration-200" style={{ color: 'var(--color-text-secondary)' }}>{subtitle}</p>
-        </div>
-      </div>
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+      <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-10 pt-6 md:px-6 md:pt-8">
+        <motion.div
+          className="max-w-3xl mx-auto flex flex-col items-center text-center py-4 pb-20"
+          initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 220, damping: 26 }}
+        >
+          {/* Top Graphic: Overall Score */}
+          <div className="mb-6 w-full flex justify-center relative">
+            <div className="relative w-48 h-48" style={{ color: passed === false ? 'var(--color-warning-500)' : 'var(--color-success-500)' }}>
+               <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                 <circle cx="50" cy="50" r="40" stroke="var(--color-border)" strokeWidth="8" fill="none" />
+                 <motion.circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="none" strokeLinecap="round" initial={{ strokeDasharray: `0 ${ringCircumference}` }} animate={{ strokeDasharray: `${ringProgress} ${ringCircumference}` }} transition={{ duration: 1.5, ease: "easeOut" }} />
+               </svg>
+               <div className="absolute inset-0 flex flex-col items-center justify-center text-[var(--color-text-primary)]">
+                  <span className="text-5xl font-black">{percentage}%</span>
+                  <span className="text-sm font-bold text-[var(--color-text-secondary)] uppercase tracking-widest border-t-2 border-[var(--color-border)] pt-1 mt-1">
+                    {mode === 'exam' ? (passed ? 'Aprobado' : 'No aprobado') : 'Completado'}
+                  </span>
+               </div>
+            </div>
+          </div>
+          
+          <h1 className="text-3xl md:text-4xl font-black text-[var(--color-text-primary)] tracking-tighter mb-2 uppercase">{title}</h1>
+          <p className="mt-2 max-w-2xl text-sm leading-6 md:text-base text-[var(--color-text-secondary)] mb-8">{subtitle}</p>
 
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 md:px-6 md:py-6 transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
-        <div className="mx-auto flex w-full max-w-3xl flex-col gap-6">
-          {/* Results Card */}
-          <section
-            className={`rounded-[30px] border p-6 shadow-sm ${
-              mode === 'exam'
-                ? passed
-                  ? 'border-sage-200 bg-sage-50'
-                  : 'border-warning-200 bg-warning-50'
-                : 'border-primary-200 bg-primary-50'
-            }`}
-            role="status"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <div>
-                  <div className="text-5xl font-black tracking-tight text-neutral-900">
-                    {score}/{maxScore}
-                  </div>
-                  <div className="mt-2 flex items-center gap-2">
-                    <span className={`text-sm font-bold ${performanceTier.color}`}>
-                      {performanceTier.tier}
-                    </span>
-                    <span className="text-2xl font-black text-neutral-900">{percentage}%</span>
-                  </div>
-                  <p className="mt-2 text-sm leading-7 text-neutral-700">
-                    {mode === 'exam'
-                      ? passed
-                        ? `¡Excelente! Aprobaste con éxito. ${totalQuestions - incorrectCount} respuestas correctas.`
-                        : `Necesitas ${passingScore! - score} puntos más para aprobar.`
-                      : `Acertaste ${correctCount} de ${totalQuestions} preguntas.`}
-                  </p>
-                </div>
+          {/* Overview Stat Row */}
+          <div className="flex justify-around bg-[var(--color-bg-secondary)] border-2 border-[var(--color-border)] rounded-2xl p-4 mb-8 shadow-sm w-full">
+             <div className="text-center">
+               <div className="text-xs font-bold text-[var(--color-text-secondary)] uppercase tracking-widest">Total</div>
+               <div className="text-2xl font-black text-[var(--color-text-primary)]">{totalQuestions}</div>
+             </div>
+             <div className="text-center">
+               <div className="text-xs font-bold text-[var(--color-text-secondary)] uppercase tracking-widest">Correctas</div>
+               <div className="text-2xl font-black text-[var(--color-success-600)]">{correctCount}</div>
+             </div>
+             <div className="text-center">
+               <div className="text-xs font-bold text-[var(--color-text-secondary)] uppercase tracking-widest">Incorrectas</div>
+               <div className="text-2xl font-black text-[var(--color-warning-600)]">{incorrectCount}</div>
+             </div>
+          </div>
 
-                <div className="flex gap-3">
-                  <div className="rounded-2xl bg-white/80 px-4 py-3 text-center shadow-sm">
-                    <div className="text-sm font-bold text-success-600">{correctCount}</div>
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-neutral-500">Correctas</div>
-                  </div>
-                  <div className="rounded-2xl bg-white/80 px-4 py-3 text-center shadow-sm">
-                    <div className="text-sm font-bold text-warning-600">{incorrectCount}</div>
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-neutral-500">Incorrectas</div>
-                  </div>
-                </div>
+          {/* Performance Breakdown */}
+          <div className="w-full text-left bg-[var(--color-bg-secondary)] border-2 border-[var(--color-border)] rounded-2xl p-6 mb-12 shadow-sm">
+            <h3 className="font-black text-sm uppercase tracking-widest text-[var(--color-text-secondary)] border-b-2 border-[var(--color-border)] pb-3 mb-4">Desempeño por Capítulo</h3>
+            <div className="space-y-4">
+               {categoryStats.map((stat, i) => (
+                 <div key={i} className="flex justify-between items-center font-bold text-[var(--color-text-primary)] text-sm md:text-base">
+                   <span className="truncate pr-4">{stat.category}</span>
+                   <span className="shrink-0 px-3 py-1 rounded-lg" style={{ backgroundColor: 'color-mix(in srgb, ' + accentColor + ' 10%, transparent)', color: accentColor }}>
+                     {stat.correct} / {stat.total}
+                   </span>
+                 </div>
+               ))}
+            </div>
+          </div>
+
+          {/* Detailed Question Revision */}
+          <div className="w-full text-left space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+              <h3 className="font-black text-xl text-[var(--color-text-primary)]">Revisión Detallada</h3>
+              <div className="flex flex-wrap gap-2">
+                {(['all', 'correct', 'incorrect'] as const).map((filter) => {
+                  const active = reviewFilter === filter;
+                  const label = filter === 'all' ? `Todas` : filter === 'correct' ? `Correctas` : `Incorrectas`;
+                  return (
+                    <button
+                      key={filter} onClick={() => setReviewFilter(filter)}
+                      className={`rounded-full border px-3 py-1.5 text-xs font-black uppercase tracking-widest transition-colors
+                        ${active ? 'bg-slate-800 text-white border-slate-800' : 'bg-transparent text-[var(--color-text-secondary)] border-[var(--color-border)] hover:bg-[var(--color-border)]'}`}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
               </div>
             </div>
-          </section>
 
-          {/* Category Breakdown */}
-          {categoryStats.length > 0 && (
-            <section
-              className="rounded-[30px] border border-neutral-200 bg-white p-5 shadow-sm md:p-6"
-              aria-label="Desglose de desempeño por categoría o capítulo"
-            >
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
-                Desempeño por categoría
-              </h2>
-
-              <div className="mt-4 space-y-2">
-                {categoryStats.map((stat) => (
-                  <div key={stat.category} className="flex items-center gap-3">
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center justify-between gap-2 mb-1">
-                        <span className="text-sm font-semibold text-neutral-900 truncate">
-                          {stat.category}
-                        </span>
-                        <span className="text-xs font-bold text-neutral-600">
-                          {stat.correct}/{stat.total}
-                        </span>
-                      </div>
-                      <div className="h-2 overflow-hidden rounded-full bg-neutral-200">
-                        <div
-                          className={`h-full ${
-                            stat.percentage >= 80 ? 'bg-sage-500' : stat.percentage >= 60 ? 'bg-primary-500' : 'bg-warning-500'
-                          }`}
-                          style={{ width: `${stat.percentage}%` }}
-                        />
-                      </div>
+            {filteredQuestions.map((question, i) => {
+               const outcome = outcomesByQuestionId.get(question.id);
+               const correct = outcome?.isCorrect ?? false;
+               
+               return (
+                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 5) * 0.1 }} key={question.id} className="p-5 md:p-6 bg-[var(--color-bg-secondary)] border-2 border-[var(--color-border)] rounded-3xl shadow-sm">
+                    {/* Meta Row */}
+                    <div className="flex justify-between items-center mb-4 border-b-2 border-[var(--color-border)] pb-3">
+                       <span className="text-xs font-bold text-[var(--color-text-secondary)] uppercase tracking-widest flex items-center gap-2"><BookIcon /> Pág. {question.sourcePage}</span>
+                       <span className={`text-xs font-black uppercase tracking-widest px-2.5 py-1 rounded-lg border-2 ${correct ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-rose-50 text-rose-700 border-rose-200'}`}>
+                         {correct ? `+${outcome?.pointsEarned || 1} punto(s)` : `0 de ${outcome?.pointsAvailable || 1}`}
+                       </span>
                     </div>
-                    <span className="text-xs font-bold text-neutral-600 w-8 text-right">{stat.percentage}%</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
 
-          {/* Review Filters */}
-          <section
-            className="rounded-[30px] border border-neutral-200 bg-white p-5 shadow-sm md:p-6"
-            aria-label="Revisión detallada de respuestas con opción de filtrado"
-          >
-            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-              <h2 className="text-xs font-black uppercase tracking-[0.2em] text-neutral-400">
-                Revisión de respuestas
-              </h2>
-              <div className="flex gap-2" role="group" aria-label="Filtrar respuestas">
-                {(['all', 'correct', 'incorrect'] as const).map((filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => setReviewFilter(filter)}
-                    aria-pressed={reviewFilter === filter}
-                    aria-label={filter === 'all' ? `Todas las respuestas (${totalQuestions})` : filter === 'correct' ? `Solo respuestas correctas (${correctCount})` : `Solo respuestas incorrectas (${incorrectCount})`}
-                    className={`min-h-[44px] rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-wide transition-colors md:min-h-0 ${
-                      reviewFilter === filter
-                        ? filter === 'correct'
-                          ? 'bg-success-600 text-white'
-                          : filter === 'incorrect'
-                            ? 'bg-warning-600 text-white'
-                            : 'bg-primary-600 text-white'
-                        : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
-                    }`}
-                    type="button"
-                  >
-                    {filter === 'all' ? `Todas (${totalQuestions})` : filter === 'correct' ? `Correctas (${correctCount})` : `Incorrectas (${incorrectCount})`}
-                  </button>
-                ))}
-              </div>
-            </div>
+                    {/* Prompt */}
+                    <p className="font-bold text-lg mb-6 text-[var(--color-text-primary)] leading-snug">{question.prompt}</p>
+                    
+                    {/* Responses */}
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-[10px] font-black text-[var(--color-text-secondary)] uppercase tracking-widest mb-1.5">Respuesta Correcta:</p>
+                        <div className="text-sm font-bold text-emerald-800 bg-emerald-50 border-2 border-emerald-200 p-4 rounded-2xl flex items-start gap-3">
+                           <div className="bg-emerald-200/50 rounded-lg p-1 shrink-0 mt-0.5"><CheckIcon size={16} /></div> 
+                           <span className="leading-snug pt-0.5">{formatCorrectAnswers(question)}</span>
+                        </div>
+                      </div>
 
-            <div className="mt-4 space-y-3">
-              {filteredQuestions.map((question) => {
-                const outcome = outcomesByQuestionId.get(question.id);
-                const correct = outcome?.isCorrect ?? false;
-
-                return (
-                  <article
-                    key={question.id}
-                    className={`rounded-2xl border px-4 py-4 ${
-                      correct
-                        ? 'border-success-200 bg-success-50/70'
-                        : 'border-neutral-200 bg-neutral-50'
-                    }`}
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-3">
-                      <span className="rounded-full bg-white px-2.5 py-1 text-[11px] font-black uppercase tracking-wide text-neutral-500">
-                        Pág. {question.sourcePage}
-                      </span>
-                      {outcome && (
-                        <span
-                          className={`rounded-full px-2.5 py-1 text-[11px] font-black uppercase tracking-wide ${
-                            correct
-                              ? 'bg-success-100 text-success-700'
-                              : 'bg-warning-100 text-warning-700'
-                          }`}
-                        >
-                          {correct
-                            ? `+${outcome.pointsEarned} punto(s)`
-                            : `0 de ${outcome.pointsAvailable}`}
-                        </span>
+                      {!correct && outcome && (
+                        <div className="mt-4">
+                          <p className="text-[10px] font-black text-[var(--color-text-secondary)] uppercase tracking-widest mb-1.5">Tu Respuesta:</p>
+                          <div className="text-sm font-bold text-rose-800 bg-rose-50 border-2 border-rose-200 p-4 rounded-2xl flex items-start gap-3">
+                             <div className="bg-rose-200/50 rounded-lg p-1 shrink-0 mt-0.5"><XIcon size={16} /></div> 
+                             <span className="leading-snug pt-0.5">
+                               {question.options.filter(opt => outcome.selectedOptionIds.includes(opt.id)).map(opt => `${opt.label}. ${opt.text}`).join(' · ') || 'No respondida'}
+                             </span>
+                          </div>
+                        </div>
                       )}
                     </div>
-                    <h3 className="mt-3 text-sm font-black leading-6 text-neutral-900">
-                      {question.prompt}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-neutral-500">{question.instruction}</p>
-                    <p className="mt-3 text-sm font-semibold leading-6 text-neutral-700">
-                      Respuesta correcta: {formatCorrectAnswers(question)}
-                    </p>
-                  </article>
-                );
-              })}
-            </div>
-          </section>
-        </div>
+                 </motion.div>
+               );
+             })}
+          </div>
+        </motion.div>
       </div>
 
-      <div className="shrink-0 border-t border-neutral-200 bg-white px-4 py-4">
+      {/* Action Button */}
+      <div className="shrink-0 border-t border-[var(--color-border)] px-4 py-4 md:px-6 bg-[var(--color-bg-secondary)]">
         <div className="mx-auto max-w-3xl">
           <button
-            className={`w-full rounded-2xl border-b-4 px-6 py-3.5 text-base font-black text-white transition-all active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 ${
-              mode === 'exam'
-                ? 'border-sage-800 bg-sage-600 hover:border-sage-700 hover:bg-sage-500 focus-visible:ring-sage-200'
-                : 'border-primary-800 bg-primary-600 hover:border-primary-700 hover:bg-primary-500 focus-visible:ring-primary-200'
-            }`}
+            className="w-full rounded-[1.6rem] border-2 border-b-4 px-6 py-4 text-base font-black uppercase tracking-[0.18em] text-white transition-all active:translate-y-[4px] active:border-b-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
+            style={{ backgroundColor: accentColor, borderColor: accentColor }}
             type="button"
             onClick={onRestart}
           >

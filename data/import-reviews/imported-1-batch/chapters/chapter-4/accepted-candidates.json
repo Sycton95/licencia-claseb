@@ -1,0 +1,2227 @@
+[
+  {
+    "externalId": "imported-1-batch-141",
+    "prompt": "¿Cuál es el tiempo de reacción promedio ante un imprevisto?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "1 segundo."
+      },
+      {
+        "text": "0.1 minuto."
+      },
+      {
+        "text": "0.1 segundo."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Los problemas emocionales que reaccionar ante un imprevisto, ya desvían los pensamientos, ocuparse de la radio, de un teléfono, que tardarás más tiempo en recibir fumar o comer mientras conduces, influyen negativamente en información. ¡Conducir requiere la seguridad del tránsito.",
+    "reviewNotes": "Importado desde competitor_audit (141).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S7"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "1 segundo",
+        "value": "1",
+        "unit": "segundo",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-187",
+    "prompt": "¿Cómo suele ser la percepción del riesgo en la mayoría de los conductores?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sobre el riesgo real, suele ser una percepción objetiva y demasiado realista, lo cual produce que el riesgo percibido es prácticamente de un 100% del conductor."
+      },
+      {
+        "text": "Por debajo del riesgo real, pues suele ser una percepción subjetiva y poco realista, lo cual produce que el riesgo percibido es prácticamente nulo."
+      },
+      {
+        "text": "La percepción del riesgo es igual para todos los conductores."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Es necesario practicar la conducción y obtener seguridad Estadísticas internacionales señalan frente a los estimulos visuales y la percepción de estos, que las personas conductoras princiasí se dará origen a decisiones seguras, pues las reglas del piantes sufren siniestros de trá",
+    "reviewNotes": "Importado desde competitor_audit (187).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 26.4,
+    "duplicateClusterId": "dup-cluster-30",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-202",
+    "prompt": "En situaciones reales que requieren reacciones complejas, en las que deben interpretarse rápidamente muchas impresiones, los conductores expertos tienen una reacción mucho más rápida. ¿A quiénes corresponde el grupo de edad \"más rápido\"?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El grupo de edad \"más rápido\" tienen entre 60 y 70 años."
+      },
+      {
+        "text": "El grupo de edad \"más rápido\" tienen entre 18 y 25 años."
+      },
+      {
+        "text": "El grupo de edad \"más rápido\" tienen entre 35 y 50 años."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 40,
+    "sourcePageEnd": 40,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito Capacidad de reacción En el relato, el conductor reaccionó rápidamente cuando estuvo a punto de salirse del camino en la primera curva: demostró buena capacidad de reacción. El movimiento del volante y la reducción de velocidad salvaron la situación. El ",
+    "reviewNotes": "Importado desde competitor_audit (202).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-40-25"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P40-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 3,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "fact_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "35",
+        "value": "35",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "50 años",
+        "value": "50",
+        "unit": "años",
+        "factRefIds": [
+          "fact-chapter-4-40-25"
+        ]
+      }
+    ],
+    "qualityScore": 50,
+    "duplicateClusterId": "dup-cluster-45",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-205",
+    "prompt": "¿Cuál de las siguientes afirmaciones es CORRECTA en cuanto a la capacidad de reacción de los conductores jóvenes inexpertos, comparados con conductores experimentados cuya edad fluctúa entre 35 y 50 años?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Ante situaciones complejas, los conductores jóvenes reaccionan más rápido."
+      },
+      {
+        "text": "Los conductores jóvenes reaccionan siempre con mayor rapidez."
+      },
+      {
+        "text": "En situaciones reales, que requieren reacciones complejas, los conductores experimentados reaccionan en un tiempo más corto que los jóvenes inexpertos."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 40,
+    "sourcePageEnd": 40,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito Capacidad de reacción En el relato, el conductor reaccionó rápidamente cuando estuvo a punto de salirse del camino en la primera curva: demostró buena capacidad de reacción. El movimiento del volante y la reducción de velocidad salvaron la situación. El ",
+    "reviewNotes": "Importado desde competitor_audit (205).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-40-25"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P40-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 3,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "fact_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "35",
+        "value": "35",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "50 años",
+        "value": "50",
+        "unit": "años",
+        "factRefIds": [
+          "fact-chapter-4-40-25"
+        ]
+      }
+    ],
+    "qualityScore": 48.4,
+    "duplicateClusterId": "dup-cluster-48",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-217",
+    "prompt": "¿Qué es la percepción selectiva al conducir?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Son los objetos presentes en la vía los cuales emiten una luz que puede encandilar a las personas conductoras."
+      },
+      {
+        "text": "Es la selección e interpretación que no depende de la casualidad, sino que se ven influenciadas por las expectativas, necesidades y por el estado de vigilancia."
+      },
+      {
+        "text": "No existe la percepción selectiva al conducir."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Es necesario practicar la conducción y obtener seguridad Estadísticas internacionales señalan frente a los estimulos visuales y la percepción de estos, que las personas conductoras princiasí se dará origen a decisiones seguras, pues las reglas del piantes sufren siniestros de trá",
+    "reviewNotes": "Importado desde competitor_audit (217).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 23.4,
+    "duplicateClusterId": "dup-cluster-60",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-219",
+    "prompt": "En relación con la técnica de observación de los conductores inexpertos, ¿Cuál o cuáles de las siguientes afirmaciones es o son verdaderas?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Los conductores inexpertos concentran su mirada en puntos fijos."
+      },
+      {
+        "text": "Los conductores inexpertos aprovechan al máximo su visión periférica."
+      },
+      {
+        "text": "Los conductores inexpertos observan el entorno que los rodea en forma más sistemática que los conductores experimentados."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 43,
+    "sourcePageEnd": 43,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Las personas conductoras con experiencia, aprovechan su visión periférica más que quienes conducen recientemente. Esto es debido a que tienen una técnica de localización más sistemática, versus las personas que se inician en la conducción, que casi siempre ven lo que se encuentra",
+    "reviewNotes": "Importado desde competitor_audit (219).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P43-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 32.9,
+    "duplicateClusterId": "dup-cluster-62",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-222",
+    "prompt": "De las siguientes afirmaciones, ¿Cuál o cuáles es o son verdaderas? I- El tener una buena visión es imprescindible para poder captar las diversas situaciones que se presentan al conducir. II- Existe un alto riesgo de que los conductores cuyo campo visual no es suficientemente amplio, no alcancen a reaccionar a tiempo ante peligros provenientes de los lados. III- Si usted conduce durante un largo tiempo en condiciones difíciles, puede tener problemas para apreciar correctamente lo que ve y, por lo tanto, tomar decisiones equivocadas.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "I y II."
+      },
+      {
+        "text": "II y III."
+      },
+      {
+        "text": "I, II y III."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (222).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 7,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-224",
+    "prompt": "Normalmente se tiene un campo visual de algo más de ___ periférica:",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "360°."
+      },
+      {
+        "text": "180°."
+      },
+      {
+        "text": "100°."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 40,
+    "sourcePageEnd": 40,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Capacidad visual El conductor se vió sorprendido al descubrir a un ciclista a pocos metros de su vehículo. Esto nos lleva a pensar en nuestra capacidad para ver en la oscuridad y descubrir los objetos importantes en el tránsito, ya que los seres humanos no contamos con la agudeza",
+    "reviewNotes": "Importado desde competitor_audit (224).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P40-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "180",
+        "value": "180",
+        "unit": "",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-228",
+    "prompt": "¿Qué debe hacer usted si siente una alteración en su visión?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Consultar a un médico."
+      },
+      {
+        "text": "Consultar a un mecánico."
+      },
+      {
+        "text": "No se preocupe, la visión no es importante para conducir."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 43,
+    "sourcePageEnd": 43,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Un campo visual satismental que si percibes cualquier factorio y una visión tal que permita percibir nítidamente objetos a tipo de alteración en tu vista, diferentes distancias durante el día y la noche, son imprescindibles consultes al médico y tomes las para poder resolver las ",
+    "reviewNotes": "Importado desde competitor_audit (228).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P43-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-278",
+    "prompt": "¿Cuál o cuáles de las siguientes afirmaciones es o son verdaderas? I- La capacidad de reacción de una persona se ve afectada con pequeñas concentraciones de alcohol en su organismo. II- Una buena taza de café acelera el proceso mediante el cual el organismo se libera del alcohol. III- Con pequeñas concentraciones de alcohol en el organismo de un individuo, disminuyen ciertas inhibiciones y tiende a sobrestimar sus capacidades.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "I y II."
+      },
+      {
+        "text": "I y III."
+      },
+      {
+        "text": "I."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (278).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 3,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-282",
+    "prompt": "De las siguientes capacidades de un individuo, ¿cuál de ellas no se ve afectada por el consumo de alcohol?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "La percepción de colores."
+      },
+      {
+        "text": "El juicio acerca de la velocidad."
+      },
+      {
+        "text": "Los tiempos de reacción."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 46,
+    "sourcePageEnd": 46,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Muchas personas jóvenes no ven como peligrosas situaciones de riesgo (por ejemplo, conducir tras haber ingerido alcohol), por lo que su comportamiento será más arriesgado. Ser una buena persona conductora exige muchos conocimientos y destrezas: hay que ser capaz de registrar a ti",
+    "reviewNotes": "Importado desde competitor_audit (282).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P46-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 5,
+      "chapter-5": 0,
+      "chapter-6": 3,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-283",
+    "prompt": "El tiempo que transcurre desde que usted percibe un peligro hasta que actúa se denomina tiempo de reacción. En una emergencia, ¿qué factor influye en su tiempo de reacción?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Su estado de salud."
+      },
+      {
+        "text": "El estado de la calzada."
+      },
+      {
+        "text": "La velocidad de su vehículo."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Los problemas emocionales que reaccionar ante un imprevisto, ya desvían los pensamientos, ocuparse de la radio, de un teléfono, que tardarás más tiempo en recibir fumar o comer mientras conduces, influyen negativamente en información. ¡Conducir requiere la seguridad del tránsito.",
+    "reviewNotes": "Importado desde competitor_audit (283).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S7"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 3,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-286",
+    "prompt": "¿De qué manera el alcohol afecta a la capacidad para conducir un vehículo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Intensifica los reflejos del conductor."
+      },
+      {
+        "text": "Disminuye la capacidad de reacción del conductor."
+      },
+      {
+        "text": "Dorsiona la percepción de los colores del conductor."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (286).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 5,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-287",
+    "prompt": "¿Qué consecuencias negativas produce consumir alcohol al conducir?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Hace más rápida la comunicación."
+      },
+      {
+        "text": "Perturba el estado de ánimo."
+      },
+      {
+        "text": "Influye positivamente en el tiempo de reacción."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 45,
+    "sourcePageEnd": 45,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La conducción segura requiere equilibrio emocional Capacidad de raciocinio y decisión Para optar a una Licencia de Conducir es necesario haber cumplido 18 años (o excepcionalmente 17) ya que esta es la edad que la sociedad ha fijado como el momento donde",
+    "reviewNotes": "Importado desde competitor_audit (287).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P45-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-301",
+    "prompt": "¿Cuáles son los primeros efectos que produce el consumir alcohol?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Los primeros efectos son psicológicos, como, por ejemplo: la atención, percepción, y procesamiento de la información."
+      },
+      {
+        "text": "Los primeros efectos son hambre y sed."
+      },
+      {
+        "text": "No produce efectos nocivos consumir alcohol."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "efectos visuales en la conducción Perspectiva lineal: las líneas convergentes parecieran enconDensidad de pauta: sucede cuando hay mayor densidad de trarse en un punto que está más alejado de lo que realmente objetos, provocando que estos se perciban más lejanos de lo se encuentr",
+    "reviewNotes": "Importado desde competitor_audit (301).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-304",
+    "prompt": "El alcohol perturba el estado de ánimo, hace más lenta la comunicación en el sistema nervioso e inhibe la capacidad de distinguir entre diferentes estímulos, lo que influye negativamente en el tiempo de reacción de un conductor ante un imprevisto.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Verdadero."
+      },
+      {
+        "text": "Falso."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Otros ejemplos de interpretaciones erróneas son cuando al conducir por terreno montañoso o sinuoso, se tiene la sensación de ir cuesta abajo, en circunstancias que lo hace cuesta arriba; o cuando los focos sucios o con luz poco potente de un vehículo hacen que este parezca encont",
+    "reviewNotes": "Importado desde competitor_audit (304).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-307",
+    "prompt": "¿Qué funciones se ven afectadas por el consumo de alcohol de una persona antes que pueda darse cuenta?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El equilibrio, y producirá vómitos."
+      },
+      {
+        "text": "La visión periférica, la atención, el tiempo de reacción y la capacidad de interpretación y decisión."
+      },
+      {
+        "text": "La parte motriz de una persona."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (307).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 8,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-311",
+    "prompt": "¿Por qué conducir bajo los efectos de estupefacientes o drogas es peligroso?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Debido a que las reacciones serán más rápidas."
+      },
+      {
+        "text": "Debido a que la percepción del riesgo será mejor y más rápida."
+      },
+      {
+        "text": "Debido a que las drogas y estupefacientes actúan sobre el cerebro."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "efectos visuales en la conducción Perspectiva lineal: las líneas convergentes parecieran enconDensidad de pauta: sucede cuando hay mayor densidad de trarse en un punto que está más alejado de lo que realmente objetos, provocando que estos se perciban más lejanos de lo se encuentr",
+    "reviewNotes": "Importado desde competitor_audit (311).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 5,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-312",
+    "prompt": "¿Qué efectos negativos produce el consumo de estupefacientes o drogas en una persona?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Pueden alterar la percepción, la cognición, la atención, el equilibrio, la coordinación, el tiempo de reacción, y otras facultades requeridas para conducir de manera segura."
+      },
+      {
+        "text": "Pueden alterar el estado de ánimo, la cognición, la atención, mejora la coordinación."
+      },
+      {
+        "text": "Pueden alterar el estado de ánimo, mejora la percepción y el tiempo de reacción."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (312).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 8,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-314",
+    "prompt": "¿Cómo se clasifica la marihuana?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Como una droga que da felicidad y mucha hambre."
+      },
+      {
+        "text": "Se clasifica como depresor, alucinógeno, no es un estimulante y sus efectos son de rápida aparición."
+      },
+      {
+        "text": "Se clasifica como un apoyo para el conductor."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "efectos visuales en la conducción Perspectiva lineal: las líneas convergentes parecieran enconDensidad de pauta: sucede cuando hay mayor densidad de trarse en un punto que está más alejado de lo que realmente objetos, provocando que estos se perciban más lejanos de lo se encuentr",
+    "reviewNotes": "Importado desde competitor_audit (314).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-315",
+    "prompt": "¿Cuáles son las principales consecuencias del consumo de marihuana?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Se altera la percepción del entorno, se altera la percepción del tiempo, espacio y de velocidad, cuesta mantener la concentración, aumenta el tiempo de reacción y produce fuertes somnolencias."
+      },
+      {
+        "text": "Se altera de manera favorable la percepción del entorno, del tiempo, espacio y de la velocidad."
+      },
+      {
+        "text": "Las principales consecuencias son mejoras considerablemente la concentración para conducir, evita que el conductor pueda tomar malas decisiones."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 38,
+    "sourcePageEnd": 38,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito A continuación, analizaremos el recorrido de una persona conductora: Está oscureciendo, está nublado y la visibilidad es reducida. 1 La carretera parece desaparecer al final de una cuesta ( ). La 5 velocidad es de 90 km/h y el conductor ve cómo la carret",
+    "reviewNotes": "Importado desde competitor_audit (315).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-1-8-4",
+      "fact-chapter-1-8-5",
+      "fact-chapter-1-8-6",
+      "fact-chapter-1-8-7",
+      "fact-chapter-1-8-8",
+      "fact-chapter-2-23-10",
+      "fact-chapter-2-23-11",
+      "fact-chapter-2-24-12",
+      "fact-chapter-2-24-13",
+      "fact-chapter-2-24-14",
+      "fact-chapter-2-24-15",
+      "fact-chapter-2-24-16",
+      "fact-chapter-2-24-17",
+      "fact-chapter-2-26-18",
+      "fact-chapter-2-26-19",
+      "fact-chapter-2-26-20",
+      "fact-chapter-2-26-21",
+      "fact-chapter-2-29-22",
+      "fact-chapter-2-30-23",
+      "fact-chapter-4-38-24",
+      "fact-chapter-4-44-26",
+      "fact-chapter-4-44-27",
+      "fact-chapter-4-44-28",
+      "fact-chapter-4-44-29",
+      "fact-chapter-4-44-30",
+      "fact-chapter-4-46-32",
+      "fact-chapter-4-58-43",
+      "fact-chapter-5-70-47",
+      "fact-chapter-6-87-54",
+      "fact-chapter-6-88-55",
+      "fact-chapter-6-88-56",
+      "fact-chapter-6-88-57",
+      "fact-chapter-6-92-58",
+      "fact-chapter-6-96-59",
+      "fact-chapter-6-96-60",
+      "fact-chapter-6-96-61",
+      "fact-chapter-6-96-62",
+      "fact-chapter-6-97-63",
+      "fact-chapter-6-98-64",
+      "fact-chapter-6-98-65",
+      "fact-chapter-6-100-66",
+      "fact-chapter-6-100-67",
+      "fact-chapter-6-100-68",
+      "fact-chapter-6-100-69",
+      "fact-chapter-6-100-70",
+      "fact-chapter-6-100-71",
+      "fact-chapter-6-100-72",
+      "fact-chapter-6-100-73",
+      "fact-chapter-6-101-74",
+      "fact-chapter-6-107-75",
+      "fact-chapter-7-109-76",
+      "fact-chapter-7-118-77",
+      "fact-chapter-7-118-78",
+      "fact-chapter-8-131-79",
+      "fact-chapter-8-131-80",
+      "fact-chapter-8-131-81",
+      "fact-chapter-9-142-87",
+      "fact-chapter-9-142-88",
+      "fact-chapter-9-142-89",
+      "fact-chapter-9-142-90",
+      "fact-chapter-9-143-95"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P38-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 8,
+      "chapter-5": 0,
+      "chapter-6": 3,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-319",
+    "prompt": "¿Puede conducir usted si ha consumido alguna droga?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sí, debido a que las drogas mejoran considerablemente la percepción del riesgo."
+      },
+      {
+        "text": "No, solo si es de día."
+      },
+      {
+        "text": "No, nunca puede usted conducir al haber consumido cualquier tipo de droga."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Porque, en ocasiones, carecerás parcialmente de ciertos indicios o estos se presentarán de un modo confuso o incluso no existirán, por ejemplo, cuando hay niebla, cuando está oscuro o cuando te encandiles por la luz; y el resultado puede ser interpretaciones erróneas muy peligros",
+    "reviewNotes": "Importado desde competitor_audit (319).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-327",
+    "prompt": "¿Cuál es el riesgo de conducir al consumir antihistamínicos?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Pueden provocar mayor somnolencia al volante."
+      },
+      {
+        "text": "Pueden provocar mayor concentración al conducir."
+      },
+      {
+        "text": "Pueden provocar una menor distancia de reacción."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Con seguridad, una causa que contribuyó a que fuera sorprendido por la curva a la derecha fue el hecho de que se desconcentró al poner su atención en el cambio de sintonía de la radio. Hacer dos cosas al mismo tiempo puede resultar muy riesgoso, especialmente tratándose de person",
+    "reviewNotes": "Importado desde competitor_audit (327).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 3,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-332",
+    "prompt": "¿Qué reacción podría tener una persona al sentirse estresado?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Podría tener una reacción más adecuada para conducir."
+      },
+      {
+        "text": "Una persona bajo estrés puede tener reacciones de pánico."
+      },
+      {
+        "text": "Una persona bajo estrés estará más tranquila para conducir."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (332).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 3,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-340",
+    "prompt": "¿Por qué es peligroso que una persona conductora consuma medicamentos sin haber preguntado a un profesional?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sí, debido a que algunos medicamentos disminuyen la atención y aumentan el tiempo de reacción al conducir."
+      },
+      {
+        "text": "Sí, debido a que algunos medicamentos incrementan la atención al conducir."
+      },
+      {
+        "text": "No, no es peligroso, usted puede consumir cualquier medicamento."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (340).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-346",
+    "prompt": "¿Qué efectos producen los antihistamínicos?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Visión borrosa, pérdida de concentración, ansiedad, somnolencia, aumento del tiempo de reacción."
+      },
+      {
+        "text": "Mareo, cansancio, y lentitud de los movimientos."
+      },
+      {
+        "text": "Menor sensibilidad al encadenamiento."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "efectos visuales en la conducción Perspectiva lineal: las líneas convergentes parecieran enconDensidad de pauta: sucede cuando hay mayor densidad de trarse en un punto que está más alejado de lo que realmente objetos, provocando que estos se perciban más lejanos de lo se encuentr",
+    "reviewNotes": "Importado desde competitor_audit (346).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 8,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-348",
+    "prompt": "¿Cuáles son los efectos del cansancio y del sueño en la conducción?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Aumenta el tiempo de reacción."
+      },
+      {
+        "text": "Disminuye el tiempo de reacción."
+      },
+      {
+        "text": "Aumenta su concentración."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "efectos visuales en la conducción Perspectiva lineal: las líneas convergentes parecieran enconDensidad de pauta: sucede cuando hay mayor densidad de trarse en un punto que está más alejado de lo que realmente objetos, provocando que estos se perciban más lejanos de lo se encuentr",
+    "reviewNotes": "Importado desde competitor_audit (348).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 2,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-350",
+    "prompt": "¿Cuál o cuáles son los efectos asociados al cansancio y sueño en la conducción? I- Aumenta el tiempo de reacción. II- Aumenta el número de distracciones al volante. III- La capacidad para tomar decisiones al volante y el juicio se alteran.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "I y II."
+      },
+      {
+        "text": "II y III."
+      },
+      {
+        "text": "I, II y III."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (350).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 2,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-354",
+    "prompt": "¿Qué efectos riesgosos en la conducción tiene la fatiga?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Las personas conductoras están más conscientes del tránsito, su tiempo de reacción es normal."
+      },
+      {
+        "text": "Poca concentración en el tránsito, alteración de sensaciones y percepciones, alteraciones de la toma de decisiones."
+      },
+      {
+        "text": "Pérdida de equilibrio y su efecto es similar a conducir en estado de ebriedad."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito La persona en el tránsito Las personas que conducen un vehículo tienen una gran responsabilidad y se encuentran permanentemente solucionando problemas. Sabemos que la capacidad del ser humano tiene un límite, el cual solemos olvidar al momento de tomar e",
+    "reviewNotes": "Importado desde competitor_audit (354).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 5,
+      "chapter-3": 0,
+      "chapter-4": 8,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-583",
+    "prompt": "¿Dónde está prohibido estacionar y detenerse?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "En doble fila respecto a otros vehículos estacionados."
+      },
+      {
+        "text": "En puentes, túneles y pasos bajo nivel."
+      },
+      {
+        "text": "Todas las anteriores."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 54,
+    "sourcePageEnd": 54,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "En todas sus etapas los riesgos para la conducción son altos y evidentes. Entre los efectos físicos destacan: falta de coordinación, mareos, dilatación de las pupilas, temblores, náuseas y/o vómitos. Éxtasis El consumo de éxtasis puede generar las siguientes manifestaciones: Perí",
+    "reviewNotes": "Importado desde competitor_audit (583).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P54-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 2,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-660",
+    "prompt": "¿Cuál es el principal riesgo de conducir con fatiga?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el auto gaste más combustible."
+      },
+      {
+        "text": "La disminución de la alerta y el aumento del tiempo de reacción."
+      },
+      {
+        "text": "Que las luces iluminen menos."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Los problemas emocionales que reaccionar ante un imprevisto, ya desvían los pensamientos, ocuparse de la radio, de un teléfono, que tardarás más tiempo en recibir fumar o comer mientras conduces, influyen negativamente en información. ¡Conducir requiere la seguridad del tránsito.",
+    "reviewNotes": "Importado desde competitor_audit (660).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S7"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-673",
+    "prompt": "¿Qué es la 'visión periférica'?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "La visión que tenemos de frente."
+      },
+      {
+        "text": "La capacidad de percibir objetos y movimientos fuera del centro de la mirada."
+      },
+      {
+        "text": "La visión nocturna."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Otros ejemplos de interpretaciones erróneas son cuando al conducir por terreno montañoso o sinuoso, se tiene la sensación de ir cuesta abajo, en circunstancias que lo hace cuesta arriba; o cuando los focos sucios o con luz poco potente de un vehículo hacen que este parezca encont",
+    "reviewNotes": "Importado desde competitor_audit (673).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-674",
+    "prompt": "¿Cómo afecta el alcohol a la visión?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Mejora la visión nocturna."
+      },
+      {
+        "text": "Reduce el campo visual (efecto túnel) y dificulta el enfoque."
+      },
+      {
+        "text": "No afecta la visión."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "efectos visuales en la conducción Perspectiva lineal: las líneas convergentes parecieran enconDensidad de pauta: sucede cuando hay mayor densidad de trarse en un punto que está más alejado de lo que realmente objetos, provocando que estos se perciban más lejanos de lo se encuentr",
+    "reviewNotes": "Importado desde competitor_audit (674).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 4,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-729",
+    "prompt": "¿Cuál es el principal efecto de la fatiga al conducir?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sentir hambre."
+      },
+      {
+        "text": "Aumento del tiempo de reacción y falta de concentración."
+      },
+      {
+        "text": "Mejorar la visión."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Porque, en ocasiones, carecerás parcialmente de ciertos indicios o estos se presentarán de un modo confuso o incluso no existirán, por ejemplo, cuando hay niebla, cuando está oscuro o cuando te encandiles por la luz; y el resultado puede ser interpretaciones erróneas muy peligros",
+    "reviewNotes": "Importado desde competitor_audit (729).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 8,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-734",
+    "prompt": "¿Qué es la 'distancia de reacción'?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "La distancia desde que freno hasta que paro."
+      },
+      {
+        "text": "La distancia que recorre el vehículo desde que percibo el peligro hasta que pongo el pie en el freno."
+      },
+      {
+        "text": "La distancia de seguridad."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Luego, de igual modo, interpretó mal al auto que llevaba un foco roto, creyendo que era una motocicleta. Estas interpretaciones erróneas del entorno, que son bastante comunes, pueden ser muy peligrosas. Surgen cuando los indicios en cuanto a distancia y forma son insuficientes o ",
+    "reviewNotes": "Importado desde competitor_audit (734).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 3,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 22.5,
+    "duplicateClusterId": "dup-cluster-80",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-779",
+    "prompt": "¿Cuál es la función del convertidor catalítico?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Limpiar el aceite."
+      },
+      {
+        "text": "Reducir la toxicidad de los gases de escape mediante reacciones químicas."
+      },
+      {
+        "text": "Ahorrar bencina."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 40,
+    "sourcePageEnd": 40,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "En situaciones reales que requieren reacciones complejas, en las que deben interpretarse rápidamente muchas impresiones, las personas conductoras expertas tienen una reacción mucho más rápida. El grupo de edad “más rápido” corresponde a quienes tienen entre 35 y 50 años. Posterio",
+    "reviewNotes": "Importado desde competitor_audit (779).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P40-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 3,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-821",
+    "prompt": "¿Cuál es el principal factor que determina la distancia de reacción?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El estado de los frenos."
+      },
+      {
+        "text": "El estado físico y psicológico del conductor."
+      },
+      {
+        "text": "La profundidad del dibujo del neumático."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 40,
+    "sourcePageEnd": 40,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito Capacidad de reacción En el relato, el conductor reaccionó rápidamente cuando estuvo a punto de salirse del camino en la primera curva: demostró buena capacidad de reacción. El movimiento del volante y la reducción de velocidad salvaron la situación. El ",
+    "reviewNotes": "Importado desde competitor_audit (821).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P40-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 3,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-917",
+    "prompt": "¿Cuál es el riesgo de conducir bajo los efectos del alcohol?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Mejora los reflejos."
+      },
+      {
+        "text": "Aumenta el tiempo de reacción, reduce la visión y genera una falsa sensación de seguridad."
+      },
+      {
+        "text": "No tiene riesgos si se conduce despacio."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 37,
+    "sourcePageEnd": 37,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "efectos visuales en la conducción Perspectiva lineal: las líneas convergentes parecieran enconDensidad de pauta: sucede cuando hay mayor densidad de trarse en un punto que está más alejado de lo que realmente objetos, provocando que estos se perciban más lejanos de lo se encuentr",
+    "reviewNotes": "Importado desde competitor_audit (917).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH4-P37-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 8,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-926",
+    "prompt": "¿Cuál es el riesgo de conducir con fatiga o sueño?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Mejor concentración."
+      },
+      {
+        "text": "Pérdida de alerta, microsueños y aumento peligroso del tiempo de reacción."
+      },
+      {
+        "text": "Ninguno."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Los problemas emocionales que reaccionar ante un imprevisto, ya desvían los pensamientos, ocuparse de la radio, de un teléfono, que tardarás más tiempo en recibir fumar o comer mientras conduces, influyen negativamente en información. ¡Conducir requiere la seguridad del tránsito.",
+    "reviewNotes": "Importado desde competitor_audit (926).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S7"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 6,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1025",
+    "prompt": "¿Qué mantenimiento básico requiere la batería de 'libre mantenimiento'?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Agregar agua destilada mensualmente."
+      },
+      {
+        "text": "Limpiar los bornes y verificar que las conexiones estén apretadas."
+      },
+      {
+        "text": "No requiere ninguna revisión."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 56,
+    "sourcePageEnd": 56,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "la persona en el tránsito Enfermedades que pueden afectar a la conducción Conducir un vehículo con seguridad requiere de toda nuestra concentración y de poder reaccionar adecuadamente ante situaciones de riesgo, por lo que es necesario que nuestras capacidades estén en buen estad",
+    "reviewNotes": "Importado desde competitor_audit (1025).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P56-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1083",
+    "prompt": "¿Qué debe hacer si el volante de dirección tiene mucho 'juego' (gira mucho antes de mover las ruedas)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Apretar los pernos de las ruedas."
+      },
+      {
+        "text": "Llevarlo a revisión, pues los terminales de dirección o la caja podrían estar gastados."
+      },
+      {
+        "text": "Inflar más los neumáticos."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Con seguridad, una causa que contribuyó a que fuera sorprendido por la curva a la derecha fue el hecho de que se desconcentró al poner su atención en el cambio de sintonía de la radio. Hacer dos cosas al mismo tiempo puede resultar muy riesgoso, especialmente tratándose de person",
+    "reviewNotes": "Importado desde competitor_audit (1083).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1091",
+    "prompt": "¿Qué indica una luz naranja o amarilla fija en el panel?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Todo está bien."
+      },
+      {
+        "text": "Advertencia o mal funcionamiento de un sistema que no requiere detención inmediata pero sí revisión pronta."
+      },
+      {
+        "text": "Detención obligatoria inmediata."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 39,
+    "sourcePageEnd": 39,
+    "sourceReference": "La persona en el tránsito",
+    "groundingExcerpt": "Luego, de igual modo, interpretó mal al auto que llevaba un foco roto, creyendo que era una motocicleta. Estas interpretaciones erróneas del entorno, que son bastante comunes, pueden ser muy peligrosas. Surgen cuando los indicios en cuanto a distancia y forma son insuficientes o ",
+    "reviewNotes": "Importado desde competitor_audit (1091).",
+    "tags": [],
+    "chapterId": "chapter-4",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH4-P39-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  }
+]

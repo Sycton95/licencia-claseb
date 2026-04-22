@@ -1,0 +1,1861 @@
+[
+  {
+    "id": "fact-chapter-1-6-1",
+    "entity": "manual_fact_6_14_anos",
+    "value": 14,
+    "unit": "años",
+    "chapterId": "chapter-1",
+    "pageRange": {
+      "start": 6,
+      "end": 6
+    },
+    "manualRef": "Los siniestros de tránsito",
+    "aliases": [
+      "en chile, al igual que en"
+    ],
+    "strictness": "soft",
+    "excerpt": "En Chile, al igual que en el resto del mundo, los siniestros de tránsito constituyen una de las principales causas de mortalidad. En la población infantil, entre 1 a 14 años, representa la primera causa de muerte y en la población joven, entre 15 y 29 años, la segunda causa de mu"
+  },
+  {
+    "id": "fact-chapter-1-6-2",
+    "entity": "manual_fact_6_29_anos",
+    "value": 29,
+    "unit": "años",
+    "chapterId": "chapter-1",
+    "pageRange": {
+      "start": 6,
+      "end": 6
+    },
+    "manualRef": "Los siniestros de tránsito",
+    "aliases": [
+      "en chile, al igual que en"
+    ],
+    "strictness": "soft",
+    "excerpt": "En Chile, al igual que en el resto del mundo, los siniestros de tránsito constituyen una de las principales causas de mortalidad. En la población infantil, entre 1 a 14 años, representa la primera causa de muerte y en la población joven, entre 15 y 29 años, la segunda causa de mu"
+  },
+  {
+    "id": "fact-chapter-1-8-3",
+    "entity": "manual_fact_8_5_anos",
+    "value": 5,
+    "unit": "años",
+    "chapterId": "chapter-1",
+    "pageRange": {
+      "start": 8,
+      "end": 8
+    },
+    "manualRef": "Los siniestros de tránsito",
+    "aliases": [
+      "los siniestros de tránsito 2 estadísticas"
+    ],
+    "strictness": "soft",
+    "excerpt": "los siniestros de tránsito 2 Estadísticas de siniestros en Chile Anualmente en Chile se registran más de 82.000 siniestros. Como Como promedio de los últimos consecuencia de éstos fallecen aproximadamente 1.600 personas, 5 años, aproximadamente 7.700 lo que significa que diariame"
+  },
+  {
+    "id": "fact-chapter-1-8-4",
+    "entity": "speed_fact_8_50_km_h",
+    "value": 50,
+    "unit": "km/h",
+    "chapterId": "chapter-1",
+    "pageRange": {
+      "start": 8,
+      "end": 8
+    },
+    "manualRef": "Los siniestros de tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "La probabilidad de que un peatón muera atropellado se multiplica por ocho cuando la Además, las estadísticas indican que la falla humana velocidad del vehículo sube de 30 a 50 km/h. está presente en más del 90% de los siniestros de tránsito, involucrando mayormente a jóvenes, ent"
+  },
+  {
+    "id": "fact-chapter-1-8-5",
+    "entity": "speed_fact_8_29_anos",
+    "value": 29,
+    "unit": "años",
+    "chapterId": "chapter-1",
+    "pageRange": {
+      "start": 8,
+      "end": 8
+    },
+    "manualRef": "Los siniestros de tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "La probabilidad de que un peatón muera atropellado se multiplica por ocho cuando la Además, las estadísticas indican que la falla humana velocidad del vehículo sube de 30 a 50 km/h. está presente en más del 90% de los siniestros de tránsito, involucrando mayormente a jóvenes, ent"
+  },
+  {
+    "id": "fact-chapter-1-8-6",
+    "entity": "speed_fact_8_30_km_h",
+    "value": 30,
+    "unit": "km/h",
+    "chapterId": "chapter-1",
+    "pageRange": {
+      "start": 8,
+      "end": 8
+    },
+    "manualRef": "Los siniestros de tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "La probabilidad de que un peatón muera atropellado se multiplica por ocho cuando la Además, las estadísticas indican que la falla humana velocidad del vehículo sube de 30 a 50 km/h. está presente en más del 90% de los siniestros de tránsito, involucrando mayormente a jóvenes, ent"
+  },
+  {
+    "id": "fact-chapter-1-8-7",
+    "entity": "speed_fact_8_45_km_h",
+    "value": 45,
+    "unit": "km/h",
+    "chapterId": "chapter-1",
+    "pageRange": {
+      "start": 8,
+      "end": 8
+    },
+    "manualRef": "Los siniestros de tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "29% del total de las personas conductoras fallecidas Peatones tienen menos del 50% de proen siniestros de tránsito en los últimos años. babilidades de sobrevivir a un choque a 45 km/h o más. Finalmente, se debe agregar que cerca del 79% de las personas conductoras fallecidas en s"
+  },
+  {
+    "id": "fact-chapter-1-8-8",
+    "entity": "speed_fact_8_65_km_h",
+    "value": 65,
+    "unit": "km/h",
+    "chapterId": "chapter-1",
+    "pageRange": {
+      "start": 8,
+      "end": 8
+    },
+    "manualRef": "Los siniestros de tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "29% del total de las personas conductoras fallecidas Peatones tienen menos del 50% de proen siniestros de tránsito en los últimos años. babilidades de sobrevivir a un choque a 45 km/h o más. Finalmente, se debe agregar que cerca del 79% de las personas conductoras fallecidas en s"
+  },
+  {
+    "id": "fact-chapter-2-19-9",
+    "entity": "manual_fact_19_5_anos",
+    "value": 5,
+    "unit": "años",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 19,
+      "end": 19
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "podría haber estos estén fríos y"
+    ],
+    "strictness": "soft",
+    "excerpt": "Podría haber estos estén fríos y respetar las recomendaciones un problema de desbalanceo. Si la presión se ajusta cuando Los neumáticos deben ser cambiados al los neumáticos están calientes, se tendrá una menos cada 5 años. Aunque tengan poco uso y presión inferior a la adecuada."
+  },
+  {
+    "id": "fact-chapter-2-23-10",
+    "entity": "speed_fact_23_36_km_h",
+    "value": 36,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 23,
+      "end": 23
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "En este segundo, un vehículo a 36 km/h recorre 10 metros, 20 metros si lo hace a 72 km/h, etc. Además, existe la variable relacionada a la experiencia en conducción, que permite tener mejores tiempo de reacción. Puedes estimar aproximadamente la distancia de reacción, multiplican"
+  },
+  {
+    "id": "fact-chapter-2-23-11",
+    "entity": "speed_fact_23_72_km_h",
+    "value": 72,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 23,
+      "end": 23
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "En este segundo, un vehículo a 36 km/h recorre 10 metros, 20 metros si lo hace a 72 km/h, etc. Además, existe la variable relacionada a la experiencia en conducción, que permite tener mejores tiempo de reacción. Puedes estimar aproximadamente la distancia de reacción, multiplican"
+  },
+  {
+    "id": "fact-chapter-2-24-12",
+    "entity": "speed_fact_24_99_km_h",
+    "value": 99,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 24,
+      "end": 24
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "los principios de la conducción velocidad. Este ejercicio es válido hasta distancia de reacción (r) aproximada los 99 km/h. Para velocidades sobre 100 (metros recorridos en 1 segundo) km/h, debes considerear los 2 primeros (11x3) dígitos (ver imagen de referencia)."
+  },
+  {
+    "id": "fact-chapter-2-24-13",
+    "entity": "speed_fact_24_110_km_h",
+    "value": 110,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 24,
+      "end": 24
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "33 m 110 km/h La distancia de frenado es la distancia que recorre el vehículo desde que se presiona (9x3) 90 km/h el pedal de freno hasta su detención total. 27 m Esta depende de la velocidad, del estado de la calzada, de la pendiente, del estado (7x3) 21 m de los frenos y neumát"
+  },
+  {
+    "id": "fact-chapter-2-24-14",
+    "entity": "speed_fact_24_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 24,
+      "end": 24
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "33 m 110 km/h La distancia de frenado es la distancia que recorre el vehículo desde que se presiona (9x3) 90 km/h el pedal de freno hasta su detención total. 27 m Esta depende de la velocidad, del estado de la calzada, de la pendiente, del estado (7x3) 21 m de los frenos y neumát"
+  },
+  {
+    "id": "fact-chapter-2-24-15",
+    "entity": "speed_fact_24_70_km_h",
+    "value": 70,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 24,
+      "end": 24
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "33 m 110 km/h La distancia de frenado es la distancia que recorre el vehículo desde que se presiona (9x3) 90 km/h el pedal de freno hasta su detención total. 27 m Esta depende de la velocidad, del estado de la calzada, de la pendiente, del estado (7x3) 21 m de los frenos y neumát"
+  },
+  {
+    "id": "fact-chapter-2-24-16",
+    "entity": "speed_fact_24_50_km_h",
+    "value": 50,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 24,
+      "end": 24
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "33 m 110 km/h La distancia de frenado es la distancia que recorre el vehículo desde que se presiona (9x3) 90 km/h el pedal de freno hasta su detención total. 27 m Esta depende de la velocidad, del estado de la calzada, de la pendiente, del estado (7x3) 21 m de los frenos y neumát"
+  },
+  {
+    "id": "fact-chapter-2-24-17",
+    "entity": "speed_fact_24_30_km_h",
+    "value": 30,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 24,
+      "end": 24
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Así, si duplicas la velocidad, la distancia (3x3) de frenado aumenta cuatro veces; si la 30 km/h 9 m triplica, la distancia de frenado aumenta 9 veces, etc. variación de distancia de detención Distancia de Reacción y Frenado según velocidad y estado del asfalto. Distancia de fren"
+  },
+  {
+    "id": "fact-chapter-2-26-18",
+    "entity": "speed_fact_26_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 26,
+      "end": 26
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h",
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "hard",
+    "excerpt": "90 km/h Un choque a 50 km/h sin llevar puesto el cinturón de seguridad, es como tirarse a la calle desde un cuarto piso sin red de seguridad. Si la velocidad es de 70 km/h, ello equivale a lanzarse desde un séptimo piso. 70 km/h Chocar a una velocidad de 90 km/h provoca los mismo"
+  },
+  {
+    "id": "fact-chapter-2-26-19",
+    "entity": "speed_fact_26_50_km_h",
+    "value": 50,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 26,
+      "end": 26
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h",
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "hard",
+    "excerpt": "90 km/h Un choque a 50 km/h sin llevar puesto el cinturón de seguridad, es como tirarse a la calle desde un cuarto piso sin red de seguridad. Si la velocidad es de 70 km/h, ello equivale a lanzarse desde un séptimo piso. 70 km/h Chocar a una velocidad de 90 km/h provoca los mismo"
+  },
+  {
+    "id": "fact-chapter-2-26-20",
+    "entity": "speed_fact_26_70_km_h",
+    "value": 70,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 26,
+      "end": 26
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h",
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "hard",
+    "excerpt": "90 km/h Un choque a 50 km/h sin llevar puesto el cinturón de seguridad, es como tirarse a la calle desde un cuarto piso sin red de seguridad. Si la velocidad es de 70 km/h, ello equivale a lanzarse desde un séptimo piso. 70 km/h Chocar a una velocidad de 90 km/h provoca los mismo"
+  },
+  {
+    "id": "fact-chapter-2-26-21",
+    "entity": "speed_fact_26_30_km_h",
+    "value": 30,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 26,
+      "end": 26
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h",
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "soft",
+    "excerpt": "50 km/h Después de sufrir un siniestro, el cinturón podría estar dañado y su uso ya 30 km/h no ser seguro. En este caso deberás reemplazarlo por uno nuevo. Revísalo después de alguna eventualidad."
+  },
+  {
+    "id": "fact-chapter-2-29-22",
+    "entity": "speed_fact_29_40_km_h",
+    "value": 40,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 29,
+      "end": 29
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h",
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "soft",
+    "excerpt": "Por ejemplo, un golpe frontal a tan sólo 30 o 40 km/h podría resultar mortal con facilidad si la cabeza de la persona impacta contra el parabrisas o contra el volante, lo que suele ocurrir con frecuencia. “Si el recorrido es corto, no hace falta ponerse el cinturón de seguridad” "
+  },
+  {
+    "id": "fact-chapter-2-30-23",
+    "entity": "speed_fact_30_300_km_h",
+    "value": 300,
+    "unit": "km/h",
+    "chapterId": "chapter-2",
+    "pageRange": {
+      "start": 30,
+      "end": 30
+    },
+    "manualRef": "Los principios de la conducción",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h",
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "hard",
+    "excerpt": "Evita el impacto de las y los ocupantes contra algunos elementos del interior del vehículo: el volante, el tablero, el parabrisas o las ventanas. Protege la cara y los ojos de los fragmentos de cristal u otros elementos que pueden desprenderse, por ejemplo, del parabrisas. Al pro"
+  },
+  {
+    "id": "fact-chapter-4-38-24",
+    "entity": "speed_fact_38_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 38,
+      "end": 38
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "la persona en el tránsito A continuación, analizaremos el recorrido de una persona conductora: Está oscureciendo, está nublado y la visibilidad es reducida. 1 La carretera parece desaparecer al final de una cuesta ( ). La 5 velocidad es de 90 km/h y el conductor ve cómo la carret"
+  },
+  {
+    "id": "fact-chapter-4-40-25",
+    "entity": "manual_fact_40_50_anos",
+    "value": 50,
+    "unit": "años",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 40,
+      "end": 40
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "en situaciones reales que requieren reacciones"
+    ],
+    "strictness": "soft",
+    "excerpt": "En situaciones reales que requieren reacciones complejas, en las que deben interpretarse rápidamente muchas impresiones, las personas conductoras expertas tienen una reacción mucho más rápida. El grupo de edad “más rápido” corresponde a quienes tienen entre 35 y 50 años. Posterio"
+  },
+  {
+    "id": "fact-chapter-4-44-26",
+    "entity": "speed_fact_44_130_km_h",
+    "value": 130,
+    "unit": "km/h",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 44,
+      "end": 44
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Como lo muestra la imagen, cuanto mayor es tu vevelocidad campo visual locidad, tanto más lejos fijas tu mirada, con lo que 30° A: 130 km/h ves sólo una parte de tu campo visual y no puedes descubrir lo que hay a los lados de la carretera. 42° B: 100 km/h 70° C: 65 km/h Este efec"
+  },
+  {
+    "id": "fact-chapter-4-44-27",
+    "entity": "speed_fact_44_100_km_h",
+    "value": 100,
+    "unit": "km/h",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 44,
+      "end": 44
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Como lo muestra la imagen, cuanto mayor es tu vevelocidad campo visual locidad, tanto más lejos fijas tu mirada, con lo que 30° A: 130 km/h ves sólo una parte de tu campo visual y no puedes descubrir lo que hay a los lados de la carretera. 42° B: 100 km/h 70° C: 65 km/h Este efec"
+  },
+  {
+    "id": "fact-chapter-4-44-28",
+    "entity": "speed_fact_44_65_km_h",
+    "value": 65,
+    "unit": "km/h",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 44,
+      "end": 44
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Como lo muestra la imagen, cuanto mayor es tu vevelocidad campo visual locidad, tanto más lejos fijas tu mirada, con lo que 30° A: 130 km/h ves sólo una parte de tu campo visual y no puedes descubrir lo que hay a los lados de la carretera. 42° B: 100 km/h 70° C: 65 km/h Este efec"
+  },
+  {
+    "id": "fact-chapter-4-44-29",
+    "entity": "speed_fact_44_35_km_h",
+    "value": 35,
+    "unit": "km/h",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 44,
+      "end": 44
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Como lo muestra la imagen, cuanto mayor es tu vevelocidad campo visual locidad, tanto más lejos fijas tu mirada, con lo que 30° A: 130 km/h ves sólo una parte de tu campo visual y no puedes descubrir lo que hay a los lados de la carretera. 42° B: 100 km/h 70° C: 65 km/h Este efec"
+  },
+  {
+    "id": "fact-chapter-4-44-30",
+    "entity": "speed_fact_44_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 44,
+      "end": 44
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Calcular la velocidad de los vehículos que vienen en sentido contrario es muy difícil, y normalmente, la estimación del lugar en el que se cruzarán los vehículos resulta ser una estimación del punto medio de la distancia entre ambos; es decir, el cerebro presupone que los vehícul"
+  },
+  {
+    "id": "fact-chapter-4-45-31",
+    "entity": "license_fact_45_18_anos",
+    "value": 18,
+    "unit": "años",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 45,
+      "end": 45
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "licencia de conducir"
+    ],
+    "strictness": "hard",
+    "excerpt": "la persona en el tránsito La conducción segura requiere equilibrio emocional Capacidad de raciocinio y decisión Para optar a una Licencia de Conducir es necesario haber cumplido 18 años (o excepcionalmente 17) ya que esta es la edad que la sociedad ha fijado como el momento donde"
+  },
+  {
+    "id": "fact-chapter-4-46-32",
+    "entity": "speed_fact_46_80_km_h",
+    "value": 80,
+    "unit": "km/h",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 46,
+      "end": 46
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "En el caso de una persona conductora joven esto puede significar lamentablemente, por ejemplo, probar cuál es la velocidad máxima del vehículo, tratar de pasar una curva cerrada a 80 km/h o tratar de batir la marca de tiempo que lleva conducir cierto trayecto. Debes conocer tus h"
+  },
+  {
+    "id": "fact-chapter-4-50-33",
+    "entity": "alcohol_fact_50_0.79_gramos_por_mil",
+    "value": 0.79,
+    "unit": "gramos por mil",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 50,
+      "end": 50
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "utm",
+      "multa",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "LIBRO PARA LA CONDUCCIÓNEN CHILE LA PERSONA EN EL TRÁNSITO Sobre el alcohol en la conducción En el año 2012 fue promulgada la modificación a la Ley de Tránsito, conocida como Ley Tolerancia Cero, que redujo los niveles permitidos de alcohol en el organismo para definir lo que se "
+  },
+  {
+    "id": "fact-chapter-4-50-34",
+    "entity": "alcohol_fact_50_0.5_g_l",
+    "value": 0.5,
+    "unit": "g/l",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 50,
+      "end": 50
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "utm",
+      "multa",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "0,8 o más gramos por mil Sanción: multas, cancelación Estado de ebriedad de alcohol en la sangre. Con una alcoholemia entre 0,3 y 0,5 g/l el riesgo Las sanciones aumentan significativamente en de sufrir un siniestro es el doble que si no hubiera caso de reincidencia, o si la pers"
+  },
+  {
+    "id": "fact-chapter-4-50-35",
+    "entity": "alcohol_fact_50_0.8_g_l",
+    "value": 0.8,
+    "unit": "g/l",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 50,
+      "end": 50
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "utm",
+      "multa",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "0,8 o más gramos por mil Sanción: multas, cancelación Estado de ebriedad de alcohol en la sangre. Con una alcoholemia entre 0,3 y 0,5 g/l el riesgo Las sanciones aumentan significativamente en de sufrir un siniestro es el doble que si no hubiera caso de reincidencia, o si la pers"
+  },
+  {
+    "id": "fact-chapter-4-50-36",
+    "entity": "alcohol_fact_50_3_meses",
+    "value": 3,
+    "unit": "meses",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 50,
+      "end": 50
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Grado etílico Lesión, daño causado Reincidencia Tiempo suspensión de licencia Sin daño ni lesiones 1era vez 3 meses Bajo las 0,31 - 0,79 Lesiones gravísimas o influencia gramos por mil de 1era vez 3-5 años muerte del alcohol alcohol en la sangre 2da vez Reincidencia bajo la 4-6 a"
+  },
+  {
+    "id": "fact-chapter-4-50-37",
+    "entity": "alcohol_fact_50_5_anos",
+    "value": 5,
+    "unit": "años",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 50,
+      "end": 50
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Grado etílico Lesión, daño causado Reincidencia Tiempo suspensión de licencia Sin daño ni lesiones 1era vez 3 meses Bajo las 0,31 - 0,79 Lesiones gravísimas o influencia gramos por mil de 1era vez 3-5 años muerte del alcohol alcohol en la sangre 2da vez Reincidencia bajo la 4-6 a"
+  },
+  {
+    "id": "fact-chapter-4-50-38",
+    "entity": "alcohol_fact_50_6_anos",
+    "value": 6,
+    "unit": "años",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 50,
+      "end": 50
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Grado etílico Lesión, daño causado Reincidencia Tiempo suspensión de licencia Sin daño ni lesiones 1era vez 3 meses Bajo las 0,31 - 0,79 Lesiones gravísimas o influencia gramos por mil de 1era vez 3-5 años muerte del alcohol alcohol en la sangre 2da vez Reincidencia bajo la 4-6 a"
+  },
+  {
+    "id": "fact-chapter-4-50-39",
+    "entity": "alcohol_fact_50_2_anos",
+    "value": 2,
+    "unit": "años",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 50,
+      "end": 50
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Grado etílico Lesión, daño causado Reincidencia Tiempo suspensión de licencia Sin daño ni lesiones 1era vez 3 meses Bajo las 0,31 - 0,79 Lesiones gravísimas o influencia gramos por mil de 1era vez 3-5 años muerte del alcohol alcohol en la sangre 2da vez Reincidencia bajo la 4-6 a"
+  },
+  {
+    "id": "fact-chapter-4-53-40",
+    "entity": "alcohol_fact_53_18_anos",
+    "value": 18,
+    "unit": "años",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 53,
+      "end": 53
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia"
+    ],
+    "strictness": "hard",
+    "excerpt": "La edad: Los menores de 18 años y los mayores de 65 años perciben con mayor intensidad los efectos del alcohol. Los efectos del alcohol son más peligrosos en las personas conductoras principiantes, debido a que aún no han automatizado muchos movimientos necesarios para conducir, "
+  },
+  {
+    "id": "fact-chapter-4-53-41",
+    "entity": "alcohol_fact_53_65_anos",
+    "value": 65,
+    "unit": "años",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 53,
+      "end": 53
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia"
+    ],
+    "strictness": "hard",
+    "excerpt": "La edad: Los menores de 18 años y los mayores de 65 años perciben con mayor intensidad los efectos del alcohol. Los efectos del alcohol son más peligrosos en las personas conductoras principiantes, debido a que aún no han automatizado muchos movimientos necesarios para conducir, "
+  },
+  {
+    "id": "fact-chapter-4-57-42",
+    "entity": "manual_fact_57_3_meses",
+    "value": 3,
+    "unit": "meses",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 57,
+      "end": 57
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "la persona en el tránsito enfermedades"
+    ],
+    "strictness": "soft",
+    "excerpt": "la persona en el tránsito Enfermedades que pueden afectar a la conducción enfermedades con mayor riesgo de afectar nuestras capacidades para conducir un vehículo * tipo de enfermedad enfermedad posibles riesgos para el tránsito Hipertensión arterial Mareos; pérdida repentina de c"
+  },
+  {
+    "id": "fact-chapter-4-58-43",
+    "entity": "speed_fact_58_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 58,
+      "end": 58
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "En un viaje por carretera circulando a 90 km/h, durante un estornudo de un segundo de duración, el vehículo recorre unos 25 metros sin que se pueda prestar atención a las condiciones de la vía. CONSEJOS ÚTILES PARA PERSONAS CONDUCTORAS ALÉRGICAS: Intentar no abrir las ventanas du"
+  },
+  {
+    "id": "fact-chapter-4-60-44",
+    "entity": "alcohol_fact_60_0.5_g_l",
+    "value": 0.5,
+    "unit": "g/l",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 60,
+      "end": 60
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Se ha comprobado que el riesgo de conducir bajo los efectos de algunos de estos medicamentos es equivalente al riesgo de conducir con una tasa de alcohol en la sangre de 0,5 g/l a 0,8 g/l, esto es, conducir bajo la influencia del alcohol. Hoy existen antihistamínicos que no produ"
+  },
+  {
+    "id": "fact-chapter-4-60-45",
+    "entity": "alcohol_fact_60_0.8_g_l",
+    "value": 0.8,
+    "unit": "g/l",
+    "chapterId": "chapter-4",
+    "pageRange": {
+      "start": 60,
+      "end": 60
+    },
+    "manualRef": "La persona en el tránsito",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Se ha comprobado que el riesgo de conducir bajo los efectos de algunos de estos medicamentos es equivalente al riesgo de conducir con una tasa de alcohol en la sangre de 0,5 g/l a 0,8 g/l, esto es, conducir bajo la influencia del alcohol. Hoy existen antihistamínicos que no produ"
+  },
+  {
+    "id": "fact-chapter-5-70-46",
+    "entity": "manual_fact_70_15_anos",
+    "value": 15,
+    "unit": "años",
+    "chapterId": "chapter-5",
+    "pageRange": {
+      "start": 70,
+      "end": 70
+    },
+    "manualRef": "Las y los usuarios vulnerables",
+    "aliases": [
+      "es tu responsabilidad que no ocurra"
+    ],
+    "strictness": "soft",
+    "excerpt": "Es tu responsabilidad que no ocurra un siniestro. Debes saber que las niñas y niños: Tienen una estatura pequeña: por eso, con facilidad pueden no ser vistos cuando juegan detrás de un vehículo estacionado. No tienen la vista completamente desarrollada: la vista no se desarrolla "
+  },
+  {
+    "id": "fact-chapter-5-70-47",
+    "entity": "speed_fact_70_12_anos",
+    "value": 12,
+    "unit": "años",
+    "chapterId": "chapter-5",
+    "pageRange": {
+      "start": 70,
+      "end": 70
+    },
+    "manualRef": "Las y los usuarios vulnerables",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Tienen dificultad para juzgar la distancia y la velocidad. Comienzan a actuar con seguridad en el tránsito entre los 9 y 12 años de edad. Sé una persona cautelosa y mantente preparada para detener tu vehículo: En áreas residenciales donde las niñas y niños juegan en calzadas y ve"
+  },
+  {
+    "id": "fact-chapter-5-73-48",
+    "entity": "manual_fact_73_12_anos",
+    "value": 12,
+    "unit": "años",
+    "chapterId": "chapter-5",
+    "pageRange": {
+      "start": 73,
+      "end": 73
+    },
+    "manualRef": "Las y los usuarios vulnerables",
+    "aliases": [
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "soft",
+    "excerpt": "En Chile, durante la última década, fallecieron 497 adecuados para su peso, talla y nivel niñas, niños y adolescentes menores de 12 años, el 45% murió en calidad de pasajero de un vehículo en siniestros de tránsito y de desarrollo. Recuerda que con su 36.221 resultaron con lesion"
+  },
+  {
+    "id": "fact-chapter-5-73-49",
+    "entity": "fine_fact_73_8_anos",
+    "value": 8,
+    "unit": "años",
+    "chapterId": "chapter-5",
+    "pageRange": {
+      "start": 73,
+      "end": 73
+    },
+    "manualRef": "Las y los usuarios vulnerables",
+    "aliases": [
+      "utm",
+      "multa",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Asimismo, desde marzo de 2017 la Ley de Tránsito obliga a las personas conductoras a transportar niñas y niños de hasta 8 años inclusive (es decir, hasta un día antes de cumplir los 9 años), o de una estatura menor o igual a 135 centímetros y 33 kilogramos de peso, en Sistemas de"
+  },
+  {
+    "id": "fact-chapter-5-73-50",
+    "entity": "fine_fact_73_9_anos",
+    "value": 9,
+    "unit": "años",
+    "chapterId": "chapter-5",
+    "pageRange": {
+      "start": 73,
+      "end": 73
+    },
+    "manualRef": "Las y los usuarios vulnerables",
+    "aliases": [
+      "utm",
+      "multa",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Asimismo, desde marzo de 2017 la Ley de Tránsito obliga a las personas conductoras a transportar niñas y niños de hasta 8 años inclusive (es decir, hasta un día antes de cumplir los 9 años), o de una estatura menor o igual a 135 centímetros y 33 kilogramos de peso, en Sistemas de"
+  },
+  {
+    "id": "fact-chapter-5-73-51",
+    "entity": "fine_fact_73_3_utm",
+    "value": 3,
+    "unit": "UTM",
+    "chapterId": "chapter-5",
+    "pageRange": {
+      "start": 73,
+      "end": 73
+    },
+    "manualRef": "Las y los usuarios vulnerables",
+    "aliases": [
+      "utm",
+      "multa",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Asimismo, desde marzo de 2017 la Ley de Tránsito obliga a las personas conductoras a transportar niñas y niños de hasta 8 años inclusive (es decir, hasta un día antes de cumplir los 9 años), o de una estatura menor o igual a 135 centímetros y 33 kilogramos de peso, en Sistemas de"
+  },
+  {
+    "id": "fact-chapter-5-73-52",
+    "entity": "fine_fact_73_45_dias",
+    "value": 45,
+    "unit": "días",
+    "chapterId": "chapter-5",
+    "pageRange": {
+      "start": 73,
+      "end": 73
+    },
+    "manualRef": "Las y los usuarios vulnerables",
+    "aliases": [
+      "utm",
+      "multa",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Asimismo, desde marzo de 2017 la Ley de Tránsito obliga a las personas conductoras a transportar niñas y niños de hasta 8 años inclusive (es decir, hasta un día antes de cumplir los 9 años), o de una estatura menor o igual a 135 centímetros y 33 kilogramos de peso, en Sistemas de"
+  },
+  {
+    "id": "fact-chapter-6-86-53",
+    "entity": "manual_fact_86_30_mese",
+    "value": 30,
+    "unit": "meSe",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 86,
+      "end": 86
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "ante un cambio de pista, no"
+    ],
+    "strictness": "soft",
+    "excerpt": "Ante un cambio de pista, no comiences a señalizar hasta que no tengas seguridad de que podrás realizar la maniobra. Recuerda siempre la secuencia espejo – señalización – maniobra. Algunos casos: Señaliza cuando vayas a poSeñaliza con al menos 30 meSeñaliza con suficiente anticine"
+  },
+  {
+    "id": "fact-chapter-6-87-54",
+    "entity": "speed_fact_87_80_km_h",
+    "value": 80,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 87,
+      "end": 87
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "Distancia a los vehículos que van delante Saber cuál es la distancia correcta con respecto al vehículo que va adelante puede resultar difícil. Una regla aplicable en carreteras dice que se debe mantener una distancia medida en metros equivalente a lo que el velocímetro te indica "
+  },
+  {
+    "id": "fact-chapter-6-88-55",
+    "entity": "speed_fact_88_50_km_h",
+    "value": 50,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 88,
+      "end": 88
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "En este tiempo recorrerás alrededor de 15 metros si vas a 50 km/h, de 20 metros si vas a 70 km/h y 25 metros si vas a 90 km/h. Por lo general, los choques en serie se deben a que las personas conductoras guardan una distancia demasiado corta respecto de los vehículos que van dela"
+  },
+  {
+    "id": "fact-chapter-6-88-56",
+    "entity": "speed_fact_88_70_km_h",
+    "value": 70,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 88,
+      "end": 88
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "En este tiempo recorrerás alrededor de 15 metros si vas a 50 km/h, de 20 metros si vas a 70 km/h y 25 metros si vas a 90 km/h. Por lo general, los choques en serie se deben a que las personas conductoras guardan una distancia demasiado corta respecto de los vehículos que van dela"
+  },
+  {
+    "id": "fact-chapter-6-88-57",
+    "entity": "speed_fact_88_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 88,
+      "end": 88
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "En este tiempo recorrerás alrededor de 15 metros si vas a 50 km/h, de 20 metros si vas a 70 km/h y 25 metros si vas a 90 km/h. Por lo general, los choques en serie se deben a que las personas conductoras guardan una distancia demasiado corta respecto de los vehículos que van dela"
+  },
+  {
+    "id": "fact-chapter-6-92-58",
+    "entity": "speed_fact_92_100_km_h",
+    "value": 100,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 92,
+      "end": 92
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "normas de circulación Recuerda que tus preparativos para efectuar un viraje tienen que comenzar con anticipación, de modo que las demás personas no se sorprendan con la maniobra que has pensado hacer. La distancia con que debas señalizar tu maniobra dependerá de la velocidad en c"
+  },
+  {
+    "id": "fact-chapter-6-96-59",
+    "entity": "speed_fact_96_50_km_h",
+    "value": 50,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 96,
+      "end": 96
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "normas de circulación La velocidad Es fácil acostumbrarse a las velocidades altas y dejarse cegar por ellas. Recuerda que a medida que Luego de un rato de conducción por una autopista, la velocidad se siente aumenta la velocidad, se agradable, y no te das cuenta de lo rápido que "
+  },
+  {
+    "id": "fact-chapter-6-96-60",
+    "entity": "speed_fact_96_100_km_h",
+    "value": 100,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 96,
+      "end": 96
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "A 50 km/h se necesitan unos 25 metros para detenerse si el pavimento es bueno y está seco. Si aumentas la velocidad a 100 km/h, requerirás unos 80 metros. Esta distancia de detención, es la que debes tener presente cuando aumentes la velocidad."
+  },
+  {
+    "id": "fact-chapter-6-96-61",
+    "entity": "speed_fact_96_120_km_h",
+    "value": 120,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 96,
+      "end": 96
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "En zonas urbanas, la velocidad máxima permitida es de 50 km/h. En zonas no urbanas, y cuando la calzada tiene sólo una pista por sentido, la velocidad máxima permitida a los vehículos livianos es de 100 km/h. Cuando hay 2 o más pistas en un mismo sentido, este límite aumenta a 12"
+  },
+  {
+    "id": "fact-chapter-6-96-62",
+    "entity": "speed_fact_96_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 96,
+      "end": 96
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "En todo caso, los buses, camiones y vehículos de transporte escolar no deben circular a más de 90 km/h ni los buses interurbanos a más de 100 km/h. No obstante, la autoridad puede modificar los límites antes indicados en determinadas vías instalando las señales correspondientes. "
+  },
+  {
+    "id": "fact-chapter-6-97-63",
+    "entity": "speed_fact_97_30_km_h",
+    "value": 30,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 97,
+      "end": 97
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Debes reducir tu velocidad a no más de 30 km/h cuando circules por las afueras de un colegio durante las horas de entrada y salida de clases. Cuando te acerques a animales que caminan por la carretera o camino. Al pasar por un lugar en el que se estén llevando a cabo trabajos en "
+  },
+  {
+    "id": "fact-chapter-6-98-64",
+    "entity": "speed_fact_98_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 98,
+      "end": 98
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Una vez que estés en ella no dejes que el vehículo marche por su propia inercia. Acelera gradualmente para retomar la velocidad al salir de la curva. Encuentros y adelantamientos Encuentros Los riesgos de siniestro al encontrarte o cruzarte con otro vehículo son mayores en la med"
+  },
+  {
+    "id": "fact-chapter-6-98-65",
+    "entity": "speed_fact_98_100_km_h",
+    "value": 100,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 98,
+      "end": 98
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "Como vimos anteriormente, es difícil calcular la distancia a la cual se encuentra el que viene en sentido contrario, y se 100 km/h tiende a creer que el cruce tendrá lugar más allá de donde en realidad se produce. Con frecuencia, erróneamente se estima que el cruce PR: Punto real"
+  },
+  {
+    "id": "fact-chapter-6-100-66",
+    "entity": "speed_fact_100_40_km_h",
+    "value": 40,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 100,
+      "end": 100
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "110 120 130 40 km/h 5:00 7:30 9:00 10:00 10:23 3:00 6:26 8:20 9:33 50 km/h 2:00 4:30 6:00 7:00 7:23 - 3:26 5:20 6:33 60 km/h 5:00 5:23 - - 1:26 2:30 3:20 4:00 4:33 70 km/h - - 1:04 1:54 2:34 3:07 3:34 3:57 - 80 km/h - - - - 0:50 1:30 2:03 2:30 2:53 90 km/h - - 0:40 1:13 1:40 2:03"
+  },
+  {
+    "id": "fact-chapter-6-100-67",
+    "entity": "speed_fact_100_50_km_h",
+    "value": 50,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 100,
+      "end": 100
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "110 120 130 40 km/h 5:00 7:30 9:00 10:00 10:23 3:00 6:26 8:20 9:33 50 km/h 2:00 4:30 6:00 7:00 7:23 - 3:26 5:20 6:33 60 km/h 5:00 5:23 - - 1:26 2:30 3:20 4:00 4:33 70 km/h - - 1:04 1:54 2:34 3:07 3:34 3:57 - 80 km/h - - - - 0:50 1:30 2:03 2:30 2:53 90 km/h - - 0:40 1:13 1:40 2:03"
+  },
+  {
+    "id": "fact-chapter-6-100-68",
+    "entity": "speed_fact_100_60_km_h",
+    "value": 60,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 100,
+      "end": 100
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "110 120 130 40 km/h 5:00 7:30 9:00 10:00 10:23 3:00 6:26 8:20 9:33 50 km/h 2:00 4:30 6:00 7:00 7:23 - 3:26 5:20 6:33 60 km/h 5:00 5:23 - - 1:26 2:30 3:20 4:00 4:33 70 km/h - - 1:04 1:54 2:34 3:07 3:34 3:57 - 80 km/h - - - - 0:50 1:30 2:03 2:30 2:53 90 km/h - - 0:40 1:13 1:40 2:03"
+  },
+  {
+    "id": "fact-chapter-6-100-69",
+    "entity": "speed_fact_100_70_km_h",
+    "value": 70,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 100,
+      "end": 100
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "110 120 130 40 km/h 5:00 7:30 9:00 10:00 10:23 3:00 6:26 8:20 9:33 50 km/h 2:00 4:30 6:00 7:00 7:23 - 3:26 5:20 6:33 60 km/h 5:00 5:23 - - 1:26 2:30 3:20 4:00 4:33 70 km/h - - 1:04 1:54 2:34 3:07 3:34 3:57 - 80 km/h - - - - 0:50 1:30 2:03 2:30 2:53 90 km/h - - 0:40 1:13 1:40 2:03"
+  },
+  {
+    "id": "fact-chapter-6-100-70",
+    "entity": "speed_fact_100_80_km_h",
+    "value": 80,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 100,
+      "end": 100
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "110 120 130 40 km/h 5:00 7:30 9:00 10:00 10:23 3:00 6:26 8:20 9:33 50 km/h 2:00 4:30 6:00 7:00 7:23 - 3:26 5:20 6:33 60 km/h 5:00 5:23 - - 1:26 2:30 3:20 4:00 4:33 70 km/h - - 1:04 1:54 2:34 3:07 3:34 3:57 - 80 km/h - - - - 0:50 1:30 2:03 2:30 2:53 90 km/h - - 0:40 1:13 1:40 2:03"
+  },
+  {
+    "id": "fact-chapter-6-100-71",
+    "entity": "speed_fact_100_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 100,
+      "end": 100
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "110 120 130 40 km/h 5:00 7:30 9:00 10:00 10:23 3:00 6:26 8:20 9:33 50 km/h 2:00 4:30 6:00 7:00 7:23 - 3:26 5:20 6:33 60 km/h 5:00 5:23 - - 1:26 2:30 3:20 4:00 4:33 70 km/h - - 1:04 1:54 2:34 3:07 3:34 3:57 - 80 km/h - - - - 0:50 1:30 2:03 2:30 2:53 90 km/h - - 0:40 1:13 1:40 2:03"
+  },
+  {
+    "id": "fact-chapter-6-100-72",
+    "entity": "speed_fact_100_100_km_h",
+    "value": 100,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 100,
+      "end": 100
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "110 120 130 40 km/h 5:00 7:30 9:00 10:00 10:23 3:00 6:26 8:20 9:33 50 km/h 2:00 4:30 6:00 7:00 7:23 - 3:26 5:20 6:33 60 km/h 5:00 5:23 - - 1:26 2:30 3:20 4:00 4:33 70 km/h - - 1:04 1:54 2:34 3:07 3:34 3:57 - 80 km/h - - - - 0:50 1:30 2:03 2:30 2:53 90 km/h - - 0:40 1:13 1:40 2:03"
+  },
+  {
+    "id": "fact-chapter-6-100-73",
+    "entity": "speed_fact_100_120_km_h",
+    "value": 120,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 100,
+      "end": 100
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "110 120 130 40 km/h 5:00 7:30 9:00 10:00 10:23 3:00 6:26 8:20 9:33 50 km/h 2:00 4:30 6:00 7:00 7:23 - 3:26 5:20 6:33 60 km/h 5:00 5:23 - - 1:26 2:30 3:20 4:00 4:33 70 km/h - - 1:04 1:54 2:34 3:07 3:34 3:57 - 80 km/h - - - - 0:50 1:30 2:03 2:30 2:53 90 km/h - - 0:40 1:13 1:40 2:03"
+  },
+  {
+    "id": "fact-chapter-6-101-74",
+    "entity": "speed_fact_101_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 101,
+      "end": 101
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "Analicemos el caso de la siguiente imagen: supón que circulas a 90 km/h y que vas a adelantar al vehículo que te precede. De pronto, a 350 metros de distancia aparece un vehículo que viene en sentido contrario y que también marcha a 90 km/h. El adelantamiento tarda 8 segundos."
+  },
+  {
+    "id": "fact-chapter-6-107-75",
+    "entity": "speed_fact_107_100_km_h",
+    "value": 100,
+    "unit": "km/h",
+    "chapterId": "chapter-6",
+    "pageRange": {
+      "start": 107,
+      "end": 107
+    },
+    "manualRef": "Normas de circulación",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "No obstante, no debes confiarte de estos sistemas; detente siempre, tómate tu tiempo para mirar en ambas direcciones y escuchar antes de cruzar, para esto, apaga la radio de tu vehículo en caso de llevarla encendida. Señal Cruce Ferroviario a Nivel Sin Barreras Recuerda que los t"
+  },
+  {
+    "id": "fact-chapter-7-109-76",
+    "entity": "speed_fact_109_90_km_h",
+    "value": 90,
+    "unit": "km/h",
+    "chapterId": "chapter-7",
+    "pageRange": {
+      "start": 109,
+      "end": 109
+    },
+    "manualRef": "Conducción en circunstancias especiales",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "conducción en circunstancias especiales Conducción en circunstancias especiales Conducción en la oscuridad En la oscuridad, un vehículo circula a una velocidad cercana a los 90 km/h. La persona que conduce va con la mirada fija hacia el frente. De pronto, siente un golpe en la ca"
+  },
+  {
+    "id": "fact-chapter-7-118-77",
+    "entity": "speed_fact_118_80_km_h",
+    "value": 80,
+    "unit": "km/h",
+    "chapterId": "chapter-7",
+    "pageRange": {
+      "start": 118,
+      "end": 118
+    },
+    "manualRef": "Conducción en circunstancias especiales",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "La pista de desaceleración para salir de la autopista se distingue por líneas segmentadas más anchas que lo normal (como muestra la imagen). Al salir de la autopista tu velocidad puede ser mayor de lo que crees. Así, 80 km/h pueden parecerte como si fueras a 50 km/h."
+  },
+  {
+    "id": "fact-chapter-7-118-78",
+    "entity": "speed_fact_118_50_km_h",
+    "value": 50,
+    "unit": "km/h",
+    "chapterId": "chapter-7",
+    "pageRange": {
+      "start": 118,
+      "end": 118
+    },
+    "manualRef": "Conducción en circunstancias especiales",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "La pista de desaceleración para salir de la autopista se distingue por líneas segmentadas más anchas que lo normal (como muestra la imagen). Al salir de la autopista tu velocidad puede ser mayor de lo que crees. Así, 80 km/h pueden parecerte como si fueras a 50 km/h."
+  },
+  {
+    "id": "fact-chapter-8-131-79",
+    "entity": "speed_fact_131_120_km_h",
+    "value": 120,
+    "unit": "km/h",
+    "chapterId": "chapter-8",
+    "pageRange": {
+      "start": 131,
+      "end": 131
+    },
+    "manualRef": "Conducción eficiente",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Velocidad óptima Si bien en carreteras se permiten límites de velocidad de 90, 100 o hasta 120 km/h, se debe tener en cuenta que a altas velocidades el rendimiento de combustible se reduce bastante, del orden de un 10% y más. Claro, si viajas grandes distancias podría justificars"
+  },
+  {
+    "id": "fact-chapter-8-131-80",
+    "entity": "speed_fact_131_10_km_h",
+    "value": 10,
+    "unit": "km/h",
+    "chapterId": "chapter-8",
+    "pageRange": {
+      "start": 131,
+      "end": 131
+    },
+    "manualRef": "Conducción eficiente",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Te invitamos a ver en cuánto tiempo se reduce tu viaje al aumentar tu velocidad en 10 km/h en la tabla de la sección de Encuentros y adelantamientos del capítulo Normas de circulación (ver página 100). ¿Valdrá la pena incrementar tanto el consumo por unos cuantos minutos? Evita e"
+  },
+  {
+    "id": "fact-chapter-8-131-81",
+    "entity": "speed_fact_131_70_km_h",
+    "value": 70,
+    "unit": "km/h",
+    "chapterId": "chapter-8",
+    "pageRange": {
+      "start": 131,
+      "end": 131
+    },
+    "manualRef": "Conducción eficiente",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "soft",
+    "excerpt": "Es por ello que se recomienda mantener las revoluciones en rangos relativamente bajos. Esto se logra procurando mantener marchas o cambios más altos durante su conducción (3ª, 4ª o superiores). Por ejemplo, para andar a 70 km/h, aunque puede hacerse en 4ª o en 5ª, prefiere la mar"
+  },
+  {
+    "id": "fact-chapter-9-142-82",
+    "entity": "license_fact_142_17_anos",
+    "value": 17,
+    "unit": "años",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "licencia de conducir"
+    ],
+    "strictness": "hard",
+    "excerpt": "informaciones importantes Acompañante de una persona conductora de 17 años Excepcionalmente, una persona de 17 años puede obtener una Licencia Clase B siempre que cuente con autorización de su madre, padre, apoderados o representantes legales, y haya aprobado un curso en una Escu"
+  },
+  {
+    "id": "fact-chapter-9-142-83",
+    "entity": "license_fact_142_18_anos",
+    "value": 18,
+    "unit": "años",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "licencia de conducir"
+    ],
+    "strictness": "hard",
+    "excerpt": "informaciones importantes Acompañante de una persona conductora de 17 años Excepcionalmente, una persona de 17 años puede obtener una Licencia Clase B siempre que cuente con autorización de su madre, padre, apoderados o representantes legales, y haya aprobado un curso en una Escu"
+  },
+  {
+    "id": "fact-chapter-9-142-84",
+    "entity": "license_fact_142_5_anos",
+    "value": 5,
+    "unit": "años",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "licencia de conducir"
+    ],
+    "strictness": "hard",
+    "excerpt": "informaciones importantes Acompañante de una persona conductora de 17 años Excepcionalmente, una persona de 17 años puede obtener una Licencia Clase B siempre que cuente con autorización de su madre, padre, apoderados o representantes legales, y haya aprobado un curso en una Escu"
+  },
+  {
+    "id": "fact-chapter-9-142-85",
+    "entity": "alcohol_fact_142_3_meses",
+    "value": 3,
+    "unit": "meses",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "utm",
+      "multa",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Suspensión y cancelación de la Licencia de Conducir Sin perjuicio de las multas que corresponda aplicar por la comisión de infracciones, la Licencia de Conducir es suspendida cuando su persona titular es sorprendida conduciendo bajo las siguientes situaciones: suspensión de licen"
+  },
+  {
+    "id": "fact-chapter-9-142-86",
+    "entity": "alcohol_fact_142_2_anos",
+    "value": 2,
+    "unit": "años",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "alcoholemia",
+      "alcohol",
+      "ebriedad",
+      "ley emilia",
+      "utm",
+      "multa",
+      "licencia de conducir",
+      "suspensión de licencia",
+      "cancelación de licencia"
+    ],
+    "strictness": "hard",
+    "excerpt": "Suspensión y cancelación de la Licencia de Conducir Sin perjuicio de las multas que corresponda aplicar por la comisión de infracciones, la Licencia de Conducir es suspendida cuando su persona titular es sorprendida conduciendo bajo las siguientes situaciones: suspensión de licen"
+  },
+  {
+    "id": "fact-chapter-9-142-87",
+    "entity": "speed_fact_142_6_meses",
+    "value": 6,
+    "unit": "meses",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "6 meses* Exceder en más de 60 km/h un límite de velocidad máxima. Exceder en más de 20 km/h un límite de velocidad máxima. Entre 5 y 45 días* No detenerse ante una luz roja del semáforo o ante una señal PARE."
+  },
+  {
+    "id": "fact-chapter-9-142-88",
+    "entity": "speed_fact_142_60_km_h",
+    "value": 60,
+    "unit": "km/h",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "6 meses* Exceder en más de 60 km/h un límite de velocidad máxima. Exceder en más de 20 km/h un límite de velocidad máxima. Entre 5 y 45 días* No detenerse ante una luz roja del semáforo o ante una señal PARE."
+  },
+  {
+    "id": "fact-chapter-9-142-89",
+    "entity": "speed_fact_142_20_km_h",
+    "value": 20,
+    "unit": "km/h",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "6 meses* Exceder en más de 60 km/h un límite de velocidad máxima. Exceder en más de 20 km/h un límite de velocidad máxima. Entre 5 y 45 días* No detenerse ante una luz roja del semáforo o ante una señal PARE."
+  },
+  {
+    "id": "fact-chapter-9-142-90",
+    "entity": "speed_fact_142_45_dias",
+    "value": 45,
+    "unit": "días",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "6 meses* Exceder en más de 60 km/h un límite de velocidad máxima. Exceder en más de 20 km/h un límite de velocidad máxima. Entre 5 y 45 días* No detenerse ante una luz roja del semáforo o ante una señal PARE."
+  },
+  {
+    "id": "fact-chapter-9-142-91",
+    "entity": "manual_fact_142_12_anos",
+    "value": 12,
+    "unit": "años",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "llevar menores de 12 años en"
+    ],
+    "strictness": "soft",
+    "excerpt": "Llevar menores de 12 años en los asientos delanteros. No utilizar Sistema de Retención Infantil en el traslado de niñas y niños de hasta 8 años, inclusive, o estatura de 135 centímetros y 33 kilogramos de peso, en los asientos traseros. Conducir un vehículo manipulando un disposi"
+  },
+  {
+    "id": "fact-chapter-9-142-92",
+    "entity": "manual_fact_142_8_anos",
+    "value": 8,
+    "unit": "años",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 142,
+      "end": 142
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "llevar menores de 12 años en"
+    ],
+    "strictness": "soft",
+    "excerpt": "Llevar menores de 12 años en los asientos delanteros. No utilizar Sistema de Retención Infantil en el traslado de niñas y niños de hasta 8 años, inclusive, o estatura de 135 centímetros y 33 kilogramos de peso, en los asientos traseros. Conducir un vehículo manipulando un disposi"
+  },
+  {
+    "id": "fact-chapter-9-143-93",
+    "entity": "manual_fact_143_12_anos",
+    "value": 12,
+    "unit": "años",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 143,
+      "end": 143
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "soft",
+    "excerpt": "El traslado de menores de 12 años en los asientos delanteros del vehículo. Excepto en vehículos de cabina simple y con un SRI apropiado. No hacer uso del Sistema de Retención Infantil para niños y niñas de hasta 8 años, inclusive, o para estatura de 135 centímetros y 33 kilogramo"
+  },
+  {
+    "id": "fact-chapter-9-143-94",
+    "entity": "manual_fact_143_8_anos",
+    "value": 8,
+    "unit": "años",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 143,
+      "end": 143
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "seguridad vial",
+      "cinturón",
+      "airbag",
+      "sistema de retención infantil"
+    ],
+    "strictness": "soft",
+    "excerpt": "El traslado de menores de 12 años en los asientos delanteros del vehículo. Excepto en vehículos de cabina simple y con un SRI apropiado. No hacer uso del Sistema de Retención Infantil para niños y niñas de hasta 8 años, inclusive, o para estatura de 135 centímetros y 33 kilogramo"
+  },
+  {
+    "id": "fact-chapter-9-143-95",
+    "entity": "speed_fact_143_20_km_h",
+    "value": 20,
+    "unit": "km/h",
+    "chapterId": "chapter-9",
+    "pageRange": {
+      "start": 143,
+      "end": 143
+    },
+    "manualRef": "Informaciones importantes",
+    "aliases": [
+      "velocidad",
+      "límite de velocidad",
+      "km/h"
+    ],
+    "strictness": "hard",
+    "excerpt": "Exceder entre 20 y 60 kilómetros por hora el límite de velocidad máxima. Algunas infracciones graves: Conducir un vehículo en condiciones físicas o psíquicas deficientes. Exceder de 11 a 20 km/h el límite de velocidad máxima."
+  }
+]

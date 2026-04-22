@@ -10,6 +10,8 @@ type Props = {
   footer?: ReactNode;
   isMobile?: boolean;
   className?: string;
+  bodyClassName?: string;
+  footerClassName?: string;
 };
 
 export function AdminPanel({
@@ -21,6 +23,8 @@ export function AdminPanel({
   footer,
   isMobile = false,
   className = '',
+  bodyClassName = '',
+  footerClassName = '',
 }: Props) {
   if (!isOpen) return null;
 
@@ -44,12 +48,12 @@ export function AdminPanel({
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-4">
+        <div className={`flex-1 overflow-y-auto p-4 ${bodyClassName}`}>
           {children}
         </div>
 
         {footer && (
-          <div className="border-t border-neutral-200 bg-neutral-50 px-4 py-4 flex gap-3">
+          <div className={`border-t border-neutral-200 bg-neutral-50 px-4 py-4 flex gap-3 ${footerClassName}`}>
             {footer}
           </div>
         )}
@@ -78,12 +82,12 @@ export function AdminPanel({
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-6 space-y-6">
+      <div className={`flex-1 overflow-y-auto p-6 space-y-6 ${bodyClassName}`}>
         {children}
       </div>
 
       {footer && (
-        <div className="border-t border-neutral-200 bg-neutral-50 px-6 py-4 flex gap-3">
+        <div className={`border-t border-neutral-200 bg-neutral-50 px-6 py-4 flex gap-3 ${footerClassName}`}>
           {footer}
         </div>
       )}

@@ -10,8 +10,12 @@ Plataforma web en `React + Vite + Vercel` para estudiar la licencia Clase B en C
 ```bash
 npm install
 npm run dev
+npm run dev:admin-beta
 npm run build
 npm run validate:content
+npm run prepare:manual-knowledge
+npm run review:import -- data/imports/imported-1-batch.json
+npm run review:import:chapter2
 npm run smoke:prod
 npm run smoke:prod:compat
 npm run release:check
@@ -128,6 +132,7 @@ Comportamiento esperado:
 - [`docs/editorial-rules.md`](./docs/editorial-rules.md): reglas de exactitud y formato
 - [`docs/security.md`](./docs/security.md): modelo de seguridad y permisos
 - [`docs/deployment.md`](./docs/deployment.md): flujo de release y despliegue
+- [`docs/import-review-workflow.md`](./docs/import-review-workflow.md): pipeline offline de revisión, grounding y duplicados para imports masivos
 - [`docs/automation-recommendations.md`](./docs/automation-recommendations.md): automatizaciones sugeridas
 - [`docs/progress.md`](./docs/progress.md): bitácora operativa y estado de milestones
 - [`docs/admin-local-beta.md`](./docs/admin-local-beta.md): enablement y operación del Beta local con Ollama

@@ -19,6 +19,7 @@ export {
   SearchIcon,
   DashboardIcon,
   CatalogIcon,
+  ImportReviewIcon,
   SparkIcon,
   FlaskIcon,
   LogOutIcon,

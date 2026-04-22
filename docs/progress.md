@@ -13,6 +13,40 @@
   - `databaseReachable: true`
   - `schema: v1`
 
+## 2026-04-21 Versioned manual knowledge pack and grounding calibration
+
+- Added a versioned manual knowledge pack rooted at `data/manual-knowledge/2026/`.
+- `scripts/prepare-manual-knowledge.mjs` now writes:
+  - `2026/index.json`
+  - `2026/facts.json`
+  - `2026/chapters/chapter-*.json`
+- The flat files under `data/manual-knowledge/` remain in place as compatibility outputs for the current runtime and reviewer transition.
+- Stable manual segment ids now use the versioned form `2026-CH{n}-P{page}-S{segment}`.
+- The import reviewer now prefers the versioned knowledge-pack index and chapter files instead of relying only on flat `manual-segments.json`.
+- Lexical grounding was calibrated with:
+  - Spanish stopword filtering
+  - stronger weighting for concept/title matches
+  - chapter-local segment loading from the versioned pack
+- `/admin` import review now includes a read-only manual browser beside actionable and rejected review tabs.
+- Validation results after regenerating the pack from `Libro-ClaseB-2026.pdf`:
+  - `prepare:manual-knowledge`
+    - `170` pages
+    - `751` segments
+    - `95` facts
+  - full `imported-1-batch.json` review
+    - `999` accepted with warning
+    - `465` rejected
+    - `154` duplicate clusters
+  - Chapter 2 calibration run
+    - `334` accepted with warning
+    - `115` rejected
+    - baseline before calibration was `19` accepted with warning / `18` rejected on the prior sparse-pack gate
+- Local verification completed:
+  - `node scripts/prepare-manual-knowledge.mjs`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json --chapter=chapter-2`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json`
+  - `npm run build`
+
 ## Active milestone
 
 - Milestone 5E local LLM suggestion pilot:
@@ -412,6 +446,54 @@
   - Merge remote-tracking branch from previous sync
 - Production baseline stable, ready for next phase
 - Proceeding to M7 (Advanced Accessibility) work
+
+## 2026-04-21 PDF grounding engine and import-review recovery
+
+- Added a Node-only ingestion path for the local `Libro-ClaseB-2026.pdf`.
+- Added deterministic offline extraction and segmentation scripts:
+  - `scripts/extract-manual-grounding.mjs`
+  - `scripts/prepare-manual-knowledge.mjs`
+- The manual knowledge pack is now regenerated from the real PDF, not the old starter JSON.
+- Current generated manual artifacts:
+  - `data/manual-knowledge/extracted-pages.json`
+  - `data/manual-knowledge/segmented-manual.json`
+  - `data/manual-knowledge/manual-segments.json`
+  - `data/manual-knowledge/ground-truth.json`
+  - `data/manual-knowledge/chapter-classifier.json`
+- Latest extraction baseline from the 2026 manual:
+  - `170` extracted pages
+  - `754` searchable manual segments
+  - `95` derived fact-map entries
+- Tightened the offline reviewer to use the extracted manual segments through lexical grounding search.
+- Kept the current review contract intact:
+  - `accepted`
+  - `accepted_with_warning`
+  - `rejected`
+- Preserved conservative rejection behavior for:
+  - fact conflicts
+  - ambiguous grounding
+  - duplicates against the existing bank
+- Kept same-batch duplicate winner selection active.
+- Review artifacts remain split as:
+  - `data/import-reviews/manifest.json`
+  - `data/import-reviews/<run-id>/run-details.json`
+- Fixed the manifest run-id collision so chapter dry-runs no longer reuse the full-corpus run id.
+- `/admin` import review remains read-only and lazy-loads heavy per-run detail payloads from `run-details.json`.
+- Latest full bulk-corpus baseline for `data/imports/imported-1-batch.json`:
+  - `1141` accepted with warning
+  - `323` rejected
+  - `154` duplicate clusters
+- Latest Chapter 2 dry-run baseline:
+  - `19` accepted with warning
+  - `18` rejected
+  - `2` duplicate clusters
+- Operational interpretation:
+  - the reviewer shape is no longer the blocker
+  - the remaining recovery rate depends on enriching the manual knowledge pack, especially for chapter-specific legal and alcohol facts
+- Local verification completed during this phase:
+  - `node scripts/prepare-manual-knowledge.mjs`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json --chapter=chapter-2`
 
 ## Next approved work blocks
 

@@ -8,6 +8,7 @@ vite.config.d.ts
 
 .vercel
 .codex/
+.builder/
 .env
 .env.local
 .env.production.local

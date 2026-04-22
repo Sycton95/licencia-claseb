@@ -11,6 +11,7 @@ export function AdminTopStrip({ activeSection, onOpenMobileMenu }: Props) {
     dashboard: 'Resumen',
     catalog: 'Catalogo de preguntas',
     ai: 'Cola de revision AI',
+    imports: 'Revision de imports',
     beta: 'Beta local Ollama',
   };
 

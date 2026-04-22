@@ -1,0 +1,453 @@
+# Import Review: imported-1-batch
+
+## Batch overview
+- Source file: `data/imports/imported-1-batch.json`
+- Reviewed at: `2026-04-22T00:19:19.492Z`
+- Chapter: `auto-classified`
+- Chapter filter: `none`
+- Source document: `manual-claseb-2026`
+- Total questions: 1464
+- Accepted: 999
+- Accepted with warning: 999
+- Auto-grounded accepted: 999
+- Rejected: 465
+- Duplicate clusters: 154
+- Warnings: 5229
+- Errors: 3301
+
+## Accepted items
+- `imported-1-batch-1` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-2` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-3` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-4` (4 warnings) [fact_auto] -> `chapter-1`
+- `imported-1-batch-5` (3 warnings) [fact_auto] -> `chapter-1`
+- `imported-1-batch-6` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-7` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-8` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-9` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-10` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-11` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-12` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-13` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-14` (3 warnings) [fact_auto] -> `chapter-1`
+- `imported-1-batch-15` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-17` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-18` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-20` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-21` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-26` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-27` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-28` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-29` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-31` (3 warnings) [citation_auto] -> `chapter-1`
+- `imported-1-batch-32` (3 warnings) [citation_auto] -> `chapter-1`
+- ... 974 more accepted items
+
+## Rejected items
+- `imported-1-batch-16`
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-15 in cluster dup-cluster-1.
+  - duplicate: batch imported-1-batch-15 (1.00)
+- `imported-1-batch-19`
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-18 in cluster dup-cluster-2.
+  - duplicate: batch imported-1-batch-18 (1.00)
+- `imported-1-batch-22`
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-5 (29 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-6 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-7 (45 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-8 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-12 (99 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-13 (110 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-14 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-15 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-17 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-18 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-20 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-30-23 (300 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-38-24 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-26 (130 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-27 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-28 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-29 (35 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-30 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-46-32 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-5-70-47 (12 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-56 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-57 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-92-58 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-60 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-61 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-62 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-97-63 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-98-64 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-109-76 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-77 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-79 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-80 (10 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-87 (6 meses).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-88 (60 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-89 (20 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-90 (45 días).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-143-95 (20 km/h).
+- `imported-1-batch-23`
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-4 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-5 (29 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-7 (45 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-8 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-12 (99 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-13 (110 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-14 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-15 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-16 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-18 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-19 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-20 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-30-23 (300 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-38-24 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-26 (130 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-27 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-28 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-29 (35 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-30 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-46-32 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-5-70-47 (12 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-55 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-56 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-57 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-92-58 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-59 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-60 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-61 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-62 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-98-64 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-109-76 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-77 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-78 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-79 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-80 (10 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-87 (6 meses).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-88 (60 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-89 (20 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-90 (45 días).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-143-95 (20 km/h).
+- `imported-1-batch-24`
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-4 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-5 (29 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-6 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-8 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-12 (99 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-13 (110 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-14 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-15 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-16 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-17 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-18 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-19 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-20 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-30-23 (300 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-38-24 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-26 (130 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-27 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-28 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-29 (35 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-30 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-46-32 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-5-70-47 (12 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-55 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-56 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-57 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-92-58 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-59 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-60 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-61 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-62 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-97-63 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-98-64 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-109-76 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-77 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-78 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-79 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-80 (10 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-87 (6 meses).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-88 (60 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-89 (20 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-90 (45 días).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-143-95 (20 km/h).
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-23 in cluster dup-cluster-3.
+- `imported-1-batch-25`
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-4 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-5 (29 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-6 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-7 (45 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-12 (99 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-13 (110 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-14 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-15 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-16 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-17 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-18 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-19 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-20 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-30-23 (300 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-38-24 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-26 (130 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-27 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-29 (35 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-30 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-46-32 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-5-70-47 (12 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-55 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-56 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-57 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-92-58 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-59 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-60 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-61 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-62 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-97-63 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-98-64 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-109-76 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-77 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-78 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-79 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-80 (10 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-87 (6 meses).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-88 (60 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-89 (20 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-90 (45 días).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-143-95 (20 km/h).
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-23 in cluster dup-cluster-3.
+  - duplicate: batch imported-1-batch-23 (0.88)
+- `imported-1-batch-30`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-42`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-53`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-82`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-84`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-90`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-94`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-82 in cluster dup-cluster-4.
+  - duplicate: batch imported-1-batch-82 (1.00)
+- `imported-1-batch-95`
+  - duplicate_prompt_reviewed_import: Prompt is too similar to reviewed import item imported-1-batch-1052 (similarity 1.00).
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-1052 in cluster dup-cluster-5.
+  - duplicate: batch imported-1-batch-1052 (1.00)
+- `imported-1-batch-121`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-180 in cluster dup-cluster-6.
+  - duplicate: batch imported-1-batch-180 (0.88)
+- `imported-1-batch-122`
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-180 in cluster dup-cluster-6.
+  - duplicate: batch imported-1-batch-180 (0.88)
+- `imported-1-batch-123`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-180 in cluster dup-cluster-6.
+  - duplicate: batch imported-1-batch-180 (0.88)
+- `imported-1-batch-124`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-180 in cluster dup-cluster-6.
+  - duplicate: batch imported-1-batch-180 (0.88)
+- `imported-1-batch-125`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+  - referenced_duplicate_in_batch: Candidate was superseded by duplicate winner imported-1-batch-180 in cluster dup-cluster-6.
+  - duplicate: batch imported-1-batch-180 (0.88)
+- `imported-1-batch-126`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-128`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-130`
+  - chapter_classification_ambiguous: Question could not be assigned to a single chapter with enough confidence.
+  - missing_grounding_excerpt: groundingExcerpt is required.
+  - invalid_source_page: sourcePageStart and sourcePageEnd must resolve to valid numbers.
+- `imported-1-batch-133`
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-4 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-5 (29 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-6 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-7 (45 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-8 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-12 (99 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-13 (110 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-14 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-15 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-16 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-17 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-18 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-19 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-20 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-30-23 (300 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-38-24 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-26 (130 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-27 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-28 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-29 (35 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-30 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-46-32 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-5-70-47 (12 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-55 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-56 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-57 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-92-58 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-59 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-60 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-61 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-62 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-97-63 (30 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-98-64 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-109-76 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-77 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-78 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-79 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-80 (10 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-87 (6 meses).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-88 (60 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-89 (20 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-90 (45 días).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-143-95 (20 km/h).
+- `imported-1-batch-134`
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-4 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-5 (29 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-7 (45 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-8 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-12 (99 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-13 (110 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-14 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-15 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-16 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-18 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-19 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-20 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-30-23 (300 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-38-24 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-26 (130 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-27 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-28 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-29 (35 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-30 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-46-32 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-5-70-47 (12 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-55 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-56 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-57 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-92-58 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-59 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-60 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-61 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-62 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-98-64 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-109-76 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-77 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-78 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-79 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-80 (10 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-87 (6 meses).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-89 (20 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-90 (45 días).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-143-95 (20 km/h).
+- `imported-1-batch-135`
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-4 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-5 (29 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-7 (45 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-1-8-8 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-12 (99 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-13 (110 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-14 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-15 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-24-16 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-18 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-19 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-26-20 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-2-30-23 (300 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-38-24 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-26 (130 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-27 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-28 (65 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-29 (35 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-44-30 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-4-46-32 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-5-70-47 (12 años).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-55 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-56 (70 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-88-57 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-92-58 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-59 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-60 (100 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-61 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-96-62 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-6-98-64 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-109-76 (90 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-77 (80 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-7-118-78 (50 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-79 (120 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-8-131-80 (10 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-87 (6 meses).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-89 (20 km/h).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-142-90 (45 días).
+  - manual_fact_conflict: Question content conflicts with manual fact fact-chapter-9-143-95 (20 km/h).
+- ... 440 more rejected items
+
+## Duplicate clusters
+- dup-cluster-1: winner `imported-1-batch-15` over 1 duplicates
+- dup-cluster-2: winner `imported-1-batch-18` over 1 duplicates
+- dup-cluster-3: winner `imported-1-batch-23` over 2 duplicates
+- dup-cluster-4: winner `imported-1-batch-82` over 1 duplicates
+- dup-cluster-5: winner `imported-1-batch-1052` over 1 duplicates
+- dup-cluster-6: winner `imported-1-batch-180` over 6 duplicates
+- dup-cluster-7: winner `imported-1-batch-131` over 1 duplicates
+- dup-cluster-8: winner `imported-1-batch-143` over 1 duplicates
+- dup-cluster-9: winner `imported-1-batch-161` over 1 duplicates
+- dup-cluster-10: winner `imported-1-batch-162` over 1 duplicates
+- dup-cluster-11: winner `imported-1-batch-163` over 1 duplicates
+- dup-cluster-12: winner `imported-1-batch-167` over 7 duplicates
+- dup-cluster-13: winner `imported-1-batch-168` over 3 duplicates
+- dup-cluster-14: winner `imported-1-batch-170` over 1 duplicates
+- dup-cluster-15: winner `imported-1-batch-171` over 1 duplicates
+
+## Chapter split
+- chapter-1: 281 accepted / 69 rejected
+- chapter-2: 336 accepted / 113 rejected
+- chapter-3: 5 accepted / 2 rejected
+- chapter-4: 42 accepted / 14 rejected
+- chapter-5: 43 accepted / 6 rejected
+- chapter-6: 187 accepted / 58 rejected
+- chapter-7: 13 accepted / 0 rejected
+- chapter-8: 86 accepted / 16 rejected
+- chapter-9: 6 accepted / 5 rejected
+
+## Normalization warnings
+- None
+
+## Next operator action
+- Use `accepted-candidates.json` as the eligible staging set.
+- Review `run-details.json` for rejected candidates, duplicate clusters, and grounding suggestions.
+- Use the per-chapter accepted files under `chapters/` for chapter-specific merge preparation.

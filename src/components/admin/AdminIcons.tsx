@@ -38,6 +38,10 @@ export const CatalogIcon = ({ className, size }: IconProps) => (
   <svg {...baseProps(size, className)}><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
 );
 
+export const ImportReviewIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/><path d="m9 9 3-3 3 3"/><path d="M12 6v12"/><path d="m9 15 3 3 3-3"/></svg>
+);
+
 export const SparkIcon = ({ className, size }: IconProps) => (
   <svg {...baseProps(size, className)}><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
 );

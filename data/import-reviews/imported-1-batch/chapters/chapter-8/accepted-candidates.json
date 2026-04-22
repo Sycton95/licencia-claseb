@@ -1,0 +1,4147 @@
+[
+  {
+    "externalId": "imported-1-batch-44",
+    "prompt": "¿Qué tipo de combustible pueden utilizar los vehículos actuales?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Gasolina, petróleo Diésel, gas y/o electricidad."
+      },
+      {
+        "text": "Solo electricidad."
+      },
+      {
+        "text": "Solo gasolina y petróleo diésel."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Conducción eficiente En este capítulo queremos entregarte las herramientas necesarias para reducir el consumo de combustible que utilizas mientras conduces. La importancia de esto radica en que, al mejorar tus hábitos de conducción, lograrás beneficios tanto ",
+    "reviewNotes": "Importado desde competitor_audit (44).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-49",
+    "prompt": "¿Qué debe hacer usted si se enciende el testigo de presión de aceite?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Avanzar sin preocuparse."
+      },
+      {
+        "text": "Debe detener el motor inmediatamente y no ponerlo en marcha hasta haberlo reparado."
+      },
+      {
+        "text": "Detenerse y puede avanzar inmediatamente, ya que, se solucionará solo."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "¿Para qué hacer dos viajes, si en uno puedes hacer todos los trámites? Si tienes un GPS o tu teléfono celular cuenta con uno, utilízalo para planificar la ruta antes del viaje. Existen sistemas GPS y aplicaciones para teléfonos móviles que, además, entregan indicaciones mientras ",
+    "reviewNotes": "Importado desde competitor_audit (49).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-54",
+    "prompt": "¿Qué provoca que una batería se encuentre en mal estado en su vehículo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el vehículo consumirá más combustible."
+      },
+      {
+        "text": "Que el vehículo tenga dificultades para arrancar, especialmente cuando la temperatura está baja."
+      },
+      {
+        "text": "El vehículo solo tendrá problemas para frenar."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Esa fuerza se obtiene gracias a la energía contenida en el combustible. Así, mientras mayor peso se tenga en el vehículo, mayor será el consumo de combustible. Verifica no tener objetos de excesivo peso para el viaje, como cajas de herramientas o portaequipajes en el techo, cuand",
+    "reviewNotes": "Importado desde competitor_audit (54).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S7"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-60",
+    "prompt": "¿Cómo puede prevenir usted el riesgo de incendio de su vehículo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Manteniendo los niveles de agua sobre el máximo."
+      },
+      {
+        "text": "Evitando conducir con el estanque lleno de combustible."
+      },
+      {
+        "text": "Revisando su vehículo ante cualquier olor a gasolina extraño."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 133,
+    "sourcePageEnd": 133,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente frenado del vehículo, como se vio en la sección La energía y las leyes físicas del capítulo Los principios de la conducción (página 23). Si te detienes por más de un minuto, apaga el motor Es común que durante el viaje se produzcan detenciones ¿Sabías que es ",
+    "reviewNotes": "Importado desde competitor_audit (60).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P133-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-61",
+    "prompt": "¿Qué debe evitar hacer usted al cargar combustible en una gasolinera?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Comer."
+      },
+      {
+        "text": "Fumar."
+      },
+      {
+        "text": "Llenar el estanque."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (61).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-62",
+    "prompt": "¿Cómo puede contaminar menos con su vehículo al conducir?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Llenando el estanque de combustible cada vez que vaya a recargar, ya que contaminará menos al liberar menos gases."
+      },
+      {
+        "text": "No llenando el estanque de combustible cada vez que vaya a recargar, debido a que, si usted lo llena contaminará más."
+      },
+      {
+        "text": "Conduciendo siempre a 5.000 rpm."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Los beneficios de la Conducción Eficiente se manifiestan principalmente en un menor costo del viaje y menor costo en el mantenimiento del vehículo. CONDUCCIÓN EFICIENTE Menor costo Menor costo del viaje de mantenimiento Asimismo, la forma de conducir es esencial en la reducción d",
+    "reviewNotes": "Importado desde competitor_audit (62).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-63",
+    "prompt": "¿Por qué debe evitar usted abrir la tapa de combustible más veces de lo necesario?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque consumirá mayor cantidad de combustible."
+      },
+      {
+        "text": "Porque los vapores del combustible pueden ser cancerígenos."
+      },
+      {
+        "text": "Porque el vehículo podría perder estabilidad."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Recomendaciones antes de partir tu viaje Una persona conductora eficiente no se preocupa únicamente de cómo conduce, sino también de otros aspectos previos a la conducción misma, que influirán directamente en el consumo de combustible final de cada viaje. A c",
+    "reviewNotes": "Importado desde competitor_audit (63).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-64",
+    "prompt": "¿A qué se debe un alto consumo de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Fallas en el sistema de dirección."
+      },
+      {
+        "text": "Aceleraciones en curvas."
+      },
+      {
+        "text": "Frecuentes frenadas y aceleraciones."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Conducción eficiente En este capítulo queremos entregarte las herramientas necesarias para reducir el consumo de combustible que utilizas mientras conduces. La importancia de esto radica en que, al mejorar tus hábitos de conducción, lograrás beneficios tanto ",
+    "reviewNotes": "Importado desde competitor_audit (64).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-65",
+    "prompt": "¿En cuál situación de tránsito un vehículo tiene un consumo de combustible más elevado?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Un vehículo que transita en ciudad consume más combustible."
+      },
+      {
+        "text": "Un vehículo que transita en carretera consume más combustible."
+      },
+      {
+        "text": "Un vehículo que transita en carretera y ciudad (mixto) consume más combustible."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Conducción eficiente En este capítulo queremos entregarte las herramientas necesarias para reducir el consumo de combustible que utilizas mientras conduces. La importancia de esto radica en que, al mejorar tus hábitos de conducción, lograrás beneficios tanto ",
+    "reviewNotes": "Importado desde competitor_audit (65).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-76",
+    "prompt": "¿Por qué usted no debería conducir presionando el pedal de embrague durante más tiempo que el necesario?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque reduce su control sobre el vehículo."
+      },
+      {
+        "text": "Porque aumenta el desgaste de la caja de cambios."
+      },
+      {
+        "text": "Porque aumenta el consumo de combustible."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Especialmente a altas velocidades, se produce una resistencia aerodinámica, que tiene que ver con la oposición del aire al movimiento del vehículo. Si tienes un portaequipajes o bulto en el techo, 4 el consumo se puede incrementar por sobre un 20% en carretera. Controla la presió",
+    "reviewNotes": "Importado desde competitor_audit (76).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-78",
+    "prompt": "¿Qué ocurre si al momento de conducir usted desengancha el motor del vehículo (seleccionar neutro)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Permite un mejor control al conductor."
+      },
+      {
+        "text": "Aumenta el consumo de combustible."
+      },
+      {
+        "text": "Reduce el control del conductor."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 131,
+    "sourcePageEnd": 131,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Te invitamos a ver en cuánto tiempo se reduce tu viaje al aumentar tu velocidad en 10 km/h en la tabla de la sección de Encuentros y adelantamientos del capítulo Normas de circulación (ver página 100). ¿Valdrá la pena incrementar tanto el consumo por unos cuantos minutos? Evita e",
+    "reviewNotes": "Importado desde competitor_audit (78).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P131-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-91",
+    "prompt": "¿En qué momento el servo freno funciona?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El motor está apagado."
+      },
+      {
+        "text": "El motor está en marcha."
+      },
+      {
+        "text": "El motor deja de funcionar."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 131,
+    "sourcePageEnd": 131,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Este consejo sólo es aplicable si el vehículo que conduces posee una caja de cambios manual. En el caso de un caja de cambios automática, si se evitan las aceleraciones a fondo, el vehículo en general selecciona la marcha más alta posible. Las marchas más altas tendrán Por el con",
+    "reviewNotes": "Importado desde competitor_audit (91).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P131-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-129",
+    "prompt": "¿Por qué es importante usar zapatos apropiados cuando conduce?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Para tener un adecuado control de los pedales."
+      },
+      {
+        "text": "Para evitar el desgaste acelerado de las gomas de los pedales."
+      },
+      {
+        "text": "Para poder efectuar los cambios de marcha más rápidamente."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "La presión a utilizar también se puede encontrar en el marco de una de las puertas, generalmente en la de la persona que conduce. Dicha revisión, también debe ser efectuada antes de iniciar un viaje largo como en las vacaciones u otras salidas fuera de la ciudad. Se estima que un",
+    "reviewNotes": "Importado desde competitor_audit (129).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 0.2880048283775518,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-154",
+    "prompt": "¿Cuáles de las siguientes afirmaciones son verdaderas por las cuales no debe desengancharse el motor al ir cuesta abajo? (Doble Puntaje) I- Porque tendrá menor control del frenado y dirección. II- Porque el vehículo agarrará velocidad. III- Porque el consumo de combustible será mayor. IV- Porque se gastan y deterioran más los neumáticos.",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "I y II."
+      },
+      {
+        "text": "II y III."
+      },
+      {
+        "text": "III y IV."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Conducción eficiente En este capítulo queremos entregarte las herramientas necesarias para reducir el consumo de combustible que utilizas mientras conduces. La importancia de esto radica en que, al mejorar tus hábitos de conducción, lograrás beneficios tanto ",
+    "reviewNotes": "Importado desde competitor_audit (154).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [
+      "fact-chapter-1-8-4",
+      "fact-chapter-1-8-5",
+      "fact-chapter-1-8-6",
+      "fact-chapter-1-8-7",
+      "fact-chapter-1-8-8",
+      "fact-chapter-2-23-10",
+      "fact-chapter-2-23-11",
+      "fact-chapter-2-24-12",
+      "fact-chapter-2-24-13",
+      "fact-chapter-2-24-14",
+      "fact-chapter-2-24-15",
+      "fact-chapter-2-24-16",
+      "fact-chapter-2-24-17",
+      "fact-chapter-2-26-18",
+      "fact-chapter-2-26-19",
+      "fact-chapter-2-26-20",
+      "fact-chapter-2-26-21",
+      "fact-chapter-2-29-22",
+      "fact-chapter-2-30-23",
+      "fact-chapter-4-38-24",
+      "fact-chapter-4-44-26",
+      "fact-chapter-4-44-27",
+      "fact-chapter-4-44-28",
+      "fact-chapter-4-44-29",
+      "fact-chapter-4-44-30",
+      "fact-chapter-4-46-32",
+      "fact-chapter-4-58-43",
+      "fact-chapter-5-70-47",
+      "fact-chapter-6-87-54",
+      "fact-chapter-6-88-55",
+      "fact-chapter-6-88-56",
+      "fact-chapter-6-88-57",
+      "fact-chapter-6-92-58",
+      "fact-chapter-6-96-59",
+      "fact-chapter-6-96-60",
+      "fact-chapter-6-96-61",
+      "fact-chapter-6-96-62",
+      "fact-chapter-6-97-63",
+      "fact-chapter-6-98-64",
+      "fact-chapter-6-98-65",
+      "fact-chapter-6-100-66",
+      "fact-chapter-6-100-67",
+      "fact-chapter-6-100-68",
+      "fact-chapter-6-100-69",
+      "fact-chapter-6-100-70",
+      "fact-chapter-6-100-71",
+      "fact-chapter-6-100-72",
+      "fact-chapter-6-100-73",
+      "fact-chapter-6-101-74",
+      "fact-chapter-6-107-75",
+      "fact-chapter-7-109-76",
+      "fact-chapter-7-118-77",
+      "fact-chapter-7-118-78",
+      "fact-chapter-8-131-79",
+      "fact-chapter-8-131-80",
+      "fact-chapter-8-131-81",
+      "fact-chapter-9-142-87",
+      "fact-chapter-9-142-88",
+      "fact-chapter-9-142-89",
+      "fact-chapter-9-142-90",
+      "fact-chapter-9-143-95"
+    ],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 3,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 3,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-317",
+    "prompt": "¿Cuáles son las principales consecuencias del consumo de pasta base?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Produce una sensación de tranquilidad, percibe mejor su entorno y toma mejores decisiones."
+      },
+      {
+        "text": "Produce etapas de euforia, etapas de disforia, el consumo ininterrumpido de droga y una etapa de psicosis y alucinaciones."
+      },
+      {
+        "text": "Mejora considerablemente el razonamiento de una persona conductora."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Especialmente a altas velocidades, se produce una resistencia aerodinámica, que tiene que ver con la oposición del aire al movimiento del vehículo. Si tienes un portaequipajes o bulto en el techo, 4 el consumo se puede incrementar por sobre un 20% en carretera. Controla la presió",
+    "reviewNotes": "Importado desde competitor_audit (317).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-435",
+    "prompt": "¿Cuál es el rango de edad recomendado para instalar un SRI a contramarcha?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Hasta los 2 años."
+      },
+      {
+        "text": "Hasta los 3 años."
+      },
+      {
+        "text": "Desde que nacen hasta alcanzar los límites de peso y altura indicados (mínimo hasta los dos años)."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 131,
+    "sourcePageEnd": 131,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Velocidad óptima Si bien en carreteras se permiten límites de velocidad de 90, 100 o hasta 120 km/h, se debe tener en cuenta que a altas velocidades el rendimiento de combustible se reduce bastante, del orden de un 10% y más. Claro, si viajas grandes distancias podría justificars",
+    "reviewNotes": "Importado desde competitor_audit (435).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P131-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-614",
+    "prompt": "¿Qué debe hacer si los frenos fallan totalmente?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Poner neutro y esperar a que el auto pare."
+      },
+      {
+        "text": "Poner el freno de mano de forma brusca."
+      },
+      {
+        "text": "Bombear el pedal, usar el freno de motor bajando marchas y usar el freno de mano de forma suave y progresiva."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "¿Para qué hacer dos viajes, si en uno puedes hacer todos los trámites? Si tienes un GPS o tu teléfono celular cuenta con uno, utilízalo para planificar la ruta antes del viaje. Existen sistemas GPS y aplicaciones para teléfonos móviles que, además, entregan indicaciones mientras ",
+    "reviewNotes": "Importado desde competitor_audit (614).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-617",
+    "prompt": "¿Qué significa el principio de 'Conducción Eficiente'?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Conducir lo más rápido posible para llegar antes."
+      },
+      {
+        "text": "Aplicar técnicas de conducción que permiten reducir el consumo de combustible, la contaminación y el desgaste del vehículo."
+      },
+      {
+        "text": "Usar solo el transporte público."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Conducción eficiente En este capítulo queremos entregarte las herramientas necesarias para reducir el consumo de combustible que utilizas mientras conduces. La importancia de esto radica en que, al mejorar tus hábitos de conducción, lograrás beneficios tanto ",
+    "reviewNotes": "Importado desde competitor_audit (617).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 3,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 8,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-618",
+    "prompt": "Para una conducción eficiente, ¿cómo debe ser la aceleración al iniciar la marcha?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Acelerando a fondo para alcanzar la velocidad crucero rápido."
+      },
+      {
+        "text": "Suave y progresiva, evitando aceleraciones bruscas."
+      },
+      {
+        "text": "No se debe acelerar en primera marcha."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Conducción eficiente En este capítulo queremos entregarte las herramientas necesarias para reducir el consumo de combustible que utilizas mientras conduces. La importancia de esto radica en que, al mejorar tus hábitos de conducción, lograrás beneficios tanto ",
+    "reviewNotes": "Importado desde competitor_audit (618).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 2,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 3,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-619",
+    "prompt": "¿Por qué es mejor usar marchas altas (4ta o 5ta) siempre que sea posible para la eficiencia?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque el motor gira a menos revoluciones por minuto (RPM) consumiendo menos combustible."
+      },
+      {
+        "text": "Porque el vehículo corre más."
+      },
+      {
+        "text": "Para que el motor se caliente menos."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Diversos estudios realizados por la Agencia La información contenida en este capítulo, tiene por Chilena de Eficiencia Energética (AChEE) han objetivo esencial ayudarte a crear hábitos que te permitan mejorar tu conducción en forma continua, así como demostrado que aplicar técnic",
+    "reviewNotes": "Importado desde competitor_audit (619).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "4",
+        "value": "4",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "5",
+        "value": "5",
+        "unit": "",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-620",
+    "prompt": "¿Cómo ayuda el mantenimiento preventivo a la economía del conductor?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "No ayuda, es un gasto extra."
+      },
+      {
+        "text": "Evita averías costosas y mantiene el consumo de combustible en niveles óptimos."
+      },
+      {
+        "text": "Solo sirve para pasar la Revisión Técnica."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Conducción eficiente En este capítulo queremos entregarte las herramientas necesarias para reducir el consumo de combustible que utilizas mientras conduces. La importancia de esto radica en que, al mejorar tus hábitos de conducción, lograrás beneficios tanto ",
+    "reviewNotes": "Importado desde competitor_audit (620).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 2,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 2,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-625",
+    "prompt": "¿Cuál es el riesgo de usar neumáticos con una presión menor a la recomendada?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El vehículo consume menos combustible."
+      },
+      {
+        "text": "Aumenta el consumo, se desgastan los bordes del neumático y hay riesgo de desllante o reventón."
+      },
+      {
+        "text": "La dirección se vuelve muy liviana."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Mientras más carga haya en el vehículo, Con menor carga, se requiere menos mayor es la fuerza que se debe hacer esfuerzo. En el vehículo, esto se traduce en para moverlo. Cuida la aerodinámica Los equipos portaequipajes y bultos en el techo tienen otro efecto",
+    "reviewNotes": "Importado desde competitor_audit (625).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-628",
+    "prompt": "¿Qué indica un humo negro por el tubo de escape?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El motor está quemando aceite."
+      },
+      {
+        "text": "Mala combustión por exceso de combustible o filtro de aire sucio."
+      },
+      {
+        "text": "Falla en el sistema de frenos."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (628).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 23.8,
+    "duplicateClusterId": "dup-cluster-74",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-672",
+    "prompt": "¿Qué debe hacer antes de iniciar un viaje largo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Limpiar solo el parabrisas."
+      },
+      {
+        "text": "Revisar niveles de aceite, refrigerante, presión de neumáticos, luces y frenos."
+      },
+      {
+        "text": "Cargar solo el combustible necesario."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Recomendaciones antes de partir tu viaje Una persona conductora eficiente no se preocupa únicamente de cómo conduce, sino también de otros aspectos previos a la conducción misma, que influirán directamente en el consumo de combustible final de cada viaje. A c",
+    "reviewNotes": "Importado desde competitor_audit (672).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-709",
+    "prompt": "¿Por qué es importante mantener la distancia de seguridad entre vehículos?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Para ahorrar combustible."
+      },
+      {
+        "text": "Para evitar choques por alcance ante frenadas bruscas o imprevistos."
+      },
+      {
+        "text": "Para que el motor no se recaliente."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (709).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-726",
+    "prompt": "¿Cuál es el riesgo de conducir con un nivel muy bajo de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el auto corra menos."
+      },
+      {
+        "text": "Que la bomba de combustible succione impurezas del fondo del estanque o se sobrecaliente."
+      },
+      {
+        "text": "Ninguno, el auto funciona igual."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Beneficios de un buen mantenimiento mantenimiento Tal como se señaló en la sección Funcionamiento del autode tu vehículo móvil del capítulo Los principios de la conducción, un buen mantenimiento te permitirá conducir tu vehículo de forma Permite conducir de s",
+    "reviewNotes": "Importado desde competitor_audit (726).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-752",
+    "prompt": "¿Cuál es el riesgo de llevar neumáticos con poco aire?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el auto rebote."
+      },
+      {
+        "text": "Desgaste excesivo en los bordes, mayor consumo de combustible y riesgo de sobrecalentamiento del neumático."
+      },
+      {
+        "text": "Que el volante esté más blando."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Conducción eficiente En este capítulo queremos entregarte las herramientas necesarias para reducir el consumo de combustible que utilizas mientras conduces. La importancia de esto radica en que, al mejorar tus hábitos de conducción, lograrás beneficios tanto ",
+    "reviewNotes": "Importado desde competitor_audit (752).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-793",
+    "prompt": "¿Qué indica el testigo del panel con forma de una gota amarilla cruzada?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Bajo nivel de aceite."
+      },
+      {
+        "text": "Filtro de combustible con agua o suciedad."
+      },
+      {
+        "text": "Falta de agua en el limpiaparabrisas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (793).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-803",
+    "prompt": "¿Cuál es la función del sistema de inyección?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Frenar el motor."
+      },
+      {
+        "text": "Introducir la cantidad precisa de combustible en el motor de forma pulverizada."
+      },
+      {
+        "text": "Limpiar los gases de escape."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (803).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-826",
+    "prompt": "¿Cuál es el riesgo de llevar el motor a muy bajas revoluciones en una marcha alta (picar el motor)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Ahorro máximo de combustible."
+      },
+      {
+        "text": "Esfuerzo excesivo de las piezas internas del motor y falta de capacidad de respuesta."
+      },
+      {
+        "text": "Ninguno."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (826).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-834",
+    "prompt": "¿Cuál es el propósito del sistema de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Enfriar el motor."
+      },
+      {
+        "text": "Almacenar y suministrar el combustible necesario para el funcionamiento del motor."
+      },
+      {
+        "text": "Cambiar las marchas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es posible que desconozcas la existencia de rutas más cortas para llegar a un mismo destino. Es por eso que te recomendamos revisar previamente el mapa a fin de identificar y optar por alternativas que acorten tu trayecto. De este modo evitarás recorrer kilómetros extra que te ob",
+    "reviewNotes": "Importado desde competitor_audit (834).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-842",
+    "prompt": "¿Cuál es la función del filtro de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Limpiar el aire."
+      },
+      {
+        "text": "Retener impurezas y agua presentes en el combustible antes de que lleguen al sistema de inyección."
+      },
+      {
+        "text": "Controlar la potencia."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Recomendaciones antes de partir tu viaje Una persona conductora eficiente no se preocupa únicamente de cómo conduce, sino también de otros aspectos previos a la conducción misma, que influirán directamente en el consumo de combustible final de cada viaje. A c",
+    "reviewNotes": "Importado desde competitor_audit (842).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-860",
+    "prompt": "¿Qué debe hacer si al conducir siente que el vehículo no tiene fuerza y el motor 'tose'?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Acelerar a fondo."
+      },
+      {
+        "text": "Probable falla en el sistema de combustible o encendido; debe revisarlo."
+      },
+      {
+        "text": "Cambiar el aceite."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (860).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-879",
+    "prompt": "¿Cuál es la función del sensor de oxígeno (sonda lambda)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Medir el aire de los neumáticos."
+      },
+      {
+        "text": "Medir la cantidad de oxígeno en los gases de escape para ajustar la mezcla aire-combustible."
+      },
+      {
+        "text": "Darle aire al motor."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (879).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-895",
+    "prompt": "¿Qué debe hacer si al conducir ve que el nivel de bencina está en reserva?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Seguir igual."
+      },
+      {
+        "text": "Cargar combustible pronto para evitar quedar detenido o dañar la bomba."
+      },
+      {
+        "text": "Apagar las luces."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (895).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-904",
+    "prompt": "¿Qué indica el testigo del panel con una figura de un motor y la palabra 'CHECK'?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el motor está encendido."
+      },
+      {
+        "text": "Una anomalía en el sistema de inyección o de control de emisiones."
+      },
+      {
+        "text": "Que debe cambiar el aceite de inmediato."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Por lo mismo, te recomendamos aplicar las siguientes técnicas paulatinamente y a medida que se vayan haciendo naturales en ti, se constituirán en un hábito. Enciende el motor sin pisar el acelerador Cuando enciendas el motor, prefiere no pisar el acelerador, pues tal acción sólo ",
+    "reviewNotes": "Importado desde competitor_audit (904).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-905",
+    "prompt": "¿Cuál es la función principal de la batería?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Generar energía mientras el auto camina."
+      },
+      {
+        "text": "Almacenar energía para el arranque y consumos cuando el motor está apagado."
+      },
+      {
+        "text": "Darle potencia al motor."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Esa fuerza se obtiene gracias a la energía contenida en el combustible. Así, mientras mayor peso se tenga en el vehículo, mayor será el consumo de combustible. Verifica no tener objetos de excesivo peso para el viaje, como cajas de herramientas o portaequipajes en el techo, cuand",
+    "reviewNotes": "Importado desde competitor_audit (905).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S7"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-907",
+    "prompt": "¿Cuál es el riesgo de llevar neumáticos con presión excesiva?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Ahorro de combustible."
+      },
+      {
+        "text": "Desgaste excesivo en el centro de la banda de rodamiento y menor adherencia por menor superficie de contacto."
+      },
+      {
+        "text": "Que el neumático dure más."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Esa fuerza se obtiene gracias a la energía contenida en el combustible. Así, mientras mayor peso se tenga en el vehículo, mayor será el consumo de combustible. Verifica no tener objetos de excesivo peso para el viaje, como cajas de herramientas o portaequipajes en el techo, cuand",
+    "reviewNotes": "Importado desde competitor_audit (907).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S7"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-924",
+    "prompt": "¿Qué indica el testigo de la batería encendido con el motor en marcha?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Batería cargada."
+      },
+      {
+        "text": "Falla en el sistema de carga (el alternador no funciona)."
+      },
+      {
+        "text": "Luces encendidas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (924).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1010",
+    "prompt": "¿Cuál es el riesgo de conducir con un nivel de líquido refrigerante extremadamente bajo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el aire acondicionado no enfríe."
+      },
+      {
+        "text": "Sobrecalentamiento del motor y posibles daños graves en la culata."
+      },
+      {
+        "text": "Mayor consumo de aceite."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 133,
+    "sourcePageEnd": 133,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Sólo se recomienda adelantar cuando se tenga una distancia suficiente para no forzar el motor y no se ponga en riesgo la seguridad propia o de terceros. Ahora bien, como se mencionó en el capítulo La persona en el tránsito (página 37), estar bajo mucho estrés constituye un import",
+    "reviewNotes": "Importado desde competitor_audit (1010).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P133-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1012",
+    "prompt": "¿Qué debe revisar si las luces delanteras iluminan menos de lo normal?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El nivel de combustible."
+      },
+      {
+        "text": "La limpieza de las ópticas y el estado del sistema de carga (batería/alternador)."
+      },
+      {
+        "text": "La presión de aire."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Mientras más carga haya en el vehículo, Con menor carga, se requiere menos mayor es la fuerza que se debe hacer esfuerzo. En el vehículo, esto se traduce en para moverlo. Cuida la aerodinámica Los equipos portaequipajes y bultos en el techo tienen otro efecto",
+    "reviewNotes": "Importado desde competitor_audit (1012).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1017",
+    "prompt": "¿Qué indica el humo gris oscuro o negro saliendo del escape en un motor a gasolina?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Mezcla aire-combustible demasiado rica (exceso de combustible)."
+      },
+      {
+        "text": "Quema de aceite de motor."
+      },
+      {
+        "text": "Presencia de agua en los cilindros."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Recomendaciones antes de partir tu viaje Una persona conductora eficiente no se preocupa únicamente de cómo conduce, sino también de otros aspectos previos a la conducción misma, que influirán directamente en el consumo de combustible final de cada viaje. A c",
+    "reviewNotes": "Importado desde competitor_audit (1017).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1018",
+    "prompt": "¿Cuál es la función de la bomba de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Medir la cantidad de bencina."
+      },
+      {
+        "text": "Suministrar el combustible a presión desde el estanque hacia el motor."
+      },
+      {
+        "text": "Limpiar el combustible."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (1018).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 23.7,
+    "duplicateClusterId": "dup-cluster-136",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-1029",
+    "prompt": "¿Qué indica el testigo del panel con forma de surtidor de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falla en la bomba de bencina."
+      },
+      {
+        "text": "Nivel de combustible en reserva; requiere cargar pronto."
+      },
+      {
+        "text": "Combustible de mala calidad."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Diversos estudios realizados por la Agencia La información contenida en este capítulo, tiene por Chilena de Eficiencia Energética (AChEE) han objetivo esencial ayudarte a crear hábitos que te permitan mejorar tu conducción en forma continua, así como demostrado que aplicar técnic",
+    "reviewNotes": "Importado desde competitor_audit (1029).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1031",
+    "prompt": "¿Qué debe hacer si el motor de partida suena pero el motor no arranca?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Revisar el sistema de encendido o suministro de combustible."
+      },
+      {
+        "text": "Cambiar la batería de inmediato."
+      },
+      {
+        "text": "Pisar el freno más fuerte."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es posible que desconozcas la existencia de rutas más cortas para llegar a un mismo destino. Es por eso que te recomendamos revisar previamente el mapa a fin de identificar y optar por alternativas que acorten tu trayecto. De este modo evitarás recorrer kilómetros extra que te ob",
+    "reviewNotes": "Importado desde competitor_audit (1031).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1035",
+    "prompt": "¿Qué debe revisar si el motor funciona con tirones o se apaga en ralentí?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El estado de los frenos."
+      },
+      {
+        "text": "El sistema de inyección, filtro de combustible o bujías."
+      },
+      {
+        "text": "El nivel de agua del limpiaparabrisas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es posible que desconozcas la existencia de rutas más cortas para llegar a un mismo destino. Es por eso que te recomendamos revisar previamente el mapa a fin de identificar y optar por alternativas que acorten tu trayecto. De este modo evitarás recorrer kilómetros extra que te ob",
+    "reviewNotes": "Importado desde competitor_audit (1035).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1050",
+    "prompt": "¿Cuál es la función del embrague?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Frenar las ruedas traseras."
+      },
+      {
+        "text": "Interrumpir la conexión entre el motor y la caja de cambios para permitir el cambio de marcha."
+      },
+      {
+        "text": "Acelerar el motor rápidamente."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 131,
+    "sourcePageEnd": 131,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es por ello que se recomienda mantener las revoluciones en rangos relativamente bajos. Esto se logra procurando mantener marchas o cambios más altos durante su conducción (3ª, 4ª o superiores). Por ejemplo, para andar a 70 km/h, aunque puede hacerse en 4ª o en 5ª, prefiere la mar",
+    "reviewNotes": "Importado desde competitor_audit (1050).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P131-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 22.3,
+    "duplicateClusterId": "dup-cluster-75",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-1057",
+    "prompt": "¿Qué debe revisar si el motor de su vehículo bota humo azul?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El nivel de combustible."
+      },
+      {
+        "text": "El estado de los anillos de pistón o sellos de válvula, ya que está quemando aceite."
+      },
+      {
+        "text": "El filtro de aire."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Imagina lo que significa andar en bicicleta con una rueda desinflada, requiere de mucho más esfuerzo de tu parte. En el caso del vehículo, requiere de mucho más combustible. Es necesario revisar la presión de tus neumáticos regularmente, en la frecuencia descrita por el fabricant",
+    "reviewNotes": "Importado desde competitor_audit (1057).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1063",
+    "prompt": "¿Qué indica un humo negro denso en un motor Diesel bajo carga?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Motor en perfecto estado."
+      },
+      {
+        "text": "Mala combustión por exceso de combustible o falta de aire (filtro sucio)."
+      },
+      {
+        "text": "Quema de líquido de frenos."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (1063).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1076",
+    "prompt": "¿Cuál es la función del sensor MAF (Flujo de aire)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Medir la temperatura del aire."
+      },
+      {
+        "text": "Medir la cantidad de aire que entra al motor para ajustar la inyección de combustible."
+      },
+      {
+        "text": "Filtrar el aire."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (1076).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1080",
+    "prompt": "¿Cuál es el propósito del sistema de inyección electrónica?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Enfriar el motor."
+      },
+      {
+        "text": "Dosificar con precisión el combustible según las necesidades del motor y condiciones de marcha."
+      },
+      {
+        "text": "Limpiar los cilindros."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (1080).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1084",
+    "prompt": "¿Cuál es la función del multiplicador de torque (marchas bajas) en la caja de cambios?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Hacer que el auto sea más rápido."
+      },
+      {
+        "text": "Brindar mayor fuerza al vehículo para iniciar la marcha o subir pendientes."
+      },
+      {
+        "text": "Ahorrar combustible a alta velocidad."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Recuerda no manipular tu teléfono mientras estés conduciendo, escucha las indicaciones del GPS a través del audio de cada aplicación. Prepara tu vehículo para el viaje Para mover una carga más grande se necesita más fuerza que para mover una pequeña. De la misma forma, mientras m",
+    "reviewNotes": "Importado desde competitor_audit (1084).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S6"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 3,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 27.6,
+    "duplicateClusterId": "dup-cluster-143",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-1094",
+    "prompt": "¿Cuál es la función de los colectores de admisión?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sacar el aire del motor."
+      },
+      {
+        "text": "Distribuir la mezcla de aire o aire solo hacia los cilindros de forma equitativa."
+      },
+      {
+        "text": "Limpiar el combustible."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Especialmente a altas velocidades, se produce una resistencia aerodinámica, que tiene que ver con la oposición del aire al movimiento del vehículo. Si tienes un portaequipajes o bulto en el techo, 4 el consumo se puede incrementar por sobre un 20% en carretera. Controla la presió",
+    "reviewNotes": "Importado desde competitor_audit (1094).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1099",
+    "prompt": "¿Qué indica el testigo con forma de gota amarilla?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falta de agua en el limpiaparabrisas."
+      },
+      {
+        "text": "Presencia de agua en el filtro de combustible (común en Diesel)."
+      },
+      {
+        "text": "Fuga de aceite."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (1099).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1103",
+    "prompt": "¿Cuál es el propósito del sistema de purga del filtro de petróleo (Diesel)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Eliminar el exceso de aire en el sistema."
+      },
+      {
+        "text": "Extraer el agua acumulada que se separa del combustible."
+      },
+      {
+        "text": "Limpiar las bujías incandescentes."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (1103).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1105",
+    "prompt": "¿Qué indica si sale humo negro denso por el escape de un vehículo Diesel?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el motor está quemando aceite."
+      },
+      {
+        "text": "Mala combustión por falta de aire o exceso de combustible inyectado."
+      },
+      {
+        "text": "Que el motor ya alcanzó su temperatura óptima."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (1105).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1107",
+    "prompt": "¿Qué debe revisar si el indicador de temperatura no sube nada después de 20 minutos de marcha?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El nivel de combustible."
+      },
+      {
+        "text": "El sensor de temperatura o el termostato (que podría estar pegado abierto)."
+      },
+      {
+        "text": "La presión de los neumáticos."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "anterior podría generar una combustión incompleta, esto es, aquella en que no se aprovecha el total de energía disponible. Un filtro de aire sucio puede llegar a perjudicar en un 1,5% el rendimiento, pues al no haber suficiente aire disponible, o bien al estar contaminado, el com",
+    "reviewNotes": "Importado desde competitor_audit (1107).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "20",
+        "value": "20",
+        "unit": "",
+        "factRefIds": []
+      }
+    ]
+  },
+  {
+    "externalId": "imported-1-batch-1118",
+    "prompt": "¿Qué indica el testigo con forma de motor de color amarillo fijo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falta de combustible."
+      },
+      {
+        "text": "Falla en el sistema de gestión del motor (Check Engine)."
+      },
+      {
+        "text": "Que el motor está funcionando perfectamente."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Por lo mismo, te recomendamos aplicar las siguientes técnicas paulatinamente y a medida que se vayan haciendo naturales en ti, se constituirán en un hábito. Enciende el motor sin pisar el acelerador Cuando enciendas el motor, prefiere no pisar el acelerador, pues tal acción sólo ",
+    "reviewNotes": "Importado desde competitor_audit (1118).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1121",
+    "prompt": "¿Cuál es la función de la bomba de inyección en motores Diesel antiguos?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Enfriar el petróleo."
+      },
+      {
+        "text": "Dosificar y elevar la presión del combustible hacia los inyectores."
+      },
+      {
+        "text": "Limpiar el aire del motor."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Imagina lo que significa andar en bicicleta con una rueda desinflada, requiere de mucho más esfuerzo de tu parte. En el caso del vehículo, requiere de mucho más combustible. Es necesario revisar la presión de tus neumáticos regularmente, en la frecuencia descrita por el fabricant",
+    "reviewNotes": "Importado desde competitor_audit (1121).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1125",
+    "prompt": "¿Qué indica el testigo amarillo con forma de un surtidor de bencina?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falla en la inyección."
+      },
+      {
+        "text": "Bajo nivel de combustible (reserva)."
+      },
+      {
+        "text": "Carga de batería baja."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (1125).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1132",
+    "prompt": "¿Cuál es la función de la válvula EGR?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Aumentar la potencia del turbo."
+      },
+      {
+        "text": "Recircular parte de los gases de escape hacia la admisión para reducir emisiones de NOx."
+      },
+      {
+        "text": "Limpiar el filtro de aceite."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 134,
+    "sourcePageEnd": 134,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es necesario un esfuerzo conjunto de todas y todos para poder reducir el consumo de recursos energéticos a nivel nacional, así como los niveles de contaminación atmosférica. Puedes ser una parte clave en este esfuerzo por tener un Chile más limpio y eficiente. Si deseas aprender ",
+    "reviewNotes": "Importado desde competitor_audit (1132).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P134-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1135",
+    "prompt": "¿Qué indica un humo azulado al arrancar el motor en frío que luego desaparece?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Desgaste en los cilindros."
+      },
+      {
+        "text": "Retenes de guía de válvulas en mal estado."
+      },
+      {
+        "text": "Filtro de combustible sucio."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (1135).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1140",
+    "prompt": "¿Cuál es la función del regulador de presión de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Limpiar la bencina."
+      },
+      {
+        "text": "Mantener la presión constante en el riel de inyectores."
+      },
+      {
+        "text": "Medir cuánta bencina queda."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (1140).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1149",
+    "prompt": "¿Qué debe revisar si siente un fuerte olor a bencina fuera del auto?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El nivel de aceite."
+      },
+      {
+        "text": "Posibles fugas en mangueras o el estanque de combustible."
+      },
+      {
+        "text": "El estado de los frenos."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es posible que desconozcas la existencia de rutas más cortas para llegar a un mismo destino. Es por eso que te recomendamos revisar previamente el mapa a fin de identificar y optar por alternativas que acorten tu trayecto. De este modo evitarás recorrer kilómetros extra que te ob",
+    "reviewNotes": "Importado desde competitor_audit (1149).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1151",
+    "prompt": "¿Qué indica si al dar contacto no enciende ninguna luz en el tablero?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falla en el motor de partida."
+      },
+      {
+        "text": "Batería totalmente descargada o bornes sueltos/sulfatados."
+      },
+      {
+        "text": "Falta de combustible."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Por lo mismo, te recomendamos aplicar las siguientes técnicas paulatinamente y a medida que se vayan haciendo naturales en ti, se constituirán en un hábito. Enciende el motor sin pisar el acelerador Cuando enciendas el motor, prefiere no pisar el acelerador, pues tal acción sólo ",
+    "reviewNotes": "Importado desde competitor_audit (1151).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 0.38620245811622417,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1174",
+    "prompt": "¿Cuál es la función del sincronizador?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Medir las RPM."
+      },
+      {
+        "text": "Facilitar el engranaje de las marchas sin ruidos."
+      },
+      {
+        "text": "Frenar el motor."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 131,
+    "sourcePageEnd": 131,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Este consejo sólo es aplicable si el vehículo que conduces posee una caja de cambios manual. En el caso de un caja de cambios automática, si se evitan las aceleraciones a fondo, el vehículo en general selecciona la marcha más alta posible. Las marchas más altas tendrán Por el con",
+    "reviewNotes": "Importado desde competitor_audit (1174).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P131-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 0.5677914644677765,
+    "extractedEntities": [],
+    "qualityScore": 22.8,
+    "duplicateClusterId": "dup-cluster-152",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-1203",
+    "prompt": "¿Qué debe hacer si al circular nota que sale un humo negro denso solo al acelerar fuerte?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Cambiar el aceite."
+      },
+      {
+        "text": "Revisar el filtro de aire o el sistema de inyección, ya que hay un exceso de combustible."
+      },
+      {
+        "text": "Nada, es normal en todos los autos."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es posible que desconozcas la existencia de rutas más cortas para llegar a un mismo destino. Es por eso que te recomendamos revisar previamente el mapa a fin de identificar y optar por alternativas que acorten tu trayecto. De este modo evitarás recorrer kilómetros extra que te ob",
+    "reviewNotes": "Importado desde competitor_audit (1203).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1206",
+    "prompt": "¿Cuál es la función del múltiple de admisión?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Recolectar los gases de escape."
+      },
+      {
+        "text": "Canalizar la mezcla de aire y combustible (o aire solo) hacia los cilindros."
+      },
+      {
+        "text": "Filtrar el aceite."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (1206).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 23.5,
+    "duplicateClusterId": "dup-cluster-121",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-1208",
+    "prompt": "¿Cuál es la función de las válvulas de escape?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Permitir la entrada de combustible."
+      },
+      {
+        "text": "Abrirse para permitir la salida de los gases quemados hacia el múltiple de escape."
+      },
+      {
+        "text": "Lubricar el cilindro."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "conducción eficiente Beneficios de un buen mantenimiento mantenimiento Tal como se señaló en la sección Funcionamiento del autode tu vehículo móvil del capítulo Los principios de la conducción, un buen mantenimiento te permitirá conducir tu vehículo de forma Permite conducir de s",
+    "reviewNotes": "Importado desde competitor_audit (1208).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 0.5840676032232291,
+    "extractedEntities": [],
+    "qualityScore": 23.6,
+    "duplicateClusterId": "dup-cluster-120",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-1217",
+    "prompt": "¿Qué mantenimiento requiere el filtro de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Limpiarlo con agua."
+      },
+      {
+        "text": "Sustituirlo periódicamente para evitar obstrucciones en los inyectores."
+      },
+      {
+        "text": "No se cambia nunca."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Diversos estudios realizados por la Agencia La información contenida en este capítulo, tiene por Chilena de Eficiencia Energética (AChEE) han objetivo esencial ayudarte a crear hábitos que te permitan mejorar tu conducción en forma continua, así como demostrado que aplicar técnic",
+    "reviewNotes": "Importado desde competitor_audit (1217).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1246",
+    "prompt": "¿Qué indica el humo negro en un Diesel?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Quema de aceite."
+      },
+      {
+        "text": "Exceso de combustible o falta de aire."
+      },
+      {
+        "text": "Todo está bien."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (1246).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1268",
+    "prompt": "¿Qué indica el testigo de reserva de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Motor ok."
+      },
+      {
+        "text": "Poca bencina."
+      },
+      {
+        "text": "Aceite sucio."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Un filtro de combustible en rendimiento de mal estado puede incrementar el consumo en un 0,5%, debido combustible. a que la bomba debe hacer más fuerza para llevarlo hasta el motor. Eventualmente, no se contará con la cantidad necesaria Mayor disponibilidad de combustible ante un",
+    "reviewNotes": "Importado desde competitor_audit (1268).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1304",
+    "prompt": "¿Qué indica un humo de color azul saliendo por el tubo de escape?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Mala combustión de la gasolina."
+      },
+      {
+        "text": "El motor está quemando aceite."
+      },
+      {
+        "text": "Presencia de agua en el combustible."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Por lo mismo, te recomendamos aplicar las siguientes técnicas paulatinamente y a medida que se vayan haciendo naturales en ti, se constituirán en un hábito. Enciende el motor sin pisar el acelerador Cuando enciendas el motor, prefiere no pisar el acelerador, pues tal acción sólo ",
+    "reviewNotes": "Importado desde competitor_audit (1304).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 0.3201828700339909,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1313",
+    "prompt": "¿Qué indica un humo de color negro saliendo por el escape?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Quema de aceite."
+      },
+      {
+        "text": "Mala combustión, generalmente por exceso de combustible o filtro de aire sucio."
+      },
+      {
+        "text": "Fuga de líquido refrigerante."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "La presión a utilizar también se puede encontrar en el marco de una de las puertas, generalmente en la de la persona que conduce. Dicha revisión, también debe ser efectuada antes de iniciar un viaje largo como en las vacaciones u otras salidas fuera de la ciudad. Se estima que un",
+    "reviewNotes": "Importado desde competitor_audit (1313).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1317",
+    "prompt": "¿Qué indica el testigo con forma de motor (amarillo) encendido en el panel?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falla en el sistema de gestión del motor (Check Engine)."
+      },
+      {
+        "text": "Que el motor está a la temperatura ideal."
+      },
+      {
+        "text": "Que se ha quedado sin combustible."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (1317).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1324",
+    "prompt": "¿Cuál es el propósito del sistema de lubricación del motor?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Enfriar el radiador."
+      },
+      {
+        "text": "Reducir la fricción entre las piezas móviles y protegerlas del desgaste."
+      },
+      {
+        "text": "Aumentar el consumo de combustible."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "¿Para qué hacer dos viajes, si en uno puedes hacer todos los trámites? Si tienes un GPS o tu teléfono celular cuenta con uno, utilízalo para planificar la ruta antes del viaje. Existen sistemas GPS y aplicaciones para teléfonos móviles que, además, entregan indicaciones mientras ",
+    "reviewNotes": "Importado desde competitor_audit (1324).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S5"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1330",
+    "prompt": "¿Cuál es el propósito del sistema de inyección de combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Enfriar los pistones."
+      },
+      {
+        "text": "Introducir la mezcla de aire y combustible de forma precisa en el motor."
+      },
+      {
+        "text": "Limpiar el tanque de bencina."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Diversos estudios realizados por la Agencia La información contenida en este capítulo, tiene por Chilena de Eficiencia Energética (AChEE) han objetivo esencial ayudarte a crear hábitos que te permitan mejorar tu conducción en forma continua, así como demostrado que aplicar técnic",
+    "reviewNotes": "Importado desde competitor_audit (1330).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1335",
+    "prompt": "¿Qué debe hacer si nota que el vehículo consume excesivo combustible?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Revisar el filtro de aire, las bujías y la presión de los neumáticos."
+      },
+      {
+        "text": "Conducir siempre en marchas bajas."
+      },
+      {
+        "text": "Usar solo gasolina de bajo octanaje."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 127,
+    "sourcePageEnd": 127,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Diversos estudios realizados por la Agencia La información contenida en este capítulo, tiene por Chilena de Eficiencia Energética (AChEE) han objetivo esencial ayudarte a crear hábitos que te permitan mejorar tu conducción en forma continua, así como demostrado que aplicar técnic",
+    "reviewNotes": "Importado desde competitor_audit (1335).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P127-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 1,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 5,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1345",
+    "prompt": "¿Qué indica el testigo con forma de batería roja con el motor en marcha?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Batería completamente cargada."
+      },
+      {
+        "text": "Falla en el alternador o sistema de carga eléctrica."
+      },
+      {
+        "text": "Luces de posición encendidas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Recuerda no manipular tu teléfono mientras estés conduciendo, escucha las indicaciones del GPS a través del audio de cada aplicación. Prepara tu vehículo para el viaje Para mover una carga más grande se necesita más fuerza que para mover una pequeña. De la misma forma, mientras m",
+    "reviewNotes": "Importado desde competitor_audit (1345).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S6"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1349",
+    "prompt": "¿Qué indica un ruido de golpeteo metálico fuerte dentro del motor?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falla grave de lubricación o desgaste excesivo de piezas internas (metales)."
+      },
+      {
+        "text": "Que el combustible es de alto octanaje."
+      },
+      {
+        "text": "Que el motor está frío."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 133,
+    "sourcePageEnd": 133,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Sólo se recomienda adelantar cuando se tenga una distancia suficiente para no forzar el motor y no se ponga en riesgo la seguridad propia o de terceros. Ahora bien, como se mencionó en el capítulo La persona en el tránsito (página 37), estar bajo mucho estrés constituye un import",
+    "reviewNotes": "Importado desde competitor_audit (1349).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P133-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1366",
+    "prompt": "¿Cuál es la función de la bomba de inyección (Diesel)?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Enfriar el combustible."
+      },
+      {
+        "text": "Dosificar y enviar el combustible a alta presión hacia los inyectores."
+      },
+      {
+        "text": "Limpiar el tanque de petróleo."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Especialmente a altas velocidades, se produce una resistencia aerodinámica, que tiene que ver con la oposición del aire al movimiento del vehículo. Si tienes un portaequipajes o bulto en el techo, 4 el consumo se puede incrementar por sobre un 20% en carretera. Controla la presió",
+    "reviewNotes": "Importado desde competitor_audit (1366).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1377",
+    "prompt": "¿Qué indica el testigo con forma de motor (Check Engine) parpadeando?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Falla grave en la combustión que puede dañar irreparablemente el catalizador."
+      },
+      {
+        "text": "Aviso de ahorro de combustible activado."
+      },
+      {
+        "text": "Que el motor está prendido."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 130,
+    "sourcePageEnd": 130,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "anterior podría generar una combustión incompleta, esto es, aquella en que no se aprovecha el total de energía disponible. Un filtro de aire sucio puede llegar a perjudicar en un 1,5% el rendimiento, pues al no haber suficiente aire disponible, o bien al estar contaminado, el com",
+    "reviewNotes": "Importado desde competitor_audit (1377).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P130-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1379",
+    "prompt": "¿Qué debe revisar si al conducir siente que el motor no tiene fuerza?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El filtro de combustible y el sistema de encendido (bujías/cables)."
+      },
+      {
+        "text": "El nivel de líquido limpiaparabrisas."
+      },
+      {
+        "text": "La carga de la batería."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es posible que desconozcas la existencia de rutas más cortas para llegar a un mismo destino. Es por eso que te recomendamos revisar previamente el mapa a fin de identificar y optar por alternativas que acorten tu trayecto. De este modo evitarás recorrer kilómetros extra que te ob",
+    "reviewNotes": "Importado desde competitor_audit (1379).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1380",
+    "prompt": "¿Cuál es el propósito del regulador de presión de bencina?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Limpiar la bencina."
+      },
+      {
+        "text": "Mantener la presión constante en el riel de inyectores."
+      },
+      {
+        "text": "Medir el consumo en el tablero."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Si buscas las rutas menos congestionadas y evitas, en la medida de lo posible, las horas de mayor tráfico, podrás disminuir tu consumo de combustible así como el tiempo que demoras el viaje. Esto implica estar menos tiempo con el motor encendido consumiendo combustible. Además, u",
+    "reviewNotes": "Importado desde competitor_audit (1380).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 2,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1387",
+    "prompt": "¿Qué debe revisar si al soltar el acelerador escucha explosiones en el escape?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Posibles fugas en el múltiple de escape o falla en la mezcla de aire-combustible."
+      },
+      {
+        "text": "El nivel de aceite de motor."
+      },
+      {
+        "text": "La presión de aire de las ruedas traseras."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 128,
+    "sourcePageEnd": 128,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "Es posible que desconozcas la existencia de rutas más cortas para llegar a un mismo destino. Es por eso que te recomendamos revisar previamente el mapa a fin de identificar y optar por alternativas que acorten tu trayecto. De este modo evitarás recorrer kilómetros extra que te ob",
+    "reviewNotes": "Importado desde competitor_audit (1387).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P128-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1404",
+    "prompt": "¿Cuál es la función de los buzos o taqués hidráulicos?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Abrir el paso de combustible."
+      },
+      {
+        "text": "Ajustar automáticamente la holgura entre las válvulas y el árbol de levas mediante presión de aceite."
+      },
+      {
+        "text": "Frenar el movimiento del pistón."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 129,
+    "sourcePageEnd": 129,
+    "sourceReference": "Conducción eficiente",
+    "groundingExcerpt": "La presión a utilizar también se puede encontrar en el marco de una de las puertas, generalmente en la de la persona que conduce. Dicha revisión, también debe ser efectuada antes de iniciar un viaje largo como en las vacaciones u otras salidas fuera de la ciudad. Se estima que un",
+    "reviewNotes": "Importado desde competitor_audit (1404).",
+    "tags": [],
+    "chapterId": "chapter-8",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH8-P129-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 0,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 3,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  }
+]

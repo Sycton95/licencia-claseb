@@ -1,0 +1,317 @@
+{
+  "generatedAt": "2026-04-22T00:19:19.786Z",
+  "runs": [
+    {
+      "runId": "imported-1-batch",
+      "sourceFile": "data/imports/imported-1-batch.json",
+      "reviewedAt": "2026-04-22T00:19:19.492Z",
+      "acceptedCount": 999,
+      "acceptedWithWarningCount": 999,
+      "rejectedCount": 465,
+      "warningCount": 5229,
+      "errorCount": 3301,
+      "autoGroundedAcceptedCount": 999,
+      "duplicateClusterCount": 154,
+      "ambiguousCandidateCount": 182,
+      "chapterSummaries": [
+        {
+          "chapterId": "chapter-1",
+          "acceptedCount": 281,
+          "rejectedCount": 69
+        },
+        {
+          "chapterId": "chapter-2",
+          "acceptedCount": 336,
+          "rejectedCount": 113
+        },
+        {
+          "chapterId": "chapter-3",
+          "acceptedCount": 5,
+          "rejectedCount": 2
+        },
+        {
+          "chapterId": "chapter-4",
+          "acceptedCount": 42,
+          "rejectedCount": 14
+        },
+        {
+          "chapterId": "chapter-5",
+          "acceptedCount": 43,
+          "rejectedCount": 6
+        },
+        {
+          "chapterId": "chapter-6",
+          "acceptedCount": 187,
+          "rejectedCount": 58
+        },
+        {
+          "chapterId": "chapter-7",
+          "acceptedCount": 13,
+          "rejectedCount": 0
+        },
+        {
+          "chapterId": "chapter-8",
+          "acceptedCount": 86,
+          "rejectedCount": 16
+        },
+        {
+          "chapterId": "chapter-9",
+          "acceptedCount": 6,
+          "rejectedCount": 5
+        }
+      ],
+      "files": {
+        "reviewLog": "data/import-reviews/imported-1-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/imported-1-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/imported-1-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/imported-1-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/imported-1-batch/chapters",
+        "runDetails": "data/import-reviews/imported-1-batch/run-details.json"
+      }
+    },
+    {
+      "runId": "imported-1-batch--chapter-2",
+      "sourceFile": "data/imports/imported-1-batch.json",
+      "reviewedAt": "2026-04-22T00:17:36.452Z",
+      "acceptedCount": 334,
+      "acceptedWithWarningCount": 334,
+      "rejectedCount": 115,
+      "warningCount": 1515,
+      "errorCount": 730,
+      "autoGroundedAcceptedCount": 334,
+      "duplicateClusterCount": 46,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [
+        {
+          "chapterId": "chapter-1",
+          "acceptedCount": 0,
+          "rejectedCount": 0
+        },
+        {
+          "chapterId": "chapter-2",
+          "acceptedCount": 334,
+          "rejectedCount": 115
+        },
+        {
+          "chapterId": "chapter-3",
+          "acceptedCount": 0,
+          "rejectedCount": 0
+        },
+        {
+          "chapterId": "chapter-4",
+          "acceptedCount": 0,
+          "rejectedCount": 0
+        },
+        {
+          "chapterId": "chapter-5",
+          "acceptedCount": 0,
+          "rejectedCount": 0
+        },
+        {
+          "chapterId": "chapter-6",
+          "acceptedCount": 0,
+          "rejectedCount": 0
+        },
+        {
+          "chapterId": "chapter-7",
+          "acceptedCount": 0,
+          "rejectedCount": 0
+        },
+        {
+          "chapterId": "chapter-8",
+          "acceptedCount": 0,
+          "rejectedCount": 0
+        },
+        {
+          "chapterId": "chapter-9",
+          "acceptedCount": 0,
+          "rejectedCount": 0
+        }
+      ],
+      "files": {
+        "reviewLog": "data/import-reviews/imported-1-batch--chapter-2/review-log.json",
+        "reviewSummary": "data/import-reviews/imported-1-batch--chapter-2/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/imported-1-batch--chapter-2/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/imported-1-batch--chapter-2/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/imported-1-batch--chapter-2/chapters",
+        "runDetails": "data/import-reviews/imported-1-batch--chapter-2/run-details.json"
+      }
+    },
+    {
+      "runId": "chapter-1-batch",
+      "sourceFile": "data/imports/chapter-1-batch.json",
+      "reviewedAt": "2026-04-12T01:46:31.635Z",
+      "acceptedCount": 33,
+      "acceptedWithWarningCount": 0,
+      "rejectedCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "autoGroundedAcceptedCount": 0,
+      "duplicateClusterCount": 0,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [],
+      "files": {
+        "reviewLog": "data/import-reviews/chapter-1-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/chapter-1-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/chapter-1-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/chapter-1-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/chapter-1-batch/chapters",
+        "runDetails": "data/import-reviews/chapter-1-batch/run-details.json"
+      }
+    },
+    {
+      "runId": "chapter-2-batch",
+      "sourceFile": "data/imports/chapter-2-batch.json",
+      "reviewedAt": "2026-04-12T01:45:59.525Z",
+      "acceptedCount": 40,
+      "acceptedWithWarningCount": 0,
+      "rejectedCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "autoGroundedAcceptedCount": 0,
+      "duplicateClusterCount": 0,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [],
+      "files": {
+        "reviewLog": "data/import-reviews/chapter-2-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/chapter-2-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/chapter-2-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/chapter-2-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/chapter-2-batch/chapters",
+        "runDetails": "data/import-reviews/chapter-2-batch/run-details.json"
+      }
+    },
+    {
+      "runId": "chapter-9-batch",
+      "sourceFile": "data/imports/chapter-9-batch.json",
+      "reviewedAt": "2026-04-12T01:09:10.038Z",
+      "acceptedCount": 40,
+      "acceptedWithWarningCount": 0,
+      "rejectedCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "autoGroundedAcceptedCount": 0,
+      "duplicateClusterCount": 0,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [],
+      "files": {
+        "reviewLog": "data/import-reviews/chapter-9-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/chapter-9-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/chapter-9-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/chapter-9-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/chapter-9-batch/chapters",
+        "runDetails": "data/import-reviews/chapter-9-batch/run-details.json"
+      }
+    },
+    {
+      "runId": "chapter-7-batch",
+      "sourceFile": "data/imports/chapter-7-batch.json",
+      "reviewedAt": "2026-04-12T01:09:10.026Z",
+      "acceptedCount": 40,
+      "acceptedWithWarningCount": 0,
+      "rejectedCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "autoGroundedAcceptedCount": 0,
+      "duplicateClusterCount": 0,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [],
+      "files": {
+        "reviewLog": "data/import-reviews/chapter-7-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/chapter-7-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/chapter-7-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/chapter-7-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/chapter-7-batch/chapters",
+        "runDetails": "data/import-reviews/chapter-7-batch/run-details.json"
+      }
+    },
+    {
+      "runId": "chapter-8-batch",
+      "sourceFile": "data/imports/chapter-8-batch.json",
+      "reviewedAt": "2026-04-12T01:09:10.017Z",
+      "acceptedCount": 40,
+      "acceptedWithWarningCount": 0,
+      "rejectedCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "autoGroundedAcceptedCount": 0,
+      "duplicateClusterCount": 0,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [],
+      "files": {
+        "reviewLog": "data/import-reviews/chapter-8-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/chapter-8-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/chapter-8-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/chapter-8-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/chapter-8-batch/chapters",
+        "runDetails": "data/import-reviews/chapter-8-batch/run-details.json"
+      }
+    },
+    {
+      "runId": "chapter-5-batch",
+      "sourceFile": "data/imports/chapter-5-batch.json",
+      "reviewedAt": "2026-04-12T01:08:56.566Z",
+      "acceptedCount": 39,
+      "acceptedWithWarningCount": 0,
+      "rejectedCount": 1,
+      "warningCount": 0,
+      "errorCount": 2,
+      "autoGroundedAcceptedCount": 0,
+      "duplicateClusterCount": 0,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [],
+      "files": {
+        "reviewLog": "data/import-reviews/chapter-5-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/chapter-5-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/chapter-5-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/chapter-5-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/chapter-5-batch/chapters",
+        "runDetails": "data/import-reviews/chapter-5-batch/run-details.json"
+      }
+    },
+    {
+      "runId": "chapter-6-batch",
+      "sourceFile": "data/imports/chapter-6-batch.json",
+      "reviewedAt": "2026-04-12T01:08:56.560Z",
+      "acceptedCount": 40,
+      "acceptedWithWarningCount": 0,
+      "rejectedCount": 0,
+      "warningCount": 0,
+      "errorCount": 0,
+      "autoGroundedAcceptedCount": 0,
+      "duplicateClusterCount": 0,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [],
+      "files": {
+        "reviewLog": "data/import-reviews/chapter-6-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/chapter-6-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/chapter-6-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/chapter-6-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/chapter-6-batch/chapters",
+        "runDetails": "data/import-reviews/chapter-6-batch/run-details.json"
+      }
+    },
+    {
+      "runId": "chapter-4-batch",
+      "sourceFile": "data/imports/chapter-4-batch.json",
+      "reviewedAt": "2026-04-12T01:08:56.546Z",
+      "acceptedCount": 49,
+      "acceptedWithWarningCount": 0,
+      "rejectedCount": 1,
+      "warningCount": 0,
+      "errorCount": 1,
+      "autoGroundedAcceptedCount": 0,
+      "duplicateClusterCount": 0,
+      "ambiguousCandidateCount": 0,
+      "chapterSummaries": [],
+      "files": {
+        "reviewLog": "data/import-reviews/chapter-4-batch/review-log.json",
+        "reviewSummary": "data/import-reviews/chapter-4-batch/review-summary.md",
+        "acceptedCandidates": "data/import-reviews/chapter-4-batch/accepted-candidates.json",
+        "rejectedCandidates": "data/import-reviews/chapter-4-batch/rejected-candidates.json",
+        "chaptersRoot": "data/import-reviews/chapter-4-batch/chapters",
+        "runDetails": "data/import-reviews/chapter-4-batch/run-details.json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+[
+  {
+    "externalId": "imported-1-batch-186",
+    "prompt": "Según la educación vial, ¿Cuáles son los valores imprescindibles para la conducción?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El respeto, la solidaridad, la comprensión, el perdón y la tolerancia."
+      },
+      {
+        "text": "La irresponsabilidad y la intolerancia."
+      },
+      {
+        "text": "Solidaridad e irresponsabilidad."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "convivencia vial Convivencia Vial Una buena Convivencia Vial es aquella en donde las personas conductoras de vehículos, usuarias de las vías, peatones y pasajeros, se respeten entre sí, resultando una interacción armoniosa y segura. Para lograr dicho cometido, es necesario que to",
+    "reviewNotes": "Importado desde competitor_audit (186).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 2,
+      "chapter-3": 4,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 27.4,
+    "duplicateClusterId": "dup-cluster-29",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-193",
+    "prompt": "¿Por qué la solidaridad es uno de los principios fundamentales en la conducción?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque usted debe ser solidario solamente en las vías rápidas."
+      },
+      {
+        "text": "La solidaridad no es uno de los principios fundamentales en la conducción, ya que, los conductores no pueden cometer errores."
+      },
+      {
+        "text": "Porque un conductor solidario tiene consideración con los usuarios vulnerables, entre otras prácticas en pos de una buena convivencia vial."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "convivencia vial Convivencia Vial Una buena Convivencia Vial es aquella en donde las personas conductoras de vehículos, usuarias de las vías, peatones y pasajeros, se respeten entre sí, resultando una interacción armoniosa y segura. Para lograr dicho cometido, es necesario que to",
+    "reviewNotes": "Importado desde competitor_audit (193).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 2,
+      "chapter-3": 5,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "qualityScore": 27,
+    "duplicateClusterId": "dup-cluster-36",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-280",
+    "prompt": "¿Qué precauciones debe tomar un conductor cuando asiste a un evento social?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Beber bastante café después de ingerir bebidas alcohólicas."
+      },
+      {
+        "text": "Evitar circular por calles de mucho tráfico después de beber alcohol."
+      },
+      {
+        "text": "Evitar consumir alcohol si va a conducir."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "Debes saber que mientras conduces un automóvil corres riesgos y que un comportamiento incorrecto en estas circunstancias puede poner en peligro tu vida y la de las demás personas. La imprudencia y la falta de práctica de quienes conducen son el mayor riesgo a la hora de conducir.",
+    "reviewNotes": "Importado desde competitor_audit (280).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [
+      "fact-chapter-4-50-33",
+      "fact-chapter-4-50-34",
+      "fact-chapter-4-50-35",
+      "fact-chapter-4-50-36",
+      "fact-chapter-4-50-37",
+      "fact-chapter-4-50-38",
+      "fact-chapter-4-50-39",
+      "fact-chapter-4-53-40",
+      "fact-chapter-4-53-41",
+      "fact-chapter-4-60-44",
+      "fact-chapter-4-60-45",
+      "fact-chapter-9-142-85",
+      "fact-chapter-9-142-86"
+    ],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 2,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1061",
+    "prompt": "¿Qué debe hacer si se enciende el testigo del sistema de frenos (círculo rojo) mientras conduce?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Seguir con precaución."
+      },
+      {
+        "text": "Detenerse inmediatamente y revisar el nivel de líquido o si el freno de mano está puesto."
+      },
+      {
+        "text": "Acelerar para limpiar los sensores."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "Debes saber que mientras conduces un automóvil corres riesgos y que un comportamiento incorrecto en estas circunstancias puede poner en peligro tu vida y la de las demás personas. La imprudencia y la falta de práctica de quienes conducen son el mayor riesgo a la hora de conducir.",
+    "reviewNotes": "Importado desde competitor_audit (1061).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 2,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  },
+  {
+    "externalId": "imported-1-batch-1367",
+    "prompt": "¿Qué debe hacer si al presionar el pedal de freno este se va hasta el fondo?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Seguir conduciendo con precaución."
+      },
+      {
+        "text": "Detenerse inmediatamente y revisar fallas graves en el sistema hidráulico."
+      },
+      {
+        "text": "Acelerar para que el servofreno cargue."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 35,
+    "sourcePageEnd": 35,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "La premando la ocasión en un momento de molestia vención será siempre su principal defensa. Mantén una distancia suficiente y prudente Para conducir con seguridad debes estar con los demás vehículos y las y los usuarios. Utiliza siempre el No des por hecho que las demás personas ",
+    "reviewNotes": "Importado desde competitor_audit (1367).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P35-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 2,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": []
+  }
+]

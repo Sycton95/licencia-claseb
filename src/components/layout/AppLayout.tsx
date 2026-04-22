@@ -4,14 +4,17 @@ import { MobileNav } from './MobileNav';
 
 const links = [
   { to: '/', label: 'Inicio' },
-  { to: '/practice', label: 'Practica' },
+  { to: '/practice', label: 'Práctica' },
   { to: '/exam', label: 'Simulador' },
 ];
 
 export function AppLayout() {
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className="flex h-[100dvh] w-full flex-col overflow-hidden font-sans" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
+    <div
+      className="public-theme flex h-[100dvh] w-full flex-col overflow-hidden font-sans"
+      style={{ backgroundColor: 'var(--color-bg-primary)' }}
+    >
       <a
         href="#main-content"
         className="absolute left-4 top-3 z-[60] -translate-y-16 rounded-xl bg-neutral-900 px-4 py-2 text-sm font-bold text-white transition-transform focus-visible:translate-y-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-300"
@@ -80,9 +83,13 @@ export function AppLayout() {
         </div>
       </header>
 
-      <main id="main-content" className="relative flex min-w-0 flex-1 flex-col overflow-y-auto pb-16 md:overflow-hidden md:pb-0 landscape:overflow-y-auto landscape:pb-0 landscape:md:overflow-hidden transition-colors duration-200" style={{ backgroundColor: 'var(--color-bg-primary)' }}>
-        <Outlet />
-      </main>
+      <main 
+  id="main-content" 
+  className="relative flex min-w-0 flex-1 flex-col overflow-y-auto pb-16 md:overflow-hidden md:pb-0 transition-colors duration-200" 
+  style={{ backgroundColor: 'var(--color-bg-primary)' }}
+>
+  <Outlet />
+</main>
 
       <MobileNav />
     </div>
