@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "suite": "chapter4_gold_cases",
+  "cases": [
+    {
+      "id": "chapter4-low-beam-visibility-distance",
+      "label": "Visibilidad con luces bajas",
+      "query": {
+        "prompt": "¿Cuál es la distancia de visibilidad al usar luces bajas durante un cruce con otro vehículo y cuándo no existe dicho cruce?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P40-S7",
+        "supportUnitType": "base",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 40, "end": 40 }
+      },
+      "expectedAnswerText": "En un cruce de vehículos la visibilidad no supera los 15 o 20 metros; cuando no hay tal cruce es posible ver las demarcaciones de la calzada hasta unos 70 metros.",
+      "requiredPhrases": [
+        "luces bajas",
+        "15 o 20 metros",
+        "demarcaciones de la calzada",
+        "70 metros"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "15 metros", "normalized": 15, "unit": "metros" },
+        { "raw": "20 metros", "normalized": 20, "unit": "metros" },
+        { "raw": "70 metros", "normalized": 70, "unit": "metros" }
+      ],
+      "reviewerNotes": "La referencia exacta de visibilidad nocturna con luces bajas aparece concentrada en el cierre de la página 40."
+    },
+    {
+      "id": "chapter4-visual-field-130-kmh",
+      "label": "Campo visual a 130 km/h",
+      "query": {
+        "prompt": "¿A cuántos grados se reduce el campo visual de un conductor cuando aumenta su velocidad a 130 km/h?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P44-S1__WIN__2026-CH4-P44-S2",
+        "supportUnitType": "window",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 44, "end": 44 }
+      },
+      "expectedAnswerText": "El campo visual se reduce a 30°.",
+      "requiredPhrases": [
+        "30°",
+        "130 km/h",
+        "campo visual"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "130 km/h", "normalized": 130, "unit": "km/h" }
+      ],
+      "reviewerNotes": "El gráfico de visión de túnel en la página 44 vincula explícitamente 130 km/h con un campo visual de 30°."
+    },
+    {
+      "id": "chapter4-alcohol-thresholds",
+      "label": "Rangos legales de alcohol",
+      "query": {
+        "prompt": "¿Qué niveles de alcohol en la sangre definen legalmente la conducción \"bajo la influencia del alcohol\" y en \"estado de ebriedad\"?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P50-S1__WIN__2026-CH4-P50-S2",
+        "supportUnitType": "window",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 50, "end": 50 }
+      },
+      "expectedAnswerText": "Bajo la influencia del alcohol se define como 0,31 a 0,79 gramos por mil de alcohol en la sangre, mientras que el estado de ebriedad es de 0,8 o más gramos por mil.",
+      "requiredPhrases": [
+        "0,31 - 0,79",
+        "bajo la influencia del alcohol",
+        "0,8 o más gramos",
+        "estado de ebriedad"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "0,31", "normalized": 0.31, "unit": "g‰" },
+        { "raw": "0,79", "normalized": 0.79, "unit": "g‰" },
+        { "raw": "0,8", "normalized": 0.8, "unit": "g‰" }
+      ],
+      "reviewerNotes": "La tabla sancionatoria de la página 50 contiene en un mismo bloque los umbrales legales para influencia del alcohol y estado de ebriedad."
+    },
+    {
+      "id": "chapter4-fastest-reaction-age-group",
+      "label": "Grupo etario con reacción más rápida",
+      "query": {
+        "prompt": "¿Qué grupo de edad registra el tiempo de reacción más rápido en situaciones de tránsito reales que requieren reacciones complejas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P40-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 40, "end": 40 }
+      },
+      "expectedAnswerText": "El grupo de edad que corresponde a quienes tienen entre 35 y 50 años.",
+      "requiredPhrases": [
+        "situaciones reales que requieren reacciones complejas",
+        "grupo de edad",
+        "entre 35 y 50 años"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "35 años", "normalized": 35, "unit": "años" },
+        { "raw": "50 años", "normalized": 50, "unit": "años" }
+      ],
+      "reviewerNotes": "La respuesta aparece de forma textual en el bloque central de la página 40 sobre capacidad de reacción."
+    },
+    {
+      "id": "chapter4-rest-recommendation-fatigue",
+      "label": "Descanso recomendado en viajes largos",
+      "query": {
+        "prompt": "¿Cuál es la recomendación de descanso para evitar la fatiga durante viajes largos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P66-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 66, "end": 66 }
+      },
+      "expectedAnswerText": "Descansar al menos 20 a 30 minutos cada 2 horas o 200 kilómetros de conducción, como máximo.",
+      "requiredPhrases": [
+        "viajes largos",
+        "20 a",
+        "cada 2 horas",
+        "200 kilómetros"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "20 minutos", "normalized": 20, "unit": "minutos" },
+        { "raw": "30 minutos", "normalized": 30, "unit": "minutos" },
+        { "raw": "2 horas", "normalized": 2, "unit": "horas" },
+        { "raw": "200 kilómetros", "normalized": 200, "unit": "kilómetros" }
+      ],
+      "reviewerNotes": "La recomendación preventiva para la fatiga aparece al final de la página 66 en el bloque de consejos para viajes largos."
+    }
+  ]
+}

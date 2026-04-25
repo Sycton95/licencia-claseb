@@ -2,6 +2,7 @@ export type ImportReviewIssue = {
   code: string;
   message: string;
   field?: string;
+  localizedMessage?: string;
 };
 
 export type ImportReviewQuestionOption = {
@@ -39,6 +40,71 @@ export type ImportReviewGroundingSuggestion = {
   confidence: number;
 };
 
+export type ImportReviewGroundingAudit = {
+  disposition: 'grounded' | 'low_confidence' | 'no_grounding';
+  productionDisposition?:
+    | 'grounded'
+    | 'grounded_recoverable'
+    | 'usable_winner_low_confidence'
+    | 'no_grounding';
+  reason: string;
+  predictedChapterId?: string;
+  predictedLikelihood?: number;
+  winnerId?: string;
+  winnerChapterId?: string;
+  winnerPageRange?: {
+    start: number;
+    end: number;
+  } | null;
+  supportCoverage?: number;
+  factScore?: number;
+  top1Score?: number;
+  delta?: number;
+  answerSupportCoverage?: number;
+  answerTokenCoverage?: number;
+  supportRefinement?: Record<string, unknown> | null;
+  fallbackRecovery?: Record<string, unknown> | null;
+  latencyMs?: number;
+};
+
+export type ImportReviewMetadataRepair = {
+  applied: boolean;
+  fields: string[];
+  before: Record<string, string | number | null>;
+  after: Record<string, string | number | null>;
+  basis: 'grounding_winner';
+  recoveryTier?: 'grounded' | 'grounded_recoverable' | 'usable_winner_low_confidence';
+  winnerId?: string;
+  winnerChapterId?: string;
+  winnerPageRange?: {
+    start: number;
+    end: number;
+  } | null;
+};
+
+export type ImportReviewFactReviewSuggestion = {
+  factId: string;
+  chapterId: string;
+  pageRange: {
+    start: number;
+    end: number;
+  };
+  supportUnitId?: string;
+  entity: string;
+  importedValue: string;
+  manualValue: string;
+  unit?: string;
+  issueCode: 'manual_fact_fix_suggested' | 'manual_fact_auxiliary_warning';
+  conflictReason: string;
+  excerpt?: string;
+};
+
+export type ImportReviewFactReview = {
+  advisoryOnly: boolean;
+  winnerScopedFactIds: string[];
+  suggestions: ImportReviewFactReviewSuggestion[];
+};
+
 export type ImportReviewQuestionRecord = {
   externalId: string;
   prompt: string;
@@ -61,6 +127,10 @@ export type ImportReviewQuestionRecord = {
   groundingMode?: 'manual' | 'fact_auto' | 'citation_auto' | 'missing';
   autoGroundingConfidence?: number;
   extractedEntities?: ImportReviewExtractedEntity[];
+  groundingAudit?: ImportReviewGroundingAudit;
+  metadataRepair?: ImportReviewMetadataRepair;
+  factReview?: ImportReviewFactReview;
+  needsVisualAudit?: boolean;
   duplicateClusterId?: string;
   duplicateWinnerId?: string;
   duplicateResolution?: 'winner' | 'referenced_duplicate';
@@ -114,6 +184,22 @@ export type ImportReviewRunManifestSummary = {
   warningCount: number;
   errorCount: number;
   autoGroundedAcceptedCount: number;
+  recoverableAcceptedCount?: number;
+  usableWinnerLowConfidenceCount?: number;
+  recoveredValidRejectCount?: number;
+  remainingRecoverableWinnerRejectCount?: number;
+  duplicateBlockedRejectCount?: number;
+  factBlockedRejectCount?: number;
+  factReviewSuggestedCount?: number;
+  auxiliaryOnlyMismatchCount?: number;
+  metadataRepairedCount?: number;
+  metadataRepairedByTier?: Partial<
+    Record<'grounded' | 'grounded_recoverable' | 'usable_winner_low_confidence', number>
+  >;
+  visualAuditRequiredCount?: number;
+  chapterFallbackRecoveredCount?: number;
+  unresolvedMetadataRejectCount?: number;
+  trueNoGroundingRejectCount?: number;
   duplicateClusterCount: number;
   ambiguousCandidateCount: number;
   chapterSummaries: ImportReviewChapterSummary[];
@@ -136,6 +222,24 @@ export type ImportReviewRunDetail = {
   runId: string;
   sourceFile: string;
   reviewedAt: string;
+  summary?: {
+    recoverableAcceptedCount: number;
+    usableWinnerLowConfidenceCount?: number;
+    recoveredValidRejectCount?: number;
+    remainingRecoverableWinnerRejectCount?: number;
+    duplicateBlockedRejectCount?: number;
+    factBlockedRejectCount?: number;
+    factReviewSuggestedCount?: number;
+    auxiliaryOnlyMismatchCount?: number;
+    metadataRepairedCount: number;
+    metadataRepairedByTier?: Partial<
+      Record<'grounded' | 'grounded_recoverable' | 'usable_winner_low_confidence', number>
+    >;
+    visualAuditRequiredCount: number;
+    chapterFallbackRecoveredCount?: number;
+    unresolvedMetadataRejectCount?: number;
+    trueNoGroundingRejectCount?: number;
+  };
   duplicateClusters: ImportReviewDuplicateCluster[];
   ambiguousCandidates: Array<{
     externalId: string;

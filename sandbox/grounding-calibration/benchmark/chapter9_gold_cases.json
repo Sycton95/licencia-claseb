@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "suite": "chapter9_gold_cases",
+  "cases": [
+    {
+      "id": "chapter9-crash-legal-obligations",
+      "label": "Obligaciones legales en siniestro con lesionados o muertos",
+      "query": {
+        "prompt": "¿Cuáles son las obligaciones legales de toda persona que participe en un siniestro de tránsito con lesionados o muertos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P136-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 136, "end": 136 }
+      },
+      "expectedAnswerText": "Está obligada a detener su marcha, prestar la ayuda que fuese posible y dar cuenta a la autoridad policial más cercana.",
+      "requiredPhrases": [
+        "detener su marcha",
+        "prestar la ayuda que fuese posible",
+        "autoridad policial más cercana"
+      ],
+      "reviewerNotes": "La obligación legal completa está contenida de forma textual en un solo segmento de la página 136."
+    },
+    {
+      "id": "chapter9-xabcde-a-and-b",
+      "label": "Primeros auxilios XABCDE A y B",
+      "query": {
+        "prompt": "En el protocolo de primeros auxilios XABCDE, ¿qué acciones específicas corresponden a las letras A y B?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P137-S4__WIN__2026-CH9-P137-S6",
+        "supportUnitType": "window",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 137, "end": 137 }
+      },
+      "expectedAnswerText": "La A corresponde a abrir la vía aérea para despejarla mediante la maniobra frente-mentón. La B consiste en verificar si la víctima respira y, en caso de entrenamiento, administrar ventilaciones boca a boca cada 6 segundos.",
+      "requiredPhrases": [
+        "abrir la vía aérea",
+        "maniobra frente-mentón",
+        "verificar si la víctima respira",
+        "ventilaciones boca a boca",
+        "1 cada 6 segundos"
+      ],
+      "reviewerNotes": "La definición de A y B queda repartida entre dos segmentos consecutivos de la página 137; el soporte fiel es una ventana."
+    },
+    {
+      "id": "chapter9-no-chat-not-hands-free",
+      "label": "Equipos no considerados manos libres",
+      "query": {
+        "prompt": "¿Qué define el reglamento de la Ley No Chat como dispositivos que NO son considerados manos libres?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P141-S5__WIN__2026-CH9-P141-S6",
+        "supportUnitType": "window",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 141, "end": 141 }
+      },
+      "expectedAnswerText": "No son manos libres los sistemas de sujeción al oído, los que requieran sostener el artefacto con el hombro, la cabeza o el cuerpo, y las soluciones que obliguen a manipular el dispositivo con una o ambas manos.",
+      "requiredPhrases": [
+        "a la altura del oído",
+        "con su hombro",
+        "contra su cabeza",
+        "sobre sus piernas o en su muñeca",
+        "manipular con una o ambas manos"
+      ],
+      "reviewerNotes": "La lista reglamentaria de equipos no permitidos requiere la ventana que une el segmento de definición con el remate operativo sobre manipulación manual."
+    },
+    {
+      "id": "chapter9-gravisima-speed-range",
+      "label": "Exceso de velocidad gravísimo",
+      "query": {
+        "prompt": "Según la clasificación de infracciones, ¿qué rango de exceso de velocidad se considera una falta gravísima?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P143-S4__WIN__2026-CH9-P143-S7",
+        "supportUnitType": "window",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 143, "end": 143 }
+      },
+      "expectedAnswerText": "Se considera infracción gravísima exceder entre 20 y 60 kilómetros por hora el límite de velocidad máxima.",
+      "requiredPhrases": [
+        "20 y 60 kilómetros por hora",
+        "límite de velocidad máxima"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "20 km/h", "normalized": 20, "unit": "km/h" },
+        { "raw": "60 km/h", "normalized": 60, "unit": "km/h" }
+      ],
+      "reviewerNotes": "El rango de falta gravísima aparece de forma directa en un solo segmento de la página 143."
+    },
+    {
+      "id": "chapter9-black-and-blue-smoke",
+      "label": "Humo negro y azul por el escape",
+      "query": {
+        "prompt": "Técnicamente, ¿qué indica la emisión de humo negro o azul por el tubo de escape de un vehículo?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P147-S6__WIN__2026-CH9-P147-S7",
+        "supportUnitType": "window",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 147, "end": 147 }
+      },
+      "expectedAnswerText": "El humo negro indica una falla en la combustión del motor, que puede deberse a filtros sucios o inyección excesiva. El humo azul se debe a un consumo anormal de aceite de motor.",
+      "requiredPhrases": [
+        "humo negro por el tubo de escape",
+        "falla en la combustión del motor",
+        "filtro de aire en mal estado",
+        "inyección excesiva de combustible",
+        "humo azul por el tubo de escape",
+        "consumo anormal de aceite de motor"
+      ],
+      "reviewerNotes": "La explicación técnica completa para humo negro y humo azul requiere la ventana entre los segmentos consecutivos de la página 147."
+    }
+  ]
+}

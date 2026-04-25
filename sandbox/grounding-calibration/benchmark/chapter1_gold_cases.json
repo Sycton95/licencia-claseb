@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "suite": "chapter1_gold_cases",
+  "cases": [
+    {
+      "id": "chapter1-concept-siniestro",
+      "label": "Cambio de accidente a siniestro",
+      "query": {
+        "prompt": "¿Por qué se ha cambiado el concepto de \"accidente\" por el de \"siniestro\"?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P06-S1",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 6, "end": 6 }
+      },
+      "expectedAnswerText": "Para relevar la importancia de sus efectos negativos y la responsabilidad de cada persona usuaria de las vías.",
+      "requiredPhrases": [
+        "efectos negativos",
+        "responsabilidad de cada persona usuaria de las vías"
+      ],
+      "reviewerNotes": "La justificación explícita aparece en el primer párrafo del capítulo 1. No basta con recuperar un segmento general sobre siniestros."
+    },
+    {
+      "id": "chapter1-world-daily-deaths",
+      "label": "Más de 3.000 muertes diarias",
+      "query": {
+        "prompt": "¿Cuántas personas fallecen cada día en el mundo como consecuencia de los siniestros de tránsito?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P06-S5",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 6, "end": 6 }
+      },
+      "expectedAnswerText": "Más de 3.000 personas.",
+      "requiredEntities": [
+        { "raw": "3.000 personas", "normalized": 3000, "unit": "personas" }
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "3.000 personas", "normalized": 3000, "unit": "personas" }
+      ],
+      "forbiddenTopSegmentIds": ["2026-CH1-P06-S1"],
+      "reviewerNotes": "La respuesta correcta está en el párrafo OMS del inicio del capítulo 1, no en la cabecera introductoria."
+    },
+    {
+      "id": "chapter1-costs-oms-pib",
+      "label": "Costo OMS 2% del PIB",
+      "query": {
+        "prompt": "¿A cuánto ascienden los costos de los siniestros de tránsito en Chile según cifras de la OMS?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P07-S2",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 7, "end": 7 }
+      },
+      "expectedAnswerText": "2% del PIB.",
+      "requiredEntities": [
+        { "raw": "2% del PIB", "normalized": 2, "unit": "%" }
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "2% del PIB", "normalized": 2, "unit": "%" }
+      ],
+      "reviewerNotes": "Debe recuperar el párrafo económico que menciona explícitamente el 2% del PIB según cifras de la OMS."
+    },
+    {
+      "id": "chapter1-urban-share-80",
+      "label": "80% de siniestros en áreas urbanas",
+      "query": {
+        "prompt": "¿Qué porcentaje de los siniestros de tránsito en Chile se produce en vías o áreas urbanas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P08-S2",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 8, "end": 8 }
+      },
+      "expectedAnswerText": "Aproximadamente un 80%.",
+      "requiredEntities": [
+        { "raw": "80%", "normalized": 80, "unit": "%" }
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "80%", "normalized": 80, "unit": "%" }
+      ],
+      "reviewerNotes": "Debe ganar el segmento que contrasta vías interurbanas con vías urbanas y afirma el 80%."
+    },
+    {
+      "id": "chapter1-human-failure-90",
+      "label": "Falla humana sobre 90%",
+      "query": {
+        "prompt": "¿En qué porcentaje de los siniestros de tránsito está presente la falla humana?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P08-S4",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 8, "end": 8 }
+      },
+      "expectedAnswerText": "Más del 90%.",
+      "requiredEntities": [
+        { "raw": "90%", "normalized": 90, "unit": "%" }
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "90%", "normalized": 90, "unit": "%" }
+      ],
+      "reviewerNotes": "El segmento correcto menciona explícitamente que la falla humana está presente en más del 90% de los siniestros."
+    }
+  ]
+}

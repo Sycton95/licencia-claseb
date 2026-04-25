@@ -1,0 +1,436 @@
+{
+  "version": 1,
+  "suite": "blind_test_dataset",
+  "cases": [
+    {
+      "id": "blind-ch1-daily-world-deaths",
+      "validationMode": "blind",
+      "label": "Muertes diarias en el mundo",
+      "query": {
+        "prompt": "Según el manual, ¿cuántas personas mueren cada día en el mundo por los siniestros de tránsito?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P06-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 6, "end": 6 }
+      },
+      "expectedAnswerText": "Más de 3.000 personas.",
+      "requiredNormalizedFacts": [
+        { "raw": "3.000 personas", "normalized": 3000, "unit": "personas" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch1-child-mortality-age-range",
+      "validationMode": "blind",
+      "label": "Población infantil 1 a 14 años",
+      "query": {
+        "prompt": "¿En qué rango de edad los siniestros de tránsito son la primera causa de muerte en la población infantil en Chile?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P06-S6",
+        "supportUnitType": "base",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 6, "end": 6 }
+      },
+      "expectedAnswerText": "Entre 1 a 14 años.",
+      "requiredNormalizedFacts": [
+        { "raw": "14 años", "normalized": 14, "unit": "años" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch1-annual-cost-per-person",
+      "validationMode": "blind",
+      "label": "Costo medio anual por persona",
+      "query": {
+        "prompt": "Según el manual, ¿cuál es el costo medio anual por persona en Chile derivado de los siniestros de tránsito?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P07-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 7, "end": 7 }
+      },
+      "expectedAnswerText": "Poco más de 6 millones de pesos.",
+      "requiredNormalizedFacts": [
+        { "raw": "6 millones de pesos", "normalized": 6000000, "unit": "pesos" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch2-red-warnings-panel",
+      "validationMode": "blind",
+      "mustBeWindow": true,
+      "label": "Testigos rojos del panel",
+      "query": {
+        "prompt": "¿Qué informan los testigos rojos del panel de instrumentos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P11-S1__WIN__2026-CH2-P11-S2",
+        "supportUnitType": "window",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 11, "end": 11 }
+      },
+      "expectedAnswerText": "Atención inmediata, avería grave.",
+      "requiredPhrases": ["testigos", "rojo", "avería grave"]
+    },
+    {
+      "id": "blind-ch2-odometer-distance",
+      "validationMode": "blind",
+      "label": "Definición de odómetro",
+      "query": {
+        "prompt": "¿Qué información entrega el odómetro de un vehículo?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P11-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 11, "end": 11 }
+      },
+      "expectedAnswerText": "La distancia total o parcial recorrida por el vehículo.",
+      "requiredPhrases": ["odómetro", "distancia total o parcial recorrida"]
+    },
+    {
+      "id": "blind-ch2-headrest-max-gap",
+      "validationMode": "blind",
+      "label": "Separación máxima del apoya cabezas",
+      "query": {
+        "prompt": "¿Cuál es la separación máxima admitida entre la cabeza y el apoya cabezas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P31-S3__WIN__2026-CH2-P31-S4",
+        "supportUnitType": "window",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 31, "end": 31 }
+      },
+      "expectedAnswerText": "Nunca superior a 4 cm.",
+      "requiredNormalizedFacts": [
+        { "raw": "4 cm", "normalized": 4, "unit": "cm" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch3-good-road-coexistence",
+      "validationMode": "blind",
+      "label": "Convivencia vial",
+      "query": {
+        "prompt": "¿Qué describe el manual como una buena convivencia vial?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P33-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 33, "end": 33 }
+      },
+      "expectedAnswerText": "Una interacción armoniosa y segura entre personas conductoras, usuarias de las vías, peatones y pasajeros.",
+      "requiredPhrases": ["interacción armoniosa y segura", "peatones y pasajeros"]
+    },
+    {
+      "id": "blind-ch3-prevention-main-defense",
+      "validationMode": "blind",
+      "label": "Prevención como defensa",
+      "query": {
+        "prompt": "¿Cuál es la defensa principal de la persona conductora para evitar siniestros?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S4",
+        "supportUnitType": "window",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 35, "end": 35 }
+      },
+      "expectedAnswerText": "La prevención, basada en ver y ser visible.",
+      "requiredPhrases": ["principal defensa", "ver y ser visible"]
+    },
+    {
+      "id": "blind-ch4-reaction-age-group",
+      "validationMode": "blind",
+      "label": "Grupo de reacción más rápida",
+      "query": {
+        "prompt": "En situaciones reales de tránsito, ¿qué grupo etario reacciona más rápido ante eventos complejos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P40-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 40, "end": 40 }
+      },
+      "expectedAnswerText": "Quienes tienen entre 35 y 50 años.",
+      "requiredPhrases": ["35 y 50 años", "reacciones complejas"]
+    },
+    {
+      "id": "blind-ch4-fatigue-rest",
+      "validationMode": "blind",
+      "label": "Descanso por fatiga",
+      "query": {
+        "prompt": "¿Qué descanso recomienda el manual para reducir la fatiga durante trayectos largos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P66-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 66, "end": 66 }
+      },
+      "expectedAnswerText": "Descansar 20 a 30 minutos cada 2 horas o 200 kilómetros.",
+      "requiredPhrases": ["20 a 30 minutos", "cada 2 horas", "200 kilómetros"]
+    },
+    {
+      "id": "blind-ch5-pedestrian-fatalities",
+      "validationMode": "blind",
+      "label": "Atropellos en Chile",
+      "query": {
+        "prompt": "¿Qué proporción del total de fallecidos en siniestros de tránsito en Chile corresponde a personas atropelladas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P68-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 68, "end": 68 }
+      },
+      "expectedAnswerText": "Aproximadamente un 28%.",
+      "requiredNormalizedFacts": [
+        { "raw": "28%", "normalized": 28, "unit": "%" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch5-zone-uncertainty",
+      "validationMode": "blind",
+      "label": "Zona de incertidumbre",
+      "query": {
+        "prompt": "¿Qué significa la zona de incertidumbre de peatones, ciclistas o motociclistas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P68-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 68, "end": 68 }
+      },
+      "expectedAnswerText": "El espacio que les rodea cuando circulan por la vía.",
+      "requiredPhrases": ["zona de incertidumbre", "espacio que las rodea"]
+    },
+    {
+      "id": "blind-ch5-sri-single-anchor",
+      "validationMode": "blind",
+      "label": "No usar dos anclajes",
+      "query": {
+        "prompt": "¿Es obligatorio instalar un sistema de retención infantil usando a la vez ISOFIX y cinturón?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P75-S2__WIN__2026-CH5-P75-S3",
+        "supportUnitType": "window",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 75, "end": 75 }
+      },
+      "expectedAnswerText": "No, salvo que lo indique el fabricante del SRI.",
+      "requiredPhrases": ["no se requiere utilizar dos sistemas", "fabricante del SRI"]
+    },
+    {
+      "id": "blind-ch6-right-hand-priority",
+      "validationMode": "blind",
+      "label": "Preferencia por la derecha",
+      "query": {
+        "prompt": "En un cruce sin semáforo ni señalización de prioridad, ¿a quién debe cederse el paso?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P84-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 84, "end": 84 }
+      },
+      "expectedAnswerText": "A los vehículos que llegan por la derecha.",
+      "requiredPhrases": ["desde tu derecha", "preferencia"]
+    },
+    {
+      "id": "blind-ch6-three-second-rule",
+      "validationMode": "blind",
+      "mustBeWindow": true,
+      "label": "Regla de los tres segundos",
+      "query": {
+        "prompt": "¿Cómo se aplica la regla de los tres segundos para mantener distancia de seguridad?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P87-S6__WIN__2026-CH6-P88-S1",
+        "supportUnitType": "window",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 87, "end": 88 }
+      },
+      "expectedAnswerText": "Se cuenta hasta mil tres desde un punto de referencia fijo.",
+      "requiredPhrases": ["regla de los tres segundos", "mil tres", "un árbol"]
+    },
+    {
+      "id": "blind-ch6-train-stopping-distance",
+      "validationMode": "blind",
+      "label": "Detención de tren a 100 km/h",
+      "query": {
+        "prompt": "¿Qué distancia necesita aproximadamente un tren para detenerse si va a 100 km/h?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P107-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 107, "end": 107 }
+      },
+      "expectedAnswerText": "Entre 800 y 1.000 metros.",
+      "requiredNormalizedFacts": [
+        { "raw": "100 km/h", "normalized": 100, "unit": "km/h" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch7-lights-required-period",
+      "validationMode": "blind",
+      "label": "Horario obligatorio de luces",
+      "query": {
+        "prompt": "¿Desde cuándo y hasta cuándo es obligatorio circular con las luces del vehículo encendidas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P110-S1__WIN__2026-CH7-P110-S2",
+        "supportUnitType": "window",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 110, "end": 110 }
+      },
+      "expectedAnswerText": "Desde media hora después de la puesta de sol hasta media hora antes de su salida.",
+      "requiredPhrases": ["media hora después de la puesta de sol", "media hora antes de su salida"]
+    },
+    {
+      "id": "blind-ch7-trailer-class-b-limits",
+      "validationMode": "blind",
+      "label": "Límites de remolque clase B",
+      "query": {
+        "prompt": "Con licencia Clase B, ¿qué límites de peso rigen para un vehículo con remolque?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P114-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 114, "end": 114 }
+      },
+      "expectedAnswerText": "El remolque no debe exceder la tara de la unidad motriz y el total no debe superar los 3.500 kilogramos.",
+      "requiredNormalizedFacts": [
+        { "raw": "3.500 kilogramos", "normalized": 3500, "unit": "kilogramos" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch7-icy-road-braking",
+      "validationMode": "blind",
+      "label": "Calzada helada",
+      "query": {
+        "prompt": "¿Cuánto puede aumentar la distancia de frenado cuando la calzada está helada?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P124-S6",
+        "supportUnitType": "base",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 124, "end": 124 }
+      },
+      "expectedAnswerText": "Hasta 10 veces por encima de lo normal.",
+      "requiredPhrases": ["calzada está helada", "10 veces por encima de lo normal"]
+    },
+    {
+      "id": "blind-ch8-efficient-driving-reduction",
+      "validationMode": "blind",
+      "label": "Ahorro global por conducción eficiente",
+      "query": {
+        "prompt": "¿Qué reducción general del consumo promete el manual al aplicar técnicas de conducción eficiente?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P127-S1__WIN__2026-CH8-P127-S3",
+        "supportUnitType": "window",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 127, "end": 127 }
+      },
+      "expectedAnswerText": "Entre un 10 y un 15%.",
+      "requiredNormalizedFacts": [
+        { "raw": "10%", "normalized": 10, "unit": "%" },
+        { "raw": "15%", "normalized": 15, "unit": "%" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch8-roof-rack-highway-consumption",
+      "validationMode": "blind",
+      "label": "Portaequipajes en carretera",
+      "query": {
+        "prompt": "¿Cuánto puede aumentar el consumo de combustible en carretera por llevar carga en el techo?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P129-S2__WIN__2026-CH8-P129-S3",
+        "supportUnitType": "window",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 129, "end": 129 }
+      },
+      "expectedAnswerText": "Por sobre un 20%.",
+      "requiredNormalizedFacts": [
+        { "raw": "20%", "normalized": 20, "unit": "%" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-ch8-stop-engine-over-one-minute",
+      "validationMode": "blind",
+      "label": "Apagar el motor en detenciones largas",
+      "query": {
+        "prompt": "¿Desde qué duración de detención conviene apagar el motor por economía?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P133-S1__WIN__2026-CH8-P133-S2",
+        "supportUnitType": "window",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 133, "end": 133 }
+      },
+      "expectedAnswerText": "En detenciones mayores a un minuto.",
+      "requiredPhrases": ["detención mayor a un minuto", "más económico apagar el motor"]
+    },
+    {
+      "id": "blind-ch9-crash-legal-obligations",
+      "validationMode": "blind",
+      "label": "Deberes tras un siniestro con lesionados",
+      "query": {
+        "prompt": "¿Qué exige la ley a cualquier persona involucrada en un siniestro con personas lesionadas o fallecidas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P136-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 136, "end": 136 }
+      },
+      "expectedAnswerText": "Detenerse, prestar ayuda y avisar a la autoridad policial más cercana.",
+      "requiredPhrases": ["detener su marcha", "prestar la ayuda", "autoridad policial más cercana"]
+    },
+    {
+      "id": "blind-ch9-no-chat-not-hands-free",
+      "validationMode": "blind",
+      "label": "Qué no cuenta como manos libres",
+      "query": {
+        "prompt": "Bajo la Ley No Chat, ¿qué sistemas no pueden considerarse manos libres?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P141-S5__WIN__2026-CH9-P141-S6",
+        "supportUnitType": "window",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 141, "end": 141 }
+      },
+      "expectedAnswerText": "Los sistemas sujetos al oído, sostenidos con el cuerpo o que exigen manipulación manual.",
+      "requiredPhrases": ["a la altura del oído", "con su hombro", "manipular con una o ambas manos"]
+    },
+    {
+      "id": "blind-ch9-black-blue-smoke",
+      "validationMode": "blind",
+      "label": "Diagnóstico por humo del escape",
+      "query": {
+        "prompt": "¿Qué problemas técnicos sugieren el humo negro y el humo azul en el escape?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P147-S6__WIN__2026-CH9-P147-S7",
+        "supportUnitType": "window",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 147, "end": 147 }
+      },
+      "expectedAnswerText": "Humo negro: falla de combustión. Humo azul: consumo anormal de aceite.",
+      "requiredPhrases": ["humo negro", "falla en la combustión del motor", "humo azul", "consumo anormal de aceite de motor"]
+    }
+  ]
+}

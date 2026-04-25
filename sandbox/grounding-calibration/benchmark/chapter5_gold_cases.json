@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "suite": "chapter5_gold_cases",
+  "cases": [
+    {
+      "id": "chapter5-vulnerable-road-users-half",
+      "label": "Usuarios vulnerables casi la mitad",
+      "query": {
+        "prompt": "¿Qué porcentaje de las víctimas mortales por causa del tránsito en el mundo representan los peatones, ciclistas y motociclistas junto con sus pasajeros?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P68-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 68, "end": 68 }
+      },
+      "expectedAnswerText": "Representan casi la mitad de las víctimas mortales por causa del tránsito en el mundo.",
+      "requiredPhrases": [
+        "peatones, ciclistas y motociclistas",
+        "junto con sus pasajeros",
+        "casi la mitad de las víctimas"
+      ],
+      "reviewerNotes": "La definición general de usuarios vulnerables en la apertura del capítulo 5 contiene la referencia a casi la mitad de las víctimas mortales."
+    },
+    {
+      "id": "chapter5-pedestrian-fatalities-28-percent",
+      "label": "Atropellos 28 por ciento",
+      "query": {
+        "prompt": "¿Cuál es el porcentaje de fallecidos en siniestros de tránsito en Chile que corresponden a atropellos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P68-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 68, "end": 68 }
+      },
+      "expectedAnswerText": "Las personas atropelladas fallecidas en estos siniestros corresponden aproximadamente al 28% del total de fallecidas.",
+      "requiredPhrases": [
+        "atropellos",
+        "28% del total de fallecidas"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "28%", "normalized": 28, "unit": "%" }
+      ],
+      "reviewerNotes": "El bloque de peatones en la página 68 entrega textualmente el 28 por ciento de fallecidas por atropello."
+    },
+    {
+      "id": "chapter5-sri-accreditation-label-size",
+      "label": "Etiqueta de acreditación SRI",
+      "query": {
+        "prompt": "¿Cuál es la medida de la etiqueta de acreditación que deben llevar las sillas infantiles (SRI) certificadas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P75-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 75, "end": 75 }
+      },
+      "expectedAnswerText": "La etiqueta debe ir pegada a la silla, es de color amarillo con letras negras y mide 9,5 cm de alto y 7,5 cm de ancho.",
+      "requiredPhrases": [
+        "etiqueta debe ir pegada",
+        "color amarillo",
+        "letras negras",
+        "7,5 cm de ancho"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "9,5 cm", "normalized": 9.5, "unit": "cm" },
+        { "raw": "7,5 cm", "normalized": 7.5, "unit": "cm" }
+      ],
+      "reviewerNotes": "La descripción de la etiqueta certificada del SRI está concentrada en la página 75; el OCR corta la frase de altura, pero mantiene las medidas y rasgos visuales clave."
+    },
+    {
+      "id": "chapter5-zone-of-uncertainty",
+      "label": "Zona de incertidumbre",
+      "query": {
+        "prompt": "¿Qué define la \"zona de incertidumbre\" de un peatón, ciclista o motociclista?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P68-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 68, "end": 68 }
+      },
+      "expectedAnswerText": "Es aquel espacio que las rodea cuando circulan por la vía.",
+      "requiredPhrases": [
+        "zona de incertidumbre",
+        "espacio que las rodea",
+        "circulan por la vía"
+      ],
+      "reviewerNotes": "La definición de zona de incertidumbre aparece en el mismo bloque de peatones donde se explica la imprevisibilidad de estas personas usuarias."
+    },
+    {
+      "id": "chapter5-sri-no-double-anchor",
+      "label": "No usar dos sistemas de anclaje",
+      "query": {
+        "prompt": "¿Es necesario utilizar dos sistemas de anclaje al mismo tiempo (como ISOFIX y el cinturón de seguridad) para instalar un SRI?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P75-S2__WIN__2026-CH5-P75-S3",
+        "supportUnitType": "window",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 75, "end": 75 }
+      },
+      "expectedAnswerText": "No se requiere utilizar dos sistemas al mismo tiempo, a menos que lo indique el fabricante del SRI.",
+      "requiredPhrases": [
+        "no se requiere utilizar dos sistemas al mismo tiempo",
+        "fabricante del SRI",
+        "ISOFIX"
+      ],
+      "reviewerNotes": "La regla sobre anclaje único aparece de forma textual en la página 75 dentro de la sección de instalación del SRI."
+    }
+  ]
+}

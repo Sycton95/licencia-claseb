@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "suite": "critical_numeric_cases",
+  "cases": [
+    {
+      "id": "urban-speed-limit",
+      "label": "Velocidad máxima urbana",
+      "query": {
+        "prompt": "En zonas urbanas, la velocidad máxima permitida es de:",
+        "options": ["30 km/h.", "50 km/h.", "60 km/h."]
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P96-S5",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 96, "end": 96 }
+      },
+      "requiredEntities": [
+        { "raw": "50 km/h", "normalized": 50, "unit": "km/h" }
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "50 km/h", "normalized": 50, "unit": "km/h" }
+      ],
+      "expectedAnswerText": "50 km/h.",
+      "reviewerNotes": "Debe priorizar el párrafo normativo sobre otros párrafos que también mencionan 50 km/h."
+    },
+    {
+      "id": "alcohol-influence-range",
+      "label": "Rango bajo la influencia del alcohol",
+      "query": {
+        "prompt": "Si un conductor está bajo la influencia del alcohol (0,31-0,79 gramos por litro de sangre) sin haber provocado daños ni lesiones, ¿cuántas UTM serían de multa y el tiempo de suspensión de licencia?",
+        "options": [
+          "Arriesga una multa de 1-5 UTM y una suspensión de licencia de 9 meses.",
+          "Arriesga una multa de 4-10 UTM y una suspensión de licencia de 3 meses.",
+          "Arriesga una multa de 1-5 UTM y una suspensión de licencia de 3 meses."
+        ]
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P50-S3",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 50, "end": 50 }
+      },
+      "requiredEntities": [
+        { "raw": "0,31 - 0,79", "normalized": 0.31, "unit": "g‰" },
+        { "raw": "3 meses", "normalized": 3, "unit": "meses" }
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "0,31 - 0,79", "normalized": 0.31, "unit": "g‰" },
+        { "raw": "3 meses", "normalized": 3, "unit": "meses" }
+      ],
+      "expectedAnswerText": "Arriesga una multa de 1-5 UTM y una suspensión de licencia de 3 meses.",
+      "reviewerNotes": "La tabla de sanciones es más precisa que el párrafo general de Tolerancia Cero."
+    }
+  ]
+}

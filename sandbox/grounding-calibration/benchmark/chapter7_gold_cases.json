@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "suite": "chapter7_gold_cases",
+  "cases": [
+    {
+      "id": "chapter7-visibility-light-clothes-60m",
+      "label": "Visibilidad ropas claras con luces bajas",
+      "query": {
+        "prompt": "¿Cuál es la distancia de visibilidad de un peatón que viste ropas claras cuando un vehículo circula con luces bajas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P110-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 110, "end": 110 }
+      },
+      "expectedAnswerText": "La distancia de visibilidad es de 60 metros.",
+      "requiredPhrases": [
+        "ropas claras",
+        "con luces bajas",
+        "60 m"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "60 metros", "normalized": 60, "unit": "metros" }
+      ],
+      "reviewerNotes": "El gráfico de distancias de visibilidad en la página 110 indica directamente 60 metros para ropas claras con luces bajas."
+    },
+    {
+      "id": "chapter7-lights-required-period",
+      "label": "Periodo obligatorio de luces encendidas",
+      "query": {
+        "prompt": "¿En qué periodo del día es obligatorio circular con las luces del vehículo encendidas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P110-S1__WIN__2026-CH7-P110-S2",
+        "supportUnitType": "window",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 110, "end": 110 }
+      },
+      "expectedAnswerText": "Desde media hora después de la puesta de sol y hasta media hora antes de su salida, y cada vez que las condiciones de visibilidad lo hagan necesario.",
+      "requiredPhrases": [
+        "media hora después de la puesta de sol",
+        "media hora antes de su salida",
+        "condiciones de visibilidad"
+      ],
+      "reviewerNotes": "La regla de encendido obligatorio de luces aparece en el mismo bloque de la página 110 bajo el subtítulo Encendido de luces."
+    },
+    {
+      "id": "chapter7-class-b-trailer-weight-limits",
+      "label": "Límites de remolque con licencia Clase B",
+      "query": {
+        "prompt": "Bajo la Licencia de Conducir Clase B, ¿cuáles son los límites de peso para conducir un vehículo con remolque?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P114-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 114, "end": 114 }
+      },
+      "expectedAnswerText": "El peso del remolque no debe exceder la tara de la unidad motriz, y el peso total entre ambos no debe superar los 3.500 kilogramos.",
+      "requiredPhrases": [
+        "Licencia de Conducir Clase B",
+        "no exceda la tara de unidad motriz",
+        "3.500 kilogramos"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "3.500 kilogramos", "normalized": 3500, "unit": "kilogramos" }
+      ],
+      "reviewerNotes": "La restricción de remolque permitido con licencia Clase B se entrega de forma textual en la página 110."
+    },
+    {
+      "id": "chapter7-motorway-entry-priority",
+      "label": "Prioridad al ingresar por pista de aceleración",
+      "query": {
+        "prompt": "Al ingresar a una autopista a través de la pista de aceleración, ¿quién tiene la prioridad de paso?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P116-S3__WIN__2026-CH7-P116-S4",
+        "supportUnitType": "window",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 116, "end": 116 }
+      },
+      "expectedAnswerText": "Los vehículos que ya circulan por la autopista tienen la prioridad.",
+      "requiredPhrases": [
+        "vehículos que circulan por la autopista tienen la prioridad",
+        "pista de aceleración",
+        "brecha segura"
+      ],
+      "reviewerNotes": "La prioridad al incorporarse desde la pista de aceleración se establece explícitamente en la página 116."
+    },
+    {
+      "id": "chapter7-icy-road-braking-distance",
+      "label": "Aumento de frenado en calzada helada",
+      "query": {
+        "prompt": "¿Cuánto puede aumentar la distancia de frenado de un vehículo cuando la calzada está helada?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P124-S6",
+        "supportUnitType": "base",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 124, "end": 124 }
+      },
+      "expectedAnswerText": "La distancia de frenado puede aumentar hasta 10 veces por encima de lo normal.",
+      "requiredPhrases": [
+        "calzada está helada",
+        "10 veces por encima de lo normal",
+        "distancia de frenado"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "10 veces", "normalized": 10, "unit": "" }
+      ],
+      "reviewerNotes": "La advertencia sobre hielo y aumento de la distancia de frenado aparece textualmente en la página 116."
+    }
+  ]
+}

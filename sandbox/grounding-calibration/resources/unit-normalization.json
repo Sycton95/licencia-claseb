@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "canonicalUnit": "km/h",
+      "aliases": ["kmh", "kms/h", "km/hr", "kph", "km / h", "kmh.", "km/h."]
+    },
+    {
+      "canonicalUnit": "g/l",
+      "aliases": ["g/l", "g/lt", "gr/l", "gramos por litro", "gramos de alcohol por litro de sangre"]
+    },
+    {
+      "canonicalUnit": "g‰",
+      "aliases": ["gramos por mil", "g por mil", "g‰"]
+    },
+    {
+      "canonicalUnit": "utm",
+      "aliases": ["utm", "u.t.m.", "unidad tributaria mensual"]
+    },
+    {
+      "canonicalUnit": "años",
+      "aliases": ["anos", "años", "ano", "año"]
+    },
+    {
+      "canonicalUnit": "meses",
+      "aliases": ["mes", "meses"]
+    },
+    {
+      "canonicalUnit": "cm",
+      "aliases": ["cm", "cms", "centimetro", "centimetros", "centímetro", "centímetros"]
+    },
+    {
+      "canonicalUnit": "pesos",
+      "aliases": ["peso", "pesos", "clp"]
+    },
+    {
+      "canonicalUnit": "psi",
+      "aliases": ["psi", "p.s.i."]
+    }
+  ]
+}

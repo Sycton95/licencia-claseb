@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "issues": [
+    {
+      "id": "issue-2026-ch8-p129-s4-truncated-consumption",
+      "segmentId": "2026-CH8-P129-S4",
+      "chapterId": "chapter-8",
+      "sourceAuditFile": "chapter8-2026-pag-127-134.pdf",
+      "status": "sandbox_override_active",
+      "summary": "The segmented manual text truncates the final consumption increase statement for the 5 PSI tire-pressure example.",
+      "pdfVerifiedAnswer": "Se estima que una reduccion en 5 PSI del nivel optimo de aire en los neumaticos puede incrementar el consumo de combustible en un 3%.",
+      "sandboxOverrideId": "2026-CH8-P129-S4"
+    }
+  ]
+}

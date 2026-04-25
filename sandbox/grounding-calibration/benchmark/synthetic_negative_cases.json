@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "suite": "synthetic_negative_cases",
+  "cases": [
+    {
+      "id": "negative-turbo-idle-pressure",
+      "validationMode": "blind",
+      "expectedOutcome": "low_confidence",
+      "label": "Presión ideal del turbo",
+      "query": {
+        "prompt": "¿Qué presión de soplado en PSI debe registrar un turbo VGT al ralentí según el manual?"
+      },
+      "reviewerNotes": "Pregunta sintética fuera del alcance del manual. Debe disparar baja confianza o no grounding."
+    },
+    {
+      "id": "negative-window-tint-percent",
+      "validationMode": "blind",
+      "expectedOutcome": "low_confidence",
+      "label": "Polarizado legal exacto",
+      "query": {
+        "prompt": "¿Qué porcentaje exacto de transmisión luminosa debe tener un polarizado cerámico legal en ventanas delanteras?"
+      },
+      "reviewerNotes": "La pregunta usa vocabulario de conducción, pero no debe resolverse a una cita forzada del manual."
+    },
+    {
+      "id": "negative-timing-belt-law",
+      "validationMode": "blind",
+      "expectedOutcome": "low_confidence",
+      "label": "Cambio obligatorio de correa",
+      "query": {
+        "prompt": "¿Qué kilometraje legal obliga a cambiar la correa de distribución y tensores?"
+      },
+      "reviewerNotes": "No existe soporte específico en el manual. La salida correcta es baja confianza."
+    },
+    {
+      "id": "negative-catalytic-converter-light",
+      "validationMode": "blind",
+      "expectedOutcome": "low_confidence",
+      "label": "Color por falla de catalizador",
+      "query": {
+        "prompt": "¿Qué código OBD-II o color exclusivo de testigo identifica una falla del convertidor catalítico?"
+      },
+      "reviewerNotes": "Puede tener solapamiento léxico con capítulos mecánicos, pero no grounding suficiente."
+    },
+    {
+      "id": "negative-engine-torque-remolque",
+      "validationMode": "blind",
+      "expectedOutcome": "low_confidence",
+      "label": "Torque mínimo para remolque",
+      "query": {
+        "prompt": "¿Qué torque mínimo en newton-metro exige el manual para una rótula de enganche de remolque clase B?"
+      },
+      "reviewerNotes": "Pregunta sintética. Debe caer en baja confianza/no grounding, no en una coincidencia de remolque."
+    }
+  ]
+}

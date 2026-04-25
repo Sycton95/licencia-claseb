@@ -13,6 +13,9 @@
     "prepare:manual-knowledge": "node scripts/prepare-manual-knowledge.mjs",
     "review:import": "node scripts/review-import.mjs",
     "review:import:chapter2": "node scripts/review-import.mjs data/imports/imported-1-batch.json --chapter=chapter-2",
+    "grounding:chapter-stats": "node sandbox/grounding-calibration/generate-chapter-stats.mjs",
+    "grounding:fact-harvest": "node sandbox/grounding-calibration/fact-harvester.mjs",
+    "grounding:calibration": "node sandbox/grounding-calibration/test-grounding-calibration.mjs",
     "smoke:prod": "node scripts/smoke-check.mjs --require-schema=v1",
     "smoke:prod:compat": "node scripts/smoke-check.mjs",
     "smoke:url": "node scripts/smoke-check.mjs",
@@ -22,7 +25,6 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.101.1",
     "framer-motion": "^12.38.0",
-    "minisearch": "^7.2.0",
     "pdfjs-dist": "^5.6.205",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

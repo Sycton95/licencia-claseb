@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "suite": "chapter2_gold_cases",
+  "cases": [
+    {
+      "id": "chapter2-tacometro-rpm",
+      "label": "Tacómetro en revoluciones por minuto",
+      "query": {
+        "prompt": "¿Qué mide exactamente el tacómetro en el panel de instrumentos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P11-S1__WIN__2026-CH2-P11-S2",
+        "supportUnitType": "window",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 11, "end": 11 }
+      },
+      "expectedAnswerText": "Velocidad del motor en revoluciones por minuto.",
+      "requiredPhrases": [
+        "tacómetro",
+        "velocidad del motor",
+        "revoluciones por minuto"
+      ],
+      "reviewerNotes": "La definición está fragmentada entre los bloques del panel de instrumentos en la página 11, por lo que el soporte correcto es una ventana sintética mínima."
+    },
+    {
+      "id": "chapter2-odometro-distance",
+      "label": "Odómetro distancia total o parcial",
+      "query": {
+        "prompt": "¿Qué indica el odómetro en el vehículo?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P11-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 11, "end": 11 }
+      },
+      "expectedAnswerText": "Indica la distancia total o parcial recorrida por el vehículo.",
+      "requiredPhrases": [
+        "odómetro",
+        "distancia total o parcial",
+        "recorrida por el vehículo"
+      ],
+      "reviewerNotes": "La definición del odómetro sí queda contenida en el primer bloque de la página 11."
+    },
+    {
+      "id": "chapter2-headrest-gap-4cm",
+      "label": "Separación máxima de 4 cm",
+      "query": {
+        "prompt": "¿Cuál es la separación máxima permitida entre la cabeza y el apoya cabezas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P31-S3__WIN__2026-CH2-P31-S4",
+        "supportUnitType": "window",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 31, "end": 31 }
+      },
+      "expectedAnswerText": "Nunca superior a 4 cm.",
+      "requiredEntities": [
+        { "raw": "4 cm", "normalized": 4, "unit": "cm" }
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "4 cm", "normalized": 4, "unit": "cm" }
+      ],
+      "requiredPhrases": [
+        "correcto uso del apoya cabezas"
+      ],
+      "reviewerNotes": "La referencia de 4 cm queda OCR-fragmentada con el bloque adyacente de ajuste del apoya cabezas; la ventana mínima fiel une S3 y S4."
+    },
+    {
+      "id": "chapter2-headrest-upper-edge",
+      "label": "Borde superior del apoya cabezas",
+      "query": {
+        "prompt": "¿Dónde debe quedar situado el borde superior del apoya cabezas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P31-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 31, "end": 31 }
+      },
+      "expectedAnswerText": "Entre el límite superior de la cabeza y la altura de los ojos.",
+      "requiredPhrases": [
+        "borde superior del apoya cabezas",
+        "límite superior de la cabeza",
+        "altura de los ojos"
+      ],
+      "reviewerNotes": "La posición correcta aparece en el bloque de ajuste del apoya cabezas en la página 31."
+    },
+    {
+      "id": "chapter2-efecto-latigazo",
+      "label": "Efecto latigazo",
+      "query": {
+        "prompt": "¿Cómo se denomina el movimiento que provoca un violento cambio de dirección en el cuello durante un siniestro?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P31-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 31, "end": 31 }
+      },
+      "expectedAnswerText": "Efecto latigazo.",
+      "requiredPhrases": [
+        "violento cambio de dirección en el cuello",
+        "efecto latigazo"
+      ],
+      "reviewerNotes": "La denominación exacta aparece al final del primer bloque sobre apoya cabezas e impacto por atrás."
+    }
+  ]
+}

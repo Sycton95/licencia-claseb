@@ -9,7 +9,10 @@ export type EditorialAction =
   | 'mark_reviewed'
   | 'publish'
   | 'archive'
-  | 'seed';
+  | 'seed'
+  | 'import_prepare'
+  | 'import_commit'
+  | 'import_revert';
 
 export interface Edition {
   id: string;
@@ -59,6 +62,39 @@ export interface QuestionMedia {
   order: number;
 }
 
+export interface QuestionImportReferenceAsset {
+  assetId: string;
+  kind: 'crop' | 'upload';
+  mimeType: string;
+  name: string;
+  page?: number;
+  byteSize: number;
+}
+
+export interface QuestionImportGroundingCorrection {
+  replacementText: string;
+  source: 'manual_segment' | 'pdf_selection';
+  page?: number;
+  segmentId?: string;
+  excerpt?: string;
+  updatedAt: string;
+}
+
+export interface QuestionImportMetadata {
+  importBatchId: string;
+  importRunId: string;
+  importExternalId: string;
+  importSourceFile: string;
+  importReviewDisposition: string;
+  groundingDisposition?: string;
+  manualCitationRefs?: string[];
+  manualFactRefs?: string[];
+  needsVisualAudit?: boolean;
+  warnings?: string[];
+  draftGroundingCorrection?: QuestionImportGroundingCorrection;
+  referenceAssets?: QuestionImportReferenceAsset[];
+}
+
 export interface Question {
   id: string;
   editionId: string;
@@ -82,6 +118,7 @@ export interface Question {
   publishedAt?: string;
   options: QuestionOption[];
   media: QuestionMedia[];
+  importMetadata?: QuestionImportMetadata;
 }
 
 export interface ExamRuleSet {

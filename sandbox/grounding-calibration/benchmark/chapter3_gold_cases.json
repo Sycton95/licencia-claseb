@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "suite": "chapter3_gold_cases",
+  "cases": [
+    {
+      "id": "chapter3-good-road-coexistence",
+      "label": "Buena Convivencia Vial",
+      "query": {
+        "prompt": "¿Qué define una buena Convivencia Vial?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P33-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 33, "end": 33 }
+      },
+      "expectedAnswerText": "Es aquella en donde las personas conductoras de vehículos, usuarias de las vías, peatones y pasajeros, se respeten entre sí, resultando una interacción armoniosa y segura.",
+      "requiredPhrases": [
+        "personas conductoras de vehículos",
+        "peatones y pasajeros",
+        "interacción armoniosa y segura"
+      ],
+      "reviewerNotes": "La definición exacta de buena Convivencia Vial aparece en el primer bloque del capítulo 3."
+    },
+    {
+      "id": "chapter3-road-education-values",
+      "label": "Valores de la Educación Vial",
+      "query": {
+        "prompt": "¿Qué valores busca inculcar la Educación Vial para una mejor convivencia?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P33-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 33, "end": 33 }
+      },
+      "expectedAnswerText": "El respeto (respeto a tu vida y la de las demás personas), la solidaridad, la comprensión, el perdón y la tolerancia.",
+      "requiredPhrases": [
+        "respeto a tu vida y la de las demás personas",
+        "solidaridad",
+        "comprensión",
+        "perdón",
+        "tolerancia"
+      ],
+      "reviewerNotes": "Los valores de la Educación Vial están enumerados explícitamente en el segundo bloque de la página 33."
+    },
+    {
+      "id": "chapter3-road-safety-final-goal",
+      "label": "Meta final de la Seguridad Vial",
+      "query": {
+        "prompt": "¿Cuál es la meta final de la Seguridad Vial?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P33-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 33, "end": 33 }
+      },
+      "expectedAnswerText": "La eliminación total de los siniestros de tránsito, partiendo de la reducción de los mismos y la minimización de sus consecuencias.",
+      "requiredPhrases": [
+        "eliminación total de los siniestros de tránsito",
+        "reducción de los mismos",
+        "minimización de sus consecuencias"
+      ],
+      "reviewerNotes": "La meta final de la Seguridad Vial se define textualmente en el tercer bloque de la página 33."
+    },
+    {
+      "id": "chapter3-safe-adequate-speed",
+      "label": "Velocidad adecuada y segura",
+      "query": {
+        "prompt": "¿Qué caracteriza a una velocidad \"adecuada y segura\"?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P35-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 35, "end": 35 }
+      },
+      "expectedAnswerText": "Es la que permite mantener el control del vehículo y reaccionar a tiempo ante cualquier situación imprevista.",
+      "requiredPhrases": [
+        "adecuada y segura",
+        "te permite mantener",
+        "el control del vehículo",
+        "reaccionar a tiempo",
+        "situación imprevista"
+      ],
+      "reviewerNotes": "La definición de velocidad adecuada y segura aparece en el bloque de claves para la convivencia vial de la página 35."
+    },
+    {
+      "id": "chapter3-prevention-main-defense",
+      "label": "Prevención como principal defensa",
+      "query": {
+        "prompt": "¿Cuál es la principal defensa de una persona conductora para evitar siniestros?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S4",
+        "supportUnitType": "window",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 35, "end": 35 }
+      },
+      "expectedAnswerText": "La prevención será siempre su principal defensa, basada en ver y ser visible en todo momento.",
+      "requiredPhrases": [
+        "ver y ser visible",
+        "vención será siempre su principal defensa"
+      ],
+      "reviewerNotes": "La idea queda OCR-fragmentada entre el cierre del bloque de solidaridad y el bloque siguiente de claves para la convivencia vial; la ventana mínima fiel une S3 y S4."
+    }
+  ]
+}

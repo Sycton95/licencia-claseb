@@ -1,0 +1,590 @@
+{
+  "version": 1,
+  "suite": "blind_test_dataset_v2",
+  "cases": [
+    {
+      "id": "blind-v2-ch1-daily-chile-deaths",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter1-2026-pag6-9.pdf",
+      "label": "Muertes diarias en Chile",
+      "query": {
+        "prompt": "Segun el manual, cuantas personas mueren diariamente en las vias publicas de Chile como promedio?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P08-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 8, "end": 8 }
+      },
+      "expectedAnswerText": "Diariamente mueren entre 4 y 5 personas.",
+      "requiredPhrases": ["diariamente mueren entre 4 y 5 personas"]
+    },
+    {
+      "id": "blind-v2-ch1-vision-cero",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter1-2026-pag6-9.pdf",
+      "label": "Vision Cero",
+      "query": {
+        "prompt": "Que principio etico establece el enfoque de Sistema Seguro conocido como Vision Cero?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P09-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 9, "end": 9 }
+      },
+      "expectedAnswerText": "Que las muertes y lesiones graves en el transito son inaceptables.",
+      "requiredPhrases": ["muertes y lesiones graves", "son inaceptables", "vision cero"]
+    },
+    {
+      "id": "blind-v2-ch1-system-safe-shared-responsibility",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter1-2026-pag6-9.pdf",
+      "label": "Responsabilidad compartida",
+      "query": {
+        "prompt": "En el enfoque Sistema Seguro, quienes comparten la responsabilidad de evitar muertes o lesiones graves?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P09-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 9, "end": 9 }
+      },
+      "expectedAnswerText": "Quienes disenan, construyen, administran y usan las vias y los vehiculos, junto con quienes brindan atencion luego del siniestro.",
+      "requiredPhrases": ["responsabilidad compartida", "disenan construyen administran y usan las vias", "brindan atencion luego de ocurrido el siniestro"]
+    },
+    {
+      "id": "blind-v2-ch2-amber-testigos",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter2-2026-pag11-31.pdf",
+      "label": "Testigos amarillos",
+      "query": {
+        "prompt": "Que advierten los testigos amarillos o ambar del panel de instrumentos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P11-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 11, "end": 11 }
+      },
+      "expectedAnswerText": "Advierten sobre un posible problema a revisar.",
+      "requiredPhrases": ["testigos color amarillo", "advierten sobre un posible problema a revisar"]
+    },
+    {
+      "id": "blind-v2-ch2-convex-mirrors",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter2-2026-pag11-31.pdf",
+      "label": "Espejos convexos",
+      "query": {
+        "prompt": "Como se perciben las imagenes en la mayoria de los espejos laterales convexos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P21-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 21, "end": 21 }
+      },
+      "expectedAnswerText": "Se visualizan mas lejanas y o mas pequenas de lo que estan en la realidad.",
+      "requiredPhrases": ["espejos laterales son convexos", "mas lejanas", "mas pequenas"]
+    },
+    {
+      "id": "blind-v2-ch2-puntos-ciegos",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter2-2026-pag11-31.pdf",
+      "label": "Puntos ciegos",
+      "query": {
+        "prompt": "Como denomina el manual a los sectores sobre los cuales no tendras vision aunque los espejos esten bien regulados?"
+      },
+      "expected": {
+        "segmentId": "2026-CH2-P21-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-2",
+        "pageRange": { "start": 21, "end": 21 }
+      },
+      "expectedAnswerText": "Puntos ciegos o angulos muertos.",
+      "requiredPhrases": ["puntos ciegos", "angulos muertos"]
+    },
+    {
+      "id": "blind-v2-ch3-speed-risk-share",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter3-2026-pag-33-35.pdf",
+      "label": "Velocidad inadecuada",
+      "query": {
+        "prompt": "Segun el manual, en que proporcion de los siniestros con victimas esta presente la velocidad inadecuada?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P34-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 34, "end": 34 }
+      },
+      "expectedAnswerText": "En la cuarta parte de los siniestros con victimas.",
+      "requiredPhrases": ["velocidad inadecuada", "cuarta parte de los siniestros con victimas"]
+    },
+    {
+      "id": "blind-v2-ch3-defensive-preventive-driving",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter3-2026-pag-33-35.pdf",
+      "label": "Conduccion defensiva y preventiva",
+      "query": {
+        "prompt": "Que debes practicar para garantizar tu seguridad, considerando que todas las personas pueden equivocarse?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P35-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 35, "end": 35 }
+      },
+      "expectedAnswerText": "La conduccion defensiva y preventiva.",
+      "requiredPhrases": ["practicando la conduccion defensiva y preventiva", "garantizar tu seguridad"]
+    },
+    {
+      "id": "blind-v2-ch3-precaution-fundamental-principle",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter3-2026-pag-33-35.pdf",
+      "label": "Principio fundamental",
+      "query": {
+        "prompt": "Cual es el principio fundamental en la conduccion de un vehiculo segun el capitulo de convivencia vial?"
+      },
+      "expected": {
+        "segmentId": "2026-CH3-P35-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-3",
+        "pageRange": { "start": 35, "end": 35 }
+      },
+      "expectedAnswerText": "La precaucion.",
+      "requiredPhrases": ["la precaucion es el principio fundamental"]
+    },
+    {
+      "id": "blind-v2-ch4-sneeze-distance",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter4-2026-pag-37-66.pdf",
+      "label": "Estornudo a 90 km/h",
+      "query": {
+        "prompt": "En un viaje por carretera a 90 km/h, cuantos metros recorre el vehiculo durante un estornudo de un segundo?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P58-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 58, "end": 58 }
+      },
+      "expectedAnswerText": "Unos 25 metros.",
+      "requiredNormalizedFacts": [
+        { "raw": "90 km/h", "normalized": 90, "unit": "km/h" }
+      ],
+      "requiredPhrases": ["25 metros"],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch4-antihistamines-equivalence",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter4-2026-pag-37-66.pdf",
+      "label": "Medicamentos y alcohol",
+      "query": {
+        "prompt": "A que rango de alcohol en sangre equivale el riesgo de conducir bajo los efectos de algunos antihistaminicos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P60-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 60, "end": 60 }
+      },
+      "expectedAnswerText": "A una tasa de alcohol en la sangre de 0,5 g/l a 0,8 g/l.",
+      "requiredNormalizedFacts": [
+        { "raw": "0,5 g/l", "normalized": 0.5, "unit": "g/l" },
+        { "raw": "0,8 g/l", "normalized": 0.8, "unit": "g/l" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch4-visual-field-100",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter4-2026-pag-37-66.pdf",
+      "label": "Campo visual a 100 km/h",
+      "query": {
+        "prompt": "A cuantos grados se reduce el campo visual cuando la velocidad es de 100 km/h?"
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P44-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 44, "end": 44 }
+      },
+      "expectedAnswerText": "A 42 grados.",
+      "requiredNormalizedFacts": [
+        { "raw": "100 km/h", "normalized": 100, "unit": "km/h" }
+      ],
+      "requiredPhrases": ["42"],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch5-cyclist-helmet",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter5-2026-pag-68-75.pdf",
+      "label": "Casco ciclista",
+      "query": {
+        "prompt": "Que efecto tiene el casco en la probabilidad de lesiones en la cabeza de las y los ciclistas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P71-S6",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 71, "end": 71 }
+      },
+      "expectedAnswerText": "Reduce hasta tres veces la probabilidad de sufrir lesiones en la cabeza.",
+      "requiredPhrases": ["reduce hasta tres veces", "lesiones en la cabeza"]
+    },
+    {
+      "id": "blind-v2-ch5-cyclist-lateral-distance",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter5-2026-pag-68-75.pdf",
+      "label": "Distancia lateral ciclistas",
+      "query": {
+        "prompt": "Que espacio lateral minimo debes dejar al pasar con tu vehiculo cerca de una persona ciclista?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P71-S6",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 71, "end": 71 }
+      },
+      "expectedAnswerText": "Al menos 1,5 metros.",
+      "requiredNormalizedFacts": [
+        { "raw": "1,5 metros", "normalized": 1.5, "unit": "metros" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch5-under-12-rear-seat",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter5-2026-pag-68-75.pdf",
+      "label": "Menores de 12 anos",
+      "query": {
+        "prompt": "Desde 2016, donde deben ser transportados los menores de 12 anos en un automovil?"
+      },
+      "expected": {
+        "segmentId": "2026-CH5-P73-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-5",
+        "pageRange": { "start": 73, "end": 73 }
+      },
+      "expectedAnswerText": "En el asiento trasero, salvo en vehiculos de cabina simple.",
+      "requiredPhrases": ["prohibicion del traslado de menores de 12 anos en los asientos delanteros", "debiendo ser transportados en el asiento trasero"]
+    },
+    {
+      "id": "blind-v2-ch6-green-light-ten-meters",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter6-2026-pag-77-107.pdf",
+      "label": "No bloquear cruce con luz verde",
+      "query": {
+        "prompt": "Aun teniendo luz verde, que espacio expedito debes tener despues del cruce para avanzar?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P78-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 78, "end": 78 }
+      },
+      "expectedAnswerText": "A lo menos 10 metros expeditos en tu pista de circulacion.",
+      "requiredPhrases": ["a lo menos 10 metros expeditos"]
+    },
+    {
+      "id": "blind-v2-ch6-red-flashing-light",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter6-2026-pag-77-107.pdf",
+      "label": "Luz roja intermitente",
+      "query": {
+        "prompt": "Que indica una luz roja intermitente en un cruce?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P78-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 78, "end": 78 }
+      },
+      "expectedAnswerText": "Ceda el paso.",
+      "requiredPhrases": ["luz roja intermitente", "ceda el paso"]
+    },
+    {
+      "id": "blind-v2-ch6-zebra-imaginary-line",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter6-2026-pag-77-107.pdf",
+      "label": "Linea imaginaria paso cebra",
+      "query": {
+        "prompt": "Aunque no este pintada, a que distancia minima antes del paso de cebra se ubica imaginariamente la linea de detencion?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P83-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 83, "end": 83 }
+      },
+      "expectedAnswerText": "A no menos de un metro antes de estos.",
+      "requiredPhrases": ["a no menos de un metro antes de estos"]
+    },
+    {
+      "id": "blind-v2-ch7-high-beam-light-clothes",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter7-2026-pag-109-125.pdf",
+      "label": "Ropas claras con luces altas",
+      "query": {
+        "prompt": "Que distancia de visibilidad tiene un peaton con ropas claras cuando un vehiculo circula con luces altas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P110-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 110, "end": 110 }
+      },
+      "expectedAnswerText": "300 metros.",
+      "requiredNormalizedFacts": [
+        { "raw": "300 metros", "normalized": 300, "unit": "metros" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch7-trailer-brakes-over-750",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter7-2026-pag-109-125.pdf",
+      "label": "Frenos remolque",
+      "query": {
+        "prompt": "Cuando deben poseer frenos los remolques segun su capacidad de carga?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P115-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 115, "end": 115 }
+      },
+      "expectedAnswerText": "Cuando tienen capacidad de carga superior a 750 kilogramos.",
+      "requiredNormalizedFacts": [
+        { "raw": "750 kilogramos", "normalized": 750, "unit": "kilogramos" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch7-autopista-min-speed",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter7-2026-pag-109-125.pdf",
+      "label": "No usar autopista",
+      "query": {
+        "prompt": "Cuando no debes usar una autopista respecto de la capacidad de tu vehiculo?"
+      },
+      "expected": {
+        "segmentId": "2026-CH7-P116-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-7",
+        "pageRange": { "start": 116, "end": 116 }
+      },
+      "expectedAnswerText": "Cuando tu vehiculo no puede desarrollar una velocidad tal que no ponga en riesgo a las demas personas.",
+      "requiredPhrases": ["no uses una autopista", "no ponga en riesgo a las demas personas"]
+    },
+    {
+      "id": "blind-v2-ch8-shorter-routes",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter8-2026-pag-127-134.pdf",
+      "label": "Rutas mas cortas",
+      "query": {
+        "prompt": "Por que recomienda el manual revisar previamente el mapa antes del viaje?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P128-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 128, "end": 128 }
+      },
+      "expectedAnswerText": "Para identificar rutas mas cortas y evitar recorrer kilometros extra que obliguen a gastar mas combustible.",
+      "requiredPhrases": ["rutas mas cortas", "evitaras recorrer kilometros extra"]
+    },
+    {
+      "id": "blind-v2-ch8-fuel-filter",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter8-2026-pag-127-134.pdf",
+      "label": "Filtro de combustible",
+      "query": {
+        "prompt": "Cuanto puede incrementar el consumo un filtro de combustible en mal estado?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P130-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 130, "end": 130 }
+      },
+      "expectedAnswerText": "En un 0,5%.",
+      "requiredNormalizedFacts": [
+        { "raw": "0,5%", "normalized": 0.5, "unit": "%" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch8-air-filter",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter8-2026-pag-127-134.pdf",
+      "label": "Filtro de aire sucio",
+      "query": {
+        "prompt": "Hasta en cuanto puede perjudicar el rendimiento un filtro de aire sucio?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P130-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 130, "end": 130 }
+      },
+      "expectedAnswerText": "En un 1,5%.",
+      "requiredNormalizedFacts": [
+        { "raw": "1,5%", "normalized": 1.5, "unit": "%" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch8-high-speed-fuel-loss",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter8-2026-pag-127-134.pdf",
+      "label": "Altas velocidades y rendimiento",
+      "query": {
+        "prompt": "Que pasa con el rendimiento de combustible a velocidades de carretera de hasta 120 km/h?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P131-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 131, "end": 131 }
+      },
+      "expectedAnswerText": "Se reduce bastante, del orden de un 10% y mas.",
+      "requiredNormalizedFacts": [
+        { "raw": "120 km/h", "normalized": 120, "unit": "km/h" },
+        { "raw": "10%", "normalized": 10, "unit": "%" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch8-tire-pressure-psi",
+      "validationMode": "blind",
+      "reviewStatus": "needs_extraction_repair",
+      "sourceAuditFile": "chapter8-2026-pag-127-134.pdf",
+      "extractionIssueId": "issue-2026-ch8-p129-s4-truncated-consumption",
+      "label": "Presion de neumaticos 5 PSI",
+      "query": {
+        "prompt": "Segun el manual, cuanto puede aumentar el consumo una reduccion en 5 PSI del nivel optimo de aire en los neumaticos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P129-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 129, "end": 129 }
+      },
+      "expectedAnswerText": "En un 3%.",
+      "requiredNormalizedFacts": [
+        { "raw": "5 PSI", "normalized": 5, "unit": "psi" },
+        { "raw": "3%", "normalized": 3, "unit": "%" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch9-emergency-numbers",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter9-2026-pag-136-148.pdf",
+      "label": "Numeros de emergencia",
+      "query": {
+        "prompt": "Que numeros de emergencia indica el manual que debes llamar lo mas pronto posible en un siniestro?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P136-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 136, "end": 136 }
+      },
+      "expectedAnswerText": "SAMU o ambulancia 131, Bomberos 132 y Carabineros 133.",
+      "requiredNormalizedFacts": [
+        { "raw": "131", "normalized": 131 },
+        { "raw": "132", "normalized": 132 },
+        { "raw": "133", "normalized": 133 }
+      ],
+      "minimumWinnerFactScore": 0.35
+    },
+    {
+      "id": "blind-v2-ch9-tourniquet",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter9-2026-pag-136-148.pdf",
+      "label": "Torniquete",
+      "query": {
+        "prompt": "Cuando corresponde realizar un torniquete y donde debe ubicarse?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P137-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 137, "end": 137 }
+      },
+      "expectedAnswerText": "Cuando no es posible contener una hemorragia con presion directa en una extremidad, en la zona mas superior posible de esa extremidad.",
+      "requiredPhrases": ["no es posible contener la hemorragia con la presion directa", "torniquete", "zona mas superior posible"]
+    },
+    {
+      "id": "blind-v2-ch9-total-brake-failure",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter9-2026-pag-136-148.pdf",
+      "label": "Falla total de frenos",
+      "query": {
+        "prompt": "Cual es la primera maniobra recomendada ante una falla total de frenos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P146-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 146, "end": 146 }
+      },
+      "expectedAnswerText": "Presionar y soltar el pedal varias veces.",
+      "requiredPhrases": ["presionar y soltar el pedal varias veces"]
+    },
+    {
+      "id": "blind-v2-ch9-light-speed-infraction",
+      "validationMode": "blind",
+      "reviewStatus": "verified_from_pdf",
+      "sourceAuditFile": "chapter9-2026-pag-136-148.pdf",
+      "label": "Infraccion leve por velocidad",
+      "query": {
+        "prompt": "Segun la clasificacion del manual, exceder hasta en cuantos kilometros por hora el limite maximo de velocidad constituye una infraccion leve?"
+      },
+      "expected": {
+        "segmentId": "2026-CH9-P145-S1",
+        "supportUnitType": "base",
+        "chapterId": "chapter-9",
+        "pageRange": { "start": 145, "end": 145 }
+      },
+      "expectedAnswerText": "Exceder hasta en 10 kilometros por hora el limite maximo de velocidad.",
+      "requiredNormalizedFacts": [
+        { "raw": "10 kilometros por hora", "normalized": 10, "unit": "km/h" }
+      ],
+      "minimumWinnerFactScore": 0.35
+    }
+  ]
+}

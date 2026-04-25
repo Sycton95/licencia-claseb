@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "suite": "chapter6_gold_cases",
+  "cases": [
+    {
+      "id": "chapter6-right-hand-priority",
+      "label": "Preferencia por la derecha",
+      "query": {
+        "prompt": "¿Quién tiene la preferencia en un cruce que no tiene semáforo, ni carabinero, ni señales de PARE o Ceda el Paso?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P84-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 84, "end": 84 }
+      },
+      "expectedAnswerText": "Siempre tienes que dar preferencia a los vehículos que se aproximan al cruce por la otra vía desde tu derecha.",
+      "requiredPhrases": [
+        "cruce sin semáforo",
+        "PARE o Ceda el Paso",
+        "desde tu derecha"
+      ],
+      "reviewerNotes": "La regla general de preferencia en cruces no regulados aparece de forma textual en la página 84."
+    },
+    {
+      "id": "chapter6-three-second-rule",
+      "label": "Regla de los Tres Segundos",
+      "query": {
+        "prompt": "¿Cómo se aplica la \"Regla de los Tres Segundos\" para mantener una distancia segura con el vehículo de adelante en carretera?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P87-S6__WIN__2026-CH6-P88-S1",
+        "supportUnitType": "window",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 87, "end": 88 }
+      },
+      "expectedAnswerText": "Fija tu mirada en un punto, por ejemplo, un árbol. Tan pronto el vehículo que circula adelante pase el árbol, comienza a contar... mil uno, mil dos, mil tres. Si pasas el árbol antes de haber contado mil tres significa que la distancia que estás guardando es muy corta.",
+      "requiredPhrases": [
+        "Regla de los Tres Segundos",
+        "fija tu mirada en un punto",
+        "un árbol",
+        "contado mil tres"
+      ],
+      "reviewerNotes": "La explicación operativa de la regla está concentrada en el bloque siguiente de la página 84; el OCR conserva el inicio y el criterio de fallo aunque no enumere claramente mil uno y mil dos."
+    },
+    {
+      "id": "chapter6-urban-speed-limit-50",
+      "label": "Velocidad máxima urbana",
+      "query": {
+        "prompt": "¿Cuál es el límite de velocidad máxima permitido en zonas urbanas para vehículos livianos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P96-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 96, "end": 96 }
+      },
+      "expectedAnswerText": "En zonas urbanas, la velocidad máxima permitida es de 50 km/h.",
+      "requiredPhrases": [
+        "zonas urbanas",
+        "velocidad máxima permitida",
+        "50 km/h"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "50 km/h", "normalized": 50, "unit": "km/h" }
+      ],
+      "reviewerNotes": "La regla de velocidad urbana aparece de forma textual en la página 96."
+    },
+    {
+      "id": "chapter6-parallel-parking-distances",
+      "label": "Distancias al estacionar junto a la cuneta",
+      "query": {
+        "prompt": "Al estacionar un vehículo de forma paralela a la cuneta, ¿cuáles son las distancias máximas y mínimas permitidas?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P104-S2",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 104, "end": 104 }
+      },
+      "expectedAnswerText": "Debes hacerlo a no más de 30 centímetros de la cuneta y dejando una distancia mínima de 60 centímetros respecto de otros vehículos estacionados.",
+      "requiredPhrases": [
+        "forma paralela a la cuneta",
+        "30 centímetros",
+        "60 centímetros"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "30 centímetros", "normalized": 30, "unit": "cm" },
+        { "raw": "60 centímetros", "normalized": 60, "unit": "cm" }
+      ],
+      "reviewerNotes": "La regla de estacionamiento paralelo y sus distancias exactas aparece completa en la página 102."
+    },
+    {
+      "id": "chapter6-train-stopping-distance",
+      "label": "Distancia de detención de un tren",
+      "query": {
+        "prompt": "¿Qué distancia aproximada necesita para detenerse un tren que circula a 100 km/h?"
+      },
+      "expected": {
+        "segmentId": "2026-CH6-P107-S3",
+        "supportUnitType": "base",
+        "chapterId": "chapter-6",
+        "pageRange": { "start": 107, "end": 107 }
+      },
+      "expectedAnswerText": "Un tren que marcha a 100 km/h necesitará entre 800 a 1.000 metros para detenerse.",
+      "requiredPhrases": [
+        "trenes no pueden detenerse fácilmente",
+        "100 km/h",
+        "800 a 1.000 metros"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "100 km/h", "normalized": 100, "unit": "km/h" },
+        { "raw": "800 metros", "normalized": 800, "unit": "metros" },
+        { "raw": "1.000 metros", "normalized": 1000, "unit": "metros" }
+      ],
+      "reviewerNotes": "La advertencia de cruce ferroviario sin barreras entrega de forma directa la distancia de detención del tren."
+    }
+  ]
+}

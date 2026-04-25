@@ -1,5 +1,305 @@
 [
   {
+    "externalId": "imported-1-batch-7",
+    "prompt": "Un siniestro de tránsito afecta económicamente a cualquier usuario de la vía, pero ¿Afectan económicamente los siniestros de tránsito a otras personas que no se hayan visto involucradas?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "No, debido a que no estuve presente en el siniestro de tránsito."
+      },
+      {
+        "text": "Tal vez, solo si el siniestro fue cercano a mi domicilio."
+      },
+      {
+        "text": "Sí, debido a que los siniestros de tránsito afectan de manera directa o indirecta que asumimos todas y todos los ciudadanos."
+      }
+    ],
+    "correctOptionIndexes": [
+      2
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "convivencia vial Convivencia Vial Una buena Convivencia Vial es aquella en donde las personas conductoras de vehículos, usuarias de las vías, peatones y pasajeros, se respeten entre sí, resultando una interacción armoniosa y segura. Para lograr dicho cometido, es necesario que to i ó c n a v c i u a d l e La Educación Vial es la adquisición de valores imprescindibles para la conducción, que trata de inculcar hábitos ",
+    "reviewNotes": "Importado desde competitor_audit (7).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S1__WIN__2026-CH3-P33-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.371709,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.155537,
+      "chapter-4": 0.061111,
+      "chapter-5": 0.106087,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-1",
+      "predictedLikelihood": 0.371709,
+      "winnerId": "2026-CH3-P33-S1__WIN__2026-CH3-P33-S3",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      },
+      "supportCoverage": 0.875,
+      "factScore": 0.35,
+      "top1Score": 1.4064199999999998,
+      "delta": 0.018342,
+      "answerSupportCoverage": 0.558824,
+      "answerTokenCoverage": 0.533333,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_neighbor_window_available",
+        "originalWinnerId": "2026-CH3-P33-S1__WIN__2026-CH3-P33-S3",
+        "originalStructuredCoverage": 0.875,
+        "originalWinner": {
+          "id": "2026-CH3-P33-S1__WIN__2026-CH3-P33-S3",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 33,
+            "end": 33
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.4064199999999998,
+          "supportMetrics": {
+            "phraseCoverage": 0.875,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 0.875,
+            "supportSpanPenalty": 0.024,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0.043750000000000004,
+            "incompleteCoveragePenalty": 0.0275,
+            "refinedScore": 1.4064199999999998
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 36.471
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 33,
+        "sourcePageEnd": 33,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P33-S1__WIN__2026-CH3-P33-S3",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    }
+  },
+  {
+    "externalId": "imported-1-batch-27",
+    "prompt": "El 90% de los accidentes de tránsito con víctimas son producidas por...",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Fallas mecánicas."
+      },
+      {
+        "text": "Fallas humanas."
+      },
+      {
+        "text": "Mal clima."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "Hay que ser conscientes y adquirir una percepción del riesgo objetiva, pues la mayoría de los siniestros son evitables. Muchas veces las personas conductoras de automóCerca del 90% de los siniestros de tránsito con viles, por querer demostrar su habilidad al volante, víctimas son",
+    "reviewNotes": "Importado desde competitor_audit (27).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S6"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.200714,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.371508,
+      "chapter-4": 0.061111,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "90",
+        "value": "90",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "90%",
+        "value": "90",
+        "unit": "%",
+        "factRefIds": []
+      }
+    ],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.371508,
+      "winnerId": "2026-CH3-P33-S6",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      },
+      "supportCoverage": 0.75,
+      "factScore": 1,
+      "top1Score": 1.6308333333333336,
+      "delta": 0.057416,
+      "answerSupportCoverage": 0.636364,
+      "answerTokenCoverage": 0.5,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_better_window_found",
+        "originalWinnerId": "2026-CH3-P33-S6",
+        "originalStructuredCoverage": 0.75,
+        "bestExpansionCandidateId": "2026-CH3-P33-S4__WIN__2026-CH3-P33-S6",
+        "bestExpansionStructuredCoverage": 0.75,
+        "originalWinner": {
+          "id": "2026-CH3-P33-S6",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 33,
+            "end": 33
+          },
+          "isSyntheticWindow": false,
+          "finalScore": 1.6308333333333336,
+          "supportMetrics": {
+            "phraseCoverage": 0.5,
+            "factCoverage": 1,
+            "matchedFacts": [
+              {
+                "normalized": 90,
+                "unit": ""
+              },
+              {
+                "normalized": 90,
+                "unit": "%"
+              }
+            ],
+            "missingFacts": [],
+            "structuredCoverage": 0.75,
+            "supportSpanPenalty": 0,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0,
+            "incompleteCoveragePenalty": 0.055,
+            "refinedScore": 1.6308333333333336
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 14.784
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 33,
+        "sourcePageEnd": 33,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P33-S6",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    }
+  },
+  {
     "externalId": "imported-1-batch-186",
     "prompt": "Según la educación vial, ¿Cuáles son los valores imprescindibles para la conducción?",
     "selectionMode": "single",
@@ -22,18 +322,358 @@
     "sourcePageStart": 33,
     "sourcePageEnd": 33,
     "sourceReference": "Convivencia vial",
-    "groundingExcerpt": "convivencia vial Convivencia Vial Una buena Convivencia Vial es aquella en donde las personas conductoras de vehículos, usuarias de las vías, peatones y pasajeros, se respeten entre sí, resultando una interacción armoniosa y segura. Para lograr dicho cometido, es necesario que to",
+    "groundingExcerpt": "convivencia vial Convivencia Vial Una buena Convivencia Vial es aquella en donde las personas conductoras de vehículos, usuarias de las vías, peatones y pasajeros, se respeten entre sí, resultando una interacción armoniosa y segura. Para lograr dicho cometido, es necesario que to i ó c n a v c i u a d l e La Educación Vial es la adquisición de valores imprescindibles para la conducción, que trata de inculcar hábitos ",
     "reviewNotes": "Importado desde competitor_audit (186).",
     "tags": [],
     "chapterId": "chapter-3",
     "manualFactRefs": [],
     "manualCitationRefs": [
-      "2026-CH3-P33-S1"
+      "2026-CH3-P33-S1__WIN__2026-CH3-P33-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.061111,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.511111,
+      "chapter-4": 0.061111,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.511111,
+      "winnerId": "2026-CH3-P33-S1__WIN__2026-CH3-P33-S2",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      },
+      "supportCoverage": 1,
+      "factScore": 0.35,
+      "top1Score": 1.6466764799416775,
+      "delta": 0.015558,
+      "answerSupportCoverage": 0.866667,
+      "answerTokenCoverage": 1,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": false,
+        "reason": "not_needed",
+        "originalWinnerId": "2026-CH3-P33-S1__WIN__2026-CH3-P33-S2",
+        "originalStructuredCoverage": 1,
+        "originalWinner": {
+          "id": "2026-CH3-P33-S1__WIN__2026-CH3-P33-S2",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 33,
+            "end": 33
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.6466764799416775,
+          "supportMetrics": {
+            "phraseCoverage": 1,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 1,
+            "supportSpanPenalty": 0.02,
+            "exactSupportBonus": 0.08,
+            "faithfulWindowBonus": 0.05,
+            "incompleteCoveragePenalty": 0,
+            "refinedScore": 1.6466764799416775
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 9.653
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 33,
+        "sourcePageEnd": 33,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P33-S1__WIN__2026-CH3-P33-S2",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    },
+    "qualityScore": 27.4,
+    "duplicateClusterId": "dup-cluster-29",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-187",
+    "prompt": "¿Cómo suele ser la percepción del riesgo en la mayoría de los conductores?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Sobre el riesgo real, suele ser una percepción objetiva y demasiado realista, lo cual produce que el riesgo percibido es prácticamente de un 100% del conductor."
+      },
+      {
+        "text": "Por debajo del riesgo real, pues suele ser una percepción subjetiva y poco realista, lo cual produce que el riesgo percibido es prácticamente nulo."
+      },
+      {
+        "text": "La percepción del riesgo es igual para todos los conductores."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "l s e a i g v u r d i d a La meta de la Seguridad Vial es la eliminación total de los siniestros de tránsito, partiendo de la reducción de los mismos y la minimización de sus consecuencias. Para que esto ocurra, se debe tener una adecuada y real percepción del riesgo. Dicha perce Debes saber que mientras conduces un automóvil corres riesgos y que un comportamiento incorrecto en estas circunstancias puede poner en pel",
+    "reviewNotes": "Importado desde competitor_audit (187).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S3__WIN__2026-CH3-P33-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.061111,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.511111,
+      "chapter-4": 0.061111,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [
+      {
+        "raw": "100",
+        "value": "100",
+        "unit": "",
+        "factRefIds": []
+      },
+      {
+        "raw": "100%",
+        "value": "100",
+        "unit": "%",
+        "factRefIds": []
+      }
+    ],
+    "groundingAudit": {
+      "disposition": "grounded",
+      "reason": "confident_match",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.511111,
+      "winnerId": "2026-CH3-P33-S3__WIN__2026-CH3-P33-S4",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      },
+      "supportCoverage": 1.1875,
+      "factScore": 0.1,
+      "top1Score": 1.5185553782221999,
+      "delta": 0.031876,
+      "answerSupportCoverage": 0.931034,
+      "answerTokenCoverage": 1,
+      "productionDisposition": "grounded",
+      "supportRefinement": {
+        "attempted": false,
+        "reason": "not_needed",
+        "originalWinnerId": "2026-CH3-P33-S3__WIN__2026-CH3-P33-S4",
+        "originalStructuredCoverage": 1.1875,
+        "originalWinner": {
+          "id": "2026-CH3-P33-S3__WIN__2026-CH3-P33-S4",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 33,
+            "end": 33
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.5185553782221999,
+          "supportMetrics": {
+            "phraseCoverage": 2.375,
+            "factCoverage": 0,
+            "matchedFacts": [],
+            "missingFacts": [
+              {
+                "normalized": 100,
+                "unit": ""
+              },
+              {
+                "normalized": 100,
+                "unit": "%"
+              }
+            ],
+            "structuredCoverage": 1.1875,
+            "supportSpanPenalty": 0.012,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0.05,
+            "incompleteCoveragePenalty": 0,
+            "refinedScore": 1.5185553782221999
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": true,
+        "triggeredBy": {
+          "reason": "small_margin",
+          "top1Score": 0.6831421114226711,
+          "delta": 0.005447,
+          "supportCoverage": 0.5
+        },
+        "selectedPass": "global_unboosted",
+        "winnerChanged": true,
+        "candidates": [
+          {
+            "label": "initial_chapter_boosted",
+            "winnerId": "2026-CH3-P33-S3",
+            "winnerChapterId": "chapter-3",
+            "top1Score": 0.6831421114226711,
+            "delta": 0.005447,
+            "supportCoverage": 0.5,
+            "finalScore": 0.6831421114226711,
+            "selected": false
+          },
+          {
+            "label": "global_unboosted",
+            "winnerId": "2026-CH3-P33-S3__WIN__2026-CH3-P33-S4",
+            "winnerChapterId": "chapter-3",
+            "top1Score": 1.5185553782221999,
+            "delta": 0.031876,
+            "supportCoverage": 1.1875,
+            "finalScore": 1.5185553782221999,
+            "selected": true
+          },
+          {
+            "label": "top_chapters_unboosted",
+            "winnerId": "2026-CH3-P33-S3__WIN__2026-CH3-P33-S4",
+            "winnerChapterId": "chapter-3",
+            "top1Score": 1.5185553782221999,
+            "delta": 0.031876,
+            "supportCoverage": 1.1875,
+            "finalScore": 1.5185553782221999,
+            "selected": false
+          }
+        ]
+      },
+      "latencyMs": 53.163
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 33,
+        "sourcePageEnd": 33,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded",
+      "winnerId": "2026-CH3-P33-S3__WIN__2026-CH3-P33-S4",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    },
+    "qualityScore": 26.4,
+    "duplicateClusterId": "dup-cluster-30",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-190",
+    "prompt": "¿Qué es el principio de confianza en la conducción?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "El principio de confianza es cuando un conductor puede exceder la velocidad máxima permitida."
+      },
+      {
+        "text": "El principio de confianza es cuando los conductores esperan que los demás usuarios de las vías cumplan con las normas de convivencia y comportamiento vial."
+      },
+      {
+        "text": "El principio de confianza es cuando los usuarios de las vías pueden hacer caso omiso a las normas de tránsito."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 34,
+    "sourcePageEnd": 35,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "Para que el tránsito sea ordenado, seguro y no se produzcan siniestros, existen reglas que se deben cumplir y que se apoyan en una serie de principios como el de la confianza. Sin este principio no se podría salir a la calle, si no se confiara en que las demás personas cumplirán convivencia vial La Convivencia Vial exige un compromiso con la Educación Vial, un compromiso con las demás personas y contigo misma/o. Quie",
+    "reviewNotes": "Importado desde competitor_audit (190).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P34-S6__WIN__2026-CH3-P35-S1"
     ],
     "classificationScores": {
       "chapter-1": 0,
-      "chapter-2": 2,
-      "chapter-3": 4,
+      "chapter-2": 0,
+      "chapter-3": 1,
       "chapter-4": 0,
       "chapter-5": 0,
       "chapter-6": 0,
@@ -45,8 +685,381 @@
     "groundingMode": "citation_auto",
     "autoGroundingConfidence": 1,
     "extractedEntities": [],
-    "qualityScore": 27.4,
-    "duplicateClusterId": "dup-cluster-29",
+    "groundingAudit": {
+      "disposition": "grounded",
+      "reason": "confident_match",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 1,
+      "winnerId": "2026-CH3-P34-S6__WIN__2026-CH3-P35-S1",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 35
+      },
+      "supportCoverage": 1,
+      "factScore": 0.35,
+      "top1Score": 1.64292,
+      "delta": 0.022434,
+      "answerSupportCoverage": 0.695652,
+      "answerTokenCoverage": 0.631579,
+      "productionDisposition": "grounded",
+      "supportRefinement": {
+        "attempted": false,
+        "reason": "not_needed",
+        "originalWinnerId": "2026-CH3-P34-S6__WIN__2026-CH3-P35-S1",
+        "originalStructuredCoverage": 1,
+        "originalWinner": {
+          "id": "2026-CH3-P34-S6__WIN__2026-CH3-P35-S1",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 34,
+            "end": 35
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.64292,
+          "supportMetrics": {
+            "phraseCoverage": 1,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 1,
+            "supportSpanPenalty": 0.02,
+            "exactSupportBonus": 0.08,
+            "faithfulWindowBonus": 0.05,
+            "incompleteCoveragePenalty": 0,
+            "refinedScore": 1.64292
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 8.647
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 34,
+        "sourcePageEnd": 35,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded",
+      "winnerId": "2026-CH3-P34-S6__WIN__2026-CH3-P35-S1",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 35
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    },
+    "qualityScore": 24.1,
+    "duplicateClusterId": "dup-cluster-33",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-191",
+    "prompt": "¿Por qué la precaución es uno de los principios fundamentales de la conducción?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque usted cuando esté conduciendo debe estar atento solo a las intersecciones viales."
+      },
+      {
+        "text": "Porque el conductor debe ser consciente y admitir que todas las personas pueden equivocarse y cometer errores, por lo tanto, debe estar atento a las condiciones de tránsito."
+      },
+      {
+        "text": "Porque el conductor debe estar atento a que los documentos del vehículo estén ubicados en la guantera, en caso de fiscalización."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 34,
+    "sourcePageEnd": 35,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "Pero este Entorno Vial es mucho más que calles o carreteras por las que se puede circular. Este es un espacio de convivencia social, un entorno en el que se desarrollan las personas, como seres humanos. Los vehículos son conducidos por personas, las calles y las carreteras las ut Para que el tránsito sea ordenado, seguro y no se produzcan siniestros, existen reglas que se deben cumplir y que se apoyan en una serie de",
+    "reviewNotes": "Importado desde competitor_audit (191).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P34-S5__WIN__2026-CH3-P35-S1"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.061111,
+      "chapter-2": 0.137767,
+      "chapter-3": 0.434455,
+      "chapter-4": 0.061111,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.434455,
+      "winnerId": "2026-CH3-P34-S5__WIN__2026-CH3-P35-S1",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 35
+      },
+      "supportCoverage": 0.75,
+      "factScore": 0.35,
+      "top1Score": 1.21642,
+      "delta": 0.01312,
+      "answerSupportCoverage": 0.566667,
+      "answerTokenCoverage": 0.5,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_neighbor_window_available",
+        "originalWinnerId": "2026-CH3-P34-S5__WIN__2026-CH3-P35-S1",
+        "originalStructuredCoverage": 0.75,
+        "originalWinner": {
+          "id": "2026-CH3-P34-S5__WIN__2026-CH3-P35-S1",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 34,
+            "end": 35
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.21642,
+          "supportMetrics": {
+            "phraseCoverage": 0.75,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 0.75,
+            "supportSpanPenalty": 0.024,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0,
+            "incompleteCoveragePenalty": 0.055,
+            "refinedScore": 1.21642
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 11.996
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 34,
+        "sourcePageEnd": 35,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P34-S5__WIN__2026-CH3-P35-S1",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 35
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    },
+    "qualityScore": 26.9,
+    "duplicateClusterId": "dup-cluster-34",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-192",
+    "prompt": "¿Por qué el respeto es uno de los principios fundamentales de la conducción?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Porque el respeto es esencial para mantenerse en todo momento una actitud segura, responsable y tranquila."
+      },
+      {
+        "text": "El respeto no es uno de los principios fundamentales de la conducción."
+      },
+      {
+        "text": "El respeto es solo esencial en carreteras, debido a que los vehículos circulan a una alta velocidad."
+      }
+    ],
+    "correctOptionIndexes": [
+      0
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 34,
+    "sourcePageEnd": 35,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "Pero este Entorno Vial es mucho más que calles o carreteras por las que se puede circular. Este es un espacio de convivencia social, un entorno en el que se desarrollan las personas, como seres humanos. Los vehículos son conducidos por personas, las calles y las carreteras las ut Para que el tránsito sea ordenado, seguro y no se produzcan siniestros, existen reglas que se deben cumplir y que se apoyan en una serie de",
+    "reviewNotes": "Importado desde competitor_audit (192).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P34-S5__WIN__2026-CH3-P35-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0,
+      "chapter-2": 0,
+      "chapter-3": 1,
+      "chapter-4": 0,
+      "chapter-5": 0,
+      "chapter-6": 0,
+      "chapter-7": 0,
+      "chapter-8": 0,
+      "chapter-9": 0
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 1,
+      "winnerId": "2026-CH3-P34-S5__WIN__2026-CH3-P35-S2",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 35
+      },
+      "supportCoverage": 0.75,
+      "factScore": 0.35,
+      "top1Score": 1.20442,
+      "delta": 0.01131,
+      "answerSupportCoverage": 0.7,
+      "answerTokenCoverage": 0.666667,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_neighbor_window_available",
+        "originalWinnerId": "2026-CH3-P34-S5__WIN__2026-CH3-P35-S2",
+        "originalStructuredCoverage": 0.75,
+        "originalWinner": {
+          "id": "2026-CH3-P34-S5__WIN__2026-CH3-P35-S2",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 34,
+            "end": 35
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.20442,
+          "supportMetrics": {
+            "phraseCoverage": 0.75,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 0.75,
+            "supportSpanPenalty": 0.036000000000000004,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0,
+            "incompleteCoveragePenalty": 0.055,
+            "refinedScore": 1.20442
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 10.572
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 34,
+        "sourcePageEnd": 35,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P34-S5__WIN__2026-CH3-P35-S2",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 35
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    },
+    "qualityScore": 26.6,
+    "duplicateClusterId": "dup-cluster-35",
     "duplicateResolution": "winner"
   },
   {
@@ -69,189 +1082,897 @@
       2
     ],
     "publicExplanation": "",
-    "sourcePageStart": 33,
-    "sourcePageEnd": 33,
+    "sourcePageStart": 34,
+    "sourcePageEnd": 35,
     "sourceReference": "Convivencia vial",
-    "groundingExcerpt": "convivencia vial Convivencia Vial Una buena Convivencia Vial es aquella en donde las personas conductoras de vehículos, usuarias de las vías, peatones y pasajeros, se respeten entre sí, resultando una interacción armoniosa y segura. Para lograr dicho cometido, es necesario que to",
+    "groundingExcerpt": "Para que el tránsito sea ordenado, seguro y no se produzcan siniestros, existen reglas que se deben cumplir y que se apoyan en una serie de principios como el de la confianza. Sin este principio no se podría salir a la calle, si no se confiara en que las demás personas cumplirán convivencia vial La Convivencia Vial exige un compromiso con la Educación Vial, un compromiso con las demás personas y contigo misma/o. Quie",
     "reviewNotes": "Importado desde competitor_audit (193).",
     "tags": [],
     "chapterId": "chapter-3",
     "manualFactRefs": [],
     "manualCitationRefs": [
-      "2026-CH3-P33-S1"
+      "2026-CH3-P34-S6__WIN__2026-CH3-P35-S3"
     ],
     "classificationScores": {
-      "chapter-1": 0,
-      "chapter-2": 2,
-      "chapter-3": 5,
-      "chapter-4": 0,
-      "chapter-5": 0,
-      "chapter-6": 0,
-      "chapter-7": 0,
-      "chapter-8": 0,
-      "chapter-9": 0
+      "chapter-1": 0.259669,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.312553,
+      "chapter-4": 0.061111,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
     },
     "reviewDisposition": "accepted_with_warning",
     "groundingMode": "citation_auto",
     "autoGroundingConfidence": 1,
     "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.312553,
+      "winnerId": "2026-CH3-P34-S6__WIN__2026-CH3-P35-S3",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 35
+      },
+      "supportCoverage": 0.75,
+      "factScore": 0.35,
+      "top1Score": 1.20442,
+      "delta": 0.250101,
+      "answerSupportCoverage": 0.8,
+      "answerTokenCoverage": 0.823529,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_neighbor_window_available",
+        "originalWinnerId": "2026-CH3-P34-S6__WIN__2026-CH3-P35-S3",
+        "originalStructuredCoverage": 0.75,
+        "originalWinner": {
+          "id": "2026-CH3-P34-S6__WIN__2026-CH3-P35-S3",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 34,
+            "end": 35
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.20442,
+          "supportMetrics": {
+            "phraseCoverage": 0.75,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 0.75,
+            "supportSpanPenalty": 0.036000000000000004,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0,
+            "incompleteCoveragePenalty": 0.055,
+            "refinedScore": 1.20442
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 10.089
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 34,
+        "sourcePageEnd": 35,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P34-S6__WIN__2026-CH3-P35-S3",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 35
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    },
     "qualityScore": 27,
     "duplicateClusterId": "dup-cluster-36",
     "duplicateResolution": "winner"
   },
   {
-    "externalId": "imported-1-batch-280",
-    "prompt": "¿Qué precauciones debe tomar un conductor cuando asiste a un evento social?",
+    "externalId": "imported-1-batch-194",
+    "prompt": "¿Cuáles de las siguientes afirmaciones son VERDADERAS, en cuanto a las claves para la convivencia vial? (Doble Puntaje) I- Debe conducir solo de día evitando conducir de noche. II- Debe conducir a una velocidad moderada y acorde a las condiciones viales. III- Conduce siempre dejando un espacio suficiente y prudente al momento de conducir.",
     "selectionMode": "single",
     "instruction": "Marque una respuesta.",
     "options": [
       {
-        "text": "Beber bastante café después de ingerir bebidas alcohólicas."
+        "text": "II y III."
       },
       {
-        "text": "Evitar circular por calles de mucho tráfico después de beber alcohol."
+        "text": "I y II."
       },
       {
-        "text": "Evitar consumir alcohol si va a conducir."
+        "text": "I y III."
       }
     ],
     "correctOptionIndexes": [
-      2
-    ],
-    "publicExplanation": "",
-    "sourcePageStart": 33,
-    "sourcePageEnd": 33,
-    "sourceReference": "Convivencia vial",
-    "groundingExcerpt": "Debes saber que mientras conduces un automóvil corres riesgos y que un comportamiento incorrecto en estas circunstancias puede poner en peligro tu vida y la de las demás personas. La imprudencia y la falta de práctica de quienes conducen son el mayor riesgo a la hora de conducir.",
-    "reviewNotes": "Importado desde competitor_audit (280).",
-    "tags": [],
-    "chapterId": "chapter-3",
-    "manualFactRefs": [
-      "fact-chapter-4-50-33",
-      "fact-chapter-4-50-34",
-      "fact-chapter-4-50-35",
-      "fact-chapter-4-50-36",
-      "fact-chapter-4-50-37",
-      "fact-chapter-4-50-38",
-      "fact-chapter-4-50-39",
-      "fact-chapter-4-53-40",
-      "fact-chapter-4-53-41",
-      "fact-chapter-4-60-44",
-      "fact-chapter-4-60-45",
-      "fact-chapter-9-142-85",
-      "fact-chapter-9-142-86"
-    ],
-    "manualCitationRefs": [
-      "2026-CH3-P33-S4"
-    ],
-    "classificationScores": {
-      "chapter-1": 0,
-      "chapter-2": 0,
-      "chapter-3": 2,
-      "chapter-4": 0,
-      "chapter-5": 0,
-      "chapter-6": 0,
-      "chapter-7": 0,
-      "chapter-8": 0,
-      "chapter-9": 0
-    },
-    "reviewDisposition": "accepted_with_warning",
-    "groundingMode": "citation_auto",
-    "autoGroundingConfidence": 1,
-    "extractedEntities": []
-  },
-  {
-    "externalId": "imported-1-batch-1061",
-    "prompt": "¿Qué debe hacer si se enciende el testigo del sistema de frenos (círculo rojo) mientras conduce?",
-    "selectionMode": "single",
-    "instruction": "Marque una respuesta.",
-    "options": [
-      {
-        "text": "Seguir con precaución."
-      },
-      {
-        "text": "Detenerse inmediatamente y revisar el nivel de líquido o si el freno de mano está puesto."
-      },
-      {
-        "text": "Acelerar para limpiar los sensores."
-      }
-    ],
-    "correctOptionIndexes": [
-      1
-    ],
-    "publicExplanation": "",
-    "sourcePageStart": 33,
-    "sourcePageEnd": 33,
-    "sourceReference": "Convivencia vial",
-    "groundingExcerpt": "Debes saber que mientras conduces un automóvil corres riesgos y que un comportamiento incorrecto en estas circunstancias puede poner en peligro tu vida y la de las demás personas. La imprudencia y la falta de práctica de quienes conducen son el mayor riesgo a la hora de conducir.",
-    "reviewNotes": "Importado desde competitor_audit (1061).",
-    "tags": [],
-    "chapterId": "chapter-3",
-    "manualFactRefs": [],
-    "manualCitationRefs": [
-      "2026-CH3-P33-S4"
-    ],
-    "classificationScores": {
-      "chapter-1": 0,
-      "chapter-2": 0,
-      "chapter-3": 2,
-      "chapter-4": 0,
-      "chapter-5": 0,
-      "chapter-6": 0,
-      "chapter-7": 0,
-      "chapter-8": 0,
-      "chapter-9": 0
-    },
-    "reviewDisposition": "accepted_with_warning",
-    "groundingMode": "citation_auto",
-    "autoGroundingConfidence": 1,
-    "extractedEntities": []
-  },
-  {
-    "externalId": "imported-1-batch-1367",
-    "prompt": "¿Qué debe hacer si al presionar el pedal de freno este se va hasta el fondo?",
-    "selectionMode": "single",
-    "instruction": "Marque una respuesta.",
-    "options": [
-      {
-        "text": "Seguir conduciendo con precaución."
-      },
-      {
-        "text": "Detenerse inmediatamente y revisar fallas graves en el sistema hidráulico."
-      },
-      {
-        "text": "Acelerar para que el servofreno cargue."
-      }
-    ],
-    "correctOptionIndexes": [
-      1
+      0
     ],
     "publicExplanation": "",
     "sourcePageStart": 35,
     "sourcePageEnd": 35,
     "sourceReference": "Convivencia vial",
-    "groundingExcerpt": "La premando la ocasión en un momento de molestia vención será siempre su principal defensa. Mantén una distancia suficiente y prudente Para conducir con seguridad debes estar con los demás vehículos y las y los usuarios. Utiliza siempre el No des por hecho que las demás personas ",
-    "reviewNotes": "Importado desde competitor_audit (1367).",
+    "groundingExcerpt": "En el Entorno Vial, la solidaridad es la mejor virtud que se puede tener al conducir un vehículo. Esta permite que dicho entorno funcione armónicamente ya que se llevan a cabo acciones como ceder el paso, dejar espacio suficiente para permitir que te adelanten, tener consideració La premando la ocasión en un momento de molestia vención será siempre su principal defensa. Mantén una distancia suficiente y prudente Para",
+    "reviewNotes": "Importado desde competitor_audit (194).",
     "tags": [],
     "chapterId": "chapter-3",
     "manualFactRefs": [],
     "manualCitationRefs": [
-      "2026-CH3-P35-S4"
+      "2026-CH3-P35-S3__WIN__2026-CH3-P35-S6"
     ],
     "classificationScores": {
-      "chapter-1": 0,
-      "chapter-2": 0,
-      "chapter-3": 2,
-      "chapter-4": 0,
-      "chapter-5": 0,
-      "chapter-6": 0,
-      "chapter-7": 0,
-      "chapter-8": 0,
-      "chapter-9": 0
+      "chapter-1": 0.061111,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.511111,
+      "chapter-4": 0.061111,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 0.7656699999999999,
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.511111,
+      "winnerId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S6",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 35,
+        "end": 35
+      },
+      "supportCoverage": 0.375,
+      "factScore": 0.35,
+      "top1Score": 0.7656699999999999,
+      "delta": 0.024142,
+      "answerSupportCoverage": 0.585366,
+      "answerTokenCoverage": 0,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_neighbor_window_available",
+        "originalWinnerId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S6",
+        "originalStructuredCoverage": 0.375,
+        "originalWinner": {
+          "id": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S6",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 35,
+            "end": 35
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 0.7656699999999999,
+          "supportMetrics": {
+            "phraseCoverage": 0.375,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 0.375,
+            "supportSpanPenalty": 0.036000000000000004,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0,
+            "incompleteCoveragePenalty": 0.1375,
+            "refinedScore": 0.7656699999999999
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": true,
+        "triggeredBy": {
+          "reason": "incomplete_support",
+          "top1Score": 0.7656699999999999,
+          "delta": 0.024142,
+          "supportCoverage": 0.375
+        },
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": [
+          {
+            "label": "initial_chapter_boosted",
+            "winnerId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S6",
+            "winnerChapterId": "chapter-3",
+            "top1Score": 0.7656699999999999,
+            "delta": 0.024142,
+            "supportCoverage": 0.375,
+            "finalScore": 0.7656699999999999,
+            "selected": true
+          },
+          {
+            "label": "global_unboosted",
+            "winnerId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S6",
+            "winnerChapterId": "chapter-3",
+            "top1Score": 0.7656699999999999,
+            "delta": 0.024142,
+            "supportCoverage": 0.375,
+            "finalScore": 0.7656699999999999,
+            "selected": false
+          },
+          {
+            "label": "top_chapters_unboosted",
+            "winnerId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S6",
+            "winnerChapterId": "chapter-3",
+            "top1Score": 0.7656699999999999,
+            "delta": 0.024142,
+            "supportCoverage": 0.375,
+            "finalScore": 0.7656699999999999,
+            "selected": false
+          }
+        ]
+      },
+      "latencyMs": 54.126
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 35,
+        "sourcePageEnd": 35,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S6",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 35,
+        "end": 35
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    },
+    "qualityScore": 41,
+    "duplicateClusterId": "dup-cluster-37",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-203",
+    "prompt": "¿Cuáles son los comportamientos incorrectos de los conductores que podrían poner en peligro su vida y la de los demás?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "La experiencia, la prudencia y la falta de formación."
+      },
+      {
+        "text": "La inexperiencia, la imprudencia y la falta de formación."
+      },
+      {
+        "text": "La prudencia, la experiencia y manteniendo su vehículo en condiciones óptimas."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "Debes saber que mientras conduces un automóvil corres riesgos y que un comportamiento incorrecto en estas circunstancias puede poner en peligro tu vida y la de las demás personas. La imprudencia y la falta de práctica de quienes conducen son el mayor riesgo a la hora de conducir.",
+    "reviewNotes": "Importado desde competitor_audit (203).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.061111,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.511111,
+      "chapter-4": 0.061111,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
     },
     "reviewDisposition": "accepted_with_warning",
     "groundingMode": "citation_auto",
     "autoGroundingConfidence": 1,
-    "extractedEntities": []
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.511111,
+      "winnerId": "2026-CH3-P33-S4",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      },
+      "supportCoverage": 0.6,
+      "factScore": 0.35,
+      "top1Score": 1.1869999999999998,
+      "delta": 0.025193,
+      "answerSupportCoverage": 0.611111,
+      "answerTokenCoverage": 0.5,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_better_window_found",
+        "originalWinnerId": "2026-CH3-P33-S4",
+        "originalStructuredCoverage": 0.6,
+        "bestExpansionCandidateId": "2026-CH3-P33-S2__WIN__2026-CH3-P33-S4",
+        "bestExpansionStructuredCoverage": 0.6,
+        "originalWinner": {
+          "id": "2026-CH3-P33-S4",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 33,
+            "end": 33
+          },
+          "isSyntheticWindow": false,
+          "finalScore": 1.1869999999999998,
+          "supportMetrics": {
+            "phraseCoverage": 0.6,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 0.6,
+            "supportSpanPenalty": 0,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0,
+            "incompleteCoveragePenalty": 0.08800000000000001,
+            "refinedScore": 1.1869999999999998
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 11.322
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 33,
+        "sourcePageEnd": 33,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P33-S4",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    },
+    "qualityScore": 30.8,
+    "duplicateClusterId": "dup-cluster-46",
+    "duplicateResolution": "winner"
+  },
+  {
+    "externalId": "imported-1-batch-373",
+    "prompt": "¿Cuáles son los factores de riesgo que afectan directamente a una persona conductora?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Solo el alcohol."
+      },
+      {
+        "text": "La velocidad, la fatiga y el alcohol."
+      },
+      {
+        "text": "Conducir al mediodía."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 34,
+    "sourcePageEnd": 34,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "convivencia vial principales factores de riesgo Las distracciones son un factor importante Alcohol y drogas, que disminuyen las fay una de las principales causas de siniestros. Fatiga, cansancio, sueño o somnolencia, Velocidad inadecuada, presente en la cuarta el consumo de fárma Para practicar una conducción segura y responsable y para reducir las probabilidades de sufrir un siniestro vial, se deben eliminar, en la ",
+    "reviewNotes": "Importado desde competitor_audit (373).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P34-S1__WIN__2026-CH3-P34-S3"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.061111,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.379104,
+      "chapter-4": 0.193118,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.379104,
+      "winnerId": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S3",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 34
+      },
+      "supportCoverage": 0.6666666666666666,
+      "factScore": 0.35,
+      "top1Score": 1.1171295064067608,
+      "delta": 0.01021,
+      "answerSupportCoverage": 0.714286,
+      "answerTokenCoverage": 0.666667,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_neighbor_window_available",
+        "originalWinnerId": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S3",
+        "originalStructuredCoverage": 0.6666666666666666,
+        "originalWinner": {
+          "id": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S3",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 34,
+            "end": 34
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.1171295064067608,
+          "supportMetrics": {
+            "phraseCoverage": 0.6666666666666666,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 0.6666666666666666,
+            "supportSpanPenalty": 0.024,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0,
+            "incompleteCoveragePenalty": 0.07333333333333335,
+            "refinedScore": 1.1171295064067608
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 13.288
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 34,
+        "sourcePageEnd": 34,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S3",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 34
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    }
+  },
+  {
+    "externalId": "imported-1-batch-660",
+    "prompt": "¿Cuál es el principal riesgo de conducir con fatiga?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Que el auto gaste más combustible."
+      },
+      {
+        "text": "La disminución de la alerta y el aumento del tiempo de reacción."
+      },
+      {
+        "text": "Que las luces iluminen menos."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 34,
+    "sourcePageEnd": 34,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "convivencia vial principales factores de riesgo Las distracciones son un factor importante Alcohol y drogas, que disminuyen las fay una de las principales causas de siniestros. Fatiga, cansancio, sueño o somnolencia, Velocidad inadecuada, presente en la cuarta el consumo de fárma Para practicar una conducción segura y responsable y para reducir las probabilidades de sufrir un siniestro vial, se deben eliminar, en la ",
+    "reviewNotes": "Importado desde competitor_audit (660).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P34-S1__WIN__2026-CH3-P34-S2"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.061111,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.463683,
+      "chapter-4": 0.108539,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.463683,
+      "winnerId": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S2",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 34
+      },
+      "supportCoverage": 1,
+      "factScore": 0.35,
+      "top1Score": 1.6282642696148113,
+      "delta": 0.007323,
+      "answerSupportCoverage": 0.5,
+      "answerTokenCoverage": 0.166667,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": false,
+        "reason": "not_needed",
+        "originalWinnerId": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S2",
+        "originalStructuredCoverage": 1,
+        "originalWinner": {
+          "id": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S2",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 34,
+            "end": 34
+          },
+          "isSyntheticWindow": true,
+          "finalScore": 1.6282642696148113,
+          "supportMetrics": {
+            "phraseCoverage": 1,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 1,
+            "supportSpanPenalty": 0.02,
+            "exactSupportBonus": 0.08,
+            "faithfulWindowBonus": 0.05,
+            "incompleteCoveragePenalty": 0,
+            "refinedScore": 1.6282642696148113
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": true,
+        "triggeredBy": {
+          "reason": "small_margin",
+          "top1Score": 1.6282642696148113,
+          "delta": 0.007323,
+          "supportCoverage": 1
+        },
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": [
+          {
+            "label": "initial_chapter_boosted",
+            "winnerId": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S2",
+            "winnerChapterId": "chapter-3",
+            "top1Score": 1.6282642696148113,
+            "delta": 0.007323,
+            "supportCoverage": 1,
+            "finalScore": 1.6282642696148113,
+            "selected": true
+          },
+          {
+            "label": "global_unboosted",
+            "winnerId": "2026-CH4-P65-S3__WIN__2026-CH4-P65-S5",
+            "winnerChapterId": "chapter-4",
+            "top1Score": 0.8697532791508708,
+            "delta": 0.013682,
+            "supportCoverage": 0.5,
+            "finalScore": 0.8697532791508708,
+            "selected": false
+          },
+          {
+            "label": "top_chapters_unboosted",
+            "winnerId": "2026-CH4-P65-S3__WIN__2026-CH4-P65-S5",
+            "winnerChapterId": "chapter-4",
+            "top1Score": 0.92392,
+            "delta": 0.018994,
+            "supportCoverage": 0.5,
+            "finalScore": 0.92392,
+            "selected": false
+          }
+        ]
+      },
+      "latencyMs": 28.407
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 34,
+        "sourcePageEnd": 34,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P34-S1__WIN__2026-CH3-P34-S2",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 34,
+        "end": 34
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    }
+  },
+  {
+    "externalId": "imported-1-batch-986",
+    "prompt": "¿Cuál es el riesgo de conducir con neblina?",
+    "selectionMode": "single",
+    "instruction": "Marque una respuesta.",
+    "options": [
+      {
+        "text": "Ninguno."
+      },
+      {
+        "text": "Mala visibilidad y pavimento resbaladizo."
+      },
+      {
+        "text": "El auto se moja."
+      }
+    ],
+    "correctOptionIndexes": [
+      1
+    ],
+    "publicExplanation": "",
+    "sourcePageStart": 33,
+    "sourcePageEnd": 33,
+    "sourceReference": "Convivencia vial",
+    "groundingExcerpt": "Debes saber que mientras conduces un automóvil corres riesgos y que un comportamiento incorrecto en estas circunstancias puede poner en peligro tu vida y la de las demás personas. La imprudencia y la falta de práctica de quienes conducen son el mayor riesgo a la hora de conducir.",
+    "reviewNotes": "Importado desde competitor_audit (986).",
+    "tags": [],
+    "chapterId": "chapter-3",
+    "manualFactRefs": [],
+    "manualCitationRefs": [
+      "2026-CH3-P33-S4"
+    ],
+    "classificationScores": {
+      "chapter-1": 0.061111,
+      "chapter-2": 0.061111,
+      "chapter-3": 0.334952,
+      "chapter-4": 0.23727,
+      "chapter-5": 0.061111,
+      "chapter-6": 0.061111,
+      "chapter-7": 0.061111,
+      "chapter-8": 0.061111,
+      "chapter-9": 0.061111
+    },
+    "reviewDisposition": "accepted_with_warning",
+    "groundingMode": "citation_auto",
+    "autoGroundingConfidence": 1,
+    "extractedEntities": [],
+    "groundingAudit": {
+      "disposition": "low_confidence",
+      "reason": "recoverable_incomplete_support",
+      "predictedChapterId": "chapter-3",
+      "predictedLikelihood": 0.334952,
+      "winnerId": "2026-CH3-P33-S4",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      },
+      "supportCoverage": 0.6666666666666666,
+      "factScore": 0.35,
+      "top1Score": 1.1885301722484884,
+      "delta": 0.022886,
+      "answerSupportCoverage": 0.333333,
+      "answerTokenCoverage": 0,
+      "productionDisposition": "grounded_recoverable",
+      "supportRefinement": {
+        "attempted": true,
+        "reason": "no_better_window_found",
+        "originalWinnerId": "2026-CH3-P33-S4",
+        "originalStructuredCoverage": 0.6666666666666666,
+        "bestExpansionCandidateId": "2026-CH3-P33-S2__WIN__2026-CH3-P33-S4",
+        "bestExpansionStructuredCoverage": 0.6666666666666666,
+        "originalWinner": {
+          "id": "2026-CH3-P33-S4",
+          "chapterId": "chapter-3",
+          "pageRange": {
+            "start": 33,
+            "end": 33
+          },
+          "isSyntheticWindow": false,
+          "finalScore": 1.1885301722484884,
+          "supportMetrics": {
+            "phraseCoverage": 0.6666666666666666,
+            "factCoverage": 1,
+            "matchedFacts": [],
+            "missingFacts": [],
+            "structuredCoverage": 0.6666666666666666,
+            "supportSpanPenalty": 0,
+            "exactSupportBonus": 0,
+            "faithfulWindowBonus": 0,
+            "incompleteCoveragePenalty": 0.07333333333333335,
+            "refinedScore": 1.1885301722484884
+          }
+        },
+        "refinedWinner": null
+      },
+      "fallbackRecovery": {
+        "attempted": false,
+        "triggeredBy": null,
+        "selectedPass": "initial_chapter_boosted",
+        "winnerChanged": false,
+        "candidates": []
+      },
+      "latencyMs": 10.261
+    },
+    "metadataRepair": {
+      "applied": true,
+      "fields": [
+        "chapterId",
+        "sourcePageStart",
+        "sourcePageEnd",
+        "sourceReference"
+      ],
+      "before": {
+        "chapterId": "",
+        "sourcePageStart": null,
+        "sourcePageEnd": null,
+        "sourceReference": ""
+      },
+      "after": {
+        "chapterId": "chapter-3",
+        "sourcePageStart": 33,
+        "sourcePageEnd": 33,
+        "sourceReference": "Convivencia vial"
+      },
+      "basis": "grounding_winner",
+      "recoveryTier": "grounded_recoverable",
+      "winnerId": "2026-CH3-P33-S4",
+      "winnerChapterId": "chapter-3",
+      "winnerPageRange": {
+        "start": 33,
+        "end": 33
+      }
+    },
+    "needsVisualAudit": false,
+    "factReview": {
+      "advisoryOnly": true,
+      "winnerScopedFactIds": [],
+      "suggestions": []
+    }
   }
 ]

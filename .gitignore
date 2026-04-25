@@ -12,3 +12,7 @@ vite.config.d.ts
 .env
 .env.local
 .env.production.local
+sandbox/grounding-calibration/runs/
+sandbox/grounding-calibration/tmp/
+sandbox/grounding-calibration/exports/
+sandbox/grounding-calibration/research/raw/

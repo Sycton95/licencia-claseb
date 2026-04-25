@@ -763,7 +763,18 @@ export function AdminPage() {
 
           {activeSection === 'imports' &&
             (importReviewManifest ? (
-              <ImportReviewManager manifest={importReviewManifest} />
+              <ImportReviewManager
+                manifest={importReviewManifest}
+                onOpenReference={handleOpenReference}
+                onOpenCatalogQuestion={(questionId) => {
+                  setActiveSection('catalog');
+                  setSelectedQuestionId(questionId);
+                }}
+                onCatalogUpdated={setCatalog}
+                catalog={catalog}
+                sourceDocuments={catalog?.sourceDocuments || []}
+                actorEmail={sessionEmail ?? 'local-admin'}
+              />
             ) : (
               <div className="flex flex-1 items-center justify-center p-6 text-sm text-slate-500">
                 Cargando manifest de import review...

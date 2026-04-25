@@ -13,6 +13,30 @@
   - `databaseReachable: true`
   - `schema: v1`
 
+## 2026-04-22 Sandbox grounding baseline frozen for production-readiness staging
+
+- The isolated grounding sandbox under `sandbox/grounding-calibration/` is now treated as a maintained calibration system.
+- Current sandbox state:
+  - Chapter 1-9 gold suites green
+  - blind suites expanded to `55` positive cases
+  - synthetic negatives remain green
+  - chapter-likelihood layer active
+  - support refinement / evidence expansion active
+- Current sandbox benchmark baseline:
+  - blind `precisionAt1 = 1`
+  - blind `recallAt5 = 1`
+  - blind `answerBearingPassRate = 1`
+  - `chapterPredictionAccuracy = 1`
+  - `negativeLowConfidencePassRate = 1`
+  - `verifiedFromPdfCaseCount = 29`
+  - `verifiedFromPdfWithoutOverridePassRate = 1`
+- New curated chapter PDF slices were added under `sandbox/grounding-calibration/resources/books/` and are now the human-audit source for blind-case curation.
+- Extraction defects are now tracked separately in `sandbox/grounding-calibration/resources/extraction-issues.json`.
+- Sandbox operating and reuse docs now live in:
+  - `sandbox/grounding-calibration/README.md`
+  - `sandbox/grounding-calibration/PROGRESS.md`
+- This baseline is the staging gate to beat before any production grounding integration.
+
 ## 2026-04-21 Versioned manual knowledge pack and grounding calibration
 
 - Added a versioned manual knowledge pack rooted at `data/manual-knowledge/2026/`.
@@ -494,6 +518,241 @@
   - `node scripts/prepare-manual-knowledge.mjs`
   - `node scripts/review-import.mjs data/imports/imported-1-batch.json`
   - `node scripts/review-import.mjs data/imports/imported-1-batch.json --chapter=chapter-2`
+
+## 2026-04-22 Production grounding replacement from sandbox
+
+- Replaced the active import-review grounding internals with the promoted sandbox grounding engine.
+- Production grounding now uses shared runtime modules under `src/lib/grounding/` for:
+  - chapter-likelihood scoring
+  - lexical retrieval with bounded chapter boosts
+  - fact normalization and fact gating
+  - support refinement / evidence expansion
+  - confidence disposition based on support completeness
+- Kept the production review contract stable:
+  - `reviewImportBatch(...)`
+  - `review-log.json`
+  - `run-details.json`
+  - `accepted-candidates.json`
+  - `rejected-candidates.json`
+- Kept duplicate clustering, cross-bank duplicate checks, and artifact shaping in `src/lib/importReview.mjs`.
+- Sandbox assets remain separated from runtime behavior:
+  - benchmark fixtures stay in `sandbox/grounding-calibration/benchmark/`
+  - chapter PDFs stay audit-only
+  - production runtime reads the versioned 2026 manual knowledge pack plus promoted grounding resources
+- The 2026 sandbox benchmark is now the promotion gate for future grounding changes.
+- Verification completed during this promotion:
+  - `npm run grounding:calibration`
+  - `npm run build`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json --chapter=chapter-2`
+- Operational note:
+  - the sample `imported-1-batch.json` run now completes on the new engine, but remains dominated by pre-existing `invalid_source_page` and `manual_fact_conflict` rejections in the source data
+  - future grounding work must preserve sandbox parity before any further production reviewer changes
+
+## 2026-04-22 Import recovery and constraint realignment
+
+- Added production metadata auto-repair driven by grounded winners.
+- Normalized question records can now overwrite bad import metadata for:
+  - `chapterId`
+  - `sourcePageStart`
+  - `sourcePageEnd`
+  - `sourceReference`
+- Added additive audit fields for:
+  - `metadataRepair`
+  - `needsVisualAudit`
+  - extended `groundingAudit`
+- Rebalanced fact validation so answer-critical conflicts remain blocking, while auxiliary explanation-only conflicts downgrade to warnings.
+- Added a production visual-dependency guardrail using a tracked trigger list under `src/lib/grounding/resources/visual-audit-triggers.json`.
+- Relaxed option-count handling:
+  - three-option items are allowed with warning
+  - non-standard counts remain review signals, not automatic blockers
+- Updated admin import-review presentation to surface:
+  - repaired metadata counts
+  - visual-audit counts
+  - Spanish explanations for the main issue codes
+- Latest replay baseline for `data/imports/imported-1-batch.json` after this phase:
+  - `146` accepted with warning
+  - `1318` rejected
+  - `189` metadata repairs applied
+  - `280` items flagged for visual audit
+  - top remaining blockers: `invalid_source_page`, `manual_fact_conflict`, and batch duplicates
+- Latest Chapter 2 dry-run baseline:
+  - `50` accepted with warning
+  - `473` rejected
+  - `78` metadata repairs applied
+  - `125` items flagged for visual audit
+
+## 2026-04-22 Recoverable grounding acceptance tier
+
+- Added a production-only `grounded_recoverable` tier above the raw engine disposition.
+- Recoverable items now:
+  - use prompt + correct-answer surface for acceptance support
+  - can repair metadata
+  - can route to `accepted_with_warning` instead of being rejected for incomplete support alone
+- Chapter ambiguity now downgrades to warning when the recovered winner is strong enough.
+- Latest replay baseline for `data/imports/imported-1-batch.json` after this phase:
+  - `219` accepted with warning
+  - `1245` rejected
+  - `73` accepted via `grounded_recoverable`
+  - `282` metadata repairs applied
+  - `280` items flagged for visual audit
+- Latest Chapter 2 dry-run baseline:
+  - `75` accepted with warning
+  - `456` rejected
+- Confirmed recovery of previously false-rejected item:
+  - `imported-1-batch-2` now lands as `accepted_with_warning`
+  - repaired to Chapter 1, page 6, `Los siniestros de tránsito`
+
+## 2026-04-22 Valid-rejection checkpoint and final recovery pass
+
+- Froze the pre-cleanup replay baseline in:
+  - `data/import-reviews/baselines/2026-04-22-valid-rejection-checkpoint.json`
+- Checkpoint definition:
+  - valid rejected question = coherent grounding winner, no duplicate blocker, no answer-critical `manual_fact_conflict`
+- Removed the dead legacy grounding path from production review:
+  - deleted the old MiniSearch-era grounding/search helpers from `src/lib/importReview.mjs`
+  - removed `minisearch` from runtime dependencies
+- Tightened production truth comparison:
+  - blocking fact validation now uses only prompt + correct answer surface
+  - `reviewNotes` and `instruction` no longer participate in manual-truth comparison
+  - auxiliary-only mismatch tracking is preserved as warning-only
+- Strengthened the recoverable winner path:
+  - winner-backed metadata/excerpt repair now covers a much larger subset of low-confidence but coherent matches
+  - replay logging now records:
+    - recovered valid rejects
+    - remaining recoverable winner rejects
+    - duplicate-blocked rejects
+    - fact-blocked rejects
+    - auxiliary-only mismatches
+- Latest full replay for `data/imports/imported-1-batch.json` after this pass:
+  - `914` accepted with warning
+  - `550` rejected
+  - `773` accepted via `grounded_recoverable`
+  - `914` recovered valid rejects
+  - `227` remaining recoverable winner rejects
+  - `1139` metadata repairs applied
+  - `280` visual-audit flags
+  - top remaining rejection codes:
+    - `manual_fact_conflict: 719`
+    - `missing_grounding_excerpt: 325`
+    - `invalid_source_page: 325`
+    - `referenced_duplicate_in_batch: 254`
+- Latest Chapter 2 dry-run after this pass:
+  - `321` accepted with warning
+  - `227` rejected
+  - `272` accepted via `grounded_recoverable`
+  - `321` recovered valid rejects
+  - `75` remaining recoverable winner rejects
+- Improvement versus the frozen checkpoint:
+  - accepted with warning: `219 -> 914`
+  - rejected: `1245 -> 550`
+  - recoverable accepted: `73 -> 773`
+  - remaining recoverable winner rejects: `922 -> 227`
+  - `missing_grounding_excerpt + invalid_source_page` bucket: `899 -> 216`
+
+## 2026-04-22 Advisory facts rework
+
+- Facts are no longer intended to act as a production rejection authority.
+- Production review now treats fact mismatches as advisory review signals tied to the grounded winner context.
+- The approval authority remains:
+  - grounding support
+  - duplicate policy
+  - no-grounding rejection
+- Facts continue to power:
+  - `manualFactRefs`
+  - numeric/entity review hints
+  - admin correction suggestions
+  - future authoring safety work
+- Sandbox gained a new yearly-manual utility:
+  - `npm run grounding:fact-harvest`
+  - emits candidate proposals to `sandbox/grounding-calibration/generated/fact-proposals-2026.json`
+- This keeps fact generation futureproof for later manual refreshes such as 2027 while production continues using curated fact data in an advisory role.
+- Verification after the advisory rework:
+  - `npm run grounding:calibration`
+  - `npm run grounding:fact-harvest`
+  - `npm run build`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json --chapter=chapter-2`
+- Latest full replay after this phase:
+  - `967` accepted with warning
+  - `497` rejected
+  - `825` accepted via `grounded_recoverable`
+  - `factBlockedRejectCount = 0`
+  - `factReviewSuggestedCount = 165`
+  - top remaining rejection codes no longer include `manual_fact_conflict`
+- Sandbox fact harvester baseline:
+  - `518` fact proposals generated for the 2026 manual corpus
+
+## 2026-04-23 Low-confidence usable-winner recovery
+
+- Production review now distinguishes three usable grounding tiers:
+  - `grounded`
+  - `grounded_recoverable`
+  - `usable_winner_low_confidence`
+- `usable_winner_low_confidence` is explicit audit-only low confidence:
+  - it can repair excerpt/page/chapter/reference metadata
+  - it always lands in `accepted_with_warning`
+  - it never bypasses duplicate or no-grounding blockers
+- The grounding engine now performs a bounded fallback search for weak first-pass winners:
+  - keeps the first chapter-boosted pass
+  - retries a global unboosted pass when the first winner is weak
+  - retries a bounded top-chapter unboosted pass
+  - keeps the better support-bearing winner and logs the fallback decision
+- Production warning cleanup in this phase:
+  - `reduced_option_count` no longer emits for valid 3-option questions
+  - `missing_public_explanation` no longer participates in production review warnings
+- Replay summaries now track:
+  - usable low-confidence accepted count
+  - chapter fallback recoveries
+  - metadata repairs by recovery tier
+  - unresolved metadata rejects
+  - true `no_grounding` rejects
+- Verification after this phase:
+  - `node sandbox/grounding-calibration/test-grounding-calibration.mjs`
+  - `npm run build`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json`
+  - `node scripts/review-import.mjs data/imports/imported-1-batch.json --chapter=chapter-2`
+- Latest full replay after this phase:
+  - `1091` accepted with warning
+  - `373` rejected
+  - `872` accepted via `grounded_recoverable`
+  - `41` accepted via `usable_winner_low_confidence`
+  - `242` chapter fallback recoveries
+  - `1288` metadata repairs
+  - `176` unresolved metadata rejects
+  - `176` true `no_grounding` rejects
+- Targeted fixes confirmed:
+  - `imported-1-batch-28` now falls back from a weak Chapter 4 first pass to a Chapter 1 winner on page 8
+  - `imported-1-batch-62` now resolves as `accepted_with_warning` under `usable_winner_low_confidence`
+
+## 2026-04-24 Admin imports workflow checkpoint
+
+- The `/admin` Imports panel now pivots from per-item approve/reject toggles to a local-first draft import workflow.
+- Core UI and workflow changes now in place:
+  - shared `Preparar importacion` batch entrypoint in the Imports header
+  - undoable local prepared batch flow into `Catalogo`
+  - imported review items land as `draft` questions with additive import provenance
+  - accepted-with-warning, rejected, and duplicate queues can now move items into a local draft batch
+  - `Imports` is wired directly to the local catalog layer instead of only local row state
+- PDF/manual review tooling was upgraded:
+  - new `AdminImportPdfWorkspace` based on `pdfjs-dist`
+  - opens the manual at the relevant page
+  - supports text selection for preliminary grounding correction
+  - supports crop/image capture for visual-reference drafting
+- Additive local persistence introduced for editorial import work:
+  - localStorage-backed draft queue and prepared batch records
+  - IndexedDB-backed reference asset storage for cropped/uploaded media
+  - question-level import provenance metadata in the content model
+- Imports UI cleanup completed in this checkpoint:
+  - duplicated `Artefactos` body panel removed
+  - localized presentation moved further toward Spanish-first labeling
+  - legacy per-item `Approve / Reject / Reset` flow removed from the actionable queue
+  - duplicate queue now supports manual “desagrupar y mover a lote”
+- Current limitations kept explicit in this checkpoint:
+  - PDF highlight is page/text-layer anchored, not geometric segment highlighting
+  - some localized copy and rejected-tab polish can still be refined in a follow-up pass without changing the new workflow contract
+- Verification after this checkpoint:
+  - `npm run build`
 
 ## Next approved work blocks
 

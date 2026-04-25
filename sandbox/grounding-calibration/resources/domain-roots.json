@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "roots": [
+    { "root": "conduc", "variants": ["conducir", "conduccion", "conducción", "conductor", "conductora", "conductores", "conductoras"] },
+    { "root": "transit", "variants": ["transito", "tránsito"] },
+    { "root": "veloc", "variants": ["velocidad", "velocidades", "velocimetro", "velocímetro"] },
+    { "root": "alcohol", "variants": ["alcohol", "alcoholemia", "etilico", "etílico", "ebriedad"] },
+    { "root": "fallec", "variants": ["fallece", "fallecen", "fallecido", "fallecidos", "muerte", "muere", "mueren"] },
+    { "root": "peaton", "variants": ["peaton", "peatón", "peatones"] },
+    { "root": "siniestr", "variants": ["siniestro", "siniestros"] },
+    { "root": "licenc", "variants": ["licencia", "licencias"] },
+    { "root": "suspend", "variants": ["suspension", "suspensión", "suspender", "suspendida"] },
+    { "root": "lesion", "variants": ["lesion", "lesión", "lesiones"] },
+    { "root": "gravisim", "variants": ["gravisima", "gravísima", "gravisimas", "gravísimas"] }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "version": 3,
+  "facts": [
+    {
+      "id": "chapter1-concept-siniestro",
+      "chapterId": "chapter-1",
+      "segmentId": "2026-CH1-P06-S1",
+      "concept": "accidente_to_siniestro",
+      "value": "responsabilidad compartida",
+      "unit": "concept",
+      "aliases": [
+        "hemos cambiado el concepto por siniestros",
+        "efectos negativos",
+        "responsabilidad de cada persona usuaria de las vías"
+      ]
+    },
+    {
+      "id": "world_daily_deaths_3000",
+      "chapterId": "chapter-1",
+      "segmentId": "2026-CH1-P06-S5",
+      "concept": "daily_world_deaths",
+      "value": 3000,
+      "unit": "personas",
+      "aliases": ["3.000 personas", "3000 personas", "fallecen cada día en el mundo"]
+    },
+    {
+      "id": "chapter1-costs-2-percent-pib",
+      "chapterId": "chapter-1",
+      "segmentId": "2026-CH1-P07-S2",
+      "concept": "traffic_crash_costs_chile",
+      "value": 2,
+      "unit": "%",
+      "aliases": ["2% del PIB", "según las cifras de la OMS", "costos de los siniestros de tránsito"]
+    },
+    {
+      "id": "chapter1-urban-share-80",
+      "chapterId": "chapter-1",
+      "segmentId": "2026-CH1-P08-S2",
+      "concept": "urban_crash_share",
+      "value": 80,
+      "unit": "%",
+      "aliases": ["aproximadamente un 80%", "se produce en vías o áreas urbanas", "mayor cantidad de siniestros"]
+    },
+    {
+      "id": "chapter1-human-failure-90",
+      "chapterId": "chapter-1",
+      "segmentId": "2026-CH1-P08-S4",
+      "concept": "human_failure_share",
+      "value": 90,
+      "unit": "%",
+      "aliases": ["más del 90%", "falla humana", "estadísticas indican"]
+    },
+    {
+      "id": "chapter2-tacometro-rpm",
+      "chapterId": "chapter-2",
+      "segmentId": "2026-CH2-P11-S1__WIN__2026-CH2-P11-S2",
+      "concept": "tachometer_definition",
+      "value": "revoluciones por minuto",
+      "unit": "concept",
+      "aliases": ["tacómetro", "velocidad del motor", "revoluciones por minuto"]
+    },
+    {
+      "id": "chapter2-odometro-distance",
+      "chapterId": "chapter-2",
+      "segmentId": "2026-CH2-P11-S1",
+      "concept": "odometer_definition",
+      "value": "distancia total o parcial recorrida",
+      "unit": "concept",
+      "aliases": ["odómetro", "distancia total o parcial recorrida", "recorrida por el vehículo"]
+    },
+    {
+      "id": "chapter2-headrest-gap-4cm",
+      "chapterId": "chapter-2",
+      "segmentId": "2026-CH2-P31-S3__WIN__2026-CH2-P31-S4",
+      "concept": "headrest_max_gap",
+      "value": 4,
+      "unit": "cm",
+      "aliases": ["4 cm", "separación máxima", "correcto uso del apoya cabezas"]
+    },
+    {
+      "id": "chapter2-headrest-upper-edge",
+      "chapterId": "chapter-2",
+      "segmentId": "2026-CH2-P31-S4",
+      "concept": "headrest_upper_edge_position",
+      "value": "altura de los ojos",
+      "unit": "concept",
+      "aliases": ["borde superior del apoya cabezas", "límite superior de la cabeza", "altura de los ojos"]
+    },
+    {
+      "id": "chapter2-whiplash-effect",
+      "chapterId": "chapter-2",
+      "segmentId": "2026-CH2-P31-S1",
+      "concept": "whiplash_effect",
+      "value": "efecto latigazo",
+      "unit": "concept",
+      "aliases": ["efecto latigazo", "violento cambio de dirección en el cuello", "impacto por atrás"]
+    },
+    {
+      "id": "chapter3-good-road-coexistence",
+      "chapterId": "chapter-3",
+      "segmentId": "2026-CH3-P33-S1",
+      "concept": "good_road_coexistence",
+      "value": "interacción armoniosa y segura",
+      "unit": "concept",
+      "aliases": ["convivencia vial", "interacción armoniosa y segura", "peatones y pasajeros"]
+    },
+    {
+      "id": "chapter3-road-education-values",
+      "chapterId": "chapter-3",
+      "segmentId": "2026-CH3-P33-S2",
+      "concept": "road_education_values",
+      "value": "respeto solidaridad comprensión perdón tolerancia",
+      "unit": "concept",
+      "aliases": ["respeto", "solidaridad", "comprensión", "perdón", "tolerancia"]
+    },
+    {
+      "id": "chapter3-road-safety-final-goal",
+      "chapterId": "chapter-3",
+      "segmentId": "2026-CH3-P33-S3",
+      "concept": "road_safety_goal",
+      "value": "eliminación total de los siniestros",
+      "unit": "concept",
+      "aliases": ["eliminación total de los siniestros de tránsito", "reducción de los mismos", "minimización de sus consecuencias"]
+    },
+    {
+      "id": "chapter3-safe-adequate-speed",
+      "chapterId": "chapter-3",
+      "segmentId": "2026-CH3-P35-S5",
+      "concept": "safe_adequate_speed",
+      "value": "mantener el control del vehículo y reaccionar a tiempo",
+      "unit": "concept",
+      "aliases": ["velocidad adecuada y segura", "mantener el control del vehículo", "reaccionar a tiempo"]
+    },
+    {
+      "id": "chapter3-prevention-main-defense",
+      "chapterId": "chapter-3",
+      "segmentId": "2026-CH3-P35-S3__WIN__2026-CH3-P35-S4",
+      "concept": "prevention_main_defense",
+      "value": "ver y ser visible en todo momento",
+      "unit": "concept",
+      "aliases": ["prevención será siempre su principal defensa", "ver y ser visible", "principal defensa"]
+    },
+    {
+      "id": "chapter4-low-beam-visibility-distance",
+      "chapterId": "chapter-4",
+      "segmentId": "2026-CH4-P40-S7",
+      "concept": "low_beam_visibility_distance",
+      "value": "15 o 20 metros en cruce y 70 metros sin cruce",
+      "unit": "concept",
+      "aliases": ["luces bajas", "15 o 20 metros", "70 metros", "demarcaciones de la calzada"]
+    },
+    {
+      "id": "chapter4-visual-field-130-kmh",
+      "chapterId": "chapter-4",
+      "segmentId": "2026-CH4-P44-S2",
+      "concept": "visual_field_at_130",
+      "value": 130,
+      "unit": "km/h",
+      "aliases": ["30°", "130 km/h", "campo visual", "visión de túnel"]
+    },
+    {
+      "id": "chapter4-alcohol-thresholds",
+      "chapterId": "chapter-4",
+      "segmentId": "2026-CH4-P50-S3",
+      "concept": "alcohol_thresholds",
+      "value": 0.31,
+      "unit": "g‰",
+      "aliases": ["0,31 - 0,79", "0,8 + gramos", "bajo la influencia del alcohol", "estado de ebriedad"]
+    },
+    {
+      "id": "chapter4-fastest-reaction-age-group",
+      "chapterId": "chapter-4",
+      "segmentId": "2026-CH4-P40-S3",
+      "concept": "fastest_reaction_age_group",
+      "value": "35 a 50 años",
+      "unit": "concept",
+      "aliases": ["35 y 50 años", "reacciones complejas", "grupo de edad más rápido"]
+    },
+    {
+      "id": "chapter4-rest-recommendation-fatigue",
+      "chapterId": "chapter-4",
+      "segmentId": "2026-CH4-P66-S5",
+      "concept": "fatigue_rest_recommendation",
+      "value": "20 a 30 minutos cada 2 horas o 200 kilómetros",
+      "unit": "concept",
+      "aliases": ["viajes largos", "20 a 30 minutos", "cada 2 horas", "200 kilómetros de conducción"]
+    },
+    {
+      "id": "chapter5-vulnerable-road-users-half",
+      "chapterId": "chapter-5",
+      "segmentId": "2026-CH5-P68-S1",
+      "concept": "vulnerable_users_half_fatalities",
+      "value": "casi la mitad",
+      "unit": "concept",
+      "aliases": ["peatones, ciclistas y motociclistas", "junto con sus pasajeros", "casi la mitad de las vÃctimas"]
+    },
+    {
+      "id": "chapter5-pedestrian-fatalities-28-percent",
+      "chapterId": "chapter-5",
+      "segmentId": "2026-CH5-P68-S2",
+      "concept": "pedestrian_fatalities_share",
+      "value": 28,
+      "unit": "%",
+      "aliases": ["28% del total de fallecidas", "atropellos", "personas atropelladas fallecidas"]
+    },
+    {
+      "id": "chapter5-sri-accreditation-label-size",
+      "chapterId": "chapter-5",
+      "segmentId": "2026-CH5-P75-S4",
+      "concept": "sri_accreditation_label_size",
+      "value": "9,5 cm por 7,5 cm",
+      "unit": "concept",
+      "aliases": ["etiqueta debe ir pegada", "color amarillo", "letras negras", "9,5 cm", "7,5 cm de ancho"]
+    },
+    {
+      "id": "chapter5-zone-of-uncertainty",
+      "chapterId": "chapter-5",
+      "segmentId": "2026-CH5-P68-S2",
+      "concept": "zone_of_uncertainty",
+      "value": "espacio que las rodea cuando circulan por la vía",
+      "unit": "concept",
+      "aliases": ["zona de incertidumbre", "espacio que las rodea", "circulan por la vía"]
+    },
+    {
+      "id": "chapter5-sri-no-double-anchor",
+      "chapterId": "chapter-5",
+      "segmentId": "2026-CH5-P75-S2__WIN__2026-CH5-P75-S3",
+      "concept": "sri_single_anchor_rule",
+      "value": "no usar dos sistemas al mismo tiempo",
+      "unit": "concept",
+      "aliases": ["no se requiere utilizar dos sistemas al mismo tiempo", "fabricante del SRI", "ISOFIX"]
+    },
+    {
+      "id": "chapter6-right-hand-priority",
+      "chapterId": "chapter-6",
+      "segmentId": "2026-CH6-P84-S4",
+      "concept": "right_hand_priority",
+      "value": "preferencia a los vehículos desde tu derecha",
+      "unit": "concept",
+      "aliases": ["cruce sin semáforo", "PARE o Ceda el Paso", "desde tu derecha"]
+    },
+    {
+      "id": "chapter6-three-second-rule",
+      "chapterId": "chapter-6",
+      "segmentId": "2026-CH6-P87-S6__WIN__2026-CH6-P88-S1",
+      "concept": "three_second_rule",
+      "value": "contar hasta mil tres",
+      "unit": "concept",
+      "aliases": ["Regla de los Tres Segundos", "fija tu mirada en un punto", "un árbol", "contado mil tres"]
+    },
+    {
+      "id": "chapter6-urban-speed-limit-50",
+      "chapterId": "chapter-6",
+      "segmentId": "2026-CH6-P96-S5",
+      "concept": "urban_speed_limit",
+      "value": 50,
+      "unit": "km/h",
+      "aliases": ["50 km/h", "zonas urbanas", "velocidad máxima permitida"]
+    },
+    {
+      "id": "chapter6-parallel-parking-distances",
+      "chapterId": "chapter-6",
+      "segmentId": "2026-CH6-P104-S2",
+      "concept": "parallel_parking_distances",
+      "value": "30 cm y 60 cm",
+      "unit": "concept",
+      "aliases": ["forma paralela a la cuneta", "30 centímetros", "60 centímetros"]
+    },
+    {
+      "id": "chapter6-train-stopping-distance",
+      "chapterId": "chapter-6",
+      "segmentId": "2026-CH6-P107-S3",
+      "concept": "train_stopping_distance",
+      "value": "800 a 1000 metros",
+      "unit": "concept",
+      "aliases": ["100 km/h", "800 a 1.000 metros", "trenes no pueden detenerse fácilmente"]
+    },
+    {
+      "id": "chapter7-visibility-light-clothes-60m",
+      "chapterId": "chapter-7",
+      "segmentId": "2026-CH7-P110-S1",
+      "concept": "visibility_light_clothes_low_beams",
+      "value": 60,
+      "unit": "metros",
+      "aliases": ["ropas claras", "con luces bajas", "60 m"]
+    },
+    {
+      "id": "chapter7-lights-required-period",
+      "chapterId": "chapter-7",
+      "segmentId": "2026-CH7-P110-S1__WIN__2026-CH7-P110-S2",
+      "concept": "required_vehicle_lights_period",
+      "value": "media hora después de la puesta de sol hasta media hora antes de su salida",
+      "unit": "concept",
+      "aliases": ["media hora después de la puesta de sol", "media hora antes de su salida", "condiciones de visibilidad"]
+    },
+    {
+      "id": "chapter7-class-b-trailer-weight-limits",
+      "chapterId": "chapter-7",
+      "segmentId": "2026-CH7-P114-S4",
+      "concept": "class_b_trailer_weight_limits",
+      "value": 3500,
+      "unit": "kilogramos",
+      "aliases": ["Licencia de Conducir Clase B", "tara de unidad motriz", "3.500 kilogramos"]
+    },
+    {
+      "id": "chapter7-motorway-entry-priority",
+      "chapterId": "chapter-7",
+      "segmentId": "2026-CH7-P116-S3__WIN__2026-CH7-P116-S4",
+      "concept": "motorway_entry_priority",
+      "value": "prioridad de los vehículos que circulan por la autopista",
+      "unit": "concept",
+      "aliases": ["pista de aceleración", "vehículos que circulan por la autopista tienen la prioridad", "brecha segura"]
+    },
+    {
+      "id": "chapter7-icy-road-braking-distance",
+      "chapterId": "chapter-7",
+      "segmentId": "2026-CH7-P124-S6",
+      "concept": "icy_road_braking_multiplier",
+      "value": 10,
+      "unit": "veces",
+      "aliases": ["calzada está helada", "10 veces por encima de lo normal", "distancia de frenado"]
+    },
+    {
+      "id": "chapter8-efficient-driving-fuel-reduction",
+      "chapterId": "chapter-8",
+      "segmentId": "2026-CH8-P127-S1__WIN__2026-CH8-P127-S3",
+      "concept": "efficient_driving_global_reduction",
+      "value": "10 a 15 por ciento",
+      "unit": "concept",
+      "aliases": ["Conducción Eficiente permite reducir", "10 y", "15% el consumo de combustible"]
+    },
+    {
+      "id": "chapter8-roof-rack-highway-consumption",
+      "chapterId": "chapter-8",
+      "segmentId": "2026-CH8-P129-S2__WIN__2026-CH8-P129-S3",
+      "concept": "roof_rack_consumption_penalty",
+      "value": 20,
+      "unit": "%",
+      "aliases": ["resistencia aerodinámica", "portaequipajes o bulto en el techo", "por sobre un 20% en carretera"]
+    },
+    {
+      "id": "chapter8-5-psi-consumption-increase",
+      "chapterId": "chapter-8",
+      "segmentId": "2026-CH8-P129-S4",
+      "concept": "tire_pressure_consumption_penalty",
+      "value": 3,
+      "unit": "%",
+      "aliases": ["reducción en 5 PSI", "nivel óptimo de aire", "neumáticos puede incrementar"]
+    },
+    {
+      "id": "chapter8-engine-braking-fuel-cut",
+      "chapterId": "chapter-8",
+      "segmentId": "2026-CH8-P132-S5",
+      "concept": "engine_braking_fuel_cut",
+      "value": "corta la inyección de combustible",
+      "unit": "concept",
+      "aliases": ["mantener el cambio puesto", "corta la inyección de combustible", "consumo final en el viaje será menor"]
+    },
+    {
+      "id": "chapter8-stop-engine-over-one-minute",
+      "chapterId": "chapter-8",
+      "segmentId": "2026-CH8-P133-S1__WIN__2026-CH8-P133-S2",
+      "concept": "stop_engine_over_one_minute",
+      "value": "más de un minuto",
+      "unit": "concept",
+      "aliases": ["detención mayor a un minuto", "más económico apagar el motor", "volverlo a encender después"]
+    },
+    {
+      "id": "chapter9-crash-legal-obligations",
+      "chapterId": "chapter-9",
+      "segmentId": "2026-CH9-P136-S1",
+      "concept": "crash_legal_obligations",
+      "value": "detener ayudar avisar a la autoridad",
+      "unit": "concept",
+      "aliases": ["detener su marcha", "prestar la ayuda que fuese posible", "autoridad policial más cercana"]
+    },
+    {
+      "id": "chapter9-xabcde-a-and-b",
+      "chapterId": "chapter-9",
+      "segmentId": "2026-CH9-P137-S4__WIN__2026-CH9-P137-S6",
+      "concept": "xabcde_a_b_actions",
+      "value": "abrir vía aérea y verificar ventilación",
+      "unit": "concept",
+      "aliases": ["abrir la vía aérea", "maniobra frente-mentón", "ventilaciones boca a boca", "1 cada 6 segundos"]
+    },
+    {
+      "id": "chapter9-no-chat-not-hands-free",
+      "chapterId": "chapter-9",
+      "segmentId": "2026-CH9-P141-S5__WIN__2026-CH9-P141-S6",
+      "concept": "no_chat_not_hands_free",
+      "value": "sujeción al oído, cuerpo y manipulación manual",
+      "unit": "concept",
+      "aliases": ["a la altura del oído", "con su hombro", "contra su cabeza", "sobre sus piernas o en su muñeca", "manipular con una o ambas manos"]
+    },
+    {
+      "id": "chapter9-gravisima-speed-range",
+      "chapterId": "chapter-9",
+      "segmentId": "2026-CH9-P143-S4__WIN__2026-CH9-P143-S7",
+      "concept": "gravisima_speed_range",
+      "value": "20 a 60 km/h",
+      "unit": "concept",
+      "aliases": ["20 y 60 kilómetros por hora", "límite de velocidad máxima", "infracción gravísima"]
+    },
+    {
+      "id": "chapter9-black-and-blue-smoke",
+      "chapterId": "chapter-9",
+      "segmentId": "2026-CH9-P147-S6__WIN__2026-CH9-P147-S7",
+      "concept": "black_blue_smoke_diagnosis",
+      "value": "combustión deficiente y consumo de aceite",
+      "unit": "concept",
+      "aliases": ["humo negro por el tubo de escape", "falla en la combustión del motor", "inyección excesiva de combustible", "humo azul por el tubo de escape", "consumo anormal de aceite de motor"]
+    },
+    {
+      "id": "urban_speed_limit_50",
+      "chapterId": "chapter-6",
+      "segmentId": "2026-CH6-P96-S5",
+      "concept": "urban_speed_limit",
+      "value": 50,
+      "unit": "km/h",
+      "aliases": ["50 km/h", "velocidad máxima permitida en zonas urbanas"]
+    },
+    {
+      "id": "alcohol_influence_min_031",
+      "chapterId": "chapter-4",
+      "segmentId": "2026-CH4-P50-S3",
+      "concept": "alcohol_influence_range",
+      "value": 0.31,
+      "unit": "g‰",
+      "aliases": ["0,31 - 0,79", "0.31 - 0.79", "bajo la influencia del alcohol"]
+    },
+    {
+      "id": "ley_emilia_effective_jail_one_year",
+      "chapterId": "chapter-4",
+      "segmentId": "2026-CH4-P51-S1",
+      "concept": "ley_emilia_effective_jail",
+      "value": 1,
+      "unit": "años",
+      "aliases": ["al menos un año", "Ley Emilia", "cárcel efectiva"]
+    }
+  ]
+}

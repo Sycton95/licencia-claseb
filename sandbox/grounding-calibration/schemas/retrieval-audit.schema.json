@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GroundingRetrievalAudit",
+  "type": "object",
+  "required": ["queryId", "query", "normalized", "entities", "lexicalCandidates", "reranked", "winner", "confidence", "latencyMs"],
+  "properties": {
+    "queryId": { "type": "string" },
+    "query": { "type": "string" },
+    "normalized": {
+      "type": "object",
+      "required": ["displayText", "searchText", "tokens"],
+      "properties": {
+        "displayText": { "type": "string" },
+        "evidenceText": { "type": "string" },
+        "searchText": { "type": "string" },
+        "tokens": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "entities": { "type": "array" },
+    "lexicalCandidates": { "type": "array" },
+    "reranked": { "type": "array" },
+    "chapterLikelihood": { "type": ["object", "null"] },
+    "winner": { "type": ["object", "null"] },
+    "supportRefinement": { "type": ["object", "null"] },
+    "confidence": { "type": "object" },
+    "latencyMs": { "type": "number" }
+  }
+}

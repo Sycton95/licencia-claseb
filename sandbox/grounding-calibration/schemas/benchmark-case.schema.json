@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GroundingBenchmarkCaseFile",
+  "type": "object",
+  "required": ["version", "suite", "cases"],
+  "properties": {
+    "version": { "type": "integer" },
+    "suite": { "type": "string" },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "query"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "validationMode": { "type": "string", "enum": ["gold", "blind"] },
+          "expectedOutcome": { "type": "string", "enum": ["grounding", "low_confidence", "no_grounding"] },
+          "reviewStatus": {
+            "type": "string",
+            "enum": ["verified_from_pdf", "verified_from_segmented_manual", "needs_extraction_repair"]
+          },
+          "sourceAuditFile": { "type": "string" },
+          "extractionIssueId": { "type": "string" },
+          "mustBeWindow": { "type": "boolean" },
+          "minimumWinnerFactScore": { "type": "number" },
+          "query": {
+            "type": "object",
+            "required": ["prompt"],
+            "properties": {
+              "prompt": { "type": "string" },
+              "options": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "expectedChapterId": { "type": "string" },
+          "expected": {
+            "type": "object",
+            "required": ["segmentId", "chapterId", "pageRange"],
+            "properties": {
+              "segmentId": { "type": "string" },
+              "supportUnitType": { "type": "string", "enum": ["base", "window"] },
+              "chapterId": { "type": "string" },
+              "expectedPageStart": { "type": "integer" },
+              "expectedPageEnd": { "type": "integer" },
+              "pageRange": {
+                "type": "object",
+                "required": ["start", "end"],
+                "properties": {
+                  "start": { "type": "integer" },
+                  "end": { "type": "integer" }
+                }
+              }
+            }
+          },
+          "requiredEntities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["raw", "normalized"],
+              "properties": {
+                "raw": { "type": "string" },
+                "normalized": { "type": ["number", "string"] },
+                "unit": { "type": "string" }
+              }
+            }
+          },
+          "expectedAnswerText": { "type": "string" },
+          "requiredPhrases": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "requiredNormalizedFacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["raw", "normalized"],
+              "properties": {
+                "raw": { "type": "string" },
+                "normalized": { "type": ["number", "string"] },
+                "unit": { "type": "string" }
+              }
+            }
+          },
+          "forbiddenTopSegmentIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "reviewerNotes": { "type": "string" }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "expectedOutcome": { "const": "grounding" }
+              }
+            },
+            "then": {
+              "required": ["expected"]
+            }
+          },
+          {
+            "if": {
+              "not": {
+                "required": ["expectedOutcome"]
+              }
+            },
+            "then": {
+              "required": ["expected"]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

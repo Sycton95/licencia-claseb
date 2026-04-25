@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "triggers": [
+    "testigo",
+    "testigos",
+    "imagen",
+    "ilustracion",
+    "ilustración",
+    "figura",
+    "panel de instrumentos",
+    "senal",
+    "señal",
+    "senales",
+    "señales",
+    "disco pare",
+    "luz roja",
+    "tablero"
+  ]
+}

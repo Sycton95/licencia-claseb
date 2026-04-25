@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "suite": "regression_cases",
+  "cases": [
+    {
+      "id": "deaths-page-intro-false-positive",
+      "label": "Rechazo del intro CH1-P06-S1",
+      "query": {
+        "prompt": "Aproximadamente, ¿Cuántas personas al día fallecen en el mundo a consecuencia de los siniestros de tránsito?"
+      },
+      "expected": {
+        "segmentId": "2026-CH1-P06-S5",
+        "chapterId": "chapter-1",
+        "pageRange": { "start": 6, "end": 6 }
+      },
+      "requiredEntities": [
+        { "raw": "3.000", "normalized": 3000, "unit": "personas" }
+      ],
+      "forbiddenTopSegmentIds": ["2026-CH1-P06-S1"],
+      "reviewerNotes": "Caso de regresión explícito: la portada del capítulo no debe ganar aunque comparta vocabulario general."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "groups": [
+    { "concept": "vehiculo", "variants": ["vehiculo", "vehículos", "automovil", "automóvil", "auto", "autos", "coche", "carro"] },
+    { "concept": "freno", "variants": ["freno", "frenos", "frenar", "frenado", "frenadas"] },
+    { "concept": "combustible", "variants": ["combustible", "bencina", "gasolina", "diesel", "diésel"] },
+    { "concept": "neumatico", "variants": ["neumatico", "neumático", "neumaticos", "neumáticos"] },
+    { "concept": "conduccion_eficiente", "variants": ["conduccion eficiente", "conducción eficiente", "eficiencia energetica", "eficiencia energética"] },
+    { "concept": "siniestro", "variants": ["siniestro", "siniestros", "accidente", "accidentes"] },
+    { "concept": "seguridad_vial", "variants": ["seguridad vial", "convivencia vial", "educacion vial", "educación vial"] },
+    { "concept": "peaton", "variants": ["peaton", "peatón", "peatones"] },
+    { "concept": "ciclista", "variants": ["ciclista", "ciclistas", "bicicleta", "bicicletas"] },
+    { "concept": "motociclista", "variants": ["motociclista", "motociclistas", "motocicleta", "motocicletas"] },
+    { "concept": "sri", "variants": ["sri", "silla infantil", "sillas infantiles", "sistema de retencion infantil", "sistema de retención infantil", "isofix"] },
+    { "concept": "velocidad_limite", "variants": ["limite de velocidad", "límite de velocidad", "velocidad maxima", "velocidad máxima"] },
+    { "concept": "alcohol", "variants": ["alcohol", "alcoholemia", "ebriedad", "ley emilia", "gramos por mil"] },
+    { "concept": "distancia_seguridad", "variants": ["distancia prudente", "distancia segura", "regla de los tres segundos", "tres segundos"] },
+    { "concept": "autopista", "variants": ["autopista", "autopistas", "pista de aceleracion", "pista de aceleración"] },
+    { "concept": "luces", "variants": ["luces bajas", "luces", "focos", "testigos rojos"] },
+    { "concept": "telefono", "variants": ["telefono", "teléfono", "celular", "dispositivo de telefonia movil", "dispositivo de telefonía móvil", "ley no chat", "manos libres"] },
+    { "concept": "primeros_auxilios", "variants": ["primeros auxilios", "xabcde", "ventilaciones boca a boca", "frente-menton", "frente-mentón"] },
+    { "concept": "humo_escape", "variants": ["humo negro", "humo azul", "tubo de escape", "escape"] },
+    { "concept": "infraccion", "variants": ["infraccion", "infracción", "gravisima", "gravísima", "gravisimas", "gravísimas"] }
+  ]
+}

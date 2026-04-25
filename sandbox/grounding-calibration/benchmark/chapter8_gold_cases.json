@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "suite": "chapter8_gold_cases",
+  "cases": [
+    {
+      "id": "chapter8-efficient-driving-fuel-reduction",
+      "label": "Reducción global del consumo",
+      "query": {
+        "prompt": "¿En qué porcentaje aproximado se puede reducir el consumo de combustible aplicando técnicas de Conducción Eficiente?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P127-S1__WIN__2026-CH8-P127-S3",
+        "supportUnitType": "window",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 127, "end": 127 }
+      },
+      "expectedAnswerText": "Aplicar estas técnicas permite reducir entre un 10 y un 15% el consumo de combustible.",
+      "requiredPhrases": [
+        "aplicar técnicas",
+        "Conducción Eficiente",
+        "10 y",
+        "15% el consumo de combustible"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "10%", "normalized": 10, "unit": "%" },
+        { "raw": "15%", "normalized": 15, "unit": "%" }
+      ],
+      "reviewerNotes": "Validado contra la página 127 del PDF 127-134. El soporte fiel es la ventana que une la definición de Conducción Eficiente con el rango 10-15%."
+    },
+    {
+      "id": "chapter8-roof-rack-highway-consumption",
+      "label": "Incremento por portaequipajes",
+      "query": {
+        "prompt": "¿Cuál es el incremento estimado en el consumo de combustible en carretera al utilizar un portaequipajes o bultos en el techo?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P129-S2__WIN__2026-CH8-P129-S3",
+        "supportUnitType": "window",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 129, "end": 129 }
+      },
+      "expectedAnswerText": "El consumo se puede incrementar por sobre un 20% en carretera debido a la resistencia aerodinámica.",
+      "requiredPhrases": [
+        "resistencia aerodinámica",
+        "portaequipajes o bulto en el techo",
+        "por sobre un 20% en carretera"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "20%", "normalized": 20, "unit": "%" }
+      ],
+      "reviewerNotes": "Validado contra la página 129 del PDF 127-134. La respuesta completa queda mejor soportada por la ventana que reúne la causa y la penalización aerodinámica."
+    },
+    {
+      "id": "chapter8-5-psi-consumption-increase",
+      "label": "Reducción de 5 PSI",
+      "query": {
+        "prompt": "¿Cómo afecta al consumo de combustible una reducción de 5 PSI en el nivel óptimo de aire de los neumáticos?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P129-S4",
+        "supportUnitType": "base",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 129, "end": 129 }
+      },
+      "expectedAnswerText": "Se estima que una reducción de 5 PSI puede incrementar el consumo de combustible en un 3%.",
+      "requiredPhrases": [
+        "reducción en 5 PSI",
+        "nivel óptimo de aire",
+        "consumo de combustible en un 3%"
+      ],
+      "requiredNormalizedFacts": [
+        { "raw": "5 PSI", "normalized": 5, "unit": "psi" },
+        { "raw": "3%", "normalized": 3, "unit": "%" }
+      ],
+      "reviewerNotes": "Validado contra la página 129 del PDF 127-134. El texto completo del libro sí contiene el efecto final de 3%, por lo que este caso deja de tratarse como soporte parcial."
+    },
+    {
+      "id": "chapter8-engine-braking-fuel-cut",
+      "label": "Corte de inyección con cambio puesto",
+      "query": {
+        "prompt": "¿Qué efecto técnico produce reducir la velocidad manteniendo una marcha o cambio puesto sin pisar el embrague?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P132-S5",
+        "supportUnitType": "base",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 132, "end": 132 }
+      },
+      "expectedAnswerText": "El reducir la velocidad manteniendo un cambio puesto corta la inyección de combustible, lo que resulta en un menor consumo final en el viaje.",
+      "requiredPhrases": [
+        "manteniendo un cambio puesto",
+        "corta la inyección de combustible",
+        "consumo final en el viaje será menor"
+      ],
+      "reviewerNotes": "Validado contra la página 132 del PDF 127-134. El soporte está íntegro en un solo bloque."
+    },
+    {
+      "id": "chapter8-stop-engine-over-one-minute",
+      "label": "Apagar el motor sobre un minuto",
+      "query": {
+        "prompt": "¿A partir de cuánto tiempo de detención es técnicamente más económico apagar el motor del vehículo?"
+      },
+      "expected": {
+        "segmentId": "2026-CH8-P133-S1__WIN__2026-CH8-P133-S2",
+        "supportUnitType": "window",
+        "chapterId": "chapter-8",
+        "pageRange": { "start": 133, "end": 133 }
+      },
+      "expectedAnswerText": "En cualquier detención mayor a un minuto, es más económico apagar el motor y volverlo a encender después.",
+      "requiredPhrases": [
+        "detención mayor a un minuto",
+        "más económico apagar el motor",
+        "volverlo a encender después"
+      ],
+      "reviewerNotes": "Validado contra la página 133 del PDF 127-134. La regla completa se sostiene mejor como ventana porque une el umbral y la recomendación."
+    }
+  ]
+}

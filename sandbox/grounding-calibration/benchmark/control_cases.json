@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "suite": "control_cases",
+  "cases": [
+    {
+      "id": "ley-emilia-effective-jail",
+      "label": "Ley Emilia cárcel efectiva mínima",
+      "query": {
+        "prompt": "La LEY EMILIA, ¿con cuánto tiempo de cárcel efectiva sanciona a personas conductoras que en estado de ebriedad provoquen lesiones gravísimas o la muerte a terceros?",
+        "options": ["Al menos 3 meses.", "Al menos 1 año.", "Al menos 10 años."]
+      },
+      "expected": {
+        "segmentId": "2026-CH4-P51-S1",
+        "chapterId": "chapter-4",
+        "pageRange": { "start": 51, "end": 51 }
+      },
+      "requiredEntities": [
+        { "raw": "1 año", "normalized": 1, "unit": "años" }
+      ],
+      "reviewerNotes": "El párrafo de Ley Emilia debe superar a otros segmentos del bloque alcohol con mejor densidad lexical pero sin el dato carcelario."
+    }
+  ]
+}

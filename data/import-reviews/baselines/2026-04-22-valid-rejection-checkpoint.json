@@ -1,0 +1,42 @@
+{
+  "checkpointId": "2026-04-22-valid-rejection-checkpoint",
+  "capturedAt": "2026-04-22T00:00:00.000Z",
+  "sourceRunId": "imported-1-batch",
+  "definition": {
+    "validRejectedQuestion": "Rejected candidate with a coherent grounding winner, no duplicate blocker, and no answer-critical manual_fact_conflict."
+  },
+  "baseline": {
+    "acceptedWithWarningCount": 219,
+    "rejectedCount": 1245,
+    "recoverableAcceptedCount": 73,
+    "metadataRepairedCount": 282,
+    "visualAuditRequiredCount": 280,
+    "winnerBackedRejectedCount": 1245,
+    "winnerBackedRejectedWithoutDuplicateOrFactConflictCount": 922,
+    "missingExcerptAndInvalidPageOnlyCount": 899,
+    "duplicateBlockedRejectCount": 255,
+    "factBlockedRejectCount": 89
+  },
+  "topRejectionCodes": [
+    {
+      "code": "missing_grounding_excerpt",
+      "count": 1182
+    },
+    {
+      "code": "invalid_source_page",
+      "count": 1182
+    },
+    {
+      "code": "manual_fact_conflict",
+      "count": 719
+    },
+    {
+      "code": "referenced_duplicate_in_batch",
+      "count": 254
+    },
+    {
+      "code": "chapter_classification_ambiguous",
+      "count": 26
+    }
+  ]
+}

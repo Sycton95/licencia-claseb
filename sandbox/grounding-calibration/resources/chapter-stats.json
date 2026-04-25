@@ -1,0 +1,5867 @@
+{
+  "version": 1,
+  "generatedAt": "2026-04-22T14:46:05.006Z",
+  "sourceVersion": "2026",
+  "topTermsPerChapter": 80,
+  "chapters": [
+    {
+      "chapterId": "chapter-1",
+      "label": "Los siniestros de tránsito",
+      "pageRange": {
+        "start": 6,
+        "end": 10
+      },
+      "segmentCount": 25,
+      "topSignatureTerms": [
+        {
+          "concept": "costos",
+          "frequency": 7,
+          "globalCount": 7,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.788091
+        },
+        {
+          "concept": "enfoque",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "lesionados",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "sufrimiento",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "muertes",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mundo",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mundo.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "29",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "productividad",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "82.000",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "registra",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "politica",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "humanos",
+          "frequency": 4,
+          "globalCount": 5,
+          "chapterPresence": 2,
+          "chapterShare": 0.8,
+          "signatureScore": 2.194949
+        },
+        {
+          "concept": "promedio",
+          "frequency": 5,
+          "globalCount": 8,
+          "chapterPresence": 2,
+          "chapterShare": 0.625,
+          "signatureScore": 1.909062
+        },
+        {
+          "concept": "cifras",
+          "frequency": 3,
+          "globalCount": 4,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 1.772462
+        },
+        {
+          "concept": "define",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "accidente",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "involuntariamente",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "asocia",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "casual",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "impredecible.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cambiado",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "relevar",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "negativos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "azarosos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "impredecila",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "bles.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "estudiado",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "perjudiciales.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "accidentales",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "tantas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "perfactores",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "detallados",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "sonas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "noches",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "libro.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "dependeria",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "pasemos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "asi.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "pensemos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "acaso",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "use",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "pagamos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "3.000",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "organizaciones",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "organizacion",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "mundial",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "oms",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "califican",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "prioritario",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "mortalidad.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "suicidios.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cuantificar",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "discapacitada",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "valora",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cercano.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cercanas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "perdidas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "asumimos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "ciudadanos.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "2%",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "pib",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "oms.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "dinero",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "invertido",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "vivienda",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "ayudas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "sociales",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "beneficio",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "representaria",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "paga",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "millones",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "pesos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "anuales",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "valorizar.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cuadro",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "enumeran",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "ocasionados",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "valorizados",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "monetariamente.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-2",
+      "label": "Los principios de la conducción",
+      "pageRange": {
+        "start": 11,
+        "end": 32
+      },
+      "segmentCount": 112,
+      "topSignatureTerms": [
+        {
+          "concept": "testigo",
+          "frequency": 12,
+          "globalCount": 12,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.906014
+        },
+        {
+          "concept": "airbag",
+          "frequency": 11,
+          "globalCount": 11,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.721709
+        },
+        {
+          "concept": "friccion",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "periodicamente",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "frontal",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "correa",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "cuello",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "apoya",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "panel",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "indicador",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "averia",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "gasolina",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "letra",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "ingles",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "producirse",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "cabezas",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "banda",
+          "frequency": 9,
+          "globalCount": 10,
+          "chapterPresence": 2,
+          "chapterShare": 0.9,
+          "signatureScore": 3.532795
+        },
+        {
+          "concept": "desgaste",
+          "frequency": 8,
+          "globalCount": 9,
+          "chapterPresence": 2,
+          "chapterShare": 0.888889,
+          "signatureScore": 3.329524
+        },
+        {
+          "concept": "neumaticos.",
+          "frequency": 8,
+          "globalCount": 9,
+          "chapterPresence": 2,
+          "chapterShare": 0.888889,
+          "signatureScore": 3.329524
+        },
+        {
+          "concept": "instrumentos",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "testigos",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "funcionar",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "encargado",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "causar",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "electrica",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "alternador",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "bateria.",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "ventilador",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "considerablemente",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "profundidad",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "exteriores",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "lesionar",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "submarino",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "bolsa",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "cervicales",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "elementos",
+          "frequency": 11,
+          "globalCount": 13,
+          "chapterPresence": 3,
+          "chapterShare": 0.846154,
+          "signatureScore": 2.914841
+        },
+        {
+          "concept": "liquido",
+          "frequency": 10,
+          "globalCount": 13,
+          "chapterPresence": 3,
+          "chapterShare": 0.769231,
+          "signatureScore": 2.557068
+        },
+        {
+          "concept": "ocupantes",
+          "frequency": 5,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.833333,
+          "signatureScore": 2.545415
+        },
+        {
+          "concept": "tacometro",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "gas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "bajo.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "encarga",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "electricidad",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "funcionamiento.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "estanque",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "cargar",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "vapores",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "refrigeracion",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "averia.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "monoxido",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "roturas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "transmision",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "sometido",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "plano",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "lado.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "amortiguacion",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "confort",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "asfalto.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "amortiguadores",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "inclina",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "perdera",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "efectividad",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "hidraulico",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "circuito",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "pastillas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "tecnologia",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "ubicada",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "lavado",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "antibloqueo",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "fugas.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "correctamente.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "piso.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "agarre",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "dificiles.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "dibujos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "rodamiento",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mm.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "usado",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "revienta",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "ajusta",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-3",
+      "label": "Convivencia vial",
+      "pageRange": {
+        "start": 33,
+        "end": 36
+      },
+      "segmentCount": 19,
+      "topSignatureTerms": [
+        {
+          "concept": "conscientes",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "respeten",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "educacion",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "vial",
+          "frequency": 18,
+          "globalCount": 23,
+          "chapterPresence": 4,
+          "chapterShare": 0.782609,
+          "signatureScore": 2.716026
+        },
+        {
+          "concept": "ordenada",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "confianza.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "amable",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "compromiso",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "convivencia",
+          "frequency": 13,
+          "globalCount": 18,
+          "chapterPresence": 4,
+          "chapterShare": 0.722222,
+          "signatureScore": 2.2465
+        },
+        {
+          "concept": "respeto",
+          "frequency": 4,
+          "globalCount": 5,
+          "chapterPresence": 2,
+          "chapterShare": 0.8,
+          "signatureScore": 2.194949
+        },
+        {
+          "concept": "resultando",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "interaccion",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "armoniosa",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "gocen",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "adquisicion",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "inculcar",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "perdon",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "incorporacion",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "catalogo",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "meta",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "eliminacion",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "partiendo",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "minimizacion",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "subjetiva",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "realista",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "nulo.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "automotriz",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "crecido",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "incesantemente",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "aumentado",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "producen.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "combatir",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "colaborar.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "accidentales.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "objetiva",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "evitables.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "automocerca",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "viles",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "demostrar",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "producidos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "atentando",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "poniendose",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "fay",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cuarta",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "farmacos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "situaparte",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "riego",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "erroneos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "atentan",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "confianza",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "inspira",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "integrante",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "quedan",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "impunes",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "fiscalizaran",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "sancionaran",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "imprudencias",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "afectadas.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "reglamentario",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "sancionadoras",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "viera",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "debilita",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "necesitamos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "justo.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "conforman",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "desarrollan",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "humanos.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "conducidos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "ordenado",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "apoyan",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "confiara",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cumpliran",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "rol",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "atreveria",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "invadan",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cedan",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "misma/o.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "integrantes",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "admitir",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "preventiva",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-4",
+      "label": "La persona en el tránsito",
+      "pageRange": {
+        "start": 37,
+        "end": 67
+      },
+      "segmentCount": 172,
+      "topSignatureTerms": [
+        {
+          "concept": "medicamentos",
+          "frequency": 18,
+          "globalCount": 18,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 6.779821
+        },
+        {
+          "concept": "concentracion",
+          "frequency": 14,
+          "globalCount": 14,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 6.235516
+        },
+        {
+          "concept": "aparicion",
+          "frequency": 11,
+          "globalCount": 11,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.721709
+        },
+        {
+          "concept": "depresion",
+          "frequency": 11,
+          "globalCount": 11,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.721709
+        },
+        {
+          "concept": "cerebro",
+          "frequency": 10,
+          "globalCount": 10,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.521358
+        },
+        {
+          "concept": "enfermedades",
+          "frequency": 10,
+          "globalCount": 10,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.521358
+        },
+        {
+          "concept": "ojo",
+          "frequency": 9,
+          "globalCount": 9,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.301898
+        },
+        {
+          "concept": "organismo",
+          "frequency": 8,
+          "globalCount": 8,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.059297
+        },
+        {
+          "concept": "periferica",
+          "frequency": 7,
+          "globalCount": 7,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.788091
+        },
+        {
+          "concept": "dormir",
+          "frequency": 7,
+          "globalCount": 7,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.788091
+        },
+        {
+          "concept": "enfermedad",
+          "frequency": 7,
+          "globalCount": 7,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.788091
+        },
+        {
+          "concept": "trastornos",
+          "frequency": 7,
+          "globalCount": 7,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.788091
+        },
+        {
+          "concept": "sueno",
+          "frequency": 31,
+          "globalCount": 33,
+          "chapterPresence": 3,
+          "chapterShare": 0.939394,
+          "signatureScore": 4.513346
+        },
+        {
+          "concept": "decisiones",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "impresiones",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "estimacion",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "asumir",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "coordinacion",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "somnolencia.",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "somnolencia",
+          "frequency": 14,
+          "globalCount": 15,
+          "chapterPresence": 2,
+          "chapterShare": 0.933333,
+          "signatureScore": 4.308774
+        },
+        {
+          "concept": "cristalino",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "alteracion",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "grado",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "necesariamente",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "impulsividad",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "pasta",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "extasis",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "concentracion.",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "antihistaminicos",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "alcohol",
+          "frequency": 133,
+          "globalCount": 160,
+          "chapterPresence": 6,
+          "chapterShare": 0.83125,
+          "signatureScore": 3.730521
+        },
+        {
+          "concept": "visuales",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "interpretacion",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "pensamientos",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "fumar",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "influyen",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "adaptarse",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "sensoriales",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "atencion.",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "identidad",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "gramos",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "sangre.",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "g/l",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "1era",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "sensaciones",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "marihuana",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "consumir",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "ansiedad",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "borrosa",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "incomoda",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "sangre",
+          "frequency": 11,
+          "globalCount": 13,
+          "chapterPresence": 2,
+          "chapterShare": 0.846154,
+          "signatureScore": 3.584426
+        },
+        {
+          "concept": "movimientos",
+          "frequency": 9,
+          "globalCount": 10,
+          "chapterPresence": 2,
+          "chapterShare": 0.9,
+          "signatureScore": 3.532795
+        },
+        {
+          "concept": "reaccion",
+          "frequency": 16,
+          "globalCount": 23,
+          "chapterPresence": 2,
+          "chapterShare": 0.695652,
+          "signatureScore": 3.359941
+        },
+        {
+          "concept": "jovenes",
+          "frequency": 8,
+          "globalCount": 9,
+          "chapterPresence": 2,
+          "chapterShare": 0.888889,
+          "signatureScore": 3.329524
+        },
+        {
+          "concept": "tasa",
+          "frequency": 8,
+          "globalCount": 9,
+          "chapterPresence": 2,
+          "chapterShare": 0.888889,
+          "signatureScore": 3.329524
+        },
+        {
+          "concept": "estres",
+          "frequency": 12,
+          "globalCount": 16,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 3.279444
+        },
+        {
+          "concept": "sintomas",
+          "frequency": 9,
+          "globalCount": 11,
+          "chapterPresence": 2,
+          "chapterShare": 0.818182,
+          "signatureScore": 3.211632
+        },
+        {
+          "concept": "situaciones.",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "descubre",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "llega",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "interpretaciones",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "erroneas",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "indicios",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "relato",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "mayor.",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "agudeza",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "dependen",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "experiencia.",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "optico",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "macula",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "retina",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "percibe",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "madurez",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "ingerido",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "procesos",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "adecuadas",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "irritacion",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "droga",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "formacion",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "sentimientos",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "prueba",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-5",
+      "label": "Las y los usuarios vulnerables",
+      "pageRange": {
+        "start": 68,
+        "end": 76
+      },
+      "segmentCount": 45,
+      "topSignatureTerms": [
+        {
+          "concept": "anclaje",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "nino",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "nina",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "silla",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "isofix",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "latch",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "audifonos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "impedimento",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "zonas.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "ancho.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "juegan",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "caballo",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "ventajas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "exigencias.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "talla",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "instalado",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "elegir",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "motociclistas",
+          "frequency": 4,
+          "globalCount": 5,
+          "chapterPresence": 2,
+          "chapterShare": 0.8,
+          "signatureScore": 2.194949
+        },
+        {
+          "concept": "ninos",
+          "frequency": 19,
+          "globalCount": 27,
+          "chapterPresence": 5,
+          "chapterShare": 0.703704,
+          "signatureScore": 2.170549
+        },
+        {
+          "concept": "ninas",
+          "frequency": 18,
+          "globalCount": 26,
+          "chapterPresence": 5,
+          "chapterShare": 0.692308,
+          "signatureScore": 2.098836
+        },
+        {
+          "concept": "retencion",
+          "frequency": 10,
+          "globalCount": 14,
+          "chapterPresence": 4,
+          "chapterShare": 0.714286,
+          "signatureScore": 2.018779
+        },
+        {
+          "concept": "descender",
+          "frequency": 3,
+          "globalCount": 4,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 1.772462
+        },
+        {
+          "concept": "facilmente",
+          "frequency": 3,
+          "globalCount": 4,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 1.772462
+        },
+        {
+          "concept": "vulnerables",
+          "frequency": 9,
+          "globalCount": 13,
+          "chapterPresence": 5,
+          "chapterShare": 0.692308,
+          "signatureScore": 1.641314
+        },
+        {
+          "concept": "publicas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "propensas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "represenpersonas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "particularmente",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "mortales",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "atropellos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "28%",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "relaciona",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "incertidumbre",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "rodea",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "moverse",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "impredecibles",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "anticiparse",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "indebida",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "pasarelas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "semaforos.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "sumado",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "tecnologias.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "escuchan",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "musica",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "aisladas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "acusticamente",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "rodea.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "prestaran",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "anticiparte",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "posial",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "bles",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "corriendo",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "prepararte",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "vehiconsidera",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "repenculo",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "tinamente",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "estacomenzado",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "peao",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "invisible.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "tones.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "descuando",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "plazarse.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "comerciales",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "concurridas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "residenciano",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "mostrarlo.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "venta",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "tiendas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "sospeches",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "proatravieses",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "poblados.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "maneja",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "ebrias",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "discapacidad.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "adaptadas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "dales",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "asumas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "auditivas.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "avanzada",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "mostrarte",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-6",
+      "label": "Normas de circulación",
+      "pageRange": {
+        "start": 77,
+        "end": 108
+      },
+      "segmentCount": 158,
+      "topSignatureTerms": [
+        {
+          "concept": "00",
+          "frequency": 10,
+          "globalCount": 10,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.521358
+        },
+        {
+          "concept": "ceda",
+          "frequency": 7,
+          "globalCount": 7,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.788091
+        },
+        {
+          "concept": "demarcacion",
+          "frequency": 7,
+          "globalCount": 7,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.788091
+        },
+        {
+          "concept": "amarilla",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "precaucion.",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "tren",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "trabajos",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "ferroviario",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "ceder",
+          "frequency": 13,
+          "globalCount": 14,
+          "chapterPresence": 2,
+          "chapterShare": 0.928571,
+          "signatureScore": 4.177576
+        },
+        {
+          "concept": "intermitente",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "advierte",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "marcas",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "traspasar",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "permitida",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "pistas",
+          "frequency": 22,
+          "globalCount": 24,
+          "chapterPresence": 3,
+          "chapterShare": 0.916667,
+          "signatureScore": 3.984491
+        },
+        {
+          "concept": "paso.",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "enfrenten",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "aproximan",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "flecha",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "ferroviarios",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "simbolos",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "rotonda",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "cruce.",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "obstaculizar",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "libre",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "verde",
+          "frequency": 9,
+          "globalCount": 10,
+          "chapterPresence": 2,
+          "chapterShare": 0.9,
+          "signatureScore": 3.532795
+        },
+        {
+          "concept": "semaforos",
+          "frequency": 8,
+          "globalCount": 9,
+          "chapterPresence": 2,
+          "chapterShare": 0.888889,
+          "signatureScore": 3.329524
+        },
+        {
+          "concept": "izquierda.",
+          "frequency": 8,
+          "globalCount": 9,
+          "chapterPresence": 2,
+          "chapterShare": 0.888889,
+          "signatureScore": 3.329524
+        },
+        {
+          "concept": "pasos",
+          "frequency": 9,
+          "globalCount": 11,
+          "chapterPresence": 2,
+          "chapterShare": 0.818182,
+          "signatureScore": 3.211632
+        },
+        {
+          "concept": "indicacion",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "carabinero",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "deberan",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "semaforizados",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "activan",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "indicar",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "grupos",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "permitido",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "realizando",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "flechas",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "leyendas",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "segmentada",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "das",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "13",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "aproximarte",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "cambiarte",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "senalizar",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "senalizador",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "urbano",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "choques",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "virajes",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "elije",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "interseccion",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "26",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "barreras",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "demarcaciones",
+          "frequency": 7,
+          "globalCount": 8,
+          "chapterPresence": 2,
+          "chapterShare": 0.875,
+          "signatureScore": 3.101809
+        },
+        {
+          "concept": "continuar",
+          "frequency": 7,
+          "globalCount": 8,
+          "chapterPresence": 2,
+          "chapterShare": 0.875,
+          "signatureScore": 3.101809
+        },
+        {
+          "concept": "linea",
+          "frequency": 21,
+          "globalCount": 25,
+          "chapterPresence": 4,
+          "chapterShare": 0.84,
+          "signatureScore": 3.060349
+        },
+        {
+          "concept": "virar",
+          "frequency": 22,
+          "globalCount": 27,
+          "chapterPresence": 4,
+          "chapterShare": 0.814815,
+          "signatureScore": 3.011283
+        },
+        {
+          "concept": "exista",
+          "frequency": 8,
+          "globalCount": 10,
+          "chapterPresence": 2,
+          "chapterShare": 0.8,
+          "signatureScore": 2.996572
+        },
+        {
+          "concept": "pista",
+          "frequency": 39,
+          "globalCount": 57,
+          "chapterPresence": 4,
+          "chapterShare": 0.684211,
+          "signatureScore": 2.97489
+        },
+        {
+          "concept": "eje",
+          "frequency": 13,
+          "globalCount": 16,
+          "chapterPresence": 3,
+          "chapterShare": 0.8125,
+          "signatureScore": 2.97254
+        },
+        {
+          "concept": "lugares",
+          "frequency": 12,
+          "globalCount": 15,
+          "chapterPresence": 3,
+          "chapterShare": 0.8,
+          "signatureScore": 2.84462
+        },
+        {
+          "concept": "proposito",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "peligros",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "intencion",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "aproximes",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "preferencia",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "estacionar",
+          "frequency": 13,
+          "globalCount": 17,
+          "chapterPresence": 3,
+          "chapterShare": 0.764706,
+          "signatureScore": 2.797684
+        },
+        {
+          "concept": "lineas",
+          "frequency": 11,
+          "globalCount": 14,
+          "chapterPresence": 3,
+          "chapterShare": 0.785714,
+          "signatureScore": 2.706638
+        },
+        {
+          "concept": "cruce",
+          "frequency": 32,
+          "globalCount": 44,
+          "chapterPresence": 5,
+          "chapterShare": 0.727273,
+          "signatureScore": 2.618234
+        },
+        {
+          "concept": "senalizacion",
+          "frequency": 9,
+          "globalCount": 11,
+          "chapterPresence": 3,
+          "chapterShare": 0.818182,
+          "signatureScore": 2.611686
+        },
+        {
+          "concept": "maniobra",
+          "frequency": 10,
+          "globalCount": 13,
+          "chapterPresence": 3,
+          "chapterShare": 0.769231,
+          "signatureScore": 2.557068
+        },
+        {
+          "concept": "cruzar.",
+          "frequency": 5,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.833333,
+          "signatureScore": 2.545415
+        },
+        {
+          "concept": "proximidad",
+          "frequency": 5,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.833333,
+          "signatureScore": 2.545415
+        },
+        {
+          "concept": "advierten",
+          "frequency": 5,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.833333,
+          "signatureScore": 2.545415
+        },
+        {
+          "concept": "longitudinales",
+          "frequency": 5,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.833333,
+          "signatureScore": 2.545415
+        },
+        {
+          "concept": "cebra",
+          "frequency": 5,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.833333,
+          "signatureScore": 2.545415
+        },
+        {
+          "concept": "verticales",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "enfrentes",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "detenidos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-7",
+      "label": "Conducción en circunstancias especiales",
+      "pageRange": {
+        "start": 109,
+        "end": 126
+      },
+      "segmentCount": 104,
+      "topSignatureTerms": [
+        {
+          "concept": "adherencia",
+          "frequency": 14,
+          "globalCount": 15,
+          "chapterPresence": 2,
+          "chapterShare": 0.933333,
+          "signatureScore": 4.308774
+        },
+        {
+          "concept": "nieve",
+          "frequency": 19,
+          "globalCount": 21,
+          "chapterPresence": 3,
+          "chapterShare": 0.904762,
+          "signatureScore": 3.757446
+        },
+        {
+          "concept": "remolque",
+          "frequency": 10,
+          "globalCount": 11,
+          "chapterPresence": 2,
+          "chapterShare": 0.909091,
+          "signatureScore": 3.716189
+        },
+        {
+          "concept": "recuperar",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "proyectan",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "charcos",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "gotas",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "resbaladiza",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "deslizamientos",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "ropas",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "125",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "150",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "encendidas.",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "triangulo",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "sos.",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "remolques",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "arrastre",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "esfera",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "acceso",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "tunel.",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "limpia",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "comprueba",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "ligera",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "aquaplaning",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "motrices",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "congelarse",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "hielo",
+          "frequency": 7,
+          "globalCount": 8,
+          "chapterPresence": 2,
+          "chapterShare": 0.875,
+          "signatureScore": 3.101809
+        },
+        {
+          "concept": "agua",
+          "frequency": 18,
+          "globalCount": 24,
+          "chapterPresence": 3,
+          "chapterShare": 0.75,
+          "signatureScore": 3.061394
+        },
+        {
+          "concept": "parabrisas",
+          "frequency": 9,
+          "globalCount": 12,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 2.943996
+        },
+        {
+          "concept": "especiales",
+          "frequency": 20,
+          "globalCount": 26,
+          "chapterPresence": 4,
+          "chapterShare": 0.769231,
+          "signatureScore": 2.76034
+        },
+        {
+          "concept": "adoptar",
+          "frequency": 7,
+          "globalCount": 9,
+          "chapterPresence": 2,
+          "chapterShare": 0.777778,
+          "signatureScore": 2.757163
+        },
+        {
+          "concept": "75",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "175",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "225",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "250",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "275",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "325",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "375",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "425",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "anticipacion.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "retrovisor.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "proyecta",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "posea",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "altas.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "normales.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "especiales.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "retirar",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "enganche",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "servicio.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "produzca",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "brecha",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "permanece",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "televia",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "pago",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "imprescindible",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "controles",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "velocimetro.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "intentes",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "gafas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "deslizante.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mezclarse",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "polvo",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mojarse",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "suavidad",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "hidroplaning",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "intensa",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "pelicula",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "desalojar",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mojar",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "luminosidad",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "lavaparabrisas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "elimina",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "caen",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "copos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "sumamente",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "deslizamiento.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "hielo.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "norma",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "extremar",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "brillo",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-8",
+      "label": "Conducción eficiente",
+      "pageRange": {
+        "start": 127,
+        "end": 135
+      },
+      "segmentCount": 41,
+      "topSignatureTerms": [
+        {
+          "concept": "eficiente",
+          "frequency": 23,
+          "globalCount": 23,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 7.317739
+        },
+        {
+          "concept": "capitulo",
+          "frequency": 9,
+          "globalCount": 9,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 5.301898
+        },
+        {
+          "concept": "incrementar",
+          "frequency": 6,
+          "globalCount": 6,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.480624
+        },
+        {
+          "concept": "minuto",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "beneficios",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "energetico",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "costo",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "consumo.",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "rendimiento",
+          "frequency": 8,
+          "globalCount": 9,
+          "chapterPresence": 2,
+          "chapterShare": 0.888889,
+          "signatureScore": 3.329524
+        },
+        {
+          "concept": "eficiencia",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "portaequipajes",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "techo",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "combustible.",
+          "frequency": 12,
+          "globalCount": 15,
+          "chapterPresence": 3,
+          "chapterShare": 0.8,
+          "signatureScore": 2.84462
+        },
+        {
+          "concept": "tecnicas",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "mantenimiento",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "combustible",
+          "frequency": 41,
+          "globalCount": 66,
+          "chapterPresence": 4,
+          "chapterShare": 0.621212,
+          "signatureScore": 2.736702
+        },
+        {
+          "concept": "seccion",
+          "frequency": 5,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.833333,
+          "signatureScore": 2.545415
+        },
+        {
+          "concept": "contenida",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "energetica",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "esencial",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "incide",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "eficiente.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "aplican",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "rutas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "antelacion",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "tramites",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "aerodinamica",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "andar",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "util",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "disponibilidad",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "exigencia",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "logra",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "optima",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "paulatinamente",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "prefiere",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "viaje.",
+          "frequency": 4,
+          "globalCount": 5,
+          "chapterPresence": 2,
+          "chapterShare": 0.8,
+          "signatureScore": 2.194949
+        },
+        {
+          "concept": "permitira",
+          "frequency": 5,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.714286,
+          "signatureScore": 2.181785
+        },
+        {
+          "concept": "pagina",
+          "frequency": 5,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.714286,
+          "signatureScore": 2.181785
+        },
+        {
+          "concept": "marchas",
+          "frequency": 6,
+          "globalCount": 8,
+          "chapterPresence": 3,
+          "chapterShare": 0.75,
+          "signatureScore": 2.023203
+        },
+        {
+          "concept": "aplicar",
+          "frequency": 4,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.666667,
+          "signatureScore": 1.829124
+        },
+        {
+          "concept": "planificar",
+          "frequency": 3,
+          "globalCount": 4,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 1.772462
+        },
+        {
+          "concept": "rendimiento.",
+          "frequency": 3,
+          "globalCount": 4,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 1.772462
+        },
+        {
+          "concept": "gps",
+          "frequency": 3,
+          "globalCount": 4,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 1.772462
+        },
+        {
+          "concept": "excesivo",
+          "frequency": 3,
+          "globalCount": 4,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 1.772462
+        },
+        {
+          "concept": "recomienda",
+          "frequency": 3,
+          "globalCount": 4,
+          "chapterPresence": 2,
+          "chapterShare": 0.75,
+          "signatureScore": 1.772462
+        },
+        {
+          "concept": "consumo",
+          "frequency": 22,
+          "globalCount": 37,
+          "chapterPresence": 6,
+          "chapterShare": 0.594595,
+          "signatureScore": 1.708285
+        },
+        {
+          "concept": "entregarte",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "utilizas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "lograras",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "brindaras",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "entendemos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "utilizamos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "realizados",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "agencia",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "chilena",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "achee",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "ayudarte",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "crear",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "demostrado",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "conducatender",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "basicos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "cion",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "incidira",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "atmosfericos",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "causantes",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "invernadero",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "consiste",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "calor",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "atmosfera.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "veran",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "subirte",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "preocupa",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "unicamente",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "influiran",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "partir.",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "desconozcas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "mapa",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "alternativas",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "acorten",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        },
+        {
+          "concept": "recorrer",
+          "frequency": 1,
+          "globalCount": 1,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 1.59603
+        }
+      ]
+    },
+    {
+      "chapterId": "chapter-9",
+      "label": "Informaciones importantes",
+      "pageRange": {
+        "start": 136,
+        "end": 148
+      },
+      "segmentCount": 75,
+      "topSignatureTerms": [
+        {
+          "concept": "informaciones",
+          "frequency": 14,
+          "globalCount": 14,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 6.235516
+        },
+        {
+          "concept": "permiso",
+          "frequency": 7,
+          "globalCount": 7,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.788091
+        },
+        {
+          "concept": "emite",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "emisiones",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "libres",
+          "frequency": 5,
+          "globalCount": 5,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 4.125679
+        },
+        {
+          "concept": "portar",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "registro",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "artefacto",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "incorporado",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "fabrica",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "corresponda",
+          "frequency": 4,
+          "globalCount": 4,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.705868
+        },
+        {
+          "concept": "procedimientos",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "equipo",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "lesionada",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "hemorragias",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "cargas",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "homologacion",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "vigentes.",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "conforme",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "chat",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "manipulando",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "telefonia",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "digital",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "infringir",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "emision",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "humo",
+          "frequency": 3,
+          "globalCount": 3,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 3.192061
+        },
+        {
+          "concept": "certificado",
+          "frequency": 6,
+          "globalCount": 7,
+          "chapterPresence": 2,
+          "chapterShare": 0.857143,
+          "signatureScore": 2.843389
+        },
+        {
+          "concept": "humo_escape",
+          "frequency": 14,
+          "globalCount": 19,
+          "chapterPresence": 3,
+          "chapterShare": 0.736842,
+          "signatureScore": 2.766219
+        },
+        {
+          "concept": "manos",
+          "frequency": 10,
+          "globalCount": 13,
+          "chapterPresence": 3,
+          "chapterShare": 0.769231,
+          "signatureScore": 2.557068
+        },
+        {
+          "concept": "obligatorio",
+          "frequency": 5,
+          "globalCount": 6,
+          "chapterPresence": 2,
+          "chapterShare": 0.833333,
+          "signatureScore": 2.545415
+        },
+        {
+          "concept": "fuga",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "motivo",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "voltaje",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "fumes",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "vean",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "autorizacion",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "inminente",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "abrigo",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "victima",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "solicitar",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "detalla",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "observar",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "aerea",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "responda",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "entrenamiento",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "responde",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "voz",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "dolorosos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "salud.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "rotulos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "involucrado",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "otorgado",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "municipalidad",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "placas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "patentes",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "unicas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "identificacion",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "febrero",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "pagarse",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "personales",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "soap",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "permisos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "autorizados",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "revisiones",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "digito",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mes",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "documento",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "esenciales",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mensajeria",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "manipulacion",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "artefactos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "libres.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "cuente",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "contravenciones",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "deficientes.",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "progresiva",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "bajos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "irrita",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "mucosas",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        },
+        {
+          "concept": "hidrocarburos",
+          "frequency": 2,
+          "globalCount": 2,
+          "chapterPresence": 1,
+          "chapterShare": 1,
+          "signatureScore": 2.529648
+        }
+      ]
+    }
+  ]
+}
