@@ -18,7 +18,7 @@ Manual library -> Foundry build -> Verified review export -> Admin review -> Dra
 ```
 
 Milestones execute in strict order. No engineering milestone should begin before the previous one is closed, except for documentation-only alignment.
-The immediate active milestone remains Milestone 1.
+The immediate active milestone remains Milestone 2.
 
 ## Milestone 1: Stabilize local Admin and PDF platform
 
@@ -50,6 +50,17 @@ Done when:
 - `smoke:admin-local` passes under the documented degraded-runtime contract
 - Foundry PDF review is stable and usable
 - manual selection/highlight quality is acceptable on digital-text manual pages
+
+Status:
+- complete
+- closure evidence:
+  - `dev:admin-local` is the default local operator path
+  - `smoke:admin-local` passes
+  - PDF text selection is confirmed
+  - inline highlight quality is accepted
+  - crop mode was removed by design
+  - embedded-image extraction remains the supported visual-reference path
+  - `data/manual-library/cache` is now local-only derived data, not tracked source
 
 ## Milestone 2: Finish Foundry as the canonical generated lane
 
@@ -148,8 +159,8 @@ Done when:
 
 ## Safety rules
 
-- The immediate active milestone remains Milestone 1.
-- Do not start Catalogo, Imports, or Resumen implementation work before Milestone 1 closes.
+- The immediate active milestone remains Milestone 2.
+- Do not start Catalogo, Imports, or Resumen implementation work before Milestone 2 closes.
 - Do not overlap milestones unless the work is purely documentary.
 - Do not mutate sandbox build artifacts from Admin.
 - Keep production user flows free of live LLM dependencies.

@@ -64,14 +64,26 @@ Tasks:
   - confirm direct text selection from the PDF page
   - confirm inline text highlight is precise enough on normal text pages
   - keep PyMuPDF geometry fallback secondary
-- keep PDF image extraction production-local and cache-backed under `data/manual-library/cache`
+- keep PDF image extraction production-local with local-only derived cache under `data/manual-library/cache`
 
 Acceptance:
 - local Admin starts without manual port repair
 - `smoke:admin-local` passes under the documented degraded-runtime contract
 - Foundry PDF open is stable and usable for editorial correction
 - manual selection/highlight quality is acceptable on digital-text manual pages
+- embedded image extraction remains the supported visual-reference workflow
+- crop mode has been removed by design from the Admin PDF workspace
 - startup deprecation/config warnings may remain temporarily only if they do not break local Admin readiness or PDF review behavior
+
+Status:
+- closed
+- closure evidence:
+  - `dev:admin-local` reaches `Admin listo` with resolved ports
+  - `smoke:admin-local` passes
+  - direct page-text selection is human-validated
+  - inline text highlight is accepted on digital-text manual pages
+  - crop mode was intentionally removed after UX validation
+  - embedded image extraction remains production-local and now uses local-only cache policy
 
 ### Milestone 2: Complete Foundry as the canonical generated-content lane
 
@@ -185,8 +197,8 @@ Acceptance:
   5. Resumen modernization
   6. legacy cleanup
 - Do not overlap milestones unless the work is purely documentary.
-- Do not start Catalogo, Imports, or Resumen refactors before Milestone 1 is closed.
-- The immediate active milestone remains Milestone 1.
+- Do not start Catalogo, Imports, or Resumen refactors before Milestone 2 is closed.
+- The immediate active milestone remains Milestone 2.
 - All milestone closeout notes must be recorded in `docs/progress.md`.
 - Additive schema and type changes remain the default.
 - Production must continue degrading cleanly when local-only tooling is absent.

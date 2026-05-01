@@ -91,28 +91,28 @@
   - `plan.md`
   - `docs/migrations/admin-editorial-milestones.md`
 - Milestones now execute in strict order.
-- The immediate active milestone remains Milestone 1.
-- Catalogo, Imports, and Resumen implementation work should not begin before Milestone 1 closes, except for documentation-only alignment.
-- Milestone 1 implementation is now partially wired:
-  - shared local Admin orchestrator for `dev:admin-local` and `dev:admin-beta`
+- The immediate active milestone remains Milestone 2.
+- Catalogo, Imports, and Resumen implementation work should not begin before Milestone 2 closes, except for documentation-only alignment.
+- Milestone 1 is now closed.
+- Milestone 1 closure evidence:
+  - shared local Admin orchestrator is active for `dev:admin-local` and `dev:admin-beta`
   - local runtime state file at `.tmp/admin-local-runtime.json`
   - local smoke command: `npm run smoke:admin-local`
   - PDF review remains text-layer-first with PyMuPDF geometric fallback
-- Milestone 1 runtime validation now confirms:
   - `dev:admin-local` resolves real free ports and writes `.tmp/admin-local-runtime.json`
   - the local PDF worker comes up under the resolved runtime contract
   - the official manual asset resolves under local dev without the prior Vite asset-import failure
-- `smoke:admin-local` now passes under the degraded-runtime contract:
+  - `smoke:admin-local` passes under the degraded-runtime contract
   - `dev:admin-local` reaches `Admin listo`
   - the PDF worker HTTP server binds correctly
   - `/__local/pdf/health` returns `available: true` for `manual-claseb-2026`
   - when PyMuPDF cannot execute locally, the worker degrades cleanly instead of returning `500`
-- The remaining Milestone 1 blocker is now human PDF usability validation in the live viewer:
-  - direct page-text selection
-  - highlight quality on digital-text manual pages
-  - text mode vs crop mode separation
-  - page-image behavior acceptance in the current degraded/local-backend state
-- Milestone 2 is prepared but does not activate until that live PDF sign-off is recorded.
+  - direct page-text selection is human-validated
+  - highlight quality on digital-text manual pages is accepted
+  - crop mode was removed by design after UX validation
+  - embedded-image extraction is retained as the supported visual-reference path
+  - `data/manual-library/cache` is treated as local-only derived output and should not remain part of tracked workflow
+- Milestone 2 is now the active implementation milestone.
 
 ## Delegated public UI/UX track
 

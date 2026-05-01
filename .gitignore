@@ -18,3 +18,4 @@ sandbox/grounding-calibration/exports/
 sandbox/grounding-calibration/research/raw/
 sandbox/rag-system/artifacts/
 .tmp/
+data/manual-library/cache/
