@@ -105,6 +105,43 @@ export type ImportReviewFactReview = {
   suggestions: ImportReviewFactReviewSuggestion[];
 };
 
+export type ImportReviewSandboxProvenance = {
+  buildId: string;
+  candidateId: string;
+  unitIds: string[];
+  generationMode: 'text' | 'visual' | 'mixed';
+  verifierScore: number;
+  verifierIssues: Array<{
+    code: string;
+    severity?: string;
+    message: string;
+  }>;
+  requiredMedia?: {
+    assetIds: string[];
+    cropHints?: Array<{
+      assetId: string;
+      reason: string;
+    }>;
+  };
+  visualSupport?: {
+    required: boolean;
+    assetIds: string[];
+  };
+  groundingAnchors?: Array<{
+    pageId?: string;
+    pageNumber?: number;
+    blockId?: string;
+    excerpt: string;
+    textAnchor?: {
+      exact?: string;
+      prefix?: string;
+      suffix?: string;
+    };
+    bbox?: unknown;
+    bboxSource?: string;
+  }>;
+};
+
 export type ImportReviewQuestionRecord = {
   externalId: string;
   prompt: string;
@@ -140,6 +177,7 @@ export type ImportReviewQuestionRecord = {
   similarityMatchId?: string;
   similarityMatchPrompt?: string;
   similarityMatchQuestion?: ImportReviewQuestionSnapshot;
+  sandboxProvenance?: ImportReviewSandboxProvenance;
 };
 
 export type ImportReviewRejectedCandidate = {

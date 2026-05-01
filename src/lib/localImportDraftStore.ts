@@ -3,7 +3,7 @@ import type { ImportReviewQuestionRecord } from '../types/importReview';
 const STORAGE_KEY = 'licencia-claseb-import-draft-workspace-v1';
 
 export type ImportDraftStageStatus = 'pending' | 'staged' | 'discarded' | 'imported';
-export type ImportDraftStageSource = 'actionable' | 'rejected' | 'duplicate';
+export type ImportDraftStageSource = 'actionable' | 'rejected' | 'duplicate' | 'foundry';
 export type ImportDraftCorrectionSource = 'manual_segment' | 'pdf_selection';
 
 export type ImportDraftGroundingCorrection = {

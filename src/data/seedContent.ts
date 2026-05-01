@@ -10,6 +10,7 @@ import type {
 } from '../types/content.js';
 import { repairPotentialMojibake } from '../lib/textEncoding.js';
 import { REVIEWED_IMPORTED_QUESTIONS } from './reviewedImports.js';
+import { getOfficialManualRecord } from './manualLibrary';
 
 const ACTIVE_EDITION_ID = 'edition-2026';
 const SEED_AUTHOR = 'seed@licencia-claseb.local';
@@ -33,7 +34,7 @@ export const SOURCE_DOCUMENTS: SourceDocument[] = [
     title: 'Libro del Nuevo Conductor Clase B 2026',
     issuer: 'Conaset',
     year: 2026,
-    url: '/Libro-ClaseB-2026.pdf',
+    url: getOfficialManualRecord('manual-claseb-2026')?.assetUrl ?? '',
     type: 'manual',
     official: true,
   },

@@ -16,3 +16,5 @@ sandbox/grounding-calibration/runs/
 sandbox/grounding-calibration/tmp/
 sandbox/grounding-calibration/exports/
 sandbox/grounding-calibration/research/raw/
+sandbox/rag-system/artifacts/
+.tmp/

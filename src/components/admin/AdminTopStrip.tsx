@@ -10,7 +10,7 @@ export function AdminTopStrip({ activeSection, onOpenMobileMenu }: Props) {
   const sectionTitles: Record<AdminSection, string> = {
     dashboard: 'Resumen',
     catalog: 'Catalogo de preguntas',
-    ai: 'Cola de revision AI',
+    foundry: 'Foundry editorial',
     imports: 'Revision de imports',
     beta: 'Beta local Ollama',
   };

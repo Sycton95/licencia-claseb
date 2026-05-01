@@ -3,9 +3,9 @@ import {
   CloseIcon,
   DashboardIcon,
   FlaskIcon,
+  FoundryIcon,
   ImportReviewIcon,
   LogOutIcon,
-  SparkIcon,
 } from './AdminIcons';
 import type { AdminSection } from './types';
 
@@ -33,7 +33,7 @@ export function AdminSidebar({
   const navItems = [
     { id: 'dashboard', label: 'Resumen', Icon: DashboardIcon },
     { id: 'catalog', label: 'Catalogo', Icon: CatalogIcon },
-    { id: 'ai', label: 'Cola AI', Icon: SparkIcon },
+    { id: 'foundry', label: 'Foundry', Icon: FoundryIcon },
     { id: 'imports' as const, label: 'Imports', Icon: ImportReviewIcon },
     ...(showBeta ? [{ id: 'beta' as const, label: 'Beta', Icon: FlaskIcon }] : []),
   ] as const;

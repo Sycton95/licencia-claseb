@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manual-build-manifest.schema.json",
+  "type": "object",
+  "required": [
+    "buildId",
+    "editionId",
+    "manualYear",
+    "sourceDocument",
+    "chapterMap",
+    "models",
+    "artifacts",
+    "createdAt"
+  ],
+  "properties": {
+    "buildId": { "type": "string" },
+    "editionId": { "type": "string" },
+    "manualYear": { "type": "integer" },
+    "sourceDocument": {
+      "type": "object",
+      "required": ["documentId", "title", "issuer", "year", "pdfPath", "sha256"],
+      "properties": {
+        "documentId": { "type": "string" },
+        "title": { "type": "string" },
+        "issuer": { "type": "string" },
+        "year": { "type": "integer" },
+        "pdfPath": { "type": "string" },
+        "sha256": { "type": "string" }
+      }
+    },
+    "chapterMap": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chapterId", "title", "pageStart", "pageEnd"],
+        "properties": {
+          "chapterId": { "type": "string" },
+          "title": { "type": "string" },
+          "pageStart": { "type": "integer" },
+          "pageEnd": { "type": "integer" }
+        }
+      }
+    },
+    "models": { "type": "object" },
+    "artifacts": { "type": "object" },
+    "createdAt": { "type": "string" }
+  }
+}

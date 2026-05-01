@@ -656,3 +656,84 @@ body, html {
     padding-right: max(0px, env(safe-area-inset-right));
   }
 }
+
+.admin-pdf-canvas {
+  position: relative;
+  z-index: 1;
+}
+
+.admin-pdf-text-layer {
+  --total-scale-factor: 1;
+  --min-font-size: 1;
+  --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));
+  --min-font-size-inv: calc(1 / var(--min-font-size));
+  position: absolute;
+  inset: 0;
+  text-align: initial;
+  overflow: clip;
+  opacity: 1;
+  line-height: 1;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+  transform-origin: 0 0;
+  z-index: 3;
+  user-select: text;
+  cursor: text;
+}
+
+.admin-pdf-text-layer :is(span, br) {
+  position: absolute;
+  color: transparent;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0 0;
+}
+
+.admin-pdf-text-layer > :not(.markedContent),
+.admin-pdf-text-layer .markedContent span:not(.markedContent) {
+  z-index: 1;
+  --font-height: 0;
+  font-size: calc(var(--text-scale-factor) * var(--font-height));
+  --scale-x: 1;
+  --rotate: 0deg;
+  transform: rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv));
+}
+
+.admin-pdf-text-layer .markedContent {
+  display: contents;
+}
+
+.admin-pdf-text-layer span[role='img'] {
+  user-select: none;
+  cursor: default;
+}
+
+.admin-pdf-text-layer .endOfContent {
+  display: block;
+  position: absolute;
+  inset: 100% 0 0;
+  z-index: 0;
+  cursor: default;
+  user-select: none;
+}
+
+.admin-pdf-text-layer ::selection {
+  background: rgb(59 130 246 / 0.25);
+}
+
+.admin-pdf-text-layer br::selection {
+  background: transparent;
+}
+
+.admin-pdf-highlight-inline {
+  background: rgb(251 191 36 / 0.38);
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgb(217 119 6 / 0.22);
+}
+
+.admin-pdf-highlight-rect {
+  border: 2px solid rgb(245 158 11 / 0.75);
+  background: rgb(252 211 77 / 0.16);
+  border-radius: 4px;
+}

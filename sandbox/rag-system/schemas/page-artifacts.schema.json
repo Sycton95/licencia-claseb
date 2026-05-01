@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "page-artifacts.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "pageId",
+      "editionId",
+      "chapterId",
+      "pageNumber",
+      "pageImagePath",
+      "ocrMarkdown",
+      "ocrBlocks",
+      "visualAssets",
+      "pageSummary",
+      "extractionIssues",
+      "sourceHash"
+    ],
+    "properties": {
+      "pageId": { "type": "string" },
+      "editionId": { "type": "string" },
+      "chapterId": { "type": "string" },
+      "pageNumber": { "type": "integer" },
+      "pageImagePath": { "type": "string" },
+      "ocrMarkdown": { "type": "string" },
+      "ocrBlocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["blockId", "type", "text", "confidence"],
+          "properties": {
+            "blockId": { "type": "string" },
+            "type": {
+              "enum": ["paragraph", "table", "list", "visual", "heading", "caption"]
+            },
+            "text": { "type": "string" },
+            "bbox": {
+              "type": ["array", "null"],
+              "items": { "type": "number" },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "confidence": { "type": "number" }
+            ,
+            "parserConfidence": { "type": "number" },
+            "parserIssues": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      },
+      "visualAssets": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["assetId", "kind", "path", "caption", "visionDescription"],
+          "properties": {
+            "assetId": { "type": "string" },
+            "kind": {
+              "enum": ["full_page", "crop", "sign", "dashboard", "figure", "table_image"]
+            },
+            "path": { "type": "string" },
+            "bbox": {
+              "type": ["array", "null"],
+              "items": { "type": "number" },
+              "minItems": 4,
+              "maxItems": 4
+            },
+            "caption": { "type": "string" },
+            "visionDescription": { "type": "string" }
+          }
+        }
+      },
+      "pageSummary": { "type": "string" },
+      "extractionIssues": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "sourceHash": { "type": "string" },
+      "visualKeywords": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    }
+  }
+}

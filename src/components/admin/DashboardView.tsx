@@ -40,6 +40,37 @@ export function DashboardView({ summary, chapterCoverage, health, reviewTasks }:
           </div>
         )}
 
+        {summary?.foundry && (
+          <AdminCard>
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div>
+                <AdminLabel variant="section-header">Foundry</AdminLabel>
+                <p className="mt-1 text-sm text-neutral-600">
+                  Estado minimo del pipeline anual generado para revision editorial.
+                </p>
+              </div>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              {[
+                { label: 'Ultimo build', value: summary.foundry.latestBuildId ?? 'Sin build' },
+                { label: 'Builds', value: summary.foundry.buildCount },
+                { label: 'Listas para revisar', value: summary.foundry.reviewReadyCount },
+                { label: 'En lote local', value: summary.foundry.stagedCount },
+                { label: 'Auditoria visual', value: summary.foundry.visualAuditCount },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-xl border border-neutral-200 bg-neutral-50 p-3">
+                  <div className="text-[11px] font-bold uppercase tracking-wide text-neutral-500">
+                    {stat.label}
+                  </div>
+                  <div className="mt-2 truncate text-lg font-semibold text-neutral-900">
+                    {stat.value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AdminCard>
+        )}
+
         <div className="grid gap-6 md:grid-cols-2">
           <AdminCard>
             <AdminLabel variant="section-header">Estado del entorno</AdminLabel>

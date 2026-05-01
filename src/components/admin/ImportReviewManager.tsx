@@ -39,6 +39,7 @@ import type {
   VersionedManualChapterSegments,
 } from '../../types/importReview';
 import type { ContentCatalog, SourceDocument } from '../../types/content';
+import type { PdfGroundingAnchor, PdfRect } from '../../types/pdfReview';
 
 type Props = {
   manifest: ImportReviewManifest;
@@ -207,6 +208,9 @@ type PdfWorkspaceRequest = {
   documentId: string;
   page?: number;
   excerpt?: string;
+  textAnchor?: PdfGroundingAnchor['textAnchor'];
+  bbox?: PdfRect | null;
+  bboxSource?: string;
   title?: string;
   subtitle?: string;
   itemKey?: string;
@@ -805,6 +809,13 @@ export function ImportReviewManager({
                       {
                         page: getCandidateManualPage(candidate),
                         excerpt: candidate?.groundingExcerpt ?? summary.groundingExcerpt,
+                        textAnchor: candidate?.sandboxProvenance?.groundingAnchors?.[0]?.textAnchor,
+                        bbox:
+                          candidate?.sandboxProvenance?.groundingAnchors?.[0]?.bbox &&
+                          typeof candidate.sandboxProvenance.groundingAnchors[0].bbox === 'object'
+                            ? (candidate.sandboxProvenance.groundingAnchors[0].bbox as PdfRect)
+                            : null,
+                        bboxSource: candidate?.sandboxProvenance?.groundingAnchors?.[0]?.bboxSource,
                         title: summary.externalId,
                         subtitle: 'Grounding preliminar para aceptada con advertencia.',
                       },
@@ -857,6 +868,15 @@ export function ImportReviewManager({
                       {
                         page: getCandidateManualPage(candidate.normalizedQuestion),
                         excerpt: candidate.normalizedQuestion.groundingExcerpt,
+                        textAnchor:
+                          candidate.normalizedQuestion.sandboxProvenance?.groundingAnchors?.[0]?.textAnchor,
+                        bbox:
+                          candidate.normalizedQuestion.sandboxProvenance?.groundingAnchors?.[0]?.bbox &&
+                          typeof candidate.normalizedQuestion.sandboxProvenance.groundingAnchors[0].bbox === 'object'
+                            ? (candidate.normalizedQuestion.sandboxProvenance.groundingAnchors[0].bbox as PdfRect)
+                            : null,
+                        bboxSource:
+                          candidate.normalizedQuestion.sandboxProvenance?.groundingAnchors?.[0]?.bboxSource,
                         title: candidate.externalId,
                         subtitle: 'Revision de rechazo y posible rebatimiento.',
                       },
@@ -941,6 +961,9 @@ export function ImportReviewManager({
         sourceDocument={selectedPdfSourceDocument}
         page={pdfWorkspaceRequest?.page}
         excerpt={pdfWorkspaceRequest?.excerpt}
+        textAnchor={pdfWorkspaceRequest?.textAnchor}
+        bbox={pdfWorkspaceRequest?.bbox}
+        bboxSource={pdfWorkspaceRequest?.bboxSource}
         title={pdfWorkspaceRequest?.title}
         subtitle={pdfWorkspaceRequest?.subtitle}
         allowDraftTools={pdfWorkspaceRequest?.allowDraftTools}

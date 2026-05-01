@@ -80,6 +80,28 @@ export interface QuestionImportGroundingCorrection {
   updatedAt: string;
 }
 
+export interface QuestionImportRequiredMedia {
+  assetIds: string[];
+  cropHints?: Array<{
+    assetId: string;
+    reason: string;
+  }>;
+}
+
+export interface QuestionImportGroundingAnchor {
+  pageId?: string;
+  pageNumber?: number;
+  blockId?: string;
+  excerpt: string;
+  textAnchor?: {
+    exact?: string;
+    prefix?: string;
+    suffix?: string;
+  };
+  bbox?: unknown;
+  bboxSource?: string;
+}
+
 export interface QuestionImportMetadata {
   importBatchId: string;
   importRunId: string;
@@ -93,6 +115,19 @@ export interface QuestionImportMetadata {
   warnings?: string[];
   draftGroundingCorrection?: QuestionImportGroundingCorrection;
   referenceAssets?: QuestionImportReferenceAsset[];
+  buildId?: string;
+  candidateId?: string;
+  unitIds?: string[];
+  generationMode?: 'text' | 'visual' | 'mixed';
+  verifierScore?: number;
+  verifierIssues?: Array<{
+    code: string;
+    severity?: string;
+    message: string;
+  }>;
+  requiredMedia?: QuestionImportRequiredMedia;
+  groundingAnchors?: QuestionImportGroundingAnchor[];
+  manualAssetId?: string;
 }
 
 export interface Question {

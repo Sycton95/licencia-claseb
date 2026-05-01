@@ -101,6 +101,7 @@ export async function importDraftBatchToLocalCatalog({
     }));
     const media = await buildMediaAssets(item, questionId);
     const warnings = [...item.warnings.map((warning) => warning.message)];
+    const sandboxProvenance = item.candidate.sandboxProvenance;
 
     const question: Question = {
       id: questionId,
@@ -146,6 +147,15 @@ export async function importDraftBatchToLocalCatalog({
               updatedAt: item.correction.updatedAt,
             }
           : undefined,
+        buildId: sandboxProvenance?.buildId,
+        candidateId: sandboxProvenance?.candidateId,
+        unitIds: sandboxProvenance?.unitIds,
+        generationMode: sandboxProvenance?.generationMode,
+        verifierScore: sandboxProvenance?.verifierScore,
+        verifierIssues: sandboxProvenance?.verifierIssues,
+        requiredMedia: sandboxProvenance?.requiredMedia,
+        groundingAnchors: sandboxProvenance?.groundingAnchors,
+        manualAssetId: 'manual-claseb-2026',
         referenceAssets: item.assets.map((asset) => ({
           assetId: asset.assetId,
           kind: asset.kind,

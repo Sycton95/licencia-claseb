@@ -20,9 +20,16 @@ export type AdminReportSummary = {
   archivedCount: number;
   examEligibleCount: number;
   reviewSummary: ReviewSummary;
+  foundry?: {
+    latestBuildId: string | null;
+    buildCount: number;
+    reviewReadyCount: number;
+    stagedCount: number;
+    visualAuditCount: number;
+  };
 };
 
-export type AdminSection = 'dashboard' | 'catalog' | 'ai' | 'imports' | 'beta';
+export type AdminSection = 'dashboard' | 'catalog' | 'foundry' | 'imports' | 'beta';
 
 export function getEditorialStatusColor(status: EditorialStatus) {
   switch (status) {

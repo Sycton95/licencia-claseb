@@ -168,11 +168,29 @@ def page_images(payload: dict[str, Any]) -> dict[str, Any]:
             extracted = document.extract_image(xref)
             image_bytes = extracted.get("image")
             image_ext = str(extracted.get("ext") or "png").lower()
-            mime_type = extracted.get("smask")
+            smask_xref = int(extracted.get("smask") or 0)
             mime_guess = mimetypes.guess_type(f"image.{image_ext}")[0]
             mime_type = mime_guess or "image/png"
             if not image_bytes:
                 continue
+
+            pix: pymupdf.Pixmap | None = None
+            mask_pix: pymupdf.Pixmap | None = None
+            try:
+                pix = pymupdf.Pixmap(document, xref)
+                if smask_xref > 0 and not pix.alpha:
+                    try:
+                        mask_pix = pymupdf.Pixmap(document, smask_xref)
+                        pix = pymupdf.Pixmap(pix, mask_pix)
+                    except Exception:
+                        mask_pix = None
+
+                if pix.alpha:
+                    image_bytes = pix.tobytes("png")
+                    image_ext = "png"
+                    mime_type = "image/png"
+            except Exception:
+                pass
 
             cache_key = hashlib.sha1(
                 f"{document_id}:{safe_page}:xref:{xref}".encode("utf-8")

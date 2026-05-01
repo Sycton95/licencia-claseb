@@ -42,6 +42,10 @@ export const ImportReviewIcon = ({ className, size }: IconProps) => (
   <svg {...baseProps(size, className)}><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/><path d="m9 9 3-3 3 3"/><path d="M12 6v12"/><path d="m9 15 3 3 3-3"/></svg>
 );
 
+export const FoundryIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="M4 10h16"/><path d="M5 10l1.5 10h11L19 10"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/><path d="M9 14h6"/><path d="M10 18h4"/></svg>
+);
+
 export const SparkIcon = ({ className, size }: IconProps) => (
   <svg {...baseProps(size, className)}><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
 );

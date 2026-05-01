@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "knowledge-units.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "unitId",
+      "editionId",
+      "chapterId",
+      "sourceDocumentId",
+      "pageRange",
+      "unitType",
+      "topicKey",
+      "topicTitle",
+      "canonicalStatement",
+      "supportingText",
+      "groundingSpans",
+      "visualSupport",
+      "entities",
+      "numericValues",
+      "aliases",
+      "difficultyHints",
+      "generatorHints",
+      "safetyFlags",
+      "buildConfidence"
+    ],
+    "properties": {
+      "unitId": { "type": "string" },
+      "editionId": { "type": "string" },
+      "chapterId": { "type": "string" },
+      "sourceDocumentId": { "type": "string" },
+      "pageRange": {
+        "type": "object",
+        "required": ["start", "end"],
+        "properties": {
+          "start": { "type": "integer" },
+          "end": { "type": "integer" }
+        }
+      },
+      "unitType": {
+        "enum": [
+          "rule",
+          "fact",
+          "procedure",
+          "definition",
+          "exception",
+          "visual_identification",
+          "scenario"
+        ]
+      },
+      "topicKey": { "type": "string" },
+      "topicTitle": { "type": "string" },
+      "canonicalStatement": { "type": "string" },
+      "pageContextSummary": { "type": "string" },
+      "supportingText": { "type": "string" },
+      "groundingSpans": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["pageId", "blockId", "excerpt"],
+          "properties": {
+            "pageId": { "type": "string" },
+            "pageNumber": { "type": "integer" },
+            "blockId": { "type": "string" },
+            "excerpt": { "type": "string" },
+            "textAnchor": { "type": "object" },
+            "bbox": { "type": ["array", "null"] },
+            "bboxSource": { "type": "string" }
+          }
+        }
+      },
+      "visualSupport": {
+        "type": "object",
+        "required": ["required", "assetIds", "visualQuestionTypes"],
+        "properties": {
+          "mode": { "enum": ["none", "optional", "required"] },
+          "required": { "type": "boolean" },
+          "assetIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "visualQuestionTypes": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "entities": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "numericValues": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["value", "raw"],
+          "properties": {
+            "value": { "type": "string" },
+            "unit": { "type": ["string", "null"] },
+            "raw": { "type": "string" }
+          }
+        }
+      },
+      "aliases": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "difficultyHints": {
+        "type": "object",
+        "required": ["estimatedLevel", "questionTargets"],
+        "properties": {
+          "estimatedLevel": { "type": "string" },
+          "questionTargets": { "type": "integer" }
+        }
+      },
+      "generatorHints": {
+        "type": "object",
+        "required": ["forbiddenDistractors", "recommendedQuestionStyles", "avoidTrivialPhrasing"],
+        "properties": {
+          "forbiddenDistractors": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "recommendedQuestionStyles": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "avoidTrivialPhrasing": { "type": "boolean" }
+        }
+      },
+      "safetyFlags": {
+        "type": "object",
+        "required": ["ambiguous", "outdated", "low_extraction_confidence"],
+        "properties": {
+          "ambiguous": { "type": "boolean" },
+          "outdated": { "type": "boolean" },
+          "low_extraction_confidence": { "type": "boolean" }
+        }
+      },
+      "unitIssues": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "buildConfidence": { "type": "number" }
+    }
+  }
+}

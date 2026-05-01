@@ -1,57 +1,156 @@
-# Final Project Progress Report: Local AI Foundry & Cloud Edge LMS
+# Sandbox RAG System Progress
 
-**Date:** April 24, 2026
-**Status:** Completed (AOT Generation Batch & Benchmarking Validated)
+**Date:** April 25, 2026
+**Status:** Active pivot to annual multimodal foundry
 
-## 1. Project Scope & Objective
-The goal was to build a highly optimized, cost-effective pipeline to generate, evaluate, and deploy a Question/Answer bank based on a yearly-updated reference manual (2026 edition). The system required extracting both text and visual context, generating Moodle-compatible JSON quizzes, and providing semantic grounding for an Admin validation panel. 
+## Current direction
 
-**Hard Constraint:** Production runtime must incur $0 LLM inference costs. All heavy AI processing must be done locally (Ahead-Of-Time), with production relying on fast vector searches and static asset delivery.
+`sandbox/rag-system` is no longer a one-question-per-page experiment. It now acts as the staging ground for the long-term annual foundry that will:
 
-## 2. Core Architecture: "Local Foundry to Cloud Edge"
-The pipeline is a decoupled, multi-phase architecture:
+1. parse a yearly manual once,
+2. derive multimodal knowledge artifacts once,
+3. generate many candidate questions per knowledge unit,
+4. verify and dedupe before review,
+5. export a review-ready package for `/Admin`.
 
-1. **The Local Foundry (Python + Ollama):** Runs locally once a year. Handles PDF parsing, Vision-Language processing, vectorization, and QA generation. Output is strictly static files (`JSON`, `.npy`, `.png`).
-2. **Local Admin UI (Vite + React):** Runs on `localhost`. Consumes the generated JSON for human-in-the-loop review, utilizes local vector search for grounding, and approves final questions.
-3. **Cloud Sync (Supabase):** Approved JSON questions and extracted image directories are pushed to Supabase PostgreSQL (with `pgvector`) and Storage buckets.
-4. **Production Edge (Cloudflare Pages):** Users access the Vite React app served from the edge, retrieving instant static data from Supabase. No active LLMs are triggered by end-users.
+The production goal remains unchanged:
+- no live LLM dependency in production,
+- local/AOT generation only,
+- human approval in `/Admin` before catalog import,
+- enough scale to reach and surpass a 1000+ bank.
 
-## 3. The Structural Pivot: ColPali-Inspired Vision Ingestion
-During initial testing, standard text extraction (Method A) failed catastrophically when encountering complex layouts, tables, and diagrams. The generative LLM fell into repetitive token loops when fed broken text strings mixed with raw image bytes.
+## Structural pivot
 
-We executed a structural pivot to a **ColPali-inspired methodology (Method B):**
+The older flow was:
 
-1. **Full-Page Rendering:** The script renders the entire PDF page into a high-resolution PNG using PyMuPDF.
-2. **Vision-Language Transcription:** The PNG is sent to `qwen3-VL:4B-Instruct`, which acts as an advanced, layout-aware OCR system. It transcribes all text, tables, and visual elements (like dashboards or road signs) into a cohesive, structured markdown document.
-3. **Page-Level Chunking:** The sliding window character chunking was discarded. The context is now preserved at the page level, ensuring no semantic boundaries are broken.
+1. `build_cache_vision.py`
+2. `pdf_qg.py`
+3. `build_vectors_vision.py`
 
-## 4. Resolving the Context Limit: Parent-Child Architecture
-The shift to page-level chunks introduced a new problem: the resulting text strings exceeded the 512-token limit of the `mxbai-embed-large` embedding model.
+That flow was useful for validating VLM OCR and page-level retrieval, but it was too thin:
+- page was the only generation unit,
+- visual support was incidental,
+- there was no verifier or dedupe layer,
+- review export was not aligned with the local draft import workflow.
 
-To resolve this while maintaining the integrity of the generation phase, we implemented a **Parent-Child Retrieval Strategy:**
+The new foundry keeps the same local-first principle but changes the contracts completely.
 
-1. **Child Embeddings:** The full page (Parent) is sliced into ~1000-character blocks (Children). Only these smaller blocks are sent to the embedding model.
-2. **Vector Mapping:** An array (`vector_mapping_vision.json`) maps the index of each Child vector back to its Parent page index in the main cache.
-3. **Retrieval & Reassembly:** During vector search, the system matches the user query to the Child vector, looks up the Parent index, and passes the *entire, unbroken* Parent page to the generative LLM.
+## Current staged pipeline
 
-## 5. Benchmark Validation (Case C)
-We tested the new architecture using a small batch (first 20 pages) of the manual. 
+The new modular pipeline in this folder is:
 
-* **Generator Model:** `qwen3:4B-Instruct`
-* **Embedding Model:** `mxbai-embed-large`
-* **VLM Engine:** `qwen3-VL:4B-Instruct`
+1. `build_manifest.py`
+   - creates `manual-build-manifest.json`
+   - records source document, chapter map, models, artifact paths, and build identity
+2. `extract_pages_vision.py`
+   - renders manual pages
+   - performs VLM transcription
+   - emits `page-artifacts.json`
+3. `derive_knowledge_units.py`
+   - derives multiple knowledge units per page
+   - emits `knowledge-units.json`
+4. `build_vectors.py`
+   - embeds knowledge-unit support text
+   - emits vector cache + mapping
+5. `generate_candidates.py`
+   - generates multiple candidate questions per unit
+   - emits `question-candidates.json`
+6. `verify_candidates.py`
+   - applies structural, grounding, answer, and visual checks
+   - updates verifier metadata and evaluation report
+7. `score_and_dedupe.py`
+   - clusters duplicate families inside the build
+   - keeps the strongest candidate per family
+8. `export_review_package.py`
+   - emits `review-export.json`
+   - preserves sandbox provenance for `/Admin`
+9. `run_foundry_build.py`
+   - orchestrates the full annual foundry pass
 
-**Key Findings from `benchmark_case_c_results.json`:**
-* **Zero Token Loops:** The generative LLM processed the page-level markdown seamlessly.
-* **Multimodal Generation:** The text-to-text LLM successfully generated questions about visual elements (e.g., a dashboard layout) because the VLM accurately described them in the text layer.
-* **Contextual Stability:** The retrieval mapping accurately fetched the full page for 11 out of 12 questions.
-* **Anti-Hallucination:** When asked a flawed question (e.g., asking for a mechanical relationship not present in the text), `qwen3:4B-Instruct` explicitly refused to answer based on the retrieved context, proving strict adherence to the system prompt constraint.
+Legacy wrappers remain available:
+- `build_cache_vision.py`
+- `pdf_qg.py`
+- `build_vectors_vision.py`
 
-## 6. Final Pipeline Execution Flow
-The architecture is mathematically and logically sound. The final multi-hour execution sequence is:
+They now call the new modular stages instead of owning an obsolete format.
 
-1.  `python build_cache_vision.py` (Full document rendering & VLM transcription)
-2.  `python pdf_qg.py` (Full document question generation)
-3.  `python build_vectors_vision.py` (Full document Parent-Child vectorization)
+## Canonical artifact chain
 
-*This document serves as the formal closure of the architectural design phase.*
+Each annual build now targets this artifact family:
+
+- `manual-build-manifest.json`
+- `page-artifacts.json`
+- `knowledge-units.json`
+- `knowledge-unit-vectors.npy`
+- `knowledge-unit-vector-mapping.json`
+- `question-candidates.json`
+- `evaluation-report.json`
+- `review-export.json`
+
+These artifacts are stored under `sandbox/rag-system/artifacts/<buildId>/`.
+
+## Canonical unit of generation
+
+The canonical unit is now the **knowledge unit**, not the page and not the imported question.
+
+Each knowledge unit carries:
+- chapter and page provenance,
+- canonical statement,
+- grounding spans,
+- visual-support requirements,
+- entities and numeric values,
+- generator hints,
+- safety flags,
+- build confidence.
+
+This is the basis for scaling toward a 1000+ question bank without exploding duplicates.
+
+## Multimodal support
+
+Visual questions are now modeled explicitly:
+- page artifacts carry `visualAssets`
+- knowledge units declare `visualSupport`
+- candidates declare `generationMode`, `needsVisualAudit`, and `requiredMedia`
+- review export preserves visual provenance so `/Admin` can keep using the local draft workflow
+
+Visual candidates are exportable only when the candidate has both:
+- textual grounding,
+- referenced visual asset ids.
+
+## `/Admin` alignment
+
+This sandbox pivot does not redesign the production catalog schema. Instead it adds the minimum provenance required for the current draft import workflow to absorb generated candidates later.
+
+Near-term additive provenance fields now planned for import metadata:
+- `buildId`
+- `candidateId`
+- `unitIds`
+- `generationMode`
+- `verifierScore`
+- `verifierIssues`
+- `requiredMedia`
+
+The intent is that `/Admin` eventually accepts two review lanes:
+- external import review
+- sandbox-generated review export
+
+Both should converge into the same local draft import path.
+
+## Remaining work after this checkpoint
+
+This sandbox now has the structural pieces, but it still needs empirical tuning:
+- stronger schema validation against real build outputs
+- better unit derivation quality for long/heterogeneous pages
+- richer verifier heuristics against weak distractors and prompt leakage
+- duplicate checks against the existing catalog/imported pool, not only within-build families
+- a generated-build lane in `/Admin`
+- annual diff tooling across manual editions
+
+## Operating assumption
+
+The project direction is now fixed:
+- annual local foundry,
+- multimodal RAG artifacts,
+- generation around knowledge units,
+- verifier before human review,
+- human approval before production catalog.

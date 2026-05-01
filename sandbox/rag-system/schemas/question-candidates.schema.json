@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "question-candidates.schema.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "candidateId",
+      "buildId",
+      "editionId",
+      "chapterId",
+      "sourceDocumentId",
+      "unitIds",
+      "generationMode",
+      "questionType",
+      "prompt",
+      "instruction",
+      "options",
+      "correctOptionIndexes",
+      "publicExplanation",
+      "groundingExcerpt",
+      "groundingRefs",
+      "needsVisualAudit",
+      "requiredMedia",
+      "generatorRationale",
+      "difficultyEstimate",
+      "noveltyKey",
+      "duplicateFamilyKey",
+      "verifier",
+      "status"
+    ],
+    "properties": {
+      "candidateId": { "type": "string" },
+      "buildId": { "type": "string" },
+      "editionId": { "type": "string" },
+      "chapterId": { "type": "string" },
+      "sourceDocumentId": { "type": "string" },
+      "unitIds": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "generationMode": { "enum": ["text", "visual", "mixed"] },
+      "questionType": { "enum": ["single_choice", "multiple_choice"] },
+      "prompt": { "type": "string" },
+      "instruction": { "type": "string" },
+      "options": {
+        "type": "array",
+        "minItems": 3,
+        "items": {
+          "type": "object",
+          "required": ["text"],
+          "properties": {
+            "text": { "type": "string" }
+          }
+        }
+      },
+      "correctOptionIndexes": {
+        "type": "array",
+        "minItems": 1,
+        "items": { "type": "integer" }
+      },
+      "publicExplanation": { "type": "string" },
+      "groundingExcerpt": { "type": "string" },
+      "groundingRefs": {
+        "type": "object",
+        "required": ["unitIds", "pageRange", "blockIds", "assetIds"],
+        "properties": {
+          "unitIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "pageRange": {
+            "type": "object",
+            "required": ["start", "end"],
+            "properties": {
+              "start": { "type": "integer" },
+              "end": { "type": "integer" }
+            }
+          },
+          "blockIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "assetIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "needsVisualAudit": { "type": "boolean" },
+      "requiredMedia": {
+        "type": "object",
+        "required": ["assetIds", "cropHints"],
+        "properties": {
+          "assetIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "cropHints": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["assetId", "reason"],
+              "properties": {
+                "assetId": { "type": "string" },
+                "reason": { "type": "string" }
+              }
+            }
+          }
+        }
+      },
+      "generatorRationale": { "type": "string" },
+      "difficultyEstimate": { "type": "string" },
+      "noveltyKey": { "type": "string" },
+      "duplicateFamilyKey": { "type": "string" },
+      "verifier": {
+        "type": "object",
+        "required": [
+          "schemaPassed",
+          "groundingPassed",
+          "answerConsistencyPassed",
+          "visualSupportPassed",
+          "duplicateRisk",
+          "issues",
+          "score"
+        ],
+        "properties": {
+          "schemaPassed": { "type": "boolean" },
+          "groundingPassed": { "type": "boolean" },
+          "answerConsistencyPassed": { "type": "boolean" },
+          "visualSupportPassed": { "type": "boolean" },
+          "duplicateRisk": { "type": "string" },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "message"],
+              "properties": {
+                "code": { "type": "string" },
+                "severity": { "type": "string" },
+                "message": { "type": "string" }
+              }
+            }
+          },
+          "score": { "type": "number" }
+        }
+      },
+      "status": {
+        "enum": ["generated", "verified", "exported", "rejected_pre_review"]
+      }
+    }
+  }
+}

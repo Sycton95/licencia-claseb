@@ -1,0 +1,55 @@
+{
+  "buildId": "manual-foundry-2026-31abbf7de7c9-repaired",
+  "editionId": "manual-2026",
+  "manualYear": 2026,
+  "sourceDocumentId": "manual-claseb-2026",
+  "exportedCount": 1572,
+  "generatedAt": "2026-04-29T00:32:40.659Z",
+  "chapters": [
+    {
+      "chapterId": "chapter-1",
+      "file": "review-export/chapter-1.jsonl",
+      "count": 62
+    },
+    {
+      "chapterId": "chapter-2",
+      "file": "review-export/chapter-2.jsonl",
+      "count": 270
+    },
+    {
+      "chapterId": "chapter-3",
+      "file": "review-export/chapter-3.jsonl",
+      "count": 37
+    },
+    {
+      "chapterId": "chapter-4",
+      "file": "review-export/chapter-4.jsonl",
+      "count": 386
+    },
+    {
+      "chapterId": "chapter-5",
+      "file": "review-export/chapter-5.jsonl",
+      "count": 104
+    },
+    {
+      "chapterId": "chapter-6",
+      "file": "review-export/chapter-6.jsonl",
+      "count": 255
+    },
+    {
+      "chapterId": "chapter-7",
+      "file": "review-export/chapter-7.jsonl",
+      "count": 234
+    },
+    {
+      "chapterId": "chapter-8",
+      "file": "review-export/chapter-8.jsonl",
+      "count": 90
+    },
+    {
+      "chapterId": "chapter-9",
+      "file": "review-export/chapter-9.jsonl",
+      "count": 134
+    }
+  ]
+}

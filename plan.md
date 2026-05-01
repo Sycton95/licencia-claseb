@@ -1,247 +1,192 @@
-# Autonomous Roadmap v2
+# Editorial Roadmap v3
 
-## Product purpose
+## Product direction
 
-Build a public study app for the Chilean `Licencia Clase B` that optimizes for two constraints above all others:
+The project is no longer centered on live AI suggestions or one-off imports.
 
-1. Content accuracy
-2. Traceability to formal sources
+The canonical system is now:
 
-The product must not claim to replicate the non-public official question bank. It must publish its own reviewed, explainable, source-grounded practice material.
+```text
+Manual library -> Foundry build -> Verified review export -> Admin review -> Draft catalog -> Reviewed/Published catalog
+```
 
-## Locked operating principles
+This repo should be optimized for:
 
-- Public content must come only from `published` questions.
-- Hidden admin route policy remains locked: `/admin` is direct URL only and must stay out of public navigation.
-- The product remains a single responsive web app.
-- AI is assistant-only. It may suggest, flag, cluster, and prepare drafts. It may not publish, overwrite approved questions, or invent sources.
-- Any public study-mode or PDF feature stays blocked until content/legal posture is documented in repo docs.
+1. content accuracy
+2. traceability to the official manual
+3. yearly maintainability
+4. local-first editorial control
 
-## Current platform baseline
+## Locked architecture rules
 
-- Frontend: `Vite + React Router`
-- Persistence and auth: `Supabase`
-- Production writes: `Vercel api/` routes
-- Deploy source of truth: `main -> GitHub -> Vercel`
-- Current production health target:
-  - `schema: v1`
-  - `usesServiceRole: true`
-- Editorial statuses:
+- Public routes must use only approved catalog content.
+- `/admin` remains a hidden editorial route.
+- The heavy annual generation pipeline stays outside production user flows.
+- Sandbox remains for experimentation only.
+- Production-owned review and import logic must live in production directories and contracts.
+- No generated or imported candidate becomes production content without Admin approval.
+
+## Current active production shape
+
+- Official yearly manuals live in `data/manual-library/official/<year>/`.
+- Review-ready generated builds live in `data/foundry-builds/<buildId>/`.
+- `Foundry` is the canonical generated-content lane in Admin.
+- `Imports` remains a secondary compatibility lane.
+- `Catalogo` remains the production question bank.
+- `Resumen` remains active but still needs modernization.
+- `Beta` is still present as a local-only transitional lane and should be removed after extraction of any still-useful diagnostics.
+
+## Milestone sequence
+
+Milestones must execute in strict order. No milestone should begin before the previous one is closed, except for documentation-only alignment work.
+
+### Milestone 1: Stabilize the local Admin platform
+
+Goal:
+- make local Admin startup, PDF review, and local PDF worker behavior deterministic
+
+Tasks:
+- finish the shared runtime contract:
+  - `npm run dev:admin-local`
+  - `npm run dev:admin-beta`
+  - `.tmp/admin-local-runtime.json`
+  - `npm run smoke:admin-local`
+- keep startup output explicit and operationally useful
+- record the current startup baseline correctly:
+  - `dev:admin-local` reaches `Admin listo` with resolved Vite and PDF worker ports
+  - the launcher/runtime path is operational even when Vite emits non-blocking tooling warnings
+  - current `vite:react-babel`, `optimizeDeps`, and `Invalid input options ... jsx` warnings are configuration hygiene issues, not Milestone 1 blockers by themselves
+- keep the local PDF worker contract green even when PyMuPDF is unavailable on the machine:
+  - `/__local/pdf/health` must degrade cleanly instead of returning `500`
+  - text-layer review must keep working with browser fallback when local PyMuPDF execution is unavailable
+  - page-image requests must return a clean empty result rather than a hard failure when the Python backend is unavailable
+- close the remaining PDF interaction gaps:
+  - confirm direct text selection from the PDF page
+  - confirm inline text highlight is precise enough on normal text pages
+  - keep PyMuPDF geometry fallback secondary
+- keep PDF image extraction production-local and cache-backed under `data/manual-library/cache`
+
+Acceptance:
+- local Admin starts without manual port repair
+- `smoke:admin-local` passes under the documented degraded-runtime contract
+- Foundry PDF open is stable and usable for editorial correction
+- manual selection/highlight quality is acceptable on digital-text manual pages
+- startup deprecation/config warnings may remain temporarily only if they do not break local Admin readiness or PDF review behavior
+
+### Milestone 2: Complete Foundry as the canonical generated-content lane
+
+Goal:
+- make Foundry the fully operational generated-review path inside Admin
+
+Tasks:
+- finish candidate review semantics and diagnostics:
+  - explicit pending/staged/discarded/imported state clarity
+  - visible grounding anchors
+  - visible verifier evidence
+  - visible media and visual-audit requirements
+- tighten build-level and chapter-level diagnostics:
+  - review-ready
+  - blocked
+  - warning-only
+  - media-dependent
+- preserve shared batch prepare/import/revert behavior with Imports
+
+Acceptance:
+- a reviewer can review a build by chapter, correct grounding/media, stage, import as draft, and revert by batch
+- Foundry clearly replaces legacy generated-content review paths
+
+### Milestone 3: Rebuild Catalogo around provenance and lifecycle
+
+Goal:
+- make Catalogo the authoritative editorial destination for reviewed imports and foundry drafts
+
+Tasks:
+- surface provenance directly in Catalogo:
+  - source lane
+  - build/candidate ids
+  - manual/grounding references
+  - visual-audit state
+  - correction presence
+  - batch import history
+- keep the lifecycle explicit:
   - `draft`
   - `reviewed`
   - `published`
   - `archived`
+- route manual inspection through the canonical PDF workspace
+- preserve separation between catalog edits and source artifacts
 
-## Autonomous execution rules
+Acceptance:
+- imported drafts remain traceable after entering Catalogo
+- editors can review and promote items without losing source/manual context
 
-- Work proceeds milestone by milestone.
-- A milestone is not considered closed until:
-  - repo changes are committed and pushed
-  - `npm run validate:content` passes
-  - `npm run build` passes
-  - production verification notes are recorded in `docs/progress.md`
-- No new milestone starts until the previous one has a status entry in `docs/progress.md`.
-- If a milestone introduces local-only infrastructure, the production path must still degrade cleanly.
+### Milestone 4: Normalize Imports into the same editorial primitives
 
-## UI/UX Track (Delegated)
+Goal:
+- keep Imports as a supported compatibility lane without preserving a separate product model
 
-As of `2026-04-14`, pure public-route UI/UX work is delegated to a separate track.
+Tasks:
+- align Imports with the same shared primitives used by Foundry:
+  - staging queue
+  - draft correction model
+  - batch prepare/import
+  - batch revert
+  - PDF workspace
+  - visual-reference storage
+- continue Spanish-first localization and cleaner issue presentation
+- keep import-specific behavior only where external-source reality requires it
 
-### Scope (delegated UI/UX track only)
+Acceptance:
+- Foundry and Imports feel like two source lanes feeding one editorial workflow
+- shared draft-import logic dominates over ad hoc tab-specific UI state
 
-- Public `/`, `/practice`, and `/exam`
-- Visual polish, layout refinement, accessibility enhancements
-- Keyboard navigation, typography, spacing, and responsive design
+### Milestone 5: Modernize Resumen around operational health
 
-### Out of scope for the delegated UI/UX track
+Goal:
+- turn Resumen into a real editorial operations dashboard
 
-- `/admin`
-- data-fetching logic
-- Supabase clients or API route modifications
-- router logic or core application state
-- Ollama, content-pipeline, or editorial-workflow features
+Tasks:
+- replace transitional metrics with operational ones:
+  - active edition/manual year
+  - catalog lifecycle counts
+  - chapter coverage
+  - Foundry build status
+  - staged/import-ready counts
+  - visual-audit backlog
+  - verifier failure buckets
+  - environment health
+- remove residual legacy AI framing
 
-### Delegated UI/UX progress tracking
+Acceptance:
+- Resumen reflects the foundry/catalog system as it actually operates now
+- operators can identify the next review bottlenecks quickly
 
-- Roadmap: `.builder/plans/ui-ux-roadmap.md`
-- Progress log: `.builder/progress.md`
+### Milestone 6: Final legacy cleanup
 
-## Release discipline
+Goal:
+- remove legacy surfaces once the editorial core is stable
 
-Normal release gate:
+Tasks:
+- remove `Beta` after extracting any still-useful diagnostics
+- remove Beta-local code paths from the main Admin architecture
+- finish documentation cleanup where old language still implies deprecated AI lanes are active
 
-- `npm run validate:content`
-- `npm run build`
-- `npm run release:check`
+Acceptance:
+- Admin navigation contains only supported editorial surfaces
+- documentation and runtime architecture describe the same product
 
-Production health checks remain:
+## Execution defaults
 
-- `/api/health`
-- hidden `/admin`
-- public `/`, `/practice`, `/exam`
-
-## AI editorial policy
-
-### Allowed AI roles
-
-- Suggest new question candidates
-- Suggest rewrites for weak or overly framed prompts
-- Detect likely editorial issues and review targets
-- Detect coverage gaps by chapter/source
-- Prepare grounded draft candidates for admin review
-
-### Prohibited AI behaviors
-
-- Auto-publishing content
-- Modifying existing published questions without explicit admin action
-- Inventing source references, pages, or factual grounding
-- Exposing AI suggestion artifacts in public routes
-
-### Grounding policy
-
-Every AI suggestion must carry:
-
-- edition id
-- source document id when applicable
-- source page or source reference
-- rationale
-- grounding excerpt
-- confidence label
-- suggestion type
-
-Any suggestion without source grounding is ineligible for admin approval.
-
-## Milestone sequence
-
-### Milestone 1: Governance and progress safety
-
-Status:
-
-- Implemented in repo
-
-### Milestone 2: Content preparation for AI
-
-Status:
-
-- Implemented for all active chapters in the runtime baseline
-- Prepared chunk floor:
-  - `chapter-1`: 3
-  - `chapter-2`: 3
-  - `chapter-3`: 7
-  - `chapter-4`: 3
-  - `chapter-5`: 3
-  - `chapter-6`: 3
-  - `chapter-7`: 3
-  - `chapter-8`: 3
-  - `chapter-9`: 3
-
-### Milestone 3: AI suggestion data model and server routes
-
-Status:
-
-- Implemented in repo and production
-
-### Milestone 4: Admin AI inbox
-
-Status:
-
-- Implemented in repo and production
-
-### Milestone 5: Automated review flags and coverage analysis
-
-Status:
-
-- Core review warnings are implemented
-- Milestone `5A` is implemented:
-  - duplicate / near-duplicate detection
-  - weak-distractor detection
-  - inconsistent-instruction checks
-  - answer-format mismatch checks
-
-### Milestone 5E: Local LLM suggestion pilot
-
-Status:
-
-- Existing scaffolding implemented:
-  - provider abstraction
-  - env-gated local Ollama adapter
-  - verifier pipeline
-  - local beta storage
-  - local-only Beta panel in `/admin`
-- Current step:
-  - sequential local task queue
-  - sticky telemetry and live batch log
-  - collapsible `/admin` review surfaces
-  - clickable related-question references and local-first manual reader
-- Production default remains `heuristic`
-
-### Milestone 6: Public UX refinement after editorial scale-up
-
-Status:
-
-- Public UI work continues on the delegated branch
-- `/admin` work is not part of this milestone in the delegated track
-
-## Current content baseline
-
-- Published questions:
-  - `chapter-1`: 61
-  - `chapter-2`: 40
-  - `chapter-3`: 20
-  - `chapter-4`: 49
-  - `chapter-5`: 39
-  - `chapter-6`: 40
-  - `chapter-7`: 40
-  - `chapter-8`: 40
-  - `chapter-9`: 40
-- Prepared source chunks:
-  - `chapter-1`: 3
-  - `chapter-2`: 3
-  - `chapter-3`: 7
-  - `chapter-4`: 3
-  - `chapter-5`: 3
-  - `chapter-6`: 3
-  - `chapter-7`: 3
-  - `chapter-8`: 3
-  - `chapter-9`: 3
-- Runtime chapter taxonomy is aligned to the formal 9-chapter manual structure
-
-## Chapter rollout policy
-
-- Coverage target remains `baseline first`
-- Public rollout remains `progressive activate`
-- A chapter is ready for public activation only when it has:
-  - at least `10` published questions
-  - at least `3` prepared source chunks
-  - clear source references on published items
-  - no unresolved critical editorial warnings
-
-## Reviewed import exclusions
-
-- `4-q047` remains excluded because it cites page `109`, which belongs to `chapter-7`
-- `5-q033` remains excluded because it cites page `162`, which belongs to the annex section
-
-## Current next actions
-
-### Main track (content, admin, and release discipline)
-
-1. Keep the runtime catalog aligned to the formal 9-chapter manual structure.
-2. Keep Milestone `5A` diagnostics active as the quality gate for imported and locally authored content.
-3. Continue Milestone `5E` as the active `/admin` track in this sandbox:
-   - local-only
-   - opt-in
-   - verifier-gated
-   - never production-default
-   - sequential worker queue, sticky telemetry/logs, and richer review surfaces inside `/admin`
-4. Finish the protected-preview gate only where it directly blocks admin release discipline.
-5. Keep annexes out of the runtime question bank until a separate annex ingestion policy exists.
-6. Run the release gate on each production content update:
-   - `npm run validate:content`
-   - `npm run build`
-   - `npm run release:check`
-
-### Delegated public UI/UX track
-
-- Public `/`, `/practice`, and `/exam` continue on the delegated branch.
-- `/admin` is intentionally out of scope for that delegated track.
-- Any admin UI needed for Beta local/Ollama work belongs to the main track here.
+- Strict order:
+  1. local Admin stability
+  2. Foundry completion
+  3. Catalogo modernization
+  4. Imports normalization
+  5. Resumen modernization
+  6. legacy cleanup
+- Do not overlap milestones unless the work is purely documentary.
+- Do not start Catalogo, Imports, or Resumen refactors before Milestone 1 is closed.
+- The immediate active milestone remains Milestone 1.
+- All milestone closeout notes must be recorded in `docs/progress.md`.
+- Additive schema and type changes remain the default.
+- Production must continue degrading cleanly when local-only tooling is absent.

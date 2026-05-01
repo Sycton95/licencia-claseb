@@ -10,6 +10,7 @@ Plataforma web en `React + Vite + Vercel` para estudiar la licencia Clase B en C
 ```bash
 npm install
 npm run dev
+npm run dev:admin-local
 npm run dev:admin-beta
 npm run build
 npm run validate:content
@@ -97,9 +98,31 @@ Reglas:
 - en Vercel Preview se habilita solo con `VITE_ENABLE_PREVIEW_ADMIN_BYPASS=true`
 - para probar auth real, desactiva el bypass y usa el flujo normal desde producción
 
+## Admin local recomendado
+
+Flujo local recomendado para el backoffice editorial:
+
+1. ejecuta `npm run dev:admin-local`
+2. o en Windows usa [`launchers/01-admin-local.cmd`](./launchers/01-admin-local.cmd)
+3. espera a que el runtime abra la URL real de `/admin`
+
+Este flujo:
+
+- no depende de Ollama
+- levanta el worker local de PDF
+- resuelve puertos libres automÃ¡ticamente
+- escribe `.tmp/admin-local-runtime.json` para smoke checks y depuraciÃ³n local
+
 ## Beta local Ollama en `/admin`
 
 Usa [`docs/admin-local-beta.md`](./docs/admin-local-beta.md) como documento operativo principal.
+
+Estado:
+
+- este flujo queda como carril local heredado y opt-in
+- no es el launcher principal recomendado
+- Ollama ya no es parte del launcher por defecto para Admin local
+- la validaciÃ³n operativa normal de Milestone 1 debe hacerse con `npm run dev:admin-local`
 
 Flujo corto:
 
@@ -109,7 +132,7 @@ Flujo corto:
    - `VITE_ENABLE_LOCAL_OLLAMA=true`
 2. asegúrate de tener Ollama levantado localmente
 3. ejecuta `npm run dev:admin-beta`
-4. abre `http://localhost:5173/admin`
+4. espera a que el runtime abra la URL real de `/admin`
 
 Comportamiento esperado:
 

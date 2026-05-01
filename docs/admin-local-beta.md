@@ -2,6 +2,13 @@
 
 This document is the source of truth for the local-only Ollama workflow used by `/admin`.
 
+Status:
+
+- legacy and opt-in
+- not the recommended default local Admin flow
+- the supported launcher path is now `npm run dev:admin-local` or `launchers/01-admin-local.cmd`
+- Milestone 1 validation should use `npm run dev:admin-local` first and treat Beta as secondary diagnostics only
+
 ## Scope
 
 - Local-only
@@ -44,8 +51,10 @@ That starts:
 
 1. Vite for the web app
 2. the local Ollama worker on `127.0.0.1`
+3. the local PDF worker on `127.0.0.1`
 
 You still need Ollama running locally with the selected model available.
+Do not use this path as the default smoke or startup verification flow for the editorial workspace.
 
 ## Expected `/admin` behavior
 
@@ -72,7 +81,40 @@ When the worker is unavailable:
   - percent is based on completed items over total items
 - Telemetry is local-only:
   - CPU and RAM are guaranteed
-  - GPU is best-effort on Windows
+- GPU is best-effort on Windows
+
+## Shared local runtime contract
+
+Both local Admin entrypoints now use the same orchestration model:
+
+- `npm run dev:admin-local`
+- `npm run dev:admin-beta`
+
+The orchestrator resolves free ports for:
+
+- Vite
+- local Ollama worker when `dev:admin-beta` is used
+- local PDF worker
+
+and writes:
+
+```text
+.tmp/admin-local-runtime.json
+```
+
+This file records the active Admin URL and worker URL for smoke checks and debugging.
+
+Verify the active local runtime with:
+
+```powershell
+npm run smoke:admin-local
+```
+
+This command checks:
+
+- the current `adminUrl`
+- the local PDF worker health endpoint
+- availability of `manual-claseb-2026`
 
 Warning thresholds:
 

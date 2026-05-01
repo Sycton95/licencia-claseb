@@ -4,11 +4,12 @@ import { AdminTopStrip } from '../components/admin/AdminTopStrip';
 import { DashboardView } from '../components/admin/DashboardView';
 import { CatalogManager } from '../components/admin/CatalogManager';
 import { EditorPanel } from '../components/admin/EditorPanel';
-import { AiQueueManager } from '../components/admin/AiQueueManager';
 import { BetaPilotManager } from '../components/admin/BetaPilotManager';
 import { ImportReviewManager } from '../components/admin/ImportReviewManager';
+import { FoundryReviewManager } from '../components/admin/FoundryReviewManager';
 import { AdminReferenceDrawer } from '../components/admin/AdminReferenceDrawer';
 import { AdminManualReader } from '../components/admin/AdminManualReader';
+import { getGeneratedBuildSummaries } from '../data/generatedFoundryBuilds';
 import type { AdminHealth, AdminReportSummary, AdminSection } from '../components/admin/types';
 import { buildDraftQuestionFromSuggestion } from '../lib/aiSuggestionEngine';
 import {
@@ -16,7 +17,6 @@ import {
   buildQuestionDiagnosticMap,
   buildReviewSummary,
   buildReviewTasks,
-  buildSuggestionDiagnosticMap,
   getQuestionDiagnostics,
 } from '../lib/editorialDiagnostics';
 import { validateQuestionAction } from '../lib/contentValidation';
@@ -31,8 +31,6 @@ import {
 } from '../lib/supabase';
 import {
   discardLocalAiPilotSuggestion,
-  generateAiWorkspace,
-  getAiWorkspace,
   getContentCatalog,
   getCurrentSession,
   getLocalAiPilotWorkspace,
@@ -40,23 +38,20 @@ import {
   getLocalAiPilotWorkerHealth,
   getLocalAiPilotWorkerMetrics,
   isCurrentUserAdmin,
-  markAiSuggestionApplied,
   persistLocalAiPilotRunResult,
   requestAdminMagicLink,
   saveQuestion,
   signOutAdmin,
   startLocalAiPilotRun,
-  transitionAiSuggestion,
   cancelLocalAiPilotRun,
 } from '../lib/contentRepository';
+import { loadImportDraftWorkspace } from '../lib/localImportDraftStore';
 import type {
   AiPilotActiveRun,
   AiPilotRunConfig,
   AiPilotRunMode,
   AiPilotSuggestionRecord,
   AiPilotWorkspace,
-  AiSuggestion,
-  AiWorkspace,
   LocalOllamaHealth,
   LocalOllamaMetrics,
 } from '../types/ai';
@@ -71,14 +66,11 @@ function cloneQuestion(question: Question) {
 
 export function AdminPage() {
   const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
-  const [aiWorkspace, setAiWorkspace] = useState<AiWorkspace | null>(null);
   const [betaWorkspace, setBetaWorkspace] = useState<AiPilotWorkspace | null>(null);
   const [activeSection, setActiveSection] = useState<AdminSection>('dashboard');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedQuestionId, setSelectedQuestionId] = useState<string | null>(null);
   const [draftQuestion, setDraftQuestion] = useState<Question | null>(null);
-  const [draftOriginSuggestionId, setDraftOriginSuggestionId] = useState<string | null>(null);
-  const [selectedSuggestionId, setSelectedSuggestionId] = useState<string | null>(null);
   const [selectedBetaSuggestionId, setSelectedBetaSuggestionId] = useState<string | null>(null);
   const [filterStatus, setFilterStatus] = useState<'all' | EditorialStatus>('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -96,7 +88,6 @@ export function AdminPage() {
   const [betaSetupError, setBetaSetupError] = useState<string | null>(null);
   const [isBetaBusy, setIsBetaBusy] = useState(false);
   const [catalogListCollapsed, setCatalogListCollapsed] = useState(false);
-  const [aiListCollapsed, setAiListCollapsed] = useState(false);
   const [betaListCollapsed, setBetaListCollapsed] = useState(false);
   const [importReviewManifest, setImportReviewManifest] = useState<ImportReviewManifest | null>(null);
   const [referenceQuestionId, setReferenceQuestionId] = useState<string | null>(null);
@@ -145,12 +136,6 @@ export function AdminPage() {
       setSessionEmail(canUseLocalAdmin ? 'local-admin' : null);
     }
   }, [canUseLocalAdmin]);
-
-  useEffect(() => {
-    if (canUseLocalAdmin || isAdminAuthorized) {
-      getAiWorkspace().then(setAiWorkspace);
-    }
-  }, [canUseLocalAdmin, isAdminAuthorized]);
 
   useEffect(() => {
     if (!showBetaSection) {
@@ -339,14 +324,6 @@ export function AdminPage() {
     [catalog],
   );
 
-  const suggestionDiagnosticsById = useMemo(
-    () =>
-      catalog && aiWorkspace
-        ? buildSuggestionDiagnosticMap(aiWorkspace.suggestions, catalog.questions)
-        : {},
-    [aiWorkspace, catalog],
-  );
-
   const draftDiagnostics = useMemo(() => {
     if (!draftQuestion || !catalog) {
       return [];
@@ -361,6 +338,13 @@ export function AdminPage() {
       return null;
     }
 
+    const foundryBuilds = getGeneratedBuildSummaries();
+    const latestFoundryBuild = foundryBuilds[0] ?? null;
+    const draftWorkspace = loadImportDraftWorkspace();
+    const foundryQueue = latestFoundryBuild
+      ? draftWorkspace.queue.filter((item) => item.runId === latestFoundryBuild.buildId)
+      : [];
+
     return {
       totalQuestions: catalog.questions.length,
       draftCount: catalog.questions.filter((question) => question.status === 'draft').length,
@@ -370,6 +354,16 @@ export function AdminPage() {
       examEligibleCount: catalog.questions.filter((question) => question.isOfficialExamEligible)
         .length,
       reviewSummary: buildReviewSummary(reviewTasks),
+      foundry: {
+        latestBuildId: latestFoundryBuild?.buildId ?? null,
+        buildCount: foundryBuilds.length,
+        reviewReadyCount: latestFoundryBuild?.exportedCount ?? 0,
+        stagedCount: foundryQueue.filter((item) => item.status === 'staged').length,
+        visualAuditCount: catalog.questions.filter(
+          (question) => question.importMetadata?.generationMode === 'visual' ||
+            question.importMetadata?.needsVisualAudit,
+        ).length,
+      },
     };
   }, [catalog, reviewTasks]);
 
@@ -410,7 +404,6 @@ export function AdminPage() {
     if (question) {
       setSelectedQuestionId(id);
       setDraftQuestion(cloneQuestion(question));
-      setDraftOriginSuggestionId(null);
       setEditorStatus(null);
     }
   };
@@ -449,37 +442,12 @@ export function AdminPage() {
       const updatedCatalog = await getContentCatalog();
       setCatalog(updatedCatalog);
 
-      if (draftOriginSuggestionId) {
-        setAiWorkspace(await markAiSuggestionApplied(draftOriginSuggestionId, questionToSave.id));
-        setDraftOriginSuggestionId(null);
-      }
-
       setDraftQuestion(cloneQuestion(questionToSave));
       setEditorStatus(message, 'success');
     } catch {
       setEditorStatus('No se pudo guardar. Revisa la conexion e intentalo nuevamente.', 'error');
     } finally {
       setIsBusy(false);
-    }
-  };
-
-  const handleLoadSuggestionIntoEditor = async (suggestion: AiSuggestion) => {
-    const questionDraft = buildDraftQuestionFromSuggestion(
-      suggestion,
-      sessionEmail ?? 'local-admin',
-    );
-    if (!questionDraft) {
-      return;
-    }
-
-    setSelectedQuestionId(suggestion.targetQuestionId ?? 'new-draft');
-    setDraftQuestion(questionDraft);
-    setDraftOriginSuggestionId(suggestion.id);
-    setActiveSection('catalog');
-    setEditorStatus('Borrador cargado desde sugerencia AI.', 'success');
-
-    if (suggestion.status === 'pending') {
-      setAiWorkspace(await transitionAiSuggestion(suggestion.id, 'accepted'));
     }
   };
 
@@ -496,7 +464,6 @@ export function AdminPage() {
 
     setSelectedQuestionId(record.suggestion.targetQuestionId ?? `beta-${record.suggestion.id}`);
     setDraftQuestion(questionDraft);
-    setDraftOriginSuggestionId(null);
     setActiveSection('catalog');
     setEditorStatus('Borrador cargado desde Beta local.', 'success');
   };
@@ -727,37 +694,16 @@ export function AdminPage() {
             />
           )}
 
-          {activeSection === 'ai' && (
-            <AiQueueManager
-              filteredSuggestions={aiWorkspace?.suggestions || []}
-              diagnosticsBySuggestionId={suggestionDiagnosticsById}
-              isBusy={isBusy}
-              isListCollapsed={aiListCollapsed}
-              referenceChapter={referenceChapter}
-              referenceQuestion={referenceQuestion}
-              referenceSourceDocument={
-                referenceQuestion
-                  ? catalog?.sourceDocuments.find((source) => source.id === referenceQuestion.sourceDocumentId) ?? null
-                  : null
-              }
-              selectedSuggestionId={selectedSuggestionId}
-              selectedSuggestion={
-                aiWorkspace?.suggestions.find((suggestion) => suggestion.id === selectedSuggestionId) ||
-                null
-              }
-              onCloseReference={() => setReferenceQuestionId(null)}
-              onSelectSuggestion={(id) => {
-                setSelectedSuggestionId(id);
-                setReferenceQuestionId(null);
+          {activeSection === 'foundry' && (
+            <FoundryReviewManager
+              catalog={catalog}
+              sourceDocuments={catalog?.sourceDocuments || []}
+              actorEmail={sessionEmail ?? 'local-admin'}
+              onCatalogUpdated={setCatalog}
+              onOpenCatalogQuestion={(questionId) => {
+                setActiveSection('catalog');
+                selectQuestion(questionId);
               }}
-              onToggleListCollapsed={() => setAiListCollapsed((current) => !current)}
-              onLoadSuggestionIntoEditor={handleLoadSuggestionIntoEditor}
-              onOpenManual={handleOpenManual}
-              onOpenReference={handleOpenReference}
-              onGenerateSuggestions={async () => setAiWorkspace(await generateAiWorkspace())}
-              onTransitionSuggestion={async (id, status) =>
-                setAiWorkspace(await transitionAiSuggestion(id, status))
-              }
             />
           )}
 
@@ -768,7 +714,7 @@ export function AdminPage() {
                 onOpenReference={handleOpenReference}
                 onOpenCatalogQuestion={(questionId) => {
                   setActiveSection('catalog');
-                  setSelectedQuestionId(questionId);
+                  selectQuestion(questionId);
                 }}
                 onCatalogUpdated={setCatalog}
                 catalog={catalog}
@@ -810,18 +756,16 @@ export function AdminPage() {
             />
           )}
         </div>
-        {activeSection !== 'ai' ? (
-          <AdminReferenceDrawer
-            chapter={referenceChapter}
-            question={referenceQuestion}
-            sourceDocument={
-              referenceQuestion
-                ? catalog?.sourceDocuments.find((source) => source.id === referenceQuestion.sourceDocumentId) ?? null
-                : null
-            }
-            onClose={() => setReferenceQuestionId(null)}
-          />
-        ) : null}
+        <AdminReferenceDrawer
+          chapter={referenceChapter}
+          question={referenceQuestion}
+          sourceDocument={
+            referenceQuestion
+              ? catalog?.sourceDocuments.find((source) => source.id === referenceQuestion.sourceDocumentId) ?? null
+              : null
+          }
+          onClose={() => setReferenceQuestionId(null)}
+        />
         <AdminManualReader
           document={manualDocument}
           initialPage={manualInitialPage}

@@ -12,12 +12,21 @@ function normalizeCatalog(rawCatalog: Partial<ContentCatalog>): ContentCatalog {
     rawCatalog.activeEdition ??
     rawCatalog.editions?.find((edition) => edition.isActive) ??
     SEED_CONTENT.activeEdition;
+  const sourceById = new Map(
+    (rawCatalog.sourceDocuments ?? []).map((source) => [source.id, source] as const),
+  );
+  for (const source of SEED_CONTENT.sourceDocuments) {
+    sourceById.set(source.id, {
+      ...(sourceById.get(source.id) ?? {}),
+      ...source,
+    });
+  }
 
   return {
     editions: rawCatalog.editions ?? SEED_CONTENT.editions,
     activeEdition,
     chapters: rawCatalog.chapters ?? SEED_CONTENT.chapters,
-    sourceDocuments: rawCatalog.sourceDocuments ?? SEED_CONTENT.sourceDocuments,
+    sourceDocuments: [...sourceById.values()],
     examRuleSet: rawCatalog.examRuleSet ?? SEED_CONTENT.examRuleSet,
     questions: rawCatalog.questions ?? SEED_CONTENT.questions,
     editorialEvents: rawCatalog.editorialEvents ?? SEED_CONTENT.editorialEvents,

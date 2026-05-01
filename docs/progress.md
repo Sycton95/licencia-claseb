@@ -5,6 +5,13 @@
 - Frontend is live on Vercel from `main`.
 - Public routes are `/`, `/practice`, and `/exam`.
 - `/admin` is active and hidden from public navigation.
+- Current Admin shell lanes are:
+  - `Resumen`
+  - `Catalogo`
+  - `Foundry`
+  - `Imports`
+  - `Beta`
+- `Cola AI` is no longer an active Admin lane in the current shell.
 - Supabase auth, allowlist validation, and server-side editorial mutations are active.
 - Verified production health baseline:
   - `ok: true`
@@ -73,19 +80,46 @@
 
 ## Active milestone
 
-- Milestone 5E local LLM suggestion pilot:
-  - local-only
-  - opt-in
-  - verifier-gated
-  - heuristic provider remains production-default
-  - `/admin` is the active implementation surface in this sandbox
-  - current step is the sequential local worker queue, sticky telemetry/task log, and richer `/admin` review surfaces
+- Editorial roadmap v3 execution order:
+  - Milestone 1: stabilize local Admin and PDF/manual review platform
+  - Milestone 2: complete Foundry as the canonical generated-content lane
+  - Milestone 3: rebuild Catalogo around provenance and editorial lifecycle
+  - Milestone 4: normalize Imports into shared editorial primitives
+  - Milestone 5: modernize Resumen around operational health
+  - Milestone 6: final legacy cleanup, including Beta removal after extraction of any still-useful diagnostics
+- The milestone source of truth is now:
+  - `plan.md`
+  - `docs/migrations/admin-editorial-milestones.md`
+- Milestones now execute in strict order.
+- The immediate active milestone remains Milestone 1.
+- Catalogo, Imports, and Resumen implementation work should not begin before Milestone 1 closes, except for documentation-only alignment.
+- Milestone 1 implementation is now partially wired:
+  - shared local Admin orchestrator for `dev:admin-local` and `dev:admin-beta`
+  - local runtime state file at `.tmp/admin-local-runtime.json`
+  - local smoke command: `npm run smoke:admin-local`
+  - PDF review remains text-layer-first with PyMuPDF geometric fallback
+- Milestone 1 runtime validation now confirms:
+  - `dev:admin-local` resolves real free ports and writes `.tmp/admin-local-runtime.json`
+  - the local PDF worker comes up under the resolved runtime contract
+  - the official manual asset resolves under local dev without the prior Vite asset-import failure
+- `smoke:admin-local` now passes under the degraded-runtime contract:
+  - `dev:admin-local` reaches `Admin listo`
+  - the PDF worker HTTP server binds correctly
+  - `/__local/pdf/health` returns `available: true` for `manual-claseb-2026`
+  - when PyMuPDF cannot execute locally, the worker degrades cleanly instead of returning `500`
+- The remaining Milestone 1 blocker is now human PDF usability validation in the live viewer:
+  - direct page-text selection
+  - highlight quality on digital-text manual pages
+  - text mode vs crop mode separation
+  - page-image behavior acceptance in the current degraded/local-backend state
+- Milestone 2 is prepared but does not activate until that live PDF sign-off is recorded.
 
 ## Delegated public UI/UX track
 
 - Public `/`, `/practice`, and `/exam` UI/UX work continues in the delegated branch.
 - `/admin` improvements are not part of that delegated public-route track.
 - The local Beta/Ollama operator console belongs to the main track here.
+- The local Beta/Ollama operator console is now a legacy opt-in diagnostic lane, not the default local Admin path.
 
 ## Completed milestones
 
@@ -767,3 +801,107 @@
    - keep the `scripts/ops/*` wrapper flow as the standard pre-production path
    - repair preview `/api/health` if the branch-scoped Supabase env set is still incomplete
 5. Keep annex content excluded until a separate annex policy is implemented.
+
+## 2026-04-25 Sandbox RAG foundry pivot
+
+- `sandbox/rag-system` now pivots from the legacy page-only question generator toward an annual multimodal foundry.
+- New sandbox pipeline stages are now in place:
+  - `build_manifest.py`
+  - `extract_pages_vision.py`
+  - `derive_knowledge_units.py`
+  - `build_vectors.py`
+  - `generate_candidates.py`
+  - `verify_candidates.py`
+  - `score_and_dedupe.py`
+  - `export_review_package.py`
+  - `run_foundry_build.py`
+- Legacy scripts remain only as compatibility wrappers:
+  - `build_cache_vision.py`
+  - `pdf_qg.py`
+  - `build_vectors_vision.py`
+- The canonical sandbox artifact chain is now:
+  - `manual-build-manifest.json`
+  - `page-artifacts.json`
+  - `knowledge-units.json`
+  - `knowledge-unit-vectors.npy`
+  - `knowledge-unit-vector-mapping.json`
+  - `question-candidates.json`
+  - `evaluation-report.json`
+  - `review-export.json`
+- The canonical generation unit is now the knowledge unit.
+- Review exports now preserve additive sandbox provenance intended for the current draft import workflow:
+  - `buildId`
+  - `candidateId`
+  - `unitIds`
+  - `generationMode`
+  - `verifierScore`
+  - `verifierIssues`
+  - `requiredMedia`
+- Production content types were extended additively so catalog drafts can preserve sandbox provenance when this lane is connected to `/admin`.
+- Sandbox schema files were added or expanded for:
+  - manifest
+  - page artifacts
+  - knowledge units
+  - question candidates
+  - review export
+- Validation for this checkpoint:
+  - `npm run build`
+  - Python syntax validation for the new `sandbox/rag-system` pipeline scripts
+
+## 2026-04-25 Production architecture documentation checkpoint
+
+- Added documentation for the production migration from mixed Admin/import/AI experiments toward an annual manual-driven content foundry.
+- The canonical content lifecycle is now documented as:
+  - `Manual PDF -> Sandbox Foundry -> Verified Review Export -> Admin Review -> Draft Catalog -> Reviewed/Published Catalog`
+- New documentation files:
+  - `docs/architecture/content-foundry.md`
+  - `docs/admin/future-admin-structure.md`
+  - `docs/admin/generated-build-review-workflow.md`
+  - `docs/migrations/foundry-to-production-roadmap.md`
+- Current Admin direction is now explicit:
+  - `Resumen` should become an operational catalog/foundry health dashboard
+  - `Catalogo` remains the production question bank/editor
+  - `Foundry` becomes the production-facing lane for sandbox generated builds
+  - `Imports` remains as a secondary compatibility lane for external/informal banks
+  - `Cola AI` is deprecated and replaceable by Foundry
+  - `Beta` is scheduled for deletion after any useful diagnostics are extracted
+- Source-of-truth boundaries are documented:
+  - sandbox artifacts are build outputs, not catalog content
+  - Admin review decisions are editorial state
+  - approved generated candidates enter Catalogo as drafts with provenance
+  - production user flows should not depend on live LLM generation
+
+## 2026-04-29 Foundry Admin production bridge
+
+- Added the first production-facing Foundry bridge while keeping heavy generation in `sandbox/rag-system`.
+- Curated generated build data now lives under:
+  - `data/foundry-builds/<buildId>/manifest.json`
+  - `data/foundry-builds/<buildId>/review-export/chapter-*.jsonl`
+- Added `npm run foundry:promote -- <buildId>` to promote a repaired sandbox build into production review data.
+- Added the live `/Admin` Foundry lane:
+  - build selector
+  - chapter selector
+  - lazy per-chapter JSONL loading
+  - candidate detail with grounding, verifier score/issues, generation mode, and media requirements
+  - staging into the shared local draft import queue
+  - prepare/import as Catalogo drafts
+  - batch revert through the existing import draft repository
+- Existing Imports remains a compatibility lane.
+- Cola AI and Beta remain present for now but Foundry is the documented replacement path for generated content.
+
+## 2026-04-29 Admin PDF platform promotion
+
+- The official yearly manual now has a production-owned library target:
+  - `data/manual-library/official/2026/manual-claseb-conaset-2026.pdf`
+- The manual source document should no longer depend on `'/Libro-ClaseB-2026.pdf'` as a brittle root path.
+- Added a production manual registry for official yearly manuals.
+- `AdminImportPdfWorkspace` is now the canonical PDF review surface.
+- `AdminManualReader` now routes through the same viewer instead of using an iframe.
+- Added a local-only production PDF worker path backed by PyMuPDF:
+  - browser routes: `/__local/pdf/...`
+  - worker script: `scripts/local-pdf-worker.ts`
+  - Python tool: `scripts/pdf_worker_tool.py`
+- The PDF stack is now explicitly split by responsibility:
+  - `pdf.js` for browser rendering, selection, and crop interaction
+  - PyMuPDF for exact anchor lookup and image extraction in local Admin mode
+- Added `npm run dev:admin-local` to run Vite with the local PDF worker.
