@@ -113,6 +113,11 @@
   - embedded-image extraction is retained as the supported visual-reference path
   - `data/manual-library/cache` is treated as local-only derived output and should not remain part of tracked workflow
 - Milestone 2 is now the active implementation milestone.
+- Milestone 2 execution is now explicitly split into:
+  - `2A`: lock Foundry review behavior and information contract
+  - `2B`: stop for the desktop-first Foundry UI/readability pass
+  - `2C`: finish remaining batch/evidence/diagnostic polish after the UI pass
+- The current approved stop for a Foundry-focused UI submilestone is `2B`, after status/evidence/diagnostic contracts stop moving and before Milestone 2 closeout.
 
 ## Delegated public UI/UX track
 

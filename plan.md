@@ -91,21 +91,56 @@ Goal:
 - make Foundry the fully operational generated-review path inside Admin
 
 Tasks:
-- finish candidate review semantics and diagnostics:
-  - explicit pending/staged/discarded/imported state clarity
-  - visible grounding anchors
-  - visible verifier evidence
-  - visible media and visual-audit requirements
-- tighten build-level and chapter-level diagnostics:
-  - review-ready
-  - blocked
-  - warning-only
-  - media-dependent
-- preserve shared batch prepare/import/revert behavior with Imports
+- Milestone 2A: lock the review contract first:
+  - explicit pending/staged/discarded/imported state clarity sourced from the shared draft workspace
+  - `Abrir PDF` never stages implicitly
+  - local corrections and saved image references remain additive without silently changing state
+  - stable candidate detail contract for grounding anchors, page/excerpt, verifier score/issues, generation mode, and visual-audit/media requirements
+  - deterministic build/chapter diagnostic buckets:
+    - review-ready
+    - blocked
+    - warning-only
+    - media-dependent
+- Milestone 2B: stop for the Foundry UI/readability pass once 2A is stable:
+  - desktop-first three-zone review surface:
+    - left: build/chapter navigation and diagnostics
+    - center: candidate queue
+    - right: candidate detail and review actions
+  - queue rows optimized for scanability:
+    - prompt preview
+    - stable state chip
+    - verifier severity band
+    - warning/block/media-dependent indicators
+    - page reference
+    - visual-audit badge when applicable
+  - detail pane reordered for reviewer cognition:
+    - question
+    - grounding
+    - verifier
+    - visual requirements
+    - draft state
+    - actions
+  - Spanish-first reviewer language, compact summaries first, low-level technical detail second
+  - header and chapter navigation become operational:
+    - selected build
+    - generated time
+    - total candidates
+    - staged count
+    - blocked count
+    - review-ready count
+    - media-dependent count
+    - latest prepared batch state when present
+- Milestone 2C: finish Foundry after the UI pass:
+  - preserve shared batch prepare/import/revert behavior with Imports
+  - batch/import/revert polish
+  - residual evidence edge cases
+  - final deterministic diagnostics cleanup
+  - acceptance verification across multiple chapters/builds
 
 Acceptance:
 - a reviewer can review a build by chapter, correct grounding/media, stage, import as draft, and revert by batch
 - Foundry clearly replaces legacy generated-content review paths
+- the Foundry UI submilestone happens after 2A is locked and before Milestone 2 is declared complete
 
 ### Milestone 3: Rebuild Catalogo around provenance and lifecycle
 

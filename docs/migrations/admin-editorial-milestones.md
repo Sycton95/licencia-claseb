@@ -68,21 +68,37 @@ Primary outcome:
 - Foundry becomes the fully usable generated-candidate review surface
 
 Implementation tasks:
-- finish candidate review semantics and diagnostics:
+- Milestone 2A: lock Foundry behavior and information contract:
   - explicit pending, staged, discarded, and imported state clarity
-  - visible grounding anchors
-  - visible verifier evidence
-  - visible media and visual-audit requirements
-- tighten build and chapter diagnostics:
-  - review-ready
-  - blocked
-  - warning-only
-  - media-dependent
-- preserve shared batch prepare/import/revert flow
+  - `Abrir PDF` never stages implicitly
+  - local corrections and saved image references stay additive without silently changing candidate status
+  - visible grounding anchors, verifier evidence, generation mode, and media/visual-audit requirements on a stable data contract
+  - deterministic build and chapter diagnostics:
+    - review-ready
+    - blocked
+    - warning-only
+    - media-dependent
+- Milestone 2B: stop for the Foundry desktop-first UI/readability pass:
+  - preserve the three-zone desktop review surface
+  - improve candidate queue scanability and state visibility
+  - reorganize candidate detail for reviewer cognition:
+    - question
+    - grounding
+    - verifier
+    - visual requirements
+    - draft state
+    - actions
+  - improve Spanish-first editorial labeling and reduce pipeline-noise density
+  - add operational build/chapter summary context in the header and navigation
+- Milestone 2C: finish Foundry after the UI pass:
+  - preserve shared batch prepare/import/revert flow
+  - complete residual batch/evidence/diagnostic polish
+  - verify the lane across multiple builds and chapters
 
 Done when:
 - generated candidates can be reviewed, corrected, staged, imported as drafts, and reverted by batch without touching source artifacts
 - Foundry is clearly the canonical generated-content path inside Admin
+- the UI/readability pass happens after 2A is stable and before Milestone 2 is declared complete
 
 ## Milestone 3: Modernize Catalogo around provenance
 
