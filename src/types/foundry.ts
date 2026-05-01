@@ -24,6 +24,14 @@ export type GeneratedReviewCandidate = ImportReviewQuestionRecord & {
   sandboxProvenance: GeneratedCandidateProvenance;
 };
 
+export type GeneratedReviewBucket =
+  | 'blocked'
+  | 'media-dependent'
+  | 'warning-only'
+  | 'review-ready';
+
+export type GeneratedVerifierBand = 'high' | 'medium' | 'low';
+
 export type GeneratedReviewExportLine =
   | {
       ok: true;
@@ -50,4 +58,24 @@ export type GeneratedChapterLoadResult = {
   chapterId: string;
   candidates: GeneratedReviewCandidate[];
   blockedRows: Extract<GeneratedReviewExportLine, { ok: false }>[];
+};
+
+export type GeneratedChapterDiagnosticsSummary = {
+  chapterId: string;
+  totalCount: number;
+  blockedCount: number;
+  blockedRowCount: number;
+  mediaDependentCount: number;
+  warningOnlyCount: number;
+  reviewReadyCount: number;
+};
+
+export type GeneratedBuildDiagnosticsSummary = {
+  buildId: string;
+  totalCount: number;
+  blockedCount: number;
+  blockedRowCount: number;
+  mediaDependentCount: number;
+  warningOnlyCount: number;
+  reviewReadyCount: number;
 };

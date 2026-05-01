@@ -118,6 +118,33 @@
   - `2B`: stop for the desktop-first Foundry UI/readability pass
   - `2C`: finish remaining batch/evidence/diagnostic polish after the UI pass
 - The current approved stop for a Foundry-focused UI submilestone is `2B`, after status/evidence/diagnostic contracts stop moving and before Milestone 2 closeout.
+- Milestone 2 current checkpoint:
+  - `2A` is implemented in code in the Foundry review surface
+  - candidate states are now reviewer-facing and sourced from the shared draft workspace:
+    - `pending`
+    - `staged`
+    - `discarded`
+    - `imported`
+  - `Abrir PDF` remains explicitly non-staging
+  - local grounding corrections and saved visual references stay additive to draft state
+  - candidate detail now surfaces:
+    - grounding anchors
+    - page/reference context
+    - verifier score/issues
+    - generation mode
+    - visual-audit/media requirements
+    - draft correction state
+    - local reference assets
+  - chapter/build diagnostics are now derived in code with:
+    - `review-ready`
+    - `blocked`
+    - `warning-only`
+    - `media-dependent`
+  - `2B` has started with a first desktop-first layout/readability pass:
+    - left build/chapter diagnostic rail
+    - center candidate queue tuned for scanability
+    - right detail pane reordered for reviewer cognition
+  - next step is live browser validation/refinement on local `/admin`, not more contract expansion
 
 ## Delegated public UI/UX track
 

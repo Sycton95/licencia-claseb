@@ -95,6 +95,23 @@ Implementation tasks:
   - complete residual batch/evidence/diagnostic polish
   - verify the lane across multiple builds and chapters
 
+Current checkpoint:
+- `2A` is now implemented in the main Foundry manager:
+  - shared draft-workspace state is explicit in the queue and detail surface
+  - `Abrir PDF` remains non-staging
+  - local PDF corrections and local visual references remain additive
+  - grounding/verifier/media fields are now part of the main reviewer detail contract
+  - chapter/build diagnostics are derived from loaded chapter data instead of hand-maintained metadata
+- `2B` has started with a first desktop-first readability pass:
+  - left rail: build/chapter context and diagnostics
+  - center rail: queue scanability
+  - right rail: reviewer detail ordered by editorial cognition
+
+Next execution block:
+- validate the new Foundry layout in local `/admin` against a fixed mixed-state chapter
+- refine spacing, scrolling boundaries, and selection contrast from browser feedback
+- only after that, declare `2B` complete and continue to `2C`
+
 Done when:
 - generated candidates can be reviewed, corrected, staged, imported as drafts, and reverted by batch without touching source artifacts
 - Foundry is clearly the canonical generated-content path inside Admin

@@ -137,6 +137,35 @@ Tasks:
   - final deterministic diagnostics cleanup
   - acceptance verification across multiple chapters/builds
 
+Current checkpoint:
+- Milestone 2A is implemented in code:
+  - reviewer-facing pending/staged/discarded/imported state is sourced from the shared draft workspace
+  - `Abrir PDF` remains non-staging
+  - local corrections and saved image references stay additive without silently staging/importing
+  - candidate detail now surfaces grounding anchors, verifier evidence, generation mode, visual requirements, draft correction state, and local reference assets
+  - build/chapter diagnostics are derived in code with:
+    - review-ready
+    - blocked
+    - warning-only
+    - media-dependent
+- Milestone 2B has started with a first desktop-first readability pass:
+  - three-zone layout kept and clarified
+  - queue rows now emphasize state, severity, page, and visual-audit signals
+  - detail pane reordered to:
+    - question
+    - grounding
+    - verifier
+    - visual requirements
+    - draft state
+    - actions
+- The next approved loop is browser-based refinement on local `/admin`, not more contract churn.
+
+Next tasks:
+- validate the current Foundry surface on a real build/chapter with mixed candidate states
+- tighten widths, scrolling boundaries, and selected-state contrast from the live browser pass
+- verify chapter/build summary buckets against real candidate data
+- then finish Milestone 2B before moving to 2C batch/evidence polish
+
 Acceptance:
 - a reviewer can review a build by chapter, correct grounding/media, stage, import as draft, and revert by batch
 - Foundry clearly replaces legacy generated-content review paths
