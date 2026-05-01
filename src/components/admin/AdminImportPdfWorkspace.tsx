@@ -41,15 +41,6 @@ type TextLayerMatch = {
   segments: TextMatchSegment[];
 };
 
-type CropDraft = {
-  startX: number;
-  startY: number;
-  endX: number;
-  endY: number;
-};
-
-type ViewerInteractionMode = 'text' | 'crop';
-
 type PdfLoadPhase =
   | 'idle'
   | 'load_started'
@@ -158,6 +149,40 @@ async function blobToDataUrl(blob: Blob) {
     reader.onload = () => resolve(String(reader.result ?? ''));
     reader.readAsDataURL(blob);
   });
+}
+
+async function loadImageElement(src: string) {
+  return new Promise<HTMLImageElement>((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error('No se pudo cargar la imagen detectada.'));
+    image.src = src;
+  });
+}
+
+async function flattenImageDataUrlToWhite(dataUrl: string) {
+  const image = await loadImageElement(dataUrl);
+  const canvas = window.document.createElement('canvas');
+  canvas.width = image.naturalWidth || image.width;
+  canvas.height = image.naturalHeight || image.height;
+  const context = canvas.getContext('2d');
+  if (!context) {
+    throw new Error('No se pudo preparar la imagen para fondo blanco.');
+  }
+
+  context.fillStyle = '#ffffff';
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL('image/png');
+}
+
+async function normalizePdfImageAsset(image: PdfImageAsset): Promise<PdfImageAsset> {
+  const dataUrl = await flattenImageDataUrlToWhite(image.dataUrl);
+  return {
+    ...image,
+    dataUrl,
+    mimeType: 'image/png',
+  };
 }
 
 function clamp(value: number, min: number, max: number) {
@@ -407,7 +432,6 @@ export function AdminImportPdfWorkspace({
 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const textLayerContainerRef = useRef<HTMLDivElement | null>(null);
-  const cropOverlayRef = useRef<HTMLDivElement | null>(null);
   const textLayerInstanceRef = useRef<InstanceType<typeof TextLayer> | null>(null);
   const textLayerDivsRef = useRef<HTMLElement[]>([]);
   const textLayerItemsRef = useRef<string[]>([]);
@@ -417,7 +441,6 @@ export function AdminImportPdfWorkspace({
   const [selectedText, setSelectedText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [cropDraft, setCropDraft] = useState<CropDraft | null>(null);
   const [viewportScale, setViewportScale] = useState(1.3);
   const [highlightResult, setHighlightResult] = useState<PdfHighlightResult | null>(null);
   const [workerError, setWorkerError] = useState<string | null>(null);
@@ -429,7 +452,6 @@ export function AdminImportPdfWorkspace({
   const [isPdfReady, setIsPdfReady] = useState(false);
   const [canvasMetrics, setCanvasMetrics] = useState({ width: 0, height: 0 });
   const [pdfDebugState, setPdfDebugState] = useState<PdfDebugState>({ phase: 'idle' });
-  const [interactionMode, setInteractionMode] = useState<ViewerInteractionMode>('text');
   const [textLayerMatch, setTextLayerMatch] = useState<TextLayerMatch | null>(null);
   const [inlineHighlightRects, setInlineHighlightRects] = useState<Array<{ key: string; style: CSSProperties }>>([]);
 
@@ -451,7 +473,6 @@ export function AdminImportPdfWorkspace({
     setPageText([]);
     setPageCount(0);
     setSelectedText('');
-    setCropDraft(null);
     setPageImages([]);
     setHasLoadedPageImages(false);
     setDraftToolMessage(null);
@@ -460,7 +481,6 @@ export function AdminImportPdfWorkspace({
     setPdfDebugState({ phase: 'idle' });
     setTextLayerMatch(null);
     setInlineHighlightRects([]);
-    setInteractionMode('text');
   }, [isOpen]);
 
   useEffect(() => {
@@ -764,7 +784,7 @@ export function AdminImportPdfWorkspace({
 
   useEffect(() => {
     const handleSelection = () => {
-      if (!isOpen || interactionMode !== 'text') {
+      if (!isOpen) {
         setSelectedText('');
         return;
       }
@@ -787,7 +807,7 @@ export function AdminImportPdfWorkspace({
     return () => {
       window.document.removeEventListener('selectionchange', handleSelection);
     };
-  }, [interactionMode, isOpen]);
+  }, [isOpen]);
 
   useEffect(() => {
     setPageImages([]);
@@ -801,14 +821,12 @@ export function AdminImportPdfWorkspace({
         `pagina=${activePage}`,
         `paginas=${pageCount}`,
         `texto=${pageText.length}`,
-        `modo=${interactionMode}`,
         `canvas=${canvasMetrics.width}x${canvasMetrics.height}`,
       ].join(' '),
     [
       activePage,
       canvasMetrics.height,
       canvasMetrics.width,
-      interactionMode,
       pageCount,
       pageText.length,
       pdfDebugState.phase,
@@ -837,11 +855,12 @@ export function AdminImportPdfWorkspace({
         documentId: sourceDocument.id,
         pageNumber: activePage,
       });
-      setPageImages(result.images);
+      const normalizedImages = await Promise.all(result.images.map(normalizePdfImageAsset));
+      setPageImages(normalizedImages);
       setWorkerError(null);
       setDraftToolMessage(
-        result.images.length > 0
-          ? `Se detectaron ${result.images.length} imagenes en la pagina.`
+        normalizedImages.length > 0
+          ? `Se detectaron ${normalizedImages.length} imagenes en la pagina.`
           : 'No se detectaron imagenes embebidas en esta pagina.',
       );
     } catch (error) {
@@ -888,98 +907,6 @@ export function AdminImportPdfWorkspace({
       previewDataUrl,
     });
   };
-
-  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!allowDraftTools || interactionMode !== 'crop' || !isPdfReady) {
-      return;
-    }
-
-    const canvasBounds = canvasRef.current?.getBoundingClientRect();
-    if (!canvasBounds) {
-      return;
-    }
-
-    setCropDraft({
-      startX: clamp(event.clientX - canvasBounds.left, 0, canvasBounds.width),
-      startY: clamp(event.clientY - canvasBounds.top, 0, canvasBounds.height),
-      endX: clamp(event.clientX - canvasBounds.left, 0, canvasBounds.width),
-      endY: clamp(event.clientY - canvasBounds.top, 0, canvasBounds.height),
-    });
-  };
-
-  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (interactionMode !== 'crop' || !cropDraft) {
-      return;
-    }
-
-    const canvasBounds = canvasRef.current?.getBoundingClientRect();
-    if (!canvasBounds) {
-      return;
-    }
-
-    setCropDraft((current) =>
-      current
-        ? {
-            ...current,
-            endX: clamp(event.clientX - canvasBounds.left, 0, canvasBounds.width),
-            endY: clamp(event.clientY - canvasBounds.top, 0, canvasBounds.height),
-          }
-        : current,
-    );
-  };
-
-  const handlePointerUp = async () => {
-    if (interactionMode !== 'crop' || !cropDraft || !canvasRef.current || !onSaveAsset) {
-      setCropDraft(null);
-      return;
-    }
-
-    const left = Math.min(cropDraft.startX, cropDraft.endX);
-    const top = Math.min(cropDraft.startY, cropDraft.endY);
-    const width = Math.abs(cropDraft.endX - cropDraft.startX);
-    const height = Math.abs(cropDraft.endY - cropDraft.startY);
-
-    if (width < 24 || height < 24) {
-      setCropDraft(null);
-      return;
-    }
-
-    const output = window.document.createElement('canvas');
-    output.width = width;
-    output.height = height;
-    const outputContext = output.getContext('2d');
-    if (!outputContext) {
-      setCropDraft(null);
-      return;
-    }
-
-    outputContext.drawImage(canvasRef.current, left, top, width, height, 0, 0, width, height);
-    const blob = await new Promise<Blob | null>((resolve) =>
-      output.toBlob((nextBlob) => resolve(nextBlob), 'image/webp', 0.82),
-    );
-    const previewDataUrl = output.toDataURL('image/webp', 0.82);
-    if (blob) {
-      onSaveAsset({
-        blob,
-        kind: 'crop',
-        page: activePage,
-        name: `manual-crop-p${activePage}.webp`,
-        previewDataUrl,
-      });
-      setDraftToolMessage(`Recorte guardado como referencia local para la pagina ${activePage}.`);
-    }
-    setCropDraft(null);
-  };
-
-  const cropStyle =
-    cropDraft && cropOverlayRef.current && canvasRef.current
-      ? {
-          left: canvasRef.current.offsetLeft + Math.min(cropDraft.startX, cropDraft.endX),
-          top: canvasRef.current.offsetTop + Math.min(cropDraft.startY, cropDraft.endY),
-          width: Math.abs(cropDraft.endX - cropDraft.startX),
-          height: Math.abs(cropDraft.endY - cropDraft.startY),
-        }
-      : null;
 
   const highlightRects = useMemo(() => {
     const canvas = canvasRef.current;
@@ -1032,10 +959,7 @@ export function AdminImportPdfWorkspace({
         </div>
 
         <div
-          ref={cropOverlayRef}
-          className={`relative min-h-0 flex-1 overflow-auto rounded-2xl border border-slate-200 bg-slate-100 ${
-            interactionMode === 'crop' ? 'cursor-crosshair' : ''
-          }`}
+          className="relative min-h-0 flex-1 overflow-auto rounded-2xl border border-slate-200 bg-slate-100"
           data-testid="admin-pdf-workspace"
           data-pdf-phase={pdfDebugState.phase}
           data-pdf-page={activePage}
@@ -1044,9 +968,6 @@ export function AdminImportPdfWorkspace({
           data-pdf-canvas-width={canvasMetrics.width}
           data-pdf-canvas-height={canvasMetrics.height}
           data-pdf-ready={isPdfReady ? 'true' : 'false'}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
         >
           <div className="relative mx-auto w-fit">
             <canvas
@@ -1059,7 +980,7 @@ export function AdminImportPdfWorkspace({
             <div
               ref={textLayerContainerRef}
               data-testid="admin-pdf-text-layer"
-              className={`admin-pdf-text-layer ${interactionMode === 'crop' ? 'crop-mode' : ''}`}
+              className="admin-pdf-text-layer"
             />
             <div className="pointer-events-none absolute inset-0 z-[2]">
               {inlineHighlightRects.map((highlightRect) => (
@@ -1078,17 +999,6 @@ export function AdminImportPdfWorkspace({
           ) : errorMessage ? (
             <div className="absolute inset-6 rounded-xl border border-dashed border-slate-300 bg-white p-6 text-sm text-slate-600">
               {errorMessage}
-            </div>
-          ) : null}
-          {cropStyle ? (
-            <div
-              className="pointer-events-none absolute border-2 border-sky-500 bg-sky-500/10"
-              style={cropStyle}
-            />
-          ) : null}
-          {interactionMode === 'crop' && isPdfReady ? (
-            <div className="pointer-events-none absolute left-4 top-4 z-[4] rounded-full bg-sky-600/90 px-3 py-1 text-xs font-semibold text-white shadow-sm">
-              Arrastra sobre el PDF para guardar un recorte
             </div>
           ) : null}
           {highlightRects.map((highlightRect) => (
@@ -1156,32 +1066,8 @@ export function AdminImportPdfWorkspace({
           <div className="rounded-2xl border border-slate-200 bg-white p-4">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Herramientas de borrador</p>
             <p className="mt-2 text-sm text-slate-700">
-              Selecciona texto directamente sobre el PDF o cambia a modo recorte para capturar una referencia visual. La extracción de imágenes usa solo PyMuPDF local sobre el manual oficial.
+              Selecciona texto directamente sobre el PDF para correcciones y usa la extracción de imágenes embebidas como referencia visual local. La extracción se prepara con fondo blanco para evitar transparencias confusas.
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <AdminButton
-                variant={interactionMode === 'text' ? 'secondary' : 'outline'}
-                size="sm"
-                onClick={() => {
-                  setInteractionMode('text');
-                  setCropDraft(null);
-                }}
-                disabled={!isPdfReady}
-              >
-                Seleccionar texto
-              </AdminButton>
-              <AdminButton
-                variant={interactionMode === 'crop' ? 'secondary' : 'outline'}
-                size="sm"
-                onClick={() => {
-                  setInteractionMode('crop');
-                  setSelectedText('');
-                }}
-                disabled={!isPdfReady}
-              >
-                Recortar zona
-              </AdminButton>
-            </div>
             <div className="mt-4 flex flex-wrap gap-2">
               <AdminButton
                 variant="secondary"
