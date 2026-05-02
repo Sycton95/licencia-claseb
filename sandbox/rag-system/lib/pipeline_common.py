@@ -1,5 +1,6 @@
 import hashlib
 import json
+import os
 import re
 import time
 from dataclasses import dataclass
@@ -12,6 +13,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 ARTIFACTS_DIR = ROOT_DIR / "artifacts"
 RENDERED_PAGES_DIR = ARTIFACTS_DIR / "rendered_pages"
 SCHEMAS_DIR = ROOT_DIR / "schemas"
+RUN_REGISTRY_PATH = ARTIFACTS_DIR / "run-registry.json"
 
 DEFAULT_EDITION_ID = "edition-2026"
 DEFAULT_DOCUMENT_ID = "manual-claseb-2026"
@@ -46,6 +48,9 @@ DEFAULT_MODELS = {
     "verifierModel": "qwen3:4B-Instruct",
 }
 
+RUN_ID_PATTERN_TEMPLATE = r"^{source}-r(\d+)$"
+REPAIR_ID_PATTERN_TEMPLATE = r"^{parent}-fix(\d+)$"
+
 
 @dataclass(frozen=True)
 class BuildPaths:
@@ -58,6 +63,7 @@ class BuildPaths:
     question_candidates_path: Path
     evaluation_report_path: Path
     review_export_path: Path
+    duplicates_path: Path
     quarantine_dir: Path
     indexes_dir: Path
     candidates_dir: Path
@@ -67,6 +73,8 @@ class BuildPaths:
     units_index_path: Path
     candidates_index_path: Path
     retry_report_path: Path
+    run_events_path: Path
+    run_telemetry_path: Path
 
 
 def utc_now_iso() -> str:
@@ -78,6 +86,13 @@ def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")
 
 
+def sanitize_filename_stem(value: str) -> str:
+    stem = (value or "").strip()
+    stem = re.sub(r"[^\w-]+", "_", stem, flags=re.UNICODE)
+    stem = re.sub(r"_+", "_", stem).strip("_-")
+    return stem or "manual"
+
+
 def ensure_directory(path: Path) -> Path:
     path.mkdir(parents=True, exist_ok=True)
     return path
@@ -85,7 +100,58 @@ def ensure_directory(path: Path) -> Path:
 
 def build_id_for_manual(manual_year: int, manual_path: Path, namespace: str = DEFAULT_BUILD_NAMESPACE) -> str:
     manual_hash = sha256_file(manual_path)[:12] if manual_path.exists() else "missing-manual"
-    return f"{namespace}-{manual_year}-{manual_hash}"
+    source_label = sanitize_filename_stem(os.getenv("RAG_SOURCE_STEM", manual_path.stem))
+    return f"{source_label}-{manual_hash}"
+
+
+def next_run_sequence(source_build_id: str) -> int:
+    pattern = re.compile(RUN_ID_PATTERN_TEMPLATE.format(source=re.escape(source_build_id)))
+    highest = 0
+    for run in list_runs_for_source(source_build_id):
+        run_id = run.get("runId", "")
+        match = pattern.match(run_id)
+        if match:
+            highest = max(highest, int(match.group(1)))
+    if ARTIFACTS_DIR.exists():
+        for child in ARTIFACTS_DIR.iterdir():
+            if not child.is_dir():
+                continue
+            match = pattern.match(child.name)
+            if match:
+                highest = max(highest, int(match.group(1)))
+    return highest + 1
+
+
+def create_run_id(source_build_id: str, generator_model: str, created_at: str | None = None) -> str:
+    sequence = next_run_sequence(source_build_id)
+    return f"{source_build_id}-r{sequence:02d}"
+
+
+def next_repair_sequence(parent_id: str) -> int:
+    pattern = re.compile(REPAIR_ID_PATTERN_TEMPLATE.format(parent=re.escape(parent_id)))
+    highest = 0
+    if ARTIFACTS_DIR.exists():
+        for child in ARTIFACTS_DIR.iterdir():
+            if not child.is_dir():
+                continue
+            match = pattern.match(child.name)
+            if match:
+                highest = max(highest, int(match.group(1)))
+    return highest + 1
+
+
+def create_repair_run_id(parent_id: str) -> str:
+    sequence = next_repair_sequence(parent_id)
+    return f"{parent_id}-fix{sequence:02d}"
+
+
+def resolve_models() -> dict[str, str]:
+    return {
+        "visionModel": os.getenv("RAG_VISION_MODEL", DEFAULT_MODELS["visionModel"]),
+        "embedModel": os.getenv("RAG_EMBED_MODEL", DEFAULT_MODELS["embedModel"]),
+        "generatorModel": os.getenv("RAG_GENERATOR_MODEL", DEFAULT_MODELS["generatorModel"]),
+        "verifierModel": os.getenv("RAG_VERIFIER_MODEL", DEFAULT_MODELS["verifierModel"]),
+    }
 
 
 def get_build_paths(build_id: str) -> BuildPaths:
@@ -101,6 +167,7 @@ def get_build_paths(build_id: str) -> BuildPaths:
         question_candidates_path=build_dir / "question-candidates.json",
         evaluation_report_path=build_dir / "evaluation-report.json",
         review_export_path=build_dir / "review-export.json",
+        duplicates_path=build_dir / "duplicates.json",
         quarantine_dir=build_dir / "quarantine",
         indexes_dir=build_dir / "indexes",
         candidates_dir=candidates_dir,
@@ -110,7 +177,44 @@ def get_build_paths(build_id: str) -> BuildPaths:
         units_index_path=build_dir / "indexes" / "units-index.json",
         candidates_index_path=build_dir / "indexes" / "candidates-index.json",
         retry_report_path=build_dir / "retry-report.json",
+        run_events_path=build_dir / "run-events.jsonl",
+        run_telemetry_path=build_dir / "run-telemetry.json",
     )
+
+
+def load_run_registry() -> dict[str, Any]:
+    registry = load_json(RUN_REGISTRY_PATH, default=None)
+    if registry:
+        return registry
+    return {"generatedAt": utc_now_iso(), "runs": []}
+
+
+def save_run_registry(registry: dict[str, Any]) -> None:
+    registry["generatedAt"] = utc_now_iso()
+    save_json(RUN_REGISTRY_PATH, registry)
+
+
+def upsert_run_registry_entry(entry: dict[str, Any]) -> dict[str, Any]:
+    registry = load_run_registry()
+    runs = registry.setdefault("runs", [])
+    for index, existing in enumerate(runs):
+        if existing.get("runId") == entry.get("runId"):
+            runs[index] = {**existing, **entry}
+            save_run_registry(registry)
+            return runs[index]
+    runs.append(entry)
+    runs.sort(key=lambda item: str(item.get("createdAt", "")), reverse=True)
+    save_run_registry(registry)
+    return entry
+
+
+def list_runs_for_source(source_build_id: str) -> list[dict[str, Any]]:
+    registry = load_run_registry()
+    return [
+        run
+        for run in registry.get("runs", [])
+        if run.get("sourceBuildId") == source_build_id
+    ]
 
 
 def sha256_file(path: Path) -> str:

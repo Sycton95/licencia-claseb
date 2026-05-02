@@ -8,6 +8,7 @@ from lib.pipeline_common import (
     artifact_relative_path,
     clean_block_text,
     compute_parser_confidence,
+    create_repair_run_id,
     detect_visual_keywords,
     ensure_directory,
     get_build_paths,
@@ -148,7 +149,10 @@ def build_repaired_manifest(source_manifest: dict, repaired_build_id: str) -> di
     manifest = {
         **source_manifest,
         "buildId": repaired_build_id,
-        "parentBuildId": source_manifest["buildId"],
+        "runId": repaired_build_id,
+        "sourceBuildId": source_manifest.get("sourceBuildId", source_manifest["buildId"]),
+        "parentRunId": source_manifest.get("runId", source_manifest["buildId"]),
+        "parentBuildId": source_manifest.get("runId", source_manifest["buildId"]),
         "repairStrategy": "parser-sanitized-derivative",
         "artifacts": {
             "pageArtifacts": str(paths.page_artifacts_path),
@@ -190,7 +194,8 @@ def repair_build(source_build_id: str, repaired_build_id: str | None = None) -> 
     if not source_manifest:
         raise FileNotFoundError(f"Missing manifest for build {source_build_id}")
 
-    repaired_build_id = repaired_build_id or f"{source_build_id}-repaired"
+    repair_parent_id = source_manifest.get("runId") or source_manifest.get("sourceBuildId", source_build_id)
+    repaired_build_id = repaired_build_id or create_repair_run_id(repair_parent_id)
     repaired_manifest = build_repaired_manifest(source_manifest, repaired_build_id)
     repaired_paths = get_build_paths(repaired_build_id)
 

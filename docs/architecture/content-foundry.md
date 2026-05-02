@@ -31,9 +31,12 @@ data/manual-library/official/<year>/manual-claseb-conaset-<year>.pdf
 Each manual year gets a separate edition and build identity:
 
 - `editionId`: the manual/content edition, for example `manual-2026`.
-- `buildId`: a specific foundry run, for example `manual-foundry-2026-...`.
-- Build artifacts are immutable audit outputs. Repairs create derivative builds instead of overwriting the original.
+- `sourceBuildId`: the stable manual lineage key derived from the yearly source manual hash.
+- `runId`: one concrete execution of the foundry on that source manual.
+- `buildId` remains the production-facing compatibility id for promoted Foundry data and currently maps to the sandbox `runId`.
+- Build artifacts are immutable audit outputs at the `runId` level. Repairs create derivative runs instead of overwriting the original.
 - Cross-year maintenance should compare knowledge units before comparing generated questions.
+- Same-year iteration must compare runs under the same `sourceBuildId`, not overwrite one mutable slot.
 
 ## Canonical Foundry Artifacts
 
@@ -51,8 +54,8 @@ Large generated outputs should remain split by chapter. Admin must not load mono
 The production-facing curated copy lives under:
 
 ```text
-data/foundry-builds/<buildId>/manifest.json
-data/foundry-builds/<buildId>/review-export/chapter-*.jsonl
+data/foundry-builds/<runId>/manifest.json
+data/foundry-builds/<runId>/review-export/chapter-*.jsonl
 ```
 
 Use the promotion command to copy a repaired sandbox build into that production review area:
@@ -68,6 +71,8 @@ The promotion step rewrites review-export paths to artifact-relative production 
 Every generated candidate that reaches Admin review should preserve:
 
 - `buildId`
+- `runId`
+- `sourceBuildId`
 - `candidateId`
 - `unitIds`
 - `generationMode`: `text`, `visual`, or `mixed`
@@ -78,6 +83,34 @@ Every generated candidate that reaches Admin review should preserve:
 - source chapter, page range, support unit, and excerpt
 
 This metadata is review evidence. It does not make a candidate production-ready by itself.
+
+## Same-Manual Iteration Policy
+
+Repeated runs on the same yearly manual are expected.
+
+Minimum iteration rules:
+
+- each full generation creates a new `runId`
+- all runs for the same manual share one `sourceBuildId`
+- the sandbox must keep a local run registry
+- new runs must compare against prior runs of the same `sourceBuildId`
+- promotion warnings must surface:
+  - exact duplicate count
+  - near-duplicate count
+  - novel candidate count
+  - novelty rate
+- the first successful run for a source manual should be preserved as the baseline reference until a better run is explicitly promoted
+
+Admin should review promoted runs, not a mutable per-manual sandbox slot.
+
+Short-term operating rule:
+
+- do not auto-promote immediately after a new `Full build`
+- first review the new run against the prior baseline for:
+  - verifier inflation
+  - duplicate pressure
+  - cross-run novelty
+  - visual dependency plausibility
 
 ## Catalog Import Policy
 

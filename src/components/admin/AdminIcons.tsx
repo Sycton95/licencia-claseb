@@ -57,3 +57,23 @@ export const FlaskIcon = ({ className, size }: IconProps) => (
 export const LogOutIcon = ({ className, size }: IconProps) => (
   <svg {...baseProps(size, className)}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
 );
+
+export const AlertTriangleIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+);
+
+export const BookOpenIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+);
+
+export const ArrowLeftIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+);
+
+export const ChevronRightIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><path d="m9 18 6-6-6-6"/></svg>
+);
+
+export const DatabaseIcon = ({ className, size }: IconProps) => (
+  <svg {...baseProps(size, className)}><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+);

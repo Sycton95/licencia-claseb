@@ -19,3 +19,5 @@ sandbox/grounding-calibration/research/raw/
 sandbox/rag-system/artifacts/
 .tmp/
 data/manual-library/cache/
+__pycache__/
+*.pyc

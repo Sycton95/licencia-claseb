@@ -116,15 +116,23 @@ export interface QuestionImportMetadata {
   draftGroundingCorrection?: QuestionImportGroundingCorrection;
   referenceAssets?: QuestionImportReferenceAsset[];
   buildId?: string;
+  sourceBuildId?: string;
+  runId?: string;
   candidateId?: string;
   unitIds?: string[];
   generationMode?: 'text' | 'visual' | 'mixed';
+  visualDependency?: 'none' | 'linked' | 'required';
   verifierScore?: number;
   verifierIssues?: Array<{
     code: string;
     severity?: string;
     message: string;
   }>;
+  duplicateClusterId?: string;
+  duplicateSuggestedWinnerId?: string;
+  duplicateDecisionMode?: 'suggested_winner' | 'manual_winner' | 'multi_keep';
+  duplicateSimilarityToSuggested?: number;
+  duplicateReviewerSummary?: string;
   requiredMedia?: QuestionImportRequiredMedia;
   groundingAnchors?: QuestionImportGroundingAnchor[];
   manualAssetId?: string;

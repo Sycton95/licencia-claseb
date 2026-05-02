@@ -144,7 +144,15 @@
     - left build/chapter diagnostic rail
     - center candidate queue tuned for scanability
     - right detail pane reordered for reviewer cognition
-  - next step is live browser validation/refinement on local `/admin`, not more contract expansion
+  - `2C` has now started on the structural side:
+    - promoted Foundry builds now support additive duplicate artifacts through `duplicates.json`
+    - build manifests now expose `duplicateClusterCount` and `duplicatesFile`
+    - the current promoted build `manual-foundry-2026-31abbf7de7c9-repaired` now carries `784` duplicate clusters
+    - Admin loads duplicate clusters separately from chapter JSONL
+    - duplicate review decisions persist locally and are wired into draft import provenance when applicable
+  - next step is split:
+    - delegated UI browser refinement on local `/admin`
+    - main-thread duplicate-gated prepare/import/revert hardening
 
 ## Delegated public UI/UX track
 

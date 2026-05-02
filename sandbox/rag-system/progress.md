@@ -3,6 +3,39 @@
 **Date:** April 25, 2026
 **Status:** Active pivot to annual multimodal foundry
 
+## 2026-05-01 Local operator control panel
+
+- Added a reusable local operator surface at `sandbox/rag-system/foundry_control_panel.py`.
+- Added `sandbox/rag-system/foundry_task_runner.py` so sandbox stages can run against an explicit build id instead of always falling back to the default manifest path.
+- The control panel now acts as the supported local UI for:
+  - full builds
+  - stage reruns
+  - repair runs
+  - grounding enrichment
+  - promotion to `data/foundry-builds`
+  - preflight checks for Ollama, Python modules, binaries, and stage file prerequisites
+- Operating docs now live in `sandbox/rag-system/README.md`.
+
+## 2026-05-02 Iteration-safe baseline and first calibration cycle
+
+- The sandbox now treats the first completed 2026 run as the baseline for same-manual iteration:
+  - `sourceBuildId`: `manual-foundry-2026-31abbf7de7c9`
+  - baseline run: `manual-foundry-2026-31abbf7de7c9-run-20260502-045041+0000-qwen3-4b-instruct`
+- The next sandbox cycle is no longer “generate and promote immediately”.
+- The immediate engineering focus is:
+  - verifier recalibration against weakly grounded applied questions
+  - reducing within-run duplicate pressure before Admin review
+  - validating a second run under the same manual lineage for real cross-run novelty comparison
+- Generator changes now bias toward:
+  - one direct grounded variant
+  - one applied variant only when the source unit truly supports it
+  - auto-rejection of same-unit variants that collapse into paraphrases
+- Verifier changes now penalize:
+  - explanation/grounding weak overlap more aggressively
+  - specific operational claims not supported by the excerpt
+  - applied scenarios inferred from general-definition units
+- Promotion remains available, but it is now explicitly treated as a post-review decision rather than the default next step after `Full build`.
+
 ## Current direction
 
 `sandbox/rag-system` is no longer a one-question-per-page experiment. It now acts as the staging ground for the long-term annual foundry that will:

@@ -17,6 +17,20 @@ from lib.pipeline_common import (
 
 MIN_UNIT_CONFIDENCE = 0.5
 MAX_ASSETS_PER_UNIT = 6
+VISUAL_REFERENCE_PATTERNS = (
+    "señal",
+    "senal",
+    "la señal anterior",
+    "la senal anterior",
+    "figura",
+    "imagen",
+    "cuadro",
+    "tabla",
+    "según la señal",
+    "segun la señal",
+    "según la senal",
+    "segun la senal",
+)
 
 
 def infer_unit_type(block_type: str, text: str) -> str:
@@ -83,6 +97,49 @@ def build_generator_hints(unit_type: str, text: str, visual_required: bool) -> d
     return hints
 
 
+def is_visual_marker_block(block: dict) -> bool:
+    text = (block.get("text") or "").strip().lower()
+    return text.startswith("![") or "https://example.com/image" in text
+
+
+def has_visual_reference(text: str) -> bool:
+    lowered = (text or "").lower()
+    return any(pattern in lowered for pattern in VISUAL_REFERENCE_PATTERNS)
+
+
+def infer_visual_dependency(
+    page_blocks: list[dict],
+    index: int,
+    block: dict,
+    valid_visual_asset_ids: list[str],
+) -> str:
+    if block["type"] == "visual" and valid_visual_asset_ids:
+        return "required"
+
+    block_text = (block.get("text") or "").strip()
+    references_visual = has_visual_reference(block_text)
+    previous_block = page_blocks[index - 1] if index > 0 else None
+    next_block = page_blocks[index + 1] if index + 1 < len(page_blocks) else None
+    previous_two = page_blocks[index - 2] if index > 1 else None
+
+    adjacent_visual = any(
+        candidate is not None and is_visual_marker_block(candidate)
+        for candidate in (previous_block, next_block)
+    )
+    heading_then_visual = (
+        previous_two is not None
+        and previous_block is not None
+        and is_visual_marker_block(previous_block)
+        and has_visual_reference(previous_two.get("text", ""))
+    )
+
+    if valid_visual_asset_ids and references_visual and (adjacent_visual or heading_then_visual):
+        return "required"
+    if valid_visual_asset_ids and (adjacent_visual or heading_then_visual or references_visual):
+        return "linked"
+    return "none"
+
+
 def build_knowledge_units(manifest: dict) -> list[dict]:
     build_paths = get_build_paths(manifest["buildId"])
     page_artifacts = load_json(build_paths.page_artifacts_path, default=[]) or []
@@ -96,7 +153,8 @@ def build_knowledge_units(manifest: dict) -> list[dict]:
             if (asset.get("caption") or asset.get("visionDescription"))
         ][:MAX_ASSETS_PER_UNIT]
 
-        for index, block in enumerate(page["ocrBlocks"], start=1):
+        page_blocks = page["ocrBlocks"]
+        for zero_index, block in enumerate(page_blocks):
             block_text = block["text"].strip()
             if len(block_text) < 80:
                 continue
@@ -108,18 +166,33 @@ def build_knowledge_units(manifest: dict) -> list[dict]:
 
             unit_type = infer_unit_type(block["type"], block_text)
             visual_keywords = detect_visual_keywords(block_text)
-            visual_required = block["type"] == "visual" and bool(valid_visual_asset_ids)
-            visual_mode = "required" if visual_required else "optional" if visual_keywords else "none"
+            visual_dependency = infer_visual_dependency(
+                page_blocks,
+                zero_index,
+                block,
+                valid_visual_asset_ids,
+            )
+            visual_required = visual_dependency == "required"
+            visual_mode = (
+                "required"
+                if visual_dependency == "required"
+                else "optional"
+                if visual_dependency == "linked" or visual_keywords
+                else "none"
+            )
 
-            block_suffix = str(block.get("blockId") or f"block-{index:03d}").replace("block-", "")
+            display_index = zero_index + 1
+            block_suffix = str(block.get("blockId") or f"block-{display_index:03d}").replace("block-", "")
             unit_id = f"{page['pageId']}-unit-{block_suffix}"
             topic_title = summarize_page_text(block_text, limit=90)
-            topic_key = slugify(topic_title) or f"unit-{index:03d}"
+            topic_key = slugify(topic_title) or f"unit-{display_index:03d}"
             numeric_values = extract_numeric_values(block_text)
             unit_issues = []
             if visual_mode == "optional":
                 unit_issues.append("visual_keyword_text_only")
-            if block["type"] == "visual" and not valid_visual_asset_ids:
+            if visual_dependency == "linked":
+                unit_issues.append("visual_dependency_linked")
+            if visual_required and not valid_visual_asset_ids:
                 unit_issues.append("visual_required_without_valid_asset")
 
             units.append(
@@ -149,17 +222,18 @@ def build_knowledge_units(manifest: dict) -> list[dict]:
                     "visualSupport": {
                         "mode": visual_mode,
                         "required": visual_required,
-                        "assetIds": valid_visual_asset_ids if visual_required else [],
-                        "visualQuestionTypes": ["visual_recognition", "mixed_context"] if visual_required else [],
+                        "assetIds": valid_visual_asset_ids if visual_dependency != "none" else [],
+                        "visualQuestionTypes": ["visual_recognition", "mixed_context"] if visual_dependency != "none" else [],
                     },
+                    "visualDependency": visual_dependency,
                     "entities": extract_entities(block_text),
                     "numericValues": numeric_values,
                     "aliases": visual_keywords,
                     "difficultyHints": {
-                        "estimatedLevel": "medium" if numeric_values or visual_required else "easy",
-                        "questionTargets": 4 if visual_required or unit_type in {"rule", "fact"} else 2,
+                        "estimatedLevel": "medium" if numeric_values or visual_dependency != "none" else "easy",
+                        "questionTargets": 4 if visual_dependency != "none" or unit_type in {"rule", "fact"} else 2,
                     },
-                    "generatorHints": build_generator_hints(unit_type, block_text, visual_required),
+                    "generatorHints": build_generator_hints(unit_type, block_text, visual_dependency != "none"),
                     "safetyFlags": {
                         "ambiguous": len(block_text.split()) < 20,
                         "outdated": False,

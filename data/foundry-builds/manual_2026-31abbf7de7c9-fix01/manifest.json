@@ -1,10 +1,12 @@
 {
-  "buildId": "manual-foundry-2026-31abbf7de7c9-repaired",
+  "buildId": "manual_2026-31abbf7de7c9-fix01",
   "editionId": "manual-2026",
   "manualYear": 2026,
   "sourceDocumentId": "manual-claseb-2026",
   "exportedCount": 1572,
-  "generatedAt": "2026-04-29T00:32:40.659Z",
+  "generatedAt": "2026-05-02T02:55:11.522Z",
+  "duplicateClusterCount": 784,
+  "duplicatesFile": "duplicates.json",
   "chapters": [
     {
       "chapterId": "chapter-1",
@@ -51,5 +53,6 @@
       "file": "review-export/chapter-9.jsonl",
       "count": 134
     }
-  ]
+  ],
+  "sourceBuildId": "manual_2026-31abbf7de7c9"
 }

@@ -106,11 +106,23 @@ Current checkpoint:
   - left rail: build/chapter context and diagnostics
   - center rail: queue scanability
   - right rail: reviewer detail ordered by editorial cognition
+- `2C` is now active structurally:
+  - promoted Foundry builds can now carry an additive whole-build duplicate artifact
+  - the promoted contract now includes:
+    - `duplicateClusterCount`
+    - `duplicatesFile`
+    - `duplicates.json`
+  - Admin now consumes duplicate clusters separately from chapter JSONL and persists local duplicate review decisions
+  - imported draft provenance is now ready to preserve duplicate review metadata
 
 Next execution block:
-- validate the new Foundry layout in local `/admin` against a fixed mixed-state chapter
-- refine spacing, scrolling boundaries, and selection contrast from browser feedback
-- only after that, declare `2B` complete and continue to `2C`
+- delegated UI track:
+  - validate the new Foundry layout in local `/admin` against a fixed mixed-state chapter
+  - refine spacing, scrolling boundaries, and selection contrast from browser feedback
+- structural track in this thread:
+  - gate final prepare/import on unresolved duplicate clusters
+  - surface override and multi-keep state in import readiness
+  - verify the duplicate contract across multiple promoted builds
 
 Done when:
 - generated candidates can be reviewed, corrected, staged, imported as drafts, and reverted by batch without touching source artifacts

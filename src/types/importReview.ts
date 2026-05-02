@@ -107,10 +107,22 @@ export type ImportReviewFactReview = {
 
 export type ImportReviewSandboxProvenance = {
   buildId: string;
+  runId?: string;
+  sourceBuildId?: string;
   candidateId: string;
   unitIds: string[];
   generationMode: 'text' | 'visual' | 'mixed';
+  visualDependency?: 'none' | 'linked' | 'required';
   verifierScore: number;
+  verifierBreakdown?: {
+    schemaQuality: number;
+    groundingQuality: number;
+    answerQuality: number;
+    distractorQuality: number;
+    visualSupportQuality: number;
+    duplicateRiskPenalty: number;
+    overallReviewScore: number;
+  };
   verifierIssues: Array<{
     code: string;
     severity?: string;
@@ -144,6 +156,8 @@ export type ImportReviewSandboxProvenance = {
 
 export type ImportReviewQuestionRecord = {
   externalId: string;
+  runId?: string;
+  sourceBuildId?: string;
   prompt: string;
   selectionMode: 'single' | 'multiple';
   instruction: string;
@@ -168,6 +182,7 @@ export type ImportReviewQuestionRecord = {
   metadataRepair?: ImportReviewMetadataRepair;
   factReview?: ImportReviewFactReview;
   needsVisualAudit?: boolean;
+  visualDependency?: 'none' | 'linked' | 'required';
   duplicateClusterId?: string;
   duplicateWinnerId?: string;
   duplicateResolution?: 'winner' | 'referenced_duplicate';
@@ -178,6 +193,17 @@ export type ImportReviewQuestionRecord = {
   similarityMatchPrompt?: string;
   similarityMatchQuestion?: ImportReviewQuestionSnapshot;
   sandboxProvenance?: ImportReviewSandboxProvenance;
+  iterationMetadata?: {
+    classification:
+      | 'novel'
+      | 'near_duplicate_previous_run'
+      | 'duplicate_previous_run'
+      | 'same_grounding_reworded';
+    matchedRunId?: string | null;
+    matchedCandidateId?: string | null;
+    similarity?: number;
+    reason?: string;
+  };
 };
 
 export type ImportReviewRejectedCandidate = {

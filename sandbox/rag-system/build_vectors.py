@@ -8,15 +8,14 @@ from lib.pipeline_common import get_build_paths, load_json, retry_call
 
 
 OLLAMA_BASE_URL = "http://localhost:11434/v1"
-EMBED_MODEL = "mxbai-embed-large"
 MAX_EMBED_CHARS = 1000
 
 client = OpenAI(api_key="ollama", base_url=OLLAMA_BASE_URL)
 
 
-def get_embedding(text: str) -> list[float]:
+def get_embedding(text: str, model_name: str) -> list[float]:
     response = retry_call(
-        lambda: client.embeddings.create(model=EMBED_MODEL, input=[text.replace("\n", " ")]),
+        lambda: client.embeddings.create(model=model_name, input=[text.replace("\n", " ")]),
         attempts=3,
         sleep_seconds=1.5,
     )
@@ -38,7 +37,7 @@ def build_vectors(manifest: dict) -> dict:
         segments = split_for_embedding(unit["supportingText"])
         for segment_index, segment in enumerate(segments):
             try:
-                vector = get_embedding(segment)
+                vector = get_embedding(segment, manifest["models"]["embedModel"])
             except Exception:  # noqa: BLE001
                 continue
             vectors.append(vector)

@@ -20,12 +20,11 @@ from lib.pipeline_common import (
 
 
 OLLAMA_BASE_URL = "http://localhost:11434/v1"
-VISION_MODEL = "qwen3-VL:4B-Instruct"
 
 client = OpenAI(api_key="ollama", base_url=OLLAMA_BASE_URL)
 
 
-def transcribe_page_with_vlm(image_bytes: bytes) -> str:
+def transcribe_page_with_vlm(image_bytes: bytes, model_name: str) -> str:
     encoded_image = base64.b64encode(image_bytes).decode("utf-8")
     prompt = """
     Actúa como un transcriptor experto de un manual de conducción.
@@ -37,7 +36,7 @@ def transcribe_page_with_vlm(image_bytes: bytes) -> str:
     """
     response = retry_call(
         lambda: client.chat.completions.create(
-            model=VISION_MODEL,
+            model=model_name,
             messages=[
                 {
                     "role": "user",
@@ -124,7 +123,7 @@ def extract_page_artifacts(manifest: dict) -> list[dict]:
         pix.save(page_image_path)
 
         try:
-            page_markdown = transcribe_page_with_vlm(image_bytes)
+            page_markdown = transcribe_page_with_vlm(image_bytes, manifest["models"]["visionModel"])
             blocks = split_text_into_blocks(page_markdown)
             visual_keywords = detect_visual_keywords(page_markdown)
             extraction_issues = [] if page_markdown else ["empty_transcription"]

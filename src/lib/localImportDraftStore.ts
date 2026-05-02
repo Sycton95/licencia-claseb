@@ -26,6 +26,17 @@ export type ImportDraftReferenceAsset = {
   previewDataUrl?: string;
 };
 
+export type ImportDraftFoundryDuplicateReview = {
+  clusterId: string;
+  familyKey: string;
+  suggestedWinnerId: string;
+  decisionMode: 'suggested_winner' | 'manual_winner' | 'multi_keep';
+  selectedExternalIds: string[];
+  similarityToSuggested?: number;
+  reviewerSummary?: string;
+  reviewedAt: string;
+};
+
 export type ImportDraftQueueItem = {
   key: string;
   runId: string;
@@ -40,6 +51,7 @@ export type ImportDraftQueueItem = {
   errors: Array<{ code: string; message: string }>;
   correction?: ImportDraftGroundingCorrection;
   assets: ImportDraftReferenceAsset[];
+  duplicateReview?: ImportDraftFoundryDuplicateReview;
 };
 
 export type PreparedImportBatchRecord = {

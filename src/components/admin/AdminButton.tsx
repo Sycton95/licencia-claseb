@@ -5,8 +5,10 @@ type Size = 'sm' | 'md' | 'lg';
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant;
+  tone?: Variant;
   size?: Size;
-  children: ReactNode;
+  children?: ReactNode;
+  label?: ReactNode;
   isLoading?: boolean;
 };
 
@@ -33,26 +35,31 @@ const sizeStyles: Record<Size, string> = {
 
 export function AdminButton({
   variant = 'primary',
+  tone,
   size = 'md',
   className = '',
   isLoading = false,
   disabled = false,
   children,
+  label,
   ...props
 }: Props) {
+  const resolvedVariant = tone ?? variant;
+  const content = children ?? label;
+
   return (
     <button
       {...props}
       disabled={disabled || isLoading}
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+      className={`${baseStyles} ${variantStyles[resolvedVariant]} ${sizeStyles[size]} ${className}`}
     >
       {isLoading ? (
         <span className="flex items-center gap-2">
           <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-          {children}
+          {content}
         </span>
       ) : (
-        children
+        content
       )}
     </button>
   );

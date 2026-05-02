@@ -159,12 +159,28 @@ Current checkpoint:
     - draft state
     - actions
 - The next approved loop is browser-based refinement on local `/admin`, not more contract churn.
+- Milestone 2C has now started structurally:
+  - promoted Foundry builds can carry an additive whole-build `duplicates.json` artifact
+  - build manifests now advertise:
+    - `duplicateClusterCount`
+    - `duplicatesFile`
+  - Admin now loads duplicate clusters separately from chapter JSONL
+  - duplicate review decisions are persisted locally and preserved into draft-import provenance when queue items exist
+  - the current promoted build `manual-foundry-2026-31abbf7de7c9-repaired` now validates this contract with `784` duplicate clusters
 
 Next tasks:
-- validate the current Foundry surface on a real build/chapter with mixed candidate states
-- tighten widths, scrolling boundaries, and selected-state contrast from the live browser pass
+- keep delegated UI validation/refinement isolated to the current Foundry surface
+- finish the remaining Foundry duplicate-review behavior:
+  - unresolved cluster gating for final prepare/import
+  - override and multi-keep handling in the batch flow
+  - duplicate-aware build/chapter import-readiness summaries
+- complete the sandbox calibration loop before choosing the next promoted Foundry run:
+  - preserve the first 2026 run as the baseline comparison artifact
+  - recalibrate verifier penalties for weakly grounded applied questions
+  - reduce same-unit pairwise variant redundancy upstream
+  - validate one second full build under the same `sourceBuildId` before model-variation experiments
 - verify chapter/build summary buckets against real candidate data
-- then finish Milestone 2B before moving to 2C batch/evidence polish
+- harden prepare/import/revert around duplicate decisions
 
 Acceptance:
 - a reviewer can review a build by chapter, correct grounding/media, stage, import as draft, and revert by batch
