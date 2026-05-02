@@ -70,6 +70,7 @@ type Props = {
   title?: string;
   subtitle?: string;
   allowDraftTools?: boolean;
+  inline?: boolean;
   onClose: () => void;
   onApplySelection?: (payload: { text: string; page: number; excerpt?: string }) => void;
   onSaveAsset?: (payload: {
@@ -426,6 +427,7 @@ export function AdminImportPdfWorkspace({
   title,
   subtitle,
   allowDraftTools = false,
+  inline = false,
   onClose,
   onApplySelection,
   onSaveAsset,
@@ -937,11 +939,11 @@ export function AdminImportPdfWorkspace({
       isOpen={isOpen}
       onClose={onClose}
       title={title ?? sourceDocument?.title ?? 'PDF del manual'}
-      subtitle={subtitle ?? 'Visor PDF con selección de texto y referencias visuales.'}
-      className="absolute inset-y-0 right-0 z-30 w-full max-w-[980px]"
-      bodyClassName="grid min-h-0 flex-1 gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.8fr)]"
+      subtitle={subtitle ?? (inline ? undefined : 'Visor PDF con selección de texto y referencias visuales')}
+      className={inline ? "flex min-w-0 flex-1 flex-col border-r border-slate-200 bg-white !max-w-none !shadow-none !border-l-0" : "absolute inset-y-0 right-0 z-30 w-full !max-w-[980px]"}
+      bodyClassName={inline ? "flex min-h-0 flex-1 flex-col gap-4" : "grid min-h-0 flex-1 gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.8fr)]"}
     >
-      <div className="flex min-h-0 flex-col">
+      <div className="flex min-h-0 flex-1 flex-col">
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <AdminButton variant="ghost" size="sm" onClick={() => setActivePage((current) => Math.max(1, current - 1))}>
             Página anterior
@@ -1011,58 +1013,59 @@ export function AdminImportPdfWorkspace({
         </div>
       </div>
 
-      <div className="flex min-h-0 flex-col gap-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Contexto</p>
-          <p className="mt-2 text-sm text-slate-700">
-            {excerpt ? excerpt : 'Sin excerpt objetivo para esta apertura del PDF.'}
-          </p>
-          {textLayerMatch ? (
-            <p className="mt-2 text-xs text-emerald-700">
-              Highlight textual: {textLayerMatch.source}
+      {!inline && (
+        <div className="flex min-h-0 flex-col gap-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Contexto</p>
+            <p className="mt-2 text-sm text-slate-700">
+              {excerpt ? excerpt : 'Sin excerpt objetivo para esta apertura del PDF.'}
             </p>
-          ) : highlightResult?.bboxSource ? (
-            <p className="mt-2 text-xs text-slate-500">
-              Highlight geométrico: {highlightResult.bboxSource}
-            </p>
-          ) : null}
-          {workerError ? (
-            <p className="mt-2 text-xs text-amber-700">{workerError}</p>
-          ) : null}
-          {debugEnabled ? (
-            <div
-              data-testid="pdf-debug-status"
-              className="mt-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600"
-            >
-              {viewerStatusText}
-              {pdfDebugState.error ? ` error=${pdfDebugState.error}` : ''}
-            </div>
-          ) : null}
-        </div>
-
-        <div className="min-h-0 flex-1 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Texto extraído</p>
-          <div className="mt-3 whitespace-pre-wrap text-sm leading-6 text-slate-700">
-            {pageText.length === 0 ? (
-              <p className="text-slate-500">Sin texto extraído para esta página.</p>
-            ) : (
-              pageText.map((chunk, index) => {
-                const highlighted =
-                  highlightNeedle && chunk.normalized && highlightNeedle.includes(chunk.normalized);
-                return (
-                  <span
-                    key={`${chunk.normalized}-${index}`}
-                    className={highlighted ? 'rounded bg-amber-200/70 px-0.5' : ''}
-                  >
-                    {chunk.text}{' '}
-                  </span>
-                );
-              })
-            )}
+            {textLayerMatch ? (
+              <p className="mt-2 text-xs text-emerald-700">
+                Highlight textual: {textLayerMatch.source}
+              </p>
+            ) : highlightResult?.bboxSource ? (
+              <p className="mt-2 text-xs text-slate-500">
+                Highlight geométrico: {highlightResult.bboxSource}
+              </p>
+            ) : null}
+            {workerError ? (
+              <p className="mt-2 text-xs text-amber-700">{workerError}</p>
+            ) : null}
+            {debugEnabled ? (
+              <div
+                data-testid="pdf-debug-status"
+                className="mt-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600"
+              >
+                {viewerStatusText}
+                {pdfDebugState.error ? ` error=${pdfDebugState.error}` : ''}
+              </div>
+            ) : null}
           </div>
-        </div>
 
-        {allowDraftTools ? (
+          <div className="min-h-0 flex-1 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Texto extraído</p>
+            <div className="mt-3 whitespace-pre-wrap text-sm leading-6 text-slate-700">
+              {pageText.length === 0 ? (
+                <p className="text-slate-500">Sin texto extraído para esta página.</p>
+              ) : (
+                pageText.map((chunk, index) => {
+                  const highlighted =
+                    highlightNeedle && chunk.normalized && highlightNeedle.includes(chunk.normalized);
+                  return (
+                    <span
+                      key={`${chunk.normalized}-${index}`}
+                      className={highlighted ? 'rounded bg-amber-200/70 px-0.5' : ''}
+                    >
+                      {chunk.text}{' '}
+                    </span>
+                  );
+                })
+              )}
+            </div>
+          </div>
+
+          {allowDraftTools ? (
           <div className="rounded-2xl border border-slate-200 bg-white p-4">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Herramientas de borrador</p>
             <p className="mt-2 text-sm text-slate-700">
@@ -1141,6 +1144,7 @@ export function AdminImportPdfWorkspace({
           </div>
         ) : null}
       </div>
+      )}
     </AdminPanel>
   );
 }
